@@ -2,7 +2,7 @@
 
 ## What This Is
 
-Eine öffentlich zugängliche, statische Webanwendung (GitHub Pages) die alle 9 österreichischen Gemeindeordnungen (eine pro Bundesland) durchsuchbar macht. Zielgruppe sind primär Grüne GemeinderätInnen, die schnell nach Stichwörtern über alle Gemeindeordnungen suchen wollen. Die Seite wird mit Grünem Branding versehen und ist öffentlich zugänglich.
+Eine öffentlich zugängliche, statische Webanwendung (GitHub Pages) die alle 9 österreichischen Gemeindeordnungen (eine pro Bundesland) sowie relevante Stadtrechte der Statutarstädte durchsuchbar macht. Zielgruppe sind primär Grüne GemeinderätInnen, die schnell nach Stichwörtern über alle Gemeindeordnungen und Stadtrechte suchen wollen. Die Seite wird mit Grünem Branding versehen und ist öffentlich zugänglich.
 
 ## Core Value
 
@@ -16,7 +16,7 @@ GemeinderätInnen können in Sekunden jede Bestimmung über alle 9 Gemeindeordnu
 
 ### Active
 
-- [ ] Alle 9 Gemeindeordnungen (eine pro Bundesland) einlesen und strukturiert verarbeiten
+- [ ] Alle 9 Gemeindeordnungen (eine pro Bundesland) + relevante Statutarstadt-Stadtrechte einlesen und strukturiert verarbeiten
 - [ ] Volltextsuche über alle Gemeindeordnungen mit Ergebnisanzeige
 - [ ] Filter nach Bundesland und Abschnitt/Thema
 - [ ] LLM-generierte Paragraph-Zusammenfassungen in einfacher Sprache (Dev-Time)
@@ -33,13 +33,14 @@ GemeinderätInnen können in Sekunden jede Bestimmung über alle 9 Gemeindeordnu
 
 - Bundesland-Vergleiche — Komplexität zu hoch für v1, evtl. v2
 - Login/Authentifizierung — Seite ist öffentlich
-- Stadtrechte/Stadtstatute — Nur Gemeindeordnungen in v1
+- Stadtrechte nicht-relevanter Statutarstädte — Nur relevante Statutarstädte mit eigenen Stadtrechten
 - Echtzeit-API-Abfragen — Statische Seite, Daten werden bei Build verarbeitet
 - Mobile App — Web-first, responsive reicht
 
 ## Context
 
-- Österreich hat 9 Bundesländer, jedes mit eigener Gemeindeordnung
+- Österreich hat 9 Bundesländer, jedes mit eigener Gemeindeordnung; Wien hat die Wiener Stadtverfassung
+- Relevante Statutarstädte (bis zu 15) haben eigene Stadtrechte — eigene Kategorie in der UI
 - Datenquellen: RIS (ris.bka.gv.at) und/oder Landes-Rechtsdatenbanken — genaue Quelle wird in Research-Phase geklärt
 - LLM-Analyse passiert nur zur Entwicklungszeit, nicht bei jedem Deployment
 - Bei Deployment werden aktuelle Gesetzestexte eingelesen und verarbeitet (Parsing, Indexierung)
@@ -64,6 +65,10 @@ GemeinderätInnen können in Sekunden jede Bestimmung über alle 9 Gemeindeordnu
 | LLM nur zur Dev-Time | Kosten sparen, statische Ergebnisse reichen | — Pending |
 | TailwindCSS | Modern, flexibel, gut für Branding | — Pending |
 | Grünes CI/Branding | Öffentlich als Grünes Tool erkennbar | — Pending |
+| Statutarstädte inkludieren | GemeinderätInnen in Statutarstädten brauchen auch Zugang | — Pending |
+| Pagefind für Suche | WASM-basiert, chunked index, German stemming, ideal für statische Seiten | — Pending |
+| RIS OGD API v2.6 | Offizielle API, kein Auth nötig, live getestet | — Pending |
+| Claude Code CLI für LLM | Subscription nutzen statt API-Kosten | — Pending |
 
 ---
-*Last updated: 2026-03-10 after initialization*
+*Last updated: 2026-03-10 after Phase 1 discussion*
