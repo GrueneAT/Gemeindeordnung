@@ -93,13 +93,44 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| — | — | Pending |
+| DATA-01 | Phase 1 | Pending |
+| DATA-02 | Phase 1 | Pending |
+| DATA-03 | Phase 1 | Pending |
+| DATA-04 | Phase 1 | Pending |
+| DATA-05 | Phase 1 | Pending |
+| DEPL-01 | Phase 1 | Pending |
+| DEPL-02 | Phase 1 | Pending |
+| DEPL-03 | Phase 1 | Pending |
+| DEPL-04 | Phase 1 | Pending |
+| DSGN-02 | Phase 1 | Pending |
+| BROW-01 | Phase 2 | Pending |
+| BROW-02 | Phase 2 | Pending |
+| BROW-03 | Phase 2 | Pending |
+| BROW-04 | Phase 2 | Pending |
+| BROW-05 | Phase 2 | Pending |
+| BROW-06 | Phase 2 | Pending |
+| DSGN-01 | Phase 2 | Pending |
+| DSGN-03 | Phase 2 | Pending |
+| SUCH-01 | Phase 3 | Pending |
+| SUCH-02 | Phase 3 | Pending |
+| SUCH-03 | Phase 3 | Pending |
+| SUCH-04 | Phase 3 | Pending |
+| SUCH-05 | Phase 3 | Pending |
+| SUCH-06 | Phase 3 | Pending |
+| SUCH-07 | Phase 3 | Pending |
+| LLM-01 | Phase 4 | Pending |
+| LLM-02 | Phase 4 | Pending |
+| LLM-03 | Phase 4 | Pending |
+| LLM-04 | Phase 4 | Pending |
+| LLM-05 | Phase 4 | Pending |
+| LLM-06 | Phase 4 | Pending |
+| LLM-07 | Phase 4 | Pending |
 
 **Coverage:**
-- v1 requirements: 28 total
-- Mapped to phases: 0
-- Unmapped: 28 ⚠️
+- v1 requirements: 32 total
+- Mapped to phases: 32
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-10*
-*Last updated: 2026-03-10 after initial definition*
+*Last updated: 2026-03-10 after roadmap creation*
