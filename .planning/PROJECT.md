@@ -44,6 +44,7 @@ GemeinderätInnen können in Sekunden jede Bestimmung über alle 9 Gemeindeordnu
 - LLM-Analyse passiert nur zur Entwicklungszeit, nicht bei jedem Deployment
 - Bei Deployment werden aktuelle Gesetzestexte eingelesen und verarbeitet (Parsing, Indexierung)
 - Grünes Corporate Identity/Styleguide vorhanden für Branding
+- Design-Referenz: https://bildgenerator.gruene.at/ (Repo: https://github.com/GrueneAT/bildgenerator)
 - Zielgruppe hat geringe technische Affinität — UI muss intuitiv und einfach sein
 
 ## Constraints
