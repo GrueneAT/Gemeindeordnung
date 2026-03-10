@@ -20,7 +20,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 ## Phase Details
 
 ### Phase 1: Data Pipeline & Project Foundation
-**Goal**: All 9 Gemeindeordnungen are fetched from RIS, parsed into structured JSON, and the site builds and deploys to GitHub Pages via automated pipeline
+**Goal**: All 9 Gemeindeordnungen + 14 Statutarstadt-Stadtrechte are fetched from RIS, parsed into structured JSON, and the site builds and deploys to GitHub Pages via automated pipeline
 **Depends on**: Nothing (first phase)
 **Requirements**: DATA-01, DATA-02, DATA-03, DATA-04, DATA-05, DEPL-01, DEPL-02, DEPL-03, DEPL-04, DSGN-02
 **Success Criteria** (what must be TRUE):
@@ -29,11 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. The site displays "Stand: [Datum]" showing when data was last fetched
   4. Dev-scripts for LLM analysis exist and can be run locally (even if LLM content is not yet generated)
   5. LLM-generated content, once created, is committed to repo and not regenerated per deploy
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md -- Project setup (Vite + TailwindCSS v4 + vitest) and RIS law fetch script with complete 23-law registry
+- [ ] 01-02-PLAN.md -- Cheerio HTML parser with real RIS test fixtures and structured JSON output
+- [ ] 01-03-PLAN.md -- Page generation, GitHub Actions deployment workflow, and LLM dev-script stub
 
 ### Phase 2: Browsing & Branding
 **Goal**: Users can browse each Bundesland's Gemeindeordnung on a well-designed, accessible, mobile-friendly site with Gruenes Corporate Identity
@@ -84,7 +85,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Data Pipeline & Project Foundation | 0/? | Not started | - |
+| 1. Data Pipeline & Project Foundation | 0/3 | Planning complete | - |
 | 2. Browsing & Branding | 0/? | Not started | - |
 | 3. Search | 0/? | Not started | - |
 | 4. LLM Enrichment | 0/? | Not started | - |
