@@ -110,3 +110,13 @@ Phases execute in numeric order: 1 -> 2 -> 2.1 -> 3 -> 4
 | 2.1 Frontend Testing Infrastructure | 2/2 | Complete | 2026-03-11 |
 | 3. Search | 0/3 | Not started | - |
 | 4. LLM Enrichment | 0/? | Not started | - |
+
+### Phase 04.1: Visual Polish & Screenshot Review (INSERTED)
+
+**Goal:** [Urgent work - to be planned]
+**Requirements**: TBD
+**Depends on:** Phase 4
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 04.1 to break down)

@@ -63,6 +63,7 @@ Progress: [██████████] 100%
 
 ### Roadmap Evolution
 - Phase 02.1 inserted after Phase 2: Frontend Testing Infrastructure (URGENT)
+- Phase 04.1 inserted after Phase 4: Visual Polish & Screenshot Review (URGENT)
 
 ### Decisions
 
