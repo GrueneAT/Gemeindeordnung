@@ -331,6 +331,26 @@ describe('generate-pages', () => {
     expect(html).toContain('data-copy-link="p2"');
   });
 
+  it('Test 20P2: copy-link button uses CSS class pattern, not inline Tailwind opacity', async () => {
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
+
+    // Article elements should have "group" class for Tailwind group-hover
+    expect(html).toMatch(/class="[^"]*\bgroup\b/);
+
+    // Copy-link buttons should use the CSS "copy-link-btn" class
+    const buttonMatches = html.match(/<button[^>]*data-copy-link[^>]*>/g);
+    expect(buttonMatches).not.toBeNull();
+    for (const btn of buttonMatches) {
+      expect(btn).toContain('copy-link-btn');
+      // Should NOT have inline opacity-0 or group-hover:opacity-100 (handled by CSS)
+      expect(btn).not.toContain('opacity-0');
+      expect(btn).not.toContain('group-hover:opacity-100');
+    }
+  });
+
   it('Test 18P2: law page contains Bundesland dropdown with id', async () => {
     const { generatePages } = await import('../scripts/generate-pages.js');
     await generatePages(TEST_DIR);
