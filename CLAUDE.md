@@ -2,47 +2,73 @@
 
 ## Visual Review Protocol (MANDATORY)
 
-After making UI changes (HTML templates, CSS, JavaScript interactions), you MUST:
+**Trigger:** Any plan that modifies HTML templates (`scripts/generate-pages.js`), CSS (`src/css/main.css`), JavaScript (`src/js/main.js`, `src/js/search.js`), or assets (`src/assets/`) MUST follow this protocol. Do NOT commit until all screenshots pass visual review.
 
-### Step 1: Run tests and capture screenshots
+### Step 1: Build, index, and capture screenshots
 ```bash
 npm run build && npx pagefind --site dist --force-language de && npx playwright test --config=e2e/playwright.config.js --project=desktop-chromium
 ```
 
 ### Step 2: Read screenshots and visually inspect
-Use the Read tool on the relevant PNG files in `e2e/screenshots/`. You can see images — look at them critically.
+Use the Read tool on the relevant PNG files in `e2e/screenshots/`. You MUST visually inspect each screenshot -- look critically for regressions.
 
-**Desktop screenshots:**
-- `browse-page-wien.png` — Page layout, header, footer
-- `card-grid-index.png` — Index page card grid
-- `search-results.png` — Search dropdown with results
-- `search-empty.png` — Search empty state
-- `search-filter-active.png` — Bundesland filter active
-- `toc-collapsed.png` / `toc-expanded.png` — Table of contents
-- `copy-link-tooltip.png` — Copy link tooltip
-- `scroll-to-top-visible.png` — Scroll-to-top button
-- `dropdown-nav-result.png` — Bundesland dropdown
-- `anchor-highlight-active.png` — Anchor highlight
-- `typography-law-text.png` — Typography and readability
-- `search-highlight-target.png` — On-page search highlighting
+**Desktop -- Layout & Branding:**
+- `card-grid-index.png` -- Index page card grid, header with arrow-G logo
+- `browse-page-wien.png` -- Law page layout, header, footer
+- `scroll-to-top-visible.png` -- Scroll-to-top button position
+- `scroll-to-top-hidden.png` -- Scroll-to-top hidden state
 
-**Mobile screenshots (375px):**
-- `mobile-index.png` — Mobile index layout
-- `mobile-law-page.png` — Mobile law page
-- `search-mobile-overlay.png` — Mobile search overlay
+**Desktop -- Search:**
+- `search-results.png` -- Search dropdown with results
+- `search-empty.png` -- Search empty state
+- `search-filter-active.png` -- Bundesland filter active
+- `search-filter-all.png` -- All-filter state
+- `search-count.png` -- Result count display
+- `search-highlight-target.png` -- On-page search highlighting
 
-### Step 3: Check for issues
-Review each screenshot against this checklist:
-- [ ] Layout correct — no overlapping elements, proper spacing, z-index correct
-- [ ] Text renders with proper characters — umlauts (ö, ä, ü, ß) display correctly
-- [ ] Gruene branding visible — correct Austrian logo, green colors
-- [ ] Typography readable — proper contrast, line-height, max-width
-- [ ] Mobile usable — no horizontal overflow, touch targets adequate
-- [ ] Interactive states correct — tooltips, highlights, dropdowns positioned well
-- [ ] Search UI polished — dropdown properly layered, results readable, filter chips aligned
+**Desktop -- Interactive States:**
+- `toc-collapsed.png` / `toc-expanded.png` -- Table of contents
+- `copy-link-tooltip.png` -- Copy link tooltip
+- `dropdown-nav-result.png` -- Bundesland dropdown navigation
+- `anchor-highlight-active.png` -- Anchor highlight on navigation
+- `anchor-highlight-faded.png` -- Anchor highlight fade-out
+
+**Desktop -- LLM Enrichment:**
+- `llm-summary-expanded.png` -- LLM summary section expanded
+- `llm-disclaimer.png` -- LLM disclaimer display
+- `topic-filter-chips.png` -- Topic filter chip display
+- `topic-filter-active.png` -- Active topic filter state
+- `topic-filter-reset.png` -- Topic filter reset state
+
+**Desktop -- Content Pages:**
+- `faq-index.png` -- FAQ index page
+- `faq-topic-page.png` -- FAQ topic detail page
+- `glossar-page.png` -- Glossar overview page
+- `glossar-tooltip.png` -- Glossar tooltip on hover
+
+**Desktop -- Accessibility & Typography:**
+- `accessibility-index.png` -- Accessibility on index page
+- `accessibility-law-page.png` -- Accessibility on law page
+- `typography-law-text.png` -- Typography and readability
+
+**Mobile (375px):**
+- `mobile-index.png` -- Mobile index layout
+- `mobile-law-page.png` -- Mobile law page
+- `search-mobile-overlay.png` -- Mobile search overlay
+
+### Step 3: Check each screenshot against this checklist
+You MUST verify every applicable dimension. Fail any screenshot that does not pass.
+
+- [ ] **Layout** -- No overlapping elements, proper spacing, correct z-index layering
+- [ ] **Branding** -- Austrian Gruene arrow-G logo visible, green colors match CI (#6BA539)
+- [ ] **Typography** -- WCAG AA contrast (4.5:1 min), line-height 1.6+, max-width ~70ch for body text
+- [ ] **Text rendering** -- German umlauts (oe, ae, ue, ss) display correctly, no ASCII-safe spellings in UI
+- [ ] **Mobile** -- No horizontal overflow, touch targets >= 44px, readable without zoom
+- [ ] **Interactive states** -- Tooltips, highlights, dropdowns positioned correctly and not clipped
+- [ ] **Search UI** -- Dropdown properly layered above content, results readable, filter chips aligned
 
 ### Step 4: Fix issues before committing
-If something looks wrong in a screenshot, fix the code, re-run tests, re-read the screenshot. Do NOT commit until the visual result is acceptable.
+If any screenshot fails a checklist item: fix the code, re-run Step 1, re-read the screenshot. Repeat until all pass. Do NOT commit until the visual result is acceptable.
 
 ## Testing
 
