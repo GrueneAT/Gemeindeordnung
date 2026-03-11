@@ -101,6 +101,23 @@ Plans:
 - [ ] 04-03-PLAN.md -- FAQ pages, glossary page, inline glossary tooltips, Vite config + header navigation extension
 - [ ] 04-04-PLAN.md -- E2E tests for all 7 LLM requirements and visual verification checkpoint
 
+### Phase 04.1: Visual Polish & Screenshot Review (INSERTED)
+
+**Goal:** Comprehensive visual review of the entire site using Playwright screenshots -- find and fix all usability, layout, and branding issues to ship-quality standard, then embed visual self-validation into the project workflow so future phases verify their own visual output autonomously
+**Depends on:** Phase 4
+**Requirements**: DSGN-01, DSGN-03, BROW-05, BROW-06
+**Success Criteria** (what must be TRUE):
+  1. Site header shows the correct Austrian Gruene arrow-G logo on every page
+  2. All template text uses proper German umlauts
+  3. Every screenshot passes visual review with zero layout, typography, or branding issues
+  4. Mobile layout at 375px is clean with no overflow
+  5. CLAUDE.md contains a mandatory Visual Review Protocol for all future UI work
+**Plans**: 2 plans
+
+Plans:
+- [ ] 04.1-01-PLAN.md -- Logo replacement, umlaut fixes, systematic screenshot review and visual polish of all pages
+- [ ] 04.1-02-PLAN.md -- Strengthen CLAUDE.md Visual Review Protocol to mandatory for future autonomous validation
+
 ## Progress
 
 **Execution Order:**
@@ -113,13 +130,4 @@ Phases execute in numeric order: 1 -> 2 -> 2.1 -> 3 -> 4
 | 2.1 Frontend Testing Infrastructure | 2/2 | Complete | 2026-03-11 |
 | 3. Search | 0/3 | Not started | - |
 | 4. LLM Enrichment | 0/4 | Not started | - |
-
-### Phase 04.1: Visual Polish & Screenshot Review (INSERTED)
-
-**Goal:** [Urgent work - to be planned]
-**Requirements**: TBD
-**Depends on:** Phase 4
-**Plans:** 0 plans
-
-Plans:
-- [ ] TBD (run /gsd:plan-phase 04.1 to break down)
+| 4.1 Visual Polish & Screenshot Review | 0/2 | Not started | - |
