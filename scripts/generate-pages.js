@@ -222,10 +222,15 @@ function generateSearchHTML() {
 
 /**
  * Generate the sticky header HTML.
+ * @param {boolean} isLawPage - Whether this is a law subpage
+ * @param {string} [currentKey] - Current law key (for dropdown)
+ * @param {string} [currentCategory] - Current category (for dropdown)
+ * @param {string} [pathPrefix] - Override path prefix (defaults based on isLawPage)
  */
-function generateHeader(isLawPage, currentKey, currentCategory) {
-  const logoPath = isLawPage ? '../assets/gruene-logo.svg' : 'assets/gruene-logo.svg';
-  const indexPath = isLawPage ? '../index.html' : 'index.html';
+function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
+  const prefix = pathPrefix !== undefined ? pathPrefix : (isLawPage ? '../' : '');
+  const logoPath = `${prefix}assets/gruene-logo.svg`;
+  const indexPath = `${prefix}index.html`;
 
   const dropdown = isLawPage ? buildBundeslandDropdown(currentKey, currentCategory) : '';
   const rightSection = dropdown
@@ -234,12 +239,18 @@ function generateHeader(isLawPage, currentKey, currentCategory) {
 
   const searchHTML = generateSearchHTML();
 
+  const navLinks = `      <nav class="hidden sm:flex items-center gap-3 text-sm shrink-0" data-pagefind-ignore>
+        <a href="${prefix}faq/index.html" class="text-gruene-dark hover:underline">FAQ</a>
+        <a href="${prefix}glossar.html" class="text-gruene-dark hover:underline">Glossar</a>
+      </nav>`;
+
   return `  <header data-pagefind-ignore class="sticky top-0 bg-white border-b border-gray-200 z-10">
     <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between">
       <a href="${indexPath}" class="flex items-center gap-2 text-gruene-dark hover:text-gruene-dark no-underline shrink-0">
         <img src="${logoPath}" alt="Gruene Logo" class="w-8 h-8 gruene-logo" />
         <span class="text-lg font-bold">Gemeindeordnung.at</span>
       </a>
+${navLinks}
 ${searchHTML}
 ${rightSection}
     </div>
@@ -398,7 +409,7 @@ function generateCard(law, category) {
 /**
  * Generate the index page listing all laws grouped by category.
  */
-function generateIndexPage(lawsByCategory) {
+function generateIndexPage(lawsByCategory, faqTopics) {
   let categorySections = '';
 
   for (const [category, laws] of Object.entries(lawsByCategory)) {
@@ -410,6 +421,27 @@ function generateIndexPage(lawsByCategory) {
           <h2 class="text-2xl font-bold text-gruene-dark mb-4">${label}</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 ${cards}
+          </div>
+        </section>`;
+  }
+
+  // FAQ section on index page (only if FAQ data exists)
+  let faqSection = '';
+  if (faqTopics && faqTopics.length > 0) {
+    const faqCards = faqTopics.map(t => {
+      return `          <a href="faq/${t.slug}.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
+            <p class="font-bold text-gruene-dark">${escapeHtml(t.title)}</p>
+            <p class="text-sm text-gruene-dark/80 mt-1">${escapeHtml(t.description)}</p>
+            <p class="text-xs text-gray-500 mt-2">${t.questions.length} Fragen</p>
+          </a>`;
+    }).join('\n');
+
+    faqSection = `
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold text-gruene-dark mb-4">Haeufige Fragen</h2>
+          <p class="text-gruene-dark/80 mb-4">Thematische Uebersichten mit Vergleich aller Bundeslaender</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+${faqCards}
           </div>
         </section>`;
   }
@@ -436,7 +468,192 @@ ${headerHtml}
           Alle 9 Gemeindeordnungen und 14 Statutarstadt-Stadtrechte durchsuchbar aufbereitet.
         </p>
       </div>
-      <main>${categorySections}
+      <main>${categorySections}${faqSection}
+      </main>
+    </div>
+${footerHtml}
+${generateScrollToTop()}
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>`;
+}
+
+/**
+ * Generate the FAQ index page listing all topic cards.
+ */
+function generateFAQIndexPage(topics) {
+  const headerHtml = generateHeader(false, undefined, undefined, '../');
+  const footerHtml = generateFooter({ isLawPage: false });
+
+  const cards = topics.map(t => {
+    return `          <a href="${t.slug}.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
+            <p class="font-bold text-gruene-dark">${escapeHtml(t.title)}</p>
+            <p class="text-sm text-gruene-dark/80 mt-1">${escapeHtml(t.description)}</p>
+            <p class="text-xs text-gray-500 mt-2">${t.questions.length} Fragen</p>
+          </a>`;
+  }).join('\n');
+
+  return `<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haeufige Fragen - Gemeindeordnung.at</title>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body class="bg-gray-50 min-h-screen flex flex-col">
+${headerHtml}
+    <div class="max-w-5xl mx-auto px-4 py-8 flex-1 w-full">
+      <div class="mb-8">
+        <h1 class="text-3xl font-bold text-gruene-dark">Haeufige Fragen zu Gemeindeordnungen</h1>
+        <p class="mt-2 text-lg text-gruene-dark/80">
+          Thematische Uebersichten mit Vergleich aller Bundeslaender
+        </p>
+      </div>
+      <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
+        <strong>Hinweis:</strong> Diese Zusammenfassungen dienen der Orientierung und sind keine Rechtsberatung.
+      </div>
+      <main>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+${cards}
+        </div>
+      </main>
+    </div>
+${footerHtml}
+${generateScrollToTop()}
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>`;
+}
+
+/**
+ * Generate a single FAQ topic page with questions and cross-BL references.
+ */
+function generateFAQTopicPage(topic) {
+  const headerHtml = generateHeader(false, undefined, undefined, '../');
+  const footerHtml = generateFooter({ isLawPage: false });
+
+  const questionsHtml = topic.questions.map(q => {
+    const refsHtml = q.references && q.references.length > 0
+      ? `<div class="mt-3 text-sm">
+            <span class="text-gray-500 font-medium">Siehe:</span>
+            ${q.references.map(r => `<a href="../${r.category}/${r.key}.html#p${encodeURIComponent(r.paragraph)}" class="text-gruene-dark hover:underline ml-2">${escapeHtml(r.label)}</a>`).join('')}
+          </div>`
+      : '';
+
+    return `      <article class="mb-8 bg-white rounded-lg border border-gray-200 p-5">
+        <h2 class="text-lg font-semibold text-gruene-dark">${escapeHtml(q.question)}</h2>
+        <p class="mt-2 text-gruene-dark/80 leading-relaxed">${escapeHtml(q.answer)}</p>
+        ${refsHtml}
+      </article>`;
+  }).join('\n');
+
+  return `<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>${escapeHtml(topic.title)} - FAQ - Gemeindeordnung.at</title>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body class="bg-gray-50 min-h-screen flex flex-col">
+${headerHtml}
+    <nav data-pagefind-ignore aria-label="Breadcrumb" class="max-w-5xl mx-auto px-4 py-2 text-sm">
+      <ol class="flex items-center gap-1 text-gruene-dark">
+        <li><a href="../index.html" class="text-gruene-dark hover:underline">Startseite</a></li>
+        <li class="text-gray-400">/</li>
+        <li><a href="index.html" class="text-gruene-dark hover:underline">FAQ</a></li>
+        <li class="text-gray-400">/</li>
+        <li class="text-gray-500">${escapeHtml(topic.title)}</li>
+      </ol>
+    </nav>
+    <div class="max-w-5xl mx-auto px-4 py-6 flex-1 w-full">
+      <header class="mb-6">
+        <h1 class="text-3xl font-bold text-gruene-dark">${escapeHtml(topic.title)}</h1>
+        <p class="mt-1 text-gruene-dark/80">${escapeHtml(topic.description)}</p>
+      </header>
+      <main data-pagefind-body>
+${questionsHtml}
+      </main>
+      <div class="mt-6">
+        <a href="index.html" class="text-gruene-dark hover:underline">&larr; Alle Themen</a>
+      </div>
+    </div>
+${footerHtml}
+${generateScrollToTop()}
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>`;
+}
+
+/**
+ * Generate the glossary page with A-Z navigation.
+ */
+function generateGlossaryPage(terms) {
+  const headerHtml = generateHeader(false);
+  const footerHtml = generateFooter({ isLawPage: false });
+
+  // Group terms by first letter
+  const grouped = {};
+  for (const term of terms) {
+    const letter = term.term.charAt(0).toUpperCase();
+    if (!grouped[letter]) grouped[letter] = [];
+    grouped[letter].push(term);
+  }
+  const sortedLetters = Object.keys(grouped).sort((a, b) => a.localeCompare(b, 'de'));
+
+  // A-Z navigation bar
+  const azNav = sortedLetters
+    .map(l => `<a href="#letter-${l}" class="text-gruene-dark hover:underline font-medium">${l}</a>`)
+    .join('\n          ');
+
+  // Term sections
+  const termSections = sortedLetters.map(letter => {
+    const letterTerms = grouped[letter].sort((a, b) => a.term.localeCompare(b.term, 'de'));
+    const termsHtml = letterTerms.map(t => {
+      const refsHtml = t.references && t.references.length > 0
+        ? `\n        <div class="mt-2 text-sm">
+          <span class="text-gray-500">Siehe:</span>
+          ${t.references.map(r => `<a href="${r.category}/${r.key}.html#p${encodeURIComponent(r.paragraph)}" class="text-gruene-dark hover:underline ml-1">${escapeHtml(r.label)}</a>`).join('')}
+        </div>`
+        : '';
+      return `      <div id="${t.slug}" class="mb-4">
+        <h3 class="text-lg font-semibold text-gruene-dark">${escapeHtml(t.term)}</h3>
+        <p class="text-gruene-dark/80 mt-1">${escapeHtml(t.definition)}</p>${refsHtml}
+      </div>`;
+    }).join('\n');
+
+    return `      <div class="mb-8">
+        <h2 id="letter-${letter}" class="text-2xl font-bold text-gruene-dark mb-4 border-b border-gray-200 pb-2">${letter}</h2>
+${termsHtml}
+      </div>`;
+  }).join('\n');
+
+  return `<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glossar der Rechtsbegriffe - Gemeindeordnung.at</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body class="bg-gray-50 min-h-screen flex flex-col">
+${headerHtml}
+    <div class="max-w-5xl mx-auto px-4 py-8 flex-1 w-full">
+      <div class="mb-8">
+        <h1 class="text-3xl font-bold text-gruene-dark">Glossar der Rechtsbegriffe</h1>
+        <p class="mt-2 text-lg text-gruene-dark/80">
+          Wichtige Fachbegriffe aus den oesterreichischen Gemeindeordnungen
+        </p>
+      </div>
+      <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
+        <strong>Hinweis:</strong> Diese Definitionen dienen der Orientierung und sind keine Rechtsberatung.
+      </div>
+      <nav class="mb-8 flex flex-wrap gap-3" data-pagefind-ignore>
+          ${azNav}
+      </nav>
+      <main data-pagefind-body>
+${termSections}
       </main>
     </div>
 ${footerHtml}
@@ -481,10 +698,49 @@ export async function generatePages(rootDir = ROOT) {
     }
   }
 
-  // Generate index page
-  const indexHtml = generateIndexPage(lawsByCategory);
+  // Load FAQ data for index page
+  const faqPath = join(rootDir, 'data', 'llm', 'faq', 'topics.json');
+  let faqTopics = [];
+  if (existsSync(faqPath)) {
+    try {
+      faqTopics = JSON.parse(readFileSync(faqPath, 'utf-8')).topics || [];
+    } catch {
+      faqTopics = [];
+    }
+  }
+
+  // Generate index page (with FAQ section if data exists)
+  const indexHtml = generateIndexPage(lawsByCategory, faqTopics);
   writeFileSync(join(rootDir, 'src', 'index.html'), indexHtml);
   console.log('Generated: src/index.html');
+
+  // Generate FAQ pages
+  if (faqTopics.length > 0) {
+    const faqDir = join(rootDir, 'src', 'faq');
+    mkdirSync(faqDir, { recursive: true });
+
+    writeFileSync(join(faqDir, 'index.html'), generateFAQIndexPage(faqTopics));
+    console.log('Generated: src/faq/index.html');
+
+    for (const topic of faqTopics) {
+      writeFileSync(join(faqDir, `${topic.slug}.html`), generateFAQTopicPage(topic));
+      console.log(`Generated: src/faq/${topic.slug}.html`);
+    }
+  }
+
+  // Generate glossary page
+  const glossaryPath = join(rootDir, 'data', 'llm', 'glossary', 'terms.json');
+  if (existsSync(glossaryPath)) {
+    try {
+      const glossaryData = JSON.parse(readFileSync(glossaryPath, 'utf-8'));
+      if (glossaryData.terms && glossaryData.terms.length > 0) {
+        writeFileSync(join(rootDir, 'src', 'glossar.html'), generateGlossaryPage(glossaryData.terms));
+        console.log('Generated: src/glossar.html');
+      }
+    } catch {
+      // Malformed glossary JSON -- skip
+    }
+  }
 
   return lawsByCategory;
 }

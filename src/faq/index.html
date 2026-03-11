@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haeufige Fragen - Gemeindeordnung.at</title>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body class="bg-gray-50 min-h-screen flex flex-col">
+  <header data-pagefind-ignore class="sticky top-0 bg-white border-b border-gray-200 z-10">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+      <a href="../index.html" class="flex items-center gap-2 text-gruene-dark hover:text-gruene-dark no-underline shrink-0">
+        <img src="../assets/gruene-logo.svg" alt="Gruene Logo" class="w-8 h-8 gruene-logo" />
+        <span class="text-lg font-bold">Gemeindeordnung.at</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-3 text-sm shrink-0" data-pagefind-ignore>
+        <a href="../faq/index.html" class="text-gruene-dark hover:underline">FAQ</a>
+        <a href="../glossar.html" class="text-gruene-dark hover:underline">Glossar</a>
+      </nav>
+      <div class="search-container relative flex-1 max-w-md mx-0 sm:mx-4 mt-2 sm:mt-0">
+        <div class="relative">
+          <input id="search-input" type="search" minlength="3" autocomplete="off"
+            placeholder="Suche... (Ctrl+K)"
+            class="w-full border border-gray-300 rounded-lg pl-9 pr-3 py-1.5 text-sm bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
+          <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+        <button id="search-toggle" class="sm:hidden absolute right-0 top-0 p-2 text-gruene-dark" aria-label="Suche oeffnen" style="display:none;">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </button>
+        <div id="search-chips" class="mt-1"></div>
+        <div id="search-dropdown" class="search-dropdown hidden"></div>
+      </div>
+
+    </div>
+  </header>
+    <div class="max-w-5xl mx-auto px-4 py-8 flex-1 w-full">
+      <div class="mb-8">
+        <h1 class="text-3xl font-bold text-gruene-dark">Haeufige Fragen zu Gemeindeordnungen</h1>
+        <p class="mt-2 text-lg text-gruene-dark/80">
+          Thematische Uebersichten mit Vergleich aller Bundeslaender
+        </p>
+      </div>
+      <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
+        <strong>Hinweis:</strong> Diese Zusammenfassungen dienen der Orientierung und sind keine Rechtsberatung.
+      </div>
+      <main>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <a href="gemeinderatssitzungen.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
+            <p class="font-bold text-gruene-dark">Gemeinderatssitzungen</p>
+            <p class="text-sm text-gruene-dark/80 mt-1">Alles rund um Einberufung, Ablauf und Beschlussfassung in Gemeinderatssitzungen.</p>
+            <p class="text-xs text-gray-500 mt-2">3 Fragen</p>
+          </a>
+          <a href="wahlen-und-abstimmungen.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
+            <p class="font-bold text-gruene-dark">Wahlen und Abstimmungen</p>
+            <p class="text-sm text-gruene-dark/80 mt-1">Regelungen zu Wahlen, Abstimmungsverfahren und Mehrheitserfordernissen in Gemeinden.</p>
+            <p class="text-xs text-gray-500 mt-2">3 Fragen</p>
+          </a>
+          <a href="buergermeister.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
+            <p class="font-bold text-gruene-dark">Buergermeister</p>
+            <p class="text-sm text-gruene-dark/80 mt-1">Aufgaben, Rechte und Pflichten des Buergermeisters sowie Vertretungsregelungen.</p>
+            <p class="text-xs text-gray-500 mt-2">3 Fragen</p>
+          </a>
+          <a href="gemeindevorstand.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
+            <p class="font-bold text-gruene-dark">Gemeindevorstand</p>
+            <p class="text-sm text-gruene-dark/80 mt-1">Zusammensetzung, Aufgaben und Beschlussfassung des Gemeindevorstands bzw. Stadtsenats.</p>
+            <p class="text-xs text-gray-500 mt-2">3 Fragen</p>
+          </a>
+          <a href="ausschuesse.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
+            <p class="font-bold text-gruene-dark">Ausschuesse</p>
+            <p class="text-sm text-gruene-dark/80 mt-1">Bildung, Zusammensetzung und Aufgaben von Gemeindeausschuessen.</p>
+            <p class="text-xs text-gray-500 mt-2">3 Fragen</p>
+          </a>
+          <a href="haushalt-und-finanzen.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
+            <p class="font-bold text-gruene-dark">Haushalt und Finanzen</p>
+            <p class="text-sm text-gruene-dark/80 mt-1">Voranschlag, Rechnungsabschluss und Finanzverwaltung der Gemeinde.</p>
+            <p class="text-xs text-gray-500 mt-2">3 Fragen</p>
+          </a>
+          <a href="aufsicht-und-kontrolle.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
+            <p class="font-bold text-gruene-dark">Aufsicht und Kontrolle</p>
+            <p class="text-sm text-gruene-dark/80 mt-1">Gemeindeaufsicht, Pruefungsrechte und Kontrollmechanismen.</p>
+            <p class="text-xs text-gray-500 mt-2">3 Fragen</p>
+          </a>
+          <a href="befangenheit.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
+            <p class="font-bold text-gruene-dark">Befangenheit</p>
+            <p class="text-sm text-gruene-dark/80 mt-1">Befangenheitsregeln fuer Gemeindeorgane und deren Rechtsfolgen.</p>
+            <p class="text-xs text-gray-500 mt-2">3 Fragen</p>
+          </a>
+          <a href="gemeindebedienstete.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
+            <p class="font-bold text-gruene-dark">Gemeindebedienstete</p>
+            <p class="text-sm text-gruene-dark/80 mt-1">Anstellung, Rechte und Pflichten der Gemeindebediensteten.</p>
+            <p class="text-xs text-gray-500 mt-2">3 Fragen</p>
+          </a>
+          <a href="gemeindekooperation.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
+            <p class="font-bold text-gruene-dark">Gemeindekooperation</p>
+            <p class="text-sm text-gruene-dark/80 mt-1">Gemeindeverbaende, Kooperationen und uebergemeindliche Zusammenarbeit.</p>
+            <p class="text-xs text-gray-500 mt-2">3 Fragen</p>
+          </a>
+        </div>
+      </main>
+    </div>
+  <footer data-pagefind-ignore class="border-t border-gray-200 mt-12">
+    <div class="max-w-5xl mx-auto px-4 py-6 text-sm text-gray-600">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
+          <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener" class="text-gruene-dark hover:underline">Quelle: RIS (ris.bka.gv.at)</a>
+          <span>Stand: 11.03.2026</span>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
+          <span class="font-medium">Keine Rechtsberatung</span>
+          <a href="#" class="text-gruene-dark hover:underline">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <button id="scroll-to-top" class="fixed bottom-6 right-6 z-50 bg-gruene-dark text-white rounded-full p-3 shadow-lg hidden hover:bg-gruene-green transition-colors" aria-label="Zurueck nach oben">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
+    </svg>
+  </button>
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>
