@@ -60,10 +60,10 @@ function renderParagraph(para) {
     body = `<p class="mt-2 whitespace-pre-line">${escapeHtml(para.text)}</p>`;
   }
 
-  return `<article class="mb-6" id="p${escapeHtml(para.nummer)}">
+  return `<article class="mb-6 group" id="p${escapeHtml(para.nummer)}">
   <h3 class="text-lg font-semibold text-gruene-dark flex items-center gap-2">
     <span>&sect; ${escapeHtml(para.nummer)} ${titel}</span>
-    <button data-copy-link="p${escapeHtml(para.nummer)}" class="text-gray-400 hover:text-gruene-dark opacity-0 group-hover:opacity-100 transition-opacity" title="Link kopieren" aria-label="Link zu &sect; ${escapeHtml(para.nummer)} kopieren">
+    <button data-copy-link="p${escapeHtml(para.nummer)}" class="text-gray-400 hover:text-gruene-dark copy-link-btn" title="Link kopieren" aria-label="Link zu &sect; ${escapeHtml(para.nummer)} kopieren">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
     </button>
   </h3>
