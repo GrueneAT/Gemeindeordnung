@@ -10,8 +10,8 @@ test.describe('On-page highlighting after search click-through', () => {
     await page.fill('#search-input', 'Gemeinderat');
     await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
 
-    // Click the first result
-    const firstResult = page.locator('.search-result-item').first();
+    // Click the first sub-result (paragraph-level match)
+    const firstResult = page.locator('.search-sub-result').first();
     await expect(firstResult).toBeVisible();
     const href = await firstResult.getAttribute('href');
     expect(href.toLowerCase()).toContain('highlight=gemeinderat');
@@ -45,8 +45,8 @@ test.describe('On-page highlighting after search click-through', () => {
     await page.fill('#search-input', 'Gemeinderat');
     await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
 
-    // Click the first result
-    const firstResult = page.locator('.search-result-item').first();
+    // Click the first sub-result (paragraph-level match)
+    const firstResult = page.locator('.search-sub-result').first();
     await expect(firstResult).toBeVisible();
     await firstResult.click();
 

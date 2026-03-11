@@ -13,8 +13,13 @@ test.describe('Search core functionality', () => {
     await page.fill('#search-input', 'Gemeinderat');
     await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
 
-    const results = page.locator('.search-result-item');
-    expect(await results.count()).toBeGreaterThan(0);
+    // Sub-results should appear (paragraph-level matches)
+    const subResults = page.locator('.search-sub-result');
+    expect(await subResults.count()).toBeGreaterThan(0);
+
+    // Law headings should be visible (results grouped by law)
+    const lawHeadings = page.locator('.search-law-heading');
+    expect(await lawHeadings.count()).toBeGreaterThan(0);
 
     await page.screenshot({ path: 'e2e/screenshots/search-results.png', fullPage: false });
   });
@@ -23,8 +28,8 @@ test.describe('Search core functionality', () => {
     await page.fill('#search-input', 'Gemeinderat');
     await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
 
-    // Pagefind wraps matches in <mark> tags within result excerpts
-    const marks = page.locator('.search-result-item mark');
+    // Pagefind wraps matches in <mark> tags within sub-result excerpts
+    const marks = page.locator('.search-sub-result mark');
     expect(await marks.count()).toBeGreaterThan(0);
   });
 
@@ -32,7 +37,7 @@ test.describe('Search core functionality', () => {
     await page.fill('#search-input', 'Gemeinderat');
     await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
 
-    const excerpts = page.locator('.search-result-excerpt');
+    const excerpts = page.locator('.search-sub-result .search-result-excerpt');
     expect(await excerpts.count()).toBeGreaterThan(0);
 
     // Each excerpt should contain text beyond just the search term
@@ -82,6 +87,28 @@ test.describe('Search core functionality', () => {
     const hint2 = page.locator('.search-hint');
     // Hint should be gone (replaced by results or empty state)
     await expect(hint2).toBeHidden({ timeout: 5000 });
+  });
+
+  test('SUCH-10: results grouped by law with paragraph sub-results', async ({ page }) => {
+    await page.fill('#search-input', 'Initiativantrag');
+    await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
+
+    // Law headings should be visible
+    const lawHeadings = page.locator('.search-law-heading');
+    expect(await lawHeadings.count()).toBeGreaterThan(0);
+
+    // Law headings should contain Treffer count
+    const firstHeading = await lawHeadings.first().textContent();
+    expect(firstHeading).toMatch(/\(\d+ Treffer\)/);
+
+    // Sub-result items should exist with paragraph titles containing section symbol
+    const subResults = page.locator('.search-sub-result');
+    expect(await subResults.count()).toBeGreaterThan(0);
+
+    const firstSubTitle = await subResults.first().locator('.search-result-title').textContent();
+    expect(firstSubTitle).toContain('\u00A7');
+
+    await page.screenshot({ path: 'e2e/screenshots/search-results.png', fullPage: false });
   });
 
   test('keyboard shortcut Ctrl+K focuses search and Escape closes', async ({ page, browserName }, testInfo) => {
