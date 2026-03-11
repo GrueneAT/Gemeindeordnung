@@ -310,6 +310,48 @@ describe('generate-pages', () => {
     expect(html).not.toContain('id="par-');
   });
 
+  it('Test 16P2: law page contains scroll-to-top button with id', async () => {
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
+
+    expect(html).toContain('id="scroll-to-top"');
+    expect(html).toContain('aria-label="Zurueck nach oben"');
+  });
+
+  it('Test 17P2: copy-link buttons have data-copy-link matching paragraph nummer', async () => {
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
+
+    // Paragraphs 1 and 2 should have copy-link buttons
+    expect(html).toContain('data-copy-link="p1"');
+    expect(html).toContain('data-copy-link="p2"');
+  });
+
+  it('Test 18P2: law page contains Bundesland dropdown with id', async () => {
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
+
+    expect(html).toContain('id="bundesland-nav"');
+    expect(html).toContain('aria-label="Bundesland wechseln"');
+    expect(html).toContain('<select');
+    expect(html).toContain('<optgroup');
+  });
+
+  it('Test 19P2: index page also contains scroll-to-top button', async () => {
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const indexHtml = readFileSync(join(TEST_DIR, 'src', 'index.html'), 'utf-8');
+
+    expect(indexHtml).toContain('id="scroll-to-top"');
+  });
+
   it('Test 15P2: nested hauptstueck ToC has two-level structure', async () => {
     // Write nested fixture
     writeFileSync(

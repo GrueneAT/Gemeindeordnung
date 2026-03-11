@@ -79,7 +79,9 @@ function initBundeslandDropdown() {
 
   select.addEventListener('change', (e) => {
     if (e.target.value) {
-      window.location.href = e.target.value;
+      // Option values are relative to site root (e.g. "gemeindeordnungen/wien.html")
+      // From a law page under a category subdir, we need "../" prefix
+      window.location.href = '../' + e.target.value;
     }
   });
 }

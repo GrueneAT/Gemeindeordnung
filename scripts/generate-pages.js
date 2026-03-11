@@ -164,8 +164,19 @@ function buildBundeslandDropdown(currentKey, currentCategory) {
     options += `        <optgroup label="${label}">\n${groupOptions}        </optgroup>\n`;
   }
 
-  return `        <select id="bundesland-nav" class="border border-gray-300 rounded px-3 py-1.5 text-sm bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50" onchange="if(this.value) window.location.href='../'+this.value">
+  return `        <select id="bundesland-nav" class="border border-gray-300 rounded px-3 py-1.5 text-sm bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50" aria-label="Bundesland wechseln">
 ${options}        </select>`;
+}
+
+/**
+ * Generate the scroll-to-top floating button HTML.
+ */
+function generateScrollToTop() {
+  return `  <button id="scroll-to-top" class="fixed bottom-6 right-6 z-50 bg-gruene-dark text-white rounded-full p-3 shadow-lg hidden hover:bg-gruene-green transition-colors" aria-label="Zurueck nach oben">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
+    </svg>
+  </button>`;
 }
 
 /**
@@ -276,6 +287,7 @@ ${tocHtml}
       </main>
     </div>
 ${footerHtml}
+${generateScrollToTop()}
     <script type="module" src="../js/main.js"></script>
   </body>
 </html>`;
@@ -342,6 +354,7 @@ ${headerHtml}
       </main>
     </div>
 ${footerHtml}
+${generateScrollToTop()}
     <script type="module" src="js/main.js"></script>
   </body>
 </html>`;
