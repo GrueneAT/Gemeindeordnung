@@ -137,7 +137,7 @@ None yet.
 |---|-------------|------|--------|-----------|
 | 1 | Fix search result click not jumping to anchor text, add E2E tests | 2026-03-11 | 394244e | [1-fix-search-result-click-not-jumping-to-a](./quick/1-fix-search-result-click-not-jumping-to-a/) |
 | 2 | Paragraph-level search results using Pagefind sub_results | 2026-03-11 | 1780968 | [2-paragraph-level-search-results-using-pag](./quick/2-paragraph-level-search-results-using-pag/) |
-| 3 | Push-to-main deploy + LLM content review + CI fix | 2026-03-11 | pending | [3-implement-push-on-main-to-deploy-to-gith](./quick/3-implement-push-on-main-to-deploy-to-gith/) |
+| 3 | Push-to-main deploy + LLM content review + CI fix | 2026-03-11 | 99d2c9c | [3-implement-push-on-main-to-deploy-to-gith](./quick/3-implement-push-on-main-to-deploy-to-gith/) |
 
 ### Blockers/Concerns
 
