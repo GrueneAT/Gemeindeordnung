@@ -77,10 +77,12 @@ Plans:
   1. User can search full-text across all 9 Gemeindeordnungen via Pagefind with highlighted search terms and contextual snippets around matches
   2. User can select their Bundesland as primary context (persistent selection) and search defaults to that Bundesland with option to search across all
   3. User sees total result count (e.g. "23 Treffer") and a meaningful empty state when no results are found
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 03-01: TBD
+- [ ] 03-01-PLAN.md -- Pagefind install, HTML indexing attributes, search JS module, build pipeline + CI update
+- [ ] 03-02-PLAN.md -- Search UI: header integration, live dropdown results, BL filter chips, empty states, mobile overlay, keyboard shortcuts, on-page highlighting
+- [ ] 03-03-PLAN.md -- E2E tests for all 7 SUCH requirements and visual verification checkpoint
 
 ### Phase 4: LLM Enrichment
 **Goal**: Legal text is enriched with plain-language summaries, thematic FAQs, a glossary, and topic tagging -- all generated at dev-time
@@ -106,5 +108,5 @@ Phases execute in numeric order: 1 -> 2 -> 2.1 -> 3 -> 4
 | 1. Data Pipeline & Project Foundation | 3/3 | Complete | 2026-03-11 |
 | 2. Browsing & Branding | 3/3 | Complete | 2026-03-11 |
 | 2.1 Frontend Testing Infrastructure | 2/2 | Complete | 2026-03-11 |
-| 3. Search | 0/? | Not started | - |
+| 3. Search | 0/3 | Not started | - |
 | 4. LLM Enrichment | 0/? | Not started | - |
