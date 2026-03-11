@@ -10,9 +10,9 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Data Pipeline
 
 - [x] **DATA-01**: System fetches all 9 Gemeindeordnungen from RIS OGD API v2.6
-- [ ] **DATA-02**: System parses fetched HTML into structured data (Paragraphen, Abschnitte, Überschriften)
+- [x] **DATA-02**: System parses fetched HTML into structured data (Paragraphen, Abschnitte, Überschriften)
 - [x] **DATA-03**: System handles varying HTML structures across all 9 Bundesländer
-- [ ] **DATA-04**: System stores parsed data in a structured JSON format for downstream consumption
+- [x] **DATA-04**: System stores parsed data in a structured JSON format for downstream consumption
 - [ ] **DATA-05**: System displays "Stand: [Datum]" showing when data was last fetched
 
 ### Browsing
@@ -94,9 +94,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | DATA-01 | Phase 1 | Complete |
-| DATA-02 | Phase 1 | Pending |
+| DATA-02 | Phase 1 | Complete |
 | DATA-03 | Phase 1 | Complete |
-| DATA-04 | Phase 1 | Pending |
+| DATA-04 | Phase 1 | Complete |
 | DATA-05 | Phase 1 | Pending |
 | DEPL-01 | Phase 1 | Pending |
 | DEPL-02 | Phase 1 | Pending |
