@@ -12,6 +12,7 @@
     "parse": "node scripts/parse-laws.js",
     "generate": "node scripts/generate-pages.js",
     "llm-analyze": "node scripts/llm-analyze.js",
+    "llm-regenerate": "node scripts/llm-analyze.js --generate --force",
     "build:search": "npm run build && npx pagefind --site dist --force-language de",
     "preview:search": "npm run build:search && npm run preview",
     "test:e2e": "playwright test --config=e2e/playwright.config.js",

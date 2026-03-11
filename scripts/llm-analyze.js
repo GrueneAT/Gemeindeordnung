@@ -17,7 +17,7 @@
  *   node scripts/llm-analyze.js --glossary              # Regenerate glossary only
  */
 
-import { readFileSync, readdirSync, existsSync, writeFileSync, mkdirSync } from 'fs';
+import { readFileSync, readdirSync, existsSync, writeFileSync, mkdirSync, unlinkSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync, spawnSync } from 'child_process';
@@ -679,9 +679,32 @@ function generatePlaceholderGlossary(summaryRefs) {
 export async function generateAll(options = {}) {
   const rootDir = options.rootDir || ROOT;
   const lawFilter = options.lawFilter || null;
+  const force = options.force || false;
 
   console.log('LLM Content Generation Pipeline');
   console.log('================================\n');
+
+  // Step 0: Clean existing output if --force
+  if (force) {
+    console.log('Step 0: Cleaning existing LLM output (--force)...\n');
+    let cleaned = 0;
+    for (const category of CATEGORIES) {
+      const summaryDir = join(rootDir, 'data', 'llm', 'summaries', category);
+      if (!existsSync(summaryDir)) continue;
+      for (const file of readdirSync(summaryDir).filter(f => f.endsWith('.json'))) {
+        if (lawFilter && file !== `${lawFilter}.json`) continue;
+        unlinkSync(join(summaryDir, file));
+        cleaned++;
+      }
+    }
+    if (!lawFilter) {
+      const faqPath = join(rootDir, 'data', 'llm', 'faq', 'topics.json');
+      if (existsSync(faqPath)) { unlinkSync(faqPath); cleaned++; }
+      const glossaryPath = join(rootDir, 'data', 'llm', 'glossary', 'terms.json');
+      if (existsSync(glossaryPath)) { unlinkSync(glossaryPath); cleaned++; }
+    }
+    console.log(`  Cleaned ${cleaned} files\n`);
+  }
 
   // Step 1: Generate per-law summaries
   console.log('Step 1: Generating per-law summaries...\n');
@@ -740,6 +763,7 @@ if (process.argv[1] && process.argv[1].endsWith('llm-analyze.js')) {
   const isGenerate = process.argv.includes('--generate');
   const isFAQ = process.argv.includes('--faq');
   const isGlossary = process.argv.includes('--glossary');
+  const force = process.argv.includes('--force');
   const lawIdx = process.argv.indexOf('--law');
   const lawFilter = lawIdx !== -1 ? process.argv[lawIdx + 1] : null;
 
@@ -762,7 +786,7 @@ if (process.argv[1] && process.argv[1].endsWith('llm-analyze.js')) {
       }
     });
   } else if (isGenerate) {
-    generateAll({ lawFilter }).catch(err => {
+    generateAll({ lawFilter, force }).catch(err => {
       console.error('Generation failed:', err.message);
       process.exit(1);
     });
@@ -779,8 +803,10 @@ if (process.argv[1] && process.argv[1].endsWith('llm-analyze.js')) {
   } else {
     console.log('Usage:');
     console.log('  node scripts/llm-analyze.js --dry-run              # Preview');
-    console.log('  node scripts/llm-analyze.js --generate              # Full pipeline');
-    console.log('  node scripts/llm-analyze.js --generate --law krems  # Single law');
+    console.log('  node scripts/llm-analyze.js --generate              # Full pipeline (incremental)');
+    console.log('  node scripts/llm-analyze.js --generate --force      # Clean + regenerate everything');
+    console.log('  node scripts/llm-analyze.js --generate --law krems  # Single law only');
+    console.log('  node scripts/llm-analyze.js --generate --force --law krems  # Force single law');
     console.log('  node scripts/llm-analyze.js --faq                   # FAQ only');
     console.log('  node scripts/llm-analyze.js --glossary              # Glossary only');
   }
