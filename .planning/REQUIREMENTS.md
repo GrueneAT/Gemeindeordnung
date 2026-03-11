@@ -17,12 +17,12 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Browsing
 
-- [ ] **BROW-01**: User can browse each Bundesland's Gemeindeordnung on a dedicated page
-- [ ] **BROW-02**: User sees auto-generated table of contents with collapsible sections
+- [x] **BROW-01**: User can browse each Bundesland's Gemeindeordnung on a dedicated page
+- [x] **BROW-02**: User sees auto-generated table of contents with collapsible sections
 - [ ] **BROW-03**: User can link directly to any paragraph via URL-Anker (z.B. `/wien/#p42`)
 - [ ] **BROW-04**: User can copy a deep link to any paragraph for sharing
-- [ ] **BROW-05**: User can read legal text in readable typography (line-height 1.6+, max-width ~70ch)
-- [ ] **BROW-06**: User can use the site on mobile during Gemeinderatssitzungen (responsive layout)
+- [x] **BROW-05**: User can read legal text in readable typography (line-height 1.6+, max-width ~70ch)
+- [x] **BROW-06**: User can use the site on mobile during Gemeinderatssitzungen (responsive layout)
 
 ### Search
 
@@ -46,9 +46,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Design & Branding
 
-- [ ] **DSGN-01**: Site uses Grünes CI (Farben, Logo) consistent with bildgenerator.gruene.at
+- [x] **DSGN-01**: Site uses Grünes CI (Farben, Logo) consistent with bildgenerator.gruene.at
 - [x] **DSGN-02**: Site uses TailwindCSS for styling
-- [ ] **DSGN-03**: Site meets WCAG 2.1 AA accessibility standards (contrast, keyboard nav)
+- [x] **DSGN-03**: Site meets WCAG 2.1 AA accessibility standards (contrast, keyboard nav)
 
 ### Deployment
 
@@ -103,14 +103,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DEPL-03 | Phase 1 | Complete |
 | DEPL-04 | Phase 1 | Complete |
 | DSGN-02 | Phase 1 | Complete |
-| BROW-01 | Phase 2 | Pending |
-| BROW-02 | Phase 2 | Pending |
+| BROW-01 | Phase 2 | Complete |
+| BROW-02 | Phase 2 | Complete |
 | BROW-03 | Phase 2 | Pending |
 | BROW-04 | Phase 2 | Pending |
-| BROW-05 | Phase 2 | Pending |
-| BROW-06 | Phase 2 | Pending |
-| DSGN-01 | Phase 2 | Pending |
-| DSGN-03 | Phase 2 | Pending |
+| BROW-05 | Phase 2 | Complete |
+| BROW-06 | Phase 2 | Complete |
+| DSGN-01 | Phase 2 | Complete |
+| DSGN-03 | Phase 2 | Complete |
 | SUCH-01 | Phase 3 | Pending |
 | SUCH-02 | Phase 3 | Pending |
 | SUCH-03 | Phase 3 | Pending |
