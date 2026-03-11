@@ -36,13 +36,13 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### LLM Content
 
-- [ ] **LLM-01**: User sees plain-language summary per paragraph ("Vereinfachte Zusammenfassung")
+- [x] **LLM-01**: User sees plain-language summary per paragraph ("Vereinfachte Zusammenfassung")
 - [ ] **LLM-02**: Summaries display disclaimer: "Vereinfachte Zusammenfassung — keine Rechtsberatung"
-- [ ] **LLM-03**: User can browse thematic FAQ pages (Sitzungen, Abstimmungen, Befangenheit etc.)
-- [ ] **LLM-04**: FAQ answers link to relevant paragraphs across Bundesländer
-- [ ] **LLM-05**: User sees glossary page with explanations of legal terms
-- [ ] **LLM-06**: User sees inline tooltips for Fachbegriffe in legal text
-- [ ] **LLM-07**: User can filter paragraphs by Thema/Topic (via LLM topic tagging)
+- [x] **LLM-03**: User can browse thematic FAQ pages (Sitzungen, Abstimmungen, Befangenheit etc.)
+- [x] **LLM-04**: FAQ answers link to relevant paragraphs across Bundesländer
+- [x] **LLM-05**: User sees glossary page with explanations of legal terms
+- [x] **LLM-06**: User sees inline tooltips for Fachbegriffe in legal text
+- [x] **LLM-07**: User can filter paragraphs by Thema/Topic (via LLM topic tagging)
 
 ### Design & Branding
 
@@ -118,13 +118,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SUCH-05 | Phase 3 | Complete |
 | SUCH-06 | Phase 3 | Complete |
 | SUCH-07 | Phase 3 | Complete |
-| LLM-01 | Phase 4 | Pending |
+| LLM-01 | Phase 4 | Complete |
 | LLM-02 | Phase 4 | Pending |
-| LLM-03 | Phase 4 | Pending |
-| LLM-04 | Phase 4 | Pending |
-| LLM-05 | Phase 4 | Pending |
-| LLM-06 | Phase 4 | Pending |
-| LLM-07 | Phase 4 | Pending |
+| LLM-03 | Phase 4 | Complete |
+| LLM-04 | Phase 4 | Complete |
+| LLM-05 | Phase 4 | Complete |
+| LLM-06 | Phase 4 | Complete |
+| LLM-07 | Phase 4 | Complete |
 
 **Coverage:**
 - v1 requirements: 32 total
