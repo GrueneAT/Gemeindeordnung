@@ -36,6 +36,78 @@ test.describe('Glossary', () => {
     await expect(seeLinks.first()).toBeVisible();
   });
 
+  test('glossary filter input is visible', async ({ page }) => {
+    await page.goto('./glossar.html');
+
+    const filterInput = page.locator('#glossar-filter');
+    await expect(filterInput).toBeVisible();
+    await expect(filterInput).toHaveAttribute('placeholder', 'Begriff suchen...');
+    await expect(filterInput).toHaveAttribute('data-pagefind-ignore', '');
+  });
+
+  test('glossary filter filters terms by name', async ({ page }) => {
+    await page.goto('./glossar.html');
+
+    const filterInput = page.locator('#glossar-filter');
+    const allLetterSections = page.locator('main > div.mb-8');
+    const totalSections = await allLetterSections.count();
+    expect(totalSections).toBeGreaterThan(1);
+
+    // Type a specific term prefix that should match only some letters
+    await filterInput.fill('Befan');
+    await page.waitForTimeout(100);
+
+    // At least 1 term div should still be visible
+    const visibleTerms = page.locator('main > div.mb-8:not([style*="display: none"]) h3');
+    const visibleCount = await visibleTerms.count();
+    expect(visibleCount).toBeGreaterThanOrEqual(1);
+
+    // Some letter sections should be hidden
+    const hiddenSections = page.locator('main > div.mb-8[style*="display: none"]');
+    const hiddenCount = await hiddenSections.count();
+    expect(hiddenCount).toBeGreaterThan(0);
+
+    await page.screenshot({ path: 'e2e/screenshots/glossar-filter-active.png', fullPage: false });
+  });
+
+  test('glossary filter clears and shows all', async ({ page }) => {
+    await page.goto('./glossar.html');
+
+    const filterInput = page.locator('#glossar-filter');
+    const allLetterSections = page.locator('main > div.mb-8');
+    const totalSections = await allLetterSections.count();
+
+    // Type filter text
+    await filterInput.fill('Befan');
+    await page.waitForTimeout(100);
+
+    // Clear the input
+    await filterInput.fill('');
+    await page.waitForTimeout(100);
+
+    // All letter sections should be visible again
+    const visibleSections = page.locator('main > div.mb-8:not([style*="display: none"])');
+    const visibleCount = await visibleSections.count();
+    expect(visibleCount).toBe(totalSections);
+  });
+
+  test('glossary filter hides empty letter sections', async ({ page }) => {
+    await page.goto('./glossar.html');
+
+    const filterInput = page.locator('#glossar-filter');
+    const allLetterSections = page.locator('main > div.mb-8');
+    const totalSections = await allLetterSections.count();
+
+    // Type a very specific term that matches only 1-2 entries
+    await filterInput.fill('Befangenheit');
+    await page.waitForTimeout(100);
+
+    const visibleSections = page.locator('main > div.mb-8:not([style*="display: none"])');
+    const visibleCount = await visibleSections.count();
+    expect(visibleCount).toBeLessThan(totalSections);
+    expect(visibleCount).toBeGreaterThanOrEqual(1);
+  });
+
   test('LLM-06: inline tooltips for Fachbegriffe in legal text', async ({ page }) => {
     await page.goto('./gemeindeordnungen/burgenland.html');
 
