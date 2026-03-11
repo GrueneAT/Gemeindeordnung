@@ -11,7 +11,9 @@
     "fetch": "node scripts/fetch-laws.js",
     "parse": "node scripts/parse-laws.js",
     "generate": "node scripts/generate-pages.js",
-    "llm-analyze": "node scripts/llm-analyze.js"
+    "llm-analyze": "node scripts/llm-analyze.js",
+    "test:e2e": "playwright test --config=e2e/playwright.config.js",
+    "test:e2e:ui": "playwright test --config=e2e/playwright.config.js --ui"
   },
   "keywords": [
     "gemeindeordnung",
@@ -22,6 +24,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.1",
+    "@playwright/test": "^1.58.2",
     "@tailwindcss/vite": "^4.2.1",
     "cheerio": "^1.2.0",
     "tailwindcss": "^4.2.1",
