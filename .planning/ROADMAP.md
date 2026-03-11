@@ -45,11 +45,12 @@ Plans:
   2. User can link directly to any paragraph via URL anchor (e.g. /wien/#p42) and copy a deep link for sharing
   3. Legal text is displayed in readable typography (line-height 1.6+, max-width ~70ch) and the site is fully usable on mobile during Gemeinderatssitzungen
   4. Site uses Gruenes CI (colors, logo) consistent with bildgenerator.gruene.at and meets WCAG 2.1 AA accessibility standards
-**Plans**: 2 plans
+**Plans**: 3 plans
 
 Plans:
 - [ ] 02-01-PLAN.md -- Gruene branding theme, page generator rewrite with header/footer, ToC, breadcrumbs, Bundesland cards, responsive typography
 - [ ] 02-02-PLAN.md -- Interactive JS features (clipboard copy, scroll-to-top, Bundesland dropdown, anchor highlight) and visual verification
+- [ ] 02-03-PLAN.md -- Gap closure: fix copy button visibility bug (missing group class, orphaned CSS rule)
 
 ### Phase 3: Search
 **Goal**: Users can find any provision across all 9 Gemeindeordnungen in seconds, with their Bundesland as the default search context
@@ -86,6 +87,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Data Pipeline & Project Foundation | 3/3 | Complete | 2026-03-11 |
-| 2. Browsing & Branding | 0/2 | Planned | - |
+| 2. Browsing & Branding | 2/3 | In Progress | - |
 | 3. Search | 0/? | Not started | - |
 | 4. LLM Enrichment | 0/? | Not started | - |
