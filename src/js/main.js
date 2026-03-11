@@ -1,5 +1,7 @@
 // Gemeindeordnung - Interactive behaviors
-// Clipboard copy, scroll-to-top, Bundesland dropdown navigation, anchor highlight
+// Clipboard copy, scroll-to-top, Bundesland dropdown navigation, anchor highlight, search
+
+import { initSearch } from './search.js';
 
 /**
  * Initialize copy-link buttons on all paragraphs.
@@ -114,9 +116,19 @@ function initAnchorHighlight() {
 }
 
 // Wire up all behaviors on DOM ready
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   initCopyLinks();
   initScrollToTop();
   initBundeslandDropdown();
   initAnchorHighlight();
+  initSearch();
+
+  // On-page highlighting for search result click-through
+  try {
+    const base = import.meta.env.BASE_URL || '/';
+    await import(/* @vite-ignore */ `${base}pagefind/pagefind-highlight.js`);
+    new PagefindHighlight({ highlightParam: 'highlight' });
+  } catch {
+    // Pagefind not available (dev mode) -- skip silently
+  }
 });
