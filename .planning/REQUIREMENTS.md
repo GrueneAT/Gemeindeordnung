@@ -19,8 +19,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **BROW-01**: User can browse each Bundesland's Gemeindeordnung on a dedicated page
 - [x] **BROW-02**: User sees auto-generated table of contents with collapsible sections
-- [ ] **BROW-03**: User can link directly to any paragraph via URL-Anker (z.B. `/wien/#p42`)
-- [ ] **BROW-04**: User can copy a deep link to any paragraph for sharing
+- [x] **BROW-03**: User can link directly to any paragraph via URL-Anker (z.B. `/wien/#p42`)
+- [x] **BROW-04**: User can copy a deep link to any paragraph for sharing
 - [x] **BROW-05**: User can read legal text in readable typography (line-height 1.6+, max-width ~70ch)
 - [x] **BROW-06**: User can use the site on mobile during Gemeinderatssitzungen (responsive layout)
 
@@ -105,8 +105,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DSGN-02 | Phase 1 | Complete |
 | BROW-01 | Phase 2 | Complete |
 | BROW-02 | Phase 2 | Complete |
-| BROW-03 | Phase 2 | Pending |
-| BROW-04 | Phase 2 | Pending |
+| BROW-03 | Phase 2 | Complete |
+| BROW-04 | Phase 2 | Complete |
 | BROW-05 | Phase 2 | Complete |
 | BROW-06 | Phase 2 | Complete |
 | DSGN-01 | Phase 2 | Complete |
