@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-03-10)
 Phase: 4.1 of 6 (Visual Polish & Screenshot Review)
 Plan: 1 of 2 in current phase
 Status: executing
-Last activity: 2026-03-11 -- Completed 04.1-01-PLAN.md
+Last activity: 2026-03-11 - Completed quick task 3: Implement push on main to deploy to github pages and make sure that LLM texts are reviewed and included for all bundeslaender and staedte
 
 Progress: [█████████░] 90%
 
@@ -137,6 +137,7 @@ None yet.
 |---|-------------|------|--------|-----------|
 | 1 | Fix search result click not jumping to anchor text, add E2E tests | 2026-03-11 | 394244e | [1-fix-search-result-click-not-jumping-to-a](./quick/1-fix-search-result-click-not-jumping-to-a/) |
 | 2 | Paragraph-level search results using Pagefind sub_results | 2026-03-11 | 1780968 | [2-paragraph-level-search-results-using-pag](./quick/2-paragraph-level-search-results-using-pag/) |
+| 3 | Push-to-main deploy + LLM content review + CI fix | 2026-03-11 | pending | [3-implement-push-on-main-to-deploy-to-gith](./quick/3-implement-push-on-main-to-deploy-to-gith/) |
 
 ### Blockers/Concerns
 

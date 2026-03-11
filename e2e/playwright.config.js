@@ -1,4 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
 
 export default defineConfig({
   testDir: './tests',
@@ -35,5 +37,6 @@ export default defineConfig({
     url: 'http://localhost:4173/gemeindeordnung/index.html',
     reuseExistingServer: !process.env.CI,
     timeout: 60000,
+    cwd: resolve(dirname(fileURLToPath(import.meta.url)), '..'),
   },
 });
