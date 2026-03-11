@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "generatedAt": "2026-03-11T09:05:15.609Z",
+    "lawKey": "wr_neustadt",
+    "category": "stadtrechte",
+    "placeholder": true
+  },
+  "paragraphs": {
+    "1": {
+      "summary": "Dieser Paragraph regelt rechtliche stellung der stadt. (1)Die Stadtgemeinde Wiener Neustadt ist eine Gebietskörperschaft mit dem Recht auf Selbstverwaltung...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "2": {
+      "summary": "Dieser Paragraph regelt stadtgebiet. Das Stadtgebiet wird durch das Gesetz über die Gliederung des Landes Niederösterreich in Gemeinden, ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "3": {
+      "summary": "Dieser Paragraph regelt wappen, farben und siegel der stadt. (1)Das Wappen der Stadt Wiener Neustadt ist ein viergeteilter Schild, der in seinem ersten und viert...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "4": {
+      "summary": "Dieser Paragraph regelt organe und kontrolle. (1)Für die Organe der Stadt gilt:1.Der Gemeinderat besteht aus 40 Mitgliedern.2.Der Stadtsenat beste...",
+      "topics": [
+        "Aufsicht und Kontrolle"
+      ]
+    },
+    "5": {
+      "summary": "Dieser Paragraph regelt kontrollamt. Zur Prüfung der Gebarung und Rechnung der Stadt ist ein Kontrollamt einzurichten....",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    }
+  }
+}

@@ -20,7 +20,7 @@
 import { readFileSync, readdirSync, existsSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { execSync } from 'child_process';
+import { execSync, spawnSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -86,10 +86,20 @@ function isClaudeAvailable() {
  */
 function callClaude(prompt) {
   try {
-    const result = execSync(
-      `echo ${JSON.stringify(prompt)} | claude -p --output-format json`,
-      { encoding: 'utf-8', maxBuffer: 10 * 1024 * 1024, timeout: 300000, stdio: ['pipe', 'pipe', 'pipe'] }
-    );
+    const child = spawnSync('claude', ['-p', '--output-format', 'json'], {
+      input: prompt,
+      encoding: 'utf-8',
+      maxBuffer: 10 * 1024 * 1024,
+      timeout: 300000,
+      stdio: ['pipe', 'pipe', 'pipe'],
+    });
+
+    if (child.status !== 0) {
+      console.error(`  Claude CLI exited with status ${child.status}: ${child.stderr?.substring(0, 200)}`);
+      return null;
+    }
+
+    const result = child.stdout;
     // The claude CLI with --output-format json wraps response in {"result":"..."}
     const parsed = JSON.parse(result);
     // Extract the actual content - claude returns {result: "..."} wrapper

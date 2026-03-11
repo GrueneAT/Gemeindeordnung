@@ -1,0 +1,652 @@
+{
+  "meta": {
+    "generatedAt": "2026-03-11T09:05:15.018Z",
+    "lawKey": "salzburg_stadt",
+    "category": "stadtrechte",
+    "placeholder": true
+  },
+  "paragraphs": {
+    "1": {
+      "summary": "Dieser Paragraph regelt rechtliche stellung der stadt. (1)Die Stadt Salzburg ist die Hauptstadt des Landes Salzburg.\n(2)Sie ist Gemeinde und zugleich polit...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "2": {
+      "summary": "Dieser Paragraph regelt gemeindegebiet. Das Gemeindegebiet umfaßt die Katastralgemeinden Stadt Salzburg, Itzling, Gnigl, Morzg, Leopoldskron...",
+      "topics": [
+        "Gemeindegebiet"
+      ]
+    },
+    "3": {
+      "summary": "Dieser Paragraph regelt farben, wappen und siegel der stadt. (1)Die Farben der Stadt sind weiß-rot.\n(2)Das Stadtwappen zeigt in Rot eine gezinnte Stadtmauer, in ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "4": {
+      "summary": "Dieser Paragraph regelt benennung. (1)Die Organe der Stadt sind:1.der Gemeinderat,2.der Bürgermeister,3.der Stadtsenat,4.die Ausschüsse...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "5": {
+      "summary": "Dieser Paragraph regelt zusammensetzung und wahl. (1)Der Gemeinderat besteht aus 40 Mitgliedern.\n(2)Die Mitglieder des Gemeinderates werden auf Grund ...",
+      "topics": [
+        "Wahlen und Abstimmungen"
+      ]
+    },
+    "6": {
+      "summary": "Dieser Paragraph regelt konstituierung. (1)Die konstituierende Sitzung des Gemeinderates, die unverzüglich nach rechtskräftig gewordener Neu...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "7": {
+      "summary": "Dieser Paragraph regelt amtsperiode. (1)Die Wahl des Gemeinderates findet für die Dauer von fünf Jahren statt.\n(2)Während dieser Zeit kan...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "8": {
+      "summary": "Dieser Paragraph regelt ausscheiden einzelner mitglieder. (1)Ein einzelnes Mitglied des Gemeinderates scheidet, abgesehen vom Fall des Ablebens oder des freiw...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "9": {
+      "summary": "Dieser Paragraph regelt pflichten der mitglieder. (1)Die allgemeinen Pflichten der Mitglieder des Gemeinderates ergeben sich aus dem Gelöbnis.\n(2)Im b...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "10": {
+      "summary": "Dieser Paragraph regelt rechte der mitglieder. (1)Die Mitglieder des Gemeinderates haben das Recht, im Gemeinderat und in den Ausschüssen, denen si...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "11": {
+      "summary": "Dieser Paragraph regelt bezug. Die Mitglieder des Gemeinderates erhalten für ihre Tätigkeit Bezüge, die im Salzburger Bezügegesetz ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "12": {
+      "summary": "Dieser Paragraph regelt einberufung der sitzungen. (1)Der Gemeinderat wird durch den Bürgermeister einberufen. Die Einberufung ist allen Mitgliedern ge...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "13": {
+      "summary": "Dieser Paragraph regelt vorsitz bei den sitzungen. (1)Den Vorsitz im Gemeinderat führt der Bürgermeister.\n(2)Er leitet die Verhandlungen und sorgt für ...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "14": {
+      "summary": "Dieser Paragraph regelt öffentlichkeit der sitzungen. (1)Die Sitzungen des Gemeinderates sind grundsätzlich öffentlich. Die Zuhörer haben sich jeder Äußer...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "15": {
+      "summary": "Dieser Paragraph regelt beschlußfähigkeit und beschlußfassung. (1)Der Gemeinderat ist, soweit in diesem Gesetz nicht anders bestimmt ist, bei Anwesenheit von minde...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "16": {
+      "summary": "Dieser Paragraph regelt befangenheit einzelner mitglieder. (1)Ein Mitglied des Gemeinderates hat, soweit es nicht zeitweise zur Auskunfterteilung zugezogen wir...",
+      "topics": [
+        "Befangenheit"
+      ]
+    },
+    "17": {
+      "summary": "Dieser Paragraph regelt beiziehung von sachkundigen personen. (1)Der Magistratsdirektor nimmt an den Sitzungen des Gemeinderates mit beratender Stimme teil.\n(2)De...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "18": {
+      "summary": "Dieser Paragraph regelt protokoll. (1)Über die Sitzungen des Gemeinderates ist ein Beschlussprotokoll zu verfassen, das vom Vorsitzende...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "19": {
+      "summary": "Dieser Paragraph regelt kundmachungen. (1)Verordnungen und gesetzlich vorgesehene Kundmachungen der Organe der Stadt sowie die Geschäftsord...",
+      "topics": [
+        "Kundmachung und Verordnungen"
+      ]
+    },
+    "20": {
+      "summary": "Dieser Paragraph regelt geschäftsordnung des gemeinderates. (1)Der Gemeinderat hat eine Geschäftsordnung für den Gemeinderat und seine Ausschüsse sowie für den ...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "21": {
+      "summary": "Dieser Paragraph regelt wahl des bürgermeisters. (1)Der Bürgermeister wird nach der Salzburger Gemeindewahlordnung 1998 (GWO 1998, § 94 Abs 1 iVm § 2...",
+      "topics": [
+        "Wahlen und Abstimmungen"
+      ]
+    },
+    "22": {
+      "summary": "Dieser Paragraph regelt wahl der bürgermeister-stellvertreter und der stadträte. (1)Die Wahl der Bürgermeister-Stellvertreter und der Stadträte hat, wenn der Bürgermeister vom Gemei...",
+      "topics": [
+        "Wahlen und Abstimmungen"
+      ]
+    },
+    "23": {
+      "summary": "Dieser Paragraph regelt amtsantritt. (1)Der Bürgermeister, die Bürgermeister-Stellvertreter und die Stadträte haben vor Antritt ihres Amt...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "24": {
+      "summary": "Dieser Paragraph regelt amtsperiode. (1)Die Amtsperiode des Bürgermeisters, der Bürgermeister-Stellvertreter und der Stadträte beginnt mi...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "25": {
+      "summary": "Dieser Paragraph regelt abberufung. (1)Der Bürgermeister, die Bürgermeister-Stellvertreter und die Stadträte können von ihrem Amt abberu...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "26": {
+      "summary": "Dieser Paragraph regelt amtsgebühren. ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "27": {
+      "summary": "Dieser Paragraph regelt zusammensetzung und wahl. (1)Der Stadtsenat besteht aus zwölf Mitgliedern. Die Zahl der Mitglieder wird auf die einzelnen Part...",
+      "topics": [
+        "Wahlen und Abstimmungen"
+      ]
+    },
+    "28": {
+      "summary": "Dieser Paragraph regelt amtsperiode. (1)Der Stadtsenat und die ständigen Ausschüsse werden für die Dauer der Amtsperiode des Gemeinderate...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "29": {
+      "summary": "Dieser Paragraph regelt amtsführung. (1)Der Stadtsenat wird vom Bürgermeister, jeder ständige Ausschuß von seinem Vorsitzenden einberufen...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "30": {
+      "summary": "Dieser Paragraph regelt nichtständige ausschüsse. (1)Für besondere Zwecke können vom Gemeinderat auch nichtständige Ausschüsse gebildet werden.\n(2)Ihr...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "31": {
+      "summary": "Dieser Paragraph regelt 4. allgemeine berufungskommission. (1)Die Allgemeine Berufungskommission besteht aus dem Magistratsdirektor als dem Vorsitzenden und zw...",
+      "topics": [
+        "Ausschuesse"
+      ]
+    },
+    "32": {
+      "summary": "Dieser Paragraph regelt der magistrat. (1)Vorstand des Magistrates ist der Bürgermeister.\n(2)Unter der unmittelbaren Aufsicht des Bürgermei...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "33": {
+      "summary": "Dieser Paragraph regelt gliederung und geschäftsordnung des magistrates. (1)Der Magistrat gliedert sich in Abteilungen, auf die die Geschäfte nach ihrem Gegenstand und ihrem...",
+      "topics": [
+        "Strafbestimmungen"
+      ]
+    },
+    "34": {
+      "summary": "Dieser Paragraph regelt sonderbestimmungen für unternehmungen. (1)Der Gemeinderat hat für die erwerbswirtschaftlichen Unternehmungen (§ 62) eine von den Bestimmung...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "35": {
+      "summary": "Dieser Paragraph regelt dienst- und besoldungsverhältnisse im allgemeinen. (1)Die Bediensteten der Stadt sind entweder von der Stadt hoheitlich bestellt oder stehen in einem V...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "36": {
+      "summary": "Dieser Paragraph regelt personalmaßnahmen im einzelfall, befristung von bestimmten funktionen. (1)Die Entscheidung über alle Personalmaßnahmen im Einzelfall, durch die die dienst- und besoldungsr...",
+      "topics": [
+        "Gemeindebedienstete"
+      ]
+    },
+    "37": {
+      "summary": "Dieser Paragraph regelt einteilung des wirkungsbereiches. (1)Der Wirkungsbereich der Stadt ist ein eigener und ein vom Bund oder vom Land übertragener.\n(2)Auf...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "38": {
+      "summary": "Dieser Paragraph regelt der eigene wirkungsbereich. (1)Der eigene Wirkungsbereich umfaßt neben den in § 1 Abs 3 angeführten Angelegenheiten alle Angeleg...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "39": {
+      "summary": "Dieser Paragraph regelt der übertragene wirkungsbereich. (1)Der übertragene Wirkungsbereich umfaßt die Angelegenheiten, die die Stadt nach Maßgabe der Bundes...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "40": {
+      "summary": "Dieser Paragraph regelt der gemeinderat. (1)Der Gemeinderat ist das allgemeine Vertretungsorgan der Stadt. Er faßt in allen Angelegenheiten, ...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "41": {
+      "summary": "Dieser Paragraph regelt der bürgermeister. (1)Der Bürgermeister leitet und beaufsichtigt die Führung der Geschäfte der Stadt und vertritt diese...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "42": {
+      "summary": "Dieser Paragraph regelt fertigung von urkunden. (1)Rechtsgeschäfte und Erklärungen, aus denen die Stadt verpflichtet werden soll oder durch die die ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "43": {
+      "summary": "Dieser Paragraph regelt durchführung von beschlüssen. (1)Die Durchführung aller Beschlüsse in den Angelegenheiten des eigenen Wirkungsbereiches obliegt de...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "44": {
+      "summary": "Dieser Paragraph regelt ressortführung im eigenen wirkungsbereich. (1)Der Bürgermeister hat zu seiner Unterstützung und unbeschadet seiner Verantwortung bestimmte Grup...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "45": {
+      "summary": "Dieser Paragraph regelt ressortführung im übertragenen wirkungsbereich. (1)Der Bürgermeister kann einzelne Gruppen von Angelegenheiten des übertragenen Wirkungsbereiches - ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "46": {
+      "summary": "Dieser Paragraph regelt verfügungen in dringenden fällen. Kann in dringenden Fällen ein Beschluß des zuständigen Kollegialorgans nicht ohne Nachteil für die S...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "47": {
+      "summary": "Dieser Paragraph regelt vertretung des bürgermeisters. Für den Fall der Verhinderung des Bürgermeisters bestimmt der Stadtsenat allgemein, welcher der Bürg...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "48": {
+      "summary": "Dieser Paragraph regelt der stadtsenat. Der Stadtsenat ist der ständige Ausschuß des Gemeinderates für alle Rechts- und Finanzangelegenheite...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "49": {
+      "summary": "Dieser Paragraph regelt die ausschüsse des gemeinderates. (1)Die Ausschüsse des Gemeinderates sind berufen, in den Angelegenheiten ihres Wirkungsbereiches die...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "50": {
+      "summary": "Dieser Paragraph regelt die allgemeine berufungskommission. Der Allgemeinen Berufungskommission (§ 31) obliegt die Entscheidung über Berufungen gegen erstinstan...",
+      "topics": [
+        "Ausschuesse"
+      ]
+    },
+    "51": {
+      "summary": "Dieser Paragraph regelt der magistrat. Die Geschäfte der Stadt werden nach den Weisungen des Bürgermeisters durch den Magistrat besorgt....",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "52": {
+      "summary": "Dieser Paragraph regelt stadtrechnungshof. (1)Der Stadtrechnungshof besteht aus dem Stadtrechnungshofdirektor, dem Direktor-Stellvertreter und ...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "53": {
+      "summary": "Dieser Paragraph regelt instanzenzug. Über Berufungen gegen Bescheide des Bürgermeisters hat in jenen Angelegenheiten des eigenen Wirkungs...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "54": {
+      "summary": "Dieser Paragraph regelt abgabenausschreibung. Soweit die Stadt nach den finanzrechtlichen Bestimmungen zur Erhebung von Gemeindeabgaben auf Grund ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "55": {
+      "summary": "Dieser Paragraph regelt abgabeneinhebung. (1)Die Durchführung der Beschlüsse über die Erhebung von Abgaben kommt dem Bürgermeister zu.\n(2)In d...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "56": {
+      "summary": "Dieser Paragraph regelt vermögensverwaltung. (1)Die Stadt hat das Gemeindevermögen sparsam, wirtschaftlich und zweckmäßig zu verwalten; diese Ges...",
+      "topics": [
+        "Gemeindevermögen"
+      ]
+    },
+    "57": {
+      "summary": "Dieser Paragraph regelt erwerb und veräußerung von vermögenswerten. (1)Vermögenswerte sollen nur erworben werden, soweit sie zur Erfüllung der Gemeindeaufgaben erforder...",
+      "topics": [
+        "Gemeindevermögen"
+      ]
+    },
+    "58": {
+      "summary": "Dieser Paragraph regelt darlehensaufnahme. (1)Die Stadt darf Darlehen nur aufnehmen, wenn dies zur Bedeckung von solchen Auszahlungen der inves...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "59": {
+      "summary": "Dieser Paragraph regelt darlehensgewährung und bürgschaftsleistung. (1)Die Stadt darf Darlehen nur gewähren, wenn ein besonderes öffentliches Interesse gegeben ist und ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "60": {
+      "summary": "Dieser Paragraph regelt beteiligung an erwerbswirtschaftlichen unternehmungen. (1)Für die Beteiligung der Stadt an erwerbswirtschaftlichen Unternehmungen gilt § 62 Abs. 1 sinngemä...",
+      "topics": [
+        "Gemeindevermögen"
+      ]
+    },
+    "61": {
+      "summary": "Dieser Paragraph regelt übersicht über das gemeindevermögen. (1)Der Bürgermeister hat eine ständig auf dem laufenden zu haltende Übersicht über das bewegliche un...",
+      "topics": [
+        "Gemeindevermögen"
+      ]
+    },
+    "62": {
+      "summary": "Dieser Paragraph regelt errichtung und führung. (1)Die Stadt darf erwerbswirtschaftliche Unternehmungen nur errichten und betreiben, wenn dies im öf...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "63": {
+      "summary": "Dieser Paragraph regelt satzungen der unternehmungen. Die näheren Bestimmungen über die Einrichtung und Geschäftsführung der Unternehmungen sind in Geschä...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "64": {
+      "summary": "Dieser Paragraph regelt anstalten und betriebe. (1)Einrichtungen, die sich ihrer Natur nach dazu eignen, denen jedoch nicht die Eigenschaft als Unte...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "65": {
+      "summary": "Dieser Paragraph regelt voranschlag. (1)Grundlage für die Führung des Ergebnis- und Finanzierungshaushaltes ist der Voranschlag. Der Vora...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "66": {
+      "summary": "Dieser Paragraph regelt feststellung des voranschlags. (1)Der Bürgermeister hat spätestens sechs Wochen vor Beginn jedes Finanzjahres dem Gemeinderat den E...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "67": {
+      "summary": "Dieser Paragraph regelt voranschlagsprovisorium. Ist zu Beginn des Finanzjahres der Voranschlag vom Gemeinderat noch nicht beschlossen, ist der Bürge...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "68": {
+      "summary": "Dieser Paragraph regelt vollziehung des voranschlages, nachtragsvoranschlag. (1)Die Ansätze des Voranschlages sind für die Gebarung bindend. Die Vollziehung hat nach den Grundsä...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "69": {
+      "summary": "Dieser Paragraph regelt rechnungsabschluss. (1)Der Bürgermeister hat unbeschadet der Bestimmungen des Rechnungshofgesetzes spätestens vier Monat...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "70": {
+      "summary": "Dieser Paragraph regelt bürgerbrief. (1)Österreichische Staatsbürger, die sich um die Stadt Salzburg verdient gemacht haben und die in de...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "71": {
+      "summary": "Dieser Paragraph regelt ehrenbürgerbrief. (1)Personen, die sich um die Stadt Salzburg besonders verdient gemacht haben, können zu Ehrenbürgern...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "72": {
+      "summary": "Dieser Paragraph regelt medaillen und ehrenringe. (1)Die Stadt kann für hervorragende Leistungen auf dem Gebiete der Kunst, der Wissenschaft, der Wirt...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "73": {
+      "summary": "Dieser Paragraph regelt beschlussfassung über die zu- und aberkennung von ehrungen. (1)Die Verleihung des Bürgerbriefes sowie von Medaillen und Ehrenringen erfolgt durch den Stadtsenat...",
+      "topics": [
+        "Schlussbestimmungen"
+      ]
+    },
+    "74": {
+      "summary": "Dieser Paragraph regelt aufgaben der aufsicht. (1)Bei Besorgung des eigenen Wirkungsbereiches der Stadt in den Angelegenheiten der Landesvollziehun...",
+      "topics": [
+        "Aufsicht und Kontrolle"
+      ]
+    },
+    "75": {
+      "summary": "Dieser Paragraph regelt eingreifen bei gesetzwidrigkeit. (1)Die Landesregierung hat gesetzwidrige Verordnungen nach Anhörung der Stadt durch Verordnung aufzu...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "76": {
+      "summary": "Dieser Paragraph regelt eingreifen bei untätigkeit. (1)Erfüllt die Stadt eine ihr durch gesetzliche Bestimmung auferlegte Verpflichtung nicht, so hat di...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "77": {
+      "summary": "Dieser Paragraph regelt ausschluß der vorstellung. Gegen Bescheide in Angelegenheiten des eigenen Wirkungsbereiches der Stadt, die dem Bereich der Land...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "78": {
+      "summary": "Dieser Paragraph regelt besondere genehmigungen. (1)Der Genehmigung der Landesregierung bedürfen:1.die Feststellung des Voranschlags und allfälliger ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "79": {
+      "summary": "Dieser Paragraph regelt auflösung des gemeinderates. (1)Die Landesregierung kann in Ausübung des Aufsichtsrechtes den Gemeinderat auflösen, wenn er wiede...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "80": {
+      "summary": "Dieser Paragraph regelt fortführung der gemeindegeschäfte. (1)Für die Zeit bis zum Amtsantritt des vom neuen Gemeinderat gewählten Bürgermeisters hat die Lande...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "81": {
+      "summary": "Dieser Paragraph regelt parteistellung der stadt. (1)Im aufsichtsbehördlichen Verfahren hat die Stadt Parteistellung. Sie ist berechtigt, nach Maßgabe...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "82": {
+      "summary": "Dieser Paragraph regelt 2. aufsicht des bundes. Insoweit der eigene Wirkungsbereich der Stadt Angelegenheiten aus dem Bereich der Bundesvollziehung ...",
+      "topics": [
+        "Aufsicht und Kontrolle"
+      ]
+    },
+    "83": {
+      "summary": "Dieser Paragraph regelt allgemeine bestimmungen. (1)Die §§ 14 Abs 3 und 19 Abs 6 und 7 in der Fassung des Gesetzes LGBl Nr 120/2006 treten mit 1. Jän...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "84": {
+      "summary": "Dieser Paragraph regelt allgemeine bestimmungen. (1)Die §§ 4 Abs 1, 25 Abs 4 und 5, 31, 36 Abs 2, 37 Abs 2, 50, 53 und 53e Abs 5 in der Fassung des G...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "85": {
+      "summary": "Dieser Paragraph regelt allgemeine bestimmungen. (1)§ 20a in der Fassung des Gesetzes LGBl Nr 103/2020 tritt mit dem Beginn der auf die Kundmachung d...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "3a": {
+      "summary": "Dieser Paragraph regelt schutz des weltkulturerbes der stadt. Als hervorragende Zielsetzung des Handelns der Stadt Salzburg gilt der Schutz ihres Weltkulturerbes,...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "11a": {
+      "summary": "Dieser Paragraph regelt schriftverkehr. Der im Zusammenhang mit der Funktionsausübung stehende Schriftverkehr zwischen dem Bürgermeister bzw...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "20a": {
+      "summary": "Dieser Paragraph regelt fraktions- und parteienförderung. (1)Zur Bewältigung ihrer kommunalpolitischen Aufgaben einschließlich Öffentlichkeitsarbeit und Schul...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "20b": {
+      "summary": "Dieser Paragraph regelt fraktionsspenden. (1)Spenden (§ 2 Z 5 Parteiengesetz 2012, BGBl I Nr 56) an eine im Gemeinderat vertretene Fraktion si...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "22a": {
+      "summary": "Dieser Paragraph regelt ausübung eines berufes während der amtstätigkeit. (1)Der Bürgermeister, die Bürgermeister-Stellvertreter und die Stadträte dürfen während der Dauer ih...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "27a": {
+      "summary": "Dieser Paragraph regelt ausübung von leitenden stellungen in bestimmtenunternehmen durch mitglieder des stadtsenates. (1)Die Mitglieder des Stadtsenates bedürfen während der Dauer dieser Amtstätigkeit nach den Bestimmu...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "49a": {
+      "summary": "Dieser Paragraph regelt der kontrollausschuß. (1)Dem Kontrollausschuss kommen im einzelnen folgende Aufgaben zu:1.die Vorberatung der Prüfberichte...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "52a": {
+      "summary": "Dieser Paragraph regelt aufgaben des stadtrechnungshofes. (1)Dem Stadtrechnungshof obliegt die Prüfung der Gebarung a)der Stadt in den Angelegenheiten des eig...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "52b": {
+      "summary": "Dieser Paragraph regelt prüftätigkeit und berichte. (1)Die Prüfungen haben sich auf die ziffernmäßige Richtigkeit, die Übereinstimmung mit den bestehend...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "53a": {
+      "summary": "Dieser Paragraph regelt bürgerabstimmung. (1)Beschlüsse des Gemeinderates können, wenn es dieser beschließt, zum Gegenstand einer Bürgerabstim...",
+      "topics": [
+        "Wahlen und Abstimmungen"
+      ]
+    },
+    "53b": {
+      "summary": "Dieser Paragraph regelt durchführung der bürgerabstimmung. (1)Die Bürgerabstimmung ist vom Bürgermeister im Amtsblatt der Landeshauptstadt auszuschreiben. Die ...",
+      "topics": [
+        "Wahlen und Abstimmungen"
+      ]
+    },
+    "53c": {
+      "summary": "Dieser Paragraph regelt wirkung. (1)Lautet die unbedingte Mehrheit der abgegebenen gültigen Stimmen auf “Nein”, darf der der Abstimmu...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "53d": {
+      "summary": "Dieser Paragraph regelt bürgerbefragung, bürgerbegehren. (1)Angelegenheiten des eigenen Wirkungsbereiches der Gemeinde können zum Gegenstand einer Bürgerbefr...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "53e": {
+      "summary": "Dieser Paragraph regelt antragstellung und unterstützungserklärungen. (1)Der Antrag auf Durchführung einer Bürgerbefragung (eines Bürgerbegehrens) kann von einer Person g...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "53f": {
+      "summary": "Dieser Paragraph regelt wirkung der antragstellung. Vom Zeitpunkt der Rechtskraft des Bescheides der Hauptwahlbehörde, mit dem der Antrag auf Durchführu...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "53g": {
+      "summary": "Dieser Paragraph regelt durchführung der bürgerbefragung (des bürgerbegehrens). (1)Die Bürgerbefragung (das Bürgerbegehren) ist im Amtsblatt der Landeshauptstadt Salzburg auszuschr...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "53h": {
+      "summary": "Dieser Paragraph regelt kundmachung und wirkung. Das Ergebnis der Bürgerbefragung ist von der Hauptwahlbehörde im Amtsblatt der Landeshauptstadt kund...",
+      "topics": [
+        "Kundmachung und Verordnungen"
+      ]
+    },
+    "53i": {
+      "summary": "Dieser Paragraph regelt volksbefragungsgesetz. Wird eine Bürgerbefragung (ein Bürgerbegehren) nach diesem Gesetz gleichzeitig mit einer Volksbefrag...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "53j": {
+      "summary": "Dieser Paragraph regelt stadtumfrage. (1)Der Bürgermeister oder der Gemeinderat können durch eine Stadtumfrage die Meinung zu Fragen der G...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "53k": {
+      "summary": "Dieser Paragraph regelt bürgerräte. Der Gemeinderat kann die Einrichtung von Bürgerräten zu bestimmten Themen der Gemeindevollziehung be...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "65a": {
+      "summary": "Dieser Paragraph regelt mittelfristiger finanzplan. Der Gemeinderat hat einen mittelfristigen Finanzplan für einen Zeitraum von fünf Finanzjahren zu bes...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "73a": {
+      "summary": "Dieser Paragraph regelt gratulationen. (1)Der Bürgermeister kann von Personen, die ihren Hauptwohnsitz in der Gemeinde haben, unter den Vor...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    }
+  }
+}

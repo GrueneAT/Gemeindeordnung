@@ -1,0 +1,784 @@
+{
+  "meta": {
+    "generatedAt": "2026-03-11T09:05:13.961Z",
+    "lawKey": "steiermark",
+    "category": "gemeindeordnungen",
+    "placeholder": true
+  },
+  "paragraphs": {
+    "1": {
+      "summary": "Dieser Paragraph regelt begriff und rechtliche stellung. (1)Das Land Steiermark gliedert sich in Gemeinden (Ortsgemeinden). Die Gemeinde ist Gebietskörpersch...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "2": {
+      "summary": "Dieser Paragraph regelt namen der gemeinden und ortschaften. (1)Die Änderung des Namens einer Gemeinde oder einer Ortschaft bedarf der Genehmigung der Landesregi...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "3": {
+      "summary": "Dieser Paragraph regelt voraussetzungen für die verleihung der bezeichnung „stadtgemeinde“ oder „marktgemeinde“. (1)Die Bezeichnung „Stadtgemeinde“ kann den Gemeinden mit einer Einwohnerzahl (§ 15 Abs. 2 und 2a) v...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "4": {
+      "summary": "Dieser Paragraph regelt gemeindewappen, ortsteilwappen. (1)Das Recht zur Führung von Gemeindewappen verleiht die Landesregierung auf Antrag der Gemeinde. Da...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "5": {
+      "summary": "Dieser Paragraph regelt gemeindesiegel. (1)Die Gemeinden führen im Gemeindesiegel die Bezeichnung (Stadtgemeinde, Marktgemeinde, Gemeinde), ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "6": {
+      "summary": "Dieser Paragraph regelt gebietsänderungen. (1)Gebietsänderungen im Sinne dieses Gesetzes sind Grenzänderungen (§ 7), die Vereinigung von Gemein...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "7": {
+      "summary": "Dieser Paragraph regelt grenzänderungen. (1)Zu Änderungen der Grenzen von Gemeinden, wodurch diese als solche zu bestehen nicht aufhören, sin...",
+      "topics": [
+        "Gemeindegebiet"
+      ]
+    },
+    "8": {
+      "summary": "Dieser Paragraph regelt vereinigung. (1)Zwei oder mehrere angrenzende Gemeinden können sich auf Grund übereinstimmender Gemeinderatsbesch...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "9": {
+      "summary": "Dieser Paragraph regelt teilung. Zur Teilung einer Gemeinde in zwei oder mehrere Gemeinden ist nach Anhörung der Gemeinde ein Gesetz ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "10": {
+      "summary": "Dieser Paragraph regelt neubildung und aufteilung. (1)Zur Neubildung einer Gemeinde aus Gebietsteilen angrenzender Gemeinden ist nach Anhörung derselbe...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "11": {
+      "summary": "Dieser Paragraph regelt gemeinsame bestimmungen. (1)Für die gemäß §§ 8, 9 und 10 Abs. 1 neu geschaffenen Gemeinden hat die Landesregierung binnen sec...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "12": {
+      "summary": "Dieser Paragraph regelt gemeindemitglieder. Gemeindemitglieder sind jene Personen, die die Staatsangehörigkeit eines Mitgliedsstaates der Europä...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "13": {
+      "summary": "Dieser Paragraph regelt ehrungen durch die gemeinde. (1)Der Gemeinderat kann Personen, die sich um die Gemeinde verdient gemacht haben, durch Ehrungen, w...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "14": {
+      "summary": "Dieser Paragraph regelt organe. (1)Die Organe der Gemeinde sind–der Gemeinderat (§ 15),–der Gemeindevorstand (§ 18),–der Bürgermeist...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "15": {
+      "summary": "Dieser Paragraph regelt zusammensetzung des gemeinderates, fraktionsvorsitzende. (1)Der Gemeinderat besteht aus 9 Mitgliedern, in Gemeinden mit über 1000 Einwohnern aus 15, in Gemei...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "16": {
+      "summary": "Dieser Paragraph regelt wahl des gemeinderates und mandatsausübung. (1)Die Wahlen in den Gemeinderat finden auf Grund des gleichen, unmittelbaren, persönlichen, freien ...",
+      "topics": [
+        "Wahlen und Abstimmungen"
+      ]
+    },
+    "17": {
+      "summary": "Dieser Paragraph regelt wahlperiode und funktionsdauer. (1)Die Mitglieder des Gemeinderates werden auf die Dauer von 5 Jahren gewählt. Die Wahlperiode begin...",
+      "topics": [
+        "Wahlen und Abstimmungen"
+      ]
+    },
+    "18": {
+      "summary": "Dieser Paragraph regelt gemeindevorstand. (1)Der Gemeindevorstand besteht aus dem Bürgermeister, dem Vizebürgermeister und dem Gemeindekassier...",
+      "topics": [
+        "Gemeindevorstand"
+      ]
+    },
+    "19": {
+      "summary": "Dieser Paragraph regelt bürgermeister. Der Bürgermeister wird vom Gemeinderat gewählt; er muß unbeschadet der Bestimmungen des § 23 nicht d...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "20": {
+      "summary": "Dieser Paragraph regelt konstituierende sitzung des gemeinderates. (1)Die neugewählten Mitglieder des Gemeinderates sind zur konstituierenden Sitzung durch den im Amt ...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "21": {
+      "summary": "Dieser Paragraph regelt angelobung der gemeinderatsmitglieder. (1)Die Mitglieder des neugewählten Gemeinderates haben zu Beginn der konstituierenden Sitzung folgen...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "22": {
+      "summary": "Dieser Paragraph regelt verteilung der vorstandssitze auf die im gemeinderat vertretenen wahlparteien. (1)Die Gesamtanzahl der Gemeindevorstandsmitglieder ist auf die im Gemeinderat vertretenen Wahlparte...",
+      "topics": [
+        "Wahlen und Abstimmungen"
+      ]
+    },
+    "23": {
+      "summary": "Dieser Paragraph regelt wahl des bürgermeisters. (1)Der Bürgermeister ist vom Gemeinderat auf Grund von schriftlichen Wahlvorschlägen mittels Stimmze...",
+      "topics": [
+        "Wahlen und Abstimmungen"
+      ]
+    },
+    "24": {
+      "summary": "Dieser Paragraph regelt wahl der übrigen gemeindevorstandsmitglieder. (1)Haben im Gemeindevorstand zwei oder mehrere Wahlparteien Anspruch auf Vorstandssitze, so fällt de...",
+      "topics": [
+        "Wahlen und Abstimmungen"
+      ]
+    },
+    "25": {
+      "summary": "Dieser Paragraph regelt niederschrift über die konstituierende sitzung, kundmachung des wahlergebnisses. (1)Über die konstituierende Sitzung des Gemeinderates (§§ 20 bis 24) ist eine Niederschrift aufzuneh...",
+      "topics": [
+        "Wahlen und Abstimmungen"
+      ]
+    },
+    "26": {
+      "summary": "Dieser Paragraph regelt angelobung und dienstausweis. (1)Der Bürgermeister und die Vizebürgermeister haben vor Antritt ihres Amtes das Gelöbnis nach § 21 ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "27": {
+      "summary": "Dieser Paragraph regelt anfechtung der wahlen der gemeindevorstandsmitglieder. Jedes Mitglied des Gemeinderates ist berechtigt, die Wahlen der Gemeindevorstandsmitglieder wegen un...",
+      "topics": [
+        "Wahlen und Abstimmungen"
+      ]
+    },
+    "28": {
+      "summary": "Dieser Paragraph regelt verwaltungs- und fachausschüsse. (1)Die Mitglieder der vom Gemeinderat zu bestellenden Verwaltungs- und Fachausschüsse sind – soweit ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "29": {
+      "summary": "Dieser Paragraph regelt mandatsverlust, befristeter mandatsverzicht. (1)Ein Mitglied des Gemeinderates wird seines Mandates verlustig, wenn:a)es sein Mandat durch schrif...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "31": {
+      "summary": "Dieser Paragraph regelt besetzung erledigter oder vorübergehend freier stellen im gemeinderat und im gemeindevorstand. (1)Ist das Mandat eines Gemeinderatsmitgliedes erledigt, so ist der nächste Ersatzmann vom Bürgermei...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "32": {
+      "summary": "Dieser Paragraph regelt verhinderung und abgang des bürgermeisters. (1)Bei Verhinderung wird der Bürgermeister durch die Vizebürgermeister in ihrer Reihenfolge vertrete...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "33": {
+      "summary": "Dieser Paragraph regelt pflichten des bürgermeisters und der gemeinderatsmitglieder. (1)Die allgemeinen Pflichten des Bürgermeisters und der Mitglieder des Gemeinderates ergeben sich au...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "34": {
+      "summary": "Dieser Paragraph regelt rechte der gemeinderatsmitglieder und des bürgermeisters. (1)Die Mitglieder des Gemeinderates haben im Gemeinderat folgende Rechte:a)das Stimmrecht;b)Anträge ...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "36": {
+      "summary": "Dieser Paragraph regelt mißtrauensvotum. (1)Der Bürgermeister, die übrigen Mitglieder des Gemeindevorstandes und die Mitglieder der Ausschüss...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "37": {
+      "summary": "Dieser Paragraph regelt verwaltungsgemeinschaften. (1)Zwei oder mehrere Gemeinden (einschließlich der Städte mit eigenem Statut) können sich aus Gründe...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "38": {
+      "summary": "Dieser Paragraph regelt gemeindeverbände. (1)Zur Besorgung ihrer Angelegenheiten können sich Gemeinden durch Vereinbarung zu Gemeindeverbänden...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "39": {
+      "summary": "Dieser Paragraph regelt einteilung des wirkungsbereiches. Der Wirkungsbereich der Gemeinde ist ein eigener und ein vom Bund und vom Land übertragener....",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "40": {
+      "summary": "Dieser Paragraph regelt eigener wirkungsbereich. (1)Der eigene Wirkungsbereich umfaßt neben den im § 1 Abs. 3 angeführten Angelegenheiten alle Angele...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "41": {
+      "summary": "Dieser Paragraph regelt selbständiges verordnungsrecht. (1)In den Angelegenheiten des eigenen Wirkungsbereiches hat die Gemeinde das Recht, ortspolizeiliche...",
+      "topics": [
+        "Strafbestimmungen"
+      ]
+    },
+    "42": {
+      "summary": "Dieser Paragraph regelt übertragener wirkungsbereich. (1)Der übertragene Wirkungsbereich umfaßt die Angelegenheiten, die die Gemeinde nach Maßgabe der Bun...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "43": {
+      "summary": "Dieser Paragraph regelt wirkungskreis des gemeinderates. (1)Der Gemeinderat ist das oberste Organ in den Angelegenheiten des eigenen Wirkungsbereiches. Ihm o...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "44": {
+      "summary": "Dieser Paragraph regelt wirkungskreis des gemeindevorstandes. (1)Dem Gemeindevorstand obliegen:a)die Vorberatung und Antragstellung der zum Wirkungskreis des Geme...",
+      "topics": [
+        "Gemeindevorstand"
+      ]
+    },
+    "45": {
+      "summary": "Dieser Paragraph regelt wirkungskreis des bürgermeisters. (1)Der Bürgermeister vertritt die Gemeinde nach außen. Unbeschadet der Zuständigkeit der anderen Gem...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "46": {
+      "summary": "Dieser Paragraph regelt hemmung des vollzuges durch den bürgermeister. (1)Erachtet der Bürgermeister, daß ein Beschluß des Gemeinderates, des Gemeindevorstandes oder eines...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "47": {
+      "summary": "Dieser Paragraph regelt befugnisse des bürgermeisters bei gefahr im verzug und notstand. (1)Bei Gefahr im Verzug, insbesondere zum Schutz der Sicherheit von Personen oder des Eigentums, ist...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "48": {
+      "summary": "Dieser Paragraph regelt ortsvorsteher. (1)Der Gemeinderat kann auf Vorschlag des Bürgermeisters für einzelne oder alle Ortsverwaltungsteile...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "49": {
+      "summary": "Dieser Paragraph regelt wirkungskreis der verwaltungsausschüsse und aufgaben der fachausschüsse. (1)Die Verwaltungsausschüsse (§ 14 Abs. 2) haben bei der Verwaltung der wirtschaftlichen Unternehmun...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "50": {
+      "summary": "Dieser Paragraph regelt allgemeines. (1)Die Kollegialorgane fassen ihre Beschlüsse in Sitzungen.\n(2)Der Gemeinderat und der Gemeindevorst...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "51": {
+      "summary": "Dieser Paragraph regelt einberufung. (1)Die Sitzungen des Gemeinderates sind vom Bürgermeister, in dessen Verhinderung durch seinen Stell...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "52": {
+      "summary": "Dieser Paragraph regelt vorsitz. (1)Den Vorsitz im Gemeinderat und im Gemeindevorstand führt der Bürgermeister, bei dessen Verhinderu...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "53": {
+      "summary": "Dieser Paragraph regelt schriftführer. (1)Der Gemeinderat wählt aus seiner Mitte Schriftführer. Jeder im Gemeinderat vertretenen Wahlpartei...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "54": {
+      "summary": "Dieser Paragraph regelt tagesordnung, fragestunde. (1)Der Bürgermeister, in dessen Verhinderung sein Stellvertreter, setzt die Tagesordnung fest; dabei...",
+      "topics": [
+        "Strafbestimmungen"
+      ]
+    },
+    "55": {
+      "summary": "Dieser Paragraph regelt anwesenheitspflicht, ausnahmen. (1)Die Mitglieder des Gemeinderates haben zu den Sitzungen pünktlich zu erscheinen und daran teilzun...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "56": {
+      "summary": "Dieser Paragraph regelt beschlußfähigkeit, beschlußfassung. (1)Der Gemeinderat ist beschlussfähig, wenn sämtliche Mitglieder ordnungsgemäß zur Sitzung einberufe...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "57": {
+      "summary": "Dieser Paragraph regelt abstimmung. (1)Zu einem gültigen Beschluß ist, soweit dieses Gesetz oder andere Gesetze nicht eine erhöhte Stimm...",
+      "topics": [
+        "Wahlen und Abstimmungen"
+      ]
+    },
+    "58": {
+      "summary": "Dieser Paragraph regelt befangenheit. (1)Der Bürgermeister und die Mitglieder der Kollegialorgane sind von der Beratung und Beschlussfassu...",
+      "topics": [
+        "Befangenheit"
+      ]
+    },
+    "59": {
+      "summary": "Dieser Paragraph regelt öffentlichkeit und nichtöffentlichkeit von sitzungen. (1)Die Sitzungen des Gemeinderates sind öffentlich. Die Öffentlichkeit besteht darin, dass jedermann...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "60": {
+      "summary": "Dieser Paragraph regelt verhandlungsschrift über die sitzungen des gemeinderates. (1)Über jede Sitzung des Gemeinderates ist eine Verhandlungsschrift aufzunehmen. Diese hat insbesond...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "61": {
+      "summary": "Dieser Paragraph regelt ordnungsgewalt des vorsitzenden. (1)Der Vorsitzende hat darüber zu wachen, daß jeder Redner zur Sache spricht, den Anstand nicht verl...",
+      "topics": [
+        "Strafbestimmungen"
+      ]
+    },
+    "62": {
+      "summary": "Dieser Paragraph regelt geschäftsordnung. (1)Die Geschäftsordnung für die Kollegialorgane kann nur der Gemeinderat beschließen. Anträge auf Er...",
+      "topics": [
+        "Strafbestimmungen"
+      ]
+    },
+    "63": {
+      "summary": "Dieser Paragraph regelt urkunden. (1)Urkunden über Rechtsgeschäfte sind vom Bürgermeister zu unterfertigen und mit dem Gemeindesiegel ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "64": {
+      "summary": "Dieser Paragraph regelt gemeindeamt, amtsleiter. (1)Die Geschäfte der Gemeinde werden durch das Gemeindeamt besorgt. In Stadtgemeinden hat das Gemein...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "70": {
+      "summary": "Dieser Paragraph regelt gemeindevermögen. (1)Alle der Gemeinde gehörigen beweglichen und unbeweglichen Sachen und Rechte bilden das Gemeindeve...",
+      "topics": [
+        "Gemeindevermögen"
+      ]
+    },
+    "71": {
+      "summary": "Dieser Paragraph regelt wirtschaftliche unternehmungen, stiftungen, anstalten und fonds ohne eigene rechtspersönlichkeit. (1)Zu den wirtschaftlichen Unternehmungen der Gemeinden zählen deren öffentliche Einrichtungen, Anla...",
+      "topics": [
+        "Gemeindevermögen"
+      ]
+    },
+    "72": {
+      "summary": "Dieser Paragraph regelt öffentliches gut. Die dem Gemeingebrauch gewidmeten Teile des Gemeindevermögens bilden das öffentliche Gut der Gemeind...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "73": {
+      "summary": "Dieser Paragraph regelt gemeindegut. (1)Sachen, die dem Gebrauch der Gemeindemitglieder dienen, bilden das Gemeindegut. Insbesondere gehö...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "74": {
+      "summary": "Dieser Paragraph regelt allgemeine haushaltsgrundsätze. (1)Die Gemeinde hat ihren Haushalt so zu planen und zu führen, dass sie im Stande ist, ihre Aufgaben...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "75": {
+      "summary": "Dieser Paragraph regelt voranschlag. (1)Der Voranschlag ist die verbindliche Grundlage für die Haushaltsführung der Gemeinde. Ansprüche u...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "76": {
+      "summary": "Dieser Paragraph regelt voranschlagsentwurf, beschlussfassung über den voranschlag. (1)Der vom Bürgermeister erstellte Voranschlagsentwurf ist vor Vorlage an den Gemeinderat für zwei W...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "77": {
+      "summary": "Dieser Paragraph regelt vorläufige haushaltsführung. (1)Ist der Voranschlag nicht so rechtzeitig erstellt und/oder beschlossen worden, dass er mit Beginn...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "78": {
+      "summary": "Dieser Paragraph regelt nachtragsvoranschlag. (1)Der Voranschlag kann nur durch Nachtragsvoranschlag geändert werden, der spätestens bis zum Ablau...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "79": {
+      "summary": "Dieser Paragraph regelt durchführung des voranschlages. (1)Der Voranschlag bildet die Grundlage für die Verwaltung der Erträge und Einzahlungen (Mittelaufbr...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "80": {
+      "summary": "Dieser Paragraph regelt aufnahme von darlehen und begründung von zahlungsverpflichtungen. (1)Die Gemeinde darf Darlehen nur aufnehmen, wenn eine andere Form der Finanzierung nicht möglich is...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "81": {
+      "summary": "Dieser Paragraph regelt gewährung von darlehen und haftungsübernahmen. (1)Die Gemeinde darf Darlehen nur gewähren und Haftungen, insbesondere Bürgschaften und Garantien üb...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "82": {
+      "summary": "Dieser Paragraph regelt liquidität, kassenstärker, begründung von konten und sparbüchern. (1)Die Gemeinde hat ihre Zahlungsfähigkeit durch eine angemessene Liquiditätsplanung sicherzustellen...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "84": {
+      "summary": "Dieser Paragraph regelt anordnung. Die Anordnung von Mittelaufbringungen und -verwendungen, der Verbuchung von Forderungen und Verbindl...",
+      "topics": [
+        "Strafbestimmungen"
+      ]
+    },
+    "85": {
+      "summary": "Dieser Paragraph regelt gemeindekassier und finanzbuchhaltung. (1)Die Finanzbuchhaltung (Zahlungsverkehr und Buchführung) besorgt der Gemeindekassier als ausführen...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "86": {
+      "summary": "Dieser Paragraph regelt aufgaben des prüfungsausschusses. (1)Zur Überprüfung der gesamten Gebarung der Gemeinde, einschließlich der wirtschaftlichen Unternehm...",
+      "topics": [
+        "Ausschuesse"
+      ]
+    },
+    "87": {
+      "summary": "Dieser Paragraph regelt überprüfung der gemeindegebarung durch die aufsichtsbehörde. (1)Der Aufsichtsbehörde steht jederzeit das Recht zu, die Gebarung der Gemeinde, einschließlich der ...",
+      "topics": [
+        "Aufsicht und Kontrolle"
+      ]
+    },
+    "88": {
+      "summary": "Dieser Paragraph regelt erstellung des rechnungsabschlusses. (1)Nach dem Ende des Haushaltsjahres ist vom Bürgermeister und Gemeindekassier (Rechnungsleger) der ...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "89": {
+      "summary": "Dieser Paragraph regelt beschlußfassung über den rechnungsabschluß. (1)Der Gemeinderat beschließt den Rechnungsabschluß in seiner Gesamtheit in öffentlicher Sitzung.\n(2...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "90": {
+      "summary": "Dieser Paragraph regelt genehmigungspflicht. (1)Für folgende abgeschlossene Rechtsgeschäfte und gesetzte Maßnahmen hat die Gemeinde, soweit in Ab...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "91": {
+      "summary": "Dieser Paragraph regelt gemeindehaushaltsverordnung. Die Landesregierung kann die Vorschriften dieses Hauptstücks durch Verordnung näher regeln.\nAnm.: in...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "92": {
+      "summary": "Dieser Paragraph regelt verordnungen der gemeinde. (1)Verordnungen der Gemeinde, die – wenn nicht anderes bestimmt wird – für das gesamte Gemeindegebie...",
+      "topics": [
+        "Strafbestimmungen"
+      ]
+    },
+    "93": {
+      "summary": "Dieser Paragraph regelt instanzenzug. (1)Berufungen gegen Bescheide sind ausgeschlossen in den1.landesgesetzlich geregelten Angelegenheite...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "95": {
+      "summary": "Dieser Paragraph regelt vollstreckung. (1)Fällige Gemeindeabgaben und die ihnen gesetzlich gleichgehaltenen Geldleistungen auf Grund von Be...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "96": {
+      "summary": "Dieser Paragraph regelt umfang der aufsicht. (1)Das Land übt das Aufsichtsrecht über die Gemeinde dahin aus, daß diese bei Besorgung der Aufgaben...",
+      "topics": [
+        "Aufsicht und Kontrolle"
+      ]
+    },
+    "97": {
+      "summary": "Dieser Paragraph regelt aufsichtsbehörde. (1)Aufsichtsbehörde ist die Landesregierung. Sie kann sich zur Überprüfung der Gemeinden (§§ 87 und ...",
+      "topics": [
+        "Aufsicht und Kontrolle"
+      ]
+    },
+    "98": {
+      "summary": "Dieser Paragraph regelt auskunftspflicht und prüfungsrecht. (1)Die Aufsichtsbehörde ist berechtigt, sich über jedwede Angelegenheit der Gemeinde zu unterrichten...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "99": {
+      "summary": "Dieser Paragraph regelt genehmigungsvorbehalte. (1)Inwieweit einzelne Maßnahmen der Gemeinde der vorherigen Genehmigung durch die Aufsichtsbehörde b...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "100": {
+      "summary": "Dieser Paragraph regelt verordnungsprüfung. (1)Die Gemeinde hat im eigenen Wirkungsbereich erlassene Verordnungen der Aufsichtsbehörde unverzügl...",
+      "topics": [
+        "Strafbestimmungen"
+      ]
+    },
+    "101": {
+      "summary": "Dieser Paragraph regelt sonstige behebung von bescheiden. (1)Ein rechtskräftiger Bescheid eines Gemeindeorgans in den Angelegenheiten des eigenen Wirkungsbere...",
+      "topics": [
+        "Kundmachung und Verordnungen"
+      ]
+    },
+    "102": {
+      "summary": "Dieser Paragraph regelt amtsverlust des bürgermeisters und der übrigen mitglieder des gemeindevorstandes. Wegen Gesetzesverletzung sowie wegen Nichtbefolgung einer Verordnung können der Bürgermeister und di...",
+      "topics": [
+        "Gemeindevorstand"
+      ]
+    },
+    "103": {
+      "summary": "Dieser Paragraph regelt auflösung des gemeinderates. (1)Wenn Umstände die Annahme rechtfertigen, daß die Gemeinde aus Gründen, die sie selbst zu vertrete...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "104": {
+      "summary": "Dieser Paragraph regelt verfahren vor der aufsichtsbehörde. (1)Für Verfahren nach den §§ 98a und 100 ist das Allgemeine Verwaltungsverfahrensgesetz – AVG, BGBl....",
+      "topics": [
+        "Aufsicht und Kontrolle"
+      ]
+    },
+    "105": {
+      "summary": "Dieser Paragraph regelt parteistellung. (1)Die Gemeinde hat das Recht, Beschwerde beim Verwaltungsgericht (Art. 130 bis 132 B-VG) zu erheben...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "106": {
+      "summary": "Dieser Paragraph regelt übergangsbestimmungen. (1)Die Gemeindeorgane, die vor dem Inkrafttreten dieses Gesetzes gewählt wurden, bleiben in der derz...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "107": {
+      "summary": "Dieser Paragraph regelt inkrafttreten. (1)Dieses Gesetz tritt mit dem Tage seiner Kundmachung in Kraft.\n(2)Mit dem Inkrafttreten dieses Ges...",
+      "topics": [
+        "Schlussbestimmungen"
+      ]
+    },
+    "108": {
+      "summary": "Dieser Paragraph regelt inkrafttreten von novellen. (1)Die Änderung des § 4 Abs. 4, § 14 Abs. 2 erster Satz, der Überschrift des § 15, des § 15 Abs. 2, ...",
+      "topics": [
+        "Schlussbestimmungen"
+      ]
+    },
+    "5a": {
+      "summary": "Dieser Paragraph regelt bezeichnung von verkehrsflächen. Die Gemeinde kann im Gemeindegebiet gelegene Straßen, Wege und Plätze (Verkehrsflächen) durch Beschl...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "32a": {
+      "summary": "Dieser Paragraph regelt karenz des bürgermeisters. (1)Ein Bürgermeister kann zur Betreuung eines Kindes bis zum vollendeten dritten Lebensjahr sowie zu...",
+      "topics": [
+        "Gemeindebuerger"
+      ]
+    },
+    "37a": {
+      "summary": "Dieser Paragraph regelt öffentlich-rechtliche vereinbarungen zwischen gemeinden. (1)Gemeinden können untereinander Vereinbarungen über ihren jeweiligen Wirkungsbereich abschließen. ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "38a": {
+      "summary": "Dieser Paragraph regelt kleinregionen. (1)Gemeinden, die untereinander räumlich-funktionell verbunden sind, können sich zur Abstimmung ihre...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "49a": {
+      "summary": "Dieser Paragraph regelt referenten. (1)Der Gemeinderat kann einzelne seiner Mitglieder zu Referenten bestellen. Die Referenten haben die...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "58a": {
+      "summary": "Dieser Paragraph regelt ungültigkeit von beschlüssen. Beschlüsse, die in einer Sitzung gefasst wurden,\nsind ungültig, die auf ihrer Grundlage erlassenen B...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "60a": {
+      "summary": "Dieser Paragraph regelt verhandlungsschrift über die sitzungen des gemeindevorstandes und der ausschüsse. (1)Über jede Sitzung des Gemeindevorstandes ist von einem Gemeindebediensteten (§ 53 Abs. 2) und übe...",
+      "topics": [
+        "Gemeinderatssitzungen"
+      ]
+    },
+    "71a": {
+      "summary": "Dieser Paragraph regelt benützungsgebühren. (1)Die Gemeinden werden ermächtigt, für die Benützung ihrer öffentlichen Einrichtungen und Anlagen a...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "71b": {
+      "summary": "Dieser Paragraph regelt beteiligung. (1)Unter einer Beteiligung ist der Anteil der Gemeinde an einem Unternehmen mit eigener Rechtspersön...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "74a": {
+      "summary": "Dieser Paragraph regelt mittelfristiger haushaltsplan. (1)Die Gemeinde hat für einen Zeitraum von fünf Haushaltsjahren für den Ergebnis- und Finanzierungsh...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "74b": {
+      "summary": "Dieser Paragraph regelt haushaltskonsolidierungskonzept. (1)Das Haushaltskonsolidierungskonzept dient der Sicherstellung der ordnungsgemäßen Besorgung der Au...",
+      "topics": [
+        "Haushalt und Finanzen"
+      ]
+    },
+    "79a": {
+      "summary": "Dieser Paragraph regelt verpflichtungsermächtigung. (1)Verpflichtungen zur Leistung von Auszahlungen für Investitionen in künftigen Jahren dürfen nur ei...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "81a": {
+      "summary": "Dieser Paragraph regelt finanzgeschäfte. (1)Derivative Finanzgeschäfte ohne Grundgeschäft sowie Finanzgeschäfte mit Fremdwährungsrisiko dürfe...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "81b": {
+      "summary": "Dieser Paragraph regelt fiskal- und transparenzregeln. Soweit dies zur Erfüllung der Verpflichtung aus ÖStP 2012 und der Vereinbarung gemäß Art. 15a B-VG m...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "86a": {
+      "summary": "Dieser Paragraph regelt mitglieder des prüfungsausschusses. (1)Die Anzahl der Mitglieder des Prüfungsausschusses bestimmt der Gemeinderat. Jeder im Gemeinderat ...",
+      "topics": [
+        "Ausschuesse"
+      ]
+    },
+    "98a": {
+      "summary": "Dieser Paragraph regelt aufsichtsbeschwerden. (1)Für Beschwerden über die Amtsführung von Gemeindeorganen (§ 14 Abs. 1) gilt vorbehaltlich Abs. 3 ...",
+      "topics": [
+        "Aufsicht und Kontrolle"
+      ]
+    },
+    "100a": {
+      "summary": "Dieser Paragraph regelt prüfung der gesetzmäßigkeit von beschlüssen. (1)Die Entscheidung über die Gesetzmäßigkeit von Beschlüssen der Kollegialorgane, die nicht Bescheid...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "101a": {
+      "summary": "Dieser Paragraph regelt ersatzvornahme. (1)Erfüllt eine Gemeinde eine ihr durch Gesetz oder Verordnung auferlegte Verpflichtung nicht, so ka...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "101b": {
+      "summary": "Dieser Paragraph regelt ordnungsstrafen. Die Aufsichtsbehörde kann dem Bürgermeister und den Mitgliedern des Gemeindevorstandes, wenn diese i...",
+      "topics": [
+        "Strafbestimmungen"
+      ]
+    },
+    "101c": {
+      "summary": "Dieser Paragraph regelt verwaltungsstrafen. (1)Verwaltungsübertretungen auf Grund von Verordnungen gemäß § 41 Abs. 1 sind, soweit es sich um Ang...",
+      "topics": [
+        "Strafbestimmungen"
+      ]
+    },
+    "101d": {
+      "summary": "Dieser Paragraph regelt widmung der geldstrafen. Die auf Grund dieses Gesetzes verhängten Geldstrafen fließen der Gemeinde zu.\nAnm.: in der Fassung L...",
+      "topics": [
+        "Strafbestimmungen"
+      ]
+    },
+    "105a": {
+      "summary": "Dieser Paragraph regelt anhörung von interessensvertretungen. Die Landesregierung hat Gesetzesentwürfe, die die allgemeinen Interessen der Gemeinden berühren, vor...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "105b": {
+      "summary": "Dieser Paragraph regelt verweise. (1)Verweise in diesem Gesetz auf andere Landesgesetze sind als Verweise auf die jeweils geltende Fas...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "106a": {
+      "summary": "Dieser Paragraph regelt übergangsbestimmungen zur novelle lgbl. nr. 15/2012. (1)Gemeinden, die im Zeitpunkt des Inkrafttretens der Novelle LGBl. Nr. 15/2012 über einen dem § 74a...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "106b": {
+      "summary": "Dieser Paragraph regelt übergangsbestimmung zur novelle lgbl. nr. 125/2012. Ein Ortsvorsteher (Bürgerrat), der in Gemeinden im Zeitpunkt des Inkrafttretens der Novelle LGBl. Nr...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "106c": {
+      "summary": "Dieser Paragraph regelt übergangsbestimmung zur novelle lgbl. nr. 131/2014. Die bis zum Tag des Inkrafttretens der Novelle LGBl. Nr. 131/2014 genehmigten Kleinregionen bleiben ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "106d": {
+      "summary": "Dieser Paragraph regelt übergangsbestimmung zur novelle lgbl. nr. 96/2019, eröffnungsbilanz. (1)Die Gemeinde hat spätestens anlässlich der Erstellung des Rechnungsabschlusses für das Haushaltsj...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "106e": {
+      "summary": "Dieser Paragraph regelt übergangsbestimmungen zur novelle lgbl. nr. 96/2019, sonstige bestimmungen. (1)Anträge und Anzeigen gemäß § 71 Abs. 5 oder § 90 Abs. 1 und 5 in der Fassung LGBl. Nr. 131/2014, ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "106f": {
+      "summary": "Dieser Paragraph regelt personenbezogene bezeichnungen. Die in diesem Gesetz verwendeten personenbezogenen Bezeichnungen gelten, soweit darin nicht anderes ...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    },
+    "106g": {
+      "summary": "Dieser Paragraph regelt übergangsbestimmung zur novelle lgbl. nr. 19/2026. (1)Im Zeitpunkt des Inkrafttretens des Gesetzes LGBl. Nr. 19/2026 anhängige Berufungsverfahren in la...",
+      "topics": [
+        "Allgemeine Bestimmungen"
+      ]
+    }
+  }
+}

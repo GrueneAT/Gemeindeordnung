@@ -1,0 +1,742 @@
+{
+  "meta": {
+    "generatedAt": "2026-03-11T09:05:15.721Z",
+    "topicCount": 10,
+    "placeholder": true
+  },
+  "topics": [
+    {
+      "slug": "gemeinderatssitzungen",
+      "title": "Gemeinderatssitzungen",
+      "description": "Alles rund um Einberufung, Ablauf und Beschlussfassung in Gemeinderatssitzungen.",
+      "questions": [
+        {
+          "question": "Was regelt das Thema \"Gemeinderatssitzungen\" in oesterreichischen Gemeindeordnungen?",
+          "answer": "Die Regelungen zu \"Gemeinderatssitzungen\" variieren je nach Bundesland. Alles rund um Einberufung, Ablauf und Beschlussfassung in Gemeinderatssitzungen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "15",
+              "label": "Par. 15 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "33",
+              "label": "Par. 33 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "36",
+              "label": "Par. 36 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "40",
+              "label": "Par. 40 burgenland"
+            }
+          ]
+        },
+        {
+          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Gemeinderatssitzungen\"?",
+          "answer": "Die neun Bundeslaender regeln \"Gemeinderatssitzungen\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "15",
+              "label": "Par. 15 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "33",
+              "label": "Par. 33 burgenland"
+            }
+          ]
+        },
+        {
+          "question": "Wo finde ich die relevanten Paragraphen zu \"Gemeinderatssitzungen\"?",
+          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu gemeinderatssitzungen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "15",
+              "label": "Par. 15 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "33",
+              "label": "Par. 33 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "36",
+              "label": "Par. 36 burgenland"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "wahlen-und-abstimmungen",
+      "title": "Wahlen und Abstimmungen",
+      "description": "Regelungen zu Wahlen, Abstimmungsverfahren und Mehrheitserfordernissen in Gemeinden.",
+      "questions": [
+        {
+          "question": "Was regelt das Thema \"Wahlen und Abstimmungen\" in oesterreichischen Gemeindeordnungen?",
+          "answer": "Die Regelungen zu \"Wahlen und Abstimmungen\" variieren je nach Bundesland. Regelungen zu Wahlen, Abstimmungsverfahren und Mehrheitserfordernissen in Gemeinden.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "42",
+              "label": "Par. 42 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "54",
+              "label": "Par. 54 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "19",
+              "label": "Par. 19 kaernten"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "23",
+              "label": "Par. 23 kaernten"
+            }
+          ]
+        },
+        {
+          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Wahlen und Abstimmungen\"?",
+          "answer": "Die neun Bundeslaender regeln \"Wahlen und Abstimmungen\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "42",
+              "label": "Par. 42 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "54",
+              "label": "Par. 54 burgenland"
+            }
+          ]
+        },
+        {
+          "question": "Wo finde ich die relevanten Paragraphen zu \"Wahlen und Abstimmungen\"?",
+          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu wahlen und abstimmungen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "42",
+              "label": "Par. 42 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "54",
+              "label": "Par. 54 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "19",
+              "label": "Par. 19 kaernten"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "buergermeister",
+      "title": "Buergermeister",
+      "description": "Aufgaben, Rechte und Pflichten des Buergermeisters sowie Vertretungsregelungen.",
+      "questions": [
+        {
+          "question": "Was regelt das Thema \"Buergermeister\" in oesterreichischen Gemeindeordnungen?",
+          "answer": "Die Regelungen zu \"Buergermeister\" variieren je nach Bundesland. Aufgaben, Rechte und Pflichten des Buergermeisters sowie Vertretungsregelungen.",
+          "references": []
+        },
+        {
+          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Buergermeister\"?",
+          "answer": "Die neun Bundeslaender regeln \"Buergermeister\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "references": []
+        },
+        {
+          "question": "Wo finde ich die relevanten Paragraphen zu \"Buergermeister\"?",
+          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu buergermeister.",
+          "references": []
+        }
+      ]
+    },
+    {
+      "slug": "gemeindevorstand",
+      "title": "Gemeindevorstand",
+      "description": "Zusammensetzung, Aufgaben und Beschlussfassung des Gemeindevorstands bzw. Stadtsenats.",
+      "questions": [
+        {
+          "question": "Was regelt das Thema \"Gemeindevorstand\" in oesterreichischen Gemeindeordnungen?",
+          "answer": "Die Regelungen zu \"Gemeindevorstand\" variieren je nach Bundesland. Zusammensetzung, Aufgaben und Beschlussfassung des Gemeindevorstands bzw. Stadtsenats.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "17",
+              "label": "Par. 17 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "22",
+              "label": "Par. 22 kaernten"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "25",
+              "label": "Par. 25 kaernten"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "65",
+              "label": "Par. 65 kaernten"
+            }
+          ]
+        },
+        {
+          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Gemeindevorstand\"?",
+          "answer": "Die neun Bundeslaender regeln \"Gemeindevorstand\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "17",
+              "label": "Par. 17 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "22",
+              "label": "Par. 22 kaernten"
+            }
+          ]
+        },
+        {
+          "question": "Wo finde ich die relevanten Paragraphen zu \"Gemeindevorstand\"?",
+          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu gemeindevorstand.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "17",
+              "label": "Par. 17 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "22",
+              "label": "Par. 22 kaernten"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "25",
+              "label": "Par. 25 kaernten"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ausschuesse",
+      "title": "Ausschuesse",
+      "description": "Bildung, Zusammensetzung und Aufgaben von Gemeindeausschuessen.",
+      "questions": [
+        {
+          "question": "Was regelt das Thema \"Ausschuesse\" in oesterreichischen Gemeindeordnungen?",
+          "answer": "Die Regelungen zu \"Ausschuesse\" variieren je nach Bundesland. Bildung, Zusammensetzung und Aufgaben von Gemeindeausschuessen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "32",
+              "label": "Par. 32 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "78",
+              "label": "Par. 78 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "93",
+              "label": "Par. 93 kaernten"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "oberoesterreich",
+              "paragraph": "91",
+              "label": "Par. 91 oberoesterreich"
+            }
+          ]
+        },
+        {
+          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Ausschuesse\"?",
+          "answer": "Die neun Bundeslaender regeln \"Ausschuesse\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "32",
+              "label": "Par. 32 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "78",
+              "label": "Par. 78 burgenland"
+            }
+          ]
+        },
+        {
+          "question": "Wo finde ich die relevanten Paragraphen zu \"Ausschuesse\"?",
+          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu ausschuesse.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "32",
+              "label": "Par. 32 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "78",
+              "label": "Par. 78 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "93",
+              "label": "Par. 93 kaernten"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "haushalt-und-finanzen",
+      "title": "Haushalt und Finanzen",
+      "description": "Voranschlag, Rechnungsabschluss und Finanzverwaltung der Gemeinde.",
+      "questions": [
+        {
+          "question": "Was regelt das Thema \"Haushalt und Finanzen\" in oesterreichischen Gemeindeordnungen?",
+          "answer": "Die Regelungen zu \"Haushalt und Finanzen\" variieren je nach Bundesland. Voranschlag, Rechnungsabschluss und Finanzverwaltung der Gemeinde.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "66",
+              "label": "Par. 66 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "67",
+              "label": "Par. 67 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "68",
+              "label": "Par. 68 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "69",
+              "label": "Par. 69 burgenland"
+            }
+          ]
+        },
+        {
+          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Haushalt und Finanzen\"?",
+          "answer": "Die neun Bundeslaender regeln \"Haushalt und Finanzen\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "66",
+              "label": "Par. 66 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "67",
+              "label": "Par. 67 burgenland"
+            }
+          ]
+        },
+        {
+          "question": "Wo finde ich die relevanten Paragraphen zu \"Haushalt und Finanzen\"?",
+          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu haushalt und finanzen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "66",
+              "label": "Par. 66 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "67",
+              "label": "Par. 67 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "68",
+              "label": "Par. 68 burgenland"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "aufsicht-und-kontrolle",
+      "title": "Aufsicht und Kontrolle",
+      "description": "Gemeindeaufsicht, Pruefungsrechte und Kontrollmechanismen.",
+      "questions": [
+        {
+          "question": "Was regelt das Thema \"Aufsicht und Kontrolle\" in oesterreichischen Gemeindeordnungen?",
+          "answer": "Die Regelungen zu \"Aufsicht und Kontrolle\" variieren je nach Bundesland. Gemeindeaufsicht, Pruefungsrechte und Kontrollmechanismen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "79",
+              "label": "Par. 79 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "86",
+              "label": "Par. 86 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "86b",
+              "label": "Par. 86b burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "104a",
+              "label": "Par. 104a kaernten"
+            }
+          ]
+        },
+        {
+          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Aufsicht und Kontrolle\"?",
+          "answer": "Die neun Bundeslaender regeln \"Aufsicht und Kontrolle\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "79",
+              "label": "Par. 79 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "86",
+              "label": "Par. 86 burgenland"
+            }
+          ]
+        },
+        {
+          "question": "Wo finde ich die relevanten Paragraphen zu \"Aufsicht und Kontrolle\"?",
+          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu aufsicht und kontrolle.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "79",
+              "label": "Par. 79 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "86",
+              "label": "Par. 86 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "86b",
+              "label": "Par. 86b burgenland"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "befangenheit",
+      "title": "Befangenheit",
+      "description": "Befangenheitsregeln fuer Gemeindeorgane und deren Rechtsfolgen.",
+      "questions": [
+        {
+          "question": "Was regelt das Thema \"Befangenheit\" in oesterreichischen Gemeindeordnungen?",
+          "answer": "Die Regelungen zu \"Befangenheit\" variieren je nach Bundesland. Befangenheitsregeln fuer Gemeindeorgane und deren Rechtsfolgen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "49",
+              "label": "Par. 49 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "40",
+              "label": "Par. 40 kaernten"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "niederoesterreich",
+              "paragraph": "50",
+              "label": "Par. 50 niederoesterreich"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "oberoesterreich",
+              "paragraph": "64",
+              "label": "Par. 64 oberoesterreich"
+            }
+          ]
+        },
+        {
+          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Befangenheit\"?",
+          "answer": "Die neun Bundeslaender regeln \"Befangenheit\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "49",
+              "label": "Par. 49 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "40",
+              "label": "Par. 40 kaernten"
+            }
+          ]
+        },
+        {
+          "question": "Wo finde ich die relevanten Paragraphen zu \"Befangenheit\"?",
+          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu befangenheit.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "49",
+              "label": "Par. 49 burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "40",
+              "label": "Par. 40 kaernten"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "niederoesterreich",
+              "paragraph": "50",
+              "label": "Par. 50 niederoesterreich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "gemeindebedienstete",
+      "title": "Gemeindebedienstete",
+      "description": "Anstellung, Rechte und Pflichten der Gemeindebediensteten.",
+      "questions": [
+        {
+          "question": "Was regelt das Thema \"Gemeindebedienstete\" in oesterreichischen Gemeindeordnungen?",
+          "answer": "Die Regelungen zu \"Gemeindebedienstete\" variieren je nach Bundesland. Anstellung, Rechte und Pflichten der Gemeindebediensteten.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "79",
+              "label": "Par. 79 kaernten"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "52",
+              "label": "Par. 52 salzburg"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "tirol",
+              "paragraph": "59",
+              "label": "Par. 59 tirol"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "tirol",
+              "paragraph": "91",
+              "label": "Par. 91 tirol"
+            }
+          ]
+        },
+        {
+          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Gemeindebedienstete\"?",
+          "answer": "Die neun Bundeslaender regeln \"Gemeindebedienstete\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "79",
+              "label": "Par. 79 kaernten"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "52",
+              "label": "Par. 52 salzburg"
+            }
+          ]
+        },
+        {
+          "question": "Wo finde ich die relevanten Paragraphen zu \"Gemeindebedienstete\"?",
+          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu gemeindebedienstete.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "79",
+              "label": "Par. 79 kaernten"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "52",
+              "label": "Par. 52 salzburg"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "tirol",
+              "paragraph": "59",
+              "label": "Par. 59 tirol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "gemeindekooperation",
+      "title": "Gemeindekooperation",
+      "description": "Gemeindeverbaende, Kooperationen und uebergemeindliche Zusammenarbeit.",
+      "questions": [
+        {
+          "question": "Was regelt das Thema \"Gemeindekooperation\" in oesterreichischen Gemeindeordnungen?",
+          "answer": "Die Regelungen zu \"Gemeindekooperation\" variieren je nach Bundesland. Gemeindeverbaende, Kooperationen und uebergemeindliche Zusammenarbeit.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "22a",
+              "label": "Par. 22a burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "85",
+              "label": "Par. 85 kaernten"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "niederoesterreich",
+              "paragraph": "14",
+              "label": "Par. 14 niederoesterreich"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "niederoesterreich",
+              "paragraph": "30",
+              "label": "Par. 30 niederoesterreich"
+            }
+          ]
+        },
+        {
+          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Gemeindekooperation\"?",
+          "answer": "Die neun Bundeslaender regeln \"Gemeindekooperation\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "22a",
+              "label": "Par. 22a burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "85",
+              "label": "Par. 85 kaernten"
+            }
+          ]
+        },
+        {
+          "question": "Wo finde ich die relevanten Paragraphen zu \"Gemeindekooperation\"?",
+          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu gemeindekooperation.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "22a",
+              "label": "Par. 22a burgenland"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "85",
+              "label": "Par. 85 kaernten"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "niederoesterreich",
+              "paragraph": "14",
+              "label": "Par. 14 niederoesterreich"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
