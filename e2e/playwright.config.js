@@ -9,7 +9,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
 
   use: {
-    baseURL: 'http://localhost:4173/gemeindeordnung/src/',
+    baseURL: 'http://localhost:4173/gemeindeordnung/',
     screenshot: 'on',
     trace: 'on-first-retry',
   },
@@ -22,15 +22,17 @@ export default defineConfig({
     {
       name: 'mobile',
       use: {
-        ...devices['iPhone 13'],
+        ...devices['Desktop Chrome'],
         viewport: { width: 375, height: 812 },
+        isMobile: true,
+        hasTouch: true,
       },
     },
   ],
 
   webServer: {
     command: 'npm run build && npx pagefind --site dist --force-language de && npm run preview -- --port 4173',
-    url: 'http://localhost:4173/gemeindeordnung/src/index.html',
+    url: 'http://localhost:4173/gemeindeordnung/index.html',
     reuseExistingServer: !process.env.CI,
     timeout: 60000,
   },

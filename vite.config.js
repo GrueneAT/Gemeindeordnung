@@ -1,18 +1,19 @@
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import { readdirSync, existsSync } from 'fs';
-import { join } from 'path';
+import { join, resolve } from 'path';
 
 /**
  * Dynamically discover all generated HTML pages to include in the build.
- * Reads src/gemeindeordnungen/*.html and src/stadtrechte/*.html.
+ * Paths are absolute since root is 'src'.
  */
 function discoverInputs() {
-  const inputs = { main: 'src/index.html' };
+  const srcDir = resolve('src');
+  const inputs = { main: join(srcDir, 'index.html') };
   const categories = ['gemeindeordnungen', 'stadtrechte'];
 
   for (const category of categories) {
-    const dir = join('src', category);
+    const dir = join(srcDir, category);
     if (!existsSync(dir)) continue;
 
     const files = readdirSync(dir).filter(f => f.endsWith('.html'));
@@ -27,8 +28,12 @@ function discoverInputs() {
 
 export default defineConfig({
   plugins: [tailwindcss()],
+  root: 'src',
   base: '/gemeindeordnung/',
+  publicDir: false,
   build: {
+    outDir: '../dist',
+    emptyOutDir: true,
     rollupOptions: {
       input: discoverInputs(),
     },

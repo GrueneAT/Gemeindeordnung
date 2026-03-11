@@ -84,7 +84,8 @@ test.describe('Search core functionality', () => {
     await expect(hint2).toBeHidden({ timeout: 5000 });
   });
 
-  test('keyboard shortcut Ctrl+K focuses search and Escape closes', async ({ page }) => {
+  test('keyboard shortcut Ctrl+K focuses search and Escape closes', async ({ page, browserName }, testInfo) => {
+    test.skip(testInfo.project.name === 'mobile', 'Ctrl+K not applicable on mobile');
     // Click on a non-input element to ensure search is not focused
     await page.locator('h1').first().click();
     await page.waitForTimeout(200);
