@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "test": "vitest run",
     "fetch": "node scripts/fetch-laws.js",
-    "parse": "node scripts/parse-laws.js"
+    "parse": "node scripts/parse-laws.js",
+    "generate": "node scripts/generate-pages.js",
+    "llm-analyze": "node scripts/llm-analyze.js"
   },
   "keywords": [
     "gemeindeordnung",
