@@ -522,8 +522,14 @@ function initSearch() {
 
   if (!searchInput) return; // No search on this page
 
-  // Restore saved Bundesland
-  activeBundesland = getSavedBundesland();
+  // Auto-detect Bundesland from current page, fall back to saved
+  const pageBundesland = document.querySelector('meta[data-pagefind-filter="bundesland[content]"]')?.getAttribute('content');
+  if (pageBundesland) {
+    activeBundesland = pageBundesland;
+    saveBundesland(pageBundesland);
+  } else {
+    activeBundesland = getSavedBundesland();
+  }
 
   // Render initial filter chips
   renderFilterChips();
