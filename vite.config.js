@@ -45,7 +45,7 @@ function discoverInputs() {
 export default defineConfig({
   plugins: [tailwindcss()],
   root: 'src',
-  base: '/gemeindeordnung/',
+  base: '/Gemeindeordnung/',
   publicDir: false,
   build: {
     outDir: '../dist',

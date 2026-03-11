@@ -11,7 +11,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
 
   use: {
-    baseURL: 'http://localhost:4173/gemeindeordnung/',
+    baseURL: 'http://localhost:4173/Gemeindeordnung/',
     screenshot: 'on',
     trace: 'on-first-retry',
   },
@@ -34,7 +34,7 @@ export default defineConfig({
 
   webServer: {
     command: 'npm run build && npx pagefind --site dist --force-language de && npm run preview -- --port 4173',
-    url: 'http://localhost:4173/gemeindeordnung/index.html',
+    url: 'http://localhost:4173/Gemeindeordnung/index.html',
     reuseExistingServer: !process.env.CI,
     timeout: 60000,
     cwd: resolve(dirname(fileURLToPath(import.meta.url)), '..'),
