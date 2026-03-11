@@ -54,6 +54,37 @@ function createFixture(overrides = {}) {
   };
 }
 
+// Fixture with nested hauptstueck > abschnitte structure for ToC testing
+function createNestedFixture() {
+  return createFixture({
+    struktur: [
+      {
+        typ: 'hauptstueck',
+        nummer: '1',
+        titel: 'Allgemeine Bestimmungen',
+        abschnitte: [
+          {
+            typ: 'abschnitt',
+            nummer: '1',
+            titel: 'Geltungsbereich',
+            paragraphen: [
+              { nummer: '1', titel: 'Anwendung', text: 'Test text.', absaetze: [] },
+            ],
+          },
+        ],
+      },
+      {
+        typ: 'abschnitt',
+        nummer: '2',
+        titel: 'Organe der Gemeinde',
+        paragraphen: [
+          { nummer: '10', titel: 'Gemeinderat', text: 'Der Gemeinderat besteht aus...', absaetze: [] },
+        ],
+      },
+    ],
+  });
+}
+
 // Temp directory for test output
 const TEST_DIR = join(ROOT, '.test-generate');
 
@@ -150,6 +181,155 @@ describe('generate-pages', () => {
     // Law names
     expect(indexHtml).toContain('Testgesetz');
     expect(indexHtml).toContain('Teststadtrecht');
+  });
+
+  // --- Phase 2: Branding & Layout Tests ---
+
+  it('Test 5P2: law page contains collapsible ToC with aria-label', async () => {
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
+
+    // ToC nav with aria-label
+    expect(html).toContain('aria-label="Inhaltsverzeichnis"');
+    // Collapsible sections using details/summary
+    expect(html).toContain('<details');
+    expect(html).toContain('<summary');
+  });
+
+  it('Test 6P2: law page contains branded header with logo', async () => {
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
+
+    // Header with logo
+    expect(html).toContain('<header');
+    expect(html).toContain('gruene-logo');
+    // Site title in header
+    expect(html).toContain('Gemeindeordnung.at');
+  });
+
+  it('Test 7P2: law page contains breadcrumb nav', async () => {
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
+
+    // Breadcrumb nav
+    expect(html).toContain('aria-label="Breadcrumb"');
+    // Link back to index
+    expect(html).toContain('index.html');
+  });
+
+  it('Test 8P2: law page contains footer with disclaimer and RIS link', async () => {
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
+
+    // Footer with disclaimer
+    expect(html).toContain('<footer');
+    expect(html).toContain('Keine Rechtsberatung');
+    // RIS link
+    expect(html).toContain('ris.bka.gv.at');
+    // Stand datum
+    expect(html).toContain('Stand');
+  });
+
+  it('Test 9P2: law page uses readable typography classes', async () => {
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
+
+    // Max-width for readability
+    expect(html).toContain('max-w-prose');
+    // Relaxed line height
+    expect(html).toMatch(/leading-relaxed|leading-7/);
+  });
+
+  it('Test 10P2: law page has viewport meta tag for responsive design', async () => {
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
+
+    expect(html).toContain('viewport');
+    expect(html).toContain('width=device-width');
+  });
+
+  it('Test 11P2: index page uses card-style grid layout', async () => {
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const indexHtml = readFileSync(join(TEST_DIR, 'src', 'index.html'), 'utf-8');
+
+    // Grid layout classes
+    expect(indexHtml).toMatch(/grid/);
+    expect(indexHtml).toMatch(/grid-cols/);
+    // Card styling
+    expect(indexHtml).toContain('rounded');
+    expect(indexHtml).toContain('shadow');
+  });
+
+  it('Test 12P2: law page uses text-gruene-dark for links (WCAG contrast)', async () => {
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
+
+    // Body/link text should use gruene-dark, NOT gruene-green
+    // Check that link elements in nav/breadcrumb use text-gruene-dark
+    expect(html).toContain('text-gruene-dark');
+    // gruene-green should NOT be used for body text links
+    expect(html).not.toMatch(/class="[^"]*text-gruene-green[^"]*"[^>]*>[^<]*<\/a>/);
+  });
+
+  it('Test 13P2: law page section headings have visual separators', async () => {
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
+
+    // Sections have border separators
+    expect(html).toMatch(/border-t/);
+  });
+
+  it('Test 14P2: law page paragraph IDs use p{nummer} format', async () => {
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
+
+    // New ID format: p{nummer}
+    expect(html).toContain('id="p1"');
+    expect(html).toContain('id="p2"');
+    // Old format should NOT be present
+    expect(html).not.toContain('id="par-');
+  });
+
+  it('Test 15P2: nested hauptstueck ToC has two-level structure', async () => {
+    // Write nested fixture
+    writeFileSync(
+      join(TEST_DIR, 'data', 'parsed', 'gemeindeordnungen', 'nested.json'),
+      JSON.stringify(createNestedFixture()),
+    );
+
+    const { generatePages } = await import('../scripts/generate-pages.js');
+    await generatePages(TEST_DIR);
+
+    const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'nested.html'), 'utf-8');
+
+    // ToC should have nested structure
+    expect(html).toContain('aria-label="Inhaltsverzeichnis"');
+    // Should contain both hauptstueck and abschnitt in ToC
+    expect(html).toContain('Allgemeine Bestimmungen');
+    expect(html).toContain('Organe der Gemeinde');
+    // Links to paragraphs
+    expect(html).toContain('href="#p1"');
+    expect(html).toContain('href="#p10"');
   });
 });
 

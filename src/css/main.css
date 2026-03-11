@@ -4,4 +4,27 @@
   --color-gruene-green: #6BA539;
   --color-gruene-dark: #005538;
   --color-gruene-light: #E8F5E9;
+  --color-gruene-accent: #8AB414;
+  --color-gruene-link: #005538;
+  --color-gruene-link-hover: #2D5016;
+}
+
+/* Anchor highlight animation for deep-linked paragraphs */
+@keyframes anchor-highlight {
+  from {
+    background-color: var(--color-gruene-light);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+/* Scroll margin for sticky header clearance on anchored articles */
+article[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Anchor highlight applied via JS */
+.anchor-highlight {
+  animation: anchor-highlight 2s ease-out;
 }

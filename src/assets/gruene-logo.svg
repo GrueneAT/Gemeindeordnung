@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <!-- Gruene sunflower-inspired logo -->
+  <g transform="translate(20,20)">
+    <!-- Petals -->
+    <g fill="#88b828">
+      <ellipse cx="0" cy="-11" rx="4" ry="7" />
+      <ellipse cx="0" cy="-11" rx="4" ry="7" transform="rotate(45)" />
+      <ellipse cx="0" cy="-11" rx="4" ry="7" transform="rotate(90)" />
+      <ellipse cx="0" cy="-11" rx="4" ry="7" transform="rotate(135)" />
+      <ellipse cx="0" cy="-11" rx="4" ry="7" transform="rotate(180)" />
+      <ellipse cx="0" cy="-11" rx="4" ry="7" transform="rotate(225)" />
+      <ellipse cx="0" cy="-11" rx="4" ry="7" transform="rotate(270)" />
+      <ellipse cx="0" cy="-11" rx="4" ry="7" transform="rotate(315)" />
+    </g>
+    <!-- Center -->
+    <circle cx="0" cy="0" r="5" fill="#005538" />
+  </g>
+</svg>
