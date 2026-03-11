@@ -12,10 +12,10 @@ This project delivers a static website that makes all 9 Austrian Gemeindeordnung
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Data Pipeline & Project Foundation** - Fetch all 9 Gemeindeordnungen from RIS, parse into structured data, set up build tooling and deployment
-- [ ] **Phase 2: Browsing & Branding** - Browsable Gemeindeordnung pages with Gruenes CI, responsive layout, and accessibility
-- [ ] **Phase 3: Search** - Pagefind full-text search with Bundesland selection as primary UX
-- [ ] **Phase 4: LLM Enrichment** - Dev-time generated summaries, FAQs, glossary, and topic tagging
+- [x] **Phase 1: Data Pipeline & Project Foundation** - Fetch all 9 Gemeindeordnungen from RIS, parse into structured data, set up build tooling and deployment
+- [x] **Phase 2: Browsing & Branding** - Browsable Gemeindeordnung pages with Gruenes CI, responsive layout, and accessibility
+- [x] **Phase 3: Search** - Pagefind full-text search with Bundesland selection as primary UX
+- [x] **Phase 4: LLM Enrichment** - Dev-time generated summaries, FAQs, glossary, and topic tagging
 
 ## Phase Details
 
@@ -80,9 +80,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 03-01-PLAN.md -- Pagefind install, HTML indexing attributes, search JS module, build pipeline + CI update
-- [ ] 03-02-PLAN.md -- Search UI: header integration, live dropdown results, BL filter chips, empty states, mobile overlay, keyboard shortcuts, on-page highlighting
-- [ ] 03-03-PLAN.md -- E2E tests for all 7 SUCH requirements and visual verification checkpoint
+- [x] 03-01-PLAN.md -- Pagefind install, HTML indexing attributes, search JS module, build pipeline + CI update
+- [x] 03-02-PLAN.md -- Search UI: header integration, live dropdown results, BL filter chips, empty states, mobile overlay, keyboard shortcuts, on-page highlighting
+- [x] 03-03-PLAN.md -- E2E tests for all 7 SUCH requirements and visual verification checkpoint
 
 ### Phase 4: LLM Enrichment
 **Goal**: Legal text is enriched with plain-language summaries, thematic FAQs, a glossary, and topic tagging -- all generated at dev-time
@@ -96,10 +96,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 04-01-PLAN.md -- LLM generation pipeline: extend llm-analyze.js and generate all summary, FAQ, and glossary JSON data files
-- [ ] 04-02-PLAN.md -- Summaries + Topics UI: collapsible summaries, disclaimer info-box, topic filter chips with JS interactivity
-- [ ] 04-03-PLAN.md -- FAQ pages, glossary page, inline glossary tooltips, Vite config + header navigation extension
-- [ ] 04-04-PLAN.md -- E2E tests for all 7 LLM requirements and visual verification checkpoint
+- [x] 04-01-PLAN.md -- LLM generation pipeline: extend llm-analyze.js and generate all summary, FAQ, and glossary JSON data files
+- [x] 04-02-PLAN.md -- Summaries + Topics UI: collapsible summaries, disclaimer info-box, topic filter chips with JS interactivity
+- [x] 04-03-PLAN.md -- FAQ pages, glossary page, inline glossary tooltips, Vite config + header navigation extension
+- [x] 04-04-PLAN.md -- E2E tests for all 7 LLM requirements and visual verification checkpoint
 
 ### Phase 04.1: Visual Polish & Screenshot Review (INSERTED)
 
@@ -128,6 +128,6 @@ Phases execute in numeric order: 1 -> 2 -> 2.1 -> 3 -> 4
 | 1. Data Pipeline & Project Foundation | 3/3 | Complete | 2026-03-11 |
 | 2. Browsing & Branding | 3/3 | Complete | 2026-03-11 |
 | 2.1 Frontend Testing Infrastructure | 2/2 | Complete | 2026-03-11 |
-| 3. Search | 0/3 | Not started | - |
-| 4. LLM Enrichment | 0/4 | Not started | - |
+| 3. Search | 3/3 | Complete | 2026-03-11 |
+| 4. LLM Enrichment | 4/4 | Complete | 2026-03-11 |
 | 4.1 Visual Polish & Screenshot Review | 0/2 | Not started | - |
