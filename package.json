@@ -1,0 +1,28 @@
+{
+  "name": "gemeindeordnung",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Durchsuchbare Gemeindeordnungen der oesterreichischen Bundeslaender",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "fetch": "node scripts/fetch-laws.js"
+  },
+  "keywords": [
+    "gemeindeordnung",
+    "austria",
+    "ris",
+    "law"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "cheerio": "^1.2.0",
+    "tailwindcss": "^4.2.1",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.18"
+  }
+}
