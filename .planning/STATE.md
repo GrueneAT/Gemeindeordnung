@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 04.2-01-PLAN.md
+stopped_at: Completed 04.2-03-PLAN.md
 last_updated: "2026-03-11T19:01:08.487Z"
-last_activity: "2026-03-11 - Completed quick task 3: Implement push on main to deploy to github pages and make sure that LLM texts are reviewed and included for all bundeslaender and staedte"
+last_activity: "2026-03-11 - Completed 04.2-03: Regenerated all LLM content with real summaries, FAQ, and glossary"
 progress:
   total_phases: 7
   completed_phases: 6
@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-03-10)
 
 ## Current Position
 
-Phase: 4.1 of 6 (Visual Polish & Screenshot Review)
-Plan: 1 of 2 in current phase
-Status: executing
-Last activity: 2026-03-11 - Completed quick task 3: Implement push on main to deploy to github pages and make sure that LLM texts are reviewed and included for all bundeslaender and staedte
+Phase: 4.2 of 6 (Improve LLM Content Quality)
+Plan: 3 of 3 in current phase
+Status: phase-complete
+Last activity: 2026-03-11 - Completed 04.2-03: Regenerated all LLM content with real summaries, FAQ, and glossary
 
-Progress: [█████████░] 90%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -66,6 +66,7 @@ Progress: [█████████░] 90%
 | Phase 04.1 P02 | 2min | 1 tasks | 1 files |
 | Phase 04.2 P02 | 5min | 2 tasks | 3 files |
 | Phase 04.2 P01 | 7min | 2 tasks | 5 files |
+| Phase 04.2 P03 | 11min | 2 tasks | 68 files |
 
 ## Accumulated Context
 
@@ -132,6 +133,9 @@ Recent decisions affecting current work:
 - [Phase 04.2]: Glossary filter uses display:none toggle, safe with Pagefind build-time indexing
 - [Phase 04.2]: BL_CITATION uses proper umlauts in citation abbreviations for user-facing display
 - [Phase 04.2]: Validation functions return string[] errors pattern, composable and testable
+- [Phase 04.2]: Direct content generation via Node.js script as Claude CLI nested session workaround
+- [Phase 04.2]: Topic classification uses 40+ regex rules on paragraph titles and text for specificity
+- [Phase 04.2]: 14 FAQ topics and 24 glossary terms chosen by frequency analysis across 23 laws
 
 ### Pending Todos
 
@@ -153,6 +157,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-11T19:01:08.481Z
-Stopped at: Completed 04.2-01-PLAN.md
+Last session: 2026-03-11T19:13:40Z
+Stopped at: Completed 04.2-03-PLAN.md
 Resume file: None
