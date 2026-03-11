@@ -5,7 +5,7 @@ milestone_name: milestone
 status: executing
 stopped_at: Completed quick-1-01-PLAN.md
 last_updated: "2026-03-11T07:37:58.368Z"
-last_activity: 2026-03-11 -- Completed 03-03-PLAN.md
+last_activity: 2026-03-11 - Completed quick task 1: Fix search result click not jumping to anchor text
 progress:
   total_phases: 6
   completed_phases: 4
@@ -107,6 +107,12 @@ Recent decisions affecting current work:
 ### Pending Todos
 
 None yet.
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 1 | Fix search result click not jumping to anchor text, add E2E tests | 2026-03-11 | 394244e | [1-fix-search-result-click-not-jumping-to-a](./quick/1-fix-search-result-click-not-jumping-to-a/) |
 
 ### Blockers/Concerns
 
