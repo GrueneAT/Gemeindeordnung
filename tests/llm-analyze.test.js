@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync, existsSync } from 'fs';
+import { readFileSync, existsSync, readdirSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = join(__dirname, '..');
 
-import { dryRun, generateForLaw, generateFAQ, generateGlossary, generateAll } from '../scripts/llm-analyze.js';
+import { dryRun, generateForLaw, generateFAQ, generateGlossary, generateAll, BL_CITATION } from '../scripts/llm-analyze.js';
 
 describe('llm-analyze exports', () => {
   it('exports dryRun as a function', () => {
@@ -31,6 +31,139 @@ describe('llm-analyze exports', () => {
   });
 });
 
+describe('BL_CITATION constant', () => {
+  it('is exported and is an object', () => {
+    expect(typeof BL_CITATION).toBe('object');
+    expect(BL_CITATION).not.toBeNull();
+  });
+
+  it('maps all 23 law keys', () => {
+    const expectedKeys = [
+      'burgenland', 'kaernten', 'niederoesterreich', 'oberoesterreich',
+      'salzburg', 'steiermark', 'tirol', 'vorarlberg', 'wien',
+      'eisenstadt', 'rust', 'klagenfurt', 'villach', 'krems',
+      'st_poelten', 'waidhofen', 'wr_neustadt', 'linz', 'steyr',
+      'wels', 'salzburg_stadt', 'graz', 'innsbruck',
+    ];
+    expect(Object.keys(BL_CITATION).sort()).toEqual(expectedKeys.sort());
+  });
+
+  it('uses correct abbreviation for Burgenland', () => {
+    expect(BL_CITATION['burgenland']).toBe('Bgld. GO');
+  });
+
+  it('uses correct abbreviation for Wien', () => {
+    expect(BL_CITATION['wien']).toBe('Wr. StV');
+  });
+
+  it('uses correct abbreviation for Eisenstadt', () => {
+    expect(BL_CITATION['eisenstadt']).toBe('Eisenstädter StR');
+  });
+
+  it('all values are non-empty strings', () => {
+    for (const [key, value] of Object.entries(BL_CITATION)) {
+      expect(typeof value).toBe('string');
+      expect(value.length).toBeGreaterThan(0);
+    }
+  });
+});
+
+describe('llm-analyze prompt quality', () => {
+  // We read the source file to inspect prompt text
+  const sourceCode = readFileSync(join(ROOT, 'scripts', 'llm-analyze.js'), 'utf-8');
+
+  it('summary prompt does NOT contain "Dieser Paragraph regelt"', () => {
+    // The prompt text should explicitly ban this phrase, not use it as instruction
+    // Check that the prompt building section doesn't instruct to start with this phrase
+    const promptSection = sourceCode.slice(sourceCode.indexOf('generateForLaw'));
+    // The old prompt said: "Beginne mit 'Dieser Paragraph regelt...'"
+    expect(promptSection).not.toMatch(/Beginne mit.*Dieser Paragraph regelt/);
+  });
+
+  it('summary prompt contains variation instruction', () => {
+    const promptSection = sourceCode.slice(sourceCode.indexOf('generateForLaw'));
+    expect(promptSection).toMatch(/[Vv]ariiere/);
+    expect(promptSection).toMatch(/natürlich|natuerlich/);
+  });
+
+  it('summary prompt includes BL_CITATION reference', () => {
+    const promptSection = sourceCode.slice(sourceCode.indexOf('generateForLaw'));
+    expect(promptSection).toMatch(/BL_CITATION/);
+  });
+
+  it('FAQ prompt does NOT hardcode topic list', () => {
+    const faqSection = sourceCode.slice(sourceCode.indexOf('generateFAQ'));
+    // The prompt should NOT contain a fixed list of topics to generate
+    // It should let Claude determine topics from content
+    expect(faqSection).not.toMatch(/Erstelle.*folgende.*Themen/);
+  });
+
+  it('FAQ prompt instructs Claude to determine topics', () => {
+    const faqSection = sourceCode.slice(sourceCode.indexOf('generateFAQ'));
+    // Should mention Claude determining/identifying topics
+    expect(faqSection).toMatch(/bestimm|identifizier|analysier/i);
+  });
+
+  it('glossary prompt reads ALL law files (no slice(0,3))', () => {
+    const glossarySection = sourceCode.slice(sourceCode.indexOf('export async function generateGlossary'));
+    const endOfGlossary = sourceCode.indexOf('function generatePlaceholderGlossary');
+    const glossaryCode = sourceCode.slice(sourceCode.indexOf('export async function generateGlossary'), endOfGlossary);
+    // Should NOT have .slice(0, 3) on file list
+    expect(glossaryCode).not.toMatch(/\.slice\(0,\s*3\)/);
+  });
+
+  it('glossary prompt reads more than 5 paragraphs per law', () => {
+    const glossarySection = sourceCode.slice(sourceCode.indexOf('export async function generateGlossary'));
+    const endOfGlossary = sourceCode.indexOf('function generatePlaceholderGlossary');
+    const glossaryCode = sourceCode.slice(sourceCode.indexOf('export async function generateGlossary'), endOfGlossary);
+    // Should NOT have .slice(0, 5) on paragraphs
+    expect(glossaryCode).not.toMatch(/\.slice\(0,\s*5\)/);
+  });
+});
+
+describe('package.json llm scripts', () => {
+  const pkg = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf-8'));
+
+  it('has llm:summaries script', () => {
+    expect(pkg.scripts['llm:summaries']).toBeDefined();
+    expect(pkg.scripts['llm:summaries']).toMatch(/llm-analyze\.js.*--generate.*--force/);
+  });
+
+  it('has llm:faq script', () => {
+    expect(pkg.scripts['llm:faq']).toBeDefined();
+    expect(pkg.scripts['llm:faq']).toMatch(/llm-analyze\.js.*--faq.*--force/);
+  });
+
+  it('has llm:glossary script', () => {
+    expect(pkg.scripts['llm:glossary']).toBeDefined();
+    expect(pkg.scripts['llm:glossary']).toMatch(/llm-analyze\.js.*--glossary.*--force/);
+  });
+
+  it('has llm:all script', () => {
+    expect(pkg.scripts['llm:all']).toBeDefined();
+  });
+
+  it('has llm:validate script', () => {
+    expect(pkg.scripts['llm:validate']).toBeDefined();
+    expect(pkg.scripts['llm:validate']).toMatch(/llm-validate\.js/);
+  });
+});
+
+describe('--force flag support', () => {
+  const sourceCode = readFileSync(join(ROOT, 'scripts', 'llm-analyze.js'), 'utf-8');
+
+  it('FAQ CLI path supports --force flag', () => {
+    // The CLI section for --faq should read the force flag
+    const cliSection = sourceCode.slice(sourceCode.indexOf('} else if (isFAQ)'));
+    expect(cliSection).toMatch(/force/);
+  });
+
+  it('glossary CLI path supports --force flag', () => {
+    const cliSection = sourceCode.slice(sourceCode.indexOf('} else if (isGlossary)'));
+    expect(cliSection).toMatch(/force/);
+  });
+});
+
 describe('llm-analyze dryRun', () => {
   it('returns expected structure', async () => {
     const result = await dryRun();
@@ -44,7 +177,6 @@ describe('llm-analyze dryRun', () => {
 
   it('law entries have required fields', async () => {
     const result = await dryRun();
-    // If there are laws to process, check their structure
     for (const law of result.laws) {
       expect(law).toHaveProperty('key');
       expect(law).toHaveProperty('category');
@@ -67,7 +199,6 @@ describe('llm-analyze JSON schemas', () => {
     expect(data).toHaveProperty('paragraphs');
     expect(typeof data.paragraphs).toBe('object');
 
-    // Check at least one paragraph entry
     const paraKeys = Object.keys(data.paragraphs);
     expect(paraKeys.length).toBeGreaterThan(0);
 
@@ -130,7 +261,6 @@ describe('llm-analyze JSON schemas', () => {
   };
 
   it('validates summary JSON schema against existing files', () => {
-    // Check if any summary files exist
     const categories = ['gemeindeordnungen', 'stadtrechte'];
     let foundAny = false;
 
@@ -138,7 +268,6 @@ describe('llm-analyze JSON schemas', () => {
       const dir = join(ROOT, 'data', 'llm', 'summaries', cat);
       if (!existsSync(dir)) continue;
 
-      const { readdirSync } = require('fs');
       const files = readdirSync(dir).filter(f => f.endsWith('.json'));
       for (const file of files) {
         const data = JSON.parse(readFileSync(join(dir, file), 'utf-8'));
@@ -148,7 +277,6 @@ describe('llm-analyze JSON schemas', () => {
     }
 
     if (!foundAny) {
-      // No files yet -- this test will pass once generation runs
       console.log('  No summary files found yet (run --generate first)');
     }
   });

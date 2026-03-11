@@ -14,7 +14,9 @@
  *   node scripts/llm-analyze.js --generate              # Run full pipeline
  *   node scripts/llm-analyze.js --generate --law krems  # Single law only
  *   node scripts/llm-analyze.js --faq                   # Regenerate FAQ only
+ *   node scripts/llm-analyze.js --faq --force           # Clean + regenerate FAQ
  *   node scripts/llm-analyze.js --glossary              # Regenerate glossary only
+ *   node scripts/llm-analyze.js --glossary --force      # Clean + regenerate glossary
  */
 
 import { readFileSync, readdirSync, existsSync, writeFileSync, mkdirSync, unlinkSync } from 'fs';
@@ -27,6 +29,38 @@ const __dirname = dirname(__filename);
 const ROOT = join(__dirname, '..');
 
 const CATEGORIES = ['gemeindeordnungen', 'stadtrechte'];
+
+/**
+ * Map of all 23 law keys to proper Austrian legal citation abbreviations.
+ * Used in prompts for reference format and in validation.
+ */
+export const BL_CITATION = {
+  // Gemeindeordnungen
+  burgenland: 'Bgld. GO',
+  kaernten: 'Ktn. AGO',
+  niederoesterreich: 'N\u00d6. GO',
+  oberoesterreich: 'O\u00d6. GO',
+  salzburg: 'Sbg. GO',
+  steiermark: 'Stmk. GO',
+  tirol: 'Tir. GO',
+  vorarlberg: 'Vbg. GG',
+  wien: 'Wr. StV',
+  // Stadtrechte
+  eisenstadt: 'Eisenst\u00e4dter StR',
+  rust: 'Ruster StR',
+  klagenfurt: 'Klagenfurter StR',
+  villach: 'Villacher StR',
+  krems: 'Kremser StR',
+  st_poelten: 'St. P\u00f6ltner StR',
+  waidhofen: 'Waidhofner StR',
+  wr_neustadt: 'Wr. Neust\u00e4dter StR',
+  linz: 'Linzer StR',
+  steyr: 'Steyrer StR',
+  wels: 'Welser StR',
+  salzburg_stadt: 'Sbg. StR',
+  graz: 'Grazer StR',
+  innsbruck: 'Innsbrucker StR',
+};
 
 /**
  * Flatten all paragraphs from a parsed law structure.
@@ -151,18 +185,18 @@ function categorizeByTitle(title) {
   const t = title.toLowerCase();
   if (t.includes('wahl') || t.includes('abstimmung')) return 'Wahlen und Abstimmungen';
   if (t.includes('gemeinderat') || t.includes('sitzung')) return 'Gemeinderatssitzungen';
-  if (t.includes('buergermeister')) return 'Buergermeister';
+  if (t.includes('buergermeister')) return 'B\u00fcrgermeister';
   if (t.includes('vorstand') || t.includes('stadtrat')) return 'Gemeindevorstand';
-  if (t.includes('ausschuss') || t.includes('kommission')) return 'Ausschuesse';
+  if (t.includes('ausschuss') || t.includes('kommission')) return 'Aussch\u00fcsse';
   if (t.includes('haushalt') || t.includes('budget') || t.includes('voranschlag') || t.includes('rechnungs')) return 'Haushalt und Finanzen';
   if (t.includes('aufsicht') || t.includes('kontrolle') || t.includes('pruefung')) return 'Aufsicht und Kontrolle';
   if (t.includes('befangen')) return 'Befangenheit';
   if (t.includes('gemeindeverband') || t.includes('kooperation') || t.includes('zusammen')) return 'Gemeindekooperation';
   if (t.includes('straf') || t.includes('ordnung')) return 'Strafbestimmungen';
   if (t.includes('bedienstete') || t.includes('personal') || t.includes('beamt')) return 'Gemeindebedienstete';
-  if (t.includes('vermögen') || t.includes('vermoegen') || t.includes('eigentum') || t.includes('wirtschaft')) return 'Gemeindevermögen';
+  if (t.includes('verm\u00f6gen') || t.includes('vermoegen') || t.includes('eigentum') || t.includes('wirtschaft')) return 'Gemeindeverm\u00f6gen';
   if (t.includes('gemeindegebiet') || t.includes('grenz')) return 'Gemeindegebiet';
-  if (t.includes('buerger') || t.includes('bürger') || t.includes('mitglied')) return 'Gemeindebuerger';
+  if (t.includes('buerger') || t.includes('b\u00fcrger') || t.includes('mitglied')) return 'Gemeindeb\u00fcrger';
   if (t.includes('kundmachung') || t.includes('verordnung') || t.includes('bescheid')) return 'Kundmachung und Verordnungen';
   if (t.includes('schluss') || t.includes('uebergang') || t.includes('inkraft')) return 'Schlussbestimmungen';
   return 'Allgemeine Bestimmungen';
@@ -276,11 +310,23 @@ export async function generateForLaw(lawKey, category, rootDir = ROOT) {
       `--- Paragraph ${p.nummer}${p.titel ? ': ' + p.titel : ''} ---\n${p.text || p.absaetze?.map(a => a.text).join('\n') || ''}`
     ).join('\n\n');
 
+    const citation = BL_CITATION[lawKey] || lawKey;
+
     const prompt = `Du bist ein Experte fuer oesterreichisches Gemeinderecht. Analysiere die folgenden Paragraphen aus "${law.meta.kurztitel}" (${law.meta.bundesland}).
 
 Fuer JEDEN Paragraph erstelle:
-1. "summary": Eine sachlich-verstaendliche Zusammenfassung in 1-3 Saetzen. Beginne mit "Dieser Paragraph regelt..." oder aehnlich.
-2. "topics": 1-3 thematische Labels aus einer konsistenten Taxonomie (z.B. "Gemeinderatssitzungen", "Wahlen und Abstimmungen", "Befangenheit", "Gemeindevorstand", "Haushalt und Finanzen", "Aufsicht und Kontrolle", "Gemeindebedienstete", "Gemeindekooperation", "Allgemeine Bestimmungen", etc.)
+1. "summary": Eine sachlich-verstaendliche Zusammenfassung in 1-3 Saetzen.
+   WICHTIG: Verwende KEINE sich wiederholenden Formulierungen.
+   Variiere die Satzanfaenge. Schreibe natuerlich und verstaendlich fuer Laien.
+   Verwende NIEMALS "Dieser Paragraph regelt..." als Einstieg.
+   Verwende IMMER korrekte deutsche Umlaute (ae, oe, ue, ss).
+
+2. "topics": 1-3 thematische Labels. Verwende spezifische, praezise Labels
+   (NICHT nur "Allgemeine Bestimmungen"). Beispiele guter Labels:
+   "Gemeinderatssitzungen", "Buergermeisterwahl", "Beschlussfaehigkeit",
+   "Befangenheit", "Rechnungspruefung", "Ortsvorsteher", etc.
+
+Referenz-Format fuer Labels: "Par. {nummer} ${citation}"
 
 Antworte NUR mit validem JSON in diesem Format (ohne Markdown-Formatierung, kein \`\`\`json):
 {
@@ -325,11 +371,18 @@ ${paraTexts}`;
  * Generate FAQ topics from all law summaries.
  *
  * @param {string} rootDir - Project root
+ * @param {object} options - { force: boolean }
  * @returns {object} The generated FAQ JSON
  */
-export async function generateFAQ(rootDir = ROOT) {
+export async function generateFAQ(rootDir = ROOT, options = {}) {
   const outputDir = join(rootDir, 'data', 'llm', 'faq');
   const outputPath = join(outputDir, 'topics.json');
+
+  // Clean existing file if --force
+  if (options.force && existsSync(outputPath)) {
+    unlinkSync(outputPath);
+    console.log('  Cleaned existing FAQ file');
+  }
 
   console.log('Generating FAQ topics...');
 
@@ -337,7 +390,7 @@ export async function generateFAQ(rootDir = ROOT) {
   const allTopics = collectTopicTaxonomy(rootDir);
   console.log(`  Found ${allTopics.length} unique topics across all laws`);
 
-  // Collect representative content for each topic
+  // Collect ALL content for each topic (no truncation)
   const topicParagraphs = {};
   for (const category of CATEGORIES) {
     const summaryDir = join(rootDir, 'data', 'llm', 'summaries', category);
@@ -367,26 +420,39 @@ export async function generateFAQ(rootDir = ROOT) {
   let result;
 
   if (isClaudeAvailable()) {
-    // Build a concise prompt with topic taxonomy and sample content
+    // Build prompt with ALL topic-paragraph data (no truncation)
     const topicSummary = Object.entries(topicParagraphs)
       .map(([topic, refs]) => {
-        const sampleRefs = refs.slice(0, 3);
-        return `Topic: ${topic} (${refs.length} Paragraphen)\n  Beispiele: ${sampleRefs.map(r => `${r.category}/${r.key} Par.${r.paragraph}: ${r.summary?.substring(0, 80)}`).join('; ')}`;
+        const refDetails = refs.map(r => {
+          const citation = BL_CITATION[r.key] || r.key;
+          return `  - Par. ${r.paragraph} ${citation} (${r.category}/${r.key}): ${r.summary?.substring(0, 120)}`;
+        }).join('\n');
+        return `Topic: ${topic} (${refs.length} Paragraphen)\n${refDetails}`;
       })
+      .join('\n\n');
+
+    // Build citation format reference for the prompt
+    const citationRef = Object.entries(BL_CITATION)
+      .map(([key, abbr]) => `  ${key} = "${abbr}"`)
       .join('\n');
 
-    const prompt = `Du bist ein Experte fuer oesterreichisches Gemeinderecht. Erstelle FAQ-Themen basierend auf folgender Thementaxonomie aus 23 Gemeindeordnungen und Stadtrechten.
+    const prompt = `Du bist ein Experte f\u00fcr \u00f6sterreichisches Gemeinderecht. Analysiere die folgende Thementaxonomie aus 23 Gemeindeordnungen und Stadtrechten und identifiziere die wichtigsten FAQ-Themen.
 
-Erstelle 8-15 FAQ-Themen, jedes mit:
+Bestimme 10-20 FAQ-Themen basierend auf der H\u00e4ufigkeit und Relevanz der Themen. Erstelle f\u00fcr jedes Thema:
 - "slug": URL-freundlicher Bezeichner (ASCII, lowercase, Bindestriche)
 - "title": Kurzer Titel
-- "description": 1-2 Saetze Beschreibung
-- "questions": 3-6 Fragen pro Thema, jede mit:
-  - "question": Die Frage
-  - "answer": Antwort mit Hinweisen auf Unterschiede zwischen Bundeslaendern
+- "description": 1-2 S\u00e4tze Beschreibung
+- "questions": So viele Fragen wie sinnvoll, jede mit:
+  - "question": Eine konkrete, praxisnahe Frage
+  - "answer": Beantworte zuerst klar und direkt, dann erg\u00e4nze Bundesl\u00e4nder-spezifische Details.
   - "references": Array von Verweisen { "category", "key", "paragraph", "label" }
 
-Verwende echte Paragraphen-Referenzen aus den folgenden Daten.
+WICHTIG:
+- Verwende IMMER korrekte deutsche Umlaute (\u00e4, \u00f6, \u00fc, \u00df).
+- Referenzen m\u00fcssen das korrekte Zitierformat verwenden:
+${citationRef}
+- Format: "Par. {nummer} {Abk\u00fcrzung}", z.B. "Par. 42 Bgld. GO"
+- Verwende echte Paragraphen-Referenzen aus den folgenden Daten.
 
 Antworte NUR mit validem JSON (ohne Markdown-Formatierung):
 {
@@ -406,7 +472,7 @@ Antworte NUR mit validem JSON (ohne Markdown-Formatierung):
   ]
 }
 
-Thementaxonomie und Beispiele:
+Thementaxonomie und vollst\u00e4ndige Paragraphen-Daten:
 
 ${topicSummary}`;
 
@@ -443,14 +509,14 @@ function generatePlaceholderFAQ(topicParagraphs) {
   const faqTopics = [
     { slug: 'gemeinderatssitzungen', title: 'Gemeinderatssitzungen', description: 'Alles rund um Einberufung, Ablauf und Beschlussfassung in Gemeinderatssitzungen.' },
     { slug: 'wahlen-und-abstimmungen', title: 'Wahlen und Abstimmungen', description: 'Regelungen zu Wahlen, Abstimmungsverfahren und Mehrheitserfordernissen in Gemeinden.' },
-    { slug: 'buergermeister', title: 'Buergermeister', description: 'Aufgaben, Rechte und Pflichten des Buergermeisters sowie Vertretungsregelungen.' },
+    { slug: 'buergermeister', title: 'B\u00fcrgermeister', description: 'Aufgaben, Rechte und Pflichten des B\u00fcrgermeisters sowie Vertretungsregelungen.' },
     { slug: 'gemeindevorstand', title: 'Gemeindevorstand', description: 'Zusammensetzung, Aufgaben und Beschlussfassung des Gemeindevorstands bzw. Stadtsenats.' },
-    { slug: 'ausschuesse', title: 'Ausschuesse', description: 'Bildung, Zusammensetzung und Aufgaben von Gemeindeausschuessen.' },
+    { slug: 'ausschuesse', title: 'Aussch\u00fcsse', description: 'Bildung, Zusammensetzung und Aufgaben von Gemeindeaussch\u00fcssen.' },
     { slug: 'haushalt-und-finanzen', title: 'Haushalt und Finanzen', description: 'Voranschlag, Rechnungsabschluss und Finanzverwaltung der Gemeinde.' },
-    { slug: 'aufsicht-und-kontrolle', title: 'Aufsicht und Kontrolle', description: 'Gemeindeaufsicht, Pruefungsrechte und Kontrollmechanismen.' },
-    { slug: 'befangenheit', title: 'Befangenheit', description: 'Befangenheitsregeln fuer Gemeindeorgane und deren Rechtsfolgen.' },
+    { slug: 'aufsicht-und-kontrolle', title: 'Aufsicht und Kontrolle', description: 'Gemeindeaufsicht, Pr\u00fcfungsrechte und Kontrollmechanismen.' },
+    { slug: 'befangenheit', title: 'Befangenheit', description: 'Befangenheitsregeln f\u00fcr Gemeindeorgane und deren Rechtsfolgen.' },
     { slug: 'gemeindebedienstete', title: 'Gemeindebedienstete', description: 'Anstellung, Rechte und Pflichten der Gemeindebediensteten.' },
-    { slug: 'gemeindekooperation', title: 'Gemeindekooperation', description: 'Gemeindeverbaende, Kooperationen und uebergemeindliche Zusammenarbeit.' },
+    { slug: 'gemeindekooperation', title: 'Gemeindekooperation', description: 'Gemeindeverb\u00e4nde, Kooperationen und \u00fcbergemeindliche Zusammenarbeit.' },
   ];
 
   const topics = faqTopics.map(t => {
@@ -463,33 +529,33 @@ function generatePlaceholderFAQ(topicParagraphs) {
       description: t.description,
       questions: [
         {
-          question: `Was regelt das Thema "${t.title}" in oesterreichischen Gemeindeordnungen?`,
+          question: `Was regelt das Thema "${t.title}" in \u00f6sterreichischen Gemeindeordnungen?`,
           answer: `Die Regelungen zu "${t.title}" variieren je nach Bundesland. ${t.description}`,
           references: sampleRefs.map(r => ({
             category: r.category,
             key: r.key,
             paragraph: r.paragraph,
-            label: `Par. ${r.paragraph} ${r.key}`,
+            label: `Par. ${r.paragraph} ${BL_CITATION[r.key] || r.key}`,
           })),
         },
         {
-          question: `Welche Unterschiede gibt es zwischen den Bundeslaendern bei "${t.title}"?`,
-          answer: `Die neun Bundeslaender regeln "${t.title}" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.`,
+          question: `Welche Unterschiede gibt es zwischen den Bundesl\u00e4ndern bei "${t.title}"?`,
+          answer: `Die neun Bundesl\u00e4nder regeln "${t.title}" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.`,
           references: sampleRefs.slice(0, 2).map(r => ({
             category: r.category,
             key: r.key,
             paragraph: r.paragraph,
-            label: `Par. ${r.paragraph} ${r.key}`,
+            label: `Par. ${r.paragraph} ${BL_CITATION[r.key] || r.key}`,
           })),
         },
         {
           question: `Wo finde ich die relevanten Paragraphen zu "${t.title}"?`,
-          answer: `Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu ${t.title.toLowerCase()}.`,
+          answer: `Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundesl\u00e4nder, insbesondere in den Abschnitten zu ${t.title.toLowerCase()}.`,
           references: sampleRefs.slice(0, 3).map(r => ({
             category: r.category,
             key: r.key,
             paragraph: r.paragraph,
-            label: `Par. ${r.paragraph} ${r.key}`,
+            label: `Par. ${r.paragraph} ${BL_CITATION[r.key] || r.key}`,
           })),
         },
       ],
@@ -510,29 +576,36 @@ function generatePlaceholderFAQ(topicParagraphs) {
  * Generate glossary of legal terms.
  *
  * @param {string} rootDir - Project root
+ * @param {object} options - { force: boolean }
  * @returns {object} The generated glossary JSON
  */
-export async function generateGlossary(rootDir = ROOT) {
+export async function generateGlossary(rootDir = ROOT, options = {}) {
   const outputDir = join(rootDir, 'data', 'llm', 'glossary');
   const outputPath = join(outputDir, 'terms.json');
 
+  // Clean existing file if --force
+  if (options.force && existsSync(outputPath)) {
+    unlinkSync(outputPath);
+    console.log('  Cleaned existing glossary file');
+  }
+
   console.log('Generating glossary...');
 
-  // Collect sample law text for context
-  const sampleTexts = [];
+  // Collect law text from ALL parsed files (no truncation)
+  const lawTexts = [];
   for (const category of CATEGORIES) {
     const parsedDir = join(rootDir, 'data', 'parsed', category);
     if (!existsSync(parsedDir)) continue;
 
-    const files = readdirSync(parsedDir).filter(f => f.endsWith('.json')).slice(0, 3);
+    const files = readdirSync(parsedDir).filter(f => f.endsWith('.json'));
     for (const file of files) {
       const law = JSON.parse(readFileSync(join(parsedDir, file), 'utf-8'));
-      const paragraphs = flattenParagraphs(law.struktur).slice(0, 5);
-      sampleTexts.push({
+      const paragraphs = flattenParagraphs(law.struktur).slice(0, 20);
+      lawTexts.push({
         lawKey: file.replace('.json', ''),
         category,
         name: law.meta.kurztitel,
-        texts: paragraphs.map(p => p.text?.substring(0, 200) || ''),
+        texts: paragraphs.map(p => `Par. ${p.nummer}: ${p.text?.substring(0, 300) || ''}`),
       });
     }
   }
@@ -555,19 +628,31 @@ export async function generateGlossary(rootDir = ROOT) {
   let result;
 
   if (isClaudeAvailable()) {
-    const sampleContent = sampleTexts.map(s =>
-      `${s.name} (${s.category}/${s.lawKey}):\n${s.texts.join('\n')}`
-    ).join('\n\n---\n\n');
+    const lawContent = lawTexts.map(s => {
+      const citation = BL_CITATION[s.lawKey] || s.lawKey;
+      return `${s.name} (${citation}, ${s.category}/${s.lawKey}):\n${s.texts.join('\n')}`;
+    }).join('\n\n---\n\n');
 
-    const prompt = `Du bist ein Experte fuer oesterreichisches Gemeinderecht. Erstelle ein Glossar von Fachbegriffen (juristische Termini), die ein Laie nicht kennen wuerde.
+    // Build citation format reference
+    const citationRef = Object.entries(BL_CITATION)
+      .map(([key, abbr]) => `  ${key} = "${abbr}"`)
+      .join('\n');
 
-Erstelle eine konservative Liste von 15-25 echten Fachbegriffen aus dem Gemeinderecht. Beispiele: Befangenheit, Kollegialorgan, Dringlichkeitsantrag, Geschaeftsordnung, Beschlussfaehigkeit, Zweidrittelmehrheit, Verordnung, Kundmachung, etc.
+    const prompt = `Du bist ein Experte f\u00fcr \u00f6sterreichisches Gemeinderecht. Erstelle ein Glossar von Fachbegriffen (juristische Termini), die ein Laie nicht kennen w\u00fcrde.
 
-Fuer jeden Begriff:
-- "term": Der Fachbegriff
-- "slug": URL-freundlich (ASCII, lowercase, Bindestriche, ae/oe/ue fuer Umlaute)
-- "definition": Verstaendliche Definition in 1-3 Saetzen
-- "references": 2-4 Verweise auf Paragraphen wo der Begriff vorkommt: { "category", "key", "paragraph", "label" }
+Erstelle eine Liste von 15-30 echten Fachbegriffen aus dem Gemeinderecht. Beispiele: Befangenheit, Kollegialorgan, Dringlichkeitsantrag, Gesch\u00e4ftsordnung, Beschlussf\u00e4higkeit, Zweidrittelmehrheit, Verordnung, Kundmachung, etc.
+
+F\u00fcr jeden Begriff:
+- "term": Der Fachbegriff (mit korrekten Umlauten)
+- "slug": URL-freundlich (ASCII, lowercase, Bindestriche, ae/oe/ue f\u00fcr Umlaute)
+- "definition": Verst\u00e4ndliche Definition in 1-3 S\u00e4tzen. Verwende IMMER korrekte deutsche Umlaute (\u00e4, \u00f6, \u00fc, \u00df).
+- "references": 3-6 Verweise auf Paragraphen aus VERSCHIEDENEN Bundesl\u00e4ndern und Stadtrechten: { "category", "key", "paragraph", "label" }
+
+WICHTIG:
+- Referenzen m\u00fcssen mehrere Bundesl\u00e4nder abdecken (mindestens 3 verschiedene).
+- Verwende das korrekte Zitierformat:
+${citationRef}
+- Format: "Par. {nummer} {Abk\u00fcrzung}", z.B. "Par. 35 Bgld. GO"
 
 Antworte NUR mit validem JSON (ohne Markdown-Formatierung):
 {
@@ -581,9 +666,9 @@ Antworte NUR mit validem JSON (ohne Markdown-Formatierung):
   ]
 }
 
-Hier sind Beispieltexte aus den Gesetzen:
+Hier sind Texte aus ALLEN 23 Gesetzen:
 
-${sampleContent}`;
+${lawContent}`;
 
     const claudeResult = callClaude(prompt);
     if (claudeResult && claudeResult.terms) {
@@ -626,32 +711,32 @@ function generatePlaceholderGlossary(summaryRefs) {
         category,
         key,
         paragraph: String(para),
-        label: `Par. ${para} ${key}`,
+        label: `Par. ${para} ${BL_CITATION[key] || key}`,
       });
     }
     return refs;
   }
 
   const terms = [
-    { term: 'Befangenheit', slug: 'befangenheit', definition: 'Zustand, in dem ein Organmitglied wegen persoenlicher Interessen an einer Sache von der Beratung und Abstimmung ausgeschlossen ist. Dient der Sicherung unparteiischer Entscheidungsfindung.', paraHint: [35, 36] },
+    { term: 'Befangenheit', slug: 'befangenheit', definition: 'Zustand, in dem ein Organmitglied wegen pers\u00f6nlicher Interessen an einer Sache von der Beratung und Abstimmung ausgeschlossen ist. Dient der Sicherung unparteiischer Entscheidungsfindung.', paraHint: [35, 36] },
     { term: 'Kollegialorgan', slug: 'kollegialorgan', definition: 'Ein Organ, das aus mehreren gleichberechtigten Mitgliedern besteht und Entscheidungen durch Abstimmung trifft. Der Gemeinderat ist das wichtigste Kollegialorgan der Gemeinde.', paraHint: [1, 2] },
-    { term: 'Dringlichkeitsantrag', slug: 'dringlichkeitsantrag', definition: 'Ein Antrag, der ohne Einhaltung der ueblichen Fristen auf die Tagesordnung einer Sitzung gesetzt werden kann. Erfordert in der Regel eine qualifizierte Mehrheit.', paraHint: [40, 41] },
-    { term: 'Geschaeftsordnung', slug: 'geschaeftsordnung', definition: 'Regelwerk fuer den inneren Betrieb eines Kollegialorgans. Legt Verfahrensregeln fuer Sitzungen, Antraege und Abstimmungen fest.', paraHint: [30, 31] },
-    { term: 'Beschlussfaehigkeit', slug: 'beschlussfaehigkeit', definition: 'Die Faehigkeit eines Kollegialorgans, gueltige Beschluesse zu fassen. Setzt in der Regel die Anwesenheit von mindestens der Haelfte der Mitglieder voraus (Quorum).', paraHint: [32, 33] },
-    { term: 'Zweidrittelmehrheit', slug: 'zweidrittelmehrheit', definition: 'Qualifizierte Mehrheit, bei der mindestens zwei Drittel der abgegebenen Stimmen oder der anwesenden Mitglieder fuer einen Beschluss stimmen muessen. Erforderlich bei besonders wichtigen Entscheidungen.', paraHint: [34, 35] },
-    { term: 'Verordnung', slug: 'verordnung', definition: 'Generelle Norm, die von einem Verwaltungsorgan (z.B. Gemeinderat) erlassen wird und fuer alle Gemeindebuerger verbindlich ist. Muss ordnungsgemaess kundgemacht werden.', paraHint: [60, 61] },
-    { term: 'Kundmachung', slug: 'kundmachung', definition: 'Oeffentliche Bekanntmachung von Verordnungen, Beschluessen oder anderen amtlichen Mitteilungen. Voraussetzung fuer die Rechtswirksamkeit von Verordnungen.', paraHint: [62, 63] },
-    { term: 'Gemeindevorstand', slug: 'gemeindevorstand', definition: 'Kollegialorgan der Gemeinde, bestehend aus Buergermeister, Vize-Buergermeister und weiteren Mitgliedern. In Staedte mit eigenem Statut als Stadtsenat oder Stadtrat bezeichnet.', paraHint: [20, 21] },
-    { term: 'Ortsvorsteher', slug: 'ortsvorsteher', definition: 'Vertreter einer Katastralgemeinde oder eines Ortsteils. Wird vom Gemeinderat bestellt und vertritt die Interessen des Ortsteils gegenueber den Gemeindeorganen.', paraHint: [70, 71] },
-    { term: 'Voranschlag', slug: 'voranschlag', definition: 'Der Haushaltsplan der Gemeinde fuer das kommende Finanzjahr. Enthaelt die geplanten Einnahmen und Ausgaben und muss vom Gemeinderat beschlossen werden.', paraHint: [80, 81] },
-    { term: 'Rechnungsabschluss', slug: 'rechnungsabschluss', definition: 'Die jaehrliche Abrechnung ueber die tatsaechlichen Einnahmen und Ausgaben der Gemeinde. Muss vom Gemeinderat geprueft und genehmigt werden.', paraHint: [82, 83] },
-    { term: 'Gemeindeaufsicht', slug: 'gemeindeaufsicht', definition: 'Die staatliche Kontrolle ueber die Gemeindeverwaltung durch die Landesregierung. Umfasst Rechtsaufsicht (Gesetzmaessigkeit) und in bestimmten Faellen Zweckmassigkeitsaufsicht.', paraHint: [90, 91] },
+    { term: 'Dringlichkeitsantrag', slug: 'dringlichkeitsantrag', definition: 'Ein Antrag, der ohne Einhaltung der \u00fcblichen Fristen auf die Tagesordnung einer Sitzung gesetzt werden kann. Erfordert in der Regel eine qualifizierte Mehrheit.', paraHint: [40, 41] },
+    { term: 'Gesch\u00e4ftsordnung', slug: 'geschaeftsordnung', definition: 'Regelwerk f\u00fcr den inneren Betrieb eines Kollegialorgans. Legt Verfahrensregeln f\u00fcr Sitzungen, Antr\u00e4ge und Abstimmungen fest.', paraHint: [30, 31] },
+    { term: 'Beschlussf\u00e4higkeit', slug: 'beschlussfaehigkeit', definition: 'Die F\u00e4higkeit eines Kollegialorgans, g\u00fcltige Beschl\u00fcsse zu fassen. Setzt in der Regel die Anwesenheit von mindestens der H\u00e4lfte der Mitglieder voraus (Quorum).', paraHint: [32, 33] },
+    { term: 'Zweidrittelmehrheit', slug: 'zweidrittelmehrheit', definition: 'Qualifizierte Mehrheit, bei der mindestens zwei Drittel der abgegebenen Stimmen oder der anwesenden Mitglieder f\u00fcr einen Beschluss stimmen m\u00fcssen. Erforderlich bei besonders wichtigen Entscheidungen.', paraHint: [34, 35] },
+    { term: 'Verordnung', slug: 'verordnung', definition: 'Generelle Norm, die von einem Verwaltungsorgan (z.B. Gemeinderat) erlassen wird und f\u00fcr alle Gemeindeb\u00fcrger verbindlich ist. Muss ordnungsgem\u00e4\u00df kundgemacht werden.', paraHint: [60, 61] },
+    { term: 'Kundmachung', slug: 'kundmachung', definition: '\u00d6ffentliche Bekanntmachung von Verordnungen, Beschl\u00fcssen oder anderen amtlichen Mitteilungen. Voraussetzung f\u00fcr die Rechtswirksamkeit von Verordnungen.', paraHint: [62, 63] },
+    { term: 'Gemeindevorstand', slug: 'gemeindevorstand', definition: 'Kollegialorgan der Gemeinde, bestehend aus B\u00fcrgermeister, Vize-B\u00fcrgermeister und weiteren Mitgliedern. In St\u00e4dten mit eigenem Statut als Stadtsenat oder Stadtrat bezeichnet.', paraHint: [20, 21] },
+    { term: 'Ortsvorsteher', slug: 'ortsvorsteher', definition: 'Vertreter einer Katastralgemeinde oder eines Ortsteils. Wird vom Gemeinderat bestellt und vertritt die Interessen des Ortsteils gegen\u00fcber den Gemeindeorganen.', paraHint: [70, 71] },
+    { term: 'Voranschlag', slug: 'voranschlag', definition: 'Der Haushaltsplan der Gemeinde f\u00fcr das kommende Finanzjahr. Enth\u00e4lt die geplanten Einnahmen und Ausgaben und muss vom Gemeinderat beschlossen werden.', paraHint: [80, 81] },
+    { term: 'Rechnungsabschluss', slug: 'rechnungsabschluss', definition: 'Die j\u00e4hrliche Abrechnung \u00fcber die tats\u00e4chlichen Einnahmen und Ausgaben der Gemeinde. Muss vom Gemeinderat gepr\u00fcft und genehmigt werden.', paraHint: [82, 83] },
+    { term: 'Gemeindeaufsicht', slug: 'gemeindeaufsicht', definition: 'Die staatliche Kontrolle \u00fcber die Gemeindeverwaltung durch die Landesregierung. Umfasst Rechtsaufsicht (Gesetzm\u00e4\u00dfigkeit) und in bestimmten F\u00e4llen Zweckm\u00e4\u00dfigkeitsaufsicht.', paraHint: [90, 91] },
     { term: 'Statutarstadt', slug: 'statutarstadt', definition: 'Eine Stadt mit eigenem Statut, die neben den Aufgaben der Gemeindeverwaltung auch jene der Bezirksverwaltung wahrnimmt. Das Stadtrecht tritt an die Stelle der Gemeindeordnung.', paraHint: [1, 2] },
-    { term: 'Gemeindeverband', slug: 'gemeindeverband', definition: 'Zusammenschluss mehrerer Gemeinden zur gemeinsamen Besorgung bestimmter Aufgaben (z.B. Abfallwirtschaft, Wasserversorgung). Wird durch Gesetz oder Vereinbarung gegruendet.', paraHint: [100, 101] },
-    { term: 'Ausschuss', slug: 'ausschuss', definition: 'Ein vom Gemeinderat eingesetztes Gremium zur Vorberatung bestimmter Angelegenheiten. Die Zusammensetzung spiegelt in der Regel die Staerke der Fraktionen wider.', paraHint: [25, 26] },
-    { term: 'Mandatar', slug: 'mandatar', definition: 'Gewaehltes Mitglied des Gemeinderats. Mandatare ueben ihr Amt in der Regel ehrenamtlich aus und sind an keinen Auftrag gebunden (freies Mandat).', paraHint: [10, 11] },
-    { term: 'Instanzenzug', slug: 'instanzenzug', definition: 'Der vorgesehene Rechtsweg zur Anfechtung von Bescheiden. Gegen Bescheide des Buergermeisters kann in der Regel Berufung an den Gemeinderat eingelegt werden.', paraHint: [50, 51] },
-    { term: 'Verhandlungsschrift', slug: 'verhandlungsschrift', definition: 'Das offizielle Protokoll einer Gemeinderatssitzung. Muss die gefassten Beschluesse, wesentlichen Beratungsinhalte und Abstimmungsergebnisse enthalten.', paraHint: [38, 39] },
+    { term: 'Gemeindeverband', slug: 'gemeindeverband', definition: 'Zusammenschluss mehrerer Gemeinden zur gemeinsamen Besorgung bestimmter Aufgaben (z.B. Abfallwirtschaft, Wasserversorgung). Wird durch Gesetz oder Vereinbarung gegr\u00fcndet.', paraHint: [100, 101] },
+    { term: 'Ausschuss', slug: 'ausschuss', definition: 'Ein vom Gemeinderat eingesetztes Gremium zur Vorberatung bestimmter Angelegenheiten. Die Zusammensetzung spiegelt in der Regel die St\u00e4rke der Fraktionen wider.', paraHint: [25, 26] },
+    { term: 'Mandatar', slug: 'mandatar', definition: 'Gew\u00e4hltes Mitglied des Gemeinderats. Mandatare \u00fcben ihr Amt in der Regel ehrenamtlich aus und sind an keinen Auftrag gebunden (freies Mandat).', paraHint: [10, 11] },
+    { term: 'Instanzenzug', slug: 'instanzenzug', definition: 'Der vorgesehene Rechtsweg zur Anfechtung von Bescheiden. Gegen Bescheide des B\u00fcrgermeisters kann in der Regel Berufung an den Gemeinderat eingelegt werden.', paraHint: [50, 51] },
+    { term: 'Verhandlungsschrift', slug: 'verhandlungsschrift', definition: 'Das offizielle Protokoll einer Gemeinderatssitzung. Muss die gefassten Beschl\u00fcsse, wesentlichen Beratungsinhalte und Abstimmungsergebnisse enthalten.', paraHint: [38, 39] },
     { term: 'Selbstverwaltung', slug: 'selbstverwaltung', definition: 'Das verfassungsrechtlich garantierte Recht der Gemeinde, Angelegenheiten des eigenen Wirkungsbereichs weisungsfrei zu besorgen. Umfasst Verordnungsrecht, Personalhoheit und Finanzhoheit.', paraHint: [1, 2] },
   ];
 
@@ -673,7 +758,7 @@ function generatePlaceholderGlossary(summaryRefs) {
 /**
  * Generate all LLM content: summaries, FAQ, and glossary.
  *
- * @param {object} options - { rootDir, lawFilter }
+ * @param {object} options - { rootDir, lawFilter, force }
  * @returns {object} Summary of what was generated
  */
 export async function generateAll(options = {}) {
@@ -791,12 +876,12 @@ if (process.argv[1] && process.argv[1].endsWith('llm-analyze.js')) {
       process.exit(1);
     });
   } else if (isFAQ) {
-    generateFAQ().catch(err => {
+    generateFAQ(ROOT, { force }).catch(err => {
       console.error('FAQ generation failed:', err.message);
       process.exit(1);
     });
   } else if (isGlossary) {
-    generateGlossary().catch(err => {
+    generateGlossary(ROOT, { force }).catch(err => {
       console.error('Glossary generation failed:', err.message);
       process.exit(1);
     });
@@ -808,6 +893,8 @@ if (process.argv[1] && process.argv[1].endsWith('llm-analyze.js')) {
     console.log('  node scripts/llm-analyze.js --generate --law krems  # Single law only');
     console.log('  node scripts/llm-analyze.js --generate --force --law krems  # Force single law');
     console.log('  node scripts/llm-analyze.js --faq                   # FAQ only');
+    console.log('  node scripts/llm-analyze.js --faq --force           # Clean + regenerate FAQ');
     console.log('  node scripts/llm-analyze.js --glossary              # Glossary only');
+    console.log('  node scripts/llm-analyze.js --glossary --force      # Clean + regenerate glossary');
   }
 }
