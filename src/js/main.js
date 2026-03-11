@@ -115,12 +115,55 @@ function initAnchorHighlight() {
   window.addEventListener('hashchange', highlightTarget);
 }
 
+/**
+ * Initialize topic filter chips on law pages.
+ * Clicking a chip filters paragraphs by topic; "Alle" shows all.
+ */
+function initTopicFilter() {
+  const filterContainer = document.getElementById('topic-filter');
+  if (!filterContainer) return;
+
+  filterContainer.addEventListener('click', (e) => {
+    const chip = e.target.closest('[data-topic]');
+    if (!chip) return;
+
+    const topic = chip.dataset.topic;
+
+    // Update chip active states
+    filterContainer.querySelectorAll('[data-topic]').forEach(c => {
+      c.classList.remove('topic-chip-active');
+      c.classList.add('topic-chip-inactive');
+    });
+    chip.classList.remove('topic-chip-inactive');
+    chip.classList.add('topic-chip-active');
+
+    // Filter paragraph articles
+    document.querySelectorAll('article[data-topics]').forEach(article => {
+      if (topic === 'alle') {
+        article.style.display = '';
+      } else {
+        const topics = article.dataset.topics.split(',');
+        article.style.display = topics.includes(topic) ? '' : 'none';
+      }
+    });
+
+    // Also hide/show section headings if all their paragraphs are hidden
+    document.querySelectorAll('main section').forEach(section => {
+      const articles = section.querySelectorAll('article[data-topics]');
+      if (articles.length === 0) return;
+      const allHidden = Array.from(articles).every(a => a.style.display === 'none');
+      section.style.display = allHidden ? 'none' : '';
+    });
+  });
+}
+
 // Wire up all behaviors on DOM ready
 document.addEventListener('DOMContentLoaded', async () => {
   initCopyLinks();
   initScrollToTop();
   initBundeslandDropdown();
   initAnchorHighlight();
+  initTopicFilter();
   initSearch();
 
   // On-page highlighting for search result click-through

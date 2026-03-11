@@ -287,6 +287,36 @@ h3[id] {
   z-index: 40;
 }
 
+/* ---- Topic Filter Styles ---- */
+
+.topic-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  border: 1px solid;
+  transition: all 0.15s;
+}
+
+.topic-chip-active {
+  background-color: var(--color-gruene-dark);
+  color: white;
+  border-color: var(--color-gruene-dark);
+}
+
+.topic-chip-inactive {
+  background-color: white;
+  color: var(--color-gruene-dark);
+  border-color: #d1d5db;
+}
+
+.topic-chip-inactive:hover {
+  border-color: var(--color-gruene-green);
+  background-color: var(--color-gruene-light);
+}
+
 /* On-page highlighting (Pagefind) */
 .pagefind-highlight {
   background-color: rgba(250, 204, 21, 0.5);
