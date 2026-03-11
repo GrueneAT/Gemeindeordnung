@@ -29,10 +29,10 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **SUCH-01**: User can search full-text across all 9 Gemeindeordnungen via Pagefind
 - [x] **SUCH-02**: User sees highlighted search terms in results
 - [x] **SUCH-03**: User sees contextual text snippets around matches
-- [ ] **SUCH-04**: User can select their Bundesland as primary context (persistent selection)
-- [ ] **SUCH-05**: Search defaults to selected Bundesland, with option to search across all
-- [ ] **SUCH-06**: User sees total result count (z.B. "23 Treffer")
-- [ ] **SUCH-07**: User sees meaningful empty state when no results found
+- [x] **SUCH-04**: User can select their Bundesland as primary context (persistent selection)
+- [x] **SUCH-05**: Search defaults to selected Bundesland, with option to search across all
+- [x] **SUCH-06**: User sees total result count (z.B. "23 Treffer")
+- [x] **SUCH-07**: User sees meaningful empty state when no results found
 
 ### LLM Content
 
@@ -114,10 +114,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SUCH-01 | Phase 3 | Complete |
 | SUCH-02 | Phase 3 | Complete |
 | SUCH-03 | Phase 3 | Complete |
-| SUCH-04 | Phase 3 | Pending |
-| SUCH-05 | Phase 3 | Pending |
-| SUCH-06 | Phase 3 | Pending |
-| SUCH-07 | Phase 3 | Pending |
+| SUCH-04 | Phase 3 | Complete |
+| SUCH-05 | Phase 3 | Complete |
+| SUCH-06 | Phase 3 | Complete |
+| SUCH-07 | Phase 3 | Complete |
 | LLM-01 | Phase 4 | Pending |
 | LLM-02 | Phase 4 | Pending |
 | LLM-03 | Phase 4 | Pending |
