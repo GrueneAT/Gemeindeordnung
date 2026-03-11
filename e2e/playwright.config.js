@@ -9,7 +9,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
 
   use: {
-    baseURL: 'http://localhost:4173/gemeindeordnung',
+    baseURL: 'http://localhost:4173/gemeindeordnung/src/',
     screenshot: 'on',
     trace: 'on-first-retry',
   },
@@ -30,7 +30,7 @@ export default defineConfig({
 
   webServer: {
     command: 'npm run preview -- --port 4173',
-    url: 'http://localhost:4173/gemeindeordnung/',
+    url: 'http://localhost:4173/gemeindeordnung/src/index.html',
     reuseExistingServer: !process.env.CI,
     timeout: 30000,
   },
