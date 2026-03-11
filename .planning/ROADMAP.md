@@ -52,6 +52,23 @@ Plans:
 - [ ] 02-02-PLAN.md -- Interactive JS features (clipboard copy, scroll-to-top, Bundesland dropdown, anchor highlight) and visual verification
 - [ ] 02-03-PLAN.md -- Gap closure: fix copy button visibility bug (missing group class, orphaned CSS rule)
 
+### Phase 02.1: Frontend Testing Infrastructure (INSERTED)
+
+**Goal:** Playwright E2E tests verify all 10 UAT scenarios from Phase 2 with screenshot capture, mobile viewport testing, and WCAG AA accessibility checks, integrated into CI to gate deployments
+**Depends on:** Phase 2
+**Requirements**: TEST-01a, TEST-01b, TEST-01c, TEST-01d, TEST-01e, TEST-01f, TEST-01g, TEST-01h, TEST-02, TEST-03, TEST-06
+**Success Criteria** (what must be TRUE):
+  1. All 10 UAT scenarios from Phase 2 are covered by Playwright E2E tests that pass against the built site
+  2. Each test captures screenshots for visual verification, stored as CI artifacts
+  3. Mobile viewport test at 375px verifies responsive layout with no horizontal overflow
+  4. axe-core WCAG AA scan passes with zero violations on index and law pages
+  5. GitHub Actions runs Playwright tests before deployment -- failing tests block deploy
+**Plans**: 2 plans
+
+Plans:
+- [ ] 02.1-01-PLAN.md -- Playwright setup (config, deps, npm scripts) and first 5 UAT tests (browse-page, ToC, card-grid, typography, copy-link)
+- [ ] 02.1-02-PLAN.md -- Remaining 5 UAT tests (scroll-to-top, dropdown-nav, anchor-highlight, mobile, accessibility) and CI workflow integration
+
 ### Phase 3: Search
 **Goal**: Users can find any provision across all 9 Gemeindeordnungen in seconds, with their Bundesland as the default search context
 **Depends on**: Phase 2
@@ -82,11 +99,12 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4
+Phases execute in numeric order: 1 -> 2 -> 2.1 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Data Pipeline & Project Foundation | 3/3 | Complete | 2026-03-11 |
-| 2. Browsing & Branding | 2/3 | In Progress | - |
+| 2. Browsing & Branding | 3/3 | Complete | 2026-03-11 |
+| 2.1 Frontend Testing Infrastructure | 0/2 | Not started | - |
 | 3. Search | 0/? | Not started | - |
 | 4. LLM Enrichment | 0/? | Not started | - |
