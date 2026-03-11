@@ -1,39 +1,44 @@
 {
   "meta": {
-    "generatedAt": "2026-03-11T17:50:59.293Z",
+    "generatedAt": "2026-03-11T19:08:50.574Z",
     "lawKey": "waidhofen",
-    "category": "stadtrechte",
-    "placeholder": true
+    "category": "stadtrechte"
   },
   "paragraphs": {
     "1": {
-      "summary": "Dieser Paragraph regelt rechtliche stellung der stadt. (1)Die Stadtgemeinde Waidhofen an der Ybbs ist eine Gebietskörperschaft mit dem Recht auf Selbstverw...",
+      "summary": "Die Bestimmung regelt rechtliche Stellung der Stadt. Die Stadtgemeinde Waidhofen an der Ybbs ist eine Gebietskörperschaft mit dem Recht auf Selbstverwaltung.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Wirkungsbereich",
+        "Statutarstadt"
       ]
     },
     "2": {
-      "summary": "Dieser Paragraph regelt stadtgebiet. Das Stadtgebiet wird durch das Gesetz über die Gliederung des Landes Niederösterreich in Gemeinden, ...",
+      "summary": "Es wird bestimmt, stadtgebiet. Das Stadtgebiet wird durch das Gesetz über die Gliederung des Landes Niederösterreich in Gemeinden, LGBl.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Stadtgebiet"
       ]
     },
     "3": {
-      "summary": "Dieser Paragraph regelt wappen, farben und siegel der stadt. (1)Das Wappen der Stadt Waidhofen an der Ybbs zeigt in blauem Feld über einem grünen Dreiberg eine s...",
+      "summary": "Vorgesehen ist wappen, Farben und Siegel der Stadt. Das Wappen der Stadt Waidhofen an der Ybbs zeigt in blauem Feld über einem grünen Dreiberg eine silberne zinnenbekrönte Stadtmauer mit offenem Tor, hochgezogenem Fallgitter, überragt von zwei dah...",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Gemeindesymbole",
+        "Gemeindeverwaltung"
       ]
     },
     "4": {
-      "summary": "Dieser Paragraph regelt organe und kontrolle. (1)Für die Organe der Stadt gilt:1.Der Gemeinderat besteht aus 40 Mitgliedern.2.Der Stadtsenat beste...",
+      "summary": "Im Mittelpunkt steht organe und Kontrolle. Für die Organe der Stadt gilt:1.Der Gemeinderat besteht aus 40 Mitgliedern.2.Der Stadtsenat besteht aus dem Ersten und dem Zweiten Vizebürgermeister sowie 8 Stadträten.",
       "topics": [
-        "Aufsicht und Kontrolle"
+        "Vizebürgermeister",
+        "Bürgermeister",
+        "Gemeindevorstand"
       ]
     },
     "5": {
-      "summary": "Dieser Paragraph regelt kontrollamt. Der Gemeinderat kann im Interesse der Überprüfung der Gebarung neben dem Kontrollausschuss ein Kontr...",
+      "summary": "Definiert werden kontrollamt. Der Gemeinderat kann im Interesse der Überprüfung der Gebarung neben dem Kontrollausschuss ein Kontrollamt einrichten.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Ausschüsse",
+        "Rechnungsprüfung",
+        "Haushalt und Finanzen"
       ]
     }
   }

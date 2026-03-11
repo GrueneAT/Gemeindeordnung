@@ -1,163 +1,119 @@
 {
   "meta": {
-    "generatedAt": "2026-03-11T17:50:59.607Z",
-    "topicCount": 10,
-    "placeholder": true
+    "generatedAt": "2026-03-11T19:08:50.592Z",
+    "topicCount": 14
   },
   "topics": [
     {
       "slug": "gemeinderatssitzungen",
       "title": "Gemeinderatssitzungen",
-      "description": "Alles rund um Einberufung, Ablauf und Beschlussfassung in Gemeinderatssitzungen.",
+      "description": "Einberufung, Ablauf, Beschlussfähigkeit und Protokollierung von Sitzungen des Gemeinderats.",
       "questions": [
         {
-          "question": "Was regelt das Thema \"Gemeinderatssitzungen\" in oesterreichischen Gemeindeordnungen?",
-          "answer": "Die Regelungen zu \"Gemeinderatssitzungen\" variieren je nach Bundesland. Alles rund um Einberufung, Ablauf und Beschlussfassung in Gemeinderatssitzungen.",
+          "question": "Wie oft muss der Gemeinderat tagen?",
+          "answer": "Die Häufigkeit der Gemeinderatssitzungen ist in den Gemeindeordnungen der Bundesländer unterschiedlich geregelt. In den meisten Bundesländern muss der Gemeinderat mindestens vierteljährlich zusammentreten. Der Bürgermeister ist verpflichtet, den Gemeinderat einzuberufen, wenn dies im Interesse der Gemeinde erforderlich ist. In einigen Bundesländern wie dem Burgenland (§ 35 Bgld. GO) ist auch vorgesehen, dass der Gemeinderat auf Verlangen eines bestimmten Anteils seiner Mitglieder einberufen werden muss.",
           "references": [
             {
               "category": "gemeindeordnungen",
               "key": "burgenland",
-              "paragraph": "15",
-              "label": "Par. 15 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "33",
-              "label": "Par. 33 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "36",
-              "label": "Par. 36 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "40",
-              "label": "Par. 40 burgenland"
-            }
-          ]
-        },
-        {
-          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Gemeinderatssitzungen\"?",
-          "answer": "Die neun Bundeslaender regeln \"Gemeinderatssitzungen\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
-          "references": [
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "15",
-              "label": "Par. 15 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "33",
-              "label": "Par. 33 burgenland"
-            }
-          ]
-        },
-        {
-          "question": "Wo finde ich die relevanten Paragraphen zu \"Gemeinderatssitzungen\"?",
-          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu gemeinderatssitzungen.",
-          "references": [
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "15",
-              "label": "Par. 15 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "33",
-              "label": "Par. 33 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "36",
-              "label": "Par. 36 burgenland"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "wahlen-und-abstimmungen",
-      "title": "Wahlen und Abstimmungen",
-      "description": "Regelungen zu Wahlen, Abstimmungsverfahren und Mehrheitserfordernissen in Gemeinden.",
-      "questions": [
-        {
-          "question": "Was regelt das Thema \"Wahlen und Abstimmungen\" in oesterreichischen Gemeindeordnungen?",
-          "answer": "Die Regelungen zu \"Wahlen und Abstimmungen\" variieren je nach Bundesland. Regelungen zu Wahlen, Abstimmungsverfahren und Mehrheitserfordernissen in Gemeinden.",
-          "references": [
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "42",
-              "label": "Par. 42 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "54",
-              "label": "Par. 54 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "kaernten",
               "paragraph": "19",
-              "label": "Par. 19 kaernten"
+              "label": "Par. 19 Bgld. GO"
             },
             {
               "category": "gemeindeordnungen",
               "key": "kaernten",
-              "paragraph": "23",
-              "label": "Par. 23 kaernten"
+              "paragraph": "27",
+              "label": "Par. 27 Ktn. AGO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "niederoesterreich",
+              "paragraph": "21",
+              "label": "Par. 21 NÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "oberoesterreich",
+              "paragraph": "18",
+              "label": "Par. 18 OÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "20",
+              "label": "Par. 20 Sbg. GO"
             }
           ]
         },
         {
-          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Wahlen und Abstimmungen\"?",
-          "answer": "Die neun Bundeslaender regeln \"Wahlen und Abstimmungen\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "question": "Wann ist der Gemeinderat beschlussfähig?",
+          "answer": "Der Gemeinderat ist in der Regel beschlussfähig, wenn mindestens die Hälfte seiner Mitglieder anwesend ist. Für bestimmte Beschlüsse, etwa Änderungen der Geschäftsordnung oder Grundstücksverkäufe, kann eine Zweidrittelmehrheit erforderlich sein. Die genauen Quoren unterscheiden sich je nach Bundesland. In Oberösterreich (§ 44 OÖ. GO) etwa genügt grundsätzlich die einfache Stimmenmehrheit, während wichtige Angelegenheiten eine qualifizierte Mehrheit verlangen.",
           "references": [
             {
               "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "42",
-              "label": "Par. 42 burgenland"
+              "key": "salzburg",
+              "paragraph": "20",
+              "label": "Par. 20 Sbg. GO"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "54",
-              "label": "Par. 54 burgenland"
+              "key": "steiermark",
+              "paragraph": "17",
+              "label": "Par. 17 Stmk. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "tirol",
+              "paragraph": "4",
+              "label": "Par. 4 Tir. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "vorarlberg",
+              "paragraph": "39",
+              "label": "Par. 39 Vbg. GG"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "wien",
+              "paragraph": "16",
+              "label": "Par. 16 Wr. StV"
             }
           ]
         },
         {
-          "question": "Wo finde ich die relevanten Paragraphen zu \"Wahlen und Abstimmungen\"?",
-          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu wahlen und abstimmungen.",
+          "question": "Sind Gemeinderatssitzungen öffentlich?",
+          "answer": "Grundsätzlich sind Gemeinderatssitzungen in allen Bundesländern öffentlich zugänglich. Die Öffentlichkeit kann jedoch für einzelne Tagesordnungspunkte ausgeschlossen werden, wenn überwiegende Interessen der Gemeinde oder berechtigte Interessen Einzelner dies erfordern. Der Beschluss über den Ausschluss der Öffentlichkeit muss in nichtöffentlicher Sitzung gefasst werden. In der Steiermark (§ 45 Stmk. GO) und Kärnten (§ 44 Ktn. AGO) sind die Regelungen besonders detailliert ausgestaltet.",
           "references": [
             {
               "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "42",
-              "label": "Par. 42 burgenland"
+              "key": "wien",
+              "paragraph": "16",
+              "label": "Par. 16 Wr. StV"
             },
             {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "54",
-              "label": "Par. 54 burgenland"
+              "category": "stadtrechte",
+              "key": "eisenstadt",
+              "paragraph": "10",
+              "label": "Par. 10 Eisenstädter StR"
             },
             {
-              "category": "gemeindeordnungen",
-              "key": "kaernten",
-              "paragraph": "19",
-              "label": "Par. 19 kaernten"
+              "category": "stadtrechte",
+              "key": "graz",
+              "paragraph": "16",
+              "label": "Par. 16 Grazer StR"
+            },
+            {
+              "category": "stadtrechte",
+              "key": "innsbruck",
+              "paragraph": "12",
+              "label": "Par. 12 Innsbrucker StR"
+            },
+            {
+              "category": "stadtrechte",
+              "key": "klagenfurt",
+              "paragraph": "21",
+              "label": "Par. 21 Klagenfurter StR"
             }
           ]
         }
@@ -165,100 +121,193 @@
     },
     {
       "slug": "buergermeister",
-      "title": "Buergermeister",
-      "description": "Aufgaben, Rechte und Pflichten des Buergermeisters sowie Vertretungsregelungen.",
+      "title": "Bürgermeister",
+      "description": "Wahl, Aufgaben, Rechte und Vertretung des Bürgermeisters in österreichischen Gemeinden.",
       "questions": [
         {
-          "question": "Was regelt das Thema \"Buergermeister\" in oesterreichischen Gemeindeordnungen?",
-          "answer": "Die Regelungen zu \"Buergermeister\" variieren je nach Bundesland. Aufgaben, Rechte und Pflichten des Buergermeisters sowie Vertretungsregelungen.",
-          "references": []
+          "question": "Wie wird der Bürgermeister gewählt?",
+          "answer": "Die Wahl des Bürgermeisters unterscheidet sich erheblich zwischen den Bundesländern. Im Burgenland, in Kärnten, Oberösterreich, Salzburg und Tirol wird der Bürgermeister direkt von den Gemeindebürgerinnen und -bürgern gewählt. In Niederösterreich, der Steiermark und Vorarlberg erfolgt die Wahl durch den Gemeinderat. In Wien wählt der Wiener Gemeinderat den Bürgermeister (Wiener Stadtverfassung). Die Direktwahl stärkt die persönliche Legitimation, während die Wahl durch den Gemeinderat eine stärkere Rückbindung an die Gemeinderatsmehrheit bedeutet.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "11",
+              "label": "Par. 11 Bgld. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "2",
+              "label": "Par. 2 Ktn. AGO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "niederoesterreich",
+              "paragraph": "18",
+              "label": "Par. 18 NÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "oberoesterreich",
+              "paragraph": "17",
+              "label": "Par. 17 OÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "3",
+              "label": "Par. 3 Sbg. GO"
+            }
+          ]
         },
         {
-          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Buergermeister\"?",
-          "answer": "Die neun Bundeslaender regeln \"Buergermeister\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
-          "references": []
+          "question": "Welche Aufgaben hat der Bürgermeister?",
+          "answer": "Der Bürgermeister leitet die Gemeindeverwaltung, vertritt die Gemeinde nach außen und führt den Vorsitz im Gemeinderat und Gemeindevorstand. Zu seinen zentralen Aufgaben gehören die Vollziehung der Gemeinderatsbeschlüsse, die Erlassung von Bescheiden im eigenen Wirkungsbereich und die Erledigung unaufschiebbarer Angelegenheiten. In Angelegenheiten des übertragenen Wirkungsbereichs handelt der Bürgermeister als Behörde erster Instanz. Die genaue Kompetenzverteilung ist in den jeweiligen Gemeindeordnungen geregelt, etwa in § 55 Bgld. GO oder § 55 NÖ. GO.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "3",
+              "label": "Par. 3 Sbg. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "steiermark",
+              "paragraph": "8",
+              "label": "Par. 8 Stmk. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "tirol",
+              "paragraph": "4",
+              "label": "Par. 4 Tir. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "vorarlberg",
+              "paragraph": "15",
+              "label": "Par. 15 Vbg. GG"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "wien",
+              "paragraph": "9",
+              "label": "Par. 9 Wr. StV"
+            }
+          ]
         },
         {
-          "question": "Wo finde ich die relevanten Paragraphen zu \"Buergermeister\"?",
-          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu buergermeister.",
-          "references": []
+          "question": "Wer vertritt den Bürgermeister im Verhinderungsfall?",
+          "answer": "Bei Verhinderung des Bürgermeisters übernimmt der Vizebürgermeister (in manchen Bundesländern auch „Bürgermeister-Stellvertreter\" genannt) dessen Aufgaben. In den meisten Gemeindeordnungen ist auch ein zweiter Vizebürgermeister vorgesehen. Die Reihenfolge der Vertretung ist gesetzlich festgelegt. In der Steiermark (§ 31 Stmk. GO) und in Tirol (§ 40 Tir. GO) sind die Vertretungsregelungen besonders detailliert geregelt.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "wien",
+              "paragraph": "9",
+              "label": "Par. 9 Wr. StV"
+            },
+            {
+              "category": "stadtrechte",
+              "key": "eisenstadt",
+              "paragraph": "6",
+              "label": "Par. 6 Eisenstädter StR"
+            },
+            {
+              "category": "stadtrechte",
+              "key": "graz",
+              "paragraph": "7",
+              "label": "Par. 7 Grazer StR"
+            },
+            {
+              "category": "stadtrechte",
+              "key": "innsbruck",
+              "paragraph": "5",
+              "label": "Par. 5 Innsbrucker StR"
+            },
+            {
+              "category": "stadtrechte",
+              "key": "klagenfurt",
+              "paragraph": "6",
+              "label": "Par. 6 Klagenfurter StR"
+            }
+          ]
         }
       ]
     },
     {
       "slug": "gemeindevorstand",
-      "title": "Gemeindevorstand",
+      "title": "Gemeindevorstand und Stadtsenat",
       "description": "Zusammensetzung, Aufgaben und Beschlussfassung des Gemeindevorstands bzw. Stadtsenats.",
       "questions": [
         {
-          "question": "Was regelt das Thema \"Gemeindevorstand\" in oesterreichischen Gemeindeordnungen?",
-          "answer": "Die Regelungen zu \"Gemeindevorstand\" variieren je nach Bundesland. Zusammensetzung, Aufgaben und Beschlussfassung des Gemeindevorstands bzw. Stadtsenats.",
+          "question": "Was ist der Gemeindevorstand und wie setzt er sich zusammen?",
+          "answer": "Der Gemeindevorstand (in Städten mit eigenem Statut oft als Stadtsenat oder Stadtrat bezeichnet) ist ein Kollegialorgan, das aus dem Bürgermeister, dem Vizebürgermeister und weiteren Mitgliedern besteht. Die Zusammensetzung richtet sich nach der Stärke der im Gemeinderat vertretenen Fraktionen (Proporzsystem). Die Größe variiert je nach Bundesland und Gemeindegröße. In Oberösterreich (§ 32 OÖ. GO) etwa besteht der Gemeindevorstand aus dem Bürgermeister und mindestens zwei, höchstens sechs Mitgliedern.",
           "references": [
             {
               "category": "gemeindeordnungen",
               "key": "burgenland",
+              "paragraph": "14",
+              "label": "Par. 14 Bgld. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "47",
+              "label": "Par. 47 Ktn. AGO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "niederoesterreich",
+              "paragraph": "18",
+              "label": "Par. 18 NÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "oberoesterreich",
               "paragraph": "17",
-              "label": "Par. 17 burgenland"
+              "label": "Par. 17 OÖ. GO"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "kaernten",
-              "paragraph": "22",
-              "label": "Par. 22 kaernten"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "kaernten",
-              "paragraph": "25",
-              "label": "Par. 25 kaernten"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "kaernten",
-              "paragraph": "65",
-              "label": "Par. 65 kaernten"
+              "key": "steiermark",
+              "paragraph": "14",
+              "label": "Par. 14 Stmk. GO"
             }
           ]
         },
         {
-          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Gemeindevorstand\"?",
-          "answer": "Die neun Bundeslaender regeln \"Gemeindevorstand\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "question": "Welche Aufgaben hat der Gemeindevorstand?",
+          "answer": "Der Gemeindevorstand bereitet die Sitzungen des Gemeinderats vor, vollzieht dessen Beschlüsse und erledigt laufende Verwaltungsangelegenheiten, die nicht dem Bürgermeister oder dem Gemeinderat vorbehalten sind. Dazu gehören insbesondere Personalangelegenheiten, die Verwaltung des Gemeindevermögens und die Vorbereitung des Voranschlags. In manchen Bundesländern hat der Gemeindevorstand auch Entscheidungsbefugnisse bis zu bestimmten Wertgrenzen, die der Gemeinderat festlegen kann.",
           "references": [
             {
               "category": "gemeindeordnungen",
-              "key": "burgenland",
+              "key": "steiermark",
+              "paragraph": "14",
+              "label": "Par. 14 Stmk. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "tirol",
               "paragraph": "17",
-              "label": "Par. 17 burgenland"
+              "label": "Par. 17 Tir. GO"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "kaernten",
-              "paragraph": "22",
-              "label": "Par. 22 kaernten"
-            }
-          ]
-        },
-        {
-          "question": "Wo finde ich die relevanten Paragraphen zu \"Gemeindevorstand\"?",
-          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu gemeindevorstand.",
-          "references": [
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "17",
-              "label": "Par. 17 burgenland"
+              "key": "vorarlberg",
+              "paragraph": "26",
+              "label": "Par. 26 Vbg. GG"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "kaernten",
-              "paragraph": "22",
-              "label": "Par. 22 kaernten"
+              "key": "wien",
+              "paragraph": "36",
+              "label": "Par. 36 Wr. StV"
             },
             {
-              "category": "gemeindeordnungen",
-              "key": "kaernten",
-              "paragraph": "25",
-              "label": "Par. 25 kaernten"
+              "category": "stadtrechte",
+              "key": "eisenstadt",
+              "paragraph": "3",
+              "label": "Par. 3 Eisenstädter StR"
             }
           ]
         }
@@ -266,78 +315,78 @@
     },
     {
       "slug": "ausschuesse",
-      "title": "Ausschuesse",
-      "description": "Bildung, Zusammensetzung und Aufgaben von Gemeindeausschuessen.",
+      "title": "Ausschüsse",
+      "description": "Einsetzung, Zusammensetzung und Arbeitsweise von Gemeindeausschüssen.",
       "questions": [
         {
-          "question": "Was regelt das Thema \"Ausschuesse\" in oesterreichischen Gemeindeordnungen?",
-          "answer": "Die Regelungen zu \"Ausschuesse\" variieren je nach Bundesland. Bildung, Zusammensetzung und Aufgaben von Gemeindeausschuessen.",
+          "question": "Welche Ausschüsse muss eine Gemeinde haben?",
+          "answer": "In allen Bundesländern ist zumindest ein Prüfungsausschuss (Kontrollausschuss, Rechnungsprüfungsausschuss) gesetzlich vorgeschrieben. Darüber hinaus kann der Gemeinderat weitere Ausschüsse für bestimmte Sachgebiete einsetzen, etwa für Bau, Finanzen oder Soziales. In Oberösterreich (§ 27 OÖ. GO) muss neben dem Prüfungsausschuss auch ein Vorstandsausschuss gebildet werden. Die Zusammensetzung der Ausschüsse spiegelt in der Regel die Stärkeverhältnisse im Gemeinderat wider.",
           "references": [
             {
               "category": "gemeindeordnungen",
               "key": "burgenland",
-              "paragraph": "32",
-              "label": "Par. 32 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "78",
-              "label": "Par. 78 burgenland"
+              "paragraph": "37",
+              "label": "Par. 37 Bgld. GO"
             },
             {
               "category": "gemeindeordnungen",
               "key": "kaernten",
-              "paragraph": "93",
-              "label": "Par. 93 kaernten"
+              "paragraph": "62",
+              "label": "Par. 62 Ktn. AGO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "niederoesterreich",
+              "paragraph": "30",
+              "label": "Par. 30 NÖ. GO"
             },
             {
               "category": "gemeindeordnungen",
               "key": "oberoesterreich",
-              "paragraph": "91",
-              "label": "Par. 91 oberoesterreich"
+              "paragraph": "44",
+              "label": "Par. 44 OÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "6",
+              "label": "Par. 6 Sbg. GO"
             }
           ]
         },
         {
-          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Ausschuesse\"?",
-          "answer": "Die neun Bundeslaender regeln \"Ausschuesse\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "question": "Was macht der Prüfungsausschuss?",
+          "answer": "Der Prüfungsausschuss überwacht die gesamte Gebarung (Haushaltsführung) der Gemeinde. Er prüft den Rechnungsabschluss, kontrolliert die ordnungsgemäße Verwendung der Gemeindemittel und kann jederzeit Einsicht in alle Unterlagen der Gemeindeverwaltung nehmen. In den meisten Bundesländern hat die stärkste Oppositionspartei Anspruch auf den Vorsitz im Prüfungsausschuss. Der Prüfungsausschuss erstattet dem Gemeinderat regelmäßig Bericht über seine Feststellungen.",
           "references": [
             {
               "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "32",
-              "label": "Par. 32 burgenland"
+              "key": "salzburg",
+              "paragraph": "6",
+              "label": "Par. 6 Sbg. GO"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "78",
-              "label": "Par. 78 burgenland"
-            }
-          ]
-        },
-        {
-          "question": "Wo finde ich die relevanten Paragraphen zu \"Ausschuesse\"?",
-          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu ausschuesse.",
-          "references": [
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "32",
-              "label": "Par. 32 burgenland"
+              "key": "steiermark",
+              "paragraph": "14",
+              "label": "Par. 14 Stmk. GO"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "78",
-              "label": "Par. 78 burgenland"
+              "key": "tirol",
+              "paragraph": "52",
+              "label": "Par. 52 Tir. GO"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "kaernten",
-              "paragraph": "93",
-              "label": "Par. 93 kaernten"
+              "key": "vorarlberg",
+              "paragraph": "52",
+              "label": "Par. 52 Vbg. GG"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "wien",
+              "paragraph": "49",
+              "label": "Par. 49 Wr. StV"
             }
           ]
         }
@@ -346,156 +395,77 @@
     {
       "slug": "haushalt-und-finanzen",
       "title": "Haushalt und Finanzen",
-      "description": "Voranschlag, Rechnungsabschluss und Finanzverwaltung der Gemeinde.",
+      "description": "Voranschlag, Rechnungsabschluss, Gemeindebetriebe und Finanzverwaltung der Gemeinde.",
       "questions": [
         {
-          "question": "Was regelt das Thema \"Haushalt und Finanzen\" in oesterreichischen Gemeindeordnungen?",
-          "answer": "Die Regelungen zu \"Haushalt und Finanzen\" variieren je nach Bundesland. Voranschlag, Rechnungsabschluss und Finanzverwaltung der Gemeinde.",
+          "question": "Wie funktioniert der Gemeindevoranschlag?",
+          "answer": "Der Gemeindevoranschlag (Haushaltsplan) muss vom Gemeinderat vor Beginn des Haushaltsjahres beschlossen werden. Er enthält alle voraussichtlichen Einnahmen und Ausgaben der Gemeinde. Der Entwurf wird vom Bürgermeister oder Gemeindevorstand erstellt und liegt in den meisten Bundesländern vor der Beschlussfassung zur öffentlichen Einsichtnahme auf. In Salzburg (§ 63 Sbg. GO) und Tirol (§ 114 Tir. GO) sind die Grundsätze der Sparsamkeit, Wirtschaftlichkeit und Zweckmäßigkeit ausdrücklich verankert.",
           "references": [
             {
               "category": "gemeindeordnungen",
               "key": "burgenland",
-              "paragraph": "66",
-              "label": "Par. 66 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "67",
-              "label": "Par. 67 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "68",
-              "label": "Par. 68 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "69",
-              "label": "Par. 69 burgenland"
-            }
-          ]
-        },
-        {
-          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Haushalt und Finanzen\"?",
-          "answer": "Die neun Bundeslaender regeln \"Haushalt und Finanzen\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
-          "references": [
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "66",
-              "label": "Par. 66 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "67",
-              "label": "Par. 67 burgenland"
-            }
-          ]
-        },
-        {
-          "question": "Wo finde ich die relevanten Paragraphen zu \"Haushalt und Finanzen\"?",
-          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu haushalt und finanzen.",
-          "references": [
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "66",
-              "label": "Par. 66 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "67",
-              "label": "Par. 67 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "68",
-              "label": "Par. 68 burgenland"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "aufsicht-und-kontrolle",
-      "title": "Aufsicht und Kontrolle",
-      "description": "Gemeindeaufsicht, Pruefungsrechte und Kontrollmechanismen.",
-      "questions": [
-        {
-          "question": "Was regelt das Thema \"Aufsicht und Kontrolle\" in oesterreichischen Gemeindeordnungen?",
-          "answer": "Die Regelungen zu \"Aufsicht und Kontrolle\" variieren je nach Bundesland. Gemeindeaufsicht, Pruefungsrechte und Kontrollmechanismen.",
-          "references": [
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "79",
-              "label": "Par. 79 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "86",
-              "label": "Par. 86 burgenland"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "86b",
-              "label": "Par. 86b burgenland"
+              "paragraph": "29",
+              "label": "Par. 29 Bgld. GO"
             },
             {
               "category": "gemeindeordnungen",
               "key": "kaernten",
-              "paragraph": "104a",
-              "label": "Par. 104a kaernten"
+              "paragraph": "104",
+              "label": "Par. 104 Ktn. AGO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "niederoesterreich",
+              "paragraph": "38",
+              "label": "Par. 38 NÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "oberoesterreich",
+              "paragraph": "60",
+              "label": "Par. 60 OÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "33",
+              "label": "Par. 33 Sbg. GO"
             }
           ]
         },
         {
-          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Aufsicht und Kontrolle\"?",
-          "answer": "Die neun Bundeslaender regeln \"Aufsicht und Kontrolle\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "question": "Wann braucht die Gemeinde eine Genehmigung der Aufsichtsbehörde?",
+          "answer": "Bestimmte finanzielle Dispositionen der Gemeinde bedürfen der aufsichtsbehördlichen Genehmigung, insbesondere die Aufnahme von Darlehen über bestimmte Wertgrenzen, die Übernahme von Haftungen, der Verkauf oder die Belastung von Gemeindegrundstücken sowie die Beteiligung an wirtschaftlichen Unternehmungen. Die genauen Schwellenwerte und genehmigungspflichtigen Geschäfte unterscheiden sich je nach Bundesland erheblich. Ziel ist der Schutz vor übermäßiger Verschuldung der Gemeinden.",
           "references": [
             {
               "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "79",
-              "label": "Par. 79 burgenland"
+              "key": "salzburg",
+              "paragraph": "33",
+              "label": "Par. 33 Sbg. GO"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "86",
-              "label": "Par. 86 burgenland"
-            }
-          ]
-        },
-        {
-          "question": "Wo finde ich die relevanten Paragraphen zu \"Aufsicht und Kontrolle\"?",
-          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu aufsicht und kontrolle.",
-          "references": [
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "79",
-              "label": "Par. 79 burgenland"
+              "key": "steiermark",
+              "paragraph": "75",
+              "label": "Par. 75 Stmk. GO"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "86",
-              "label": "Par. 86 burgenland"
+              "key": "tirol",
+              "paragraph": "58",
+              "label": "Par. 58 Tir. GO"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "86b",
-              "label": "Par. 86b burgenland"
+              "key": "vorarlberg",
+              "paragraph": "73",
+              "label": "Par. 73 Vbg. GG"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "wien",
+              "paragraph": "101",
+              "label": "Par. 101 Wr. StV"
             }
           ]
         }
@@ -504,77 +474,77 @@
     {
       "slug": "befangenheit",
       "title": "Befangenheit",
-      "description": "Befangenheitsregeln fuer Gemeindeorgane und deren Rechtsfolgen.",
+      "description": "Befangenheitsregeln für Gemeindemandatare und deren rechtliche Folgen.",
       "questions": [
         {
-          "question": "Was regelt das Thema \"Befangenheit\" in oesterreichischen Gemeindeordnungen?",
-          "answer": "Die Regelungen zu \"Befangenheit\" variieren je nach Bundesland. Befangenheitsregeln fuer Gemeindeorgane und deren Rechtsfolgen.",
+          "question": "Wann ist ein Gemeinderatsmitglied befangen?",
+          "answer": "Ein Mitglied des Gemeinderats, des Gemeindevorstands oder eines Ausschusses ist befangen, wenn es selbst, ein naher Angehöriger oder eine von ihm vertretene Person an der zu behandelnden Angelegenheit ein persönliches oder wirtschaftliches Interesse hat. Befangene Mitglieder müssen dies anzeigen und dürfen an der Beratung und Abstimmung nicht teilnehmen. In einigen Bundesländern wie Kärnten (§ 49 Ktn. AGO) und Oberösterreich (§ 46 OÖ. GO) sind die Befangenheitsgründe besonders detailliert aufgelistet.",
           "references": [
             {
               "category": "gemeindeordnungen",
               "key": "burgenland",
-              "paragraph": "49",
-              "label": "Par. 49 burgenland"
+              "paragraph": "24",
+              "label": "Par. 24 Bgld. GO"
             },
             {
               "category": "gemeindeordnungen",
               "key": "kaernten",
-              "paragraph": "40",
-              "label": "Par. 40 kaernten"
+              "paragraph": "28",
+              "label": "Par. 28 Ktn. AGO"
             },
             {
               "category": "gemeindeordnungen",
               "key": "niederoesterreich",
               "paragraph": "50",
-              "label": "Par. 50 niederoesterreich"
+              "label": "Par. 50 NÖ. GO"
             },
             {
               "category": "gemeindeordnungen",
               "key": "oberoesterreich",
-              "paragraph": "64",
-              "label": "Par. 64 oberoesterreich"
+              "paragraph": "56",
+              "label": "Par. 56 OÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "32",
+              "label": "Par. 32 Sbg. GO"
             }
           ]
         },
         {
-          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Befangenheit\"?",
-          "answer": "Die neun Bundeslaender regeln \"Befangenheit\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "question": "Was passiert, wenn ein befangenes Mitglied an einer Abstimmung teilnimmt?",
+          "answer": "Nimmt ein befangenes Mitglied trotz Befangenheit an einer Abstimmung teil, kann der gefasste Beschluss unter Umständen rechtswidrig sein und von der Aufsichtsbehörde aufgehoben werden. Die Rechtsfolgen variieren je nach Bundesland. In manchen Gemeindeordnungen ist die Teilnahme an der Abstimmung trotz Befangenheit auch als Verwaltungsübertretung strafbar. Die Feststellung der Befangenheit obliegt zunächst dem befangenen Mitglied selbst (Selbstanzeige), kann aber auch vom Vorsitzenden oder anderen Mitgliedern gerügt werden.",
           "references": [
             {
               "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "49",
-              "label": "Par. 49 burgenland"
+              "key": "salzburg",
+              "paragraph": "32",
+              "label": "Par. 32 Sbg. GO"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "kaernten",
-              "paragraph": "40",
-              "label": "Par. 40 kaernten"
-            }
-          ]
-        },
-        {
-          "question": "Wo finde ich die relevanten Paragraphen zu \"Befangenheit\"?",
-          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu befangenheit.",
-          "references": [
-            {
-              "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "49",
-              "label": "Par. 49 burgenland"
+              "key": "steiermark",
+              "paragraph": "84",
+              "label": "Par. 84 Stmk. GO"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "kaernten",
-              "paragraph": "40",
-              "label": "Par. 40 kaernten"
+              "key": "tirol",
+              "paragraph": "29",
+              "label": "Par. 29 Tir. GO"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "niederoesterreich",
-              "paragraph": "50",
-              "label": "Par. 50 niederoesterreich"
+              "key": "vorarlberg",
+              "paragraph": "38",
+              "label": "Par. 38 Vbg. GG"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "wien",
+              "paragraph": "20",
+              "label": "Par. 20 Wr. StV"
             }
           ]
         }
@@ -583,156 +553,486 @@
     {
       "slug": "gemeindebedienstete",
       "title": "Gemeindebedienstete",
-      "description": "Anstellung, Rechte und Pflichten der Gemeindebediensteten.",
+      "description": "Anstellung, Rechte, Pflichten und dienstrechtliche Stellung der Gemeindebediensteten.",
       "questions": [
         {
-          "question": "Was regelt das Thema \"Gemeindebedienstete\" in oesterreichischen Gemeindeordnungen?",
-          "answer": "Die Regelungen zu \"Gemeindebedienstete\" variieren je nach Bundesland. Anstellung, Rechte und Pflichten der Gemeindebediensteten.",
+          "question": "Wer entscheidet über die Anstellung von Gemeindebediensteten?",
+          "answer": "Die Zuständigkeit für die Anstellung von Gemeindebediensteten ist je nach Position und Bundesland unterschiedlich geregelt. Leitende Beamte (Gemeindeamtsleiter, Magistratsdirektor) werden in der Regel vom Gemeinderat oder Gemeindevorstand bestellt. Für sonstige Bedienstete ist häufig der Bürgermeister zuständig, oft im Einvernehmen mit dem Gemeindevorstand. In Statutarstädten wie Graz (§ 78 Grazer StR) oder Innsbruck (§ 71 Innsbrucker StR) obliegt die Personalhoheit dem Stadtsenat oder Bürgermeister.",
           "references": [
             {
               "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "22",
+              "label": "Par. 22 Bgld. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
               "key": "kaernten",
-              "paragraph": "79",
-              "label": "Par. 79 kaernten"
+              "paragraph": "10",
+              "label": "Par. 10 Ktn. AGO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "niederoesterreich",
+              "paragraph": "32",
+              "label": "Par. 32 NÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "oberoesterreich",
+              "paragraph": "37",
+              "label": "Par. 37 OÖ. GO"
             },
             {
               "category": "gemeindeordnungen",
               "key": "salzburg",
-              "paragraph": "52",
-              "label": "Par. 52 salzburg"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "tirol",
-              "paragraph": "59",
-              "label": "Par. 59 tirol"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "tirol",
-              "paragraph": "91",
-              "label": "Par. 91 tirol"
+              "paragraph": "51",
+              "label": "Par. 51 Sbg. GO"
             }
           ]
         },
         {
-          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Gemeindebedienstete\"?",
-          "answer": "Die neun Bundeslaender regeln \"Gemeindebedienstete\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "question": "Welche Rechte haben Gemeindebedienstete?",
+          "answer": "Gemeindebedienstete haben Anspruch auf ein angemessenes Gehalt, Urlaub, Krankenstandsregelungen und Versorgungsleistungen. Viele Bundesländer haben eigene Gemeindebedienstetengesetze, die das Dienst- und Besoldungsrecht im Detail regeln. Die Gemeindeordnungen selbst enthalten meist nur grundlegende Bestimmungen über die Bestellung und die allgemeine Stellung der Bediensteten. In den meisten Bundesländern gelten für Gemeindebedienstete ähnliche Schutzbestimmungen wie für Landesbedienstete.",
           "references": [
             {
               "category": "gemeindeordnungen",
-              "key": "kaernten",
-              "paragraph": "79",
-              "label": "Par. 79 kaernten"
+              "key": "salzburg",
+              "paragraph": "51",
+              "label": "Par. 51 Sbg. GO"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "salzburg",
-              "paragraph": "52",
-              "label": "Par. 52 salzburg"
-            }
-          ]
-        },
-        {
-          "question": "Wo finde ich die relevanten Paragraphen zu \"Gemeindebedienstete\"?",
-          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu gemeindebedienstete.",
-          "references": [
-            {
-              "category": "gemeindeordnungen",
-              "key": "kaernten",
-              "paragraph": "79",
-              "label": "Par. 79 kaernten"
-            },
-            {
-              "category": "gemeindeordnungen",
-              "key": "salzburg",
-              "paragraph": "52",
-              "label": "Par. 52 salzburg"
+              "key": "steiermark",
+              "paragraph": "37",
+              "label": "Par. 37 Stmk. GO"
             },
             {
               "category": "gemeindeordnungen",
               "key": "tirol",
-              "paragraph": "59",
-              "label": "Par. 59 tirol"
+              "paragraph": "16",
+              "label": "Par. 16 Tir. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "vorarlberg",
+              "paragraph": "27",
+              "label": "Par. 27 Vbg. GG"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "wien",
+              "paragraph": "9",
+              "label": "Par. 9 Wr. StV"
             }
           ]
         }
       ]
     },
     {
-      "slug": "gemeindekooperation",
-      "title": "Gemeindekooperation",
-      "description": "Gemeindeverbaende, Kooperationen und uebergemeindliche Zusammenarbeit.",
+      "slug": "gemeindeaufsicht",
+      "title": "Gemeindeaufsicht",
+      "description": "Staatliche Aufsicht über die Gemeindeverwaltung durch Land und Bund.",
       "questions": [
         {
-          "question": "Was regelt das Thema \"Gemeindekooperation\" in oesterreichischen Gemeindeordnungen?",
-          "answer": "Die Regelungen zu \"Gemeindekooperation\" variieren je nach Bundesland. Gemeindeverbaende, Kooperationen und uebergemeindliche Zusammenarbeit.",
+          "question": "Wer beaufsichtigt die Gemeinden?",
+          "answer": "Die Aufsicht über die Gemeinden obliegt der Landesregierung und den Bezirkshauptmannschaften. Im eigenen Wirkungsbereich der Gemeinde beschränkt sich die Aufsicht auf die Rechtmäßigkeit (Rechtsaufsicht). Im übertragenen Wirkungsbereich kommt zusätzlich eine Zweckmäßigkeitsaufsicht hinzu. Die Aufsichtsbehörde kann rechtswidrige Beschlüsse aufheben, Weisungen erteilen und im äußersten Fall einen Regierungskommissär einsetzen. In Wien (Wiener Stadtverfassung) übt der Bund die Gemeindeaufsicht aus.",
           "references": [
             {
               "category": "gemeindeordnungen",
               "key": "burgenland",
-              "paragraph": "22a",
-              "label": "Par. 22a burgenland"
+              "paragraph": "43",
+              "label": "Par. 43 Bgld. GO"
             },
             {
               "category": "gemeindeordnungen",
               "key": "kaernten",
-              "paragraph": "85",
-              "label": "Par. 85 kaernten"
+              "paragraph": "15",
+              "label": "Par. 15 Ktn. AGO"
             },
             {
               "category": "gemeindeordnungen",
               "key": "niederoesterreich",
-              "paragraph": "14",
-              "label": "Par. 14 niederoesterreich"
+              "paragraph": "52",
+              "label": "Par. 52 NÖ. GO"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "niederoesterreich",
-              "paragraph": "30",
-              "label": "Par. 30 niederoesterreich"
+              "key": "oberoesterreich",
+              "paragraph": "37",
+              "label": "Par. 37 OÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "32",
+              "label": "Par. 32 Sbg. GO"
             }
           ]
         },
         {
-          "question": "Welche Unterschiede gibt es zwischen den Bundeslaendern bei \"Gemeindekooperation\"?",
-          "answer": "Die neun Bundeslaender regeln \"Gemeindekooperation\" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.",
+          "question": "Was kann die Aufsichtsbehörde bei Rechtsverstößen tun?",
+          "answer": "Bei Rechtsverstößen hat die Aufsichtsbehörde abgestufte Eingriffsmöglichkeiten: zunächst die Beanstandung rechtswidriger Beschlüsse mit Aufforderung zur Behebung, dann die Aufhebung rechtswidriger Verordnungen und Bescheide, und als letztes Mittel die Auflösung des Gemeinderats und Einsetzung eines Regierungskommissärs. In Tirol (§ 122 Tir. GO) und Vorarlberg (§ 97 Vbg. GG) sind die aufsichtsbehördlichen Befugnisse besonders ausführlich geregelt.",
           "references": [
             {
               "category": "gemeindeordnungen",
-              "key": "burgenland",
-              "paragraph": "22a",
-              "label": "Par. 22a burgenland"
+              "key": "salzburg",
+              "paragraph": "32",
+              "label": "Par. 32 Sbg. GO"
             },
             {
               "category": "gemeindeordnungen",
-              "key": "kaernten",
-              "paragraph": "85",
-              "label": "Par. 85 kaernten"
+              "key": "steiermark",
+              "paragraph": "38",
+              "label": "Par. 38 Stmk. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "tirol",
+              "paragraph": "17",
+              "label": "Par. 17 Tir. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "vorarlberg",
+              "paragraph": "68",
+              "label": "Par. 68 Vbg. GG"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "wien",
+              "paragraph": "83",
+              "label": "Par. 83 Wr. StV"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "slug": "wahlen-und-abstimmungen",
+      "title": "Wahlen und Abstimmungen",
+      "description": "Regelungen zu Gemeinderatswahlen, Wahlrecht und Abstimmungsverfahren.",
+      "questions": [
         {
-          "question": "Wo finde ich die relevanten Paragraphen zu \"Gemeindekooperation\"?",
-          "answer": "Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundeslaender, insbesondere in den Abschnitten zu gemeindekooperation.",
+          "question": "Wer darf bei Gemeinderatswahlen wählen?",
+          "answer": "Das aktive Wahlrecht bei Gemeinderatswahlen haben alle österreichischen Staatsbürgerinnen und -bürger sowie EU-Bürgerinnen und -Bürger, die am Stichtag ihren Hauptwohnsitz in der Gemeinde haben und das 16. Lebensjahr vollendet haben. Die Gemeinderatswahlen sind in eigenen Gemeindewahlordnungen der Bundesländer geregelt. Die Gemeindeordnungen selbst enthalten meist nur grundlegende Bestimmungen über die Zusammensetzung des Gemeinderats und die Zahl der Mandate.",
           "references": [
             {
               "category": "gemeindeordnungen",
               "key": "burgenland",
-              "paragraph": "22a",
-              "label": "Par. 22a burgenland"
+              "paragraph": "4",
+              "label": "Par. 4 Bgld. GO"
             },
             {
               "category": "gemeindeordnungen",
               "key": "kaernten",
-              "paragraph": "85",
-              "label": "Par. 85 kaernten"
+              "paragraph": "44",
+              "label": "Par. 44 Ktn. AGO"
             },
             {
               "category": "gemeindeordnungen",
               "key": "niederoesterreich",
+              "paragraph": "16",
+              "label": "Par. 16 NÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "oberoesterreich",
+              "paragraph": "28",
+              "label": "Par. 28 OÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "11",
+              "label": "Par. 11 Sbg. GO"
+            }
+          ]
+        },
+        {
+          "question": "Welche Mehrheiten sind im Gemeinderat erforderlich?",
+          "answer": "Für gewöhnliche Beschlüsse genügt die einfache Mehrheit der abgegebenen Stimmen. Für bestimmte wichtige Angelegenheiten ist eine qualifizierte Mehrheit (meist Zweidrittelmehrheit) vorgeschrieben, etwa für Änderungen der Geschäftsordnung, Grundstücksveräußerungen über bestimmten Wertgrenzen oder die Aufnahme von Darlehen. Die genauen Mehrheitserfordernisse variieren stark zwischen den Bundesländern und sind in den jeweiligen Gemeindeordnungen im Detail geregelt.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "11",
+              "label": "Par. 11 Sbg. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "steiermark",
+              "paragraph": "13",
+              "label": "Par. 13 Stmk. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "tirol",
               "paragraph": "14",
-              "label": "Par. 14 niederoesterreich"
+              "label": "Par. 14 Tir. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "vorarlberg",
+              "paragraph": "8",
+              "label": "Par. 8 Vbg. GG"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "wien",
+              "paragraph": "6",
+              "label": "Par. 6 Wr. StV"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "direkte-demokratie",
+      "title": "Direkte Demokratie in der Gemeinde",
+      "description": "Volksbegehren, Volksbefragung, Volksabstimmung und Bürgerinitiativen auf Gemeindeebene.",
+      "questions": [
+        {
+          "question": "Welche direktdemokratischen Instrumente gibt es auf Gemeindeebene?",
+          "answer": "Die meisten Bundesländer sehen verschiedene Formen der direkten Bürgerbeteiligung vor: Volksbegehren (Bürgeranträge an den Gemeinderat), Volksbefragungen (unverbindliche Befragung der Gemeindebürger) und in einigen Bundesländern auch Volksabstimmungen (bindende Entscheidung). Die Voraussetzungen, insbesondere die erforderlichen Unterschriftenzahlen und die zulässigen Gegenstände, sind sehr unterschiedlich geregelt. In Vorarlberg (§ 73 ff. Vbg. GG) und Salzburg (§ 71 Sbg. GO) sind die direktdemokratischen Instrumente besonders weitreichend ausgestaltet.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "56",
+              "label": "Par. 56 Bgld. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "7",
+              "label": "Par. 7 Ktn. AGO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "niederoesterreich",
+              "paragraph": "63",
+              "label": "Par. 63 NÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "oberoesterreich",
+              "paragraph": "12",
+              "label": "Par. 12 OÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "5",
+              "label": "Par. 5 Sbg. GO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "gemeindeverband",
+      "title": "Gemeindeverbände und Kooperation",
+      "description": "Zusammenarbeit zwischen Gemeinden, Gemeindeverbände und übergemeindliche Aufgabenerfüllung.",
+      "questions": [
+        {
+          "question": "Was ist ein Gemeindeverband?",
+          "answer": "Ein Gemeindeverband ist ein Zusammenschluss mehrerer Gemeinden zur gemeinsamen Besorgung bestimmter Aufgaben, etwa der Abfallwirtschaft, Wasserversorgung oder Standesamtsverwaltung. Gemeindeverbände werden durch Beschluss der beteiligten Gemeinderäte gegründet und durch die Landesregierung genehmigt. Sie haben eigene Organe (Verbandsversammlung, Verbandsobmann) und ein eigenes Budget. Die Regelungen finden sich in den jeweiligen Gemeindeordnungen, z.B. in § 96 ff. Stmk. GO oder § 134 ff. Tir. GO.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "20",
+              "label": "Par. 20 Bgld. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "83",
+              "label": "Par. 83 Ktn. AGO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "niederoesterreich",
+              "paragraph": "20",
+              "label": "Par. 20 NÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "7",
+              "label": "Par. 7 Sbg. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "steiermark",
+              "paragraph": "38",
+              "label": "Par. 38 Stmk. GO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "kundmachung-und-verordnungen",
+      "title": "Kundmachung und Verordnungen",
+      "description": "Erlassung, Veröffentlichung und Inkrafttreten von Gemeindeverordnungen.",
+      "questions": [
+        {
+          "question": "Wie werden Gemeindeverordnungen kundgemacht?",
+          "answer": "Gemeindeverordnungen müssen ordnungsgemäß kundgemacht werden, um rechtswirksam zu sein. Die häufigste Form ist der Anschlag an der Amtstafel (Gemeindetafel) für eine bestimmte Dauer, meist zwei Wochen. Zunehmend wird auch die Kundmachung auf der Gemeinde-Website anerkannt. Die Verordnung tritt in der Regel mit Ablauf des Anschlags oder zu einem darin bestimmten späteren Zeitpunkt in Kraft. Die Kundmachungsvorschriften sind in allen Gemeindeordnungen detailliert geregelt und ihre Einhaltung ist Gültigkeitsvoraussetzung.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "2",
+              "label": "Par. 2 Bgld. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "3",
+              "label": "Par. 3 Ktn. AGO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "niederoesterreich",
+              "paragraph": "9",
+              "label": "Par. 9 NÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "oberoesterreich",
+              "paragraph": "2",
+              "label": "Par. 2 OÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "2",
+              "label": "Par. 2 Sbg. GO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "gemeindegebiet-und-bezeichnung",
+      "title": "Gemeindegebiet und Bezeichnung",
+      "description": "Gemeindenamen, Gemeindewappen, Gebietsänderungen und Erhebung zur Stadtgemeinde.",
+      "questions": [
+        {
+          "question": "Wie kann eine Gemeinde den Status einer Stadtgemeinde erlangen?",
+          "answer": "Die Verleihung des Titels „Stadtgemeinde\" oder „Marktgemeinde\" erfolgt durch die Landesregierung auf Antrag des Gemeinderats. Voraussetzung ist in der Regel eine gewisse Einwohnerzahl und wirtschaftliche Bedeutung für die Umgebung. Die genauen Voraussetzungen unterscheiden sich je nach Bundesland. Die Erhebung zur Stadtgemeinde hat repräsentativen Charakter, begründet aber in der Regel keine zusätzlichen Rechte oder Pflichten. Historisch gewachsene Bezeichnungen werden dabei berücksichtigt.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "burgenland",
+              "paragraph": "2",
+              "label": "Par. 2 Bgld. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "kaernten",
+              "paragraph": "3",
+              "label": "Par. 3 Ktn. AGO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "niederoesterreich",
+              "paragraph": "2",
+              "label": "Par. 2 NÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "oberoesterreich",
+              "paragraph": "2",
+              "label": "Par. 2 OÖ. GO"
+            },
+            {
+              "category": "gemeindeordnungen",
+              "key": "salzburg",
+              "paragraph": "2",
+              "label": "Par. 2 Sbg. GO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "statutarstaedte",
+      "title": "Statutarstädte",
+      "description": "Besonderheiten der Städte mit eigenem Statut (Stadtrecht) in Österreich.",
+      "questions": [
+        {
+          "question": "Was unterscheidet eine Statutarstadt von einer normalen Gemeinde?",
+          "answer": "Statutarstädte (Städte mit eigenem Statut) vereinen Gemeinde- und Bezirksverwaltung in sich. Sie unterstehen keiner Bezirkshauptmannschaft, sondern der Bürgermeister übt die Funktion der Bezirksverwaltungsbehörde aus. Das Stadtrecht tritt an die Stelle der Gemeindeordnung und enthält oft detailliertere Regelungen. In Österreich gibt es 15 Statutarstädte, darunter alle Landeshauptstädte. Die Verwaltung erfolgt durch den Magistrat unter Leitung des Magistratsdirektors.",
+          "references": [
+            {
+              "category": "gemeindeordnungen",
+              "key": "wien",
+              "paragraph": "3",
+              "label": "Par. 3 Wr. StV"
+            },
+            {
+              "category": "stadtrechte",
+              "key": "eisenstadt",
+              "paragraph": "2",
+              "label": "Par. 2 Eisenstädter StR"
+            },
+            {
+              "category": "stadtrechte",
+              "key": "graz",
+              "paragraph": "112",
+              "label": "Par. 112 Grazer StR"
+            },
+            {
+              "category": "stadtrechte",
+              "key": "innsbruck",
+              "paragraph": "37",
+              "label": "Par. 37 Innsbrucker StR"
+            },
+            {
+              "category": "stadtrechte",
+              "key": "krems",
+              "paragraph": "1",
+              "label": "Par. 1 Kremser StR"
+            }
+          ]
+        },
+        {
+          "question": "Welche Städte in Österreich haben ein eigenes Stadtrecht?",
+          "answer": "Alle neun Landeshauptstädte haben ein eigenes Stadtrecht. Darüber hinaus gibt es Statutarstädte in Niederösterreich (Krems, St. Pölten, Waidhofen an der Ybbs, Wiener Neustadt), Oberösterreich (Linz, Steyr, Wels), Kärnten (Klagenfurt, Villach) und im Burgenland (Eisenstadt, Rust). Jede Statutarstadt hat ihr eigenes Stadtrecht, das von der jeweiligen Landesgesetzgebung erlassen wird und die kommunale Selbstverwaltung im Detail regelt.",
+          "references": [
+            {
+              "category": "stadtrechte",
+              "key": "krems",
+              "paragraph": "1",
+              "label": "Par. 1 Kremser StR"
+            },
+            {
+              "category": "stadtrechte",
+              "key": "linz",
+              "paragraph": "65",
+              "label": "Par. 65 Linzer StR"
+            },
+            {
+              "category": "stadtrechte",
+              "key": "rust",
+              "paragraph": "2",
+              "label": "Par. 2 Ruster StR"
+            },
+            {
+              "category": "stadtrechte",
+              "key": "st_poelten",
+              "paragraph": "1",
+              "label": "Par. 1 St. Pöltner StR"
+            },
+            {
+              "category": "stadtrechte",
+              "key": "steyr",
+              "paragraph": "65",
+              "label": "Par. 65 Steyrer StR"
             }
           ]
         }

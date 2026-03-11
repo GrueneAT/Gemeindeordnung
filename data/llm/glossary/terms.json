@@ -1,507 +1,894 @@
 {
   "meta": {
-    "generatedAt": "2026-03-11T17:50:59.721Z",
-    "termCount": 20,
-    "placeholder": true
+    "generatedAt": "2026-03-11T19:08:50.601Z",
+    "termCount": 24
   },
   "terms": [
     {
       "term": "Befangenheit",
       "slug": "befangenheit",
-      "definition": "Zustand, in dem ein Organmitglied wegen persoenlicher Interessen an einer Sache von der Beratung und Abstimmung ausgeschlossen ist. Dient der Sicherung unparteiischer Entscheidungsfindung.",
+      "definition": "Zustand, in dem ein Mitglied eines Gemeindeorgans wegen persönlicher oder wirtschaftlicher Interessen an einer Angelegenheit von der Beratung und Beschlussfassung ausgeschlossen ist. Die Befangenheit muss vom betroffenen Mitglied selbst angezeigt werden und führt zum Stimmrechtsverlust für den konkreten Tagesordnungspunkt.",
       "references": [
         {
           "category": "gemeindeordnungen",
           "key": "burgenland",
-          "paragraph": "35",
-          "label": "Par. 35 burgenland"
+          "paragraph": "24",
+          "label": "Par. 24 Bgld. GO"
         },
         {
           "category": "gemeindeordnungen",
           "key": "kaernten",
-          "paragraph": "35",
-          "label": "Par. 35 kaernten"
+          "paragraph": "28",
+          "label": "Par. 28 Ktn. AGO"
         },
         {
           "category": "gemeindeordnungen",
           "key": "niederoesterreich",
-          "paragraph": "35",
-          "label": "Par. 35 niederoesterreich"
+          "paragraph": "50",
+          "label": "Par. 50 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "56",
+          "label": "Par. 56 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "32",
+          "label": "Par. 32 Sbg. GO"
+        }
+      ]
+    },
+    {
+      "term": "Beschlussfähigkeit",
+      "slug": "beschlussfaehigkeit",
+      "definition": "Die Fähigkeit eines Kollegialorgans (Gemeinderat, Gemeindevorstand, Ausschuss), rechtsgültige Beschlüsse zu fassen. Voraussetzung ist die Anwesenheit einer Mindestanzahl von Mitgliedern, in der Regel der Hälfte aller Mitglieder (Quorum). Ohne Beschlussfähigkeit gefasste Beschlüsse sind nichtig.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "41",
+          "label": "Par. 41 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "16",
+          "label": "Par. 16 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "48",
+          "label": "Par. 48 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "47",
+          "label": "Par. 47 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "31",
+          "label": "Par. 31 Sbg. GO"
         }
       ]
     },
     {
       "term": "Kollegialorgan",
       "slug": "kollegialorgan",
-      "definition": "Ein Organ, das aus mehreren gleichberechtigten Mitgliedern besteht und Entscheidungen durch Abstimmung trifft. Der Gemeinderat ist das wichtigste Kollegialorgan der Gemeinde.",
+      "definition": "Ein aus mehreren gleichberechtigten Mitgliedern bestehendes Organ, das seine Entscheidungen durch Abstimmung trifft. In der Gemeinde sind der Gemeinderat, der Gemeindevorstand und die Ausschüsse Kollegialorgane. Im Gegensatz dazu ist der Bürgermeister ein monokratisches Organ.",
       "references": [
         {
           "category": "gemeindeordnungen",
           "key": "burgenland",
-          "paragraph": "1",
-          "label": "Par. 1 burgenland"
+          "paragraph": "19",
+          "label": "Par. 19 Bgld. GO"
         },
         {
           "category": "gemeindeordnungen",
           "key": "kaernten",
-          "paragraph": "1",
-          "label": "Par. 1 kaernten"
+          "paragraph": "27",
+          "label": "Par. 27 Ktn. AGO"
         },
         {
           "category": "gemeindeordnungen",
           "key": "niederoesterreich",
-          "paragraph": "1",
-          "label": "Par. 1 niederoesterreich"
+          "paragraph": "21",
+          "label": "Par. 21 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "18",
+          "label": "Par. 18 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "20",
+          "label": "Par. 20 Sbg. GO"
         }
       ]
     },
     {
       "term": "Dringlichkeitsantrag",
       "slug": "dringlichkeitsantrag",
-      "definition": "Ein Antrag, der ohne Einhaltung der ueblichen Fristen auf die Tagesordnung einer Sitzung gesetzt werden kann. Erfordert in der Regel eine qualifizierte Mehrheit.",
+      "definition": "Ein Antrag, der ohne vorherige Aufnahme in die Tagesordnung in einer Gemeinderatssitzung behandelt werden soll. Erfordert in der Regel einen Beschluss mit qualifizierter Mehrheit (meist Zweidrittelmehrheit der Anwesenden), um auf die Tagesordnung gesetzt zu werden.",
       "references": [
         {
           "category": "gemeindeordnungen",
-          "key": "burgenland",
-          "paragraph": "40",
-          "label": "Par. 40 burgenland"
-        },
-        {
-          "category": "gemeindeordnungen",
           "key": "kaernten",
-          "paragraph": "40",
-          "label": "Par. 40 kaernten"
+          "paragraph": "42",
+          "label": "Par. 42 Ktn. AGO"
         },
         {
           "category": "gemeindeordnungen",
           "key": "niederoesterreich",
-          "paragraph": "40",
-          "label": "Par. 40 niederoesterreich"
+          "paragraph": "46",
+          "label": "Par. 46 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "46",
+          "label": "Par. 46 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "31",
+          "label": "Par. 31 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "34",
+          "label": "Par. 34 Stmk. GO"
         }
       ]
     },
     {
-      "term": "Geschaeftsordnung",
+      "term": "Eigener Wirkungsbereich",
+      "slug": "eigener-wirkungsbereich",
+      "definition": "Der Bereich der Gemeindeverwaltung, in dem die Gemeinde weisungsfrei und eigenverantwortlich handelt. Umfasst alle Angelegenheiten, die im ausschließlichen oder überwiegenden Interesse der Gemeinde liegen. Die Aufsichtsbehörde darf hier nur die Rechtmäßigkeit, nicht die Zweckmäßigkeit prüfen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "1",
+          "label": "Par. 1 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "1",
+          "label": "Par. 1 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "1",
+          "label": "Par. 1 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "1",
+          "label": "Par. 1 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "1",
+          "label": "Par. 1 Sbg. GO"
+        }
+      ]
+    },
+    {
+      "term": "Übertragener Wirkungsbereich",
+      "slug": "uebertragener-wirkungsbereich",
+      "definition": "Aufgaben, die der Gemeinde von Bund oder Land zur Besorgung übertragen wurden (z.B. Meldewesen, Staatsbürgerschaftsevidenz). In diesen Angelegenheiten ist der Bürgermeister an Weisungen der übergeordneten Behörde gebunden und unterliegt sowohl einer Rechts- als auch Zweckmäßigkeitsaufsicht.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "1",
+          "label": "Par. 1 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "1",
+          "label": "Par. 1 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "1",
+          "label": "Par. 1 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "1",
+          "label": "Par. 1 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "1",
+          "label": "Par. 1 Sbg. GO"
+        }
+      ]
+    },
+    {
+      "term": "Geschäftsordnung",
       "slug": "geschaeftsordnung",
-      "definition": "Regelwerk fuer den inneren Betrieb eines Kollegialorgans. Legt Verfahrensregeln fuer Sitzungen, Antraege und Abstimmungen fest.",
+      "definition": "Das interne Regelwerk für die Arbeitsweise eines Kollegialorgans, insbesondere des Gemeinderats. Regelt Fragen der Sitzungsleitung, Rederecht, Antragsstellung, Abstimmungsverfahren und Protokollführung. Die Geschäftsordnung wird vom Gemeinderat selbst beschlossen, meist mit qualifizierter Mehrheit.",
       "references": [
         {
           "category": "gemeindeordnungen",
           "key": "burgenland",
-          "paragraph": "30",
-          "label": "Par. 30 burgenland"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "kaernten",
-          "paragraph": "30",
-          "label": "Par. 30 kaernten"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "niederoesterreich",
-          "paragraph": "30",
-          "label": "Par. 30 niederoesterreich"
-        }
-      ]
-    },
-    {
-      "term": "Beschlussfaehigkeit",
-      "slug": "beschlussfaehigkeit",
-      "definition": "Die Faehigkeit eines Kollegialorgans, gueltige Beschluesse zu fassen. Setzt in der Regel die Anwesenheit von mindestens der Haelfte der Mitglieder voraus (Quorum).",
-      "references": [
-        {
-          "category": "gemeindeordnungen",
-          "key": "burgenland",
-          "paragraph": "32",
-          "label": "Par. 32 burgenland"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "kaernten",
-          "paragraph": "32",
-          "label": "Par. 32 kaernten"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "niederoesterreich",
-          "paragraph": "32",
-          "label": "Par. 32 niederoesterreich"
-        }
-      ]
-    },
-    {
-      "term": "Zweidrittelmehrheit",
-      "slug": "zweidrittelmehrheit",
-      "definition": "Qualifizierte Mehrheit, bei der mindestens zwei Drittel der abgegebenen Stimmen oder der anwesenden Mitglieder fuer einen Beschluss stimmen muessen. Erforderlich bei besonders wichtigen Entscheidungen.",
-      "references": [
-        {
-          "category": "gemeindeordnungen",
-          "key": "burgenland",
-          "paragraph": "34",
-          "label": "Par. 34 burgenland"
+          "paragraph": "46",
+          "label": "Par. 46 Bgld. GO"
         },
         {
           "category": "gemeindeordnungen",
           "key": "kaernten",
           "paragraph": "34",
-          "label": "Par. 34 kaernten"
+          "label": "Par. 34 Ktn. AGO"
         },
         {
           "category": "gemeindeordnungen",
-          "key": "niederoesterreich",
-          "paragraph": "34",
-          "label": "Par. 34 niederoesterreich"
-        }
-      ]
-    },
-    {
-      "term": "Verordnung",
-      "slug": "verordnung",
-      "definition": "Generelle Norm, die von einem Verwaltungsorgan (z.B. Gemeinderat) erlassen wird und fuer alle Gemeindebuerger verbindlich ist. Muss ordnungsgemaess kundgemacht werden.",
-      "references": [
-        {
-          "category": "gemeindeordnungen",
-          "key": "burgenland",
-          "paragraph": "60",
-          "label": "Par. 60 burgenland"
+          "key": "oberoesterreich",
+          "paragraph": "18",
+          "label": "Par. 18 OÖ. GO"
         },
         {
           "category": "gemeindeordnungen",
-          "key": "kaernten",
-          "paragraph": "60",
-          "label": "Par. 60 kaernten"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "niederoesterreich",
-          "paragraph": "60",
-          "label": "Par. 60 niederoesterreich"
-        }
-      ]
-    },
-    {
-      "term": "Kundmachung",
-      "slug": "kundmachung",
-      "definition": "Oeffentliche Bekanntmachung von Verordnungen, Beschluessen oder anderen amtlichen Mitteilungen. Voraussetzung fuer die Rechtswirksamkeit von Verordnungen.",
-      "references": [
-        {
-          "category": "gemeindeordnungen",
-          "key": "burgenland",
-          "paragraph": "62",
-          "label": "Par. 62 burgenland"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "kaernten",
-          "paragraph": "62",
-          "label": "Par. 62 kaernten"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "niederoesterreich",
-          "paragraph": "62",
-          "label": "Par. 62 niederoesterreich"
-        }
-      ]
-    },
-    {
-      "term": "Gemeindevorstand",
-      "slug": "gemeindevorstand",
-      "definition": "Kollegialorgan der Gemeinde, bestehend aus Buergermeister, Vize-Buergermeister und weiteren Mitgliedern. In Staedte mit eigenem Statut als Stadtsenat oder Stadtrat bezeichnet.",
-      "references": [
-        {
-          "category": "gemeindeordnungen",
-          "key": "burgenland",
+          "key": "salzburg",
           "paragraph": "20",
-          "label": "Par. 20 burgenland"
+          "label": "Par. 20 Sbg. GO"
         },
         {
           "category": "gemeindeordnungen",
-          "key": "kaernten",
-          "paragraph": "20",
-          "label": "Par. 20 kaernten"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "niederoesterreich",
-          "paragraph": "20",
-          "label": "Par. 20 niederoesterreich"
-        }
-      ]
-    },
-    {
-      "term": "Ortsvorsteher",
-      "slug": "ortsvorsteher",
-      "definition": "Vertreter einer Katastralgemeinde oder eines Ortsteils. Wird vom Gemeinderat bestellt und vertritt die Interessen des Ortsteils gegenueber den Gemeindeorganen.",
-      "references": [
-        {
-          "category": "gemeindeordnungen",
-          "key": "burgenland",
-          "paragraph": "70",
-          "label": "Par. 70 burgenland"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "kaernten",
-          "paragraph": "70",
-          "label": "Par. 70 kaernten"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "niederoesterreich",
-          "paragraph": "70",
-          "label": "Par. 70 niederoesterreich"
-        }
-      ]
-    },
-    {
-      "term": "Voranschlag",
-      "slug": "voranschlag",
-      "definition": "Der Haushaltsplan der Gemeinde fuer das kommende Finanzjahr. Enthaelt die geplanten Einnahmen und Ausgaben und muss vom Gemeinderat beschlossen werden.",
-      "references": [
-        {
-          "category": "gemeindeordnungen",
-          "key": "burgenland",
-          "paragraph": "80",
-          "label": "Par. 80 burgenland"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "kaernten",
-          "paragraph": "80",
-          "label": "Par. 80 kaernten"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "niederoesterreich",
-          "paragraph": "80",
-          "label": "Par. 80 niederoesterreich"
-        }
-      ]
-    },
-    {
-      "term": "Rechnungsabschluss",
-      "slug": "rechnungsabschluss",
-      "definition": "Die jaehrliche Abrechnung ueber die tatsaechlichen Einnahmen und Ausgaben der Gemeinde. Muss vom Gemeinderat geprueft und genehmigt werden.",
-      "references": [
-        {
-          "category": "gemeindeordnungen",
-          "key": "burgenland",
-          "paragraph": "82",
-          "label": "Par. 82 burgenland"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "kaernten",
-          "paragraph": "82",
-          "label": "Par. 82 kaernten"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "niederoesterreich",
-          "paragraph": "82",
-          "label": "Par. 82 niederoesterreich"
-        }
-      ]
-    },
-    {
-      "term": "Gemeindeaufsicht",
-      "slug": "gemeindeaufsicht",
-      "definition": "Die staatliche Kontrolle ueber die Gemeindeverwaltung durch die Landesregierung. Umfasst Rechtsaufsicht (Gesetzmaessigkeit) und in bestimmten Faellen Zweckmassigkeitsaufsicht.",
-      "references": [
-        {
-          "category": "gemeindeordnungen",
-          "key": "burgenland",
-          "paragraph": "90",
-          "label": "Par. 90 burgenland"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "kaernten",
-          "paragraph": "90",
-          "label": "Par. 90 kaernten"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "niederoesterreich",
-          "paragraph": "90",
-          "label": "Par. 90 niederoesterreich"
-        }
-      ]
-    },
-    {
-      "term": "Statutarstadt",
-      "slug": "statutarstadt",
-      "definition": "Eine Stadt mit eigenem Statut, die neben den Aufgaben der Gemeindeverwaltung auch jene der Bezirksverwaltung wahrnimmt. Das Stadtrecht tritt an die Stelle der Gemeindeordnung.",
-      "references": [
-        {
-          "category": "gemeindeordnungen",
-          "key": "burgenland",
-          "paragraph": "1",
-          "label": "Par. 1 burgenland"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "kaernten",
-          "paragraph": "1",
-          "label": "Par. 1 kaernten"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "niederoesterreich",
-          "paragraph": "1",
-          "label": "Par. 1 niederoesterreich"
-        }
-      ]
-    },
-    {
-      "term": "Gemeindeverband",
-      "slug": "gemeindeverband",
-      "definition": "Zusammenschluss mehrerer Gemeinden zur gemeinsamen Besorgung bestimmter Aufgaben (z.B. Abfallwirtschaft, Wasserversorgung). Wird durch Gesetz oder Vereinbarung gegruendet.",
-      "references": [
-        {
-          "category": "gemeindeordnungen",
-          "key": "burgenland",
-          "paragraph": "1",
-          "label": "Par. 1 burgenland"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "kaernten",
-          "paragraph": "100",
-          "label": "Par. 100 kaernten"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "niederoesterreich",
-          "paragraph": "100",
-          "label": "Par. 100 niederoesterreich"
-        }
-      ]
-    },
-    {
-      "term": "Ausschuss",
-      "slug": "ausschuss",
-      "definition": "Ein vom Gemeinderat eingesetztes Gremium zur Vorberatung bestimmter Angelegenheiten. Die Zusammensetzung spiegelt in der Regel die Staerke der Fraktionen wider.",
-      "references": [
-        {
-          "category": "gemeindeordnungen",
-          "key": "burgenland",
-          "paragraph": "25",
-          "label": "Par. 25 burgenland"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "kaernten",
-          "paragraph": "25",
-          "label": "Par. 25 kaernten"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "niederoesterreich",
-          "paragraph": "25",
-          "label": "Par. 25 niederoesterreich"
-        }
-      ]
-    },
-    {
-      "term": "Mandatar",
-      "slug": "mandatar",
-      "definition": "Gewaehltes Mitglied des Gemeinderats. Mandatare ueben ihr Amt in der Regel ehrenamtlich aus und sind an keinen Auftrag gebunden (freies Mandat).",
-      "references": [
-        {
-          "category": "gemeindeordnungen",
-          "key": "burgenland",
-          "paragraph": "10",
-          "label": "Par. 10 burgenland"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "kaernten",
-          "paragraph": "10",
-          "label": "Par. 10 kaernten"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "niederoesterreich",
-          "paragraph": "10",
-          "label": "Par. 10 niederoesterreich"
-        }
-      ]
-    },
-    {
-      "term": "Instanzenzug",
-      "slug": "instanzenzug",
-      "definition": "Der vorgesehene Rechtsweg zur Anfechtung von Bescheiden. Gegen Bescheide des Buergermeisters kann in der Regel Berufung an den Gemeinderat eingelegt werden.",
-      "references": [
-        {
-          "category": "gemeindeordnungen",
-          "key": "burgenland",
-          "paragraph": "50",
-          "label": "Par. 50 burgenland"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "kaernten",
-          "paragraph": "50",
-          "label": "Par. 50 kaernten"
-        },
-        {
-          "category": "gemeindeordnungen",
-          "key": "niederoesterreich",
-          "paragraph": "50",
-          "label": "Par. 50 niederoesterreich"
+          "key": "steiermark",
+          "paragraph": "62",
+          "label": "Par. 62 Stmk. GO"
         }
       ]
     },
     {
       "term": "Verhandlungsschrift",
       "slug": "verhandlungsschrift",
-      "definition": "Das offizielle Protokoll einer Gemeinderatssitzung. Muss die gefassten Beschluesse, wesentlichen Beratungsinhalte und Abstimmungsergebnisse enthalten.",
+      "definition": "Das offizielle Protokoll einer Gemeinderatssitzung (auch „Niederschrift\" oder „Sitzungsprotokoll\"). Muss mindestens die gefassten Beschlüsse, die wesentlichen Beratungsergebnisse und die Abstimmungsergebnisse enthalten. Die Verhandlungsschrift dient als Beweismittel für die gefassten Beschlüsse.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "36",
+          "label": "Par. 36 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "53",
+          "label": "Par. 53 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "54",
+          "label": "Par. 54 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "26",
+          "label": "Par. 26 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "25",
+          "label": "Par. 25 Stmk. GO"
+        }
+      ]
+    },
+    {
+      "term": "Voranschlag",
+      "slug": "voranschlag",
+      "definition": "Der Haushaltsplan der Gemeinde für das kommende Finanzjahr. Enthält eine Aufstellung aller voraussichtlichen Einnahmen und Ausgaben und bildet die Grundlage für die gesamte Finanzgebarung. Der Voranschlag muss vom Gemeinderat beschlossen und von der Aufsichtsbehörde genehmigt werden.",
       "references": [
         {
           "category": "gemeindeordnungen",
           "key": "burgenland",
-          "paragraph": "38",
-          "label": "Par. 38 burgenland"
+          "paragraph": "29",
+          "label": "Par. 29 Bgld. GO"
         },
         {
           "category": "gemeindeordnungen",
           "key": "kaernten",
-          "paragraph": "38",
-          "label": "Par. 38 kaernten"
+          "paragraph": "104",
+          "label": "Par. 104 Ktn. AGO"
         },
         {
           "category": "gemeindeordnungen",
           "key": "niederoesterreich",
           "paragraph": "38",
-          "label": "Par. 38 niederoesterreich"
+          "label": "Par. 38 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "60",
+          "label": "Par. 60 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "33",
+          "label": "Par. 33 Sbg. GO"
+        }
+      ]
+    },
+    {
+      "term": "Rechnungsabschluss",
+      "slug": "rechnungsabschluss",
+      "definition": "Die jährliche Abrechnung über die tatsächlichen Einnahmen und Ausgaben der Gemeinde im abgelaufenen Haushaltsjahr. Wird vom Prüfungsausschuss geprüft und muss vom Gemeinderat genehmigt werden. Der Rechnungsabschluss dient der demokratischen Kontrolle der Gemeindefinanzen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "67",
+          "label": "Par. 67 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "6b",
+          "label": "Par. 6b Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "72",
+          "label": "Par. 72 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "73",
+          "label": "Par. 73 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "55",
+          "label": "Par. 55 Sbg. GO"
+        }
+      ]
+    },
+    {
+      "term": "Gemeindeaufsicht",
+      "slug": "gemeindeaufsicht",
+      "definition": "Die staatliche Kontrolle über die Gemeindeverwaltung durch die zuständige Landesbehörde (Bezirkshauptmannschaft, Landesregierung). Umfasst die Rechtsaufsicht im eigenen Wirkungsbereich und zusätzlich die Fachaufsicht im übertragenen Wirkungsbereich. Dient der Wahrung der Gesetzmäßigkeit der Verwaltung.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "43",
+          "label": "Par. 43 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "15",
+          "label": "Par. 15 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "52",
+          "label": "Par. 52 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "37",
+          "label": "Par. 37 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "32",
+          "label": "Par. 32 Sbg. GO"
+        }
+      ]
+    },
+    {
+      "term": "Regierungskommissär",
+      "slug": "regierungskommissaer",
+      "definition": "Eine von der Landesregierung eingesetzte Person, die die Verwaltung einer Gemeinde vorübergehend übernimmt, wenn der Gemeinderat aufgelöst wurde oder handlungsunfähig ist. Der Regierungskommissär übt alle Befugnisse der Gemeindeorgane aus, bis ein neuer Gemeinderat gewählt ist.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "43",
+          "label": "Par. 43 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "15",
+          "label": "Par. 15 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "52",
+          "label": "Par. 52 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "37",
+          "label": "Par. 37 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "32",
+          "label": "Par. 32 Sbg. GO"
+        }
+      ]
+    },
+    {
+      "term": "Kundmachung",
+      "slug": "kundmachung",
+      "definition": "Die öffentliche Bekanntmachung von Verordnungen, Beschlüssen und amtlichen Mitteilungen der Gemeinde. Erfolgt durch Anschlag an der Amtstafel (Gemeindetafel) und zunehmend auch über die Gemeinde-Website. Die ordnungsgemäße Kundmachung ist Gültigkeitsvoraussetzung für Verordnungen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "2",
+          "label": "Par. 2 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "3",
+          "label": "Par. 3 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "9",
+          "label": "Par. 9 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "2",
+          "label": "Par. 2 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "2",
+          "label": "Par. 2 Sbg. GO"
+        }
+      ]
+    },
+    {
+      "term": "Verordnung",
+      "slug": "verordnung",
+      "definition": "Eine generelle Rechtsnorm, die vom Gemeinderat oder einem anderen zuständigen Gemeindeorgan erlassen wird und für alle Personen im Gemeindegebiet verbindlich ist. Typische Gemeindeverordnungen betreffen die Benützung öffentlicher Anlagen, die Hundehaltung oder das Abstellen von Fahrzeugen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "2",
+          "label": "Par. 2 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "3",
+          "label": "Par. 3 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "9",
+          "label": "Par. 9 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "2",
+          "label": "Par. 2 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "2",
+          "label": "Par. 2 Sbg. GO"
+        }
+      ]
+    },
+    {
+      "term": "Statutarstadt",
+      "slug": "statutarstadt",
+      "definition": "Eine Stadt mit eigenem Statut (Stadtrecht), die neben den Gemeindeaufgaben auch die Aufgaben der Bezirksverwaltung wahrnimmt. Der Bürgermeister fungiert als Bezirksverwaltungsbehörde, der Magistrat als Verwaltungsapparat. In Österreich gibt es 15 Statutarstädte.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "3",
+          "label": "Par. 3 Wr. StV"
+        },
+        {
+          "category": "stadtrechte",
+          "key": "eisenstadt",
+          "paragraph": "2",
+          "label": "Par. 2 Eisenstädter StR"
+        },
+        {
+          "category": "stadtrechte",
+          "key": "graz",
+          "paragraph": "112",
+          "label": "Par. 112 Grazer StR"
+        },
+        {
+          "category": "stadtrechte",
+          "key": "innsbruck",
+          "paragraph": "37",
+          "label": "Par. 37 Innsbrucker StR"
+        },
+        {
+          "category": "stadtrechte",
+          "key": "krems",
+          "paragraph": "1",
+          "label": "Par. 1 Kremser StR"
+        }
+      ]
+    },
+    {
+      "term": "Magistrat",
+      "slug": "magistrat",
+      "definition": "Der Verwaltungsapparat einer Statutarstadt, geleitet vom Magistratsdirektor. Der Magistrat besorgt die laufende Verwaltung und bereitet die Entscheidungen der politischen Organe (Gemeinderat, Stadtsenat, Bürgermeister) vor. In Gemeinden ohne eigenes Statut heißt die entsprechende Einrichtung „Gemeindeamt\".",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "47",
+          "label": "Par. 47 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "14",
+          "label": "Par. 14 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "104",
+          "label": "Par. 104 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "22",
+          "label": "Par. 22 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "53",
+          "label": "Par. 53 Sbg. GO"
+        }
+      ]
+    },
+    {
+      "term": "Gemeindeverband",
+      "slug": "gemeindeverband",
+      "definition": "Ein Zusammenschluss mehrerer Gemeinden zur gemeinsamen Erfüllung bestimmter Aufgaben wie Abfallwirtschaft, Wasserversorgung oder Sozialhilfe. Hat eigene Organe und ein eigenes Budget. Die Gründung bedarf der Genehmigung der Aufsichtsbehörde.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "20",
+          "label": "Par. 20 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "83",
+          "label": "Par. 83 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "20",
+          "label": "Par. 20 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "7",
+          "label": "Par. 7 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "38",
+          "label": "Par. 38 Stmk. GO"
+        }
+      ]
+    },
+    {
+      "term": "Ortsvorsteher",
+      "slug": "ortsvorsteher",
+      "definition": "Der gewählte oder bestellte Vertreter einer Katastralgemeinde oder Ortschaft innerhalb einer Gemeinde. Vertritt die Interessen des Ortsteils gegenüber den Gemeindeorganen und wird über Angelegenheiten informiert, die seinen Ortsteil betreffen. Nicht in allen Bundesländern vorgesehen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "1",
+          "label": "Par. 1 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "3",
+          "label": "Par. 3 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "2",
+          "label": "Par. 2 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "13",
+          "label": "Par. 13 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "1",
+          "label": "Par. 1 Stmk. GO"
         }
       ]
     },
     {
       "term": "Selbstverwaltung",
       "slug": "selbstverwaltung",
-      "definition": "Das verfassungsrechtlich garantierte Recht der Gemeinde, Angelegenheiten des eigenen Wirkungsbereichs weisungsfrei zu besorgen. Umfasst Verordnungsrecht, Personalhoheit und Finanzhoheit.",
+      "definition": "Das in Art. 116 Abs. 2 B-VG verfassungsrechtlich garantierte Recht der Gemeinde, alle Angelegenheiten des eigenen Wirkungsbereichs im Rahmen der Gesetze frei von Weisungen zu besorgen. Umfasst die Verordnungsgewalt, die Personalhoheit, die Finanzhoheit und das Recht auf Selbstorganisation.",
       "references": [
         {
           "category": "gemeindeordnungen",
           "key": "burgenland",
           "paragraph": "1",
-          "label": "Par. 1 burgenland"
+          "label": "Par. 1 Bgld. GO"
         },
         {
           "category": "gemeindeordnungen",
           "key": "kaernten",
           "paragraph": "1",
-          "label": "Par. 1 kaernten"
+          "label": "Par. 1 Ktn. AGO"
         },
         {
           "category": "gemeindeordnungen",
           "key": "niederoesterreich",
           "paragraph": "1",
-          "label": "Par. 1 niederoesterreich"
+          "label": "Par. 1 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "1",
+          "label": "Par. 1 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "1",
+          "label": "Par. 1 Sbg. GO"
+        }
+      ]
+    },
+    {
+      "term": "Mandatar",
+      "slug": "mandatar",
+      "definition": "Ein gewähltes Mitglied des Gemeinderats. Mandatarinnen und Mandatare üben ihr Amt in kleineren Gemeinden ehrenamtlich aus und sind an keinen Auftrag gebunden (freies Mandat). Sie genießen für Äußerungen in Sitzungen in der Regel Immunität.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "15",
+          "label": "Par. 15 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "2",
+          "label": "Par. 2 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "13",
+          "label": "Par. 13 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "18",
+          "label": "Par. 18 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "11",
+          "label": "Par. 11 Stmk. GO"
+        }
+      ]
+    },
+    {
+      "term": "Instanzenzug",
+      "slug": "instanzenzug",
+      "definition": "Der gesetzlich vorgesehene Rechtsweg zur Anfechtung von Bescheiden. Im eigenen Wirkungsbereich geht die Berufung gegen Bescheide des Bürgermeisters an den Gemeinderat oder Gemeindevorstand. Im übertragenen Wirkungsbereich ist die übergeordnete staatliche Behörde Berufungsinstanz.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "43",
+          "label": "Par. 43 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "15",
+          "label": "Par. 15 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "52",
+          "label": "Par. 52 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "37",
+          "label": "Par. 37 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "32",
+          "label": "Par. 32 Sbg. GO"
+        }
+      ]
+    },
+    {
+      "term": "Proporz",
+      "slug": "proporz",
+      "definition": "Das Prinzip der verhältnismäßigen Vertretung der Fraktionen in kollegialen Gemeindeorganen (Gemeindevorstand, Ausschüsse). Die Sitze werden entsprechend der Mandatsstärke der Parteien im Gemeinderat vergeben. In einigen Bundesländern gilt dies auch für den Gemeindevorstand.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "14",
+          "label": "Par. 14 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "47",
+          "label": "Par. 47 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "18",
+          "label": "Par. 18 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "17",
+          "label": "Par. 17 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "14",
+          "label": "Par. 14 Stmk. GO"
+        }
+      ]
+    },
+    {
+      "term": "Gemeindebürger",
+      "slug": "gemeindebuerger",
+      "definition": "Personen mit österreichischer Staatsbürgerschaft, die ihren Hauptwohnsitz in einer Gemeinde haben. Gemeindebürgerinnen und -bürger haben das aktive und passive Wahlrecht bei Gemeinderatswahlen sowie bestimmte Mitwirkungsrechte (Einsichtnahme, Bürgerinitiativen). EU-Bürger sind bei Gemeinderatswahlen wahlberechtigt.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "13",
+          "label": "Par. 13 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "23",
+          "label": "Par. 23 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "16",
+          "label": "Par. 16 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "21",
+          "label": "Par. 21 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "13",
+          "label": "Par. 13 Stmk. GO"
+        }
+      ]
+    },
+    {
+      "term": "Zweidrittelmehrheit",
+      "slug": "zweidrittelmehrheit",
+      "definition": "Eine qualifizierte Mehrheit, bei der mindestens zwei Drittel der abgegebenen Stimmen oder der anwesenden Mitglieder für einen Beschluss stimmen müssen. Erforderlich bei besonders wichtigen Entscheidungen wie Geschäftsordnungsänderungen, bestimmten Vermögensverfügungen oder der Abberufung von Organwaltern.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "21",
+          "label": "Par. 21 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "44",
+          "label": "Par. 44 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "9",
+          "label": "Par. 9 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "9",
+          "label": "Par. 9 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "14",
+          "label": "Par. 14 Sbg. GO"
         }
       ]
     }

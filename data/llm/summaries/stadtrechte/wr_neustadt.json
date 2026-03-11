@@ -1,39 +1,42 @@
 {
   "meta": {
-    "generatedAt": "2026-03-11T17:50:59.486Z",
+    "generatedAt": "2026-03-11T19:08:50.581Z",
     "lawKey": "wr_neustadt",
-    "category": "stadtrechte",
-    "placeholder": true
+    "category": "stadtrechte"
   },
   "paragraphs": {
     "1": {
-      "summary": "Dieser Paragraph regelt rechtliche stellung der stadt. (1)Die Stadtgemeinde Wiener Neustadt ist eine Gebietskörperschaft mit dem Recht auf Selbstverwaltung...",
+      "summary": "Es wird bestimmt, rechtliche Stellung der Stadt. Die Stadtgemeinde Wiener Neustadt ist eine Gebietskörperschaft mit dem Recht auf Selbstverwaltung.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Wirkungsbereich",
+        "Statutarstadt"
       ]
     },
     "2": {
-      "summary": "Dieser Paragraph regelt stadtgebiet. Das Stadtgebiet wird durch das Gesetz über die Gliederung des Landes Niederösterreich in Gemeinden, ...",
+      "summary": "Vorgesehen ist stadtgebiet. Das Stadtgebiet wird durch das Gesetz über die Gliederung des Landes Niederösterreich in Gemeinden, LGBl.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Stadtgebiet"
       ]
     },
     "3": {
-      "summary": "Dieser Paragraph regelt wappen, farben und siegel der stadt. (1)Das Wappen der Stadt Wiener Neustadt ist ein viergeteilter Schild, der in seinem ersten und viert...",
+      "summary": "Im Mittelpunkt steht wappen, Farben und Siegel der Stadt. ",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Gemeindesymbole",
+        "Gemeindeverwaltung"
       ]
     },
     "4": {
-      "summary": "Dieser Paragraph regelt organe und kontrolle. (1)Für die Organe der Stadt gilt:1.Der Gemeinderat besteht aus 40 Mitgliedern.2.Der Stadtsenat beste...",
+      "summary": "Definiert werden organe und Kontrolle. Für die Organe der Stadt gilt:1.Der Gemeinderat besteht aus 40 Mitgliedern.2.Der Stadtsenat besteht aus dem Ersten und dem Zweiten Vizebürgermeister sowie 8 Stadträten.",
       "topics": [
-        "Aufsicht und Kontrolle"
+        "Vizebürgermeister",
+        "Bürgermeister",
+        "Gemeindevorstand"
       ]
     },
     "5": {
-      "summary": "Dieser Paragraph regelt kontrollamt. Zur Prüfung der Gebarung und Rechnung der Stadt ist ein Kontrollamt einzurichten....",
+      "summary": "Die Bestimmung legt fest, kontrollamt. Zur Prüfung der Gebarung und Rechnung der Stadt ist ein Kontrollamt einzurichten.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Haushalt und Finanzen"
       ]
     }
   }

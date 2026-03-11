@@ -1,39 +1,42 @@
 {
   "meta": {
-    "generatedAt": "2026-03-11T17:50:59.007Z",
+    "generatedAt": "2026-03-11T19:08:50.561Z",
     "lawKey": "st_poelten",
-    "category": "stadtrechte",
-    "placeholder": true
+    "category": "stadtrechte"
   },
   "paragraphs": {
     "1": {
-      "summary": "Dieser Paragraph regelt rechtliche stellung der stadt. (1)Die Landeshauptstadt St. Pölten ist eine Gebietskörperschaft mit dem Recht auf Selbstverwaltung. ...",
+      "summary": "Hier wird festgelegt, rechtliche Stellung der Stadt. Die Landeshauptstadt St.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Wirkungsbereich",
+        "Statutarstadt"
       ]
     },
     "2": {
-      "summary": "Dieser Paragraph regelt stadtgebiet. Das Stadtgebiet wird durch das Gesetz über die Gliederung des Landes Niederösterreich in Gemeinden, ...",
+      "summary": "Gegenstand ist stadtgebiet. Das Stadtgebiet wird durch das Gesetz über die Gliederung des Landes Niederösterreich in Gemeinden, LGBl.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Stadtgebiet"
       ]
     },
     "3": {
-      "summary": "Dieser Paragraph regelt wappen, farben und siegel der stadt. (1)Das Wappen der Landeshauptstadt St. Pölten besteht aus einem der Länge nach in zwei Hälften getei...",
+      "summary": "Die Regelung umfasst verschiedene Aspekte rund um wappen, Farben und Siegel der Stadt in 4 Absätzen. Das Wappen der Landeshauptstadt St.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Gemeindesymbole",
+        "Gemeindeverwaltung"
       ]
     },
     "4": {
-      "summary": "Dieser Paragraph regelt organe und kontrolle. (1)Für die Organe der Stadt gilt:1.Der Gemeinderat besteht aus 42 Mitgliedern.2.Der Stadtsenat beste...",
+      "summary": "Geregelt wird organe und Kontrolle. Für die Organe der Stadt gilt:1.Der Gemeinderat besteht aus 42 Mitgliedern.2.Der Stadtsenat besteht aus dem Ersten und dem Zweiten Vizebürgermeister sowie 11 Stadträten.",
       "topics": [
-        "Aufsicht und Kontrolle"
+        "Vizebürgermeister",
+        "Bürgermeister",
+        "Gemeindevorstand"
       ]
     },
     "5": {
-      "summary": "Dieser Paragraph regelt kontrollamt. Zur Prüfung der Gebarung und Rechnung der Stadt ist ein Kontrollamt einzurichten....",
+      "summary": "Inhaltlich geht es um kontrollamt. Zur Prüfung der Gebarung und Rechnung der Stadt ist ein Kontrollamt einzurichten.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Haushalt und Finanzen"
       ]
     }
   }

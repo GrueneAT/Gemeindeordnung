@@ -317,7 +317,7 @@ describe('generate-pages', () => {
     const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
 
     expect(html).toContain('id="scroll-to-top"');
-    expect(html).toContain('aria-label="Zurueck nach oben"');
+    expect(html).toContain('aria-label="Zurück nach oben"');
   });
 
   it('Test 17P2: copy-link buttons have data-copy-link matching paragraph nummer', async () => {
