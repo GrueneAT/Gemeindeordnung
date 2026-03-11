@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 04-03-PLAN.md
-last_updated: "2026-03-11T09:27:33.000Z"
-last_activity: 2026-03-11 -- Completed 04-03-PLAN.md
+stopped_at: Completed 04-04-PLAN.md
+last_updated: "2026-03-11T09:37:23.507Z"
+last_activity: 2026-03-11 -- Completed 04-04-PLAN.md
 progress:
   total_phases: 6
-  completed_phases: 4
+  completed_phases: 5
   total_plans: 17
-  completed_plans: 14
-  percent: 82
+  completed_plans: 15
+  percent: 88
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-10)
 
 **Core value:** GemeinderaetInnen koennen in Sekunden jede Bestimmung ueber alle 9 Gemeindeordnungen finden
-**Current focus:** Phase 4 - LLM Enrichment
+**Current focus:** Phase 4 - LLM Enrichment (complete)
 
 ## Current Position
 
 Phase: 4 of 6 (LLM Enrichment)
-Plan: 3 of 4 in current phase (04-03 complete)
+Plan: 4 of 4 in current phase (04-04 complete -- phase done)
 Status: executing
-Last activity: 2026-03-11 -- Completed 04-03-PLAN.md
+Last activity: 2026-03-11 -- Completed 04-04-PLAN.md
 
-Progress: [████████░░] 82%
+Progress: [█████████░] 88%
 
 ## Performance Metrics
 
@@ -61,6 +61,7 @@ Progress: [████████░░] 82%
 | Phase 04 P01 | 6min | 2 tasks | 28 files |
 | Phase 04 P02 | 8min | 2 tasks | 26 files |
 | Phase 04 P03 | 8min | 2 tasks | 40 files |
+| Phase 04 P04 | 5min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -117,6 +118,7 @@ Recent decisions affecting current work:
 - [Phase 04]: generateHeader pathPrefix param for flexible relative path handling across page hierarchy
 - [Phase 04]: Glossary tooltips injected into body text only, not into summary details blocks
 - [Phase 04]: FAQ/Glossar nav links hidden on mobile (sm breakpoint) to avoid header crowding
+- [Phase 04]: [04-04]: 12 targeted E2E tests across 4 files covering all 7 LLM requirements with screenshot baselines
 
 ### Pending Todos
 
@@ -137,6 +139,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-11T09:27:33.000Z
-Stopped at: Completed 04-03-PLAN.md
+Last session: 2026-03-11T09:37:21.725Z
+Stopped at: Completed 04-04-PLAN.md
 Resume file: None
