@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: completed
-stopped_at: Phase 2.1 context gathered
-last_updated: "2026-03-11T05:12:53.020Z"
-last_activity: 2026-03-11 -- Plan 02-02 complete
+status: in-progress
+stopped_at: Completed 02.1-01-PLAN.md
+last_updated: "2026-03-11T05:43:34.000Z"
+last_activity: 2026-03-11 -- Plan 02.1-01 complete
 progress:
   total_phases: 5
   completed_phases: 2
-  total_plans: 6
-  completed_plans: 6
-  percent: 100
+  total_plans: 8
+  completed_plans: 7
+  percent: 88
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-10)
 
 **Core value:** GemeinderaetInnen koennen in Sekunden jede Bestimmung ueber alle 9 Gemeindeordnungen finden
-**Current focus:** Phase 2 - Browsing & Branding
+**Current focus:** Phase 2.1 - Frontend Testing Infrastructure
 
 ## Current Position
 
-Phase: 2 of 4 (Browsing & Branding)
-Plan: 2 of 2 in current phase
-Status: Phase 02 Complete
-Last activity: 2026-03-11 -- Plan 02-02 complete
+Phase: 2.1 of 4 (Frontend Testing Infrastructure)
+Plan: 1 of 2 in current phase
+Status: Plan 02.1-01 Complete
+Last activity: 2026-03-11 -- Plan 02.1-01 complete
 
-Progress: [██████████] 100%
+Progress: [████████░░] 88%
 
 ## Performance Metrics
 
@@ -53,6 +53,7 @@ Progress: [██████████] 100%
 *Updated after each plan completion*
 | Phase 02 P02 | 2min | 3 tasks | 4 files |
 | Phase 02 P03 | 1min | 1 tasks | 2 files |
+| Phase 02.1 P01 | 10min | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -83,6 +84,9 @@ Recent decisions affecting current work:
 - [Phase 02]: Dropdown navigation uses ../ prefix for relative paths from law subdir pages
 - [Phase 02]: Anchor highlight uses JS class toggle rather than CSS :target for better animation control
 - [Phase 02]: Use CSS .copy-link-btn class instead of inline Tailwind opacity for touch/desktop visibility differentiation
+- [02.1-01]: baseURL includes /src/ path because vite build outputs to dist/src/
+- [02.1-01]: Use ./relative goto paths in Playwright so URL resolution works with baseURL
+- [02.1-01]: NODE_ENV=development required for npm install when NODE_ENV=production is set
 
 ### Pending Todos
 
@@ -96,6 +100,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-11T05:12:53.015Z
-Stopped at: Phase 2.1 context gathered
-Resume file: .planning/phases/02.1-frontend-testing-infrastructure/02.1-CONTEXT.md
+Last session: 2026-03-11T05:43:34.000Z
+Stopped at: Completed 02.1-01-PLAN.md
+Resume file: .planning/phases/02.1-frontend-testing-infrastructure/02.1-01-SUMMARY.md
