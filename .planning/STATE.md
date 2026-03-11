@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 04-02-PLAN.md
-last_updated: "2026-03-11T09:18:20.300Z"
-last_activity: 2026-03-11 -- Completed 04-02-PLAN.md
+stopped_at: Completed 04-03-PLAN.md
+last_updated: "2026-03-11T09:27:33.000Z"
+last_activity: 2026-03-11 -- Completed 04-03-PLAN.md
 progress:
   total_phases: 6
   completed_phases: 4
   total_plans: 17
-  completed_plans: 13
-  percent: 71
+  completed_plans: 14
+  percent: 82
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-10)
 ## Current Position
 
 Phase: 4 of 6 (LLM Enrichment)
-Plan: 2 of 4 in current phase (04-02 complete)
+Plan: 3 of 4 in current phase (04-03 complete)
 Status: executing
-Last activity: 2026-03-11 -- Completed 04-02-PLAN.md
+Last activity: 2026-03-11 -- Completed 04-03-PLAN.md
 
-Progress: [███████░░░] 71%
+Progress: [████████░░] 82%
 
 ## Performance Metrics
 
@@ -60,6 +60,7 @@ Progress: [███████░░░] 71%
 | Phase 03 P03 | 9min | 2 tasks | 6 files |
 | Phase 04 P01 | 6min | 2 tasks | 28 files |
 | Phase 04 P02 | 8min | 2 tasks | 26 files |
+| Phase 04 P03 | 8min | 2 tasks | 40 files |
 
 ## Accumulated Context
 
@@ -113,6 +114,9 @@ Recent decisions affecting current work:
 - [Phase 04]: vitest test config added to vite.config.js (root was src/, tests in tests/)
 - [Phase 04]: LLM data loaded per-law in generateLawPage() with rootDir parameter and graceful JSON fallback
 - [Phase 04]: Topic chips sorted alphabetically with German locale, section visibility toggles when all articles hidden
+- [Phase 04]: generateHeader pathPrefix param for flexible relative path handling across page hierarchy
+- [Phase 04]: Glossary tooltips injected into body text only, not into summary details blocks
+- [Phase 04]: FAQ/Glossar nav links hidden on mobile (sm breakpoint) to avoid header crowding
 
 ### Pending Todos
 
@@ -133,6 +137,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-11T09:18:20.296Z
-Stopped at: Completed 04-02-PLAN.md
+Last session: 2026-03-11T09:27:33.000Z
+Stopped at: Completed 04-03-PLAN.md
 Resume file: None
