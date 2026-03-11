@@ -29,9 +29,9 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: 'npm run preview -- --port 4173',
+    command: 'npm run build && npx pagefind --site dist --force-language de && npm run preview -- --port 4173',
     url: 'http://localhost:4173/gemeindeordnung/src/index.html',
     reuseExistingServer: !process.env.CI,
-    timeout: 30000,
+    timeout: 60000,
   },
 });

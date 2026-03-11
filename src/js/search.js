@@ -128,7 +128,12 @@ function renderResultItem(result, query) {
   const stadtrechtBadge = isStadtrecht(result)
     ? '<span class="search-badge-stadtrecht">Stadtrecht</span>'
     : '';
-  const highlightUrl = result.url + '?highlight=' + encodeURIComponent(query);
+  // Pagefind already appends ?highlight= when highlightParam option is set
+  // Only add our own if the URL doesn't already have the highlight param
+  const hasHighlight = result.url && result.url.includes('highlight=');
+  const highlightUrl = hasHighlight
+    ? result.url
+    : result.url + '?highlight=' + encodeURIComponent(query);
 
   return `<a href="${highlightUrl}" class="search-result-item">
     <div class="search-result-title">${escapeForDisplay(title)} ${stadtrechtBadge}</div>
