@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-10)
 
 **Core value:** GemeinderaetInnen koennen in Sekunden jede Bestimmung ueber alle 9 Gemeindeordnungen finden
-**Current focus:** Phase 2.1 - Frontend Testing Infrastructure
+**Current focus:** Phase 3 - Search
 
 ## Current Position
 
-Phase: 2.1 of 4 (Frontend Testing Infrastructure)
-Plan: 2 of 2 in current phase
-Status: Phase 02.1 Complete (all plans)
-Last activity: 2026-03-11 -- Phase 02.1 complete
+Phase: 3 of 4 (Search)
+Plan: 1 of 3 in current phase
+Status: executing
+Last activity: 2026-03-11 -- Completed 03-01-PLAN.md
 
 Progress: [██████████] 100%
 
@@ -55,6 +55,7 @@ Progress: [██████████] 100%
 | Phase 02 P03 | 1min | 1 tasks | 2 files |
 | Phase 02.1 P01 | 10min | 2 tasks | 8 files |
 | Phase 02.1 P02 | 4min | 2 tasks | 7 files |
+| Phase 03 P01 | 3min | 2 tasks | 27 files |
 
 ## Accumulated Context
 
@@ -90,6 +91,9 @@ Recent decisions affecting current work:
 - [02.1-01]: NODE_ENV=development required for npm install when NODE_ENV=production is set
 - [02.1-02]: Changed text-gruene-dark/70 to /80 for WCAG AA contrast compliance (4.12:1 -> 5.48:1)
 - [02.1-02]: Mobile test runs in desktop-chromium project with explicit viewport resize (WebKit not installed)
+- [03-01]: Pagefind dynamic import uses import.meta.env.BASE_URL for path resolution
+- [03-01]: debouncedSearch with 200ms debounce for live-search cancellation
+- [03-01]: Max 15 results loaded initially with allResults for show-all expansion
 
 ### Pending Todos
 
@@ -103,6 +107,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-11T05:50:38.000Z
-Stopped at: Completed 02.1-02-PLAN.md
-Resume file: .planning/phases/02.1-frontend-testing-infrastructure/02.1-02-SUMMARY.md
+Last session: 2026-03-11T06:25:55Z
+Stopped at: Completed 03-01-PLAN.md
+Resume file: .planning/phases/03-search/03-01-SUMMARY.md

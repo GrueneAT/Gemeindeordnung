@@ -26,9 +26,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Search
 
-- [ ] **SUCH-01**: User can search full-text across all 9 Gemeindeordnungen via Pagefind
-- [ ] **SUCH-02**: User sees highlighted search terms in results
-- [ ] **SUCH-03**: User sees contextual text snippets around matches
+- [x] **SUCH-01**: User can search full-text across all 9 Gemeindeordnungen via Pagefind
+- [x] **SUCH-02**: User sees highlighted search terms in results
+- [x] **SUCH-03**: User sees contextual text snippets around matches
 - [ ] **SUCH-04**: User can select their Bundesland as primary context (persistent selection)
 - [ ] **SUCH-05**: Search defaults to selected Bundesland, with option to search across all
 - [ ] **SUCH-06**: User sees total result count (z.B. "23 Treffer")
@@ -111,9 +111,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | BROW-06 | Phase 2 | Complete |
 | DSGN-01 | Phase 2 | Complete |
 | DSGN-03 | Phase 2 | Complete |
-| SUCH-01 | Phase 3 | Pending |
-| SUCH-02 | Phase 3 | Pending |
-| SUCH-03 | Phase 3 | Pending |
+| SUCH-01 | Phase 3 | Complete |
+| SUCH-02 | Phase 3 | Complete |
+| SUCH-03 | Phase 3 | Complete |
 | SUCH-04 | Phase 3 | Pending |
 | SUCH-05 | Phase 3 | Pending |
 | SUCH-06 | Phase 3 | Pending |
