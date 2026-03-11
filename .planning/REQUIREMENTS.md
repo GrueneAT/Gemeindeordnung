@@ -13,7 +13,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **DATA-02**: System parses fetched HTML into structured data (Paragraphen, Abschnitte, Überschriften)
 - [x] **DATA-03**: System handles varying HTML structures across all 9 Bundesländer
 - [x] **DATA-04**: System stores parsed data in a structured JSON format for downstream consumption
-- [ ] **DATA-05**: System displays "Stand: [Datum]" showing when data was last fetched
+- [x] **DATA-05**: System displays "Stand: [Datum]" showing when data was last fetched
 
 ### Browsing
 
@@ -52,10 +52,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Deployment
 
-- [ ] **DEPL-01**: Site builds and deploys to GitHub Pages via GitHub Actions
-- [ ] **DEPL-02**: GitHub Actions workflow fetches current Gemeindeordnungen at build time
-- [ ] **DEPL-03**: Dev-Scripts allow local LLM analysis (summaries, FAQs, glossary generation)
-- [ ] **DEPL-04**: LLM-generated content is committed to repo (not regenerated per deploy)
+- [x] **DEPL-01**: Site builds and deploys to GitHub Pages via GitHub Actions
+- [x] **DEPL-02**: GitHub Actions workflow fetches current Gemeindeordnungen at build time
+- [x] **DEPL-03**: Dev-Scripts allow local LLM analysis (summaries, FAQs, glossary generation)
+- [x] **DEPL-04**: LLM-generated content is committed to repo (not regenerated per deploy)
 
 ## v2 Requirements
 
@@ -97,11 +97,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DATA-02 | Phase 1 | Complete |
 | DATA-03 | Phase 1 | Complete |
 | DATA-04 | Phase 1 | Complete |
-| DATA-05 | Phase 1 | Pending |
-| DEPL-01 | Phase 1 | Pending |
-| DEPL-02 | Phase 1 | Pending |
-| DEPL-03 | Phase 1 | Pending |
-| DEPL-04 | Phase 1 | Pending |
+| DATA-05 | Phase 1 | Complete |
+| DEPL-01 | Phase 1 | Complete |
+| DEPL-02 | Phase 1 | Complete |
+| DEPL-03 | Phase 1 | Complete |
+| DEPL-04 | Phase 1 | Complete |
 | DSGN-02 | Phase 1 | Complete |
 | BROW-01 | Phase 2 | Pending |
 | BROW-02 | Phase 2 | Pending |
