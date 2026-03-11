@@ -28,3 +28,21 @@ article[id] {
 .anchor-highlight {
   animation: anchor-highlight 2s ease-out;
 }
+
+/* Copy button visibility: always visible on touch devices, hover-only on desktop */
+.copy-link-btn {
+  transition: opacity 0.15s;
+}
+@media (hover: hover) {
+  .copy-link-btn {
+    opacity: 0;
+  }
+  article:hover .copy-link-btn {
+    opacity: 1;
+  }
+}
+
+/* Scroll-to-top button transition */
+#scroll-to-top {
+  transition: opacity 0.2s;
+}
