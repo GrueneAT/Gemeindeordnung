@@ -47,11 +47,46 @@ function escapeHtml(text) {
 }
 
 /**
+ * Escape regex special characters in a string.
+ */
+function escapeRegex(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Inject glossary term tooltips into body HTML text.
+ * Only matches first occurrence of each term per call (per paragraph).
+ * Does NOT match inside HTML tags or attributes.
+ * @param {string} bodyHtml - The paragraph body HTML
+ * @param {Array} glossaryTerms - Array of glossary term objects
+ * @param {string} categoryPrefix - Path prefix for glossary link (e.g. '../')
+ * @returns {string} HTML with glossary tooltips injected
+ */
+function injectGlossaryTerms(bodyHtml, glossaryTerms, categoryPrefix) {
+  if (!bodyHtml || glossaryTerms.length === 0) return bodyHtml;
+
+  let result = bodyHtml;
+  for (const term of glossaryTerms) {
+    // Match whole word, first occurrence only, case-insensitive
+    const pattern = new RegExp(`(?<=>)([^<]*?)\\b(${escapeRegex(term.term)})\\b`, 'i');
+    const match = result.match(pattern);
+    if (match) {
+      // Build tooltip span
+      const tooltipHtml = `<span class="glossar-term" tabindex="0">${match[2]}<span class="glossar-tooltip">${escapeHtml(term.definition)}<a href="${categoryPrefix}glossar.html#${term.slug}" class="glossar-tooltip-link">&#8594; Glossar</a></span></span>`;
+      // Replace only first occurrence
+      result = result.replace(match[2], tooltipHtml);
+    }
+  }
+  return result;
+}
+
+/**
  * Render a single paragraph to HTML.
  * @param {object} para - Parsed paragraph data
  * @param {object|null} llmData - LLM summary data for the law (optional)
+ * @param {Array} glossaryTerms - Glossary terms for tooltip injection
  */
-function renderParagraph(para, llmData) {
+function renderParagraph(para, llmData, glossaryTerms) {
   const titel = para.titel ? `<span class="text-gruene-dark/80">${escapeHtml(para.titel)}</span>` : '';
   let body = '';
 
@@ -60,6 +95,11 @@ function renderParagraph(para, llmData) {
     body = `<ol class="list-decimal list-inside ml-4 mt-2">\n${items}\n</ol>`;
   } else if (para.text) {
     body = `<p class="mt-2 whitespace-pre-line">${escapeHtml(para.text)}</p>`;
+  }
+
+  // Inject glossary tooltips into body text ONLY (not summary)
+  if (glossaryTerms && glossaryTerms.length > 0 && body) {
+    body = injectGlossaryTerms(body, glossaryTerms, '../');
   }
 
   // LLM enrichment: topics attribute and collapsible summary
@@ -92,7 +132,7 @@ function renderParagraph(para, llmData) {
 /**
  * Render a section (Abschnitt or Hauptstueck) to HTML.
  */
-function renderSection(section, llmData) {
+function renderSection(section, llmData, glossaryTerms) {
   const isHaupt = section.typ === 'hauptstueck';
   const borderClass = isHaupt ? 'border-t-2 border-gruene-green/20' : 'border-t border-gray-200';
 
@@ -107,9 +147,9 @@ function renderSection(section, llmData) {
   let content = '';
 
   if (section.abschnitte) {
-    content = section.abschnitte.map(abs => renderSection(abs, llmData)).join('\n');
+    content = section.abschnitte.map(abs => renderSection(abs, llmData, glossaryTerms)).join('\n');
   } else if (section.paragraphen) {
-    content = section.paragraphen.map(p => renderParagraph(p, llmData)).join('\n');
+    content = section.paragraphen.map(p => renderParagraph(p, llmData, glossaryTerms)).join('\n');
   }
 
   return `<section class="mb-8 ${borderClass} pt-4">\n${heading}\n${content}\n</section>`;
@@ -239,7 +279,7 @@ function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
 
   const searchHTML = generateSearchHTML();
 
-  const navLinks = `      <nav class="hidden sm:flex items-center gap-3 text-sm shrink-0" data-pagefind-ignore>
+  const navLinks = `      <nav class="hidden sm:flex items-center gap-3 text-sm shrink-0 ml-4" data-pagefind-ignore>
         <a href="${prefix}faq/index.html" class="text-gruene-dark hover:underline">FAQ</a>
         <a href="${prefix}glossar.html" class="text-gruene-dark hover:underline">Glossar</a>
       </nav>`;
@@ -321,7 +361,18 @@ function generateLawPage(law, key, category, rootDir = ROOT) {
     }
   }
 
-  const strukturHtml = law.struktur.map(s => renderSection(s, llmData)).join('\n');
+  // Load glossary terms for tooltip injection
+  const glossaryTermPath = join(rootDir, 'data', 'llm', 'glossary', 'terms.json');
+  let glossaryTerms = [];
+  if (existsSync(glossaryTermPath)) {
+    try {
+      glossaryTerms = JSON.parse(readFileSync(glossaryTermPath, 'utf-8')).terms || [];
+    } catch {
+      glossaryTerms = [];
+    }
+  }
+
+  const strukturHtml = law.struktur.map(s => renderSection(s, llmData, glossaryTerms)).join('\n');
   const tocHtml = buildToC(law.struktur);
   const headerHtml = generateHeader(true, key, category);
   const breadcrumbHtml = generateBreadcrumb(law.meta.bundesland, law.meta.kurztitel);

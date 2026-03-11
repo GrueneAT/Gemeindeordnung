@@ -317,6 +317,50 @@ h3[id] {
   background-color: var(--color-gruene-light);
 }
 
+/* ---- Glossary Tooltip Styles ---- */
+
+.glossar-term {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-gruene-green);
+  text-underline-offset: 2px;
+  cursor: help;
+  position: relative;
+}
+
+.glossar-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-gruene-dark);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  max-width: min(300px, calc(100vw - 2rem));
+  width: max-content;
+  z-index: 30;
+  margin-bottom: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.glossar-term:hover .glossar-tooltip,
+.glossar-term:focus .glossar-tooltip,
+.glossar-term.glossar-tooltip-active .glossar-tooltip {
+  display: block;
+}
+
+.glossar-tooltip-link {
+  color: var(--color-gruene-light);
+  text-decoration: underline;
+  font-size: 0.75rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
 /* On-page highlighting (Pagefind) */
 .pagefind-highlight {
   background-color: rgba(250, 204, 21, 0.5);

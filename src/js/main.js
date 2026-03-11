@@ -157,6 +157,26 @@ function initTopicFilter() {
   });
 }
 
+/**
+ * Initialize glossary tooltips for mobile tap support.
+ * On touch devices, tapping a glossary term toggles the tooltip.
+ */
+function initGlossaryTooltips() {
+  document.addEventListener('click', (e) => {
+    const term = e.target.closest('.glossar-term');
+
+    // Close all open tooltips first
+    document.querySelectorAll('.glossar-tooltip-active').forEach((el) => {
+      if (el !== term) el.classList.remove('glossar-tooltip-active');
+    });
+
+    if (term) {
+      e.preventDefault();
+      term.classList.toggle('glossar-tooltip-active');
+    }
+  });
+}
+
 // Wire up all behaviors on DOM ready
 document.addEventListener('DOMContentLoaded', async () => {
   initCopyLinks();
@@ -164,6 +184,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initBundeslandDropdown();
   initAnchorHighlight();
   initTopicFilter();
+  initGlossaryTooltips();
   initSearch();
 
   // On-page highlighting for search result click-through

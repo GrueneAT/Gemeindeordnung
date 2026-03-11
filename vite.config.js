@@ -23,6 +23,22 @@ function discoverInputs() {
     }
   }
 
+  // FAQ pages
+  const faqDir = join(srcDir, 'faq');
+  if (existsSync(faqDir)) {
+    const faqFiles = readdirSync(faqDir).filter(f => f.endsWith('.html'));
+    for (const file of faqFiles) {
+      const key = file.replace('.html', '');
+      inputs[`faq-${key}`] = join(faqDir, file);
+    }
+  }
+
+  // Glossary page
+  const glossarPath = join(srcDir, 'glossar.html');
+  if (existsSync(glossarPath)) {
+    inputs['glossar'] = glossarPath;
+  }
+
   return inputs;
 }
 
