@@ -93,10 +93,13 @@ Plans:
   2. User can browse thematic FAQ pages (Sitzungen, Abstimmungen, Befangenheit etc.) with answers that link to relevant paragraphs across Bundeslaender
   3. User can look up legal terms in a glossary page and sees inline tooltips for Fachbegriffe in the legal text
   4. User can filter paragraphs by Thema/Topic using LLM-generated topic tags
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 04-01: TBD
+- [ ] 04-01-PLAN.md -- LLM generation pipeline: extend llm-analyze.js and generate all summary, FAQ, and glossary JSON data files
+- [ ] 04-02-PLAN.md -- Summaries + Topics UI: collapsible summaries, disclaimer info-box, topic filter chips with JS interactivity
+- [ ] 04-03-PLAN.md -- FAQ pages, glossary page, inline glossary tooltips, Vite config + header navigation extension
+- [ ] 04-04-PLAN.md -- E2E tests for all 7 LLM requirements and visual verification checkpoint
 
 ## Progress
 
@@ -109,7 +112,7 @@ Phases execute in numeric order: 1 -> 2 -> 2.1 -> 3 -> 4
 | 2. Browsing & Branding | 3/3 | Complete | 2026-03-11 |
 | 2.1 Frontend Testing Infrastructure | 2/2 | Complete | 2026-03-11 |
 | 3. Search | 0/3 | Not started | - |
-| 4. LLM Enrichment | 0/? | Not started | - |
+| 4. LLM Enrichment | 0/4 | Not started | - |
 
 ### Phase 04.1: Visual Polish & Screenshot Review (INSERTED)
 
