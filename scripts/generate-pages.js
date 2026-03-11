@@ -78,9 +78,13 @@ function renderSection(section) {
   const isHaupt = section.typ === 'hauptstueck';
   const borderClass = isHaupt ? 'border-t-2 border-gruene-green/20' : 'border-t border-gray-200';
 
+  const sectionSlug = isHaupt
+    ? `hauptstueck-${section.nummer}`
+    : `abschnitt-${section.nummer}`;
+
   const heading = isHaupt
-    ? `<h2 class="text-2xl font-bold mt-12 mb-6 text-gruene-dark">${escapeHtml(section.nummer)}. Hauptstueck: ${escapeHtml(section.titel)}</h2>`
-    : `<h2 class="text-xl font-semibold mt-8 mb-4 text-gruene-dark">${escapeHtml(section.nummer)}. Abschnitt: ${escapeHtml(section.titel)}</h2>`;
+    ? `<h2 id="${sectionSlug}" class="text-2xl font-bold mt-12 mb-6 text-gruene-dark">${escapeHtml(section.nummer)}. Hauptstueck: ${escapeHtml(section.titel)}</h2>`
+    : `<h2 id="${sectionSlug}" class="text-xl font-semibold mt-8 mb-4 text-gruene-dark">${escapeHtml(section.nummer)}. Abschnitt: ${escapeHtml(section.titel)}</h2>`;
 
   let content = '';
 
@@ -140,7 +144,7 @@ ${paraLinks}
 
   const items = struktur.map(s => tocSection(s)).join('\n');
 
-  return `    <nav aria-label="Inhaltsverzeichnis" class="mb-8 bg-white rounded-lg border border-gray-200 p-4">
+  return `    <nav data-pagefind-ignore aria-label="Inhaltsverzeichnis" class="mb-8 bg-white rounded-lg border border-gray-200 p-4">
       <h2 class="text-lg font-bold text-gruene-dark mb-3">Inhaltsverzeichnis</h2>
       <ul class="space-y-1">
 ${items}
@@ -191,7 +195,7 @@ function generateHeader(isLawPage, currentKey, currentCategory) {
     ? `      <div class="mt-2 sm:mt-0">\n${dropdown}\n      </div>`
     : '';
 
-  return `  <header class="sticky top-0 bg-white border-b border-gray-200 z-10">
+  return `  <header data-pagefind-ignore class="sticky top-0 bg-white border-b border-gray-200 z-10">
     <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between">
       <a href="${indexPath}" class="flex items-center gap-2 text-gruene-dark hover:text-gruene-dark no-underline">
         <img src="${logoPath}" alt="Gruene Logo" class="w-8 h-8 gruene-logo" />
@@ -206,7 +210,7 @@ ${rightSection}
  * Generate breadcrumb navigation for law pages.
  */
 function generateBreadcrumb(bundesland, kurztitel) {
-  return `  <nav aria-label="Breadcrumb" class="max-w-5xl mx-auto px-4 py-2 text-sm">
+  return `  <nav data-pagefind-ignore aria-label="Breadcrumb" class="max-w-5xl mx-auto px-4 py-2 text-sm">
     <ol class="flex items-center gap-1 text-gruene-dark">
       <li><a href="../index.html" class="text-gruene-dark hover:underline">Startseite</a></li>
       <li class="text-gray-400">/</li>
@@ -229,7 +233,7 @@ function generateFooter(options = {}) {
 
   const stand = standDatum || formatGermanDate(new Date().toISOString());
 
-  return `  <footer class="border-t border-gray-200 mt-12">
+  return `  <footer data-pagefind-ignore class="border-t border-gray-200 mt-12">
     <div class="max-w-5xl mx-auto px-4 py-6 text-sm text-gray-600">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
         <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
@@ -271,6 +275,8 @@ function generateLawPage(law, key, category) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${title} - Gemeindeordnung.at</title>
     <link rel="stylesheet" href="../css/main.css" />
+    <meta data-pagefind-filter="bundesland[content]" content="${escapeHtml(law.meta.bundesland)}" />
+    <meta data-pagefind-filter="typ[content]" content="${escapeHtml(category)}" />
   </head>
   <body class="bg-white min-h-screen flex flex-col">
 ${headerHtml}
@@ -282,7 +288,7 @@ ${breadcrumbHtml}
         <p class="mt-1 text-sm text-gray-600">Stand: ${standDatum}</p>
       </header>
 ${tocHtml}
-      <main class="max-w-prose mx-auto leading-relaxed">
+      <main data-pagefind-body class="max-w-prose mx-auto leading-relaxed">
         ${strukturHtml}
       </main>
     </div>
