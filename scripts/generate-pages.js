@@ -130,7 +130,7 @@ function renderParagraph(para, llmData, glossaryTerms) {
 }
 
 /**
- * Render a section (Abschnitt or Hauptstueck) to HTML.
+ * Render a section (Abschnitt or Hauptstück) to HTML.
  */
 function renderSection(section, llmData, glossaryTerms) {
   const isHaupt = section.typ === 'hauptstueck';
@@ -141,7 +141,7 @@ function renderSection(section, llmData, glossaryTerms) {
     : `abschnitt-${section.nummer}`;
 
   const heading = isHaupt
-    ? `<h2 id="${sectionSlug}" class="text-2xl font-bold mt-12 mb-6 text-gruene-dark">${escapeHtml(section.nummer)}. Hauptstueck: ${escapeHtml(section.titel)}</h2>`
+    ? `<h2 id="${sectionSlug}" class="text-2xl font-bold mt-12 mb-6 text-gruene-dark">${escapeHtml(section.nummer)}. Hauptstück: ${escapeHtml(section.titel)}</h2>`
     : `<h2 id="${sectionSlug}" class="text-xl font-semibold mt-8 mb-4 text-gruene-dark">${escapeHtml(section.nummer)}. Abschnitt: ${escapeHtml(section.titel)}</h2>`;
 
   let content = '';
@@ -161,7 +161,7 @@ function renderSection(section, llmData, glossaryTerms) {
 function buildToC(struktur) {
   function tocSection(section) {
     const label = section.typ === 'hauptstueck'
-      ? `${section.nummer}. Hauptstueck: ${escapeHtml(section.titel)}`
+      ? `${section.nummer}. Hauptstück: ${escapeHtml(section.titel)}`
       : `${section.nummer}. Abschnitt: ${escapeHtml(section.titel)}`;
 
     let innerList = '';
@@ -234,7 +234,7 @@ ${options}        </select>`;
  * Generate the scroll-to-top floating button HTML.
  */
 function generateScrollToTop() {
-  return `  <button id="scroll-to-top" class="fixed bottom-6 right-6 z-50 bg-gruene-dark text-white rounded-full p-3 shadow-lg hidden hover:bg-gruene-green transition-colors" aria-label="Zurueck nach oben">
+  return `  <button id="scroll-to-top" class="fixed bottom-6 right-6 z-50 bg-gruene-dark text-white rounded-full p-3 shadow-lg hidden hover:bg-gruene-green transition-colors" aria-label="Zurück nach oben">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
       <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
     </svg>
@@ -252,7 +252,7 @@ function generateSearchHTML() {
             class="w-full border border-gray-300 rounded-lg pl-9 pr-3 py-1.5 text-sm bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
           <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         </div>
-        <button id="search-toggle" class="sm:hidden absolute right-0 top-0 p-2 text-gruene-dark" aria-label="Suche oeffnen" style="display:none;">
+        <button id="search-toggle" class="sm:hidden absolute right-0 top-0 p-2 text-gruene-dark" aria-label="Suche öffnen" style="display:none;">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         </button>
         <div id="search-chips" class="mt-1"></div>
@@ -309,7 +309,7 @@ function generateBreadcrumb(bundesland, kurztitel) {
       <li class="text-gray-400">/</li>
       <li class="text-gray-500">${escapeHtml(kurztitel)}</li>
     </ol>
-    <a href="../index.html" class="sm:hidden text-gruene-dark hover:underline text-sm">&larr; Uebersicht</a>
+    <a href="../index.html" class="sm:hidden text-gruene-dark hover:underline text-sm">&larr; Übersicht</a>
   </nav>`;
 }
 
@@ -489,8 +489,8 @@ ${cards}
 
     faqSection = `
         <section class="mb-10">
-          <h2 class="text-2xl font-bold text-gruene-dark mb-4">Haeufige Fragen</h2>
-          <p class="text-gruene-dark/80 mb-4">Thematische Uebersichten mit Vergleich aller Bundeslaender</p>
+          <h2 class="text-2xl font-bold text-gruene-dark mb-4">Häufige Fragen</h2>
+          <p class="text-gruene-dark/80 mb-4">Thematische Übersichten mit Vergleich aller Bundesländer</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 ${faqCards}
           </div>
@@ -505,7 +505,7 @@ ${faqCards}
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gemeindeordnungen der oesterreichischen Bundeslaender</title>
+    <title>Gemeindeordnungen der österreichischen Bundesländer</title>
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
@@ -513,7 +513,7 @@ ${headerHtml}
     <div class="max-w-5xl mx-auto px-4 py-8 flex-1 w-full">
       <div class="mb-8">
         <h1 class="text-3xl font-bold text-gruene-dark">
-          Gemeindeordnungen der oesterreichischen Bundeslaender
+          Gemeindeordnungen der österreichischen Bundesländer
         </h1>
         <p class="mt-2 text-lg text-gruene-dark/80">
           Alle 9 Gemeindeordnungen und 14 Statutarstadt-Stadtrechte durchsuchbar aufbereitet.
@@ -549,16 +549,16 @@ function generateFAQIndexPage(topics) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Haeufige Fragen - Gemeindeordnung.at</title>
+    <title>Häufige Fragen - Gemeindeordnung.at</title>
     <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
 ${headerHtml}
     <div class="max-w-5xl mx-auto px-4 py-8 flex-1 w-full">
       <div class="mb-8">
-        <h1 class="text-3xl font-bold text-gruene-dark">Haeufige Fragen zu Gemeindeordnungen</h1>
+        <h1 class="text-3xl font-bold text-gruene-dark">Häufige Fragen zu Gemeindeordnungen</h1>
         <p class="mt-2 text-lg text-gruene-dark/80">
-          Thematische Uebersichten mit Vergleich aller Bundeslaender
+          Thematische Übersichten mit Vergleich aller Bundesländer
         </p>
       </div>
       <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
@@ -694,7 +694,7 @@ ${headerHtml}
       <div class="mb-8">
         <h1 class="text-3xl font-bold text-gruene-dark">Glossar der Rechtsbegriffe</h1>
         <p class="mt-2 text-lg text-gruene-dark/80">
-          Wichtige Fachbegriffe aus den oesterreichischen Gemeindeordnungen
+          Wichtige Fachbegriffe aus den österreichischen Gemeindeordnungen
         </p>
       </div>
       <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>

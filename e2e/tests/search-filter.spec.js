@@ -65,15 +65,14 @@ test.describe('Search Bundesland filter (SUCH-04, SUCH-05)', () => {
     // Extract Wien result count
     const wienCount = parseInt(wienCountText.match(/(\d+)/)[1], 10);
 
-    // Click "Alle Bundeslaender" chip
-    const allChip = page.locator('.search-chip', { hasText: 'Alle Bundeslaender' });
+    // Click "Alle Bundesländer" chip
+    const allChip = page.locator('.search-chip', { hasText: 'Alle Bundesländer' });
     await allChip.click();
 
-    // Wait for results to update
-    await page.waitForTimeout(500);
+    // Wait for results to update (count text should no longer say "in Wien")
+    await expect(countEl).not.toContainText('in Wien', { timeout: 5000 });
     const allCountText = await countEl.textContent();
     expect(allCountText).toMatch(/\d+ Treffer/);
-    expect(allCountText).not.toContain('in Wien');
 
     // All results should be >= Wien results
     const allCount = parseInt(allCountText.match(/(\d+)/)[1], 10);

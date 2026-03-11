@@ -242,7 +242,7 @@ function renderResults(searchResult) {
 
   let html = renderCountHeader(subResultCount, activeBundesland);
 
-  // Group by BL when searching all Bundeslaender
+  // Group by BL when searching all Bundesländer
   if (!activeBundesland && results.length > 0) {
     html += renderGroupedResults(results, currentQuery);
   } else {
@@ -285,16 +285,16 @@ function renderResults(searchResult) {
 function renderEmptyState(query, bundesland) {
   if (!searchDropdown) return;
 
-  const blText = bundesland || 'Alle Bundeslaender';
+  const blText = bundesland || 'Alle Bundesländer';
   let html = `<div class="search-empty-state">
-    <p class="search-empty-title">Keine Treffer fuer &bdquo;${escapeForDisplay(query)}&ldquo; in ${escapeForDisplay(blText)}</p>
+    <p class="search-empty-title">Keine Treffer für &bdquo;${escapeForDisplay(query)}&ldquo; in ${escapeForDisplay(blText)}</p>
     <p class="search-empty-hint">Versuchen Sie einen anderen Suchbegriff</p>`;
 
   if (bundesland) {
-    html += `<button class="search-empty-action" data-action="search-all">In allen Bundeslaendern suchen</button>`;
+    html += `<button class="search-empty-action" data-action="search-all">In allen Bundesländern suchen</button>`;
   }
 
-  html += `<a href="${getIndexPath()}" class="search-empty-action">Zur Uebersicht</a>`;
+  html += `<a href="${getIndexPath()}" class="search-empty-action">Zur Übersicht</a>`;
   html += `</div>`;
 
   searchDropdown.innerHTML = html;
@@ -338,9 +338,9 @@ function renderFilterChips() {
   if (savedBL) {
     const isActive = activeBundesland === savedBL;
     html += `<button class="search-chip ${isActive ? 'search-chip-active' : 'search-chip-inactive'}" data-bl="${escapeForDisplay(savedBL)}">${escapeForDisplay(savedBL)}</button>`;
-    html += `<button class="search-chip ${!activeBundesland ? 'search-chip-active' : 'search-chip-inactive'}" data-bl="">Alle Bundeslaender</button>`;
+    html += `<button class="search-chip ${!activeBundesland ? 'search-chip-active' : 'search-chip-inactive'}" data-bl="">Alle Bundesländer</button>`;
   } else {
-    html += `<button class="search-chip search-chip-active" data-bl="">Alle Bundeslaender</button>`;
+    html += `<button class="search-chip search-chip-active" data-bl="">Alle Bundesländer</button>`;
   }
 
   searchChips.innerHTML = html;
