@@ -1,0 +1,9 @@
+FROM claude-flow:latest
+
+# Install project dependencies (devDependencies needed for vite/tailwind/vitest)
+COPY package.json package-lock.json* ./
+ENV NODE_ENV=development
+RUN npm install && npm cache clean --force
+
+# Generate pages and build on container start if needed
+# Actual dev server is started via Makefile target

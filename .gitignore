@@ -1,6 +1,7 @@
 node_modules/
 dist/
 data/raw/
+data/parsed/
 e2e/screenshots/
 e2e/test-results/
 playwright-report/
