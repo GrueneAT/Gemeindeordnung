@@ -37,7 +37,7 @@ Requirements for initial release. Each maps to roadmap phases.
 ### LLM Content
 
 - [x] **LLM-01**: User sees plain-language summary per paragraph ("Vereinfachte Zusammenfassung")
-- [ ] **LLM-02**: Summaries display disclaimer: "Vereinfachte Zusammenfassung — keine Rechtsberatung"
+- [x] **LLM-02**: Summaries display disclaimer: "Vereinfachte Zusammenfassung — keine Rechtsberatung"
 - [x] **LLM-03**: User can browse thematic FAQ pages (Sitzungen, Abstimmungen, Befangenheit etc.)
 - [x] **LLM-04**: FAQ answers link to relevant paragraphs across Bundesländer
 - [x] **LLM-05**: User sees glossary page with explanations of legal terms
@@ -119,7 +119,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SUCH-06 | Phase 3 | Complete |
 | SUCH-07 | Phase 3 | Complete |
 | LLM-01 | Phase 4 | Complete |
-| LLM-02 | Phase 4 | Pending |
+| LLM-02 | Phase 4 | Complete |
 | LLM-03 | Phase 4 | Complete |
 | LLM-04 | Phase 4 | Complete |
 | LLM-05 | Phase 4 | Complete |
