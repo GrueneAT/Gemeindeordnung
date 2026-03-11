@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-/* Prevent horizontal overflow on mobile from font rendering differences */
-body {
-  overflow-x: hidden;
-}
-
 @theme {
   --color-gruene-green: #6BA539;
   --color-gruene-dark: #005538;

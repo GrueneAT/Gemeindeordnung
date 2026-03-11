@@ -22,12 +22,18 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
   test('law page is readable and responsive with no overflow', async ({ page }) => {
     await page.goto('./gemeindeordnungen/wien.html');
 
-    // No horizontal overflow (compare against viewport + scrollbar tolerance for Linux)
-    const { scrollWidth, clientWidth } = await page.evaluate(() => ({
-      scrollWidth: document.documentElement.scrollWidth,
-      clientWidth: document.documentElement.clientWidth,
-    }));
-    expect(scrollWidth).toBeLessThanOrEqual(clientWidth);
+    // No element should extend beyond the viewport width
+    const overflowingEl = await page.evaluate(() => {
+      const vw = document.documentElement.clientWidth;
+      for (const el of document.querySelectorAll('body *')) {
+        const rect = el.getBoundingClientRect();
+        if (rect.right > vw + 1) {
+          return { tag: el.tagName, id: el.id, class: el.className, right: rect.right, vw };
+        }
+      }
+      return null;
+    });
+    expect(overflowingEl, `Element overflows viewport: ${JSON.stringify(overflowingEl)}`).toBeNull();
 
     // Main content is visible and text is readable
     const main = page.locator('main');
