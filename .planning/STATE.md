@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed quick-1-01-PLAN.md
-last_updated: "2026-03-11T07:37:58.368Z"
-last_activity: 2026-03-11 - Completed quick task 1: Fix search result click not jumping to anchor text
+stopped_at: Completed quick-2-01-PLAN.md
+last_updated: "2026-03-11T07:53:18Z"
+last_activity: 2026-03-11 - Completed quick task 2: Paragraph-level search results using Pagefind sub_results
 progress:
   total_phases: 6
   completed_phases: 4
@@ -103,6 +103,9 @@ Recent decisions affecting current work:
 - [Phase 03]: Stadtrecht badge on results detected via URL path (/stadtrechte/)
 - [Phase 03]: Ctrl+K tested over / for keyboard shortcut (Playwright reliability)
 - [Phase 03]: Fixed duplicate ?highlight= param: Pagefind already adds via highlightParam option
+- [Quick-2]: Moved id from article to h3 for Pagefind sub_results indexing
+- [Quick-2]: Sub-result count used for Treffer display instead of page count
+- [Quick-2]: Search hierarchy: BL group -> law group -> paragraph sub-results
 
 ### Pending Todos
 
@@ -113,6 +116,7 @@ None yet.
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 1 | Fix search result click not jumping to anchor text, add E2E tests | 2026-03-11 | 394244e | [1-fix-search-result-click-not-jumping-to-a](./quick/1-fix-search-result-click-not-jumping-to-a/) |
+| 2 | Paragraph-level search results using Pagefind sub_results | 2026-03-11 | 1780968 | [2-paragraph-level-search-results-using-pag](./quick/2-paragraph-level-search-results-using-pag/) |
 
 ### Blockers/Concerns
 
@@ -122,6 +126,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-11T07:37:58.359Z
-Stopped at: Completed quick-1-01-PLAN.md
+Last session: 2026-03-11T07:53:18Z
+Stopped at: Completed quick-2-01-PLAN.md
 Resume file: None
