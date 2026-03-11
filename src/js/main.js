@@ -128,6 +128,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     const base = import.meta.env.BASE_URL || '/';
     await import(/* @vite-ignore */ `${base}pagefind/pagefind-highlight.js`);
     new PagefindHighlight({ highlightParam: 'highlight' });
+
+    // Scroll to first highlight when arriving from search (highlight= param present)
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('highlight')) {
+      const scrollToHighlight = () => {
+        let attempts = 0;
+        const maxAttempts = 40; // 40 * 50ms = 2 seconds
+        const interval = setInterval(() => {
+          const el = document.querySelector('.pagefind-highlight');
+          if (el) {
+            clearInterval(interval);
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else if (++attempts >= maxAttempts) {
+            clearInterval(interval);
+          }
+        }, 50);
+      };
+      requestAnimationFrame(scrollToHighlight);
+    }
   } catch {
     // Pagefind not available (dev mode) -- skip silently
   }
