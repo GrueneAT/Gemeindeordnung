@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "fetch": "node scripts/fetch-laws.js"
+    "fetch": "node scripts/fetch-laws.js",
+    "parse": "node scripts/parse-laws.js"
   },
   "keywords": [
     "gemeindeordnung",
