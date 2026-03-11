@@ -66,8 +66,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02.1-01-PLAN.md -- Playwright setup (config, deps, npm scripts) and first 5 UAT tests (browse-page, ToC, card-grid, typography, copy-link)
-- [ ] 02.1-02-PLAN.md -- Remaining 5 UAT tests (scroll-to-top, dropdown-nav, anchor-highlight, mobile, accessibility) and CI workflow integration
+- [x] 02.1-01-PLAN.md -- Playwright setup (config, deps, npm scripts) and first 5 UAT tests (browse-page, ToC, card-grid, typography, copy-link)
+- [x] 02.1-02-PLAN.md -- Remaining 5 UAT tests (scroll-to-top, dropdown-nav, anchor-highlight, mobile, accessibility) and CI workflow integration
 
 ### Phase 3: Search
 **Goal**: Users can find any provision across all 9 Gemeindeordnungen in seconds, with their Bundesland as the default search context
@@ -105,6 +105,6 @@ Phases execute in numeric order: 1 -> 2 -> 2.1 -> 3 -> 4
 |-------|----------------|--------|-----------|
 | 1. Data Pipeline & Project Foundation | 3/3 | Complete | 2026-03-11 |
 | 2. Browsing & Branding | 3/3 | Complete | 2026-03-11 |
-| 2.1 Frontend Testing Infrastructure | 0/2 | Not started | - |
+| 2.1 Frontend Testing Infrastructure | 2/2 | Complete | 2026-03-11 |
 | 3. Search | 0/? | Not started | - |
 | 4. LLM Enrichment | 0/? | Not started | - |

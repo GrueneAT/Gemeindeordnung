@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in-progress
-stopped_at: Completed 02.1-01-PLAN.md
-last_updated: "2026-03-11T05:43:34.000Z"
-last_activity: 2026-03-11 -- Plan 02.1-01 complete
+stopped_at: Completed 02.1-02-PLAN.md
+last_updated: "2026-03-11T05:50:38.000Z"
+last_activity: 2026-03-11 -- Phase 02.1 complete (all plans)
 progress:
   total_phases: 5
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 8
-  completed_plans: 7
-  percent: 88
+  completed_plans: 8
+  percent: 100
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-10)
 ## Current Position
 
 Phase: 2.1 of 4 (Frontend Testing Infrastructure)
-Plan: 1 of 2 in current phase
-Status: Plan 02.1-01 Complete
-Last activity: 2026-03-11 -- Plan 02.1-01 complete
+Plan: 2 of 2 in current phase
+Status: Phase 02.1 Complete (all plans)
+Last activity: 2026-03-11 -- Phase 02.1 complete
 
-Progress: [████████░░] 88%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -54,6 +54,7 @@ Progress: [████████░░] 88%
 | Phase 02 P02 | 2min | 3 tasks | 4 files |
 | Phase 02 P03 | 1min | 1 tasks | 2 files |
 | Phase 02.1 P01 | 10min | 2 tasks | 8 files |
+| Phase 02.1 P02 | 4min | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -87,6 +88,8 @@ Recent decisions affecting current work:
 - [02.1-01]: baseURL includes /src/ path because vite build outputs to dist/src/
 - [02.1-01]: Use ./relative goto paths in Playwright so URL resolution works with baseURL
 - [02.1-01]: NODE_ENV=development required for npm install when NODE_ENV=production is set
+- [02.1-02]: Changed text-gruene-dark/70 to /80 for WCAG AA contrast compliance (4.12:1 -> 5.48:1)
+- [02.1-02]: Mobile test runs in desktop-chromium project with explicit viewport resize (WebKit not installed)
 
 ### Pending Todos
 
@@ -100,6 +103,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-11T05:43:34.000Z
-Stopped at: Completed 02.1-01-PLAN.md
-Resume file: .planning/phases/02.1-frontend-testing-infrastructure/02.1-01-SUMMARY.md
+Last session: 2026-03-11T05:50:38.000Z
+Stopped at: Completed 02.1-02-PLAN.md
+Resume file: .planning/phases/02.1-frontend-testing-infrastructure/02.1-02-SUMMARY.md
