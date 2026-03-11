@@ -38,14 +38,14 @@ created: 2026-03-11
 
 | Task ID | Plan | Wave | Requirement | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|-----------|-------------------|-------------|--------|
-| 04-01-01 | 01 | 1 | LLM-GEN | unit | `npm test -- --run -t "llm"` | ❌ W0 | ⬜ pending |
+| 04-01-01 | 01 | 1 | LLM-GEN | unit | `npm test -- --run -t "llm"` | Plan 01 creates `tests/llm-analyze.test.js` | ⬜ pending |
 | 04-02-01 | 02 | 2 | LLM-01 | E2E | `npx playwright test --config=e2e/playwright.config.js --project=desktop-chromium -g "summary"` | ❌ W0 | ⬜ pending |
 | 04-02-02 | 02 | 2 | LLM-02 | E2E | `npx playwright test --config=e2e/playwright.config.js --project=desktop-chromium -g "disclaimer"` | ❌ W0 | ⬜ pending |
 | 04-02-03 | 02 | 2 | LLM-07 | E2E | `npx playwright test --config=e2e/playwright.config.js --project=desktop-chromium -g "topic filter"` | ❌ W0 | ⬜ pending |
-| 04-03-01 | 03 | 2 | LLM-03 | E2E | `npx playwright test --config=e2e/playwright.config.js --project=desktop-chromium -g "faq"` | ❌ W0 | ⬜ pending |
-| 04-03-02 | 03 | 2 | LLM-04 | E2E | `npx playwright test --config=e2e/playwright.config.js --project=desktop-chromium -g "faq link"` | ❌ W0 | ⬜ pending |
-| 04-04-01 | 04 | 2 | LLM-05 | E2E | `npx playwright test --config=e2e/playwright.config.js --project=desktop-chromium -g "glossar"` | ❌ W0 | ⬜ pending |
-| 04-04-02 | 04 | 2 | LLM-06 | E2E | `npx playwright test --config=e2e/playwright.config.js --project=desktop-chromium -g "tooltip"` | ❌ W0 | ⬜ pending |
+| 04-03-01 | 03 | 3 | LLM-03 | E2E | `npx playwright test --config=e2e/playwright.config.js --project=desktop-chromium -g "faq"` | ❌ W0 | ⬜ pending |
+| 04-03-02 | 03 | 3 | LLM-04 | E2E | `npx playwright test --config=e2e/playwright.config.js --project=desktop-chromium -g "faq link"` | ❌ W0 | ⬜ pending |
+| 04-04-01 | 04 | 4 | LLM-05 | E2E | `npx playwright test --config=e2e/playwright.config.js --project=desktop-chromium -g "glossar"` | ❌ W0 | ⬜ pending |
+| 04-04-02 | 04 | 4 | LLM-06 | E2E | `npx playwright test --config=e2e/playwright.config.js --project=desktop-chromium -g "tooltip"` | ❌ W0 | ⬜ pending |
 
 *Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky*
 
@@ -57,7 +57,7 @@ created: 2026-03-11
 - [ ] `e2e/tests/faq.spec.js` — stubs for LLM-03, LLM-04
 - [ ] `e2e/tests/glossar.spec.js` — stubs for LLM-05, LLM-06
 - [ ] `e2e/tests/topic-filter.spec.js` — stubs for LLM-07
-- [ ] `tests/llm-analyze.test.js` — stubs for LLM-GEN (unit test for JSON schema validation)
+- [x] `tests/llm-analyze.test.js` — created by Plan 04-01 Task 1 (unit test for JSON schema validation)
 
 *Existing infrastructure covers framework install — Playwright and Vitest already installed.*
 
