@@ -1,7 +1,7 @@
 IMAGE := gemeindeordnung-dev
 PORT  := 4173
 
-.PHONY: build review dev preview generate test clean setup
+.PHONY: build review dev generate test clean
 
 # Build the Docker image
 build:
@@ -40,15 +40,6 @@ test: build
 		--entrypoint "" \
 		$(IMAGE) \
 		sh -c "npm install && npm run test"
-
-# First-time setup (run outside container)
-setup:
-	npm install
-	npm run fetch
-	npm run parse
-	npm run generate
-	npm run build
-	npx pagefind --site dist --force-language de
 
 # Remove Docker image
 clean:
