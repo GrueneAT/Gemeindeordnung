@@ -101,6 +101,25 @@ Plans:
 - [x] 04-03-PLAN.md -- FAQ pages, glossary page, inline glossary tooltips, Vite config + header navigation extension
 - [x] 04-04-PLAN.md -- E2E tests for all 7 LLM requirements and visual verification checkpoint
 
+### Phase 04.2: Improve LLM content quality: searchable glossary, real FAQ, no placeholder summaries (INSERTED)
+
+**Goal:** Replace all placeholder LLM content with high-quality, real content: regenerate summaries with varied natural language for all 23 laws, create substantive FAQ with proper legal citations and BL-specific details, expand glossary with full BL coverage and client-side search, and improve the LLM pipeline with separate commands and validation
+**Depends on:** Phase 4
+**Requirements**: LLM-01, LLM-02, LLM-03, LLM-04, LLM-05, LLM-06, LLM-07, DEPL-03
+**Success Criteria** (what must be TRUE):
+  1. All 23 summary files have no placeholder flag and use varied, natural German language
+  2. FAQ topics are substantive with real BL-specific details and proper legal citation format
+  3. Glossary terms have comprehensive definitions with cross-BL references and a client-side search filter
+  4. Topic tags are specific and granular (not just "Allgemeine Bestimmungen")
+  5. npm run llm:validate exits with code 0
+  6. Separate npm commands exist for llm:summaries, llm:faq, llm:glossary, llm:all, llm:validate
+**Plans**: 3 plans
+
+Plans:
+- [ ] 04.2-01-PLAN.md -- Improve LLM prompts, add citation map, separate CLI commands, and validation script
+- [ ] 04.2-02-PLAN.md -- Add client-side glossary filter/search input with E2E tests
+- [ ] 04.2-03-PLAN.md -- Regenerate all LLM content and human quality verification
+
 ### Phase 04.1: Visual Polish & Screenshot Review (INSERTED)
 
 **Goal:** Comprehensive visual review of the entire site using Playwright screenshots -- find and fix all usability, layout, and branding issues to ship-quality standard, then embed visual self-validation into the project workflow so future phases verify their own visual output autonomously
@@ -131,3 +150,4 @@ Phases execute in numeric order: 1 -> 2 -> 2.1 -> 3 -> 4
 | 3. Search | 3/3 | Complete | 2026-03-11 |
 | 4. LLM Enrichment | 4/4 | Complete | 2026-03-11 |
 | 4.1 Visual Polish & Screenshot Review | 2/2 | Complete   | 2026-03-11 |
+| 4.2 Improve LLM Content Quality | 0/3 | Planning | - |
