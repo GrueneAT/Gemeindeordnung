@@ -50,7 +50,7 @@ function escapeHtml(text) {
  * Render a single paragraph to HTML.
  */
 function renderParagraph(para) {
-  const titel = para.titel ? `<span class="text-gruene-dark/70">${escapeHtml(para.titel)}</span>` : '';
+  const titel = para.titel ? `<span class="text-gruene-dark/80">${escapeHtml(para.titel)}</span>` : '';
   let body = '';
 
   if (para.absaetze && para.absaetze.length > 0) {
@@ -278,7 +278,7 @@ ${breadcrumbHtml}
     <div class="max-w-5xl mx-auto px-4 py-6 flex-1 w-full">
       <header class="mb-6">
         <h1 class="text-3xl font-bold text-gruene-dark">${title}</h1>
-        <p class="mt-1 text-gruene-dark/70">${bundesland}${stadtInfo}</p>
+        <p class="mt-1 text-gruene-dark/80">${bundesland}${stadtInfo}</p>
         <p class="mt-1 text-sm text-gray-600">Stand: ${standDatum}</p>
       </header>
 ${tocHtml}
