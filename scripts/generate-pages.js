@@ -48,8 +48,10 @@ function escapeHtml(text) {
 
 /**
  * Render a single paragraph to HTML.
+ * @param {object} para - Parsed paragraph data
+ * @param {object|null} llmData - LLM summary data for the law (optional)
  */
-function renderParagraph(para) {
+function renderParagraph(para, llmData) {
   const titel = para.titel ? `<span class="text-gruene-dark/80">${escapeHtml(para.titel)}</span>` : '';
   let body = '';
 
@@ -60,13 +62,29 @@ function renderParagraph(para) {
     body = `<p class="mt-2 whitespace-pre-line">${escapeHtml(para.text)}</p>`;
   }
 
-  return `<article class="mb-6 group">
+  // LLM enrichment: topics attribute and collapsible summary
+  const paraLlm = llmData && llmData.paragraphs && llmData.paragraphs[para.nummer];
+  const topicsAttr = paraLlm && paraLlm.topics && paraLlm.topics.length > 0
+    ? ` data-topics="${paraLlm.topics.map(t => escapeHtml(t)).join(',')}"`
+    : '';
+  const summaryHtml = paraLlm && paraLlm.summary
+    ? `\n  <details class="mt-1 mb-2">
+    <summary class="text-sm text-gruene-dark/80 cursor-pointer hover:text-gruene-dark">
+      Vereinfachte Zusammenfassung
+    </summary>
+    <p class="text-sm text-gruene-dark/80 mt-1 pl-4 border-l-2 border-gruene-green/30">
+      ${escapeHtml(paraLlm.summary)}
+    </p>
+  </details>`
+    : '';
+
+  return `<article class="mb-6 group"${topicsAttr}>
   <h3 id="p${escapeHtml(para.nummer)}" class="text-lg font-semibold text-gruene-dark flex items-center gap-2">
     <span>&sect; ${escapeHtml(para.nummer)} ${titel}</span>
     <button data-copy-link="p${escapeHtml(para.nummer)}" class="text-gray-400 hover:text-gruene-dark copy-link-btn" title="Link kopieren" aria-label="Link zu &sect; ${escapeHtml(para.nummer)} kopieren">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
     </button>
-  </h3>
+  </h3>${summaryHtml}
   ${body}
 </article>`;
 }
@@ -74,7 +92,7 @@ function renderParagraph(para) {
 /**
  * Render a section (Abschnitt or Hauptstueck) to HTML.
  */
-function renderSection(section) {
+function renderSection(section, llmData) {
   const isHaupt = section.typ === 'hauptstueck';
   const borderClass = isHaupt ? 'border-t-2 border-gruene-green/20' : 'border-t border-gray-200';
 
@@ -89,9 +107,9 @@ function renderSection(section) {
   let content = '';
 
   if (section.abschnitte) {
-    content = section.abschnitte.map(abs => renderSection(abs)).join('\n');
+    content = section.abschnitte.map(abs => renderSection(abs, llmData)).join('\n');
   } else if (section.paragraphen) {
-    content = section.paragraphen.map(p => renderParagraph(p)).join('\n');
+    content = section.paragraphen.map(p => renderParagraph(p, llmData)).join('\n');
   }
 
   return `<section class="mb-8 ${borderClass} pt-4">\n${heading}\n${content}\n</section>`;
@@ -274,13 +292,25 @@ function generateFooter(options = {}) {
 /**
  * Generate a single law HTML page.
  */
-function generateLawPage(law, key, category) {
+function generateLawPage(law, key, category, rootDir = ROOT) {
   const standDatum = formatGermanDate(law.meta.fetchedAt);
   const title = escapeHtml(law.meta.kurztitel);
   const bundesland = escapeHtml(law.meta.bundesland);
   const stadtInfo = law.meta.stadt ? ` (${escapeHtml(law.meta.stadt)})` : '';
 
-  const strukturHtml = law.struktur.map(s => renderSection(s)).join('\n');
+  // Load LLM summary data if available
+  const llmPath = join(rootDir, 'data', 'llm', 'summaries', category, `${key}.json`);
+  let llmData = null;
+  if (existsSync(llmPath)) {
+    try {
+      llmData = JSON.parse(readFileSync(llmPath, 'utf-8'));
+    } catch {
+      // Malformed JSON -- skip LLM enrichment gracefully
+      llmData = null;
+    }
+  }
+
+  const strukturHtml = law.struktur.map(s => renderSection(s, llmData)).join('\n');
   const tocHtml = buildToC(law.struktur);
   const headerHtml = generateHeader(true, key, category);
   const breadcrumbHtml = generateBreadcrumb(law.meta.bundesland, law.meta.kurztitel);
@@ -289,6 +319,34 @@ function generateLawPage(law, key, category) {
     standDatum,
     isLawPage: true,
   });
+
+  // Disclaimer info-box (only if LLM data exists)
+  const disclaimerHtml = llmData
+    ? `      <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
+        <strong>Hinweis:</strong> Vereinfachte Zusammenfassungen dienen der Orientierung und sind keine Rechtsberatung.
+      </div>\n`
+    : '';
+
+  // Topic filter chips (only if LLM data has topics)
+  let topicChipsHtml = '';
+  if (llmData && llmData.paragraphs) {
+    const allTopics = new Set();
+    for (const pData of Object.values(llmData.paragraphs)) {
+      if (pData.topics) {
+        pData.topics.forEach(t => allTopics.add(t));
+      }
+    }
+    if (allTopics.size > 0) {
+      const sortedTopics = [...allTopics].sort((a, b) => a.localeCompare(b, 'de'));
+      const chipButtons = sortedTopics
+        .map(t => `        <button class="topic-chip topic-chip-inactive" data-topic="${escapeHtml(t)}">${escapeHtml(t)}</button>`)
+        .join('\n');
+      topicChipsHtml = `      <div id="topic-filter" class="mb-4 flex flex-wrap gap-2" data-pagefind-ignore>
+        <button class="topic-chip topic-chip-active" data-topic="alle">Alle</button>
+${chipButtons}
+      </div>\n`;
+    }
+  }
 
   return `<!doctype html>
 <html lang="de">
@@ -309,7 +367,7 @@ ${breadcrumbHtml}
         <p class="mt-1 text-gruene-dark/80">${bundesland}${stadtInfo}</p>
         <p class="mt-1 text-sm text-gray-600">Stand: ${standDatum}</p>
       </header>
-${tocHtml}
+${disclaimerHtml}${topicChipsHtml}${tocHtml}
       <main data-pagefind-body class="max-w-prose mx-auto leading-relaxed">
         ${strukturHtml}
       </main>
@@ -415,7 +473,7 @@ export async function generatePages(rootDir = ROOT) {
       const key = file.replace('.json', '');
       const law = JSON.parse(readFileSync(join(parsedDir, file), 'utf-8'));
 
-      const html = generateLawPage(law, key, category);
+      const html = generateLawPage(law, key, category, rootDir);
       writeFileSync(join(outDir, `${key}.html`), html);
       console.log(`Generated: src/${category}/${key}.html`);
 
