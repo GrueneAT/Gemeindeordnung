@@ -9,9 +9,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Data Pipeline
 
-- [ ] **DATA-01**: System fetches all 9 Gemeindeordnungen from RIS OGD API v2.6
+- [x] **DATA-01**: System fetches all 9 Gemeindeordnungen from RIS OGD API v2.6
 - [ ] **DATA-02**: System parses fetched HTML into structured data (Paragraphen, Abschnitte, Überschriften)
-- [ ] **DATA-03**: System handles varying HTML structures across all 9 Bundesländer
+- [x] **DATA-03**: System handles varying HTML structures across all 9 Bundesländer
 - [ ] **DATA-04**: System stores parsed data in a structured JSON format for downstream consumption
 - [ ] **DATA-05**: System displays "Stand: [Datum]" showing when data was last fetched
 
@@ -47,7 +47,7 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Design & Branding
 
 - [ ] **DSGN-01**: Site uses Grünes CI (Farben, Logo) consistent with bildgenerator.gruene.at
-- [ ] **DSGN-02**: Site uses TailwindCSS for styling
+- [x] **DSGN-02**: Site uses TailwindCSS for styling
 - [ ] **DSGN-03**: Site meets WCAG 2.1 AA accessibility standards (contrast, keyboard nav)
 
 ### Deployment
@@ -93,16 +93,16 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DATA-01 | Phase 1 | Pending |
+| DATA-01 | Phase 1 | Complete |
 | DATA-02 | Phase 1 | Pending |
-| DATA-03 | Phase 1 | Pending |
+| DATA-03 | Phase 1 | Complete |
 | DATA-04 | Phase 1 | Pending |
 | DATA-05 | Phase 1 | Pending |
 | DEPL-01 | Phase 1 | Pending |
 | DEPL-02 | Phase 1 | Pending |
 | DEPL-03 | Phase 1 | Pending |
 | DEPL-04 | Phase 1 | Pending |
-| DSGN-02 | Phase 1 | Pending |
+| DSGN-02 | Phase 1 | Complete |
 | BROW-01 | Phase 2 | Pending |
 | BROW-02 | Phase 2 | Pending |
 | BROW-03 | Phase 2 | Pending |

@@ -85,7 +85,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Data Pipeline & Project Foundation | 0/3 | Planning complete | - |
+| 1. Data Pipeline & Project Foundation | 1/3 | In Progress | - |
 | 2. Browsing & Branding | 0/? | Not started | - |
 | 3. Search | 0/? | Not started | - |
 | 4. LLM Enrichment | 0/? | Not started | - |
