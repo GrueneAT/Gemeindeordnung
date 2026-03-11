@@ -177,6 +177,51 @@ function initGlossaryTooltips() {
   });
 }
 
+/**
+ * Initialize glossary filter for instant term lookup.
+ * Filters terms by name or definition as user types; hides empty letter sections.
+ */
+function initGlossaryFilter() {
+  const input = document.getElementById('glossar-filter');
+  if (!input) return;
+
+  input.addEventListener('input', () => {
+    const query = input.value.toLowerCase().trim();
+
+    // Each letter group is a div.mb-8 inside main
+    const letterGroups = document.querySelectorAll('main > div.mb-8');
+
+    letterGroups.forEach((group) => {
+      // Term divs have an id attribute (slugs); the h2 is the letter heading
+      const termDivs = group.querySelectorAll('div[id]');
+      let anyVisible = false;
+
+      termDivs.forEach((termDiv) => {
+        if (!query) {
+          termDiv.style.display = '';
+          anyVisible = true;
+          return;
+        }
+
+        const h3 = termDiv.querySelector('h3');
+        const p = termDiv.querySelector('p');
+        const nameText = h3 ? h3.textContent.toLowerCase() : '';
+        const defText = p ? p.textContent.toLowerCase() : '';
+
+        if (nameText.includes(query) || defText.includes(query)) {
+          termDiv.style.display = '';
+          anyVisible = true;
+        } else {
+          termDiv.style.display = 'none';
+        }
+      });
+
+      // Hide entire letter group if no terms match
+      group.style.display = anyVisible ? '' : 'none';
+    });
+  });
+}
+
 // Wire up all behaviors on DOM ready
 document.addEventListener('DOMContentLoaded', async () => {
   initCopyLinks();
@@ -185,6 +230,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initAnchorHighlight();
   initTopicFilter();
   initGlossaryTooltips();
+  initGlossaryFilter();
   initSearch();
 
   // On-page highlighting for search result click-through
