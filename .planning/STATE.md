@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-03-10)
 
 ## Current Position
 
-Phase: 4 of 6 (LLM Enrichment)
-Plan: 4 of 4 in current phase (04-04 complete -- phase done)
+Phase: 4.1 of 6 (Visual Polish & Screenshot Review)
+Plan: 1 of 2 in current phase
 Status: executing
-Last activity: 2026-03-11 -- Completed 04-04-PLAN.md
+Last activity: 2026-03-11 -- Completed 04.1-01-PLAN.md
 
-Progress: [█████████░] 88%
+Progress: [█████████░] 90%
 
 ## Performance Metrics
 
@@ -62,6 +62,7 @@ Progress: [█████████░] 88%
 | Phase 04 P02 | 8min | 2 tasks | 26 files |
 | Phase 04 P03 | 8min | 2 tasks | 40 files |
 | Phase 04 P04 | 5min | 2 tasks | 4 files |
+| Phase 04.1 P01 | 5min | 2 tasks | 40 files |
 
 ## Accumulated Context
 
@@ -119,6 +120,9 @@ Recent decisions affecting current work:
 - [Phase 04]: Glossary tooltips injected into body text only, not into summary details blocks
 - [Phase 04]: FAQ/Glossar nav links hidden on mobile (sm breakpoint) to avoid header crowding
 - [Phase 04]: [04-04]: 12 targeted E2E tests across 4 files covering all 7 LLM requirements with screenshot baselines
+- [04.1-01]: Arrow-G logo uses project #6BA539 green as circle fill with white G path
+- [04.1-01]: Data-source BL names (Niederoesterreich, Kaernten) kept as-is from RIS JSON
+- [04.1-01]: All user-facing German text uses proper umlauts, never ASCII-safe spellings
 
 ### Pending Todos
 
@@ -139,6 +143,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-11T09:37:21.725Z
-Stopped at: Completed 04-04-PLAN.md
+Last session: 2026-03-11T09:49:35Z
+Stopped at: Completed 04.1-01-PLAN.md
 Resume file: None
