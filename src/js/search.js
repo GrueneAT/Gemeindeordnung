@@ -121,7 +121,7 @@ function renderCountHeader(totalCount, bundesland) {
 }
 
 /**
- * Render a single search result item.
+ * Render a single search result item (fallback for results without sub_results).
  */
 function renderResultItem(result, query) {
   const title = cleanTitle(result.meta?.title || '');
@@ -142,6 +142,50 @@ function renderResultItem(result, query) {
 }
 
 /**
+ * Render a single sub-result item (paragraph-level result).
+ */
+function renderSubResultItem(sub) {
+  const title = sub.title || '';
+  return `<a href="${sub.url}" class="search-result-item search-sub-result">
+    <div class="search-result-title">${escapeForDisplay(title)}</div>
+    <div class="search-result-excerpt">${sub.excerpt || ''}</div>
+  </a>`;
+}
+
+/**
+ * Render a law-level group with its sub-results.
+ */
+function renderLawGroup(lawTitle, subResults, stadtrecht) {
+  const badge = stadtrecht
+    ? ' <span class="search-badge-stadtrecht">Stadtrecht</span>'
+    : '';
+  let html = `<div class="search-law-heading">${escapeForDisplay(lawTitle)}${badge} <span class="search-law-count">(${subResults.length} Treffer)</span></div>`;
+  for (const sub of subResults) {
+    html += renderSubResultItem(sub);
+  }
+  return html;
+}
+
+/**
+ * Count total sub-results across all results (for header display).
+ */
+function countSubResults(results) {
+  return results.reduce((sum, r) => sum + (r.sub_results?.length || 1), 0);
+}
+
+/**
+ * Render results for a single page result using sub_results if available.
+ */
+function renderPageResult(result, query) {
+  if (result.sub_results && result.sub_results.length > 0) {
+    const lawTitle = cleanTitle(result.meta?.title || '');
+    return renderLawGroup(lawTitle, result.sub_results, isStadtrecht(result));
+  }
+  // Fallback to page-level rendering
+  return renderResultItem(result, query);
+}
+
+/**
  * Escape text for safe display (not for innerHTML with markup).
  */
 function escapeForDisplay(text) {
@@ -151,7 +195,7 @@ function escapeForDisplay(text) {
 }
 
 /**
- * Render results grouped by Bundesland.
+ * Render results grouped by Bundesland, with law sub-groups inside.
  */
 function renderGroupedResults(results, query) {
   const groups = {};
@@ -165,9 +209,10 @@ function renderGroupedResults(results, query) {
   const sortedBLs = Object.keys(groups).sort();
   for (const bl of sortedBLs) {
     const items = groups[bl];
-    html += `<div class="search-group-heading">${escapeForDisplay(bl)} (${items.length})</div>`;
+    const blSubCount = items.reduce((sum, r) => sum + (r.sub_results?.length || 1), 0);
+    html += `<div class="search-group-heading">${escapeForDisplay(bl)} (${blSubCount})</div>`;
     for (const result of items) {
-      html += renderResultItem(result, query);
+      html += renderPageResult(result, query);
     }
   }
   return html;
@@ -188,19 +233,26 @@ function renderResults(searchResult) {
     return;
   }
 
-  let html = renderCountHeader(totalCount, activeBundesland);
+  // Count paragraph-level matches for display
+  const subResultCount = countSubResults(results);
+  // For "show all", estimate total sub-results proportionally
+  const estimatedTotal = hasMore
+    ? Math.round((subResultCount / results.length) * totalCount)
+    : subResultCount;
+
+  let html = renderCountHeader(subResultCount, activeBundesland);
 
   // Group by BL when searching all Bundeslaender
   if (!activeBundesland && results.length > 0) {
     html += renderGroupedResults(results, currentQuery);
   } else {
     for (const result of results) {
-      html += renderResultItem(result, currentQuery);
+      html += renderPageResult(result, currentQuery);
     }
   }
 
   if (hasMore) {
-    html += `<button class="search-show-all" data-action="show-all">Alle ${totalCount} Treffer anzeigen</button>`;
+    html += `<button class="search-show-all" data-action="show-all">Alle ${totalCount} Gesetze durchsuchen</button>`;
   }
 
   searchDropdown.innerHTML = html;
@@ -212,12 +264,13 @@ function renderResults(searchResult) {
       e.preventDefault();
       showAllBtn.textContent = 'Lade...';
       const allLoaded = await Promise.all(allResults.map((r) => r.data()));
-      let allHtml = renderCountHeader(totalCount, activeBundesland);
+      const allSubCount = countSubResults(allLoaded);
+      let allHtml = renderCountHeader(allSubCount, activeBundesland);
       if (!activeBundesland) {
         allHtml += renderGroupedResults(allLoaded, currentQuery);
       } else {
         for (const result of allLoaded) {
-          allHtml += renderResultItem(result, currentQuery);
+          allHtml += renderPageResult(result, currentQuery);
         }
       }
       searchDropdown.innerHTML = allHtml;
