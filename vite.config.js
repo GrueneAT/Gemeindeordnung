@@ -38,4 +38,8 @@ export default defineConfig({
       input: discoverInputs(),
     },
   },
+  test: {
+    root: '.',
+    include: ['tests/**/*.test.js'],
+  },
 });
