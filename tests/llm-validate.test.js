@@ -169,6 +169,60 @@ describe('validateFAQ', () => {
     expect(errors.some(e => /citation|raw|format/i.test(e))).toBe(true);
   });
 
+  it('validateFAQ handles per-topic generated structure with multiple topics', () => {
+    const data = {
+      meta: { generatedAt: '2026-01-01', topicCount: 3 },
+      topics: [
+        {
+          slug: 'befangenheit-und-ausschluss',
+          title: 'Befangenheit und Ausschluss',
+          description: 'Regelungen zur Befangenheit von Gemeinderatsmitgliedern.',
+          questions: [
+            {
+              question: 'Wann gilt ein Gemeinderatsmitglied als befangen?',
+              answer: 'In den meisten Gemeindeordnungen gilt ein Mitglied als befangen, wenn es selbst oder nahe Angehoerige von einer Angelegenheit persoenlich betroffen sind. Die befangene Person muss die Sitzung fuer die Dauer der Beratung und Abstimmung verlassen.',
+              references: [
+                { category: 'gemeindeordnungen', key: 'burgenland', paragraph: '35', label: 'Par. 35 Bgld. GO' },
+                { category: 'gemeindeordnungen', key: 'tirol', paragraph: '25', label: 'Par. 25 Tir. GO' },
+              ],
+            },
+          ],
+        },
+        {
+          slug: 'gemeindehaushalt',
+          title: 'Gemeindehaushalt und Rechnungsabschluss',
+          description: 'Regelungen zum Voranschlag und zur Haushaltsfuehrung.',
+          questions: [
+            {
+              question: 'Wie wird der Gemeindevoranschlag beschlossen?',
+              answer: 'Der Gemeindevoranschlag wird jaehrlich vom Gemeinderat beschlossen. In den meisten Bundeslaendern muss der Voranschlag vor Beginn des neuen Haushaltsjahres beschlossen werden, andernfalls gelten provisorische Regelungen.',
+              references: [
+                { category: 'gemeindeordnungen', key: 'salzburg', paragraph: '72', label: 'Par. 72 Sbg. GO' },
+              ],
+            },
+          ],
+        },
+        {
+          slug: 'buergerbeteiligung',
+          title: 'Buergerbeteiligung',
+          description: 'Instrumente der direkten Demokratie auf Gemeindeebene.',
+          questions: [
+            {
+              question: 'Welche Formen der Buergerbeteiligung gibt es auf Gemeindeebene?',
+              answer: 'Die oesterreichischen Gemeindeordnungen sehen verschiedene Formen der direkten Demokratie vor, darunter Volksbegehren, Volksbefragungen und Volksabstimmungen. Die genauen Voraussetzungen und Quoren variieren je nach Bundesland erheblich.',
+              references: [
+                { category: 'gemeindeordnungen', key: 'oberoesterreich', paragraph: '88', label: 'Par. 88 OOe. GO' },
+                { category: 'gemeindeordnungen', key: 'kaernten', paragraph: '55', label: 'Par. 55 Ktn. AGO' },
+              ],
+            },
+          ],
+        },
+      ],
+    };
+    const errors = validateFAQ(data);
+    expect(errors).toEqual([]);
+  });
+
   it('returns errors for answers shorter than 100 chars', () => {
     const data = {
       ...validFAQ,

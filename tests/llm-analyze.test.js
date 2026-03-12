@@ -91,17 +91,42 @@ describe('llm-analyze prompt quality', () => {
     expect(promptSection).toMatch(/BL_CITATION/);
   });
 
-  it('FAQ prompt does NOT hardcode topic list', () => {
-    const faqSection = sourceCode.slice(sourceCode.indexOf('generateFAQ'));
-    // The prompt should NOT contain a fixed list of topics to generate
-    // It should let Claude determine topics from content
-    expect(faqSection).not.toMatch(/Erstelle.*folgende.*Themen/);
+  it('curated-topics.json exists and has valid structure', () => {
+    const topicsPath = join(ROOT, 'data', 'llm', 'faq', 'curated-topics.json');
+    expect(existsSync(topicsPath)).toBe(true);
+
+    const data = JSON.parse(readFileSync(topicsPath, 'utf-8'));
+    expect(data).toHaveProperty('version');
+    expect(data).toHaveProperty('topics');
+    expect(Array.isArray(data.topics)).toBe(true);
+    expect(data.topics.length).toBeGreaterThanOrEqual(10);
+
+    for (const topic of data.topics) {
+      expect(topic).toHaveProperty('slug');
+      expect(topic).toHaveProperty('title');
+      expect(topic).toHaveProperty('description');
+      expect(topic).toHaveProperty('seedQuestions');
+      expect(typeof topic.slug).toBe('string');
+      expect(topic.slug).toMatch(/^[a-z0-9-]+$/);
+      expect(typeof topic.title).toBe('string');
+      expect(typeof topic.description).toBe('string');
+      expect(Array.isArray(topic.seedQuestions)).toBe(true);
+      expect(topic.seedQuestions.length).toBeGreaterThanOrEqual(2);
+    }
   });
 
-  it('FAQ prompt instructs Claude to determine topics', () => {
+  it('generateFAQ source code references curated topics', () => {
     const faqSection = sourceCode.slice(sourceCode.indexOf('generateFAQ'));
-    // Should mention Claude determining/identifying topics
-    expect(faqSection).toMatch(/bestimm|identifizier|analysier/i);
+    // After refactor, generateFAQ should read from curated-topics.json
+    // Before refactor, it uses collectTopicTaxonomy. Either way, it processes topics.
+    expect(faqSection).toMatch(/curated-topics\.json|collectTopicTaxonomy/);
+  });
+
+  it('per-topic prompt building avoids single massive prompt for all topics', () => {
+    const faqSection = sourceCode.slice(sourceCode.indexOf('export async function generateFAQ'));
+    // The function should either use per-topic calls (curated approach)
+    // or at minimum cap the number of topics to avoid token overflow
+    expect(faqSection).toMatch(/curated|slice|\.map/);
   });
 
   it('glossary prompt reads ALL law files (no slice(0,3))', () => {

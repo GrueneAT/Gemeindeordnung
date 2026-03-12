@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "slug": "sitzungsoeffentlichkeit-und-vertraulichkeit",
+      "title": "Sitzungsöffentlichkeit und Vertraulichkeit",
+      "description": "Regelungen zur Öffentlichkeit und zum Ausschluss der Öffentlichkeit bei Gemeinderatssitzungen sowie Verschwiegenheitspflichten.",
+      "seedQuestions": [
+        "Wann darf die Öffentlichkeit von einer Gemeinderatssitzung ausgeschlossen werden?",
+        "Welche Verschwiegenheitspflichten gelten für Gemeinderät:innen?",
+        "Haben Gemeindebürger:innen ein Recht auf Teilnahme an Sitzungen?"
+      ]
+    },
+    {
+      "slug": "befangenheit-und-ausschluss",
+      "title": "Befangenheit und Ausschluss",
+      "description": "Regelungen zur Befangenheit von Gemeinderatsmitgliedern und deren Ausschluss von Beratung und Abstimmung bei persönlicher Beteiligung.",
+      "seedQuestions": [
+        "Wann gilt ein Gemeinderatsmitglied als befangen?",
+        "Was passiert, wenn ein befangenes Mitglied trotzdem abstimmt?",
+        "Wer stellt die Befangenheit fest?"
+      ]
+    },
+    {
+      "slug": "buergermeisterwahl-und-abwahl",
+      "title": "Bürgermeister:innenwahl und Abwahl",
+      "description": "Verfahren zur Wahl und Abwahl der Bürgermeister:in sowie der Vizebürgermeister:in durch den Gemeinderat oder die Gemeindebevölkerung.",
+      "seedQuestions": [
+        "Wie wird die Bürgermeister:in gewählt?",
+        "Unter welchen Voraussetzungen kann die Bürgermeister:in abgewählt werden?",
+        "Welche Rolle spielt die Vizebürgermeister:in bei Verhinderung?"
+      ]
+    },
+    {
+      "slug": "gemeindevorstand-stadtrat",
+      "title": "Gemeindevorstand und Stadtrat",
+      "description": "Zusammensetzung, Aufgaben und Arbeitsweise des Gemeindevorstands (bzw. Stadtrats) als kollegiales Verwaltungsorgan der Gemeinde.",
+      "seedQuestions": [
+        "Welche Aufgaben hat der Gemeindevorstand?",
+        "Wie wird der Gemeindevorstand zusammengesetzt?",
+        "Was ist der Unterschied zwischen Gemeindevorstand und Stadtrat?"
+      ]
+    },
+    {
+      "slug": "gemeindehaushalt-und-rechnungsabschluss",
+      "title": "Gemeindehaushalt und Rechnungsabschluss",
+      "description": "Regelungen zum Voranschlag (Budget), zur Haushaltsführung und zum Rechnungsabschluss der Gemeinde.",
+      "seedQuestions": [
+        "Wie wird der Gemeindevoranschlag beschlossen?",
+        "Was passiert, wenn der Voranschlag nicht rechtzeitig beschlossen wird?",
+        "Wer prüft den Rechnungsabschluss der Gemeinde?"
+      ]
+    },
+    {
+      "slug": "pruefungsausschuss-kontrollausschuss",
+      "title": "Prüfungsausschuss und Kontrollausschuss",
+      "description": "Einrichtung, Zusammensetzung und Aufgaben des Prüfungs- bzw. Kontrollausschusses zur Kontrolle der Gemeindeverwaltung und Gebarungsprüfung.",
+      "seedQuestions": [
+        "Welche Aufgaben hat der Prüfungsausschuss?",
+        "Wer kann Mitglied des Kontrollausschusses werden?",
+        "Wie oft muss der Prüfungsausschuss die Gebarung prüfen?"
+      ]
+    },
+    {
+      "slug": "ausschuesse-und-kommissionen",
+      "title": "Ausschüsse und Kommissionen",
+      "description": "Einrichtung, Besetzung und Aufgaben der Gemeinderatsausschüsse sowie besonderer Kommissionen.",
+      "seedQuestions": [
+        "Welche Ausschüsse muss ein Gemeinderat bilden?",
+        "Nach welchem Verfahren werden Ausschüsse besetzt?",
+        "Können auch gemeindefremde Personen in Ausschüsse berufen werden?"
+      ]
+    },
+    {
+      "slug": "gemeindebedienstete-und-personal",
+      "title": "Gemeindebedienstete und Personal",
+      "description": "Regelungen zur Anstellung, Rechte und Pflichten der Gemeindebediensteten sowie zur Personalhoheit der Gemeinde.",
+      "seedQuestions": [
+        "Wer ist für die Anstellung von Gemeindebediensteten zuständig?",
+        "Welche dienstrechtlichen Regelungen gelten für Gemeindepersonal?",
+        "Kann die Bürgermeister:in Personal ohne Gemeinderatsbeschluss einstellen?"
+      ]
+    },
+    {
+      "slug": "ortspolizeiliche-verordnungen",
+      "title": "Ortspolizeiliche Verordnungen",
+      "description": "Befugnis der Gemeinde zum Erlass ortspolizeilicher Verordnungen zur Abwehr von Gefahren und Missständen.",
+      "seedQuestions": [
+        "Was sind ortspolizeiliche Verordnungen?",
+        "Wer beschließt ortspolizeiliche Verordnungen?",
+        "Welche Gegenstände können durch ortspolizeiliche Verordnungen geregelt werden?"
+      ]
+    },
+    {
+      "slug": "buergerbeteiligung",
+      "title": "Bürgerbeteiligung (Volksbegehren, Volksbefragung, Volksabstimmung)",
+      "description": "Instrumente der direkten Demokratie auf Gemeindeebene: Volksbegehren, Volksbefragungen und Volksabstimmungen.",
+      "seedQuestions": [
+        "Welche Formen der Bürgerbeteiligung gibt es auf Gemeindeebene?",
+        "Wie viele Unterschriften sind für ein Volksbegehren nötig?",
+        "Ist das Ergebnis einer Volksabstimmung für den Gemeinderat bindend?",
+        "Können Gemeindebürger:innen eine Gemeinderatssitzung zu einem bestimmten Thema erzwingen?"
+      ]
+    },
+    {
+      "slug": "gemeindevermoegen-und-liegenschaftsverwaltung",
+      "title": "Gemeindevermögen und Liegenschaftsverwaltung",
+      "description": "Regelungen zur Verwaltung des Gemeindevermögens, zum Erwerb und zur Veräußerung von Liegenschaften und zur Vermögenssicherung.",
+      "seedQuestions": [
+        "Wer entscheidet über den Verkauf von Gemeindegrundstücken?",
+        "Welche Genehmigungen sind für größere Vermögensverfügungen erforderlich?",
+        "Wie wird das Gemeindevermögen geschützt?"
+      ]
+    },
+    {
+      "slug": "gemeindezusammenlegung-und-trennung",
+      "title": "Gemeindezusammenlegung und -trennung",
+      "description": "Verfahren und Voraussetzungen für die Zusammenlegung, Trennung oder Grenzänderung von Gemeinden.",
+      "seedQuestions": [
+        "Unter welchen Voraussetzungen können Gemeinden zusammengelegt werden?",
+        "Haben die betroffenen Gemeindebürger:innen ein Mitspracherecht?",
+        "Wer entscheidet endgültig über eine Gemeindezusammenlegung?"
+      ]
+    },
+    {
+      "slug": "informationspflichten-und-akteneinsicht",
+      "title": "Informationspflichten und Akteneinsicht",
+      "description": "Auskunfts- und Informationspflichten der Gemeinde gegenüber Gemeinderät:innen und Gemeindebürger:innen sowie Recht auf Akteneinsicht.",
+      "seedQuestions": [
+        "Welches Auskunftsrecht haben Gemeinderät:innen?",
+        "Haben Gemeindebürger:innen ein Recht auf Akteneinsicht?",
+        "Wie müssen Gemeinderatsbeschlüsse veröffentlicht werden?"
+      ]
+    },
+    {
+      "slug": "aufgaben-des-gemeinderats",
+      "title": "Aufgaben des Gemeinderats",
+      "description": "Der Gemeinderat als oberstes Organ der Gemeinde: Zusammensetzung, Zuständigkeiten und Beschlussfassung.",
+      "seedQuestions": [
+        "Welche Aufgaben sind dem Gemeinderat vorbehalten?",
+        "Wie wird die Beschlussfähigkeit des Gemeinderats festgestellt?",
+        "Welche Mehrheiten sind für verschiedene Beschlüsse erforderlich?"
+      ]
+    },
+    {
+      "slug": "gemeindeaufsicht",
+      "title": "Gemeindeaufsicht (Aufsichtsbehörde)",
+      "description": "Aufsicht des Landes über die Gemeinden: Genehmigungsvorbehalte, Aufsichtsmittel und Rechtsschutz der Gemeinde.",
+      "seedQuestions": [
+        "Welche Behörde übt die Aufsicht über die Gemeinden aus?",
+        "Welche Gemeinderatsbeschlüsse bedürfen der Genehmigung der Aufsichtsbehörde?",
+        "Welche Aufsichtsmittel stehen der Landesregierung zur Verfügung?"
+      ]
+    }
+  ]
+}
