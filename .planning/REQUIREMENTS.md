@@ -160,13 +160,30 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LLM-05 | Phase 4 | Complete |
 | LLM-06 | Phase 4 | Complete |
 | LLM-07 | Phase 4 | Complete |
+| SRCH-02 | Phase 5 | Pending |
+| SRCH-03 | Phase 5 | Pending |
+| DSKT-01 | Phase 5 | Pending |
+| DSKT-02 | Phase 5 | Pending |
+| DSKT-03 | Phase 5 | Pending |
+| SRCH-01 | Phase 6 | Pending |
+| SRCH-04 | Phase 6 | Pending |
+| SRCH-05 | Phase 6 | Pending |
+| NAV-01 | Phase 6 | Pending |
+| NAV-02 | Phase 6 | Pending |
+| NAV-03 | Phase 6 | Pending |
+| READ-01 | Phase 7 | Pending |
+| READ-02 | Phase 7 | Pending |
+| READ-03 | Phase 7 | Pending |
+| READ-04 | Phase 7 | Pending |
+| READ-05 | Phase 7 | Pending |
 
 **Coverage:**
 - v1 requirements: 32 total — all complete
-- v1.1 requirements: 16 total
-- Mapped to phases: 0
-- Unmapped: 16 (awaiting roadmap)
+- v1.1 requirements: 16 total — all mapped
+- Phase 5 (Unified Search Engine): SRCH-02, SRCH-03, DSKT-01, DSKT-02, DSKT-03 (5 reqs)
+- Phase 6 (Search-Hero Homepage & Navigation): SRCH-01, SRCH-04, SRCH-05, NAV-01, NAV-02, NAV-03 (6 reqs)
+- Phase 7 (Law Text Readability): READ-01, READ-02, READ-03, READ-04, READ-05 (5 reqs)
 
 ---
 *Requirements defined: 2026-03-10*
-*Last updated: 2026-03-12 after v1.1 requirements definition*
+*Last updated: 2026-03-12 after v1.1 roadmap creation*

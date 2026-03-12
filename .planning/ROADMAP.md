@@ -1,8 +1,9 @@
 # Roadmap: Gemeindeordnungs-Recherche
 
-## Overview
+## Milestones
 
-This project delivers a static website that makes all 9 Austrian Gemeindeordnungen searchable for Gruene GemeinderaetInnen. The roadmap progresses from data acquisition (fetching and parsing laws from RIS API) through a browsable site with Gruenes branding, then adds Pagefind-powered search with Bundesland selection as the primary UX, and finally enriches the content with LLM-generated summaries, FAQs, and glossary. Each phase delivers a coherent, verifiable capability that builds on the previous.
+- v1.0 MVP - Phases 1-4.2 (shipped 2026-03-11)
+- v1.1 UI/UX Improvements - Phases 5-7 (in progress)
 
 ## Phases
 
@@ -12,12 +13,29 @@ This project delivers a static website that makes all 9 Austrian Gemeindeordnung
 
 Decimal phases appear between their surrounding integers in numeric order.
 
+<details>
+<summary>v1.0 MVP (Phases 1-4.2) - SHIPPED 2026-03-11</summary>
+
 - [x] **Phase 1: Data Pipeline & Project Foundation** - Fetch all 9 Gemeindeordnungen from RIS, parse into structured data, set up build tooling and deployment
 - [x] **Phase 2: Browsing & Branding** - Browsable Gemeindeordnung pages with Gruenes CI, responsive layout, and accessibility
+- [x] **Phase 2.1: Frontend Testing Infrastructure** - Playwright E2E tests for all UAT scenarios with CI integration
 - [x] **Phase 3: Search** - Pagefind full-text search with Bundesland selection as primary UX
 - [x] **Phase 4: LLM Enrichment** - Dev-time generated summaries, FAQs, glossary, and topic tagging
+- [x] **Phase 4.1: Visual Polish & Screenshot Review** - Comprehensive visual review and branding fixes
+- [x] **Phase 4.2: Improve LLM Content Quality** - Replace placeholder LLM content with high-quality real content
+
+</details>
+
+### v1.1 UI/UX Improvements
+
+- [ ] **Phase 5: Unified Search Engine** - Pagefind metadata tagging for FAQ/Glossar, two-pass search architecture, grouped results by content type with rich metadata
+- [ ] **Phase 6: Search-Hero Homepage & Navigation** - Search-first homepage layout replacing card grid, quick-access discovery links, polished header and navigation across all pages
+- [ ] **Phase 7: Law Text Readability** - Typography overhaul, summary-first layout, visual hierarchy for sections and Absaetze, highlighted key terms
 
 ## Phase Details
+
+<details>
+<summary>v1.0 MVP Phase Details (Phases 1-4.2)</summary>
 
 ### Phase 1: Data Pipeline & Project Foundation
 **Goal**: All 9 Gemeindeordnungen + 14 Statutarstadt-Stadtrechte are fetched from RIS, parsed into structured JSON, and the site builds and deploys to GitHub Pages via automated pipeline
@@ -32,9 +50,9 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01-PLAN.md -- Project setup (Vite + TailwindCSS v4 + vitest) and RIS law fetch script with complete 23-law registry
-- [ ] 01-02-PLAN.md -- Cheerio HTML parser with real RIS test fixtures and structured JSON output
-- [ ] 01-03-PLAN.md -- Page generation, GitHub Actions deployment workflow, and LLM dev-script stub
+- [x] 01-01-PLAN.md -- Project setup (Vite + TailwindCSS v4 + vitest) and RIS law fetch script with complete 23-law registry
+- [x] 01-02-PLAN.md -- Cheerio HTML parser with real RIS test fixtures and structured JSON output
+- [x] 01-03-PLAN.md -- Page generation, GitHub Actions deployment workflow, and LLM dev-script stub
 
 ### Phase 2: Browsing & Branding
 **Goal**: Users can browse each Bundesland's Gemeindeordnung on a well-designed, accessible, mobile-friendly site with Gruenes Corporate Identity
@@ -48,12 +66,11 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01-PLAN.md -- Gruene branding theme, page generator rewrite with header/footer, ToC, breadcrumbs, Bundesland cards, responsive typography
-- [ ] 02-02-PLAN.md -- Interactive JS features (clipboard copy, scroll-to-top, Bundesland dropdown, anchor highlight) and visual verification
-- [ ] 02-03-PLAN.md -- Gap closure: fix copy button visibility bug (missing group class, orphaned CSS rule)
+- [x] 02-01-PLAN.md -- Gruene branding theme, page generator rewrite with header/footer, ToC, breadcrumbs, Bundesland cards, responsive typography
+- [x] 02-02-PLAN.md -- Interactive JS features (clipboard copy, scroll-to-top, Bundesland dropdown, anchor highlight) and visual verification
+- [x] 02-03-PLAN.md -- Gap closure: fix copy button visibility bug (missing group class, orphaned CSS rule)
 
 ### Phase 02.1: Frontend Testing Infrastructure (INSERTED)
-
 **Goal:** Playwright E2E tests verify all 10 UAT scenarios from Phase 2 with screenshot capture, mobile viewport testing, and WCAG AA accessibility checks, integrated into CI to gate deployments
 **Depends on:** Phase 2
 **Requirements**: TEST-01a, TEST-01b, TEST-01c, TEST-01d, TEST-01e, TEST-01f, TEST-01g, TEST-01h, TEST-02, TEST-03, TEST-06
@@ -101,9 +118,24 @@ Plans:
 - [x] 04-03-PLAN.md -- FAQ pages, glossary page, inline glossary tooltips, Vite config + header navigation extension
 - [x] 04-04-PLAN.md -- E2E tests for all 7 LLM requirements and visual verification checkpoint
 
-### Phase 04.2: Improve LLM content quality: searchable glossary, real FAQ, no placeholder summaries (INSERTED)
+### Phase 04.1: Visual Polish & Screenshot Review (INSERTED)
+**Goal:** Comprehensive visual review of the entire site using Playwright screenshots -- find and fix all usability, layout, and branding issues to ship-quality standard
+**Depends on:** Phase 4
+**Requirements**: DSGN-01, DSGN-03, BROW-05, BROW-06
+**Success Criteria** (what must be TRUE):
+  1. Site header shows the correct Austrian Gruene arrow-G logo on every page
+  2. All template text uses proper German umlauts
+  3. Every screenshot passes visual review with zero layout, typography, or branding issues
+  4. Mobile layout at 375px is clean with no overflow
+  5. CLAUDE.md contains a mandatory Visual Review Protocol for all future UI work
+**Plans**: 2 plans
 
-**Goal:** Replace all placeholder LLM content with high-quality, real content: regenerate summaries with varied natural language for all 23 laws, create substantive FAQ with proper legal citations and BL-specific details, expand glossary with full BL coverage and client-side search, and improve the LLM pipeline with separate commands and validation
+Plans:
+- [x] 04.1-01-PLAN.md -- Logo replacement, umlaut fixes, systematic screenshot review and visual polish of all pages
+- [x] 04.1-02-PLAN.md -- Strengthen CLAUDE.md Visual Review Protocol to mandatory for future autonomous validation
+
+### Phase 04.2: Improve LLM Content Quality (INSERTED)
+**Goal:** Replace all placeholder LLM content with high-quality, real content
 **Depends on:** Phase 4
 **Requirements**: LLM-01, LLM-02, LLM-03, LLM-04, LLM-05, LLM-06, LLM-07, DEPL-03
 **Success Criteria** (what must be TRUE):
@@ -120,34 +152,58 @@ Plans:
 - [ ] 04.2-02-PLAN.md -- Add client-side glossary filter/search input with E2E tests
 - [ ] 04.2-03-PLAN.md -- Regenerate all LLM content and human quality verification
 
-### Phase 04.1: Visual Polish & Screenshot Review (INSERTED)
+</details>
 
-**Goal:** Comprehensive visual review of the entire site using Playwright screenshots -- find and fix all usability, layout, and branding issues to ship-quality standard, then embed visual self-validation into the project workflow so future phases verify their own visual output autonomously
-**Depends on:** Phase 4
-**Requirements**: DSGN-01, DSGN-03, BROW-05, BROW-06
+### Phase 5: Unified Search Engine
+**Goal**: Users can search across all content types (Gesetze, FAQ, Glossar) from a single input and see results grouped by source with rich metadata
+**Depends on**: Phase 4.2
+**Requirements**: SRCH-02, SRCH-03, DSKT-01, DSKT-02, DSKT-03
 **Success Criteria** (what must be TRUE):
-  1. Site header shows the correct Austrian Gruene arrow-G logo on every page
-  2. All template text uses proper German umlauts
-  3. Every screenshot passes visual review with zero layout, typography, or branding issues
-  4. Mobile layout at 375px is clean with no overflow
-  5. CLAUDE.md contains a mandatory Visual Review Protocol for all future UI work
-**Plans**: 2 plans
+  1. User types a query and sees results from Gesetze, FAQ, and Glossar grouped into visually distinct sections with content-type badges and per-group result counts
+  2. Each search result shows enough context to evaluate relevance without clicking: law name, Bundesland, paragraph number for Gesetze; topic title for FAQ; term name for Glossar
+  3. Desktop search results display in a larger panel (not the current small dropdown) that is space-efficient and scannable
+  4. Bundesland filter applies only to Gesetze results while FAQ and Glossar results always appear regardless of filter selection
+**Plans**: TBD
 
-Plans:
-- [ ] 04.1-01-PLAN.md -- Logo replacement, umlaut fixes, systematic screenshot review and visual polish of all pages
-- [ ] 04.1-02-PLAN.md -- Strengthen CLAUDE.md Visual Review Protocol to mandatory for future autonomous validation
+### Phase 6: Search-Hero Homepage & Navigation
+**Goal**: The homepage communicates "search first" with a prominent central search bar, quick-access discovery links, and polished navigation across all pages and viewports
+**Depends on**: Phase 5
+**Requirements**: SRCH-01, SRCH-04, SRCH-05, NAV-01, NAV-02, NAV-03
+**Success Criteria** (what must be TRUE):
+  1. User lands on the homepage and sees a large, centered search bar as the primary hero element with a value proposition tagline
+  2. Below the search hero, user sees quick-access links to FAQ topics and popular glossary terms for browsable discovery without searching
+  3. The former card grid of Gesetze is minimized or collapsed below the search hero, not the primary visual element
+  4. Header layout is clean and consistent across all pages with FAQ and Glossar links visible and well-integrated on both desktop and mobile
+  5. Navigation works on mobile without crowding or misalignment, with FAQ/Glossar links accessible at all breakpoints
+**Plans**: TBD
+
+### Phase 7: Law Text Readability
+**Goal**: Law text pages use improved typography, visual hierarchy, and summary-first layout so users can scan and understand content faster
+**Depends on**: Phase 4.2
+**Requirements**: READ-01, READ-02, READ-03, READ-04, READ-05
+**Success Criteria** (what must be TRUE):
+  1. Law text body uses improved typography (larger base size, generous line-height, constrained max-width) with clear visual hierarchy distinguishing Hauptstuecke, Abschnitte, and Paragraph headings
+  2. LLM summary for each paragraph is visually prominent and always visible as orientation before the law text, not hidden in a collapsed section
+  3. Numbered Absaetze within paragraphs are clearly separated and indented, not running together as a wall of text
+  4. Important terms, structural markers, or key phrases in law text are visually highlighted to aid scanning
+  5. Section headings (Hauptstuecke, Abschnitte) have strong visual hierarchy clearly distinguishing them from individual paragraph headings
+**Plans**: TBD
 
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 2.1 -> 3 -> 4
+Phases 5 and 7 can run in parallel (independent). Phase 6 depends on Phase 5.
+Recommended: 5 -> 6, with 7 parallelizable at any point.
 
-| Phase | Plans Complete | Status | Completed |
-|-------|----------------|--------|-----------|
-| 1. Data Pipeline & Project Foundation | 3/3 | Complete | 2026-03-11 |
-| 2. Browsing & Branding | 3/3 | Complete | 2026-03-11 |
-| 2.1 Frontend Testing Infrastructure | 2/2 | Complete | 2026-03-11 |
-| 3. Search | 3/3 | Complete | 2026-03-11 |
-| 4. LLM Enrichment | 4/4 | Complete | 2026-03-11 |
-| 4.1 Visual Polish & Screenshot Review | 2/2 | Complete   | 2026-03-11 |
-| 4.2 Improve LLM Content Quality | 0/3 | Planning | - |
+| Phase | Milestone | Plans Complete | Status | Completed |
+|-------|-----------|----------------|--------|-----------|
+| 1. Data Pipeline & Project Foundation | v1.0 | 3/3 | Complete | 2026-03-11 |
+| 2. Browsing & Branding | v1.0 | 3/3 | Complete | 2026-03-11 |
+| 2.1 Frontend Testing Infrastructure | v1.0 | 2/2 | Complete | 2026-03-11 |
+| 3. Search | v1.0 | 3/3 | Complete | 2026-03-11 |
+| 4. LLM Enrichment | v1.0 | 4/4 | Complete | 2026-03-11 |
+| 4.1 Visual Polish & Screenshot Review | v1.0 | 2/2 | Complete | 2026-03-11 |
+| 4.2 Improve LLM Content Quality | v1.0 | 0/3 | Planning | - |
+| 5. Unified Search Engine | v1.1 | 0/? | Not started | - |
+| 6. Search-Hero Homepage & Navigation | v1.1 | 0/? | Not started | - |
+| 7. Law Text Readability | v1.1 | 0/? | Not started | - |
