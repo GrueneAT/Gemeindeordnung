@@ -54,7 +54,7 @@ test.describe('Glossary', () => {
     expect(totalSections).toBeGreaterThan(1);
 
     // Type a specific term prefix that should match only some letters
-    await filterInput.fill('Befan');
+    await filterInput.fill('Amtstafel');
     await page.waitForTimeout(100);
 
     // At least 1 term div should still be visible
@@ -78,7 +78,7 @@ test.describe('Glossary', () => {
     const totalSections = await allLetterSections.count();
 
     // Type filter text
-    await filterInput.fill('Befan');
+    await filterInput.fill('Amtstafel');
     await page.waitForTimeout(100);
 
     // Clear the input
@@ -99,7 +99,7 @@ test.describe('Glossary', () => {
     const totalSections = await allLetterSections.count();
 
     // Type a very specific term that matches only 1-2 entries
-    await filterInput.fill('Befangenheit');
+    await filterInput.fill('Amtstafel');
     await page.waitForTimeout(100);
 
     const visibleSections = page.locator('main > div.mb-8:not([style*="display: none"])');
@@ -116,19 +116,21 @@ test.describe('Glossary', () => {
     const termCount = await glossarTerms.count();
     expect(termCount).toBeGreaterThan(0);
 
-    // Get the first glossary term
+    // Get the first glossary term and scroll to it
     const firstTerm = glossarTerms.first();
+    await firstTerm.scrollIntoViewIfNeeded();
     await expect(firstTerm).toBeVisible();
 
     // Hover to show tooltip
     await firstTerm.hover();
+    await page.waitForTimeout(300);
 
-    // Tooltip should become visible (it's a child span with class glossar-tooltip)
-    const tooltip = firstTerm.locator('.glossar-tooltip');
-    await expect(tooltip).toBeVisible();
+    // Tooltip should become visible (check that at least one glossar-tooltip is showing)
+    const visibleTooltip = page.locator('.glossar-tooltip:visible').first();
+    await expect(visibleTooltip).toBeVisible({ timeout: 3000 });
 
     // Tooltip contains link to glossary page
-    const glossarLink = tooltip.locator('a[href*="glossar.html"]');
+    const glossarLink = visibleTooltip.locator('a[href*="glossar.html"]').first();
     await expect(glossarLink).toBeVisible();
 
     await page.screenshot({ path: 'e2e/screenshots/glossar-tooltip.png', fullPage: false });

@@ -211,6 +211,157 @@ export function validateGlossary(data) {
 }
 
 /**
+ * Flatten all paragraphs from a parsed law structure.
+ */
+function flattenParagraphs(struktur) {
+  const paragraphs = [];
+  function extract(section) {
+    if (section.paragraphen) paragraphs.push(...section.paragraphen);
+    if (section.abschnitte) section.abschnitte.forEach(extract);
+    if (section.hauptstuecke) section.hauptstuecke.forEach(extract);
+  }
+  for (const section of struktur) extract(section);
+  return paragraphs;
+}
+
+/**
+ * Get full text for a specific paragraph from a parsed law file.
+ *
+ * @param {string} rootDir - Project root
+ * @param {string} category - 'gemeindeordnungen' or 'stadtrechte'
+ * @param {string} key - Law key (e.g. 'burgenland')
+ * @param {string} paraNum - Paragraph number (e.g. '41')
+ * @returns {string|null} Full paragraph text or null if not found
+ */
+function getParagraphText(rootDir, category, key, paraNum) {
+  const parsedPath = join(rootDir, 'data', 'parsed', category, `${key}.json`);
+  if (!existsSync(parsedPath)) return null;
+  try {
+    const law = JSON.parse(readFileSync(parsedPath, 'utf-8'));
+    const paragraphs = flattenParagraphs(law.struktur);
+    const para = paragraphs.find(p => String(p.nummer) === String(paraNum));
+    if (!para) return null;
+    return para.text || (para.absaetze ? para.absaetze.map(a => a.text).join('\n') : null);
+  } catch { return null; }
+}
+
+/**
+ * Cross-reference FAQ answers against actual parsed law texts.
+ * Checks numerical claims (fractions, percentages, counts) against source paragraphs.
+ *
+ * @param {object} faqData - Parsed FAQ JSON
+ * @param {string} rootDir - Project root
+ * @returns {string[]} Array of warning messages
+ */
+export function crossReferenceFAQ(faqData, rootDir = ROOT) {
+  const warnings = [];
+  if (!faqData.topics) return warnings;
+
+  // Numerical patterns to extract from FAQ answers
+  const numericalPatterns = [
+    /(\b(?:ein|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn)\s+(?:Drittel|Viertel|Fünftel|Prozent))\b/gi,
+    /(\b(?:der|die|des)\s+Hälfte)\b/gi,
+    /(\b\d+\s*(?:Prozent|%|v\.\s*H\.))\b/gi,
+    /(\b(?:mindestens|wenigstens|höchstens)\s+\d+\s+(?:Mitglieder|Wochen|Monate|Tage))\b/gi,
+    /(\b\d+\s+Mitglieder(?:n)?)\b/gi,
+  ];
+
+  for (const topic of faqData.topics) {
+    if (!topic.questions) continue;
+
+    for (const q of topic.questions) {
+      if (!q.answer || !q.references || q.references.length === 0) continue;
+
+      // Extract BL-specific claims from the answer
+      // Pattern: "In {BL} {claim}" or "Im {BL} {claim}"
+      const blClaims = q.answer.match(/(?:In|Im)\s+(Burgenland|Kärnten|Niederösterreich|Oberösterreich|Salzburg|Steiermark|Tirol|Vorarlberg|Wien|Linz|Graz|Innsbruck|Klagenfurt|Eisenstadt|Villach|Wels|Steyr)[^.]*\./g);
+      if (!blClaims) continue;
+
+      for (const claim of blClaims) {
+        // Extract the BL name
+        const blMatch = claim.match(/(?:In|Im)\s+(\S+)/);
+        if (!blMatch) continue;
+        const blName = blMatch[1];
+
+        // Find numbers/fractions in the claim
+        let hasNumerical = false;
+        for (const pat of numericalPatterns) {
+          pat.lastIndex = 0;
+          if (pat.test(claim)) { hasNumerical = true; break; }
+        }
+        if (!hasNumerical) continue;
+
+        // Find the matching reference for this BL
+        const blNameToKey = {
+          'Burgenland': 'burgenland', 'Kärnten': 'kaernten', 'Niederösterreich': 'niederoesterreich',
+          'Oberösterreich': 'oberoesterreich', 'Salzburg': 'salzburg', 'Steiermark': 'steiermark',
+          'Tirol': 'tirol', 'Vorarlberg': 'vorarlberg', 'Wien': 'wien',
+          'Linz': 'linz', 'Graz': 'graz', 'Innsbruck': 'innsbruck', 'Klagenfurt': 'klagenfurt',
+          'Eisenstadt': 'eisenstadt', 'Villach': 'villach', 'Wels': 'wels', 'Steyr': 'steyr',
+        };
+        const key = blNameToKey[blName];
+        if (!key) continue;
+
+        const matchingRefs = q.references.filter(r => r.key === key);
+        if (matchingRefs.length === 0) continue;
+
+        // Check each referenced paragraph for consistency
+        for (const ref of matchingRefs) {
+          const text = getParagraphText(rootDir, ref.category, ref.key, ref.paragraph);
+          if (!text) continue;
+
+          // Extract numbers from claim and source
+          const claimNumbers = claim.match(/\b(\d+)\b/g) || [];
+          const claimFractions = claim.match(/(?:Hälfte|Drittel|Viertel|Fünftel|zwei Drittel|ein Drittel|ein Viertel)/gi) || [];
+
+          // Check: if claim says "Hälfte" but source says "zwei Drittel" (or vice versa)
+          const claimSaysHalf = /Hälfte/i.test(claim);
+          const claimSaysTwoThirds = /zwei\s*Drittel/i.test(claim);
+          const sourceSaysHalf = /Hälfte/i.test(text);
+          const sourceSaysTwoThirds = /zwei\s*Drittel|2\/3/i.test(text);
+
+          if (claimSaysHalf && sourceSaysTwoThirds && !sourceSaysHalf) {
+            warnings.push(`[FAQ cross-ref] ${topic.slug}: Claim says 'Hälfte' for ${blName} (Par. ${ref.paragraph}), but source says 'zwei Drittel'`);
+          }
+          if (claimSaysTwoThirds && sourceSaysHalf && !sourceSaysTwoThirds) {
+            warnings.push(`[FAQ cross-ref] ${topic.slug}: Claim says 'zwei Drittel' for ${blName} (Par. ${ref.paragraph}), but source says 'Hälfte'`);
+          }
+
+          // Check: if claim says "ein Drittel" but source says "ein Viertel" (or vice versa)
+          const claimSaysThird = /ein(?:em)?\s*Drittel/i.test(claim);
+          const claimSaysQuarter = /ein(?:em)?\s*Viertel/i.test(claim);
+          const sourceSaysThird = /ein(?:em)?\s*Drittel/i.test(text);
+          const sourceSaysQuarter = /ein(?:em)?\s*Viertel/i.test(text);
+
+          if (claimSaysThird && sourceSaysQuarter && !sourceSaysThird) {
+            warnings.push(`[FAQ cross-ref] ${topic.slug}: Claim says 'ein Drittel' for ${blName} (Par. ${ref.paragraph}), but source says 'ein Viertel'`);
+          }
+          if (claimSaysQuarter && sourceSaysThird && !sourceSaysQuarter) {
+            warnings.push(`[FAQ cross-ref] ${topic.slug}: Claim says 'ein Viertel' for ${blName} (Par. ${ref.paragraph}), but source says 'ein Drittel'`);
+          }
+
+          // Check: percentage claims (e.g. "5 Prozent" vs "2 %")
+          const claimPct = claim.match(/(\d+)\s*(?:Prozent|%|v\.\s*H\.)/);
+          const sourcePct = text.match(/(\d+)\s*(?:Prozent|%|v\.\s*H\.)/);
+          if (claimPct && sourcePct && claimPct[1] !== sourcePct[1]) {
+            warnings.push(`[FAQ cross-ref] ${topic.slug}: Claim says '${claimPct[0]}' for ${blName} (Par. ${ref.paragraph}), but source says '${sourcePct[0]}'`);
+          }
+
+          // Check: member count claims (e.g. "100 Mitglieder")
+          const claimMembers = claim.match(/(\d+)\s*Mitglieder/);
+          const sourceMembers = text.match(/(\d+)\s*Mitglieder/);
+          if (claimMembers && sourceMembers && claimMembers[1] !== sourceMembers[1]) {
+            warnings.push(`[FAQ cross-ref] ${topic.slug}: Claim says '${claimMembers[0]}' for ${blName} (Par. ${ref.paragraph}), but source says '${sourceMembers[0]}'`);
+          }
+        }
+      }
+    }
+  }
+
+  return warnings;
+}
+
+/**
  * Validate all LLM content on disk.
  *
  * @param {string} rootDir - Project root
@@ -242,6 +393,7 @@ export async function validateAll(rootDir = ROOT) {
     try {
       const data = JSON.parse(readFileSync(faqPath, 'utf-8'));
       errors.push(...validateFAQ(data));
+      errors.push(...crossReferenceFAQ(data, rootDir));
     } catch (err) {
       errors.push(`[FAQ] Failed to parse JSON: ${err.message}`);
     }

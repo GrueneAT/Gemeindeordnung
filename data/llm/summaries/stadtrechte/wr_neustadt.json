@@ -1,42 +1,42 @@
 {
   "meta": {
-    "generatedAt": "2026-03-11T19:08:50.581Z",
+    "generatedAt": "2026-03-12T09:42:11.436Z",
     "lawKey": "wr_neustadt",
     "category": "stadtrechte"
   },
   "paragraphs": {
     "1": {
-      "summary": "Es wird bestimmt, rechtliche Stellung der Stadt. Die Stadtgemeinde Wiener Neustadt ist eine Gebietskörperschaft mit dem Recht auf Selbstverwaltung.",
+      "summary": "Wiener Neustadt ist eine Gebietskörperschaft mit Selbstverwaltungsrecht und besitzt den Status einer Stadt mit eigenem Statut. Ihr Gebiet bildet zugleich einen politischen Bezirk, weshalb die Stadt sowohl Gemeinde- als auch Bezirksverwaltungsaufgaben wahrnimmt.",
       "topics": [
-        "Wirkungsbereich",
+        "Rechtsstellung der Gemeinde",
         "Statutarstadt"
       ]
     },
     "2": {
-      "summary": "Vorgesehen ist stadtgebiet. Das Stadtgebiet wird durch das Gesetz über die Gliederung des Landes Niederösterreich in Gemeinden, LGBl.",
+      "summary": "Die Grenzen des Stadtgebiets ergeben sich aus dem Landesgesetz über die Gemeindegliederung Niederösterreichs (LGBl. 1030).",
       "topics": [
         "Stadtgebiet"
       ]
     },
     "3": {
-      "summary": "Im Mittelpunkt steht wappen, Farben und Siegel der Stadt. ",
+      "summary": "Das Stadtwappen zeigt einen viergeteilten Schild mit schwarzem Doppeladler in Gold sowie einem silbernen Torbau auf grünem Dreiberg in Rot. Die Stadtfarben sind Weiß-Rot. Stadtsiegel und Amtssiegel des Magistrats tragen jeweils das Wappen mit entsprechender Umschrift.",
       "topics": [
-        "Gemeindesymbole",
-        "Gemeindeverwaltung"
+        "Wappen und Hoheitszeichen",
+        "Stadtidentität"
       ]
     },
     "4": {
-      "summary": "Definiert werden organe und Kontrolle. Für die Organe der Stadt gilt:1.Der Gemeinderat besteht aus 40 Mitgliedern.2.Der Stadtsenat besteht aus dem Ersten und dem Zweiten Vizebürgermeister sowie 8 Stadträten.",
+      "summary": "Der Gemeinderat setzt sich aus 40 Mitgliedern zusammen, der Stadtsenat aus dem Ersten und Zweiten Vizebürgermeister sowie acht Stadträten. Für die Kontrolle ist ein Kontrollausschuss mit mindestens sieben Mitgliedern und Ersatzmitgliedern vorgesehen.",
       "topics": [
-        "Vizebürgermeister",
-        "Bürgermeister",
-        "Gemeindevorstand"
+        "Gemeindeorgane",
+        "Kontrollausschuss"
       ]
     },
     "5": {
-      "summary": "Die Bestimmung legt fest, kontrollamt. Zur Prüfung der Gebarung und Rechnung der Stadt ist ein Kontrollamt einzurichten.",
+      "summary": "Zur laufenden Überprüfung der städtischen Gebarung und Rechnungslegung ist ein eigenes Kontrollamt einzurichten.",
       "topics": [
-        "Haushalt und Finanzen"
+        "Rechnungsprüfung",
+        "Kontrollamt"
       ]
     }
   }

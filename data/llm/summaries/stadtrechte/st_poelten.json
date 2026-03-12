@@ -1,42 +1,42 @@
 {
   "meta": {
-    "generatedAt": "2026-03-11T19:08:50.561Z",
+    "generatedAt": "2026-03-12T09:27:46.461Z",
     "lawKey": "st_poelten",
     "category": "stadtrechte"
   },
   "paragraphs": {
     "1": {
-      "summary": "Hier wird festgelegt, rechtliche Stellung der Stadt. Die Landeshauptstadt St.",
+      "summary": "Die Landeshauptstadt St. Pölten ist eine Gebietskörperschaft mit Selbstverwaltungsrecht und besitzt ein eigenes Statut. Ihr Stadtgebiet bildet zugleich einen Verwaltungsbezirk, weshalb die Stadt sowohl Gemeinde- als auch Bezirksverwaltungsaufgaben wahrnimmt.",
       "topics": [
-        "Wirkungsbereich",
+        "Rechtsstellung der Gemeinde",
         "Statutarstadt"
       ]
     },
     "2": {
-      "summary": "Gegenstand ist stadtgebiet. Das Stadtgebiet wird durch das Gesetz über die Gliederung des Landes Niederösterreich in Gemeinden, LGBl.",
+      "summary": "Für die Festlegung des Stadtgebiets verweist das Stadtrecht auf das Landesgesetz über die Gliederung Niederösterreichs in Gemeinden (LGBl. 1030).",
       "topics": [
         "Stadtgebiet"
       ]
     },
     "3": {
-      "summary": "Die Regelung umfasst verschiedene Aspekte rund um wappen, Farben und Siegel der Stadt in 4 Absätzen. Das Wappen der Landeshauptstadt St.",
+      "summary": "Das Stadtwappen zeigt einen geteilten Schild mit einem grauen Wolf im blauen Feld und einem roten Balken im weißen Feld. Die Stadtfarben sind Rot-Gelb. Für das Stadtsiegel und das Amtssiegel des Magistrats gelten eigene Umschriften.",
       "topics": [
-        "Gemeindesymbole",
-        "Gemeindeverwaltung"
+        "Wappen und Siegel",
+        "Stadtidentität"
       ]
     },
     "4": {
-      "summary": "Geregelt wird organe und Kontrolle. Für die Organe der Stadt gilt:1.Der Gemeinderat besteht aus 42 Mitgliedern.2.Der Stadtsenat besteht aus dem Ersten und dem Zweiten Vizebürgermeister sowie 11 Stadträten.",
+      "summary": "Der Gemeinderat umfasst 42 Mitglieder, der Stadtsenat setzt sich aus dem Ersten und Zweiten Vizebürgermeister sowie elf Stadträten zusammen. Für die Kontrolle ist ein Kontrollausschuss mit mindestens sieben Mitgliedern und Ersatzmitgliedern vorgesehen.",
       "topics": [
-        "Vizebürgermeister",
-        "Bürgermeister",
-        "Gemeindevorstand"
+        "Gemeindeorgane",
+        "Kontrollausschuss"
       ]
     },
     "5": {
-      "summary": "Inhaltlich geht es um kontrollamt. Zur Prüfung der Gebarung und Rechnung der Stadt ist ein Kontrollamt einzurichten.",
+      "summary": "Zur laufenden Überprüfung der städtischen Gebarung und Rechnungslegung ist ein eigenes Kontrollamt einzurichten.",
       "topics": [
-        "Haushalt und Finanzen"
+        "Rechnungsprüfung",
+        "Kontrollamt"
       ]
     }
   }

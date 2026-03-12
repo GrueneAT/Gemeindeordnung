@@ -385,7 +385,7 @@ function generateLawPage(law, key, category, rootDir = ROOT) {
   // Disclaimer info-box (only if LLM data exists)
   const disclaimerHtml = llmData
     ? `      <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
-        <strong>Hinweis:</strong> Vereinfachte Zusammenfassungen dienen der Orientierung und sind keine Rechtsberatung.
+        <strong>Hinweis:</strong> Diese Zusammenfassungen wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
       </div>\n`
     : '';
 
@@ -562,7 +562,7 @@ ${headerHtml}
         </p>
       </div>
       <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
-        <strong>Hinweis:</strong> Diese Zusammenfassungen dienen der Orientierung und sind keine Rechtsberatung.
+        <strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
       </div>
       <main>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -623,6 +623,9 @@ ${headerHtml}
         <h1 class="text-3xl font-bold text-gruene-dark">${escapeHtml(topic.title)}</h1>
         <p class="mt-1 text-gruene-dark/80">${escapeHtml(topic.description)}</p>
       </header>
+      <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
+        <strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
+      </div>
       <main data-pagefind-body>
 ${questionsHtml}
       </main>
@@ -698,7 +701,7 @@ ${headerHtml}
         </p>
       </div>
       <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
-        <strong>Hinweis:</strong> Diese Definitionen dienen der Orientierung und sind keine Rechtsberatung.
+        <strong>Hinweis:</strong> Diese Definitionen wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
       </div>
       <div class="mb-6" data-pagefind-ignore>
         <input id="glossar-filter" type="search" data-pagefind-ignore

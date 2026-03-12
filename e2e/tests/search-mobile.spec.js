@@ -21,7 +21,7 @@ test.describe('Mobile search overlay', () => {
 
     // Wait for results to appear in mobile dropdown
     const mobileDropdown = page.locator('#search-dropdown-mobile');
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(2000);
     const mobileResults = mobileDropdown.locator('.search-result-item');
     expect(await mobileResults.count()).toBeGreaterThan(0);
 

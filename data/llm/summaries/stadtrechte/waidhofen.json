@@ -1,44 +1,42 @@
 {
   "meta": {
-    "generatedAt": "2026-03-11T19:08:50.574Z",
+    "generatedAt": "2026-03-12T09:37:46.424Z",
     "lawKey": "waidhofen",
     "category": "stadtrechte"
   },
   "paragraphs": {
     "1": {
-      "summary": "Die Bestimmung regelt rechtliche Stellung der Stadt. Die Stadtgemeinde Waidhofen an der Ybbs ist eine Gebietskörperschaft mit dem Recht auf Selbstverwaltung.",
+      "summary": "Die Stadtgemeinde Waidhofen an der Ybbs besitzt als Gebietskörperschaft das Recht auf Selbstverwaltung und ist eine Stadt mit eigenem Statut. Ihr Gebiet bildet zugleich einen politischen Bezirk, weshalb neben der Gemeindeverwaltung auch die Bezirksverwaltung vom Magistrat wahrgenommen wird.",
       "topics": [
-        "Wirkungsbereich",
+        "Rechtsstellung der Gemeinde",
         "Statutarstadt"
       ]
     },
     "2": {
-      "summary": "Es wird bestimmt, stadtgebiet. Das Stadtgebiet wird durch das Gesetz über die Gliederung des Landes Niederösterreich in Gemeinden, LGBl.",
+      "summary": "Die Grenzen des Stadtgebiets ergeben sich aus dem Landesgesetz über die Gliederung Niederösterreichs in Gemeinden (LGBl. 1030).",
       "topics": [
         "Stadtgebiet"
       ]
     },
     "3": {
-      "summary": "Vorgesehen ist wappen, Farben und Siegel der Stadt. Das Wappen der Stadt Waidhofen an der Ybbs zeigt in blauem Feld über einem grünen Dreiberg eine silberne zinnenbekrönte Stadtmauer mit offenem Tor, hochgezogenem Fallgitter, überragt von zwei dah...",
+      "summary": "Waidhofen an der Ybbs führt ein Wappen mit silberner Stadtmauer, zwei Stadttürmen und einem gekrönten Mohrenkopf auf blauem Feld über grünem Dreiberg. Die Stadtfarben sind Weiß-Blau. Stadt- und Amtssiegel tragen jeweils das Stadtwappen mit entsprechender Umschrift.",
       "topics": [
-        "Gemeindesymbole",
-        "Gemeindeverwaltung"
+        "Wappen und Siegel",
+        "Städtische Hoheitszeichen"
       ]
     },
     "4": {
-      "summary": "Im Mittelpunkt steht organe und Kontrolle. Für die Organe der Stadt gilt:1.Der Gemeinderat besteht aus 40 Mitgliedern.2.Der Stadtsenat besteht aus dem Ersten und dem Zweiten Vizebürgermeister sowie 8 Stadträten.",
+      "summary": "Der Gemeinderat setzt sich aus 40 Mitgliedern zusammen, der Stadtsenat aus dem Ersten und Zweiten Vizebürgermeister sowie acht Stadträten. Für die Kontrolle ist ein Kontrollausschuss mit mindestens sieben Mitgliedern und Ersatzmitgliedern vorgesehen.",
       "topics": [
-        "Vizebürgermeister",
-        "Bürgermeister",
-        "Gemeindevorstand"
+        "Gemeindeorgane",
+        "Kontrollausschuss"
       ]
     },
     "5": {
-      "summary": "Definiert werden kontrollamt. Der Gemeinderat kann im Interesse der Überprüfung der Gebarung neben dem Kontrollausschuss ein Kontrollamt einrichten.",
+      "summary": "Zur Überprüfung der Gebarung kann der Gemeinderat zusätzlich zum Kontrollausschuss ein eigenes Kontrollamt einrichten.",
       "topics": [
-        "Ausschüsse",
         "Rechnungsprüfung",
-        "Haushalt und Finanzen"
+        "Kontrollamt"
       ]
     }
   }

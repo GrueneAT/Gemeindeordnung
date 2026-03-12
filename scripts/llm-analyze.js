@@ -7,7 +7,7 @@
  * - Legal glossary terms (data/llm/glossary/terms.json)
  *
  * Uses `claude` CLI via child_process for LLM calls.
- * Falls back to placeholder JSON if CLI is unavailable.
+ * Fails hard if CLI is unavailable (no placeholders).
  *
  * Usage:
  *   node scripts/llm-analyze.js --dry-run              # Preview: list laws needing analysis
@@ -22,7 +22,7 @@
 import { readFileSync, readdirSync, existsSync, writeFileSync, mkdirSync, unlinkSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { execSync, spawnSync } from 'child_process';
+import { spawnSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -102,105 +102,179 @@ function countParagraphs(struktur) {
   return flattenParagraphs(struktur).length;
 }
 
-/**
- * Check if Claude CLI is available.
- */
-function isClaudeAvailable() {
-  try {
-    execSync('which claude', { encoding: 'utf-8', stdio: 'pipe' });
-    return true;
-  } catch {
-    return false;
-  }
-}
 
 /**
  * Call Claude CLI with a prompt and return parsed JSON.
  * Falls back to null if CLI unavailable or call fails.
  */
-function callClaude(prompt) {
-  try {
-    const child = spawnSync('claude', ['-p', '--output-format', 'json'], {
-      input: prompt,
-      encoding: 'utf-8',
-      maxBuffer: 10 * 1024 * 1024,
-      timeout: 300000,
-      stdio: ['pipe', 'pipe', 'pipe'],
-    });
+/**
+ * Repair JSON with unescaped double quotes inside string values.
+ * Claude often outputs text like: "summary": "den Titel "Marktgemeinde" erhalten"
+ * where the inner quotes break JSON parsing.
+ */
+function repairJSON(text) {
+  // Try parsing as-is first
+  try { return JSON.parse(text); } catch { /* needs repair */ }
 
-    if (child.status !== 0) {
-      console.error(`  Claude CLI exited with status ${child.status}: ${child.stderr?.substring(0, 200)}`);
-      return null;
+  let result = '';
+  let i = 0;
+  let inString = false;
+  let escaped = false;
+
+  while (i < text.length) {
+    const ch = text[i];
+
+    if (escaped) {
+      result += ch;
+      escaped = false;
+      i++;
+      continue;
     }
 
-    const result = child.stdout;
-    // The claude CLI with --output-format json wraps response in {"result":"..."}
-    const parsed = JSON.parse(result);
-    // Extract the actual content - claude returns {result: "..."} wrapper
-    const content = parsed.result || parsed;
-    // Try to parse the content as JSON if it's a string
-    if (typeof content === 'string') {
-      // Find JSON in the response (may have markdown code fences)
-      const jsonMatch = content.match(/```json\s*([\s\S]*?)\s*```/) || content.match(/(\{[\s\S]*\})/);
-      if (jsonMatch) {
-        return JSON.parse(jsonMatch[1]);
+    if (ch === '\\') {
+      result += ch;
+      escaped = true;
+      i++;
+      continue;
+    }
+
+    if (ch === '"') {
+      if (!inString) {
+        inString = true;
+        result += ch;
+      } else {
+        // Is this the end of the string, or an unescaped quote inside it?
+        // Look ahead past whitespace: if next meaningful char is : , } ] it's structural
+        let j = i + 1;
+        while (j < text.length && ' \n\r\t'.includes(text[j])) j++;
+        const next = text[j];
+        if (next === ':' || next === ',' || next === '}' || next === ']' || j >= text.length) {
+          inString = false;
+          result += ch;
+        } else {
+          // Unescaped quote inside string value — escape it
+          result += '\\"';
+        }
       }
-      return JSON.parse(content);
+    } else {
+      result += ch;
     }
-    return content;
-  } catch (err) {
-    console.error(`  Claude CLI error: ${err.message?.substring(0, 200)}`);
-    return null;
+    i++;
   }
+
+  return JSON.parse(result);
 }
 
 /**
- * Generate placeholder summary for a law when Claude CLI is unavailable.
+ * Call Claude CLI with a prompt and return parsed JSON.
+ * No timeout — let Claude take as long as it needs.
+ * Repairs common JSON issues (unescaped quotes in string values).
+ *
+ * @param {string} prompt - The prompt to send
+ * @param {object} options - { maxRetries }
+ * @returns {object|null} Parsed JSON or null on failure
  */
-function generatePlaceholderSummary(lawKey, category, paragraphs, lawMeta) {
-  const paragraphEntries = {};
-  for (const p of paragraphs) {
-    const topicFromTitle = p.titel || 'Allgemeine Bestimmungen';
-    paragraphEntries[p.nummer] = {
-      summary: `Dieser Paragraph regelt ${topicFromTitle.toLowerCase()}. ${p.text?.substring(0, 100) || ''}...`,
-      topics: [categorizeByTitle(topicFromTitle)],
-    };
+function callClaude(prompt, options = {}) {
+  const maxRetries = options.maxRetries || 1;
+  const promptKB = Math.round(Buffer.byteLength(prompt, 'utf-8') / 1024);
+
+  console.log(`    [claude] Prompt: ${promptKB}KB, no timeout`);
+
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    if (attempt > 1) {
+      console.log(`    [claude] Retry ${attempt}/${maxRetries}...`);
+    }
+
+    try {
+      const startTime = Date.now();
+      // Clear CLAUDECODE env var so child process doesn't think it's nested
+      const env = { ...process.env };
+      delete env.CLAUDECODE;
+
+      const child = spawnSync('claude', ['-p', '--output-format', 'json', '--tools', '', '--append-system-prompt', 'You have no tools. Respond ONLY with the requested JSON. Do not output tool_call tags or any other markup.'], {
+        input: prompt,
+        encoding: 'utf-8',
+        maxBuffer: 10 * 1024 * 1024,
+        stdio: ['pipe', 'pipe', 'pipe'],
+        env,
+      });
+
+      const elapsed = Math.round((Date.now() - startTime) / 1000);
+
+      if (child.signal) {
+        console.error(`    [claude] Killed by signal ${child.signal} after ${elapsed}s`);
+        continue;
+      }
+
+      if (child.status !== 0) {
+        console.error(`    [claude] Exited with status ${child.status} after ${elapsed}s`);
+        if (child.stderr) console.error(`    [claude] stderr: ${child.stderr.substring(0, 500)}`);
+        continue;
+      }
+
+      console.log(`    [claude] Response received in ${elapsed}s (${Math.round((child.stdout?.length || 0) / 1024)}KB)`);
+
+      const result = child.stdout;
+
+      // Write raw stdout for debugging
+      const rawDebugPath = join(ROOT, 'data', 'llm', '_debug_raw_stdout.txt');
+      writeFileSync(rawDebugPath, result || '', 'utf-8');
+      console.log(`    [claude] Raw stdout written to: ${rawDebugPath}`);
+
+      if (!result || result.trim().length === 0) {
+        console.error('    [claude] Empty response');
+        continue;
+      }
+
+      // The claude CLI with --output-format json wraps response in {"result":"..."}
+      const parsed = JSON.parse(result);
+      const content = parsed.result || parsed;
+
+      if (typeof content === 'string') {
+        // Strip any tool_call XML blocks Claude may have emitted despite --tools ""
+        let cleaned = content.replace(/<tool_call>[\s\S]*?<\/tool_call>/g, '').trim();
+        if (cleaned.length === 0) cleaned = content; // fallback if stripping removed everything
+
+        // Find JSON in the response (may have markdown code fences)
+        const jsonMatch = cleaned.match(/```json\s*([\s\S]*?)\s*```/) || cleaned.match(/(\{[\s\S]*\})/);
+        if (jsonMatch) {
+          const extracted = jsonMatch[1];
+          try {
+            return repairJSON(extracted);
+          } catch (innerErr) {
+            const pos = parseInt(innerErr.message.match(/position (\d+)/)?.[1] || '0');
+            console.error(`    [claude] JSON parse failed (even after repair): ${innerErr.message.substring(0, 200)}`);
+            if (pos > 0) {
+              console.error(`    [claude] Around position ${pos}: ...${extracted.substring(Math.max(0, pos - 60), pos + 60)}...`);
+            }
+            // Write debug files
+            const debugPath = join(ROOT, 'data', 'llm', '_debug_claude_response.json');
+            writeFileSync(debugPath, extracted, 'utf-8');
+            console.error(`    [claude] Raw extracted JSON written to: ${debugPath}`);
+            continue;
+          }
+        }
+        try {
+          return repairJSON(cleaned);
+        } catch (innerErr) {
+          console.error(`    [claude] Content JSON parse failed (even after repair): ${innerErr.message.substring(0, 200)}`);
+          const debugPath = join(ROOT, 'data', 'llm', '_debug_claude_response.json');
+          writeFileSync(debugPath, cleaned, 'utf-8');
+          console.error(`    [claude] Raw content written to: ${debugPath}`);
+          continue;
+        }
+      }
+      return content;
+    } catch (err) {
+      console.error(`    [claude] Error: ${err.message?.substring(0, 300)}`);
+      if (attempt < maxRetries) continue;
+    }
   }
 
-  return {
-    meta: {
-      generatedAt: new Date().toISOString(),
-      lawKey,
-      category,
-      placeholder: true,
-    },
-    paragraphs: paragraphEntries,
-  };
+  console.error(`    [claude] All ${maxRetries} attempts failed`);
+  return null;
 }
 
-/**
- * Simple topic categorization based on paragraph title keywords.
- */
-function categorizeByTitle(title) {
-  const t = title.toLowerCase();
-  if (t.includes('wahl') || t.includes('abstimmung')) return 'Wahlen und Abstimmungen';
-  if (t.includes('gemeinderat') || t.includes('sitzung')) return 'Gemeinderatssitzungen';
-  if (t.includes('buergermeister')) return 'B\u00fcrgermeister';
-  if (t.includes('vorstand') || t.includes('stadtrat')) return 'Gemeindevorstand';
-  if (t.includes('ausschuss') || t.includes('kommission')) return 'Aussch\u00fcsse';
-  if (t.includes('haushalt') || t.includes('budget') || t.includes('voranschlag') || t.includes('rechnungs')) return 'Haushalt und Finanzen';
-  if (t.includes('aufsicht') || t.includes('kontrolle') || t.includes('pruefung')) return 'Aufsicht und Kontrolle';
-  if (t.includes('befangen')) return 'Befangenheit';
-  if (t.includes('gemeindeverband') || t.includes('kooperation') || t.includes('zusammen')) return 'Gemeindekooperation';
-  if (t.includes('straf') || t.includes('ordnung')) return 'Strafbestimmungen';
-  if (t.includes('bedienstete') || t.includes('personal') || t.includes('beamt')) return 'Gemeindebedienstete';
-  if (t.includes('verm\u00f6gen') || t.includes('vermoegen') || t.includes('eigentum') || t.includes('wirtschaft')) return 'Gemeindeverm\u00f6gen';
-  if (t.includes('gemeindegebiet') || t.includes('grenz')) return 'Gemeindegebiet';
-  if (t.includes('buerger') || t.includes('b\u00fcrger') || t.includes('mitglied')) return 'Gemeindeb\u00fcrger';
-  if (t.includes('kundmachung') || t.includes('verordnung') || t.includes('bescheid')) return 'Kundmachung und Verordnungen';
-  if (t.includes('schluss') || t.includes('uebergang') || t.includes('inkraft')) return 'Schlussbestimmungen';
-  return 'Allgemeine Bestimmungen';
-}
 
 /**
  * Collect all unique topic labels from generated summaries.
@@ -300,19 +374,17 @@ export async function generateForLaw(lawKey, category, rootDir = ROOT) {
   const law = JSON.parse(readFileSync(parsedPath, 'utf-8'));
   const paragraphs = flattenParagraphs(law.struktur);
 
-  console.log(`  Processing ${category}/${lawKey}: ${law.meta.kurztitel} (${paragraphs.length} paragraphs)...`);
+  const paraTextSize = paragraphs.reduce((sum, p) => sum + (p.text?.length || 0), 0);
+  console.log(`  Processing ${category}/${lawKey}: ${law.meta.kurztitel} (${paragraphs.length} paragraphs, ~${Math.round(paraTextSize / 1024)}KB text)...`);
 
-  let result;
+  // Build prompt with all paragraphs
+  const paraTexts = paragraphs.map(p =>
+    `--- Paragraph ${p.nummer}${p.titel ? ': ' + p.titel : ''} ---\n${p.text || p.absaetze?.map(a => a.text).join('\n') || ''}`
+  ).join('\n\n');
 
-  if (isClaudeAvailable()) {
-    // Build prompt with all paragraphs
-    const paraTexts = paragraphs.map(p =>
-      `--- Paragraph ${p.nummer}${p.titel ? ': ' + p.titel : ''} ---\n${p.text || p.absaetze?.map(a => a.text).join('\n') || ''}`
-    ).join('\n\n');
+  const citation = BL_CITATION[lawKey] || lawKey;
 
-    const citation = BL_CITATION[lawKey] || lawKey;
-
-    const prompt = `Du bist ein Experte fuer oesterreichisches Gemeinderecht. Analysiere die folgenden Paragraphen aus "${law.meta.kurztitel}" (${law.meta.bundesland}).
+  const prompt = `Du bist ein Experte fuer oesterreichisches Gemeinderecht. Analysiere die folgenden Paragraphen aus "${law.meta.kurztitel}" (${law.meta.bundesland}).
 
 Fuer JEDEN Paragraph erstelle:
 1. "summary": Eine sachlich-verstaendliche Zusammenfassung in 1-3 Saetzen.
@@ -320,6 +392,7 @@ Fuer JEDEN Paragraph erstelle:
    Variiere die Satzanfaenge. Schreibe natuerlich und verstaendlich fuer Laien.
    Verwende NIEMALS "Dieser Paragraph regelt..." als Einstieg.
    Verwende IMMER korrekte deutsche Umlaute (ae, oe, ue, ss).
+   WICHTIG: Verwende KEINE Anführungszeichen (") im Text. Verwende stattdessen einfache Anführungszeichen (') oder Guillemets.
 
 2. "topics": 1-3 thematische Labels. Verwende spezifische, praezise Labels
    (NICHT nur "Allgemeine Bestimmungen"). Beispiele guter Labels:
@@ -340,26 +413,23 @@ Hier sind die Paragraphen:
 
 ${paraTexts}`;
 
-    const claudeResult = callClaude(prompt);
-    if (claudeResult && claudeResult.paragraphs) {
-      result = {
-        meta: {
-          generatedAt: new Date().toISOString(),
-          lawKey,
-          category,
-        },
-        paragraphs: claudeResult.paragraphs,
-      };
-    }
+  const claudeResult = callClaude(prompt);
+  let result;
+  if (claudeResult && claudeResult.paragraphs) {
+    result = {
+      meta: {
+        generatedAt: new Date().toISOString(),
+        lawKey,
+        category,
+      },
+      paragraphs: claudeResult.paragraphs,
+    };
   }
 
-  // Fallback to placeholder if Claude failed or unavailable
   if (!result) {
-    console.log(`  Using placeholder content for ${category}/${lawKey}`);
-    result = generatePlaceholderSummary(lawKey, category, paragraphs, law.meta);
+    throw new Error(`FAILED: Claude did not return valid content for ${category}/${lawKey}. Check debug files in data/llm/`);
   }
 
-  // Write output
   mkdirSync(outputDir, { recursive: true });
   writeFileSync(outputPath, JSON.stringify(result, null, 2), 'utf-8');
   console.log(`  Written: ${outputPath}`);
@@ -417,15 +487,19 @@ export async function generateFAQ(rootDir = ROOT, options = {}) {
     }
   }
 
-  let result;
+  // Keep top 100 most frequent topics to stay within prompt size limits (~200KB)
+  const sortedTopics = Object.entries(topicParagraphs)
+    .sort((a, b) => b[1].length - a[1].length)
+    .slice(0, 100);
 
-  if (isClaudeAvailable()) {
-    // Build prompt with ALL topic-paragraph data (no truncation)
-    const topicSummary = Object.entries(topicParagraphs)
+  console.log(`  Using top ${sortedTopics.length} topics (by frequency) for FAQ prompt`);
+
+  const topicSummary = sortedTopics
       .map(([topic, refs]) => {
-        const refDetails = refs.map(r => {
+        // Show up to 6 refs per topic with short summaries to keep prompt manageable
+        const refDetails = refs.slice(0, 6).map(r => {
           const citation = BL_CITATION[r.key] || r.key;
-          return `  - Par. ${r.paragraph} ${citation} (${r.category}/${r.key}): ${r.summary?.substring(0, 120)}`;
+          return `  - Par. ${r.paragraph} ${citation}: ${r.summary?.substring(0, 80)}`;
         }).join('\n');
         return `Topic: ${topic} (${refs.length} Paragraphen)\n${refDetails}`;
       })
@@ -453,6 +527,7 @@ WICHTIG:
 ${citationRef}
 - Format: "Par. {nummer} {Abk\u00fcrzung}", z.B. "Par. 42 Bgld. GO"
 - Verwende echte Paragraphen-Referenzen aus den folgenden Daten.
+- Verwende KEINE Anführungszeichen (") im Antworttext. Verwende stattdessen einfache Anführungszeichen (') oder Guillemets.
 
 Antworte NUR mit validem JSON (ohne Markdown-Formatierung):
 {
@@ -476,22 +551,20 @@ Thementaxonomie und vollst\u00e4ndige Paragraphen-Daten:
 
 ${topicSummary}`;
 
-    const claudeResult = callClaude(prompt);
-    if (claudeResult && claudeResult.topics) {
-      result = {
-        meta: {
-          generatedAt: new Date().toISOString(),
-          topicCount: claudeResult.topics.length,
-        },
-        topics: claudeResult.topics,
-      };
-    }
+  const claudeResult = callClaude(prompt);
+  let result;
+  if (claudeResult && claudeResult.topics) {
+    result = {
+      meta: {
+        generatedAt: new Date().toISOString(),
+        topicCount: claudeResult.topics.length,
+      },
+      topics: claudeResult.topics,
+    };
   }
 
-  // Fallback to placeholder FAQ
   if (!result) {
-    console.log('  Using placeholder FAQ content');
-    result = generatePlaceholderFAQ(topicParagraphs);
+    throw new Error('FAILED: Claude did not return valid FAQ content. Check debug files in data/llm/');
   }
 
   mkdirSync(outputDir, { recursive: true });
@@ -499,77 +572,6 @@ ${topicSummary}`;
   console.log(`  Written: ${outputPath} (${result.topics.length} topics)`);
 
   return result;
-}
-
-/**
- * Generate placeholder FAQ when Claude is unavailable.
- */
-function generatePlaceholderFAQ(topicParagraphs) {
-  // Group into FAQ themes
-  const faqTopics = [
-    { slug: 'gemeinderatssitzungen', title: 'Gemeinderatssitzungen', description: 'Alles rund um Einberufung, Ablauf und Beschlussfassung in Gemeinderatssitzungen.' },
-    { slug: 'wahlen-und-abstimmungen', title: 'Wahlen und Abstimmungen', description: 'Regelungen zu Wahlen, Abstimmungsverfahren und Mehrheitserfordernissen in Gemeinden.' },
-    { slug: 'buergermeister', title: 'B\u00fcrgermeister', description: 'Aufgaben, Rechte und Pflichten des B\u00fcrgermeisters sowie Vertretungsregelungen.' },
-    { slug: 'gemeindevorstand', title: 'Gemeindevorstand', description: 'Zusammensetzung, Aufgaben und Beschlussfassung des Gemeindevorstands bzw. Stadtsenats.' },
-    { slug: 'ausschuesse', title: 'Aussch\u00fcsse', description: 'Bildung, Zusammensetzung und Aufgaben von Gemeindeaussch\u00fcssen.' },
-    { slug: 'haushalt-und-finanzen', title: 'Haushalt und Finanzen', description: 'Voranschlag, Rechnungsabschluss und Finanzverwaltung der Gemeinde.' },
-    { slug: 'aufsicht-und-kontrolle', title: 'Aufsicht und Kontrolle', description: 'Gemeindeaufsicht, Pr\u00fcfungsrechte und Kontrollmechanismen.' },
-    { slug: 'befangenheit', title: 'Befangenheit', description: 'Befangenheitsregeln f\u00fcr Gemeindeorgane und deren Rechtsfolgen.' },
-    { slug: 'gemeindebedienstete', title: 'Gemeindebedienstete', description: 'Anstellung, Rechte und Pflichten der Gemeindebediensteten.' },
-    { slug: 'gemeindekooperation', title: 'Gemeindekooperation', description: 'Gemeindeverb\u00e4nde, Kooperationen und \u00fcbergemeindliche Zusammenarbeit.' },
-  ];
-
-  const topics = faqTopics.map(t => {
-    const refs = topicParagraphs[t.title] || [];
-    const sampleRefs = refs.slice(0, 4);
-
-    return {
-      slug: t.slug,
-      title: t.title,
-      description: t.description,
-      questions: [
-        {
-          question: `Was regelt das Thema "${t.title}" in \u00f6sterreichischen Gemeindeordnungen?`,
-          answer: `Die Regelungen zu "${t.title}" variieren je nach Bundesland. ${t.description}`,
-          references: sampleRefs.map(r => ({
-            category: r.category,
-            key: r.key,
-            paragraph: r.paragraph,
-            label: `Par. ${r.paragraph} ${BL_CITATION[r.key] || r.key}`,
-          })),
-        },
-        {
-          question: `Welche Unterschiede gibt es zwischen den Bundesl\u00e4ndern bei "${t.title}"?`,
-          answer: `Die neun Bundesl\u00e4nder regeln "${t.title}" unterschiedlich. Details finden sich in den jeweiligen Gemeindeordnungen.`,
-          references: sampleRefs.slice(0, 2).map(r => ({
-            category: r.category,
-            key: r.key,
-            paragraph: r.paragraph,
-            label: `Par. ${r.paragraph} ${BL_CITATION[r.key] || r.key}`,
-          })),
-        },
-        {
-          question: `Wo finde ich die relevanten Paragraphen zu "${t.title}"?`,
-          answer: `Die relevanten Bestimmungen finden sich in den jeweiligen Gemeindeordnungen der Bundesl\u00e4nder, insbesondere in den Abschnitten zu ${t.title.toLowerCase()}.`,
-          references: sampleRefs.slice(0, 3).map(r => ({
-            category: r.category,
-            key: r.key,
-            paragraph: r.paragraph,
-            label: `Par. ${r.paragraph} ${BL_CITATION[r.key] || r.key}`,
-          })),
-        },
-      ],
-    };
-  });
-
-  return {
-    meta: {
-      generatedAt: new Date().toISOString(),
-      topicCount: topics.length,
-      placeholder: true,
-    },
-    topics,
-  };
 }
 
 /**
@@ -600,12 +602,12 @@ export async function generateGlossary(rootDir = ROOT, options = {}) {
     const files = readdirSync(parsedDir).filter(f => f.endsWith('.json'));
     for (const file of files) {
       const law = JSON.parse(readFileSync(join(parsedDir, file), 'utf-8'));
-      const paragraphs = flattenParagraphs(law.struktur).slice(0, 20);
+      const paragraphs = flattenParagraphs(law.struktur).slice(0, 15);
       lawTexts.push({
         lawKey: file.replace('.json', ''),
         category,
         name: law.meta.kurztitel,
-        texts: paragraphs.map(p => `Par. ${p.nummer}: ${p.text?.substring(0, 300) || ''}`),
+        texts: paragraphs.map(p => `Par. ${p.nummer}: ${p.text?.substring(0, 200) || ''}`),
       });
     }
   }
@@ -625,10 +627,7 @@ export async function generateGlossary(rootDir = ROOT, options = {}) {
     }
   }
 
-  let result;
-
-  if (isClaudeAvailable()) {
-    const lawContent = lawTexts.map(s => {
+  const lawContent = lawTexts.map(s => {
       const citation = BL_CITATION[s.lawKey] || s.lawKey;
       return `${s.name} (${citation}, ${s.category}/${s.lawKey}):\n${s.texts.join('\n')}`;
     }).join('\n\n---\n\n');
@@ -653,6 +652,7 @@ WICHTIG:
 - Verwende das korrekte Zitierformat:
 ${citationRef}
 - Format: "Par. {nummer} {Abk\u00fcrzung}", z.B. "Par. 35 Bgld. GO"
+- Verwende KEINE Anf\u00fchrungszeichen (") im Antworttext. Verwende stattdessen einfache Anf\u00fchrungszeichen (') oder Guillemets.
 
 Antworte NUR mit validem JSON (ohne Markdown-Formatierung):
 {
@@ -670,22 +670,20 @@ Hier sind Texte aus ALLEN 23 Gesetzen:
 
 ${lawContent}`;
 
-    const claudeResult = callClaude(prompt);
-    if (claudeResult && claudeResult.terms) {
-      result = {
-        meta: {
-          generatedAt: new Date().toISOString(),
-          termCount: claudeResult.terms.length,
-        },
-        terms: claudeResult.terms,
-      };
-    }
+  const claudeResult = callClaude(prompt);
+  let result;
+  if (claudeResult && claudeResult.terms) {
+    result = {
+      meta: {
+        generatedAt: new Date().toISOString(),
+        termCount: claudeResult.terms.length,
+      },
+      terms: claudeResult.terms,
+    };
   }
 
-  // Fallback to placeholder glossary
   if (!result) {
-    console.log('  Using placeholder glossary content');
-    result = generatePlaceholderGlossary(summaryRefs);
+    throw new Error('FAILED: Claude did not return valid glossary content. Check debug files in data/llm/');
   }
 
   mkdirSync(outputDir, { recursive: true });
@@ -693,66 +691,6 @@ ${lawContent}`;
   console.log(`  Written: ${outputPath} (${result.terms.length} terms)`);
 
   return result;
-}
-
-/**
- * Generate placeholder glossary when Claude is unavailable.
- */
-function generatePlaceholderGlossary(summaryRefs) {
-  // Get some law keys for references
-  const refKeys = Object.keys(summaryRefs);
-  function makeRefs(paraNumbers) {
-    const refs = [];
-    for (const refKey of refKeys.slice(0, 3)) {
-      const [category, key] = refKey.split('/');
-      const availableParas = summaryRefs[refKey] || [];
-      const para = paraNumbers.find(p => availableParas.includes(String(p))) || availableParas[0] || '1';
-      refs.push({
-        category,
-        key,
-        paragraph: String(para),
-        label: `Par. ${para} ${BL_CITATION[key] || key}`,
-      });
-    }
-    return refs;
-  }
-
-  const terms = [
-    { term: 'Befangenheit', slug: 'befangenheit', definition: 'Zustand, in dem ein Organmitglied wegen pers\u00f6nlicher Interessen an einer Sache von der Beratung und Abstimmung ausgeschlossen ist. Dient der Sicherung unparteiischer Entscheidungsfindung.', paraHint: [35, 36] },
-    { term: 'Kollegialorgan', slug: 'kollegialorgan', definition: 'Ein Organ, das aus mehreren gleichberechtigten Mitgliedern besteht und Entscheidungen durch Abstimmung trifft. Der Gemeinderat ist das wichtigste Kollegialorgan der Gemeinde.', paraHint: [1, 2] },
-    { term: 'Dringlichkeitsantrag', slug: 'dringlichkeitsantrag', definition: 'Ein Antrag, der ohne Einhaltung der \u00fcblichen Fristen auf die Tagesordnung einer Sitzung gesetzt werden kann. Erfordert in der Regel eine qualifizierte Mehrheit.', paraHint: [40, 41] },
-    { term: 'Gesch\u00e4ftsordnung', slug: 'geschaeftsordnung', definition: 'Regelwerk f\u00fcr den inneren Betrieb eines Kollegialorgans. Legt Verfahrensregeln f\u00fcr Sitzungen, Antr\u00e4ge und Abstimmungen fest.', paraHint: [30, 31] },
-    { term: 'Beschlussf\u00e4higkeit', slug: 'beschlussfaehigkeit', definition: 'Die F\u00e4higkeit eines Kollegialorgans, g\u00fcltige Beschl\u00fcsse zu fassen. Setzt in der Regel die Anwesenheit von mindestens der H\u00e4lfte der Mitglieder voraus (Quorum).', paraHint: [32, 33] },
-    { term: 'Zweidrittelmehrheit', slug: 'zweidrittelmehrheit', definition: 'Qualifizierte Mehrheit, bei der mindestens zwei Drittel der abgegebenen Stimmen oder der anwesenden Mitglieder f\u00fcr einen Beschluss stimmen m\u00fcssen. Erforderlich bei besonders wichtigen Entscheidungen.', paraHint: [34, 35] },
-    { term: 'Verordnung', slug: 'verordnung', definition: 'Generelle Norm, die von einem Verwaltungsorgan (z.B. Gemeinderat) erlassen wird und f\u00fcr alle Gemeindeb\u00fcrger verbindlich ist. Muss ordnungsgem\u00e4\u00df kundgemacht werden.', paraHint: [60, 61] },
-    { term: 'Kundmachung', slug: 'kundmachung', definition: '\u00d6ffentliche Bekanntmachung von Verordnungen, Beschl\u00fcssen oder anderen amtlichen Mitteilungen. Voraussetzung f\u00fcr die Rechtswirksamkeit von Verordnungen.', paraHint: [62, 63] },
-    { term: 'Gemeindevorstand', slug: 'gemeindevorstand', definition: 'Kollegialorgan der Gemeinde, bestehend aus B\u00fcrgermeister, Vize-B\u00fcrgermeister und weiteren Mitgliedern. In St\u00e4dten mit eigenem Statut als Stadtsenat oder Stadtrat bezeichnet.', paraHint: [20, 21] },
-    { term: 'Ortsvorsteher', slug: 'ortsvorsteher', definition: 'Vertreter einer Katastralgemeinde oder eines Ortsteils. Wird vom Gemeinderat bestellt und vertritt die Interessen des Ortsteils gegen\u00fcber den Gemeindeorganen.', paraHint: [70, 71] },
-    { term: 'Voranschlag', slug: 'voranschlag', definition: 'Der Haushaltsplan der Gemeinde f\u00fcr das kommende Finanzjahr. Enth\u00e4lt die geplanten Einnahmen und Ausgaben und muss vom Gemeinderat beschlossen werden.', paraHint: [80, 81] },
-    { term: 'Rechnungsabschluss', slug: 'rechnungsabschluss', definition: 'Die j\u00e4hrliche Abrechnung \u00fcber die tats\u00e4chlichen Einnahmen und Ausgaben der Gemeinde. Muss vom Gemeinderat gepr\u00fcft und genehmigt werden.', paraHint: [82, 83] },
-    { term: 'Gemeindeaufsicht', slug: 'gemeindeaufsicht', definition: 'Die staatliche Kontrolle \u00fcber die Gemeindeverwaltung durch die Landesregierung. Umfasst Rechtsaufsicht (Gesetzm\u00e4\u00dfigkeit) und in bestimmten F\u00e4llen Zweckm\u00e4\u00dfigkeitsaufsicht.', paraHint: [90, 91] },
-    { term: 'Statutarstadt', slug: 'statutarstadt', definition: 'Eine Stadt mit eigenem Statut, die neben den Aufgaben der Gemeindeverwaltung auch jene der Bezirksverwaltung wahrnimmt. Das Stadtrecht tritt an die Stelle der Gemeindeordnung.', paraHint: [1, 2] },
-    { term: 'Gemeindeverband', slug: 'gemeindeverband', definition: 'Zusammenschluss mehrerer Gemeinden zur gemeinsamen Besorgung bestimmter Aufgaben (z.B. Abfallwirtschaft, Wasserversorgung). Wird durch Gesetz oder Vereinbarung gegr\u00fcndet.', paraHint: [100, 101] },
-    { term: 'Ausschuss', slug: 'ausschuss', definition: 'Ein vom Gemeinderat eingesetztes Gremium zur Vorberatung bestimmter Angelegenheiten. Die Zusammensetzung spiegelt in der Regel die St\u00e4rke der Fraktionen wider.', paraHint: [25, 26] },
-    { term: 'Mandatar', slug: 'mandatar', definition: 'Gew\u00e4hltes Mitglied des Gemeinderats. Mandatare \u00fcben ihr Amt in der Regel ehrenamtlich aus und sind an keinen Auftrag gebunden (freies Mandat).', paraHint: [10, 11] },
-    { term: 'Instanzenzug', slug: 'instanzenzug', definition: 'Der vorgesehene Rechtsweg zur Anfechtung von Bescheiden. Gegen Bescheide des B\u00fcrgermeisters kann in der Regel Berufung an den Gemeinderat eingelegt werden.', paraHint: [50, 51] },
-    { term: 'Verhandlungsschrift', slug: 'verhandlungsschrift', definition: 'Das offizielle Protokoll einer Gemeinderatssitzung. Muss die gefassten Beschl\u00fcsse, wesentlichen Beratungsinhalte und Abstimmungsergebnisse enthalten.', paraHint: [38, 39] },
-    { term: 'Selbstverwaltung', slug: 'selbstverwaltung', definition: 'Das verfassungsrechtlich garantierte Recht der Gemeinde, Angelegenheiten des eigenen Wirkungsbereichs weisungsfrei zu besorgen. Umfasst Verordnungsrecht, Personalhoheit und Finanzhoheit.', paraHint: [1, 2] },
-  ];
-
-  return {
-    meta: {
-      generatedAt: new Date().toISOString(),
-      termCount: terms.length,
-      placeholder: true,
-    },
-    terms: terms.map(t => ({
-      term: t.term,
-      slug: t.slug,
-      definition: t.definition,
-      references: makeRefs(t.paraHint),
-    })),
-  };
 }
 
 /**

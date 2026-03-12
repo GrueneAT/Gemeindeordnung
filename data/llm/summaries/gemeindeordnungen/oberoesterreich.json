@@ -1,1025 +1,957 @@
 {
   "meta": {
-    "generatedAt": "2026-03-11T19:08:50.469Z",
+    "generatedAt": "2026-03-12T08:27:32.388Z",
     "lawKey": "oberoesterreich",
     "category": "gemeindeordnungen"
   },
   "paragraphs": {
     "1": {
-      "summary": "Geregelt wird begriff und rechtliche Stellung. Das Land Oberösterreich gliedert sich in Gemeinden.",
+      "summary": "Oberösterreich gliedert sich in Gemeinden, die als Gebietskörperschaften das Recht auf Selbstverwaltung besitzen. Jedes Grundstück muss einer Gemeinde zugehören. Als selbständige Wirtschaftskörper dürfen Gemeinden Vermögen besitzen, wirtschaftliche Unternehmungen betreiben und ihren Haushalt eigenständig führen.",
       "topics": [
-        "Gemeindevermögen",
-        "Wirkungsbereich",
-        "Gemeindeabgaben"
+        "Gemeinderecht",
+        "Selbstverwaltung"
       ]
     },
     "2": {
-      "summary": "Inhaltlich geht es um verschiedene Aspekte rund um name. Die Änderung des Namens einer Gemeinde bedarf der Genehmigung der Landesregierung.",
+      "summary": "Eine Namensänderung der Gemeinde erfordert die Genehmigung der Landesregierung, die nur aus öffentlichen Rücksichten – etwa bei Verwechslungsgefahr – versagt werden darf. Bei Vereinigung, Trennung oder Neubildung von Gemeinden bestimmt die Landesregierung die neuen Namen per Verordnung oder Landesgesetz.",
       "topics": [
-        "Gebietsänderung",
-        "Kundmachung und Verordnungen",
-        "Gemeindebezeichnung"
+        "Gemeindename",
+        "Gebietsänderungen"
       ]
     },
     "3": {
-      "summary": "Normiert werden verschiedene Aspekte rund um stadt- und Marktgemeinden in 4 Absätzen. ",
+      "summary": "Gemeinden mit über 2.000 Einwohnern können auf Antrag des Gemeinderates zum Markt, solche mit über 4.500 Einwohnern zur Stadt erhoben werden. Maßgeblich ist die letzte Volkszählung vor dem Beschluss der Landesregierung. Bei Gemeindevereinigungen bleibt die höchste bisherige Bezeichnung erhalten.",
       "topics": [
-        "Gebietsänderung",
-        "Gemeindebezeichnung"
+        "Stadterhebung",
+        "Markterhebung"
       ]
     },
     "4": {
-      "summary": "Das Recht zur ist verpflichtet, bestimmte Aufgaben im Bereich Wappen und Gemeindefarben wahrzunehmen. Das Recht zur Führung eines Gemeindewappens verleiht die Landesregierung auf Antrag der Gemeinde.",
+      "summary": "Das Recht zur Führung eines Gemeindewappens wird von der Landesregierung auf Antrag verliehen und im Landesgesetzblatt kundgemacht. Gemeindefarben legt der Gemeinderat fest. Bei einer Gemeindevereinigung geht das Wappenrecht nicht automatisch auf die neue Gemeinde über.",
       "topics": [
-        "Gebietsänderung",
-        "Gemeindesymbole"
+        "Gemeindewappen",
+        "Gemeindefarben"
       ]
     },
     "5": {
-      "summary": "Die Bestimmung legt fest, siegel. Die Gemeinden haben im Gemeindesiegel die Bezeichnung (Gemeinde, Marktgemeinde, Stadtgemeinde) sowie den Namen der Gemeinde zu führen.",
+      "summary": "Im Gemeindesiegel sind Bezeichnung und Name der Gemeinde zu führen; Gemeinden mit Wappenrecht können das Wappen zusätzlich aufnehmen. Unbefugtes Führen eines Gemeindesiegels wird mit einer Geldstrafe bis 220 Euro bestraft.",
       "topics": [
-        "Gemeindesymbole",
-        "Strafbestimmungen",
-        "Gemeindebezeichnung"
+        "Gemeindesiegel",
+        "Verwaltungsstrafen"
       ]
     },
     "6": {
-      "summary": "Diese Vorschrift betrifft verschiedene Aspekte rund um gebietsänderungen in 3 Absätzen. ",
+      "summary": "Gebietsänderungen sind nur aus öffentlichen Interessen zulässig, wobei die Leistungsfähigkeit jeder beteiligten Gemeinde gewahrt bleiben muss. Auch die wirtschaftlichen und kulturellen Belange der Einwohner sind zu berücksichtigen, und Katastralgemeinden sollen möglichst nicht geteilt werden.",
       "topics": [
-        "Gebietsänderung",
-        "Kundmachung und Verordnungen"
+        "Gebietsänderungen",
+        "Gemeindestruktur"
       ]
     },
     "7": {
-      "summary": "Erfasst werden unter welchen Voraussetzungen Entscheidungen im Bereich „Grenzänderungen\" getroffen werden können. ",
+      "summary": "Grenzänderungen, bei denen die betroffenen Gemeinden weiterhin bestehen bleiben, erfordern übereinstimmende Zweidrittelmehrheitsbeschlüsse der beteiligten Gemeinderäte und eine Verordnung der Landesregierung. Gegen den Willen einer Gemeinde ist ein Landesgesetz notwendig. Die vermögensrechtliche Auseinandersetzung kann auf Antrag binnen eines Jahres durch die Landesregierung geregelt werden.",
       "topics": [
-        "Kundmachung und Verordnungen",
-        "Gemeindevermögen",
-        "Schlussbestimmungen"
+        "Grenzänderungen",
+        "Gemeindegebiet"
       ]
     },
     "8": {
-      "summary": "Die Vorschrift enthält Regelungen zu verschiedene Aspekte rund um vereinigung in 3 Absätzen. ",
+      "summary": "Aneinandergrenzende Gemeinden können bei übereinstimmenden Zweidrittelmehrheitsbeschlüssen durch Verordnung der Landesregierung vereinigt werden; gegen den Willen beteiligter Gemeinden bedarf es eines Landesgesetzes. Sämtliche Rechte, Pflichten und Dienstverhältnisse der bisherigen Gemeinden gehen vollständig auf die neue Gemeinde über.",
       "topics": [
-        "Gebietsänderung",
-        "Kundmachung und Verordnungen"
+        "Gemeindevereinigung",
+        "Gebietsänderungen"
       ]
     },
     "9": {
-      "summary": "Es werden die Voraussetzungen für verschiedene Aspekte rund um trennung in 3 Absätzen. ",
+      "summary": "Eine Gemeinde kann bei Zweidrittelmehrheit im Gemeinderat in mehrere Gemeinden getrennt werden, wobei ein vollständiger Plan zur vermögensrechtlichen Auseinandersetzung vorliegen muss. Gegen den Willen der Gemeinde ist ein Landesgesetz erforderlich. Trennung und Vermögensaufteilung treten zeitgleich in Kraft.",
       "topics": [
-        "Abstimmung und Mehrheiten",
-        "Gebietsänderung",
-        "Kundmachung und Verordnungen"
+        "Gemeindetrennung",
+        "Vermögensauseinandersetzung"
       ]
     },
     "10": {
-      "summary": "Gegenstand ist verschiedene Aspekte rund um neubildung in 3 Absätzen. ",
+      "summary": "Aus Gebietsteilen angrenzender Gemeinden kann eine neue Gemeinde gebildet werden, wenn übereinstimmende Zweidrittelmehrheitsbeschlüsse samt Vermögensaufteilungsplan vorliegen. Ohne Zustimmung aller beteiligten Gemeinden braucht es ein Landesgesetz. Die Neubildung und die vermögensrechtliche Regelung treten gleichzeitig in Kraft.",
       "topics": [
-        "Kundmachung und Verordnungen",
-        "Gemeindevermögen"
+        "Gemeindeneubildung",
+        "Gebietsänderungen"
       ]
     },
     "11": {
-      "summary": "Die Regelung umfasst grenzstreitigkeiten. Den Grenzverlauf zwischen zwei oder mehreren Gemeinden, der unter diesen strittig ist, hat die Landesregierung durch Verordnung festzustellen.",
+      "summary": "Strittige Gemeindegrenzen stellt die Landesregierung durch Verordnung fest. Bis zur Klärung kann sie auf Antrag oder von Amts wegen die vorläufige Verwaltung des umstrittenen Gebiets regeln.",
       "topics": [
-        "Grenzstreitigkeiten"
+        "Grenzstreitigkeiten",
+        "Gemeindegebiet"
       ]
     },
     "12": {
-      "summary": "Geregelt wird unter welchen Voraussetzungen Entscheidungen im Bereich „Gemeinsame Bestimmungen\" getroffen werden können. ",
+      "summary": "Gebietsänderungen dürfen grundsätzlich nur mit Jahresbeginn in Kraft treten. Bei Vereinigung, Trennung und Neubildung gelten die Bestimmungen zur Fortführung der Verwaltung sinngemäß. Landesgesetze zu Gebietsänderungen erfordern eine Zweidrittelmehrheit im Landtag sowie eine Volksbefragung in den betroffenen Gemeinden.",
       "topics": [
-        "Gebietsänderung",
-        "Kundmachung und Verordnungen",
-        "Direkte Demokratie"
+        "Gebietsänderungen",
+        "Verfassungsbestimmungen"
       ]
     },
     "13": {
-      "summary": "Inhaltlich geht es um verschiedene Aspekte rund um verwaltungsgemeinschaften in 6 Absätzen. ",
+      "summary": "Gemeinden können zur gemeinschaftlichen Geschäftsführung Verwaltungsgemeinschaften bilden, die keine eigene Rechtspersönlichkeit besitzen. Ihre Einrichtung ist der Landesregierung anzuzeigen und kann binnen acht Wochen untersagt werden. Streitigkeiten zwischen den beteiligten Gemeinden entscheidet die Landesregierung per Bescheid.",
       "topics": [
-        "Verwaltungsgemeinschaften"
+        "Verwaltungsgemeinschaften",
+        "Interkommunale Zusammenarbeit"
       ]
     },
     "14": {
-      "summary": "Im Mittelpunkt steht die näheren Einzelheiten zu diesem Rechtsbereich.",
+      "summary": "Aufgehoben.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Aufgehobene Bestimmung"
       ]
     },
     "15": {
-      "summary": "Definiert werden gemeindemitglieder. Gemeindemitglieder sind jene österreichischen Staatsbürger und Staatsangehörigen anderer Mitgliedstaaten der Europäischen Union, die im Gemeindegebiet ihren Hauptwohnsitz haben.",
+      "summary": "Als Gemeindemitglieder gelten österreichische Staatsbürger sowie Staatsangehörige anderer EU-Mitgliedstaaten, die ihren Hauptwohnsitz im Gemeindegebiet haben. Ihre besonderen Rechte und Pflichten ergeben sich aus dem Gesetz.",
       "topics": [
-        "Gemeindemitglieder"
+        "Gemeindemitgliedschaft",
+        "Hauptwohnsitz"
       ]
     },
     "16": {
-      "summary": "Die Bestimmung legt fest, verschiedene Aspekte rund um ehrungen durch die Gemeinde in 6 Absätzen. Der Gemeinderat kann Personen, die sich um die Gemeinde oder um die Gemeinden im Allgemeinen verdient gemacht haben, durch Ehrung auszeichnen.",
+      "summary": "Personen, die sich um die Gemeinde verdient gemacht haben, können vom Gemeinderat mit Drei-Viertel-Mehrheit geehrt werden. Die verliehenen Ehrenzeichen gehen in das Eigentum der ausgezeichneten Person über und dürfen nicht von Dritten getragen werden. Bei späterem Bekanntwerden von Hinderungsgründen oder unwürdigem Verhalten ist die Auszeichnung abzuerkennen.",
       "topics": [
-        "Gemeindebürger",
-        "Strafbestimmungen"
+        "Ehrungen",
+        "Ehrenbürgerschaft"
       ]
     },
     "17": {
-      "summary": "Diese Vorschrift betrifft verschiedene Aspekte rund um allgemeine Bestimmungen in 4 Absätzen. Die Organe der Gemeinde sind:a)der Gemeinderat (die Ausschüsse gemäß § 44 Abs.",
+      "summary": "Organe der Gemeinde sind der Gemeinderat, der Gemeindevorstand (in Städten: Stadtrat) und der Bürgermeister. Die Wahl von Gemeinderat und Bürgermeister regelt die OÖ Kommunalwahlordnung. Personenbezogene Bezeichnungen im Gesetz gelten auch in weiblicher Form.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Gemeindevorstand"
+        "Gemeindeorgane",
+        "Organstruktur"
       ]
     },
     "18": {
-      "summary": "Erfasst werden verschiedene Aspekte rund um gemeinderat in 3 Absätzen. Die Anzahl der Mitglieder des Gemeinderats beträgt in Gemeinden mit\n(2)Die Einwohnerzahl gemäß Abs.",
+      "summary": "Die Anzahl der Gemeinderatsmitglieder richtet sich nach der Einwohnerzahl, die anhand der Bevölkerungsstatistik zum Stichtag 31. Oktober des der Wahl zweitvorangegangenen Jahres ermittelt wird. Mandatare sind an keinen Auftrag gebunden und haben das Recht, sich über alle Angelegenheiten des eigenen Wirkungsbereichs zu informieren.",
       "topics": [
-        "Gemeinderatssitzungen",
-        "Zusammensetzung des Gemeinderats",
-        "Geschäftsordnung"
+        "Gemeinderat",
+        "Mandatsausübung"
       ]
     },
     "19": {
-      "summary": "Erfasst werden unter welchen Voraussetzungen Entscheidungen im Bereich „Funktionsperiode\" getroffen werden können. ",
+      "summary": "Die Funktionsperiode des Gemeinderates beginnt mit der Angelobung in der konstituierenden Sitzung und endet mit der Angelobung der neu gewählten Mitglieder. Mit Zweidrittelmehrheit kann der Gemeinderat jederzeit seine eigene Auflösung beschließen.",
       "topics": [
-        "Gemeinderatssitzungen",
-        "Zusammensetzung des Gemeinderats",
-        "Angelobung"
+        "Funktionsperiode",
+        "Gemeinderatsauflösung"
       ]
     },
     "20": {
-      "summary": "Die Vorschrift enthält Regelungen zu verschiedene Aspekte rund um konstituierende Sitzung des Gemeinderates; Angelobung in 8 Absätzen. Die konstituierende Sitzung des neu gewählten Gemeinderates ist vom bisherigen Bürgermeister unter Hinweis auf die Rechtsfolge nach § 23 Abs.",
+      "summary": "Die konstituierende Sitzung des neu gewählten Gemeinderates ist vom bisherigen Bürgermeister so einzuberufen, dass sie spätestens acht Wochen nach dem Wahltag stattfinden kann. In der Sitzung legen alle Mitglieder das Gelöbnis ab, Verfassung und Gesetze zu beachten und das Wohl der Gemeinde zu fördern. Anschließend werden die Mandatsverteilung im Gemeindevorstand berechnet und die Vizebürgermeister gewählt.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Vizebürgermeister",
-        "Bürgermeister"
-      ]
-    },
-    "21": {
-      "summary": "Es werden die Voraussetzungen für enden des Mandates eines Mitgliedes des Gemeinderates. Das Mandat eines Mitgliedes (Ersatzmitgliedes) des Gemeinderates endet:",
-      "topics": [
-        "Zusammensetzung des Gemeinderats"
-      ]
-    },
-    "22": {
-      "summary": "Die Bestimmung regelt mandatsverzicht. Ein Mitglied (Ersatzmitglied) des Gemeinderates kann auf sein Mandat verzichten.",
-      "topics": [
-        "Zusammensetzung des Gemeinderats",
-        "Mandatsverlust",
-        "Gemeindeverwaltung"
-      ]
-    },
-    "23": {
-      "summary": "Es wird bestimmt, verschiedene Aspekte rund um mandatsverlust. Ein Mitglied (Ersatzmitglied) des Gemeinderates verliert sein Mandat,1.wenn es die Wählbarkeit gemäß § 24 Abs.",
-      "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Gemeinderatssitzungen"
-      ]
-    },
-    "24": {
-      "summary": "Vorgesehen ist verschiedene Aspekte rund um gemeindevorstand in 5 Absätzen. Der Gemeindevorstand besteht aus dem Bürgermeister, aus einem bis höchstens drei Vizebürgermeistern und aus den weiteren Vorstandsmitgliedern.",
-      "topics": [
-        "Vizebürgermeister",
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats"
-      ]
-    },
-    "25": {
-      "summary": "Im Mittelpunkt steht verschiedene Aspekte rund um wahl des Bürgermeisters durch den Gemeinderat in 8 Absätzen. Der Bürgermeister ist in den im § 2 Abs.",
-      "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats"
-      ]
-    },
-    "26": {
-      "summary": "Definiert werden verschiedene Aspekte rund um wahl der übrigen Mitglieder des Gemeindevorstandes in 3 Absätzen. Die übrigen Mitglieder des Gemeindevorstandes sind aus dem Kreis der Mitglieder des Gemeinderates zu wählen.",
-      "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats"
-      ]
-    },
-    "27": {
-      "summary": "Die Bestimmung legt fest, verschiedene Aspekte rund um wahl der Vizebürgermeister in 5 Absätzen. Die Vizebürgermeister sind aus dem Kreis der übrigen Mitglieder des Gemeindevorstandes (§ 26 Abs.",
-      "topics": [
-        "Bürgermeisterwahl",
-        "Vizebürgermeister",
-        "Bürgermeister"
-      ]
-    },
-    "28": {
-      "summary": "Diese Vorschrift betrifft passives Wahlrecht in den Gemeindevorstand. ",
-      "topics": [
-        "Zusammensetzung des Gemeinderats",
-        "Gemeindevorstand",
-        "Wahlen und Wahlrecht"
-      ]
-    },
-    "29": {
-      "summary": "Erfasst werden verschiedene Aspekte rund um gemeinsame Bestimmungen für die Wahl der Mitglieder des Gemeindevorstandes in 7 Absätzen. ",
-      "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats"
-      ]
-    },
-    "30": {
-      "summary": "Die Vorschrift enthält Regelungen zu verschiedene Aspekte rund um erledigung des Mandates eines Mitgliedes des Gemeindevorstandes in 5 Absätzen. Das Mandat eines Mitgliedes des Gemeindevorstandes wird erledigt:a)durch Mandatsverzicht (Abs.",
-      "topics": [
-        "Zusammensetzung des Gemeinderats",
-        "Mandatsverlust",
+        "Konstituierende Sitzung",
         "Angelobung"
       ]
     },
-    "31": {
-      "summary": "Es werden die Voraussetzungen für verschiedene Aspekte rund um abberufung von Mitgliedern des Gemeindevorstandes in 5 Absätzen. ",
+    "21": {
+      "summary": "Das Mandat eines Gemeinderatsmitglieds endet aus den im Gesetz näher aufgezählten Gründen.",
+      "topics": [
+        "Mandatsende",
+        "Gemeinderat"
+      ]
+    },
+    "22": {
+      "summary": "Ein Gemeinderatsmitglied kann jederzeit schriftlich auf sein Mandat verzichten. Der Verzicht wird mit Einlangen beim Gemeindeamt wirksam und ist danach unwiderruflich. Beigefügte Bedingungen entfalten keine rechtliche Wirkung.",
+      "topics": [
+        "Mandatsverzicht",
+        "Gemeinderat"
+      ]
+    },
+    "23": {
+      "summary": "Ein Gemeinderatsmitglied verliert sein Mandat unter anderem bei Verlust der Wählbarkeit, Verweigerung des Gelöbnisses oder dreimaligem unentschuldigtem Fernbleiben von Sitzungen. In bestimmten Fällen tritt der Verlust kraft Gesetzes ein, in anderen spricht die Landesregierung ihn per Bescheid aus.",
+      "topics": [
+        "Mandatsverlust",
+        "Gemeinderat"
+      ]
+    },
+    "24": {
+      "summary": "Der Gemeindevorstand setzt sich aus dem Bürgermeister, einem bis drei Vizebürgermeistern und weiteren Vorstandsmitgliedern zusammen. Die Gesamtzahl richtet sich nach der Gemeindegröße. In Städten führt der Gemeindevorstand die Bezeichnung 'Stadtrat'.",
+      "topics": [
+        "Gemeindevorstand",
+        "Zusammensetzung"
+      ]
+    },
+    "25": {
+      "summary": "Falls der Bürgermeister nicht direkt gewählt wurde, wählt ihn der Gemeinderat aus Wahlvorschlägen der im Gemeindevorstand vertretungsberechtigten Fraktionen. Kommt in den ersten beiden Wahlgängen keine absolute Mehrheit zustande, folgt eine engere Wahl zwischen den beiden stimmenstärksten Kandidaten. Bei Stimmengleichheit gibt die Fraktionsstärke, hilfsweise die Parteisumme und zuletzt das Los den Ausschlag.",
       "topics": [
         "Bürgermeisterwahl",
-        "Vizebürgermeister",
-        "Bürgermeister"
+        "Wahlverfahren"
       ]
     },
-    "32": {
-      "summary": "Gegenstand ist verschiedene Aspekte rund um nachbesetzung freigewordener Stellen im Gemeindevorstand in 3 Absätzen. ",
+    "26": {
+      "summary": "Die Sitze im Gemeindevorstand werden nach dem d'Hondt'schen Verhältniswahlsystem auf die Fraktionen verteilt. Jede anspruchsberechtigte Fraktion hat einen Wahlvorschlag einzureichen, und die Wahl erfolgt durch die jeweiligen Fraktionsmitglieder im Gemeinderat.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats"
+        "Gemeindevorstandswahl",
+        "Verhältniswahlrecht"
       ]
     },
-    "33": {
-      "summary": "Die Regelung umfasst verschiedene Aspekte rund um wahlen in Ausschüsse in 7 Absätzen. Der Gemeinderat hat die Mitglieder (Ersatzmitglieder) der Ausschüsse zu wählen.",
+    "27": {
+      "summary": "Vizebürgermeister werden aus dem Kreis der Gemeindevorstandsmitglieder gewählt. Bei einem Vizebürgermeister wählt die stärkste Fraktion, bei zweien zusätzlich die zweitstärkste, sofern diese mindestens ein Sechstel der Mandate hält. Bei drei Vizebürgermeistern erfolgt die Verteilung nach dem Verhältniswahlrecht.",
       "topics": [
-        "Gemeinderatssitzungen",
-        "Zusammensetzung des Gemeinderats",
-        "Abstimmung und Mehrheiten"
-      ]
-    },
-    "34": {
-      "summary": "Es wird bestimmt, unter welchen Voraussetzungen Entscheidungen im Bereich „Aufwandsentschädigung und Sitzungsgeld\" getroffen werden können. ",
-      "topics": [
-        "Vizebürgermeister",
-        "Bürgermeister",
-        "Gemeinderatssitzungen"
-      ]
-    },
-    "35": {
-      "summary": "Vorgesehen ist verschiedene Aspekte rund um krankenfürsorge in 3 Absätzen. ",
-      "topics": [
-        "Vizebürgermeister",
-        "Bürgermeister",
+        "Vizebürgermeisterwahl",
         "Gemeindevorstand"
       ]
     },
-    "36": {
-      "summary": "Im Mittelpunkt steht vertretung des Bürgermeisters. Der Bürgermeister ist im Falle seiner Verhinderung vom Vizebürgermeister beziehungsweise von den Vizebürgermeistern in der nach § 27 sich ergebenden Reihenfolge zu vertreten.",
+    "28": {
+      "summary": "In den Gemeindevorstand wählbar sind nur Gemeinderatsmitglieder, die einer vertretungsberechtigten Fraktion angehören und von dieser vorgeschlagen werden. Die österreichische Staatsbürgerschaft ist Voraussetzung. Wer wegen Amtsenthebung abgesetzt wurde, bleibt fünf Jahre lang nicht wählbar.",
       "topics": [
-        "Vizebürgermeister",
-        "Bürgermeister"
+        "Passives Wahlrecht",
+        "Gemeindevorstand"
+      ]
+    },
+    "29": {
+      "summary": "Wahlvorschläge für den Gemeindevorstand müssen von der absoluten Mehrheit der berechtigten Fraktionsmitglieder unterzeichnet sein. Fraktionsinterne Wahlen erfordern die Anwesenheit von zwei Dritteln der Wahlberechtigten und die absolute Stimmenmehrheit. Jede Wahl in den Gemeindevorstand ist unverzüglich an der Amtstafel kundzumachen und der Landesregierung zu melden.",
+      "topics": [
+        "Wahlverfahren Gemeindevorstand",
+        "Wahlvorschläge"
+      ]
+    },
+    "30": {
+      "summary": "Das Mandat eines Vorstandsmitglieds endet durch Verzicht oder Mandatsverlust, etwa bei Wegfall des Gemeinderatsmandats, Verlust der Staatsbürgerschaft oder Abberufung. Der Verzicht ist schriftlich zu erklären, eigenhändig zu unterschreiben und nach Einlangen beim Gemeindeamt unwiderruflich.",
+      "topics": [
+        "Mandatserledigung",
+        "Gemeindevorstand"
+      ]
+    },
+    "31": {
+      "summary": "Bürgermeister, Vizebürgermeister und weitere Vorstandsmitglieder können durch einen von mindestens zwei Dritteln der Antragsberechtigten unterzeichneten Misstrauensantrag abberufen werden. Über den Antrag ist in geheimer Abstimmung mit Zweidrittelmehrheit zu entscheiden. Bei einem direkt gewählten Bürgermeister bedarf die Abberufung zusätzlich der Bestätigung durch eine Volksabstimmung.",
+      "topics": [
+        "Misstrauensantrag",
+        "Abberufung"
+      ]
+    },
+    "32": {
+      "summary": "Freigewordene Stellen im Gemeindevorstand sind ehestmöglich für die restliche Funktionsperiode nachzubesetzen. War der Bürgermeister direkt gewählt und scheidet er innerhalb der ersten vier Jahre aus, erfolgt eine Neuwahl durch die Wahlberechtigten. Für alle übrigen Vorstandsmitglieder findet eine Nachwahl nach den regulären Wahlbestimmungen statt.",
+      "topics": [
+        "Nachbesetzung",
+        "Gemeindevorstand"
+      ]
+    },
+    "33": {
+      "summary": "Ausschussmitglieder werden vom Gemeinderat gewählt, wobei auch Ersatzmitglieder des Gemeinderates wählbar sind. Die Größe eines Ausschusses entspricht grundsätzlich der des Gemeindevorstands, kann aber mit Drei-Viertel-Mehrheit angepasst werden – mindestens drei Mitglieder sind erforderlich. Fraktionen, die im Ausschuss nicht vertreten sind, dürfen einen Vertreter mit beratender Stimme entsenden.",
+      "topics": [
+        "Ausschusswahlen",
+        "Fraktionsvertretung"
+      ]
+    },
+    "34": {
+      "summary": "Vizebürgermeistern und Fraktionsobmännern gebührt eine Aufwandsentschädigung, deren Höhe sich am Bezug des Bürgermeisters orientiert. Gemeinderatsmitglieder ohne Aufwandsentschädigung erhalten für die Teilnahme an Sitzungen ein Sitzungsgeld zwischen 1 und 3 Prozent des Bürgermeisterbezugs. Zusätzlich wird nachweislicher Verdienstentgang aus beruflicher Tätigkeit ersetzt.",
+      "topics": [
+        "Aufwandsentschädigung",
+        "Sitzungsgeld"
+      ]
+    },
+    "35": {
+      "summary": "Für Vizebürgermeister und aufwandsentschädigungsberechtigte Vorstandsmitglieder sowie Fraktionsobmänner haben die Gemeinden eine Krankenfürsorge mindestens auf dem Niveau der Gleichwertigkeit nach dem B-KUVG sicherzustellen. Die Gemeinden sind zur Verarbeitung der dafür erforderlichen personenbezogenen Daten einschließlich Gesundheitsdaten ermächtigt.",
+      "topics": [
+        "Krankenfürsorge",
+        "Datenschutz"
+      ]
+    },
+    "36": {
+      "summary": "Bei Verhinderung des Bürgermeisters übernimmt der Vizebürgermeister in der festgelegten Reihenfolge die Vertretung. Sind auch alle Vizebürgermeister verhindert, fällt die Vertretung dem ältesten Gemeinderatsmitglied der Bürgermeisterfraktion zu.",
+      "topics": [
+        "Bürgermeistervertretung",
+        "Vizebürgermeister"
       ]
     },
     "37": {
-      "summary": "Die Gesch ist verpflichtet, bestimmte Aufgaben im Bereich Gemeindeamt wahrzunehmen. Die Geschäfte der Gemeinde werden durch das Gemeindeamt besorgt.",
+      "summary": "Das Gemeindeamt besorgt die Geschäfte der Gemeinde unter der Leitung eines vom Gemeinderat bestellten Amtsleiters. In Gemeinden über 10.000 Einwohner muss der Amtsleiter rechtskundig sein. Der Bürgermeister steht dem Gemeindeamt als Vorstand vor und erlässt die Organisationsvorschriften.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindeaufsicht",
-        "Gemeindebedienstete"
+        "Gemeindeamt",
+        "Amtsleitung"
       ]
     },
     "38": {
-      "summary": "Die Bestimmung legt fest, unter welchen Voraussetzungen Entscheidungen im Bereich „Volksbefragung\" getroffen werden können. ",
+      "summary": "Der Gemeinderat kann eine Volksbefragung über Angelegenheiten seines Aufgabenbereichs beschließen; ebenso ist sie durchzuführen, wenn eine gesetzlich bestimmte Mindestanzahl von Wahlberechtigten dies verlangt. Die Fragestellung muss mit 'Ja' oder 'Nein' beantwortbar sein. Personalentscheidungen und individuelle Behördenentscheidungen sind von der Volksbefragung ausgeschlossen.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Tagesordnung"
+        "Volksbefragung",
+        "Direkte Demokratie"
       ]
     },
     "39": {
-      "summary": "Die Bestimmung legt fest, einteilung des Wirkungsbereiches. Der Wirkungsbereich der Gemeinde ist ein eigener und ein vom Bund oder vom Land übertragener.",
+      "summary": "Der Wirkungsbereich der Gemeinde gliedert sich in einen eigenen und einen vom Bund oder Land übertragenen Bereich.",
       "topics": [
-        "Einteilung des Wirkungsbereiches"
+        "Wirkungsbereich",
+        "Kompetenzverteilung"
       ]
     },
     "40": {
-      "summary": "Diese Vorschrift betrifft verschiedene Aspekte rund um eigener Wirkungsbereich in 5 Absätzen. ",
+      "summary": "Im eigenen Wirkungsbereich erledigt die Gemeinde alle Angelegenheiten, die im überwiegenden Interesse der örtlichen Gemeinschaft liegen – darunter Sicherheitspolizei, Straßenverwaltung, Baupolizei und Raumplanung. Diese Aufgaben werden frei von Weisungen übergeordneter Behörden besorgt; dem Land steht lediglich ein Aufsichtsrecht zu. Auf Antrag der Gemeinde können einzelne Aufgaben per Verordnung auf eine staatliche Behörde übertragen werden.",
       "topics": [
-        "Gemeindeaufsicht",
-        "Kundmachung und Verordnungen",
-        "Gemeindebedienstete"
+        "Eigener Wirkungsbereich",
+        "Gemeindeautonomie"
       ]
     },
     "41": {
-      "summary": "Erfasst werden unter welchen Voraussetzungen Entscheidungen im Bereich „Ortspolizeiliche Verordnungen\" getroffen werden können. ",
+      "summary": "Im eigenen Wirkungsbereich darf der Gemeinderat ortspolizeiliche Verordnungen erlassen, um drohende Missstände abzuwehren oder bestehende zu beseitigen. Verstöße kann der Bürgermeister mit Geldstrafen bis 220 Euro oder bei Unzulänglichkeit mit Arrest bis zwei Wochen ahnden. Die Verordnungen dürfen nicht gegen übergeordnete Gesetze verstoßen.",
       "topics": [
-        "Bürgermeister",
-        "Kundmachung und Verordnungen",
-        "Strafbestimmungen"
+        "Ortspolizeiliche Verordnungen",
+        "Gemeindepolizei"
       ]
     },
     "42": {
-      "summary": "Die Vorschrift enthält Regelungen zu übertragener Wirkungsbereich. ",
+      "summary": "Im übertragenen Wirkungsbereich besorgt die Gemeinde Angelegenheiten nach Weisung des Bundes oder Landes. Die Bestrafung von Verwaltungsübertretungen zählt stets zum übertragenen Wirkungsbereich.",
       "topics": [
-        "Wirkungsbereich",
-        "Strafbestimmungen"
+        "Übertragener Wirkungsbereich",
+        "Weisungsbindung"
       ]
     },
     "43": {
-      "summary": "Es werden die Voraussetzungen für verschiedene Aspekte rund um aufgaben in 4 Absätzen. ",
+      "summary": "Grundsätzlich ist der Gemeinderat für alle Angelegenheiten des eigenen Wirkungsbereichs zuständig, sofern sie nicht ausdrücklich anderen Organen vorbehalten sind. Er kann bestimmte Zuständigkeiten – etwa die örtliche Straßenpolizei oder die Abwicklung von Bauvorhaben – per Verordnung an den Bürgermeister oder Gemeindevorstand übertragen. Voraussetzung für die Übertragung bei Projekten ist ein Grundsatzbeschluss samt genehmigtem Finanzierungsplan.",
       "topics": [
-        "Bürgermeister",
-        "Öffentlichkeit der Sitzungen",
-        "Gemeinderatssitzungen"
+        "Gemeinderatszuständigkeit",
+        "Kompetenzübertragung"
       ]
     },
     "44": {
-      "summary": "Es wird verpflichtet, bestimmte Aufgaben im Bereich Ausschüsse wahrzunehmen. ",
+      "summary": "Ausschüsse des Gemeinderates übernehmen die Vorberatung und Antragstellung für die Beschlussfassung des Gemeinderates. Mit Drei-Viertel-Mehrheit kann der Gemeinderat ihnen sogar eigenes Beschlussrecht übertragen, ausgenommen behördliche Aufgaben und Haushaltsangelegenheiten. Eine solche Übertragung tritt jedenfalls mit Ablauf der Funktionsperiode außer Kraft.",
       "topics": [
-        "Gemeinderatssitzungen",
         "Ausschüsse",
-        "Kundmachung und Verordnungen"
+        "Beschlussrecht"
       ]
     },
     "45": {
-      "summary": "Der Gemeinderat hat ist verpflichtet, bestimmte Aufgaben im Bereich Einberufung von Sitzungen wahrzunehmen. Der Gemeinderat hat je nach Bedarf, wenigstens aber in jedem Vierteljahr einmal zusammenzutreten.",
+      "summary": "Der Gemeinderat tritt mindestens vierteljährlich zusammen; die Einberufung obliegt dem Bürgermeister, der einen Sitzungsplan für mindestens sechs Monate im Voraus zustellen muss. Auf Verlangen eines Viertels der Mitglieder oder der Aufsichtsbehörde ist binnen einer Woche eine Sitzung einzuberufen. Die Abhaltung ist sieben Tage vorher unter Angabe der Tagesordnung an der Amtstafel kundzumachen.",
       "topics": [
-        "Bürgermeister",
-        "Tagesordnung",
-        "Gemeinderatssitzungen"
+        "Gemeinderatssitzungen",
+        "Einberufung"
       ]
     },
     "46": {
-      "summary": "Der B ist verpflichtet, bestimmte Aufgaben im Bereich Tagesordnung wahrzunehmen. Der Bürgermeister hat die Tagesordnung festzusetzen.",
+      "summary": "Die Tagesordnung wird vom Bürgermeister festgesetzt und enthält stets den Punkt 'Allfälliges'. Auf Verlangen eines Gemeinderatsmitglieds – spätestens zwei Wochen vor der Sitzung schriftlich eingebracht – ist ein Gegenstand aufzunehmen. Dringlichkeitsanträge können vor Sitzungsbeginn schriftlich und begründet eingebracht werden und bedürfen der Zustimmung des Gemeinderates.",
       "topics": [
-        "Bürgermeister",
         "Tagesordnung",
         "Dringlichkeitsanträge"
       ]
     },
     "47": {
-      "summary": "Im Mittelpunkt steht verschiedene Aspekte rund um anwesenheitspflicht. Die Mitglieder des Gemeinderates haben an den Sitzungen des Gemeinderates teilzunehmen.",
+      "summary": "Gemeinderatsmitglieder sind zur Teilnahme an Sitzungen verpflichtet und müssen den Bürgermeister bei Verhinderung unter Angabe des Grundes benachrichtigen. In diesem Fall werden Ersatzmitglieder einberufen. Eine Befreiung von der Anwesenheitspflicht kann bis zu drei Monate vom Bürgermeister, darüber hinaus vom Gemeinderat erteilt werden.",
       "topics": [
-        "Bürgermeister",
-        "Beschlussfähigkeit",
-        "Gemeinderatssitzungen"
+        "Anwesenheitspflicht",
+        "Ersatzmitglieder"
       ]
     },
     "48": {
-      "summary": "Definiert werden vorsitz. Den Vorsitz in den Sitzungen des Gemeinderates hat der Bürgermeister zu führen.",
+      "summary": "Den Vorsitz im Gemeinderat führt der Bürgermeister. Er eröffnet und schließt die Sitzung, leitet die Verhandlungen und sorgt für Ruhe und Ordnung. Für Beratungspausen kann er die Sitzung für insgesamt höchstens drei Stunden unterbrechen.",
       "topics": [
-        "Bürgermeister",
+        "Sitzungsvorsitz",
         "Gemeinderatssitzungen"
       ]
     },
     "49": {
-      "summary": "Die Bestimmung legt fest, unter welchen Voraussetzungen Entscheidungen im Bereich „Ordnungsbefugnisse des Vorsitzenden\" getroffen werden können. ",
+      "summary": "Bei thematischen Abschweifungen kann der Vorsitzende nach dreimaligem Ruf 'zur Sache' einem Redner das Wort entziehen. Störungen des Anstands oder der Ordnung begegnet er mit dem Ruf 'zur Ordnung' und kann die Rede unterbrechen. Bei anhaltenden Störungen darf er die Sitzung unterbrechen, vorzeitig schließen oder störende Zuhörer entfernen lassen.",
       "topics": [
-        "Gemeinderatssitzungen",
-        "Zusammensetzung des Gemeinderats"
+        "Ordnungsbefugnisse",
+        "Sitzungsleitung"
       ]
     },
     "50": {
-      "summary": "Diese Vorschrift betrifft beschlußfähigkeit. Der Gemeinderat ist, sofern die Gesetze nichts anderes bestimmen, beschlußfähig, wenn die Mitglieder (Ersatzmitglieder) ordnungsgemäß zur Sitzung eingeladen wurden und wenigstens die Hälfte der Mitglied...",
+      "summary": "Beschlussfähig ist der Gemeinderat, wenn ordnungsgemäß eingeladen wurde und mindestens die Hälfte der Mitglieder anwesend ist. Wird er durch Mandatserledigungen dauerhaft beschlussunfähig und stehen keine Ersatzmitglieder mehr bereit, hat die Landesregierung den Gemeinderat aufzulösen.",
       "topics": [
         "Beschlussfähigkeit",
-        "Gemeinderatssitzungen",
-        "Zusammensetzung des Gemeinderats"
+        "Gemeinderat"
       ]
     },
     "51": {
-      "summary": "Erfasst werden unter welchen Voraussetzungen Entscheidungen im Bereich „Abstimmung\" getroffen werden können. ",
+      "summary": "Für einen Beschluss genügt die einfache Mehrheit der anwesenden Stimmberechtigten, sofern das Gesetz nichts anderes bestimmt. Stimmenthaltung gilt als Ablehnung. Geheime Abstimmung ist durchzuführen, wenn ein Drittel der Anwesenden dies verlangt – bei behördlichen Entscheidungen ist sie jedoch grundsätzlich unzulässig.",
       "topics": [
-        "Beschlussfähigkeit",
-        "Abstimmung und Mehrheiten",
-        "Gemeindebedienstete"
+        "Abstimmung",
+        "Beschlussfassung"
       ]
     },
     "52": {
-      "summary": "Die Vorschrift enthält Regelungen zu wahlen. Wahlen durch den Gemeinderat sind stets geheim mit Stimmzetteln durchzuführen, es sei denn, daß der Gemeinderat einstimmig eine andere Art der Stimmabgabe beschließt.",
+      "summary": "Wahlen durch den Gemeinderat erfolgen grundsätzlich geheim mit Stimmzetteln. Einstimmig kann der Gemeinderat jedoch eine andere Art der Stimmabgabe beschließen.",
       "topics": [
-        "Wahlen und Wahlrecht"
+        "Wahlverfahren",
+        "Geheime Wahl"
       ]
     },
     "53": {
-      "summary": "Es werden die Voraussetzungen für unter welchen Voraussetzungen Entscheidungen im Bereich „Öffentlichkeit\" getroffen werden können. ",
+      "summary": "Gemeinderatssitzungen sind öffentlich – jedermann darf zuhören und sich Aufzeichnungen machen. Eine Live-Übertragung im Internet ist zulässig, sofern Zuhörer nicht gefilmt werden. Auf Antrag des Vorsitzenden oder dreier Mitglieder kann die Öffentlichkeit für einzelne Punkte ausgeschlossen werden, nicht jedoch bei Beratung des Voranschlags oder Rechnungsabschlusses.",
       "topics": [
-        "Tagesordnung",
-        "Öffentlichkeit der Sitzungen",
-        "Gemeinderatssitzungen"
+        "Öffentlichkeit",
+        "Sitzungstransparenz"
       ]
     },
     "54": {
-      "summary": "Es wird verpflichtet, bestimmte Aufgaben im Bereich Verhandlungsschrift wahrzunehmen. Über jede Sitzung des Gemeinderates ist eine Verhandlungsschrift zu führen.",
+      "summary": "Über jede Gemeinderatssitzung ist eine Verhandlungsschrift zu führen, die unter anderem Anwesenheit, Tagesordnung, Beratungsverlauf und Abstimmungsergebnisse dokumentiert. Die Reinschrift ist binnen vier Wochen herzustellen, den Fraktionen zu übermitteln und im Gemeindeamt aufzulegen. Einwendungen können bis zur Genehmigungssitzung erhoben werden; die genehmigte Verhandlungsschrift öffentlicher Sitzungen ist jedermann zugänglich.",
       "topics": [
-        "Bürgermeister",
-        "Tagesordnung",
-        "Verhandlungsschrift"
+        "Verhandlungsschrift",
+        "Protokollierung"
       ]
     },
     "55": {
-      "summary": "Der Obmann ist verpflichtet, bestimmte Aufgaben im Bereich Geschäftsführung der Ausschüsse wahrzunehmen. ",
+      "summary": "Der Ausschussobmann setzt die Tagesordnung fest, beruft die Sitzungen ein und führt den Vorsitz – Ausschusssitzungen sind nicht öffentlich. Beschlussfähigkeit besteht bei Anwesenheit von mehr als der Hälfte der Mitglieder. Über jede Sitzung ist ein Beschlussprotokoll zu führen, das binnen einer Woche den Fraktionen zuzustellen ist.",
       "topics": [
-        "Bürgermeister",
-        "Beschlussfähigkeit",
-        "Tagesordnung"
+        "Ausschusssitzungen",
+        "Geschäftsführung"
       ]
     },
     "56": {
-      "summary": "Vorgesehen ist verschiedene Aspekte rund um aufgaben in 4 Absätzen. Der Gemeindevorstand kann in die Zuständigkeit des Gemeinderates fallende Angelegenheiten vorberaten und Anträge an den Gemeinderat stellen.",
+      "summary": "Der Gemeindevorstand berät Angelegenheiten des Gemeinderates vor und ist unter anderem zuständig für die Vergabe von Aufträgen bis zu bestimmten Wertgrenzen, dienstrechtliche Entscheidungen und die Abschreibung von Forderungen. Bei zweimaliger aufeinanderfolgender Beschlussunfähigkeit in einer Sache geht die Zuständigkeit auf den Gemeinderat über.",
       "topics": [
-        "Bürgermeister",
-        "Befangenheit",
-        "Gemeinderatssitzungen"
+        "Gemeindevorstand",
+        "Zuständigkeiten"
       ]
     },
     "57": {
-      "summary": "Im Mittelpunkt steht verschiedene Aspekte rund um geschäftsführung in 4 Absätzen. ",
+      "summary": "Der Bürgermeister beruft den Gemeindevorstand mindestens vierteljährlich ein und führt den Vorsitz. Verhinderte Mitglieder können ein anderes Vorstandsmitglied schriftlich mit ihrer Vertretung betrauen, wobei der Vertreter bei der Beschlussfähigkeit nicht mitzählt. Die Sitzungen sind nicht öffentlich; über jede ist ein Beschlussprotokoll zu führen.",
       "topics": [
-        "Bürgermeister",
-        "Beschlussfähigkeit",
-        "Befangenheit"
+        "Gemeindevorstandssitzungen",
+        "Vertretungsregelung"
       ]
     },
     "58": {
-      "summary": "Definiert werden verschiedene Aspekte rund um aufgaben im eigenen Wirkungsbereich der Gemeinde in 6 Absätzen. Der Bürgermeister vertritt die Gemeinde nach außen.",
+      "summary": "Der Bürgermeister vertritt die Gemeinde nach außen und besorgt im eigenen Wirkungsbereich unter anderem die behördlichen Aufgaben, die Ortspolizei, die Vermögensverwaltung und kleinere Vergaben bis zur gesetzlichen Wertgrenze. In Gemeinden ab 25 Gemeinderatsmitgliedern muss er die Geschäftsbereiche nach dem politischen Stärkeverhältnis auf die Fraktionen aufteilen. Einzelne Aufgabengruppen kann er – unter Beibehaltung seiner Verantwortlichkeit – an Vorstandsmitglieder delegieren.",
       "topics": [
         "Bürgermeister",
-        "Tagesordnung",
-        "Gemeinderatssitzungen"
+        "Aufgabenverteilung"
       ]
     },
     "59": {
-      "summary": "Die Bestimmung legt fest, durchführung kollegialer Beschlüsse; Hemmung der Durchführung. ",
+      "summary": "Gesetzmäßig gefasste Beschlüsse der Kollegialorgane hat der Bürgermeister durchzuführen; sofern eine aufsichtsbehördliche Genehmigung nötig ist, muss er diese vorher einholen. Hält er einen Beschluss für rechtswidrig oder haushaltsgefährdend, kann er die Durchführung hemmen und eine neuerliche Beratung veranlassen – werden seine Bedenken nicht ausgeräumt, berichtet er der Aufsichtsbehörde.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindeaufsicht",
-        "Kundmachung und Verordnungen"
+        "Beschlussdurchführung",
+        "Durchführungshemmung"
       ]
     },
     "60": {
-      "summary": "Diese Vorschrift betrifft notanordnungen. Kann bei Gefahr im Verzug der Beschluß des zuständigen Kollegialorganes nicht ohne Nachteil für die Sache oder ohne Gefahr eines Schadens für die Gemeinde eingeholt werden, so hat der Bürgermeister diese M...",
+      "summary": "Bei Gefahr im Verzug darf der Bürgermeister Maßnahmen anstelle des zuständigen Kollegialorgans treffen, muss jedoch ohne unnötigen Aufschub dessen nachträgliche Genehmigung einholen. Eine Änderung des Gemeindevoranschlags ist durch Notanordnungen nicht zulässig.",
       "topics": [
-        "Bürgermeister",
-        "Voranschlag"
+        "Notanordnungen",
+        "Eilentscheidungen"
       ]
     },
     "61": {
-      "summary": "Erfasst werden verschiedene Aspekte rund um aufgaben im übertragenen Wirkungsbereich der Gemeinde in 4 Absätzen. Die Angelegenheiten des übertragenen Wirkungsbereiches der Gemeinde werden vom Bürgermeister besorgt.",
+      "summary": "Angelegenheiten des übertragenen Wirkungsbereichs besorgt der Bürgermeister; er kann einzelne Gruppen davon an Vorstandsmitglieder delegieren. Dabei ist er an die Weisungen der zuständigen Bundes- oder Landesorgane gebunden. Bei vorsätzlicher oder grob fahrlässiger Gesetzesverletzung in der Landesvollziehung kann die Landesregierung das betroffene Organ seines Amtes für verlustig erklären.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindevorstand",
-        "Gemeindebezeichnung"
+        "Übertragener Wirkungsbereich",
+        "Amtsverlust"
       ]
     },
     "62": {
-      "summary": "Die Vorschrift enthält Regelungen zu zuständigkeit der Organe der Gemeinde. Die Bestimmungen über die Zuständigkeit der Gemeindeorgane in den §§ 43, 56 und 58 gelten nur insoweit, als nicht in besonderen Vorschriften anderes bestimmt ist.",
+      "summary": "Die gesetzlichen Zuständigkeitsregeln für Gemeinderat, Gemeindevorstand und Bürgermeister gelten nur subsidiär – besondere Vorschriften gehen vor.",
       "topics": [
-        "Zuständigkeit der Organe der Gemeinde"
+        "Zuständigkeitsabgrenzung",
+        "Gemeindeorgane"
       ]
     },
     "63": {
-      "summary": "Hier wird festgelegt, verantwortlichkeit. Der Bürgermeister und die anderen Organe der Gemeinde (§ 17), bei Kollegialorganen auch deren Mitglieder, sind für die Erfüllung ihrer dem eigenen Wirkungsbereich der Gemeinde zugehörigen Aufgaben dem Geme...",
+      "summary": "Bürgermeister und alle weiteren Gemeindeorgane sind dem Gemeinderat für die Erfüllung ihrer Aufgaben im eigenen Wirkungsbereich verantwortlich. Der Gemeinderat kann sie befragen, Auskünfte verlangen und Beschlüsse oder Maßnahmen aufheben, die gegen seine Entschließungen verstoßen.",
       "topics": [
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats"
+        "Verantwortlichkeit",
+        "Kontrollrecht"
       ]
     },
     "64": {
-      "summary": "Es werden die Voraussetzungen für verschiedene Aspekte rund um befangenheit in 7 Absätzen. ",
+      "summary": "Von Beratung und Abstimmung ausgeschlossen sind Mitglieder der Kollegialorgane, die an der Sache persönlich beteiligt sind, als Bevollmächtigte einer Partei auftreten oder deren Unbefangenheit aus anderen Gründen in Zweifel steht. Die Befangenheit ist selbst wahrzunehmen; im Zweifel entscheidet das Kollegialorgan. Keine Befangenheit liegt vor, wenn jemand lediglich als Angehöriger einer Berufs- oder Bevölkerungsgruppe betroffen ist.",
       "topics": [
-        "Bürgermeister",
         "Befangenheit",
-        "Zusammensetzung des Gemeinderats"
+        "Ausschließungsgründe"
       ]
     },
     "65": {
-      "summary": "Die Bestimmung regelt urkunden. Urkunden über Rechtsgeschäfte sind von der Bürgermeisterin bzw.",
+      "summary": "Urkunden über Rechtsgeschäfte der Gemeinde sind vom Bürgermeister zu unterfertigen und mit dem Gemeindesiegel zu versehen. Erfordert das Geschäft einen Kollegialbeschluss oder eine aufsichtsbehördliche Genehmigung, ist dies in der Urkunde ersichtlich zu machen.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindesymbole",
-        "Gemeindeaufsicht"
+        "Urkundenrecht",
+        "Rechtsgeschäfte"
       ]
     },
     "66": {
-      "summary": "Der Gemeinderat hat ist verpflichtet, bestimmte Aufgaben im Bereich Geschäftsführung wahrzunehmen. ",
+      "summary": "Für die Geschäftsführung von Gemeinderat, Ausschüssen und Gemeindevorstand hat der Gemeinderat eine Geschäftsordnung mit Zweidrittelmehrheit zu beschließen. Diese regelt insbesondere Antragsstellung, Wortmeldungen, Redezeitbeschränkungen und die Informationsrechte der Mandatare. Der Amtsleiter ist grundsätzlich verpflichtet, an den Sitzungen des Gemeinderats mit beratender Stimme teilzunehmen.",
       "topics": [
-        "Tagesordnung",
-        "Dringlichkeitsanträge",
-        "Gemeinderatssitzungen"
+        "Geschäftsordnung",
+        "Sitzungsführung"
       ]
     },
     "67": {
-      "summary": "Geregelt wird begriff des Gemeindeeigentums. Alle der Gemeinde gehörigen beweglichen und unbeweglichen Sachen sowie die ihr zustehenden Rechte bilden das Gemeindeeigentum.",
+      "summary": "Das Gemeindeeigentum umfasst alle beweglichen und unbeweglichen Sachen sowie Rechte der Gemeinde und gliedert sich in Gemeindevermögen, öffentliches Gut und Gemeindegut. Die Veräußerung von unbeweglichem Gemeindeeigentum erfordert einen Gemeinderatsbeschluss mit Zweidrittelmehrheit.",
       "topics": [
-        "Abstimmung und Mehrheiten",
-        "Gemeindevermögen"
+        "Gemeindeeigentum",
+        "Vermögensarten"
       ]
     },
     "68": {
-      "summary": "Inhaltlich geht es um verschiedene Aspekte rund um gemeindevermögen in 3 Absätzen. Alles Gemeindeeigentum, das nicht öffentliches Gut oder Gemeindegut ist, bildet das Gemeindevermögen.",
+      "summary": "Gemeindevermögen ist in seinem Gesamtwert tunlichst ungeschmälert zu erhalten und sparsam, wirtschaftlich und zweckmäßig zu verwalten. Erlöse aus Vermögensveräußerungen dürfen nur für Instandsetzung, neue Vermögenswerte oder Sondertilgungen verwendet werden. Soweit die Finanzlage es erlaubt, sind Rücklagen für Ersatzbeschaffungen zu bilden.",
       "topics": [
-        "Gemeindevermögen",
-        "Haushalt und Finanzen"
-      ]
-    },
-    "69": {
-      "summary": "Normiert werden verschiedene Aspekte rund um wirtschaftliche Unternehmungen in 5 Absätzen. Zum Gemeindevermögen gehören auch wirtschaftliche Unternehmungen der Gemeinde.",
-      "topics": [
-        "Abstimmung und Mehrheiten",
-        "Gemeindeaufsicht",
+        "Vermögensverwaltung",
         "Gemeindevermögen"
       ]
     },
-    "70": {
-      "summary": "Normiert werden öffentliches Gut. Die dem Gemeingebrauch gewidmeten Teile des Gemeindeeigentums bilden das öffentliche Gut der Gemeinde.",
+    "69": {
+      "summary": "Wirtschaftliche Unternehmungen der Gemeinde können als Eigenunternehmungen oder ausgegliederte Unternehmungen mit eigener Rechtspersönlichkeit betrieben werden. Errichtung und Erweiterung erfordern ein öffentliches Interesse und die aufsichtsbehördliche Genehmigung. Die Veräußerung von Unternehmungen der öffentlichen Daseinsvorsorge – etwa Wasser-, Energieversorgung oder Sozialeinrichtungen – bedarf einer Zweidrittelmehrheit im Gemeinderat.",
       "topics": [
-        "Öffentliches Gut"
+        "Wirtschaftliche Unternehmungen",
+        "Daseinsvorsorge"
+      ]
+    },
+    "70": {
+      "summary": "Das öffentliche Gut der Gemeinde umfasst die dem allgemeinen Gebrauch gewidmeten Vermögensteile. Sofern keine besonderen Vorschriften oder Rechtstitel bestehen, steht die Benutzung allen gleichberechtigt zu.",
+      "topics": [
+        "Öffentliches Gut",
+        "Gemeingebrauch"
       ]
     },
     "71": {
-      "summary": "Festgelegt werden verschiedene Aspekte rund um gemeindegut in 7 Absätzen. Gemeindegut ist jenes Gemeindeeigentum, das der gemeinschaftlichen Nutzung durch einen bestimmten Kreis von Berechtigten gewidmet ist.",
+      "summary": "Gemeindegut ist jenes Gemeindeeigentum, das einem bestimmten Kreis von Berechtigten zur gemeinschaftlichen Nutzung gewidmet ist. Kein Berechtigter darf mehr nutzen, als zur Deckung seines Haus- und Gutsbedarfs nötig ist. Die mit dem Gemeindegut verbundenen Kosten sind zunächst aus dessen Ertrag zu decken; ein etwaiger Überschuss fließt der Gemeinde zu.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindeabgaben",
-        "Gemeindebetriebe"
+        "Gemeindegut",
+        "Nutzungsrechte"
       ]
     },
     "72": {
-      "summary": "Der Paragraph befasst sich mit aufhebung des Nutzungsrechtes. ",
+      "summary": "Die Gemeinde kann das Nutzungsrecht an Gemeindegut-Liegenschaften aufheben, wenn das öffentliche Interesse die privaten Interessen der Berechtigten überwiegt – etwa für Bauzwecke oder höherwertige Kultivierung. Voraussetzung ist ein Zweidrittelmehrheitsbeschluss im Gemeinderat und die Widmung einer Ersatzliegenschaft.",
       "topics": [
-        "Gemeindevermögen",
-        "Schlussbestimmungen"
+        "Nutzungsrecht",
+        "Gemeindegut"
       ]
     },
     "73": {
-      "summary": "Behandelt wird inventarverzeichnis. Die Bürgermeisterin bzw.",
+      "summary": "Der Bürgermeister hat nach den Vorgaben der VRV 2015 ein Inventarverzeichnis über das Gemeindeeigentum zu führen. Nähere Durchführungsbestimmungen kann die Landesregierung per Verordnung erlassen.",
       "topics": [
-        "Bürgermeister",
-        "Voranschlag",
-        "Rechnungsabschluss"
+        "Inventarverzeichnis",
+        "Vermögensverwaltung"
       ]
     },
     "74": {
-      "summary": "Behandelt wird unter welchen Voraussetzungen Entscheidungen im Bereich „Allgemeines\" getroffen werden können. ",
+      "summary": "Die Haushaltsführung erfolgt auf Basis des Gemeindevoranschlags, der jährlich so rechtzeitig zu erstellen ist, dass er mit Beginn des Haushaltsjahres in Kraft treten kann. Wirtschaftliche Eigenunternehmungen haben eigene Wirtschaftspläne vorzulegen, die Bestandteil des Gesamtvoranschlags sind. Ein Vorbericht gibt Überblick über die Entwicklung und aktuelle Lage des Haushalts.",
       "topics": [
-        "Voranschlag",
-        "Gemeindebetriebe",
-        "Haushalt und Finanzen"
+        "Gemeindevoranschlag",
+        "Haushaltsplanung"
       ]
     },
     "75": {
-      "summary": "Bestimmt wird verschiedene Aspekte rund um grundsätze der Voranschlagserstellung in 6 Absätzen. Die zu veranschlagenden Beträge sind, soweit Unterlagen hiefür vorhanden sind, unmittelbar zu errechnen.",
+      "summary": "Steuereinnahmen sind auf Basis der bisherigen Entwicklung realistisch zu veranschlagen, Mittelverwendungen nur mit dem sachlich begründeten unabweislichen Jahresbedarf. Im Finanzierungshaushalt muss die laufende Geschäftstätigkeit ausgeglichen sein; ein positives Nettoergebnis im Ergebnishaushalt ist anzustreben. Soweit die Finanzlage es erlaubt, sollen Haushaltsrücklagen gebildet werden.",
       "topics": [
-        "Voranschlag",
-        "Haushalt und Finanzen"
+        "Voranschlagsgrundsätze",
+        "Haushaltsausgleich"
       ]
     },
     "76": {
-      "summary": "Die B ist verpflichtet, bestimmte Aufgaben im Bereich Erstellung und Beschlussfassung wahrzunehmen. Die Bürgermeisterin bzw.",
+      "summary": "Den Entwurf des Gemeindevoranschlags erstellt der Bürgermeister; bei fehlendem Haushaltsausgleich ist er vorab der Landesregierung vorzulegen. Der Entwurf ist eine Woche öffentlich aufzulegen, wobei berechtigte Einwendungen schriftlich eingebracht werden können. Beratung und Beschlussfassung erfolgen in öffentlicher Sitzung des Gemeinderates.",
       "topics": [
-        "Bürgermeister",
-        "Öffentlichkeit der Sitzungen",
-        "Gemeinderatssitzungen"
+        "Voranschlagserstellung",
+        "Öffentliche Auflage"
       ]
     },
     "77": {
-      "summary": "Hier wird festgelegt, vorlage an die Aufsichtsbehörde. Die Bürgermeisterin bzw.",
+      "summary": "Der beschlossene Gemeindevoranschlag samt zugehörigen Beschlüssen und dem mittelfristigen Finanzplan ist vom Bürgermeister unverzüglich auf elektronischem Weg an die Aufsichtsbehörde zu übermitteln.",
       "topics": [
-        "Bürgermeister",
-        "Voranschlag",
-        "Gemeindeaufsicht"
+        "Aufsichtsbehörde",
+        "Voranschlagsvorlage"
       ]
     },
     "78": {
-      "summary": "Gegenstand ist voranschlagsprovisorium. Ist bei Beginn des Haushaltsjahres der Gemeindevoranschlag vom Gemeinderat noch nicht beschlossen oder wurde der Gemeindevoranschlag gemäß § 101 Abs.",
+      "summary": "Liegt zu Jahresbeginn noch kein beschlossener Gemeindevoranschlag vor, darf der Bürgermeister im Rahmen eines Voranschlagsprovisoriums die unaufschiebbaren laufenden Ausgaben weiterführen.",
       "topics": [
-        "Bürgermeister",
-        "Voranschlag",
-        "Haushalt und Finanzen"
+        "Voranschlagsprovisorium",
+        "Übergangsregelung"
       ]
     },
     "79": {
-      "summary": "Die Regelung umfasst verschiedene Aspekte rund um nachtragsvoranschlag in 3 Absätzen. ",
+      "summary": "Ergibt sich während des Haushaltsjahres eine nicht veranschlagte Mittelverwendung oder wird der Haushaltsausgleich gefährdet, hat der Bürgermeister einen Nachtragsvoranschlag vorzulegen. Kreditüberschreitungen und -übertragungen bedürfen der vorherigen Beschlussfassung durch den Gemeinderat. Ein Nachtragsvoranschlag ist jedenfalls bei Überschreitung von 10 Prozent der laufenden Einzahlungen oder Gefährdung des Haushaltsausgleichs erforderlich.",
       "topics": [
-        "Bürgermeister",
-        "Voranschlag",
-        "Haushalt und Finanzen"
+        "Nachtragsvoranschlag",
+        "Kreditüberschreitung"
       ]
     },
     "80": {
-      "summary": "Geregelt wird verschiedene Aspekte rund um durchführung des Gemeindevoranschlags in 3 Absätzen. Der Gemeindevoranschlag samt den allfälligen Nachtragsvoranschlägen bildet die bindende Grundlage für die Führung des Gemeindehaushalts.",
+      "summary": "Der Gemeindevoranschlag bildet die verbindliche Grundlage der Haushaltsführung; Haushaltsmittel dürfen nur bei sparsamer und wirtschaftlicher Verwaltung in Anspruch genommen werden. Investitionen sind nur zulässig, wenn die vorgesehenen Mittel vorhanden oder gesichert sind. In Notfällen kann der Bürgermeister bis zu 5 Prozent der laufenden Auszahlungen ohne Voranschlagsdeckung bestreiten.",
       "topics": [
-        "Bürgermeister",
-        "Voranschlag",
-        "Haushalt und Finanzen"
+        "Haushaltsvollzug",
+        "Mittelbewirtschaftung"
       ]
     },
     "81": {
-      "summary": "Inhaltlich geht es um unter welchen Voraussetzungen Entscheidungen im Bereich „Anweisung und Anweisungsrecht\" getroffen werden können. ",
+      "summary": "Verfügungen über veranschlagte Kredite erfolgen durch schriftliche Anweisung des Bürgermeisters. Die vorzeitige Anweisung noch nicht fälliger oder die Unterlassung fälliger Zahlungen zur Verschiebung der Kreditbelastung ist unzulässig. Das Anweisungsrecht kann schriftlich an ein Gemeinderatsmitglied, Vorstandsmitglied oder Bedienstete delegiert werden.",
       "topics": [
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats",
-        "Gemeindevorstand"
+        "Anweisungsrecht",
+        "Kreditverwaltung"
       ]
     },
     "82": {
-      "summary": "Normiert werden bedeckung der Gemeindeauszahlungen. Die zur Bedeckung der Auszahlungen der Gemeinde bestimmten Steuereinnahmen und sonstigen Abgaben werden durch die Bundes- bzw.",
+      "summary": "Die Bedeckung der Gemeindeauszahlungen regeln die Bundes- und Landessteuergesetze. Soweit für bestimmte Ausgaben zweckgewidmetes Vermögen besteht, sind vorrangig dessen Erträgnisse heranzuziehen.",
       "topics": [
-        "Gemeindeabgaben"
+        "Ausgabenbedeckung",
+        "Steuereinnahmen"
       ]
     },
     "83": {
-      "summary": "Festgelegt werden unter welchen Voraussetzungen Entscheidungen im Bereich „Kassenkredite\" getroffen werden können. ",
+      "summary": "Zur Überbrückung kurzfristiger Liquiditätsengpässe darf die Gemeinde Kassenkredite aufnehmen, die auf Euro lauten, an den EURIBOR gebunden oder fix verzinst sind und binnen Jahresfrist zurückgezahlt werden müssen. Die Höchstgrenze liegt bei einem Viertel der laufenden Einzahlungen, kann jedoch von der Landesregierung auf ein Drittel angehoben werden. Unter bestimmten Voraussetzungen dürfen Kassenkredite auch zur Vorfinanzierung von Investitionseinzahlungen herangezogen werden.",
       "topics": [
-        "Tagesordnung",
-        "Voranschlag",
-        "Kundmachung und Verordnungen"
+        "Kassenkredite",
+        "Liquiditätsmanagement"
       ]
     },
     "84": {
-      "summary": "Der Paragraph befasst sich mit unter welchen Voraussetzungen Entscheidungen im Bereich „Darlehen und sonstige Finanzgeschäfte; Veranlagungen\" getroffen werden können. ",
+      "summary": "Darlehen und sonstige Finanzgeschäfte darf die Gemeinde nur zur Deckung von Investitionsvorhaben abschließen, wenn ein öffentliches Interesse besteht und eine positive Gesamtrisikoanalyse vorliegt. Euro-Darlehen mit fixem oder EURIBOR-gebundenem Zinssatz sind genehmigungsfrei, solange der Gesamtschuldenstand ein Drittel der laufenden Einzahlungen nicht übersteigt. Veranlagungen von Gemeindevermögen bedürfen grundsätzlich der Genehmigung, ausgenommen täglich fällige Sicht- und Spareinlagen.",
       "topics": [
-        "Voranschlag",
-        "Gemeindeaufsicht",
-        "Kundmachung und Verordnungen"
+        "Darlehen",
+        "Finanzgeschäfte"
       ]
     },
     "85": {
-      "summary": "Behandelt wird verschiedene Aspekte rund um haftungen in 6 Absätzen. ",
+      "summary": "Haftungen darf die Gemeinde nur für Gemeindeverbände, Wasserverbände sowie Rechtsträger mit über 50 Prozent öffentlicher Beteiligung übernehmen, und dies nur befristet und betragsmäßig bestimmt. Ab Überschreitung eines Viertels der laufenden Einzahlungen ist eine aufsichtsbehördliche Genehmigung einzuholen. Die Landesregierung kann Haftungsobergrenzen gemäß dem Stabilitätspakt per Verordnung festlegen.",
       "topics": [
-        "Voranschlag",
-        "Gemeindeaufsicht",
-        "Kundmachung und Verordnungen"
+        "Haftungen",
+        "Finanzaufsicht"
       ]
     },
     "86": {
-      "summary": "Bestimmt wird unter welchen Voraussetzungen Entscheidungen im Bereich „Bauvorhaben\" getroffen werden können. ",
+      "summary": "Bei Bauvorhaben der Gemeinde bedarf der Finanzierungsplan einer aufsichtsbehördlichen Genehmigung, wenn der Geldbedarf ein Drittel der laufenden Einzahlungen übersteigt. Vor Erteilung der Genehmigung dürfen keine vertraglichen Verpflichtungen eingegangen werden. Übersteigen die Mehrkosten 10 Prozent der genehmigten Projektkosten, ist ein neuer Finanzierungsplan zu beschließen.",
       "topics": [
-        "Voranschlag",
-        "Gemeindeaufsicht",
-        "Haushalt und Finanzen"
+        "Bauvorhaben",
+        "Finanzierungsplan"
       ]
     },
     "87": {
-      "summary": "Hier wird festgelegt, die näheren Einzelheiten. Entfallen (Anm: BGBl.",
+      "summary": "Entfallen.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Aufgehobene Bestimmung"
       ]
     },
     "88": {
-      "summary": "Gegenstand ist die näheren Einzelheiten. Entfallen (Anm: LGBl.Nr.",
+      "summary": "Entfallen.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Aufgehobene Bestimmung"
       ]
     },
     "89": {
-      "summary": "Die F ist verpflichtet, bestimmte Aufgaben im Bereich Kassenführer wahrzunehmen. Die Führung der Kassengeschäfte in der Gemeinde obliegt dem vom Gemeinderat zu bestellenden Kassenführer.",
+      "summary": "Die Kassengeschäfte führt ein vom Gemeinderat bestellter Kassenführer; der Bürgermeister und andere Anweisungsberechtigte dürfen selbst keine Zahlungen leisten oder entgegennehmen. Auszahlungen aus der Gemeindekasse setzen eine schriftliche Anweisung eines Anweisungsberechtigten voraus. Die laufende Überwachung der Kassenführung obliegt dem Bürgermeister.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindebedienstete"
+        "Kassenführung",
+        "Vier-Augen-Prinzip"
       ]
     },
     "90": {
-      "summary": "Geregelt wird buchführung. Die Buchführung ist so einzurichten, daß sie als Grundlage für die Prüfung der liquiden Mittel und für die Erstellung des Rechnungsabschlusses geeignet ist.",
+      "summary": "Die Buchführung der Gemeinde muss als Grundlage für die Kassenprüfung und die Erstellung des Rechnungsabschlusses geeignet sein. Nähere Bestimmungen dazu erlässt die Landesregierung per Verordnung.",
       "topics": [
-        "Rechnungsabschluss"
+        "Buchführung",
+        "Rechnungswesen"
       ]
     },
     "91": {
-      "summary": "Der Gemeinderat hat ist verpflichtet, bestimmte Aufgaben im Bereich Prüfungsausschuss wahrzunehmen. ",
+      "summary": "Zur Überwachung der Gebarung bestellt der Gemeinderat für seine Funktionsperiode einen Prüfungsausschuss. Dieser prüft vierteljährlich, ob die Haushaltsführung sparsam, wirtschaftlich und gesetzeskonform erfolgt, und erstattet dem Gemeinderat jeweils einen schriftlichen Bericht mit Anträgen. Vor der Vorlage des Berichts erhält der Bürgermeister Gelegenheit zur Stellungnahme.",
       "topics": [
-        "Bürgermeister",
-        "Verhandlungsschrift",
-        "Gemeinderatssitzungen"
+        "Prüfungsausschuss",
+        "Gebarungskontrolle"
       ]
     },
     "92": {
-      "summary": "Im Mittelpunkt steht unter welchen Voraussetzungen Entscheidungen im Bereich „Erstellung des Rechnungsabschlusses\" getroffen werden können. ",
+      "summary": "Nach Ablauf jedes Haushaltsjahres hat der Bürgermeister den Rechnungsabschluss zu erstellen, der ein getreues Bild der Vermögens-, Finanzierungs- und Ergebnislage vermitteln muss. Er ist dem Gemeinderat spätestens drei Monate nach Jahresende vorzulegen und vorher zwei Wochen öffentlich aufzulegen. Einwendungen können schriftlich eingebracht werden und sind vom Gemeinderat in Erwägung zu ziehen.",
       "topics": [
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats",
-        "Ausschüsse"
+        "Rechnungsabschluss",
+        "Öffentliche Auflage"
       ]
     },
     "93": {
-      "summary": "Normiert werden verschiedene Aspekte rund um beschlußfassung über den Rechnungsabschluß in 4 Absätzen. Die Beratung und Beschlußfassung über den Rechnungsabschluß obliegen dem Gemeinderat in öffentlicher Sitzung.",
+      "summary": "Beratung und Beschlussfassung über den Rechnungsabschluss obliegen dem Gemeinderat in öffentlicher Sitzung auf Grundlage des Prüfungsausschussberichts. Bestehen Anstände, hat der Gemeinderat die notwendigen Maßnahmen zu beschließen. Der beschlossene Rechnungsabschluss ist spätestens vier Monate nach Jahresende der Aufsichtsbehörde vorzulegen und anschließend öffentlich aufzulegen.",
       "topics": [
-        "Bürgermeister",
-        "Öffentlichkeit der Sitzungen",
-        "Gemeinderatssitzungen"
+        "Rechnungsabschluss",
+        "Beschlussfassung"
       ]
     },
     "94": {
-      "summary": "Festgelegt werden verschiedene Aspekte rund um kundmachung von Verordnungen in 4 Absätzen. ",
+      "summary": "Verordnungen der Gemeindeorgane sind binnen zwei Wochen elektronisch im Rechtsinformationssystem des Bundes (RIS) kundzumachen. Sie treten grundsätzlich mit Ablauf des Kundmachungstages in Kraft – bei Gefahr im Verzug kann der Wirksamkeitsbeginn auf den Tag der Freigabe vorgezogen werden. Ist das RIS nicht verfügbar, hat die Kundmachung auf andere allgemein zugängliche Weise zu erfolgen.",
       "topics": [
-        "Kundmachung und Verordnungen",
-        "Schlussbestimmungen",
-        "Gemeindebezeichnung"
+        "Verordnungskundmachung",
+        "RIS"
       ]
     },
     "95": {
-      "summary": "Normiert werden instanzenzug. Gegen Bescheide der Gemeindeorgane in den in die Gesetzgebungskompetenz des Landes fallenden Angelegenheiten des eigenen Wirkungsbereichs der Gemeinde ist die Berufung ausgeschlossen.",
+      "summary": "Gegen Bescheide der Gemeindeorgane in landesgesetzlichen Angelegenheiten des eigenen Wirkungsbereichs ist keine Berufung möglich. Sofern die Berufung nicht gesetzlich ausgeschlossen ist, fungiert der Gemeinderat als Berufungsbehörde und übt die oberbehördlichen Befugnisse aus.",
       "topics": [
-        "Gemeindeaufsicht"
+        "Instanzenzug",
+        "Berufung"
       ]
     },
     "96": {
-      "summary": "Festgelegt werden vollstreckung. Fällige Gemeindeabgaben sowie sonstige Geldleistungen auf Grund von Bescheiden der Gemeindeorgane hat der Bürgermeister nach den für die Einbringung und Sicherung der öffentlichen Abgaben des Landes und der Gemeind...",
+      "summary": "Fällige Gemeindeabgaben und sonstige Geldleistungen treibt der Bürgermeister nach den Vorschriften zur Sicherung öffentlicher Abgaben ein. Andere auf Bescheiden beruhende Leistungspflichten vollstreckt er selbst nach dem Verwaltungsvollstreckungsgesetz oder ersucht die Bezirkshauptmannschaft um Vollstreckung.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindeabgaben"
+        "Vollstreckung",
+        "Abgabeneintreibung"
       ]
     },
     "97": {
-      "summary": "Der Paragraph befasst sich mit aufsichtsrecht. Das Land übt, soweit es sich nicht um Angelegenheiten aus dem Bereich der Bundesvollziehung handelt, das Aufsichtsrecht über die Gemeinde dahin aus, daß diese bei Besorgung des eigenen Wirkungsbereich...",
+      "summary": "Das Land übt gegenüber der Gemeinde ein Aufsichtsrecht aus, das sicherstellt, dass sie bei Besorgung des eigenen Wirkungsbereichs keine Gesetze verletzt und ihre Pflichtaufgaben erfüllt. Für Angelegenheiten der Bundesvollziehung gelten die bundesgesetzlichen Aufsichtsvorschriften. Die Bestimmungen sind auch auf Gemeindeverbände sinngemäß anzuwenden.",
       "topics": [
+        "Aufsichtsrecht",
         "Gemeindeaufsicht"
       ]
     },
     "98": {
-      "summary": "Behandelt wird verschiedene Aspekte rund um ausübung des Aufsichtsrechtes in 3 Absätzen. ",
+      "summary": "Bei der Ausübung des Aufsichtsrechts ist die Eigenverantwortlichkeit der Gemeinde möglichst zu wahren und das gelindeste zum Ziel führende Mittel anzuwenden. Entsteht der begründete Verdacht einer Gesetzesverletzung, ist die Gemeinde zu informieren und ihr Gelegenheit zur Stellungnahme zu geben. Ein Rechtsanspruch auf Ausübung des Aufsichtsrechts besteht grundsätzlich nicht.",
       "topics": [
-        "Gemeindeaufsicht",
-        "Kundmachung und Verordnungen"
+        "Verhältnismäßigkeit",
+        "Aufsichtsverfahren"
       ]
     },
     "99": {
-      "summary": "Bestimmt wird verschiedene Aspekte rund um aufsichtsbehörden in 3 Absätzen. Aufsichtsbehörde ist die Landesregierung, soweit gesetzlich nicht anderes bestimmt ist.",
+      "summary": "Aufsichtsbehörde ist grundsätzlich die Landesregierung. Die Bezirkshauptmannschaft prüft Voranschläge, Finanzpläne und Rechnungsabschlüsse auf Gesetzmäßigkeit sowie Sparsamkeit und Wirtschaftlichkeit. Darüber hinaus kann die Landesregierung die Bezirkshauptmannschaften per Verordnung allgemein oder im Einzelfall zur Aufsichtsausübung ermächtigen.",
       "topics": [
-        "Gemeinderatssitzungen",
-        "Voranschlag",
-        "Gemeindeaufsicht"
+        "Aufsichtsbehörden",
+        "Bezirkshauptmannschaft"
       ]
     },
     "100": {
-      "summary": "Die Aufsichtsbeh ist verpflichtet, bestimmte Aufgaben im Bereich Auskunftspflicht wahrzunehmen. Die Aufsichtsbehörde ist berechtigt, sich über jedwede Angelegenheit der Gemeinde zu unterrichten.",
+      "summary": "Die Aufsichtsbehörde darf sich über jede Angelegenheit der Gemeinde informieren; die Gemeinde ist zur Auskunftserteilung verpflichtet. Auf Verlangen sind Akten unverzüglich vorzulegen und Beschlüsse mitsamt Unterlagen über ihr Zustandekommen zu übermitteln. Auch Prüfungen an Ort und Stelle durch amtliche Organe sind zulässig.",
       "topics": [
-        "Gemeindeaufsicht"
+        "Auskunftspflicht",
+        "Aufsichtsrecht"
       ]
     },
     "101": {
-      "summary": "Gegenstand ist verschiedene Aspekte rund um verordnungsprüfung in 3 Absätzen. Die von der Gemeinde erlassenen Verordnungen hat der Bürgermeister unverzüglich der Aufsichtsbehörde mitzuteilen.",
+      "summary": "Gemeindeverwaltungen müssen erlassene Verordnungen unverzüglich der Aufsichtsbehörde mitteilen. Gesetzwidrige Verordnungen hebt die Aufsichtsbehörde nach Anhörung der Gemeinde durch eigene Verordnung auf; die Gemeinde hat die Aufhebung an der Amtstafel kundzumachen.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindeaufsicht",
-        "Kundmachung und Verordnungen"
+        "Verordnungsprüfung",
+        "Aufhebung"
       ]
     },
     "102": {
-      "summary": "Es wird verpflichtet, bestimmte Aufgaben im Bereich Aufsichtsbeschwerde wahrzunehmen. ",
+      "summary": "Aufsichtsbeschwerden über die Amtsführung von Gemeindeorganen sind schriftlich bei der Aufsichtsbehörde einzubringen, die dem betroffenen Organ Gelegenheit zur Stellungnahme gibt und prüft, ob ein Rechtsverstoß vorliegt. Die Beantwortung soll binnen sechs Monaten erfolgen. Anonyme, mutwillige oder bereits erledigte Beschwerden werden nicht weiter behandelt.",
       "topics": [
-        "Bürgermeister",
-        "Tagesordnung",
-        "Gemeinderatssitzungen"
+        "Aufsichtsbeschwerde",
+        "Beschwerderecht"
       ]
     },
     "103": {
-      "summary": "Es wird bestimmt, aufhebung von Bescheiden, Beschlüssen und sonstigen Maßnahmen der Gemeindeorgane. ",
+      "summary": "Rechtskräftige Bescheide sowie Beschlüsse oder sonstige Maßnahmen, die den Wirkungsbereich überschreiten oder Gesetze verletzen, kann die Aufsichtsbehörde von Amts wegen oder auf Antrag aufheben. Bescheide, die durch eine unzuständige oder falsch zusammengesetzte Behörde erlassen wurden, können nach drei Jahren nicht mehr aufgehoben werden.",
       "topics": [
-        "Gemeindeaufsicht",
-        "Schlussbestimmungen"
+        "Bescheidaufhebung",
+        "Aufsichtsmaßnahmen"
       ]
     },
     "104": {
-      "summary": "Vorgesehen ist ersatzvornahme. Erfüllt die Gemeinde eine ihr gesetzlich obliegende Aufgabe nicht, so hat ihr die Aufsichtsbehörde mit Bescheid die zur Herstellung des gesetzmäßigen Zustands erforderlichen Maßnahmen binnen angemessen festzusetzende...",
+      "summary": "Erfüllt eine Gemeinde eine gesetzliche Pflichtaufgabe nicht, setzt ihr die Aufsichtsbehörde eine Frist zur Herstellung des gesetzmäßigen Zustands. Kommt sie dem nicht nach oder besteht Gefahr im Verzug, trifft die Aufsichtsbehörde die Maßnahmen selbst auf Kosten der Gemeinde. Unbedingt notwendig ist dies insbesondere bei Gefahren für Leben und Gesundheit oder drohendem finanziellem Schaden.",
       "topics": [
-        "Gemeindeaufsicht",
-        "Haushalt und Finanzen"
+        "Ersatzvornahme",
+        "Aufsichtsmittel"
       ]
     },
     "105": {
-      "summary": "Im Mittelpunkt steht verschiedene Aspekte rund um überprüfung der Gemeindegebarung in 3 Absätzen. ",
+      "summary": "Die Aufsichtsbehörde hat das Recht, die gesamte Gebarung der Gemeinde einschließlich ihrer Unternehmungen auf Sparsamkeit, Wirtschaftlichkeit und Rechtmäßigkeit vor Ort zu prüfen. Das Ergebnis ist dem Bürgermeister zur Vorlage an den Gemeinderat und den Prüfungsausschuss zu übermitteln und gleichzeitig im Internet zu veröffentlichen. Binnen drei Monaten hat der Bürgermeister der Aufsichtsbehörde die getroffenen Maßnahmen mitzuteilen.",
       "topics": [
-        "Bürgermeister",
-        "Ausschüsse",
-        "Rechnungsprüfung"
+        "Gebarungsprüfung",
+        "Aufsichtskontrolle"
       ]
     },
     "106": {
-      "summary": "Definiert werden verschiedene Aspekte rund um genehmigungspflicht in 4 Absätzen. ",
+      "summary": "Bestimmte Rechtsgeschäfte der Gemeinde – darunter der Erwerb und die Veräußerung von Immobilien über 20 Prozent der laufenden Einzahlungen sowie Immobilien-Leasingverträge – bedürfen der aufsichtsbehördlichen Genehmigung. Die Genehmigung darf nur versagt werden, wenn gesetzliche Vorschriften verletzt, der Haushaltsausgleich verhindert oder ein unverhältnismäßig hohes finanzielles Wagnis eingegangen würde. Ohne Genehmigung oder Nichtuntersagung werden solche Rechtsgeschäfte Dritten gegenüber nicht wirksam.",
       "topics": [
-        "Voranschlag",
-        "Gemeindeaufsicht",
-        "Haushalt und Finanzen"
+        "Genehmigungspflicht",
+        "Immobiliengeschäfte"
       ]
     },
     "107": {
-      "summary": "Die Bestimmung legt fest, auflösung des Gemeinderates. ",
+      "summary": "Die Landesregierung kann den Gemeinderat auflösen, wenn er dauernd beschlussunfähig ist, wiederholt offensichtlich gegen Gesetze verstoßen hat oder die Aufsichtsbehörde wiederholt im Wege der Ersatzvornahme einschreiten musste.",
       "topics": [
-        "Gemeindeaufsicht"
+        "Gemeinderatsauflösung",
+        "Aufsichtsmaßnahmen"
       ]
     },
     "108": {
-      "summary": "Die Landesregierung hat ist verpflichtet, bestimmte Aufgaben im Bereich Fortführung der Verwaltung wahrzunehmen. ",
+      "summary": "Nach Auflösung des Gemeinderates setzt die Landesregierung einen Regierungskommissär ein, der gemeinsam mit einem ehrenamtlichen Beirat die laufenden und unaufschiebbaren Gemeindeangelegenheiten fortführt. Binnen sechs Wochen hat der Bürgermeister die Neuwahl des Gemeinderates auszuschreiben. Die Kosten des Regierungskommissärs trägt die Gemeinde.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Gemeinderatssitzungen"
+        "Regierungskommissär",
+        "Verwaltungsfortführung"
       ]
     },
     "109": {
-      "summary": "Erfasst werden verschiedene Aspekte rund um parteistellung; Verfahren in 3 Absätzen. ",
+      "summary": "Aufsichtsbehördliche Maßnahmen – mit Ausnahme jener gegen Verordnungen – ergehen als Bescheid nach dem Allgemeinen Verwaltungsverfahrensgesetz. Die Gemeinde ist Partei des Aufsichtsverfahrens und kann Beschwerde beim Verwaltungsgericht, Revision beim Verwaltungsgerichtshof und Beschwerde beim Verfassungsgerichtshof erheben.",
       "topics": [
-        "Gemeindeaufsicht",
-        "Kundmachung und Verordnungen"
+        "Parteistellung",
+        "Rechtsschutz"
       ]
     },
     "110": {
-      "summary": "Die Vorschrift enthält Regelungen zu verschiedene Aspekte rund um sondervermögen gemeinderechtlicher Art in 7 Absätzen. Vermögen, das im Zeitpunkt des Inkrafttretens dieses Gesetzes gemäß § 72 oder § 110 der Oberösterreichischen Gemeindeordnung 1948, LGBl.",
+      "summary": "Vermögen, das bei Inkrafttreten des Gesetzes als Sondervermögen gemeinderechtlicher Art gesondert verwaltet wurde, behält diesen Status und ist seiner Bestimmung gemäß zu verwalten. Auf Verlangen der Mehrheit der Berechtigten kann die Verwaltung an eigene, von den Berechtigten gewählte Organe übertragen werden, deren Satzung der Genehmigung durch den Gemeinderat bedarf. Eine einvernehmliche vermögensrechtliche Auseinandersetzung zwischen Gemeinde und Berechtigten bleibt jederzeit möglich.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Gemeinderatssitzungen"
+        "Sondervermögen",
+        "Berechtigtenverwaltung"
       ]
     },
     "111": {
-      "summary": "Es werden die Voraussetzungen für übergangsbestimmungen. ",
+      "summary": "Bestehende Gemeinden bleiben in ihrem bisherigen Umfang erhalten; ihre Namen, Wappen, Stadt- oder Marktbezeichnungen und sonstige Rechte gelten fort, sofern sie nicht im Widerspruch zum neuen Gesetz stehen. Änderungen sind ausschließlich nach den Bestimmungen der Gemeindeordnung zulässig.",
       "topics": [
-        "Gemeindesymbole",
-        "Schlussbestimmungen",
-        "Gemeindebezeichnung"
+        "Übergangsbestimmungen",
+        "Bestandsschutz"
       ]
     },
     "4a": {
-      "summary": "Definiert werden verschiedene Aspekte rund um verwendung des Gemeindewappens in 4 Absätzen. Die Verwendung des Gemeindewappens ist unter Wahrung des Ansehens der Gemeinde allgemein gestattet.",
+      "summary": "Die Verwendung des Gemeindewappens ist grundsätzlich gestattet, muss aber der Gemeinde unter Angabe des Zwecks angezeigt werden. Innerhalb von vier Wochen kann der Gemeindevorstand die Verwendung untersagen, etwa bei drohendem Missbrauch oder Ansehensschädigung. Wer das Wappen trotz Untersagung weiterverwendet, riskiert eine Geldstrafe bis 1.000 Euro.",
       "topics": [
-        "Gemeindevorstand",
-        "Gemeindesymbole",
-        "Strafbestimmungen"
+        "Gemeindewappen",
+        "Verwaltungsstrafen"
       ]
     },
     "9a": {
-      "summary": "Hier wird festgelegt, verschiedene Aspekte rund um aufteilung in 3 Absätzen. ",
+      "summary": "Eine Gemeinde kann auf angrenzende Gemeinden aufgeteilt werden, sodass sie als eigene Gemeinde erlischt – vorausgesetzt, übereinstimmende Zweidrittelmehrheitsbeschlüsse und ein vollständiger Vermögensaufteilungsplan liegen vor. Gegen den Willen der Beteiligten ist ein Landesgesetz nötig. Aufteilung und vermögensrechtliche Auseinandersetzung werden gleichzeitig wirksam.",
       "topics": [
-        "Kundmachung und Verordnungen",
-        "Gemeindevermögen"
+        "Gemeindeaufteilung",
+        "Gebietsänderungen"
       ]
     },
     "13a": {
-      "summary": "Vorgesehen ist öffentlich-rechtliche Vereinbarungen zwischen Gemeinden. ",
+      "summary": "Gemeinden können untereinander öffentlich-rechtliche Vereinbarungen über die Zusammenarbeit in behördlichen Angelegenheiten abschließen. Für solche Vereinbarungen gelten die Bestimmungen über Verwaltungsgemeinschaften sinngemäß.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Interkommunale Zusammenarbeit",
+        "Behördliche Zusammenarbeit"
       ]
     },
     "18a": {
-      "summary": "Behandelt wird verschiedene Aspekte rund um fraktionen in 6 Absätzen. ",
+      "summary": "Die gewählten Gemeinderatsmitglieder einer wahlwerbenden Partei bilden jeweils eine Fraktion. Jede Fraktion mit mehr als einem Mitglied bestellt aus ihrer Mitte einen Obmann und mindestens einen Stellvertreter. Dem Fraktionsobmann steht ein umfassendes Informationsrecht zu, einschließlich Akteneinsicht und Kopienanfertigung zu Sitzungsunterlagen.",
       "topics": [
-        "Bürgermeister",
-        "Tagesordnung",
-        "Gemeinderatssitzungen"
+        "Fraktionen",
+        "Informationsrechte"
       ]
     },
     "18b": {
-      "summary": "Diese Vorschrift betrifft unter welchen Voraussetzungen Entscheidungen im Bereich „Ausschüsse, Beiräte\" getroffen werden können. ",
+      "summary": "Für einzelne Verwaltungszweige kann der Gemeinderat Ausschüsse einrichten; verpflichtend sind ein Prüfungsausschuss sowie mindestens drei weitere Ausschüsse für Bereiche wie Bau, Raumplanung, Bildung und Umwelt. Zusätzlich können Beiräte zur Beratung der Gemeindeorgane gebildet werden.",
       "topics": [
-        "Geschäftsordnung",
         "Ausschüsse",
-        "Rechnungsprüfung"
+        "Beiräte"
       ]
     },
     "31a": {
-      "summary": "Hier wird festgelegt, verschiedene Aspekte rund um volksabstimmung über die Abberufung eines direkt gewählten Bürgermeisters in 6 Absätzen. Gegenstand der Volksabstimmung ist die Frage, ob dem Ausspruch des Mißtrauens gegen den Bürgermeister zugestimmt wird.",
+      "summary": "Über die Abberufung eines direkt gewählten Bürgermeisters entscheiden die Wahlberechtigten in einer Volksabstimmung, die frühestens sechs und spätestens zwölf Wochen nach dem Gemeinderatsbeschluss stattfindet. Stimmt die unbedingte Mehrheit der gültigen Stimmen dem Misstrauensvotum zu, gilt die Abberufung als bestätigt. Das Ergebnis kann binnen drei Tagen wegen Ermittlungsfehlern angefochten werden.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Vizebürgermeister",
-        "Bürgermeister"
+        "Volksabstimmung",
+        "Bürgermeisterabberufung"
       ]
     },
     "33a": {
-      "summary": "Die Bestimmung regelt wahlen in Organe außerhalb der Gemeinde. Vertreter der Gemeinde in Organe außerhalb der Gemeinde, die vom Gemeinderat zu beschicken sind, sind vom Gemeinderat zu wählen.",
+      "summary": "Vertreter der Gemeinde in externe Organe sind vom Gemeinderat zu wählen und müssen Gemeinderatsmitglieder, Ersatzmitglieder oder zumindest in den Gemeinderat wählbar sein. Die Wahlbestimmungen für den Gemeindevorstand gelten sinngemäß, sofern der Gemeinderat nicht einstimmig ein anderes Verfahren beschließt.",
       "topics": [
-        "Zusammensetzung des Gemeinderats",
-        "Gemeindevorstand",
-        "Gemeindebedienstete"
+        "Externe Vertretung",
+        "Gemeinderatswahlen"
       ]
     },
     "38a": {
-      "summary": "Festgelegt werden verschiedene Aspekte rund um information der Gemeindemitglieder in 4 Absätzen. ",
+      "summary": "Plant die Gemeinde ein Vorhaben, das die Interessen der Gemeindemitglieder besonders berührt, hat sie die Bevölkerung zeitgerecht und ausreichend zu informieren – möglichst bereits im Planungsstadium. Die Information kann über die Amtstafel, andere geeignete Medien oder durch Abhaltung einer Gemeindeversammlung erfolgen, in der den Teilnehmenden Gelegenheit zur Stellungnahme zu geben ist.",
       "topics": [
-        "Bürgermeister",
-        "Gemeinderatssitzungen",
-        "Gemeindebetriebe"
+        "Bürgerinformation",
+        "Gemeindeversammlung"
       ]
     },
     "38b": {
-      "summary": "Definiert werden verschiedene Aspekte rund um bürgerinnen- und Bürger-Initiative in 5 Absätzen. ",
+      "summary": "Wahlberechtigte Gemeindemitglieder können per Bürgerinitiative die Erlassung, Änderung oder Aufhebung von Gemeinderatsbeschlüssen im eigenen Wirkungsbereich verlangen. Der Antrag muss schriftlich begründet und von mindestens 2 Prozent der Wahlberechtigten, jedenfalls aber von 25 Personen, unterzeichnet sein. Personalangelegenheiten und individuelle Behördenentscheidungen sind ausgenommen.",
       "topics": [
-        "Bürgermeister",
-        "Tagesordnung",
-        "Gemeinderatssitzungen"
+        "Bürgerinitiative",
+        "Direkte Demokratie"
       ]
     },
     "62a": {
-      "summary": "Die Mitglieder des ist verpflichtet, bestimmte Aufgaben im Bereich Geheimhaltungsverpflichtung wahrzunehmen. Die Mitglieder des Gemeinderats, die Mitglieder des Gemeindevorstands sowie die Bürgermeisterin bzw.",
+      "summary": "Gemeinderatsmitglieder, Vorstandsmitglieder und der Bürgermeister unterliegen einer Geheimhaltungspflicht über dienstlich bekannt gewordene Tatsachen, soweit dies aus den in der Bundesverfassung genannten Gründen erforderlich ist. Die Verpflichtung besteht auch nach dem Ausscheiden aus der Funktion fort. In begründeten Fällen kann das zuständige Kollegialorgan von der Geheimhaltungspflicht entbinden.",
       "topics": [
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats",
-        "Mandatsverlust"
+        "Geheimhaltungspflicht",
+        "Amtsverschwiegenheit"
       ]
     },
     "63a": {
-      "summary": "Es wird verpflichtet, bestimmte Aufgaben im Bereich Anfragen wahrzunehmen. In den Angelegenheiten des eigenen Wirkungsbereiches der Gemeinde sind die Mitglieder des Gemeinderates berechtigt, Anfragen an den Bürgermeister sowie im Fall des § 58 Abs.",
+      "summary": "Gemeinderatsmitglieder können im eigenen Wirkungsbereich schriftliche Anfragen an den Bürgermeister und an betraute Vorstandsmitglieder richten. Die Beantwortung hat spätestens in der nächstfolgenden Gemeinderatssitzung mündlich zu erfolgen oder – falls keine Sitzung stattfindet – binnen zwei Monaten schriftlich. Eine Verweigerung ist nur bei bestehender Geheimhaltungspflicht zulässig und muss begründet werden.",
       "topics": [
-        "Bürgermeister",
-        "Tagesordnung",
-        "Gemeinderatssitzungen"
+        "Anfragen",
+        "Parlamentarische Kontrolle"
       ]
     },
     "66a": {
-      "summary": "Die Regelung umfasst schriftverkehr. Der im Zusammenhang mit der Funktionsausübung stehende Schriftverkehr zwischen dem Gemeindeamt und den Fraktionen bzw.",
+      "summary": "Der funktionsbezogene Schriftverkehr zwischen Gemeindeamt und Fraktionen bzw. Mandataren hat nach Maßgabe der technischen Möglichkeiten elektronisch zu erfolgen, sofern die Empfänger zustimmen. Eine Sendebestätigung genügt als Zustellnachweis.",
       "topics": [
-        "Verhandlungsschrift",
-        "Gemeindeverwaltung"
+        "Elektronischer Schriftverkehr",
+        "Zustellung"
       ]
     },
     "69a": {
-      "summary": "Im Mittelpunkt steht verbot von Rechtsgeschäften. Die Gemeinde hat in den Gesellschaftsverträgen, Statuten und dergleichen von Unternehmungen, an denen sie allein oder gemeinsam mit anderen Städten und Gemeinden zu mehr als 50 % beteiligt ist, ver...",
+      "summary": "In Gesellschaftsverträgen und Statuten von Unternehmungen, an denen die Gemeinde allein oder gemeinsam mit anderen Gemeinden zu mehr als 50 Prozent beteiligt ist, muss ein Verbot von Rechtsgeschäften mit unverhältnismäßig hohem finanziellen Wagnis verankert werden.",
       "topics": [
-        "Gemeindebetriebe",
-        "Haushalt und Finanzen"
+        "Finanzrisiko",
+        "Gemeindebeteiligungen"
       ]
     },
     "69b": {
-      "summary": "Inhaltlich geht es um verschiedene Aspekte rund um übertragung von Verwaltungsbereichen in 3 Absätzen. ",
+      "summary": "Verwaltungsbereiche dürfen nur an Rechtsträger übertragen werden, die im 75-Prozent-Eigentum der Gemeinde oder anderer Gebietskörperschaften stehen, und auch nur dann, wenn ein öffentliches Interesse vorliegt und die Leistungsfähigkeit der Gemeinde nicht gefährdet wird. Die Übertragung bedarf der aufsichtsbehördlichen Genehmigung und eines Gemeinderatsbeschlusses mit Zweidrittelmehrheit.",
       "topics": [
-        "Abstimmung und Mehrheiten",
-        "Gemeindeaufsicht"
+        "Ausgliederung",
+        "Verwaltungsübertragung"
       ]
     },
     "73a": {
-      "summary": "Diese Vorschrift betrifft anwendbare Rechtsvorschriften. ",
+      "summary": "Form und Gliederung von Gemeindevoranschlag und Rechnungsabschluss richten sich nach den bundesrechtlichen Vorschriften, insbesondere der Voranschlags- und Rechnungsabschlussverordnung 2015.",
       "topics": [
-        "Voranschlag",
-        "Rechnungsabschluss",
-        "Haushalt und Finanzen"
+        "Haushaltsrecht",
+        "VRV 2015"
       ]
     },
     "73b": {
-      "summary": "Der Paragraph befasst sich mit begriffsbestimmungen. Im Sinn dieses Landesgesetzes bedeutet:\n(Anm: LGBl.Nr.",
+      "summary": "Hier werden die wesentlichen Begriffe definiert, die im Rahmen des Gemeindehaushaltsrechts Verwendung finden.",
       "topics": [
-        "Begriffsbestimmungen"
+        "Begriffsbestimmungen",
+        "Haushaltsrecht"
       ]
     },
     "75a": {
-      "summary": "Erfasst werden nachweise zum Gemeindevoranschlag. Die Gemeinde hat in den Gemeindevoranschlag die Nachweise gemäß der VRV 2015 aufzunehmen.",
+      "summary": "Zum Gemeindevoranschlag sind verschiedene Nachweise beizufügen, darunter solche über die Investitionstätigkeit, Vermögensveräußerungen, Haftungen, Rückstellungen und das nachhaltige Haushaltsgleichgewicht.",
       "topics": [
-        "Voranschlag",
-        "Gemeindevermögen",
-        "Haushalt und Finanzen"
+        "Haushaltsnachweise",
+        "Voranschlag"
       ]
     },
     "76a": {
-      "summary": "Bestimmt wird verschiedene Aspekte rund um mittelfristiger Ergebnis- und Finanzplan in 5 Absätzen. ",
+      "summary": "Jede Gemeinde muss einen mittelfristigen Ergebnis- und Finanzplan für fünf Haushaltsjahre erstellen, der jährlich gemeinsam mit dem Voranschlag beschlossen und an geänderte Verhältnisse angepasst wird. Bei der Erstellung sind die Grundsätze des Österreichischen Stabilitätspakts zu berücksichtigen.",
       "topics": [
-        "Voranschlag",
-        "Haushalt und Finanzen"
+        "Mittelfristige Finanzplanung",
+        "Stabilitätspakt"
       ]
     },
     "91a": {
-      "summary": "Vorgesehen ist unter welchen Voraussetzungen Entscheidungen im Bereich „Zusammensetzung des Prüfungsausschusses\" getroffen werden können. ",
+      "summary": "Die Mitgliederzahl des Prüfungsausschusses entspricht grundsätzlich der des Gemeindevorstands; jede Fraktion muss mindestens ein Mitglied stellen. Der Obmann darf weder der Bürgermeisterfraktion noch der mandatsstärksten Fraktion angehören, wenn mehr als zwei Fraktionen im Gemeinderat vertreten sind. Vorstandsmitglieder und der Kassenführer sind von der Mitgliedschaft ausgeschlossen.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats"
+        "Prüfungsausschuss",
+        "Zusammensetzung"
       ]
     },
     "92a": {
-      "summary": "Inhaltlich geht es um nachweise zum Rechnungsabschluss. Die Gemeinde hat in den Rechnungsabschluss die Nachweise gemäß der VRV 2015 aufzunehmen.",
+      "summary": "Dem Rechnungsabschluss sind neben den VRV-Nachweisen unter anderem Nachweise über die Investitionstätigkeit, liquide Mittel, Personalkosten, laufende Geschäftstätigkeit und das nachhaltige Haushaltsgleichgewicht beizufügen.",
       "topics": [
-        "Rechnungsabschluss",
-        "Gemeindebedienstete",
-        "Gemeindevermögen"
+        "Rechnungsabschlussnachweise",
+        "Haushaltsdokumentation"
       ]
     },
     "94a": {
-      "summary": "Definiert werden zugang zu den Verordnungen. Die im Rahmen des RIS kundgemachten Verordnungen sind vom Bund auf Dauer im RIS unter der im § 94 Abs.",
+      "summary": "Im RIS kundgemachte Gemeindeverordnungen müssen dauerhaft, jederzeit, ohne Identitätsnachweis und kostenlos abrufbar sein. Zusätzlich kann beim Gemeindeamt während der Amtsstunden Einsicht genommen werden, wobei Abschriften erstellt und Kopien gegen Kostenersatz verlangt werden können.",
       "topics": [
-        "Gemeindeverwaltung"
+        "Verordnungszugang",
+        "Transparenz"
       ]
     },
     "94b": {
-      "summary": "Normiert werden sicherung der Authentizität und Integrität. ",
+      "summary": "Elektronisch kundzumachende Verordnungen müssen in einem zukunftssicheren Format vorliegen und mit einer elektronischen Amtssignatur versehen sein. Nach Erstellung der Signatur dürfen die Dokumente weder geändert noch – nach Freigabe – gelöscht werden.",
       "topics": [
-        "Sicherung der Authentizität und Integrität"
+        "Elektronische Signatur",
+        "Dokumentensicherheit"
       ]
     },
     "94c": {
-      "summary": "Im Mittelpunkt steht kundmachungsberichtigung von Verordnungen. Die Bürgermeisterin bzw.",
+      "summary": "Kundmachungsfehler – also Abweichungen des veröffentlichten Textes vom Original – sowie Verstöße gegen die formale Einrichtung des Verordnungsblatts kann der Bürgermeister durch eine Kundmachungsberichtigung korrigieren. Eine Berichtigung ist unzulässig, wenn sie den materiellen Inhalt der Rechtsvorschrift ändern würde.",
       "topics": [
-        "Bürgermeister",
-        "Kundmachung und Verordnungen"
+        "Kundmachungsberichtigung",
+        "Verordnungsblatt"
       ]
     },
     "94d": {
-      "summary": "Inhaltlich geht es um verschiedene Aspekte rund um amtstafel in 6 Absätzen. ",
+      "summary": "Beim Gemeindeamt ist eine Amtstafel einzurichten, die jedenfalls während der Amtsstunden uneingeschränkt zugänglich sein muss. Gesetzlich vorgeschriebene Beschlüsse und öffentlichkeitsrelevante Informationen sind dort für zwei Wochen kundzumachen. Die Amtstafel kann in Papierform oder elektronisch geführt werden; in jedem Fall ist die inhaltliche und zeitliche Nachvollziehbarkeit sicherzustellen.",
       "topics": [
-        "Kundmachung und Verordnungen",
-        "Gemeindeverwaltung"
+        "Amtstafel",
+        "Kundmachung"
       ]
     },
     "102a": {
-      "summary": "Die Bestimmung regelt belehrung. Wenn die Gemeinde bei Besorgung des eigenen Wirkungsbereichs Gesetze oder Verordnungen verletzt, insbesondere ihren Wirkungsbereich überschreitet oder die ihr gesetzlich obliegenden Aufgaben nicht erfüllt, kann die...",
+      "summary": "Stellt die Aufsichtsbehörde einen geringfügigen Rechtsverstoß der Gemeinde fest, kann sie diesen per Bescheid feststellen und eine Belehrung erteilen, um künftige gleichartige Verstöße zu verhindern. Der Bescheid ist dem verantwortlichen Organ und dem Gemeinderat zur Kenntnis zu bringen.",
       "topics": [
-        "Bürgermeister",
-        "Tagesordnung",
-        "Gemeinderatssitzungen"
+        "Aufsichtsbehördliche Belehrung",
+        "Rechtsverstoß"
       ]
     }
   }

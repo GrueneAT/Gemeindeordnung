@@ -21,7 +21,11 @@ test.describe('FAQ Pages', () => {
 
   test('LLM-03: FAQ topic page with questions', async ({ page }) => {
     // Navigate directly to a known FAQ topic page
-    await page.goto('./faq/gemeindeaufsicht.html');
+    await page.goto('./faq/gemeindeaufsicht-und-rechtsschutz.html');
+
+    // Verify disclaimer is visible
+    const disclaimer = page.locator('[data-pagefind-ignore]:has-text("mittels KI")').first();
+    await expect(disclaimer).toBeVisible();
 
     // Verify questions (h2 elements) are visible
     const questions = page.locator('article h2');
@@ -33,7 +37,7 @@ test.describe('FAQ Pages', () => {
   });
 
   test('LLM-04: FAQ answers link to paragraphs across Bundeslaender', async ({ page }) => {
-    await page.goto('./faq/gemeindeaufsicht.html');
+    await page.goto('./faq/gemeindeaufsicht-und-rechtsschutz.html');
 
     // Find cross-BL links (links to gemeindeordnungen pages with #p anchors)
     const paraLinks = page.locator('a[href*="gemeindeordnungen/"][href*="#p"]');
@@ -57,6 +61,6 @@ test.describe('FAQ Pages', () => {
     // FAQ index has its own disclaimer info-box
     const disclaimer = page.locator('[data-pagefind-ignore]:has-text("keine Rechtsberatung")').first();
     await expect(disclaimer).toBeVisible();
-    await expect(disclaimer).toContainText('Orientierung');
+    await expect(disclaimer).toContainText('mittels KI (LLM) erstellt');
   });
 });

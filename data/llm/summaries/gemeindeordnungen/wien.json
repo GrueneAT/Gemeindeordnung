@@ -1,1505 +1,1415 @@
 {
   "meta": {
-    "generatedAt": "2026-03-11T19:08:50.511Z",
+    "generatedAt": "2026-03-12T08:53:34.464Z",
     "lawKey": "wien",
     "category": "gemeindeordnungen"
   },
   "paragraphs": {
     "1": {
-      "summary": "Definiert werden die näheren Einzelheiten. Die Bundeshauptstadt Wien ist eine Gebietskörperschaft mit dem Recht auf Selbstverwaltung.",
+      "summary": "Wien ist als Bundeshauptstadt eine Gebietskörperschaft mit Selbstverwaltungsrecht und zugleich Stadt mit eigenem Statut. Neben der Gemeindeverwaltung obliegt ihr auch die Bezirksverwaltung. Die Landesverfassung Wiens findet sich im Zweiten Hauptstück.",
       "topics": [
-        "Wirkungsbereich"
+        "Rechtsstellung Wiens",
+        "Selbstverwaltung"
       ]
     },
     "2": {
-      "summary": "Die Bestimmung legt fest, die näheren Einzelheiten. Die Gemeinde Wien umfaßt das Gebiet, das durch § 2 des Gebietsänderungsgesetzes vom 29.",
+      "summary": "Das Gemeindegebiet Wiens wird durch das Gebietsänderungsgesetz vom 29. Juni 1946 festgelegt und umgrenzt.",
       "topics": [
-        "Gebietsänderung"
+        "Gemeindegebiet"
       ]
     },
     "3": {
-      "summary": "Diese Vorschrift betrifft einteilung in Bezirke. Dieses Gebiet ist zu Zwecken der Verwaltung in Bezirke eingeteilt.",
+      "summary": "Wien gliedert sich zu Verwaltungszwecken in 23 Bezirke, von der Inneren Stadt bis Liesing. Die genaue Abgrenzung ergibt sich aus dem Bezirkseinteilungsgesetz 1954 in der jeweils geltenden Fassung.",
       "topics": [
-        "Statutarstadt"
+        "Bezirkseinteilung",
+        "Verwaltungsgliederung"
       ]
     },
     "4": {
-      "summary": "Erfasst werden die näheren Einzelheiten. Eine Änderung in der Abgrenzung oder eine weitere Abteilung der im vorstehenden Paragraphen bezeichneten Bezirke, dann die Festsetzung genauer Grenzlinien zwischen den einzelnen Bezirken auf Grund der beste...",
+      "summary": "Änderungen der Bezirksgrenzen, weitere Unterteilungen sowie die Festsetzung genauer Grenzlinien fallen in die Zuständigkeit des Gemeinderates. Änderungen in der Abgrenzung und Neueinteilungen der Bezirke bedürfen eines Landesgesetzes.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Bezirksgrenzen",
+        "Gemeinderatszuständigkeit"
       ]
     },
     "5": {
-      "summary": "Die Vorschrift enthält Regelungen zu gemeindemitglieder. Gemeindemitglieder sind jene österreichischen Staatsbürger, die in der Gemeinde ihren Hauptwohnsitz haben.",
+      "summary": "Als Gemeindemitglieder gelten österreichische Staatsbürgerinnen und Staatsbürger, die in Wien ihren Hauptwohnsitz haben.",
       "topics": [
-        "Gemeindemitglieder"
+        "Gemeindemitgliedschaft"
       ]
     },
     "6": {
-      "summary": "Es werden die Voraussetzungen für verschiedene Aspekte rund um ehrungen und Bürgerernennungen in 3 Absätzen. Der Gemeinderat kann Personen, die sich um die Stadt verdient gemacht haben, durch Ehrungen auszeichnen.",
+      "summary": "Personen, die sich um Wien verdient gemacht haben, können vom Gemeinderat durch Ehrungen ausgezeichnet werden. Insbesondere kann er in Wien wohnhaften österreichischen Staatsbürgern die Bürgerschaft verleihen, die allerdings keine Sonderrechte gewährt und bei Verlust des Wahlrechts infolge gerichtlicher Verurteilung als widerrufen gilt.",
       "topics": [
-        "Gemeindebürger",
-        "Schlussbestimmungen",
-        "Wahlen und Wahlrecht"
+        "Ehrungen",
+        "Bürgerrecht"
       ]
     },
     "7": {
-      "summary": "Die Bestimmung regelt ehrenbürger. Männer und Frauen, die sich um die Republik Österreich oder die Stadt Wien besonders verdient gemacht haben, kann der Gemeinderat zu Ehrenbürgern ernennen.",
+      "summary": "Männer und Frauen mit besonderen Verdiensten um die Republik Österreich oder Wien können vom Gemeinderat zu Ehrenbürgern ernannt werden. Die Ernennung ist eine reine Auszeichnung ohne besondere Rechte und kann bei Unwürdigkeit widerrufen werden.",
       "topics": [
-        "Gemeindebürger"
+        "Ehrenbürgerschaft"
       ]
     },
     "8": {
-      "summary": "Es wird bestimmt, allgemeine Bestimmungen. Zur Besorgung der Aufgaben der Gemeinde sind als Organe berufen:",
+      "summary": "Zur Besorgung der Gemeindeaufgaben sind verschiedene Organe berufen.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Gemeindeorgane"
       ]
     },
     "9": {
-      "summary": "Vorgesehen ist verschiedene Aspekte rund um unterfertigung von Urkunden in 3 Absätzen. ",
+      "summary": "Urkunden über Rechtsgeschäfte und Ehrungen sind vom Bürgermeister, einem amtsführenden Stadtrat oder zuständigen leitenden Bediensteten zu unterfertigen. Bei im Firmenbuch eingetragenen Unternehmungen der Gemeinde gelten abweichende Regelungen.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindebedienstete",
-        "Gemeindebetriebe"
+        "Urkundenunterfertigung",
+        "Vertretungsbefugnis"
       ]
     },
     "10": {
-      "summary": "Im Mittelpunkt steht wahl der Mitglieder. Die Mitglieder des Gemeinderates werden auf Grund des gleichen, unmittelbaren, geheimen und persönlichen Verhältniswahlrechtes aller nach der Wiener Gemeindewahlordnung 1996 wahlberechtigten Gemeindemitgli...",
+      "summary": "Die 100 Mitglieder des Gemeinderates werden nach dem gleichen, unmittelbaren, geheimen und persönlichen Verhältniswahlrecht gewählt.",
       "topics": [
-        "Zusammensetzung des Gemeinderats",
-        "Wahlen und Wahlrecht"
+        "Gemeinderatswahl",
+        "Wahlrecht"
       ]
     },
     "11": {
-      "summary": "Definiert werden mehrere zusammenhängende Regelungsbereiche. ",
+      "summary": "Die Verteilung der Gemeinderatssitze auf die Wahlkreise erfolgt im Verhältnis der Gemeindemitgliederzahlen. Der Bürgermeister stellt die Aufteilung fest, wobei die Berechnung nach dem d'Hondtschen Verfahren mit der 100. Höchstzahl als Verhältniszahl vorgenommen wird.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats"
+        "Mandatsverteilung",
+        "Wahlkreiseinteilung"
       ]
     },
     "12": {
-      "summary": "Die Bestimmung legt fest, die näheren Einzelheiten. Die näheren Bestimmungen über die Wahlberechtigung und die Wählbarkeit werden durch ein eigenes Landesgesetz getroffen.",
+      "summary": "Ein eigenes Landesgesetz regelt Wahlberechtigung und Wählbarkeit zum Gemeinderat. Die Bestimmungen dürfen nicht enger gefasst sein als jene für Nationalratswahlen nach der Bundesverfassung.",
       "topics": [
-        "Wahlen und Wahlrecht"
+        "Wahlrecht",
+        "Wählbarkeit"
       ]
     },
     "13": {
-      "summary": "Diese Vorschrift betrifft dauer der Amtsführung. Die Mitglieder des Gemeinderates werden auf fünf Jahre gewählt.",
+      "summary": "Die Funktionsperiode des Gemeinderates beträgt fünf Jahre. Die Mitglieder bleiben bis zur Angelobung der Nachfolger im Amt, auch bei einer vorzeitigen Auflösung.",
       "topics": [
-        "Zusammensetzung des Gemeinderats",
-        "Angelobung",
-        "Wahlen und Wahlrecht"
+        "Funktionsperiode",
+        "Gemeinderatsmandat"
       ]
     },
     "14": {
-      "summary": "Erfasst werden die näheren Einzelheiten. Ein Mitglied des Gemeinderates wird seines Amtes verlustig:1.wenn in Ansehung seiner Person ein Grund zur Ausschließung von der Wahlberechtigung eintritt,2.wenn es das im § 19 geforderte Gelöbnis nicht ablegt.",
+      "summary": "Ein Gemeinderatsmitglied verliert sein Mandat, wenn ein Ausschlussgrund von der Wahlberechtigung eintritt oder das Gelöbnis verweigert wird. Bei Abgang eines Mitglieds beruft der Bürgermeister den Ersatzbewerber ein.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats"
+        "Mandatsverlust",
+        "Ersatzbewerber"
       ]
     },
     "15": {
-      "summary": "Die Vorschrift enthält Regelungen zu rechte und Pflichten der Gemeinderatsmitglieder. Die Rechte und Pflichten der Gemeinderatsmitglieder werden außer in diesem Gesetz auch in den vom Gemeinderat zu erlassenden Geschäftsordnungen (§§ 30 und 60) geregelt.",
+      "summary": "Gemeinderatsmitglieder haben umfassende Rechte, darunter schriftliche und mündliche Anfragen, Antragsrecht, Protokolleinsicht sowie die Möglichkeit, Verhandlungen zu verlangen und an Ausschusssitzungen teilzunehmen. Anträge müssen innerhalb eines Monats nach Zuweisung behandelt werden.",
       "topics": [
-        "Bürgermeister",
-        "Tagesordnung",
-        "Verhandlungsschrift"
+        "Rechte der Gemeinderatsmitglieder",
+        "Anfragerecht",
+        "Antragsrecht"
       ]
     },
     "16": {
-      "summary": "Es werden die Voraussetzungen für dringliche Initiativen. Die Mitglieder des Gemeinderates können für dessen öffentliche Sitzungen dringliche Initiativen in Form von dringlichen Anfragen und dringlichen Anträgen einbringen.",
+      "summary": "Für öffentliche Gemeinderatssitzungen können dringliche Anfragen und Anträge eingebracht werden. Jede dringliche Initiative benötigt die Unterstützung von mindestens sechs Mitgliedern, wobei pro Kalenderjahr höchstens zwei je Mitglied zulässig sind.",
       "topics": [
-        "Dringlichkeitsanträge",
-        "Öffentlichkeit der Sitzungen",
+        "Dringliche Initiativen",
         "Gemeinderatssitzungen"
       ]
     },
     "17": {
-      "summary": "Die Bestimmung regelt aktuelle Stunde. Die Aktuelle Stunde dient einer Aussprache über Themen von allgemeinem aktuellen Interesse aus dem Bereich der Gemeindeverwaltung.",
+      "summary": "In der Aktuellen Stunde findet eine Aussprache über allgemein interessierende Themen der Gemeindeverwaltung statt, ohne dass Anträge gestellt oder Beschlüsse gefasst werden dürfen.",
       "topics": [
-        "Aktuelle Stunde"
+        "Aktuelle Stunde",
+        "Gemeinderatsdebatte"
       ]
     },
     "18": {
-      "summary": "Es wird bestimmt, verschiedene Aspekte rund um klubs des Gemeinderates. Mindestens drei Gemeinderatsmitglieder derselben wahlwerbenden Partei haben das Recht, sich zu einem Klub zusammenzuschließen.",
+      "summary": "Mindestens drei Gemeinderatsmitglieder derselben wahlwerbenden Partei können einen Klub bilden. Der Klubvorsitzende benötigt die schriftliche Unterstützung von mehr als der Hälfte der Klubmitglieder und darf während seiner Amtstätigkeit keinen Beruf mit Erwerbsabsicht ausüben.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats"
+        "Klubbildung",
+        "Fraktionen"
       ]
     },
     "19": {
-      "summary": "Vorgesehen ist verschiedene Aspekte rund um gelöbnis der Mitglieder des Gemeinderates, Disziplinarkollegium in 7 Absätzen. ",
+      "summary": "Jedes Gemeinderatsmitglied hat bei Namensaufruf ein Treuegelöbnis gegenüber der Republik und der Stadt Wien abzulegen. Ein Disziplinarkollegium aus 15 Mitgliedern entscheidet über allfällige Gelöbnisbrüche, wobei das beanstandete Mitglied ein Ablehnungsrecht gegenüber einzelnen Kollegiumsmitgliedern hat.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Gemeinderatssitzungen"
+        "Angelobung",
+        "Disziplinarkollegium"
       ]
     },
     "20": {
-      "summary": "Im Mittelpunkt steht verschiedene Aspekte rund um befangenheit von Gemeinderatsmitgliedern, Enthalten von der Abstimmung. Ein Mitglied des Gemeinderates gilt, unbeschadet bundesgesetzlicher Vorschriften, als befangen, wenn einer der Gründe des § 7 Abs.",
+      "summary": "Befangene Gemeinderatsmitglieder müssen dies dem Vorsitzenden mitteilen und den Sitzungssaal verlassen. Wird über die dienstliche Wirksamkeit eines Mitglieds beraten, hat es sich der Abstimmung zu enthalten, muss aber für Auskünfte zur Verfügung stehen.",
       "topics": [
-        "Bürgermeister",
         "Befangenheit",
-        "Gemeinderatssitzungen"
+        "Abstimmungsausschluss"
       ]
     },
     "21": {
-      "summary": "Der Gemeinderat tritt ist verpflichtet, bestimmte Aufgaben im Bereich Anzahl und Einberufung der Sitzungen wahrzunehmen. Der Gemeinderat tritt zusammen, sooft es die Geschäfte erfordern.",
+      "summary": "Der Gemeinderat tritt auf Einberufung des Bürgermeisters zusammen; Sitzungen ohne ordnungsgemäße Einberufung sind rechtswidrig und die darin gefassten Beschlüsse ungültig. Auf Verlangen von 25 Mitgliedern oder einem Klub muss innerhalb von 21 Tagen eine Sitzung einberufen werden.",
       "topics": [
-        "Bürgermeister",
-        "Tagesordnung",
+        "Sitzungseinberufung",
         "Gemeinderatssitzungen"
       ]
     },
     "22": {
-      "summary": "Die Bestimmung legt fest, unter welchen Voraussetzungen Entscheidungen im Bereich „Öffentlichkeit der Sitzungen, Verhandlungssprache, Verhalten der Zuhörer\" getroffen werden können. ",
+      "summary": "Gemeinderatssitzungen sind grundsätzlich öffentlich und können im Internet live übertragen werden. Auf Antrag von mindestens 13 Mitgliedern und Mehrheitsbeschluss kann die Öffentlichkeit ausgeschlossen werden, nicht jedoch bei Rechnungsabschluss, Voranschlag, Fragestunden oder Untersuchungskommissionsberichten.",
       "topics": [
-        "Bürgermeister",
-        "Dringlichkeitsanträge",
-        "Öffentlichkeit der Sitzungen"
+        "Sitzungsöffentlichkeit",
+        "Internetübertragung"
       ]
     },
     "23": {
-      "summary": "Diese Vorschrift betrifft verschiedene Aspekte rund um vorsitzende. ",
+      "summary": "Aus der Mitte des Gemeinderates werden vier Vorsitzende gewählt, wobei amtsführende Stadträte nicht wählbar sind. Bei Verhinderung des Ersten Vorsitzenden übernehmen die weiteren Vorsitzenden in der Reihung dessen Rechte und Pflichten.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Gemeinderatssitzungen"
+        "Vorsitz im Gemeinderat",
+        "Vertretungsregelung"
       ]
     },
     "24": {
-      "summary": "Der Vorsitzende des ist verpflichtet, bestimmte Aufgaben im Bereich Präsidialkonferenz des Gemeinderates wahrzunehmen. Der Vorsitzende des Gemeinderates und die Vorsitzenden der Klubs bilden die Präsidialkonferenz.",
+      "summary": "Die Präsidialkonferenz, bestehend aus dem Vorsitzenden des Gemeinderates und den Klubvorsitzenden, berät den Vorsitzenden bei allen Amtsgeschäften. Ihre Empfehlungen sollen nach Möglichkeit einvernehmlich erfolgen.",
       "topics": [
-        "Geschäftsordnung"
+        "Präsidialkonferenz",
+        "Beratungsorgan"
       ]
     },
     "25": {
-      "summary": "Die Vorschrift enthält Regelungen zu verschiedene Aspekte rund um beschlußfähigkeit in 4 Absätzen. ",
+      "summary": "Für reguläre Beschlüsse genügt die Anwesenheit eines Drittels der Gemeinderatsmitglieder. Bei bestimmten Vermögens-, Darlehens- und Bürgschaftsangelegenheiten ist hingegen die Anwesenheit der Hälfte der Mitglieder erforderlich.",
       "topics": [
         "Beschlussfähigkeit",
-        "Gemeinderatssitzungen",
-        "Gemeindevermögen"
+        "Quorum"
       ]
     },
     "26": {
-      "summary": "Es werden die Voraussetzungen für genehmigung der Anträge des Stadtsenates ohne Verhandlungen. ",
+      "summary": "Anträge des Stadtsenates, die mindestens vier Tage vor der Sitzung bekannt gegeben wurden, gelten ohne Verhandlung als angenommen, sofern kein Gemeinderatsmitglied die Verhandlung verlangt oder sich für befangen erklärt hat.",
       "topics": [
-        "Befangenheit",
-        "Tagesordnung",
-        "Gemeinderatssitzungen"
+        "Antragsverfahren",
+        "Stadtsenatsanträge"
       ]
     },
     "27": {
-      "summary": "Die Bestimmung regelt beschlußfassung. Zu einem Beschluß des Gemeinderates ist die einfache Mehrheit der in beschlußfähiger Anzahl anwesenden Mitglieder desselben erforderlich, soweit nicht durch Gesetz für bestimmte Angelegenheiten andere Beschlu...",
+      "summary": "Beschlüsse des Gemeinderates erfordern die einfache Mehrheit der anwesenden Mitglieder, sofern nicht gesetzlich anderes vorgesehen ist. Wahlen erfolgen grundsätzlich mittels Stimmzettel.",
       "topics": [
-        "Beschlussfähigkeit",
-        "Wahlen und Wahlrecht"
+        "Beschlussfassung",
+        "Abstimmungsverfahren"
       ]
     },
     "28": {
-      "summary": "Es wird bestimmt, vollzug und Sistierung der Beschlüsse. Der Bürgermeister hat für den Vollzug jedes gültigen Beschlusses des Gemeinderates zu sorgen.",
+      "summary": "Der Bürgermeister sorgt für den Vollzug aller gültigen Gemeinderatsbeschlüsse und bedient sich dabei der amtsführenden Stadträte, des Magistrats oder der Bezirksvorsteher. Erachtet er einen Beschluss als gesetzwidrig oder schädlich, kann er die Vollziehung sistieren und eine neuerliche Verhandlung anordnen.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindeverwaltung"
+        "Beschlussvollzug",
+        "Sistierungsrecht"
       ]
     },
     "29": {
-      "summary": "Vorgesehen ist verschiedene Aspekte rund um fraktionsvereinbarungen in 3 Absätzen. ",
+      "summary": "Die im Gemeinderat vertretenen Parteien können schriftliche Fraktionsvereinbarungen über Sitzungsabläufe und parlamentarische Instrumente schließen. Solche Vereinbarungen benötigen die Zustimmung aller Fraktionen und werden am Tag nach Hinterlegung beim Vorsitzenden wirksam.",
       "topics": [
-        "Dringlichkeitsanträge",
-        "Gemeinderatssitzungen",
-        "Wahlen und Wahlrecht"
+        "Fraktionsvereinbarungen",
+        "Geschäftsordnungsvereinbarungen"
       ]
     },
     "30": {
-      "summary": "Inhaltlich geht es um geschäftsordnung des Gemeinderates. Der Gemeinderat beschließt seine Geschäftsordnung.",
+      "summary": "Der Gemeinderat beschließt seine eigene Geschäftsordnung, die insbesondere Bestimmungen über Rechte und Pflichten der Mitglieder, Sitzungsablauf, Redezeitbeschränkungen und Abstimmungen enthalten kann. Änderungen müssen mindestens acht Tage vor der Verhandlung mitgeteilt werden.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Tagesordnung"
+        "Geschäftsordnung des Gemeinderates",
+        "Parlamentarische Regeln"
       ]
     },
     "31": {
-      "summary": "Normiert werden wahl des Bürgermeisters. Der Gemeinderat wählt den Bürgermeister auf die Dauer der Wahlperiode des Gemeinderates.",
+      "summary": "Der Bürgermeister wird vom Gemeinderat auf die Dauer der Wahlperiode gewählt und muss nicht dem Gemeinderat angehören, aber wählbar sein. Er bleibt bis zur Neuwahl seines Nachfolgers im Amt.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Wahlen und Wahlrecht"
+        "Bürgermeisterwahl"
       ]
     },
     "32": {
-      "summary": "Festgelegt werden gelöbnis des Bürgermeisters. Der Bürgermeister hat vor dem versammelten Gemeinderat folgendes Gelöbnis abzulegen:",
+      "summary": "Vor dem versammelten Gemeinderat hat der Bürgermeister ein Gelöbnis abzulegen.",
       "topics": [
-        "Bürgermeister",
-        "Angelobung"
+        "Angelobung des Bürgermeisters"
       ]
     },
     "33": {
-      "summary": "Der Paragraph befasst sich mit vorkehrungen im Falle der Erledigung der Stelle des Bürgermeisters. Kommt die Stelle des Bürgermeisters während der regelmäßigen fünfjährigen Amtsdauer zur Erledigung, so hat ehestens deren Neubesetzung zu erfolgen.",
+      "summary": "Bei Erledigung der Bürgermeisterstelle hat der Vertreter die Geschäfte fortzuführen und innerhalb eines Monats eine Gemeinderatssitzung zur Neuwahl einzuberufen.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Gemeinderatssitzungen"
+        "Bürgermeisternachfolge",
+        "Amtsvakanz"
       ]
     },
     "34": {
-      "summary": "Behandelt wird verschiedene Aspekte rund um zusammensetzung und Wahl des Stadtsenates in 6 Absätzen. Im Gemeinderat vertretene Wahlparteien haben nach Maßgabe ihrer Stärke Anspruch auf Vertretung im Stadtsenat.",
+      "summary": "Im Gemeinderat vertretene Parteien haben nach ihrer Stärke Anspruch auf Vertretung im Stadtsenat, der aus mindestens neun und höchstens fünfzehn Stadträten besteht. Zwei davon werden als Vizebürgermeister gewählt, wobei je einer von der stärksten und zweitstärksten Partei vorgeschlagen wird.",
       "topics": [
-        "Bürgermeisterwahl",
+        "Stadtsenat",
         "Vizebürgermeister",
-        "Bürgermeister"
+        "Proporzprinzip"
       ]
     },
     "35": {
-      "summary": "Bestimmt wird gelöbnis der Stadträte. Die Stadträte haben vor dem versammelten Gemeinderat das Gelöbnis im Sinne des § 32 abzulegen.",
+      "summary": "Stadträte legen vor dem versammelten Gemeinderat ihr Gelöbnis ab und verbleiben auch nach Ablauf der Amtsdauer bis zur Neuwahl im Amt.",
       "topics": [
-        "Angelobung",
-        "Wahlen und Wahlrecht"
+        "Angelobung der Stadträte"
       ]
     },
     "36": {
-      "summary": "Hier wird festgelegt, amtsführende Stadträte. Der Gemeinderat wählt über Vorschlag des Stadtsenates für jede Verwaltungsgruppe einen Stadtrat, der hinsichtlich des eigenen Wirkungsbereiches die Geschäftsgruppe des Magistrats zu leiten hat und dem ...",
+      "summary": "Für jede Verwaltungsgruppe wählt der Gemeinderat auf Vorschlag des Stadtsenates einen amtsführenden Stadtrat, der die entsprechende Geschäftsgruppe des Magistrats leitet.",
       "topics": [
-        "Gemeindevorstand",
-        "Gemeindeverwaltung"
+        "Amtsführende Stadträte",
+        "Verwaltungsgruppen"
       ]
     },
     "37": {
-      "summary": "Gegenstand ist abberufung des Bürgermeisters und amtsführender Stadträte. ",
+      "summary": "Entzieht der Gemeinderat dem Bürgermeister oder einem amtsführenden Stadtrat durch ausdrückliche Entschließung das Vertrauen, gilt dieser als abberufen. Ein solcher Misstrauensantrag erfordert mindestens ein Viertel aller Gemeinderatsmitglieder und die Anwesenheit der Hälfte bei der Abstimmung.",
       "topics": [
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats",
-        "Abstimmung und Mehrheiten"
+        "Misstrauensvotum",
+        "Abberufung"
       ]
     },
     "38": {
-      "summary": "Die Regelung umfasst verschiedene Aspekte rund um vertretung der amtsführenden Stadträte in 3 Absätzen. ",
+      "summary": "Bei Verhinderung eines amtsführenden Stadtrates bestimmt dieser selbst einen Vertreter; fehlt ein Vorschlag, betraut der Bürgermeister einen anderen Stadtrat oder mit Zustimmung des Stadtsenates ein Gemeinderatsmitglied derselben Partei.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Gemeinderatssitzungen"
+        "Stadtrats-Vertretung"
       ]
     },
     "39": {
-      "summary": "Geregelt wird einberufung der Sitzungen des Stadtsenates. Der Stadtsenat wird vom Bürgermeister einberufen.",
+      "summary": "Der Stadtsenat wird vom Bürgermeister einberufen. Seine Sitzungen sind nicht öffentlich, wobei bestimmte Angelegenheiten ausdrücklich als vertraulich gelten.",
       "topics": [
-        "Bürgermeister",
-        "Öffentlichkeit der Sitzungen",
-        "Gemeinderatssitzungen"
+        "Stadtsenatssitzungen",
+        "Vertraulichkeit"
       ]
     },
     "40": {
-      "summary": "Inhaltlich geht es um vorsitz im Stadtsenat. Den Vorsitz im Stadtsenat führt der Bürgermeister, im Fall seiner Verhinderung sein Vertreter (§ 94).",
+      "summary": "Im Stadtsenat führt der Bürgermeister den Vorsitz, bei Verhinderung sein Vertreter.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindevorstand"
+        "Vorsitz im Stadtsenat"
       ]
     },
     "41": {
-      "summary": "Normiert werden beiziehung weiterer Personen. Der Stadtsenat ist berechtigt, seinen Sitzungen Gemeinderatsmitglieder, Bezirksvorsteher und sonstige sachkundige Personen mit beratender Stimme beizuziehen.",
+      "summary": "Der Stadtsenat kann Gemeinderatsmitglieder, Bezirksvorsteher und sachkundige Personen mit beratender Stimme beiziehen. Auch der Magistratsdirektor hat das Teilnahme- und Antragsrecht.",
       "topics": [
-        "Gemeinderatssitzungen",
-        "Gemeindevorstand",
-        "Gemeindeverwaltung"
+        "Beratende Teilnahme",
+        "Magistratsdirektor"
       ]
     },
     "42": {
-      "summary": "Festgelegt werden befangenheit von Stadträten. Ein Stadtrat gilt, unbeschadet bundesgesetzlicher Vorschriften, als befangen, wenn einer der Gründe des § 7 Abs.",
+      "summary": "Befangene Stadträte müssen ihre Befangenheit dem Bürgermeister mitteilen und während der betreffenden Beratung und Beschlussfassung den Sitzungssaal verlassen.",
       "topics": [
-        "Bürgermeister",
-        "Befangenheit"
+        "Befangenheit im Stadtsenat"
       ]
     },
     "43": {
-      "summary": "Die Berichterstattung im ist verpflichtet, bestimmte Aufgaben im Bereich Berichterstattung im Stadtsenat und Akteneinsicht wahrzunehmen. Die Berichterstattung im Stadtsenat obliegt in der Regel dem zuständigen amtsführenden Stadtrat oder, im Fall seiner Verhinderung, dem von ihm bestimmten Stadtrat.",
+      "summary": "Im Stadtsenat erstattet üblicherweise der zuständige amtsführende Stadtrat Bericht. Jeder Stadtrat hat Einsicht in die dem Stadtsenat vorliegenden Dienststücke.",
       "topics": [
-        "Bürgermeister",
-        "Gemeinderatssitzungen",
-        "Zusammensetzung des Gemeinderats"
+        "Berichterstattung",
+        "Akteneinsicht"
       ]
     },
     "44": {
-      "summary": "Behandelt wird sitzungsprotokoll. Über die Sitzungen des Stadtsenates sind durch Magistratsbeamte, die der Bürgermeister bestimmt, Protokolle zu führen, in welchen alle Anträge und Beschlüsse aufgenommen werden müssen.",
+      "summary": "Über Stadtsenatssitzungen sind Protokolle zu führen, die alle Anträge und Beschlüsse enthalten. Vertrauliche Beschlüsse werden gesondert protokolliert und erst nach Aufhebung der Vertraulichkeit durch den Bürgermeister zur Einsicht freigegeben.",
       "topics": [
-        "Bürgermeister",
-        "Verhandlungsschrift",
-        "Gemeinderatssitzungen"
+        "Sitzungsprotokolle",
+        "Vertraulichkeit"
       ]
     },
     "45": {
-      "summary": "Bestimmt wird beschlüsse des Stadtsenates. Zur Beschlußfähigkeit ist die Anwesenheit der Hälfte der Mitglieder erforderlich.",
+      "summary": "Zur Beschlussfähigkeit des Stadtsenates ist die Anwesenheit der Hälfte seiner Mitglieder erforderlich; Beschlüsse bedürfen der einfachen Stimmenmehrheit.",
       "topics": [
-        "Beschlussfähigkeit",
-        "Abstimmung und Mehrheiten",
-        "Gemeindevorstand"
+        "Beschlussfähigkeit des Stadtsenates"
       ]
     },
     "46": {
-      "summary": "Hier wird festgelegt, geschäftsordnung des Stadtsenates. Der Stadtsenat hat seine Geschäftsordnung unter Bedachtnahme auf die ihm zukommenden Aufgaben sowie unter Berücksichtigung der Erfordernisse des Amtsbetriebes zu beschließen.",
+      "summary": "Der Stadtsenat beschließt seine Geschäftsordnung unter Berücksichtigung seiner Aufgaben und der Erfordernisse des Amtsbetriebes.",
       "topics": [
-        "Geschäftsordnung",
-        "Gemeindevorstand"
+        "Geschäftsordnung des Stadtsenates"
       ]
     },
     "47": {
-      "summary": "Gegenstand ist vollzug der Beschlüsse. Der Bürgermeister ist außer in den im § 48 angeführten Fällen verpflichtet, für den Vollzug jedes gültigen Beschlusses des Stadtsenates zu sorgen.",
+      "summary": "Für den Vollzug gültiger Stadtsenatsbeschlüsse sorgt der Bürgermeister, der sich der amtsführenden Stadträte, des Magistrats oder der Bezirksvorsteher bedient.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindevorstand",
-        "Gemeindeverwaltung"
+        "Vollzug von Stadtsenatsbeschlüssen"
       ]
     },
     "48": {
-      "summary": "Die Regelung umfasst vorlage von Beschlüssen des Stadtsenates an den Gemeinderat. ",
+      "summary": "Der Bürgermeister kann jeden Stadtsenatsbeschluss vor dem Vollzug sistieren und eine neuerliche Beschlussfassung verlangen. Verbleibt der Stadtsenat bei seinem Beschluss, kann der Bürgermeister die Angelegenheit dem Gemeinderat vorlegen.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindevorstand"
+        "Sistierungsrecht",
+        "Bürgermeistervorbehalt"
       ]
     },
     "49": {
-      "summary": "Die Bestimmung regelt anzahl der Ausschüsse. Für jede vom Gemeinderat zu bestimmende Verwaltungsgruppe ist mindestens ein Gemeinderatsausschuß einzurichten.",
+      "summary": "Für jede Verwaltungsgruppe ist mindestens ein Gemeinderatsausschuss einzurichten. Der Finanzausschuss verfügt über ein umfassendes Gebarungskontrollrecht, und für den Stadtrechnungshof ist ein eigener Ausschuss vorgesehen.",
       "topics": [
-        "Ausschüsse",
-        "Gemeindebetriebe",
-        "Haushalt und Finanzen"
+        "Gemeinderatsausschüsse",
+        "Finanzausschuss",
+        "Stadtrechnungshofausschuss"
       ]
     },
     "50": {
-      "summary": "Es wird bestimmt, verschiedene Aspekte rund um zusammensetzung und Nominierung der Mitglieder (Ersatzmitglieder) der Ausschüsse in 3 Absätzen. ",
+      "summary": "Ausschüsse bestehen aus dem amtsführenden Stadtrat und mindestens zehn Mitgliedern sowie Ersatzmitgliedern, die nach Parteienproporz verteilt werden. Die Nominierung erfordert die Unterstützung von mehr als der Hälfte der Gemeinderatsmitglieder der jeweiligen Partei.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats"
+        "Ausschusszusammensetzung",
+        "Proporz"
       ]
     },
     "51": {
-      "summary": "Vorgesehen ist stimmrecht des amtsführenden Stadtrates.",
+      "summary": "Bestimmung über das Stimmrecht des amtsführenden Stadtrates.",
       "topics": [
-        "Stimmrecht des amtsführenden Stadtrates"
+        "Stimmrecht im Ausschuss"
       ]
     },
     "52": {
-      "summary": "Im Mittelpunkt steht verschiedene Aspekte rund um einberufung der Ausschußsitzungen in 3 Absätzen. Die Sitzungen werden vom amtsführenden Stadtrat einberufen.",
+      "summary": "Ausschusssitzungen werden vom amtsführenden Stadtrat einberufen, der dazu innerhalb von fünf Tagen verpflichtet ist, wenn ein Viertel der Mitglieder es verlangt. Die Sitzungen sind nicht öffentlich und können für vertraulich erklärt werden.",
       "topics": [
-        "Tagesordnung",
-        "Öffentlichkeit der Sitzungen",
-        "Gemeinderatssitzungen"
+        "Ausschusssitzungen",
+        "Einberufungspflicht"
       ]
     },
     "53": {
-      "summary": "Definiert werden vorsitz. Jeder Ausschuß wählt aus der Mitte seiner stimmberechtigten Mitglieder einen Vorsitzenden und mindestens zwei Stellvertreter auf die Dauer der Wahlperiode des Gemeinderates nach § 97 Wiener Gemeindewahlordnung 1996.",
+      "summary": "Jeder Ausschuss wählt aus seinen stimmberechtigten Mitgliedern einen Vorsitzenden und mindestens zwei Stellvertreter für die Dauer der Wahlperiode.",
       "topics": [
-        "Zusammensetzung des Gemeinderats",
-        "Ausschüsse",
-        "Wahlen und Wahlrecht"
+        "Ausschussvorsitz"
       ]
     },
     "54": {
-      "summary": "Die Bestimmung legt fest, beschlußfähigkeit und Beschlußfassung. Die Ausschüsse sind beschlußfähig, wenn wenigstens ein Drittel der Mitglieder (Ersatzmitglieder) anwesend ist.",
+      "summary": "Ausschüsse sind bei Anwesenheit eines Drittels der Mitglieder beschlussfähig. Bei Stimmengleichheit gibt die Stimme des Vorsitzenden den Ausschlag.",
       "topics": [
-        "Beschlussfähigkeit",
-        "Abstimmung und Mehrheiten",
-        "Ausschüsse"
+        "Beschlussfähigkeit der Ausschüsse",
+        "Abstimmung"
       ]
     },
     "55": {
-      "summary": "Diese Vorschrift betrifft verschiedene Aspekte rund um stadtrechnungshofausschuss in 3 Absätzen. ",
+      "summary": "Der Stadtrechnungshofausschuss hat eine besondere Zusammensetzung: Jede Partei erhält mindestens einen Sitz, und das Vorschlagsrecht für den Vorsitz steht bevorzugt der kleinsten Fraktion zu. Amtsführende Stadträte dürfen dem Ausschuss nicht angehören, werden aber bei Behandlung ihrer Angelegenheiten eingeladen.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Gemeinderatssitzungen"
+        "Stadtrechnungshofausschuss",
+        "Kontrolle"
       ]
     },
     "56": {
-      "summary": "Erfasst werden verschiedene Aspekte rund um unterausschüsse in 3 Absätzen. Zur Vorberatung einzelner oder gleichartiger Angelegenheiten können die Ausschüsse Unterausschüsse einrichten.",
+      "summary": "Ausschüsse können Unterausschüsse zur Vorberatung einzelner Angelegenheiten einrichten. Auch Ersatzmitglieder des Ausschusses sowie fraktionsfremde Gemeinderatsmitglieder können nominiert werden.",
       "topics": [
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats",
-        "Ausschüsse"
+        "Unterausschüsse"
       ]
     },
     "57": {
-      "summary": "Es wird verpflichtet, bestimmte Aufgaben im Bereich Auflösung von Ausschüssen und Abberufung von Mitgliedern (Ersatzmitgliedern) wahrzunehmen. ",
+      "summary": "Der Gemeinderat kann Ausschüsse auflösen, die ihre Geschäfte nicht ordnungsgemäß besorgen, und Mitglieder abberufen, die dreimal unentschuldigt gefehlt haben. In der Übergangszeit übernimmt der Stadtsenat die Befugnisse eines aufgelösten Ausschusses.",
       "topics": [
-        "Bürgermeister",
-        "Gemeinderatssitzungen",
-        "Zusammensetzung des Gemeinderats"
+        "Ausschussauflösung",
+        "Abberufung"
       ]
     },
     "58": {
-      "summary": "Es werden die Voraussetzungen für enqueten. Die Ausschüsse können über Antrag eines Mitgliedes (Ersatzmitgliedes) die Abhaltung einer Enquete über Angelegenheiten ihres Wirkungsbereiches beschließen.",
+      "summary": "Ausschüsse können auf Antrag eines Mitglieds Enqueten zu Angelegenheiten ihres Wirkungsbereiches beschließen, in denen jedoch keine Beschlüsse gefasst werden dürfen.",
       "topics": [
-        "Ausschüsse"
+        "Enqueten"
       ]
     },
     "59": {
-      "summary": "Die Bestimmung regelt unter welchen Voraussetzungen Entscheidungen im Bereich „Kommissionen\" getroffen werden können. ",
+      "summary": "Der Gemeinderat kann Kommissionen zur Vorberatung einzelner Gegenstände einrichten, die aus mindestens sechs Mitgliedern bestehen und nach Parteienproporz besetzt werden. Die Kommissionen können auch anstelle der zuständigen Ausschüsse Beschlüsse fassen.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Beschlussfähigkeit"
+        "Kommissionen",
+        "Vorberatung"
       ]
     },
     "60": {
-      "summary": "Hier wird festgelegt, unter welchen Voraussetzungen Entscheidungen im Bereich „Geschäftsordnung für die Ausschüsse, Unterausschüsse und Kommissionen des Gemeinderates\" getroffen werden können. ",
+      "summary": "Der Gemeinderat beschließt die Geschäftsordnung für seine Ausschüsse, Unterausschüsse und Kommissionen. Diese kann besondere Beschlusserfordernisse und Regelungen über Rechte, Pflichten und Verfahrensabläufe festlegen.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Tagesordnung"
+        "Ausschuss-Geschäftsordnung"
       ]
     },
     "61": {
-      "summary": "Gegenstand ist verschiedene Aspekte rund um zusammensetzung und Wahl in 3 Absätzen. Die Bezirksvertretung besteht in Bezirken bis zu 50 000 Einwohnern aus 40 Mitgliedern.",
+      "summary": "Bezirksvertretungen bestehen je nach Einwohnerzahl aus 40 bis 60 Mitgliedern, die den Titel Bezirksrat führen. Die genaue Mitgliederzahl wird vom Bürgermeister nach Volkszählungsergebnissen per Verordnung festgestellt.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats"
+        "Bezirksvertretung",
+        "Zusammensetzung"
       ]
     },
     "62": {
-      "summary": "Es werden die Voraussetzungen für die näheren Einzelheiten. ",
+      "summary": "Beim Ausscheiden eines Bezirksvertretungsmitglieds wird ein Ersatzbewerber einberufen. Bei vorzeitiger Erledigung des Bezirksvorsteher-Amtes hat die Bezirksvertretung binnen vier Wochen eine Neuwahl durchzuführen.",
       "topics": [
-        "Zusammensetzung des Gemeinderats",
-        "Wahlen und Wahlrecht"
+        "Mandatsnachfolge",
+        "Neuwahl im Bezirk"
       ]
     },
     "63": {
-      "summary": "Die Bestimmung regelt gelöbnis der Mitglieder. Die Mitglieder der Bezirksvertretung und der allenfalls der Bezirksvertretung nicht angehörende Bezirksvorsteher haben bei ihrem Amtsantritt dem Bürgermeister oder einem von ihm ermächtigten Vertreter...",
+      "summary": "Mitglieder der Bezirksvertretung und ein allenfalls nicht der Bezirksvertretung angehörender Bezirksvorsteher geloben bei Amtsantritt dem Bürgermeister die getreue Pflichterfüllung. Die Verweigerung oder bedingte Ablegung des Gelöbnisses führt zum Amtsverlust.",
       "topics": [
-        "Bürgermeister",
-        "Angelobung"
+        "Angelobung in der Bezirksvertretung"
       ]
     },
     "64": {
-      "summary": "Es wird bestimmt, verschiedene Aspekte rund um sitzungen der Bezirksvertretung in 4 Absätzen. Die Sitzungen der Bezirksvertretung sind mindestens in jedem Vierteljahr einmal vom Bezirksvorsteher einzuberufen.",
+      "summary": "Bezirksvertretungssitzungen finden mindestens vierteljährlich statt und sind öffentlich, wobei sie auch im Internet übertragen werden können. Beschlüsse erfordern die Anwesenheit eines Drittels der Mitglieder und werden mit einfacher Mehrheit gefasst.",
       "topics": [
-        "Bürgermeister",
-        "Beschlussfähigkeit",
-        "Öffentlichkeit der Sitzungen"
+        "Bezirksvertretungssitzungen",
+        "Öffentlichkeit"
       ]
     },
     "65": {
-      "summary": "Vorgesehen ist sistierung von Beschlüssen. Wenn eine Bezirksvertretung oder ein Ausschuß der Bezirksvertretung Beschlüsse faßt, welche gegen ein Gesetz oder gegen Beschlüsse des Gemeinderates verstoßen oder den Wirkungsbereich der Bezirksvertretun...",
+      "summary": "Fasst eine Bezirksvertretung gesetzes- oder gemeinderatswidrige Beschlüsse, muss der Bezirksvorsteher die Ausführung aufschieben und die Entscheidung des Bürgermeisters einholen. Auch der Bürgermeister kann seinerseits sistieren und die Angelegenheit dem Gemeinderat vorlegen.",
       "topics": [
-        "Bürgermeister",
-        "Ausschüsse"
+        "Sistierung von Bezirksbeschlüssen",
+        "Aufsicht"
       ]
     },
     "66": {
-      "summary": "Im Mittelpunkt steht auflösung von Bezirksvertretungen. Die Bezirksvertretung kann vom Gemeinderat aufgelöst werden.",
+      "summary": "Der Gemeinderat kann eine Bezirksvertretung auflösen; die Neuwahl muss binnen sechs Wochen ausgeschrieben werden. Einzelne Mitglieder oder der Bezirksvorsteher können bei beharrlicher Pflichtvernachlässigung ihres Amtes enthoben werden.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats"
+        "Auflösung der Bezirksvertretung",
+        "Amtsenthebung"
       ]
     },
     "67": {
-      "summary": "Der Magistrat besteht ist verpflichtet, bestimmte Aufgaben im Bereich Zusammensetzung wahrzunehmen. Der Magistrat besteht aus dem Bürgermeister, den amtsführenden Stadträten, dem Magistratsdirektor und der entsprechenden Anzahl von Bediensteten.",
+      "summary": "Der Magistrat setzt sich aus dem Bürgermeister, den amtsführenden Stadträten, dem Magistratsdirektor und den Bediensteten zusammen. Der Magistratsdirektor leitet den inneren Dienst und muss ein rechtskundiger Verwaltungsbeamter sein.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindebedienstete",
-        "Gemeindeverwaltung"
+        "Magistrat",
+        "Magistratsdirektor"
       ]
     },
     "68": {
-      "summary": "Geregelt wird die näheren Einzelheiten zu diesem Rechtsbereich.",
+      "summary": "Leerbestimmung ohne normativen Inhalt.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Leerbestimmung"
       ]
     },
     "69": {
-      "summary": "Inhaltlich geht es um die näheren Einzelheiten. Die Aufnahme in den Gemeindedienst erfolgt durch den Bürgermeister, soweit nicht der Bürgermeister die Aufnahme bestimmter Gruppen von Bediensteten aus Gründen der Zweckmäßigkeit, Raschheit und Einfa...",
+      "summary": "Die Aufnahme in den Gemeindedienst erfolgt durch den Bürgermeister, wobei er diese Befugnis an geeignete Dienststellen delegieren kann. Beim Stadtrechnungshof entscheidet der Stadtrechnungshofdirektor über Prüfpersonal.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindebedienstete",
-        "Gemeindeverwaltung"
+        "Personalaufnahme",
+        "Gemeindedienst"
       ]
     },
     "70": {
-      "summary": "Normiert werden die näheren Einzelheiten. Das Dienstverhältnis der Angestellten sowie die aus ihm entstehenden Rechte und Pflichten werden in der Dienstordnung und den sonstigen grundsätzlichen Bestimmungen über das Dienstverhältnis geregelt.",
+      "summary": "Rechte und Pflichten der Gemeindebediensteten werden in der Dienstordnung und weiteren grundsätzlichen Bestimmungen über das Dienstverhältnis geregelt.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Dienstrecht"
       ]
     },
     "71": {
-      "summary": "Hier werden zentrale Begriffe definiert, die für den Bereich „Unternehmungen\" maßgeblich sind. Unternehmungen im Sinne dieses Gesetzes sind jene wirtschaftlichen Einrichtungen, denen der Gemeinderat die Eigenschaft einer Unternehmung zuerkennt.",
+      "summary": "Wirtschaftliche Einrichtungen, denen der Gemeinderat die Eigenschaft einer Unternehmung zuerkennt, besitzen keine eigene Rechtspersönlichkeit, verwalten ihr Vermögen aber gesondert. Ein vom Gemeinderat beschlossenes Statut regelt die Organe, Zuständigkeiten und Grundsätze der Geschäftsführung.",
       "topics": [
-        "Bürgermeister",
-        "Geschäftsordnung",
-        "Gemeindevorstand"
+        "Gemeindeunternehmungen",
+        "Wirtschaftliche Einrichtungen"
       ]
     },
     "72": {
-      "summary": "Der Paragraph befasst sich mit betriebe. Verwaltungszweige, die sich ihrer Natur nach dazu eignen, denen jedoch nicht die Eigenschaft einer Unternehmung zuerkannt wurde, können durch Beschluß des Gemeinderates als Betriebe geführt werden.",
+      "summary": "Verwaltungszweige, die sich für eine betriebliche Führung eignen, können vom Gemeinderat als Betriebe geführt werden, die gegenüber anderen Magistratseinheiten erhöhte Selbständigkeit genießen, aber den Gemeindeorganen untergeordnet bleiben.",
       "topics": [
-        "Bürgermeister",
-        "Geschäftsordnung",
-        "Gemeindevorstand"
+        "Gemeindebetriebe"
       ]
     },
     "73": {
-      "summary": "Diese Vorschrift betrifft mehrere zusammenhängende Regelungsbereiche in 8 Absätzen. Der Stadtrechnungshof wird vom Stadtrechnungshofdirektor geleitet.",
+      "summary": "Der Stadtrechnungshof wird vom Stadtrechnungshofdirektor geleitet, der auf zwölf Jahre bestellt wird und keiner Wiederernennung zugänglich ist. Er ist bei der Besorgung seiner Aufgaben weisungsfrei und untersteht der Aufsicht des Gemeinderates. Eine Abberufung erfordert eine Zweidrittelmehrheit.",
       "topics": [
-        "Bürgermeister",
-        "Zusammensetzung des Gemeinderats",
-        "Abstimmung und Mehrheiten"
+        "Stadtrechnungshof",
+        "Stadtrechnungshofdirektor",
+        "Weisungsfreiheit"
       ]
     },
     "74": {
-      "summary": "Diese Vorschrift betrifft einteilung des Wirkungsbereiches. Der Wirkungsbereich der Gemeinde ist ein eigener und ein vom Bund oder vom Land übertragener.",
+      "summary": "Der Wirkungsbereich der Gemeinde gliedert sich in einen eigenen und einen vom Bund oder Land übertragenen Wirkungsbereich.",
       "topics": [
-        "Einteilung des Wirkungsbereiches"
+        "Wirkungsbereich der Gemeinde"
       ]
     },
     "75": {
-      "summary": "Erfasst werden verschiedene Aspekte rund um eigener Wirkungsbereich in 3 Absätzen. ",
+      "summary": "Im eigenen Wirkungsbereich handelt die Gemeinde weisungsfrei und eigenverantwortlich. Als selbständiger Wirtschaftskörper darf sie Vermögen besitzen, wirtschaftliche Unternehmungen betreiben und ihren Haushalt eigenständig führen.",
       "topics": [
-        "Kundmachung und Verordnungen",
-        "Gemeindevermögen",
-        "Wirkungsbereich"
+        "Eigener Wirkungsbereich",
+        "Gemeindeautonomie"
       ]
     },
     "76": {
-      "summary": "Die Vorschrift enthält Regelungen zu die näheren Einzelheiten. Der Gemeinde sind zur Besorgung im eigenen Wirkungsbereich die behördlichen Aufgaben insbesondere in folgenden Angelegenheiten gewährleistet:",
+      "summary": "Bestimmte behördliche Aufgaben sind der Gemeinde ausdrücklich zur Besorgung im eigenen Wirkungsbereich gewährleistet.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Behördliche Aufgaben",
+        "Eigener Wirkungsbereich"
       ]
     },
     "77": {
-      "summary": "Es werden die Voraussetzungen für übertragener Wirkungsbereich. ",
+      "summary": "Im übertragenen Wirkungsbereich besorgt die Gemeinde Angelegenheiten im Auftrag und nach Weisung des Bundes oder des Landes.",
       "topics": [
-        "Wirkungsbereich"
+        "Übertragener Wirkungsbereich"
       ]
     },
     "78": {
-      "summary": "Die Bestimmung regelt organe des eigenen Wirkungsbereiches der Gemeinde. ",
+      "summary": "Den eigenen Wirkungsbereich üben Gemeinderat, Stadtsenat, Bürgermeister, amtsführende Stadträte, Ausschüsse, Bezirksvertretungen, Bezirksvorsteher, der Wiener Berufungssenat und der Magistrat aus.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindevorstand",
-        "Gemeindeverwaltung"
+        "Organe des eigenen Wirkungsbereiches"
       ]
     },
     "79": {
-      "summary": "Es wird bestimmt, organe des übertragenen Wirkungsbereiches der Gemeinde. Der übertragene Wirkungsbereich wird vom Bürgermeister ausgeübt.",
+      "summary": "Im übertragenen Wirkungsbereich handelt der Bürgermeister, gebunden an Weisungen des Bundes oder Landes. Er kann Teilbereiche an Stadtsenatsmitglieder oder andere Gemeindeorgane delegieren.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindevorstand"
+        "Übertragener Wirkungsbereich",
+        "Delegation"
       ]
     },
     "80": {
-      "summary": "Geregelt wird a. Im allgemeinen. Der Gemeinderat ist innerhalb der gesetzlichen Grenzen berufen, die Gemeinde in Ausübung ihrer Rechte und Pflichten zu vertreten, für sie bindende Beschlüsse zu fassen und diese im geeigneten Wege vollziehen zu las...",
+      "summary": "Der Gemeinderat vertritt die Gemeinde, fasst verbindliche Beschlüsse und lässt diese vollziehen. Bürgermeister und übrige Organe sind ihm für die Erfüllung ihrer Aufgaben im eigenen Wirkungsbereich verantwortlich.",
       "topics": [
-        "Bürgermeister"
+        "Stellung des Gemeinderates",
+        "Politische Verantwortlichkeit"
       ]
     },
     "81": {
-      "summary": "Inhaltlich geht es um die näheren Einzelheiten. Demnach gehört zu seinem Wirkungsbereich außer den in dieser Verfassung an anderen Stellen dem Gemeinderat vorbehaltenen Geschäften:",
+      "summary": "Zum Wirkungsbereich des Gemeinderates gehören neben den an anderer Stelle vorbehaltenen Geschäften weitere ihm zugewiesene Aufgaben.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Wirkungsbereich des Gemeinderates"
       ]
     },
     "82": {
-      "summary": "Normiert werden i. Selbstbestimmung. Kraft des der Gemeinde zustehenden Rechtes der Selbstbestimmung in Gemeindeangelegenheiten hat der Gemeinderat innerhalb der gesetzlichen Grenzen organisatorische Beschlüsse in allen den eigenen Wirkungsbereich...",
+      "summary": "Kraft des Selbstbestimmungsrechts fasst der Gemeinderat organisatorische Beschlüsse in allen Angelegenheiten des eigenen Wirkungsbereiches innerhalb der gesetzlichen Grenzen.",
       "topics": [
-        "I. Selbstbestimmung"
+        "Organisationshoheit",
+        "Selbstbestimmungsrecht"
       ]
     },
     "83": {
-      "summary": "Festgelegt werden a) Überhaupt. Infolge des der Gemeinde zustehenden Rechtes der Oberaufsicht ist der Gemeinderat befugt, die Geschäftsführung aller Gemeindeämter, -betriebe und -anstalten in Angelegenheiten des eigenen Wirkungsbereiches zu unters...",
+      "summary": "Aufgrund des Oberaufsichtsrechts kann der Gemeinderat die Geschäftsführung aller Gemeindeämter, -betriebe und -anstalten untersuchen und sich die Vorlage sämtlicher relevanter Unterlagen und die Genehmigung in wichtigen Einzelfällen vorbehalten.",
       "topics": [
-        "Gemeindeaufsicht"
+        "Oberaufsicht",
+        "Kontrollrecht des Gemeinderates"
       ]
     },
     "84": {
-      "summary": "Der Gemeinderat ist ist verpflichtet, bestimmte Aufgaben im Bereich b) Insbesondere bezüglich der Verwaltung des Gemeindevermögens und Gemeindegutes wahrzunehmen. Der Gemeinderat ist verpflichtet, das gesamte Vermögen der Gemeinde in Übersicht zu halten.",
+      "summary": "Der Gemeinderat ist verpflichtet, das gesamte Gemeindevermögen zu überblicken und ertragsoptimierend zu verwalten. Nutzungen des Gemeindegutes über den Eigenbedarf hinaus müssen Erträge für die Gemeinde abwerfen.",
       "topics": [
-        "Gemeindevermögen"
+        "Vermögensverwaltung",
+        "Gemeindegut"
       ]
     },
     "85": {
-      "summary": "Behandelt wird c) Skontrierung der Kassen. Der Gemeinderat hat darauf zu sehen, daß die städtischen Kassen von Zeit zu Zeit skontriert werden, und kann deren Skontrierung durch den Stadtsenat sowie auch durch Kommissionen aus seiner Mitte vornehmen.",
+      "summary": "Der Gemeinderat hat dafür zu sorgen, dass die städtischen Kassen regelmäßig überprüft werden, und kann die Skontrierung durch den Stadtsenat oder eigene Kommissionen vornehmen lassen.",
       "topics": [
-        "Gemeindevorstand"
+        "Kassenskontrierung",
+        "Finanzkontrolle"
       ]
     },
     "86": {
-      "summary": "Der Gemeinderat hat ist verpflichtet, bestimmte Aufgaben im Bereich a) Feststellung des Voranschlages wahrzunehmen. ",
+      "summary": "Der Gemeinderat stellt den Voranschlag der Gemeinde rechtzeitig vor Jahresbeginn fest und legt einen Finanzrahmen für die nächsten fünf Jahre vor. Es besteht die Möglichkeit eines Doppelbudgets, und Voranschlagsentwürfe sind vier Wochen vor der Beratung online zu veröffentlichen.",
       "topics": [
-        "Gemeinderatssitzungen",
-        "Zusammensetzung des Gemeinderats",
-        "Gemeindevorstand"
+        "Gemeindevoranschlag",
+        "Finanzrahmen",
+        "Budgetrecht"
       ]
     },
     "87": {
-      "summary": "Bestimmt wird verschiedene Aspekte rund um b) Prüfung und Erledigung des Rechnungsabschlusses in 4 Absätzen. Der Gemeinderat prüft und erledigt die Rechnungsabschlüsse der Gemeinde sowie ihrer Fonds, Anstalten und Betriebe.",
+      "summary": "Der Gemeinderat prüft und erledigt die Rechnungsabschlüsse der Gemeinde sowie ihrer Fonds, Anstalten und Betriebe. Der Entwurf ist längstens sechs Monate nach Jahresende vorzulegen und vor der Beratung online zu veröffentlichen.",
       "topics": [
-        "Gemeindevorstand",
-        "Ausschüsse",
-        "Rechnungsabschluss"
+        "Rechnungsabschluss",
+        "Rechnungsprüfung"
       ]
     },
     "88": {
-      "summary": "Hier wird festgelegt, unter welchen Voraussetzungen Entscheidungen im Bereich „c) Sonstige besonders wichtige Verwaltungsangelegenheiten\" getroffen werden können. ",
+      "summary": "Dem Gemeinderat sind zahlreiche besonders wichtige Verwaltungsangelegenheiten vorbehalten, darunter Vermögenstransaktionen, Darlehensaufnahmen, Bürgschaften, Entgeltfestsetzungen, Neubauten und Ehrungen. Die Wertgrenzen errechnen sich anteilig aus den Ertragsanteilen an den Bundesabgaben und werden jährlich per Verordnung festgestellt.",
       "topics": [
-        "Geschäftsordnung",
-        "Gemeindevorstand",
-        "Ausschüsse"
+        "Gemeinderatsvorbehalt",
+        "Wertgrenzen",
+        "Vermögensangelegenheiten"
       ]
     },
     "89": {
-      "summary": "Gegenstand ist unter welchen Voraussetzungen Entscheidungen im Bereich „Überlassung von Gegenständen an die Bezirksvertretungen\" getroffen werden können. ",
+      "summary": "Per Verordnung oder im Einzelfall kann der Gemeinderat weitere Angelegenheiten des eigenen Wirkungsbereiches den Bezirksvertretungen zur Beschlussfassung überlassen, sofern Zweckmäßigkeit, Raschheit und Kostenersparnis dafür sprechen.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Aufgabenübertragung an Bezirke"
       ]
     },
     "90": {
-      "summary": "Die Bestimmung regelt vom Wirkungsbereich des Bürgermeisters. Der Bürgermeister steht an der Spitze der Gemeindeverwaltung.",
+      "summary": "An der Spitze der Gemeindeverwaltung steht der Bürgermeister, der die Gemeinde nach außen vertritt und über die Einhaltung der Wirkungsbereiche der Organe wacht.",
       "topics": [
         "Bürgermeister",
-        "Gemeindebedienstete",
-        "Gemeindebetriebe"
+        "Gemeindevertretung"
       ]
     },
     "91": {
-      "summary": "Es wird bestimmt, die Befugnisse und Entscheidungsmöglichkeiten der zuständigen Organe. ",
+      "summary": "Als Vorstand des Magistrats erlässt der Bürgermeister mit Genehmigung des Gemeinderates die Geschäftsordnung und Geschäftseinteilung. Ihm sind alle amtsführenden Stadträte, Bezirksvorsteher und Gemeindebediensteten unterstellt.",
       "topics": [
-        "Bürgermeister",
-        "Gemeinderatssitzungen",
-        "Zusammensetzung des Gemeinderats"
+        "Magistratsleitung",
+        "Geschäftseinteilung",
+        "Weisungsbefugnis"
       ]
     },
     "92": {
-      "summary": "Vorgesehen ist die näheren Einzelheiten. Der Bürgermeister ist berechtigt, bei dringlichen Fällen in Angelegenheiten, die in den Wirkungsbereich eines Gemeinderatsausschusses, des Stadtsenates oder des Gemeinderates fallen, unter seiner Verantwort...",
+      "summary": "Bei Dringlichkeit darf der Bürgermeister unter seiner Verantwortung Verfügungen treffen, die eigentlich dem Gemeinderat, Stadtsenat oder einem Ausschuss obliegen, muss diese aber unverzüglich zur nachträglichen Genehmigung vorlegen.",
       "topics": [
-        "Bürgermeister",
-        "Dringlichkeitsanträge",
-        "Gemeindevorstand"
+        "Dringlichkeitsverfügung des Bürgermeisters"
       ]
     },
     "93": {
-      "summary": "Im Mittelpunkt steht die näheren Einzelheiten. Der Bürgermeister hat das Recht der Sistierung von Beschlüssen des Gemeinderates (§ 28 Abs.",
+      "summary": "Dem Bürgermeister steht das Sistierungsrecht gegenüber Beschlüssen des Gemeinderates, Stadtsenates, der Ausschüsse sowie der Bezirksvertretungen zu. Außerdem kann er Magistratsangelegenheiten mit Ausnahme von Verwaltungsstrafsachen selbst erledigen.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindevorstand",
-        "Gemeindeverwaltung"
+        "Sistierungsrecht",
+        "Selbsterledigung"
       ]
     },
     "94": {
-      "summary": "Definiert werden die näheren Einzelheiten. Der Bürgermeister wird mit Ausnahme des Vorsitzes im Gemeinderat (§ 23) von den Vizebürgermeistern vertreten.",
+      "summary": "Bei Verhinderung wird der Bürgermeister durch die Vizebürgermeister vertreten; sind auch diese verhindert, tritt ein vom Bürgermeister oder Stadtsenat bestimmtes Stadtsenatsmitglied ein. Als Magistratsvorstand wird er auch durch den Magistratsdirektor vertreten.",
       "topics": [
-        "Vizebürgermeister",
-        "Bürgermeister",
-        "Gemeindevorstand"
+        "Bürgermeister-Vertretung",
+        "Vizebürgermeister"
       ]
     },
     "95": {
-      "summary": "Es wird verpflichtet, bestimmte Aufgaben im Bereich Vom Wirkungsbereich des Stadtsenates wahrzunehmen. ",
+      "summary": "Der Stadtsenat berät die in den Wirkungsbereich des Gemeinderates fallenden Angelegenheiten vor. Voranschlag und Rechnungsabschluss prüft er gemeinsam mit dem Finanzausschuss; bei abweichenden Beschlüssen ist jener des Stadtsenates für den Antrag an den Gemeinderat maßgebend.",
       "topics": [
-        "Bürgermeister",
-        "Beschlussfähigkeit",
-        "Dringlichkeitsanträge"
+        "Vorberatung durch Stadtsenat",
+        "Finanzausschuss"
       ]
     },
     "96": {
-      "summary": "Diese Vorschrift betrifft die näheren Einzelheiten. Der Stadtsenat schlägt dem Gemeinderat die amtsführenden Stadträte (§ 36) vor.",
+      "summary": "Der Stadtsenat schlägt dem Gemeinderat die amtsführenden Stadträte vor.",
       "topics": [
-        "Gemeindevorstand"
+        "Vorschlagsrecht des Stadtsenates"
       ]
     },
     "97": {
-      "summary": "Erfasst werden die näheren Einzelheiten. In seinen Wirkungsbereich fallen außerdem:",
+      "summary": "Zum Wirkungsbereich des Stadtsenates gehören weitere gesetzlich bestimmte Angelegenheiten.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Wirkungsbereich des Stadtsenates"
       ]
     },
     "98": {
-      "summary": "Die Vorschrift enthält Regelungen zu die Befugnisse und Entscheidungsmöglichkeiten der zuständigen Organe. ",
+      "summary": "In dringlichen Fällen kann der Stadtsenat nach Ausschuss-Vorberatung Verfügungen in Gemeinderatsangelegenheiten treffen und diese nachträglich genehmigen lassen. Gleiches gilt für Angelegenheiten der Ausschüsse.",
       "topics": [
-        "Dringlichkeitsanträge",
-        "Gemeinderatssitzungen",
-        "Gemeindevorstand"
+        "Dringlichkeitsverfügung des Stadtsenates"
       ]
     },
     "99": {
-      "summary": "Es werden die Voraussetzungen für die näheren Einzelheiten zu diesem Rechtsbereich.",
+      "summary": "Leerbestimmung ohne normativen Inhalt.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Leerbestimmung"
       ]
     },
     "100": {
-      "summary": "Die Gemeinderatsaussch ist verpflichtet, bestimmte Aufgaben im Bereich Vom Wirkungsbereich der Gemeinderatsausschüsse wahrzunehmen. ",
+      "summary": "Gemeinderatsausschüsse sind die beschließenden Organe in allen nicht anderweitig zugewiesenen Angelegenheiten des eigenen Wirkungsbereiches und beraten zudem bestimmte Stadtsenatsagenden vor.",
       "topics": [
-        "Gemeindevorstand"
+        "Wirkungsbereich der Ausschüsse",
+        "Beschlussfassung"
       ]
     },
     "101": {
-      "summary": "Es wird bestimmt, mehrere zusammenhängende Regelungsbereiche. Die Gemeinderatsausschüsse haben sich genau an die Ansätze des Voranschlages zu halten.",
+      "summary": "Ausschüsse müssen sich an die Voranschlagsansätze halten. Bei unvermeidbaren Überschreitungen ist die Zustimmung des Finanzstadtrats einzuholen; bei völlig unvorhergesehenen Ausgaben bedarf es der Genehmigung des Stadtsenates oder Gemeinderates.",
       "topics": [
-        "Gemeindevorstand",
-        "Ausschüsse",
-        "Voranschlag"
+        "Budgetbindung",
+        "Voranschlagsüberschreitung"
       ]
     },
     "102": {
-      "summary": "Vorgesehen ist mehrere zusammenhängende Regelungsbereiche in 3 Absätzen. ",
+      "summary": "Angelegenheiten, die mehrere Ausschüsse betreffen, können nacheinander oder in gemeinsamer Sitzung behandelt werden. Bei nicht übereinstimmenden Beschlüssen entscheidet der Stadtsenat, der auch Zuständigkeitsstreitigkeiten klärt.",
       "topics": [
-        "Bürgermeister",
-        "Geschäftsordnung",
-        "Abstimmung und Mehrheiten"
+        "Ausschussübergreifende Angelegenheiten",
+        "Zuständigkeitskonflikte"
       ]
     },
     "103": {
-      "summary": "Die Bezirksvertretung ist verpflichtet, bestimmte Aufgaben im Bereich Verwaltung von Haushaltsmitteln wahrzunehmen. ",
+      "summary": "Bezirksvertretungen, deren Finanzausschüsse und Bezirksvorsteher verwalten Haushaltsmittel in einem umfangreichen Katalog bezirksbezogener Angelegenheiten, von Kindergärten und Schulen über Straßenbau und Grünanlagen bis zu Kultur und Bädern. Die operative Besorgung obliegt dem Magistrat.",
       "topics": [
-        "Ausschüsse",
-        "Voranschlag",
-        "Rechnungsabschluss"
+        "Bezirksbudget",
+        "Dezentrale Haushaltsverwaltung",
+        "Bezirksangelegenheiten"
       ]
     },
     "104": {
-      "summary": "Hier wird festgelegt, anträge der Bezirksvertretungen. ",
+      "summary": "Bezirksvertretungen können Anträge an andere Verwaltungsorgane in Angelegenheiten des eigenen Wirkungsbereiches beschließen, die das Bezirksinteresse berühren. Ausgenommen sind Gesetzgebung, Abgaben und Personalangelegenheiten.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindebedienstete",
-        "Gemeindeabgaben"
+        "Antragsrecht der Bezirksvertretungen"
       ]
     },
     "105": {
-      "summary": "Bestimmt wird verschiedene Aspekte rund um stellung des Magistrats in 4 Absätzen. Die Geschäfte der Gemeinde sind durch den Magistrat zu besorgen.",
+      "summary": "Dem Magistrat obliegt die Besorgung der Gemeindegeschäfte, einschließlich Vermögensverwaltung, Voranschlagserstellung, Personalangelegenheiten und zahlreicher Vertragsabschlüsse innerhalb festgelegter Wertgrenzen. Bei Valorisierungsbeschlüssen des Gemeinderates passt der Magistrat Abgaben und Entgelte indexbasiert an.",
       "topics": [
-        "Gemeindevermögen",
-        "Gemeindeabgaben",
-        "Gemeindebetriebe"
+        "Wirkungsbereich des Magistrats",
+        "Wertgrenzen",
+        "Valorisierung"
       ]
     },
     "106": {
-      "summary": "Hier wird festgelegt, geschäftsgruppen des Magistrats. ",
+      "summary": "Der Magistrat gliedert sich in Geschäftsgruppen, die den Verwaltungsgruppen der Gemeinderatsausschüsse entsprechen. Jeder Geschäftsgruppe steht ein amtsführender Stadtrat vor.",
       "topics": [
-        "Bürgermeister",
-        "Geschäftsordnung",
-        "Gemeindebetriebe"
+        "Magistratsgliederung",
+        "Geschäftsgruppen"
       ]
     },
     "107": {
-      "summary": "Gegenstand ist angelegenheiten der Bezirksverwaltung. Der Magistrat hat unter Leitung und Verantwortung des Bürgermeisters die Angelegenheiten der Bezirksverwaltung zu besorgen.",
+      "summary": "Unter Leitung und Verantwortung des Bürgermeisters besorgt der Magistrat die Angelegenheiten der Bezirksverwaltung.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindeverwaltung"
+        "Bezirksverwaltung durch den Magistrat"
       ]
     },
     "108": {
-      "summary": "Die Regelung umfasst unter welchen Voraussetzungen Entscheidungen im Bereich „Ortspolizei\" getroffen werden können. ",
+      "summary": "Der Magistrat handhabt unter Leitung des Bürgermeisters die Ortspolizei und kann ortspolizeiliche Verordnungen erlassen, deren Übertretung mit Geldstrafen bis 700 Euro geahndet wird. Die Kundmachung erfolgt im offiziellen Publikationsorgan der Stadt.",
       "topics": [
-        "Bürgermeister",
-        "Kundmachung und Verordnungen",
-        "Strafbestimmungen"
+        "Ortspolizei",
+        "Polizeiverordnungen"
       ]
     },
     "109": {
-      "summary": "Geregelt wird magistratische Bezirksämter. Die magistratischen Bezirksämter haben die ihnen nach der Geschäftseinteilung (§ 91) zugewiesenen Angelegenheiten zu besorgen.",
+      "summary": "Die magistratischen Bezirksämter besorgen die ihnen nach der Geschäftseinteilung zugewiesenen Angelegenheiten unter Leitung rechtskundiger Beamter. Aus Zweckmäßigkeitsgründen kann ein Bezirksamt für zwei benachbarte Bezirke eingerichtet werden.",
       "topics": [
-        "Gemeindevorstand",
-        "Gemeindebedienstete",
-        "Gemeindeverwaltung"
+        "Magistratische Bezirksämter"
       ]
     },
     "110": {
-      "summary": "Der Magistrat hat ist verpflichtet, bestimmte Aufgaben im Bereich Informationsdatenbank wahrzunehmen. ",
+      "summary": "Zur Transparenz richtet der Magistrat eine elektronisch öffentlich zugängliche Informationsdatenbank ein, in der Protokolle, Anträge, Anfragen und Anfragebeantwortungen des Gemeinderates veröffentlicht werden.",
       "topics": [
-        "Dringlichkeitsanträge",
-        "Verhandlungsschrift",
-        "Öffentlichkeit der Sitzungen"
+        "Informationsdatenbank",
+        "Transparenz"
       ]
     },
     "111": {
-      "summary": "Normiert werden die näheren Einzelheiten zu diesem Rechtsbereich.",
+      "summary": "Leerbestimmung ohne normativen Inhalt.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Leerbestimmung"
       ]
     },
     "112": {
-      "summary": "Festgelegt werden verschiedene Aspekte rund um übertragung auf eine staatliche Behörde. ",
+      "summary": "Auf Antrag der Gemeinde kann die Landesregierung per Verordnung einzelne Angelegenheiten des eigenen Wirkungsbereiches an eine staatliche Behörde übertragen. Die Verordnung ist aufzuheben, sobald der Übertragungsgrund wegfällt.",
       "topics": [
-        "Bürgermeister"
+        "Aufgabenübertragung an staatliche Behörden"
       ]
     },
     "113": {
-      "summary": "Geregelt wird die näheren Einzelheiten. Der Gemeinderat der Stadt Wien ist auch Landtag für Wien.",
+      "summary": "Der Wiener Gemeinderat fungiert zugleich als Landtag, dessen Gesetzgebungsperiode mit der Gemeinderatswahlperiode zusammenfällt. Ausschüsse und Kommissionen dienen beiden Funktionen.",
       "topics": [
-        "Wahlen und Wahlrecht"
+        "Gemeinderat als Landtag",
+        "Doppelfunktion"
       ]
     },
     "114": {
-      "summary": "Inhaltlich geht es um mehrere zusammenhängende Regelungsbereiche. ",
+      "summary": "Die Wiener Gemeindeorgane bekleiden zugleich Landesfunktionen: Der Bürgermeister ist Landeshauptmann, der Stadtsenat Landesregierung, der Magistratsdirektor Landesamtsdirektor und der Stadtrechnungshof auch Landesrechnungshof.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindevorstand",
-        "Haushalt und Finanzen"
+        "Organidentität",
+        "Gemeinde-Land-Doppelfunktion"
       ]
     },
     "115": {
-      "summary": "Normiert werden die näheren Einzelheiten. Stadtsenat, Bürgermeister, Magistratsdirektor und Magistrat haben ihre Bescheide im Wirkungsbereich der Landesverwaltung als „Wiener Landesregierung“, „Landeshauptmann von Wien“, „Landesamtsdirektor von Wi...",
+      "summary": "In Angelegenheiten der Landesverwaltung erlassen die Wiener Gemeindeorgane ihre Bescheide unter den Bezeichnungen Wiener Landesregierung, Landeshauptmann von Wien, Landesamtsdirektor von Wien und Amt der Wiener Landesregierung.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindevorstand",
-        "Gemeindeverwaltung"
+        "Behördenbezeichnungen",
+        "Landesverwaltung"
       ]
     },
     "116": {
-      "summary": "Festgelegt werden erfordernisse der Landesgesetze für Wien. ",
+      "summary": "Ein Landesgesetz erfordert den Beschluss des Landtages, die Beurkundung durch den Landeshauptmann, die Gegenzeichnung des Landesamtsdirektors und die Kundmachung im Landesgesetzblatt für Wien. Verfassungsgesetze sind ausdrücklich als solche zu bezeichnen.",
       "topics": [
-        "Kundmachung und Verordnungen"
+        "Landesgesetzgebung",
+        "Kundmachung"
       ]
     },
     "117": {
-      "summary": "Der Paragraph befasst sich mit rechte und Pflichten der Landtagsabgeordneten. Die Rechte und Pflichten der Landtagsabgeordneten werden außer in diesem Gesetz auch in der vom Landtag zu beschließenden Geschäftsordnung (§ 129) geregelt.",
+      "summary": "Landtagsabgeordnete verfügen über Rechte wie schriftliche und mündliche Anfragen, Antragsrecht und Protokolleinsicht. Selbständige Anträge bedürfen der Unterstützung von fünf Abgeordneten.",
       "topics": [
-        "Tagesordnung",
-        "Verhandlungsschrift",
-        "Geschäftsordnung"
+        "Rechte der Landtagsabgeordneten",
+        "Anfragerecht"
       ]
     },
     "118": {
-      "summary": "Behandelt wird dringliche Initiativen. Die Landtagsabgeordneten können für öffentliche Sitzungen des Landtages dringliche Initiativen in Form von dringlichen Anfragen und dringlichen Anträgen einbringen.",
+      "summary": "Für öffentliche Landtagssitzungen können dringliche Anfragen und Anträge eingebracht werden, die mindestens sechs Abgeordnete unterstützen müssen. Pro Kalenderjahr sind höchstens zwei dringliche Initiativen je Abgeordneten zulässig.",
       "topics": [
-        "Dringlichkeitsanträge",
-        "Öffentlichkeit der Sitzungen"
+        "Dringliche Initiativen im Landtag"
       ]
     },
     "119": {
-      "summary": "Bestimmt wird verschiedene Aspekte rund um aktuelle Stunde. Die Aktuelle Stunde dient einer Aussprache über Themen von allgemeinem aktuellen Interesse aus dem Bereich der Vollziehung des Landes.",
+      "summary": "In der Aktuellen Stunde des Landtages wird über Themen der Landesvollziehung debattiert, ohne dass Anträge oder Beschlüsse zulässig wären. Sie findet auf Anordnung des Präsidenten, eines Klubs oder auf Verlangen von sechs Abgeordneten statt.",
       "topics": [
-        "Wahlen und Wahlrecht"
+        "Aktuelle Stunde im Landtag"
       ]
     },
     "120": {
-      "summary": "Die Sitzungen des ist verpflichtet, bestimmte Aufgaben im Bereich Anzahl und Einberufung der Sitzungen wahrzunehmen. Die Sitzungen des Landtages sind gesondert von den Sitzungen des Gemeinderates einzuberufen, sooft es die Geschäfte erfordern.",
+      "summary": "Landtagssitzungen sind gesondert von Gemeinderatssitzungen einzuberufen, wobei in Landtagssitzungen keine Gemeindeverwaltungsangelegenheiten verhandelt werden dürfen. Auf Verlangen von 25 Abgeordneten oder einem Klub ist eine Sitzung innerhalb von 21 Tagen abzuhalten.",
       "topics": [
-        "Gemeinderatssitzungen"
+        "Landtagssitzungen",
+        "Einberufung"
       ]
     },
     "121": {
-      "summary": "Gegenstand ist verschiedene Aspekte rund um öffentlichkeit der Sitzungen, Verhandlungssprache, Verhalten der Zuhörer in 5 Absätzen. Die Sitzungen des Landtages sind öffentlich.",
+      "summary": "Landtagssitzungen sind öffentlich und können im Internet übertragen werden. Wahrheitsgetreue Berichte über die Verhandlungen sind von jeder Verantwortung frei. Eine Informationsdatenbank ist auch für Landtagsangelegenheiten zu führen.",
       "topics": [
-        "Dringlichkeitsanträge",
-        "Verhandlungsschrift",
-        "Öffentlichkeit der Sitzungen"
+        "Öffentlichkeit des Landtages",
+        "Berichterstattungsfreiheit"
       ]
     },
     "122": {
-      "summary": "Der Landtag w ist verpflichtet, bestimmte Aufgaben im Bereich Präsidenten wahrzunehmen. ",
+      "summary": "Der Landtag wählt aus seiner Mitte mehrere Präsidenten; der Erste Präsident darf während seiner Amtstätigkeit keinen Beruf mit Erwerbsabsicht ausüben. Landeshauptmann und Landesregierungsmitglieder sind von der Präsidentenfunktion ausgeschlossen.",
       "topics": [
-        "Gemeinderatssitzungen",
-        "Geschäftsordnung",
-        "Wahlen und Wahlrecht"
+        "Landtagspräsidenten"
       ]
     },
     "123": {
-      "summary": "Die Pr ist verpflichtet, bestimmte Aufgaben im Bereich Präsidialkonferenz des Landtages wahrzunehmen. Die Präsidenten des Landtages und die Vorsitzenden der Klubs bilden die Präsidialkonferenz.",
+      "summary": "Die Präsidialkonferenz des Landtages besteht aus den Präsidenten und Klubvorsitzenden und berät den Landtagspräsidenten bei allen Amtsgeschäften.",
       "topics": [
-        "Geschäftsordnung"
+        "Präsidialkonferenz des Landtages"
       ]
     },
     "124": {
-      "summary": "Inhaltlich geht es um beschlußfähigkeit. Der Landtag ist beschlußfähig, wenn wenigstens ein Drittel der Abgeordneten anwesend ist.",
+      "summary": "Der Landtag ist bei Anwesenheit eines Drittels der Abgeordneten beschlussfähig. Für Verfassungsgesetze ist die Anwesenheit der Hälfte erforderlich.",
       "topics": [
-        "Beschlussfähigkeit"
+        "Beschlussfähigkeit des Landtages"
       ]
     },
     "125": {
-      "summary": "Im Mittelpunkt steht die näheren Einzelheiten. Die Gesetzesvorlagen sind vom zuständigen Mitglied der Landesregierung in der Landesregierung einzubringen und von dieser nach Vorberatung dem Präsidenten des Landtages zu übermitteln.",
+      "summary": "Gesetzesvorlagen werden von der Landesregierung oder als Initiativanträge von mindestens fünf Abgeordneten beim Landtagspräsidenten eingebracht, der sie dem zuständigen Ausschuss zuweist.",
       "topics": [
-        "Ausschüsse"
+        "Gesetzesinitiative",
+        "Gesetzesvorlagen"
       ]
     },
     "126": {
-      "summary": "Normiert werden die Befugnisse und Entscheidungsmöglichkeiten der zuständigen Organe. ",
+      "summary": "In der Spezialdebatte bestimmt der Präsident die Verhandlungsreihenfolge. Abänderungs- und Zusatzanträge bedürfen der Unterstützung von fünf Abgeordneten und können an den Ausschuss oder die Landesregierung zurückverwiesen werden.",
       "topics": [
-        "Tagesordnung",
-        "Ausschüsse"
+        "Spezialdebatte",
+        "Änderungsanträge"
       ]
     },
     "127": {
-      "summary": "Festgelegt werden die Befugnisse und Entscheidungsmöglichkeiten der zuständigen Organe. ",
+      "summary": "Nach der Einzelabstimmung in erster Lesung folgt die zweite Lesung als Gesamtabstimmung ohne Debatte. Nur zur Behebung von Widersprüchen zwischen beschlossenen Teilen und zur Berichtigung von Fehlern sind Anträge zulässig.",
       "topics": [
-        "Tagesordnung",
-        "Abstimmung und Mehrheiten"
+        "Zweite Lesung",
+        "Gesamtabstimmung"
       ]
     },
     "128": {
-      "summary": "Der Paragraph befasst sich mit verschiedene Aspekte rund um fraktionsvereinbarungen in 3 Absätzen. ",
+      "summary": "Die im Landtag vertretenen Parteien können Fraktionsvereinbarungen über Wortmeldungen, Fragestunden, Aktuelle Stunden und dringliche Initiativen schließen, die der einstimmigen Zustimmung aller Fraktionen bedürfen.",
       "topics": [
-        "Dringlichkeitsanträge",
-        "Wahlen und Wahlrecht"
+        "Fraktionsvereinbarungen im Landtag"
       ]
     },
     "129": {
-      "summary": "Behandelt wird geschäftsordnung des Landtages. Der Landtag beschließt seine Geschäftsordnung.",
+      "summary": "Der Landtag beschließt seine Geschäftsordnung, die Bestimmungen über Rechte und Pflichten der Abgeordneten, Sitzungsablauf, Wahlen, Gesetzesvorlagen und vieles mehr enthalten kann. Die Geschäftsordnung wird im Landesgesetzblatt kundgemacht.",
       "topics": [
-        "Tagesordnung",
-        "Dringlichkeitsanträge",
-        "Geschäftsordnung"
+        "Geschäftsordnung des Landtages"
       ]
     },
     "130": {
-      "summary": "Definiert werden unter welchen Voraussetzungen Entscheidungen im Bereich „Immunität der Landtagsabgeordneten\" getroffen werden können. ",
+      "summary": "Landtagsabgeordnete genießen Immunität wie Nationalratsmitglieder: Wegen Abstimmungen sind sie niemals verantwortlich, für Äußerungen nur gegenüber dem Landtag. Verhaftungen und Hausdurchsuchungen bedürfen grundsätzlich der Zustimmung des Landtages.",
       "topics": [
-        "Abstimmung und Mehrheiten"
+        "Immunität der Landtagsabgeordneten"
       ]
     },
     "131": {
-      "summary": "Geregelt wird wiederverlautbarung. Die Landesregierung ist ermächtigt, Landesverfassungsgesetze und Landesgesetze mit verbindlicher Wirkung durch Kundmachung im Landesgesetzblatt für Wien wiederzuverlautbaren.",
+      "summary": "Die Landesregierung ist ermächtigt, Landesgesetze mit verbindlicher Wirkung im Landesgesetzblatt wiederzuverlautbaren. Dabei können überholte Terminologie, Verweise und Nummerierungen aktualisiert sowie Übergangsbestimmungen zusammengefasst werden.",
       "topics": [
-        "Kundmachung und Verordnungen",
-        "Schlussbestimmungen"
+        "Wiederverlautbarung",
+        "Rechtsbereinigung"
       ]
     },
     "132": {
-      "summary": "Es wird bestimmt, unter welchen Voraussetzungen Entscheidungen im Bereich „Vollziehung des Landes\" getroffen werden können. ",
+      "summary": "Die Landesvollziehung übt der Stadtsenat als Landesregierung aus, die in ihrer Geschäftsordnung einzelne Geschäfte an Mitglieder oder den Magistrat delegieren kann. Sitzungen der Landesregierung sind vertraulich.",
       "topics": [
-        "Bürgermeister",
-        "Geschäftsordnung",
-        "Gemeindevorstand"
+        "Landesvollziehung",
+        "Landesregierung"
       ]
     },
     "133": {
-      "summary": "Vorgesehen ist vollziehung des Bundes. Die nach den Zuständigkeitsbestimmungen des Bundes-Verfassungsgesetzes sich ergebende Vollziehung des Bundes üben, soweit nicht eigene Bundesbehörden bestehen (unmittelbare Bundesverwaltung), der Landeshauptm...",
+      "summary": "Im Bereich der mittelbaren Bundesverwaltung handeln der Landeshauptmann und der Magistrat als Bezirksverwaltungsbehörde, soweit keine eigenen Bundesbehörden bestehen.",
       "topics": [
-        "Gemeindeverwaltung"
+        "Mittelbare Bundesverwaltung"
       ]
     },
     "134": {
-      "summary": "Inhaltlich geht es um angelobung der Mitglieder der Landesregierung. Der Landeshauptmann wird vom Bundespräsidenten, die anderen Mitglieder der Landesregierung werden vom Landeshauptmann vor Antritt des Amtes auf die Bundesverfassung angelobt.",
+      "summary": "Der Landeshauptmann wird vom Bundespräsidenten, die übrigen Regierungsmitglieder vom Landeshauptmann auf die Bundesverfassung angelobt.",
       "topics": [
-        "Angelobung"
+        "Angelobung der Landesregierung"
       ]
     },
     "135": {
-      "summary": "Normiert werden verschiedene Aspekte rund um verantwortlichkeit der Mitglieder der Landesregierung in 5 Absätzen. Der Landeshauptmann vertritt Wien als Land.",
+      "summary": "Der Landeshauptmann vertritt Wien als Land und trägt in der mittelbaren Bundesverwaltung die Verantwortung gegenüber der Bundesregierung. Die Regierungsmitglieder sind dem Landtag politisch verantwortlich, und ein Anklagebeschluss erfordert die Anwesenheit der Hälfte der Abgeordneten.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Politische Verantwortlichkeit",
+        "Ministeranklage"
       ]
     },
     "136": {
-      "summary": "Festgelegt werden landesamtsdirektor. Zur Leitung des inneren Dienstes des Magistrats als Amt der Landesregierung ist der Magistratsdirektor als Landesamtsdirektor bestellt.",
+      "summary": "Als Landesamtsdirektor leitet der Magistratsdirektor den inneren Dienst des Amtes der Landesregierung und dient dem Landeshauptmann auch in Angelegenheiten der mittelbaren Bundesverwaltung als Hilfsorgan.",
       "topics": [
-        "Bürgermeister",
-        "Gemeindeverwaltung"
+        "Landesamtsdirektor"
       ]
     },
     "137": {
-      "summary": "Der Paragraph befasst sich mit die näheren Einzelheiten. ",
+      "summary": "Die Wiener Bundesratsmitglieder werden vom Landtag für die Dauer seiner Wahlperiode nach dem Proporzsystem gewählt, wobei mindestens ein Mandat der zweitstärksten Partei zufallen muss.",
       "topics": [
-        "Wahlen und Wahlrecht"
+        "Bundesratswahl",
+        "Länderkammer"
       ]
     },
     "138": {
-      "summary": "Behandelt wird verschiedene Aspekte rund um landesgesetzblatt; Kundmachung im RIS; Bekanntmachungen in 5 Absätzen. Das Land Wien gibt das Landesgesetzblatt für Wien in deutscher Sprache heraus.",
+      "summary": "Das Landesgesetzblatt für Wien wird elektronisch im Rechtsinformationssystem des Bundes kundgemacht. Die Dokumente müssen signiert und unveränderlich sein; Sicherungskopien werden an verschiedenen Orten aufbewahrt.",
       "topics": [
-        "Kundmachung und Verordnungen"
+        "Landesgesetzblatt",
+        "Elektronische Kundmachung"
       ]
     },
     "139": {
-      "summary": "Das Land Wien ist verpflichtet, bestimmte Aufgaben im Bereich Vereinbarungen mit dem Bund und anderen Ländern wahrzunehmen. ",
+      "summary": "Wien kann mit dem Bund und anderen Ländern Vereinbarungen über Angelegenheiten des jeweiligen Wirkungsbereiches schließen. Vereinbarungen mit Ländern bedürfen der Genehmigung der Landesregierung, solche die den Landtag binden auch dessen Genehmigung.",
       "topics": [
-        "Vereinbarungen mit dem Bund und anderen Ländern"
+        "Staatsverträge",
+        "Bund-Länder-Vereinbarungen"
       ]
     },
     "140": {
-      "summary": "Die Vorschrift enthält Regelungen zu verschiedene Aspekte rund um wirksamkeitsbeginn in 3 Absätzen. Dieses Gesetz ist in seiner ursprünglichen Fassung am 18.",
+      "summary": "Die Wiener Stadtverfassung trat in ihrer ursprünglichen Fassung am 18. November 1920 in Kraft und löste das bisherige Gemeindestatut ab. Die seither erfolgten landesgesetzlichen Änderungen werden mit ihren jeweiligen Inkrafttretensdaten aufgelistet.",
       "topics": [
-        "Schlussbestimmungen"
+        "Inkrafttreten",
+        "Übergangsbestimmungen"
       ]
     },
     "141": {
-      "summary": "Es werden die Voraussetzungen für eigener Wirkungsbereich der Gemeinde. ",
+      "summary": "Die Gemeinde besorgt die Aufgaben des ersten Hauptstücks im eigenen Wirkungsbereich, ausgenommen die dort als übertragen bezeichneten Angelegenheiten und Verwaltungsstrafverfahren der Ortspolizei.",
       "topics": [
-        "Wirkungsbereich"
+        "Eigener Wirkungsbereich",
+        "Aufgabenzuweisung"
       ]
     },
     "48a": {
-      "summary": "Die Bestimmung regelt die näheren Einzelheiten zu diesem Rechtsbereich.",
+      "summary": "Leerbestimmung ohne normativen Inhalt.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Leerbestimmung"
       ]
     },
     "48b": {
-      "summary": "Gegenstand ist die näheren Einzelheiten zu diesem Rechtsbereich.",
+      "summary": "Leerbestimmung ohne normativen Inhalt.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Leerbestimmung"
       ]
     },
     "48c": {
-      "summary": "Es werden die Voraussetzungen für die näheren Einzelheiten zu diesem Rechtsbereich.",
+      "summary": "Leerbestimmung ohne normativen Inhalt.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Leerbestimmung"
       ]
     },
     "59a": {
-      "summary": "Gegenstand ist verschiedene Aspekte rund um untersuchungskommissionen des Gemeinderates in 3 Absätzen. ",
+      "summary": "Zur Überprüfung der Verwaltungsführung politisch verantwortlicher Gemeindeorgane können Untersuchungskommissionen eingesetzt werden. Mindestens 25 Gemeinderatsmitglieder müssen den Antrag einbringen, der den behaupteten Missstand darlegen muss. Gleichzeitig kann nur eine Untersuchungskommission oder ein Untersuchungsausschuss bestehen.",
       "topics": [
-        "Gemeinderatssitzungen",
-        "Zusammensetzung des Gemeinderats",
-        "Ausschüsse"
+        "Untersuchungskommission",
+        "Verwaltungskontrolle"
       ]
     },
     "59b": {
-      "summary": "Es werden die Voraussetzungen für die Befugnisse und Entscheidungsmöglichkeiten der zuständigen Organe. ",
+      "summary": "Über die Zulässigkeit eines Antrags auf Einsetzung einer Untersuchungskommission entscheidet der Vorsitzende des Gemeinderates. Bei Meinungsverschiedenheiten in der Präsidialkonferenz wird ein Gutachten des Vorsitzenden der Untersuchungskommission eingeholt.",
       "topics": [
-        "Gemeinderatssitzungen"
+        "Zulässigkeitsprüfung",
+        "Untersuchungskommission"
       ]
     },
     "59c": {
-      "summary": "Hier wird festgelegt, die Befugnisse und Entscheidungsmöglichkeiten der zuständigen Organe. ",
+      "summary": "Die Untersuchungskommission wird aus Gemeinderatsmitgliedern nach Proporz gebildet, wobei den Vorsitz ein per Los aus einer Richterliste bestellter Richter führt. Ein dreiköpfiges Schiedsgremium aus dem Vorsitzenden und seinen Stellvertretern entscheidet über Verfahrensfragen.",
       "topics": [
-        "Gemeinderatssitzungen",
-        "Zusammensetzung des Gemeinderats",
-        "Abstimmung und Mehrheiten"
+        "Zusammensetzung der Untersuchungskommission",
+        "Schiedsgremium",
+        "Richtervorsitz"
       ]
     },
     "59d": {
-      "summary": "Es wird verpflichtet, bestimmte Pflichten zu erfüllen. Zu ihren Sitzungen wird die Untersuchungskommission durch den Vorsitzenden (seinen Stellvertreter) einberufen.",
+      "summary": "Die konstituierende Sitzung muss binnen 14 Tagen stattfinden, und ein Viertel der Mitglieder kann die Ladung von Zeugen und ergänzende Beweisaufnahmen verlangen. Sitzungen sind grundsätzlich öffentlich, können aber für vertraulich erklärt werden, wobei jede Person eine Vertrauensperson zur Einvernahme mitbringen darf.",
       "topics": [
-        "Beschlussfähigkeit",
-        "Befangenheit",
-        "Verhandlungsschrift"
+        "Verfahren der Untersuchungskommission",
+        "Beweisaufnahme",
+        "Zeugenbefragung"
       ]
     },
     "59e": {
-      "summary": "Bestimmt wird die Befugnisse und Entscheidungsmöglichkeiten der zuständigen Organe. ",
+      "summary": "Die Tätigkeit einer Untersuchungskommission endet spätestens zwölf Monate nach Konstituierung, wobei die Einsetzungsminderheit eine Verlängerung um drei Monate verlangen kann. Ein Bericht ist dem Gemeinderat zu erstatten; eine vorzeitige Beendigung bedarf bei Minderheitseinsetzung deren Zustimmung.",
       "topics": [
-        "Bürgermeister",
-        "Tagesordnung",
-        "Gemeinderatssitzungen"
+        "Tätigkeitsdauer",
+        "Berichtspflicht",
+        "Untersuchungskommission"
       ]
     },
     "61a": {
-      "summary": "Es werden die Voraussetzungen für mehrere zusammenhängende Regelungsbereiche in 4 Absätzen. ",
+      "summary": "Bezirksvertretungsmitglieder werden auf fünf Jahre nach Verhältniswahlrecht gewählt und dürfen nicht gleichzeitig dem Gemeinderat angehören. Ab zwei Mitgliedern derselben Partei ist eine Klubbildung möglich, und Fraktionsvereinbarungen über den Sitzungsablauf können geschlossen werden.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Tagesordnung"
+        "Bezirksvertretungswahl",
+        "Klubbildung in Bezirken"
       ]
     },
     "61b": {
-      "summary": "Hier wird festgelegt, mehrere zusammenhängende Regelungsbereiche in 4 Absätzen. Der Bezirksvorsteher wird auf Vorschlag der stärksten wahlwerbenden Partei von der Bezirksvertretung gewählt.",
+      "summary": "Den Bezirksvorsteher wählt die Bezirksvertretung auf Vorschlag der stärksten Partei; er muss ihr nicht angehören, aber wählbar sein. Zwei Stellvertreter werden aus der Mitte der Bezirksvertretung gewählt, und der Bezirksvorsteher darf keinen Beruf mit Erwerbsabsicht ausüben.",
       "topics": [
-        "Wahlen und Wahlrecht"
+        "Bezirksvorsteherwahl",
+        "Bezirksvorsteher-Stellvertreter"
       ]
     },
     "61c": {
-      "summary": "Die Vorschrift enthält Regelungen zu die näheren Einzelheiten. Ist der Bezirksvorsteher vorübergehend verhindert, so wird er durch den von ihm bestimmten Stellvertreter, falls auch dieser verhindert ist, durch den anderen Stellvertreter vertreten.",
+      "summary": "Bei vorübergehender Verhinderung des Bezirksvorstehers springt der von ihm bestimmte Stellvertreter ein. Bezirksvorsteher und Stellvertreter bleiben bis zur Wahl ihrer Nachfolger im Amt.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Angelobung"
+        "Bezirksvorsteher-Vertretung"
       ]
     },
     "66a": {
-      "summary": "Inhaltlich geht es um ausschüsse. Die Bezirksvertretung hat einen Finanzausschuss, einen Bauausschuss und einen Umweltausschuss zu bestellen.",
+      "summary": "Jede Bezirksvertretung muss einen Finanzausschuss, einen Bauausschuss und einen Umweltausschuss bestellen.",
       "topics": [
-        "Ausschüsse",
-        "Haushalt und Finanzen"
+        "Bezirksausschüsse",
+        "Pflichtausschüsse"
       ]
     },
     "66b": {
-      "summary": "Vorgesehen ist verschiedene Aspekte rund um zusammensetzung und Bestellung der Ausschüsse in 5 Absätzen. ",
+      "summary": "Bezirksausschüsse bestehen aus zehn bis fünfzehn Mitgliedern plus Ersatzmitgliedern und werden nach Parteienproporz besetzt. Der Bezirksvorsteher gehört dem Ausschuss ohne Stimmrecht an.",
       "topics": [
-        "Ausschüsse",
-        "Wahlen und Wahlrecht"
+        "Bezirksausschuss-Zusammensetzung",
+        "Proporz"
       ]
     },
     "66c": {
-      "summary": "Geregelt wird auflösung von Ausschüssen und Abberufung von Mitgliedern. Auf Antrag des Bezirksvorstehers oder eines Mitgliedes der Bezirksvertretung kann die Bezirksvertretung einen Ausschuss auflösen, der seine Geschäfte nicht ordnungsgemäß besorgt.",
+      "summary": "Auf Antrag des Bezirksvorstehers oder eines Bezirksvertretungsmitglieds kann die Bezirksvertretung einen Ausschuss auflösen oder dreimal unentschuldigt fehlende Mitglieder abberufen.",
       "topics": [
-        "Ausschüsse"
+        "Auflösung von Bezirksausschüssen",
+        "Abberufung"
       ]
     },
     "66d": {
-      "summary": "Es wird bestimmt, vorsitz. Jeder Ausschuss wählt auf Vorschlag der stärksten wahlwerbenden Partei des Ausschusses aus seiner Mitte einen Vorsitzenden und zwei Stellvertreter des Vorsitzenden, wovon der eine Stellvertreter von der stärksten und der...",
+      "summary": "Den Ausschussvorsitzenden und zwei Stellvertreter schlägt die stärkste bzw. zweitstärkste Partei vor; der Bezirksvorsteher ist nicht wählbar.",
       "topics": [
-        "Ausschüsse",
-        "Wahlen und Wahlrecht"
+        "Vorsitz in Bezirksausschüssen"
       ]
     },
     "66e": {
-      "summary": "Die Regelung umfasst beschlüsse. Zu einem Beschluß eines Ausschusses ist die Anwesenheit von mindestens der Hälfte der stimmberechtigten Mitglieder und die einfache Stimmenmehrheit erforderlich.",
+      "summary": "Bezirksausschüsse fassen Beschlüsse mit einfacher Mehrheit bei Anwesenheit der Hälfte der stimmberechtigten Mitglieder. Nicht dem Ausschuss angehörende Bezirksvertretungsmitglieder dürfen mit beratender Stimme teilnehmen.",
       "topics": [
-        "Öffentlichkeit der Sitzungen",
-        "Abstimmung und Mehrheiten",
-        "Ausschüsse"
+        "Beschlussfassung in Bezirksausschüssen"
       ]
     },
     "66f": {
-      "summary": "Die Bestimmung regelt kommissionen. Zur Vorberatung einzelner Gegenstände und zur unmittelbaren Berichterstattung an die Bezirksvertretung kann die Bezirksvertretung Kommissionen bestellen.",
+      "summary": "Zur Vorberatung einzelner Gegenstände kann die Bezirksvertretung Kommissionen aus mindestens sechs Mitgliedern und ebenso vielen Ersatzmitgliedern einrichten.",
       "topics": [
-        "Wahlen und Wahlrecht"
+        "Bezirkskommissionen"
       ]
     },
     "66g": {
-      "summary": "Es wird verpflichtet, bestimmte Aufgaben im Bereich Vom Wiener Berufungssenat wahrzunehmen. Sofern der Instanzenzug im eigenen Wirkungsbereich der Gemeinde nicht ausgeschlossen ist, ist der Wiener Berufungssenat die Berufungsbehörde.",
+      "summary": "Sofern der Instanzenzug nicht ausgeschlossen ist, fungiert der Wiener Berufungssenat als Berufungsbehörde im eigenen Wirkungsbereich der Gemeinde. Er besteht aus drei rechtskundigen Magistratsbediensteten und wird vom Stadtsenat auf fünf Jahre bestellt.",
       "topics": [
-        "Beschlussfähigkeit",
-        "Öffentlichkeit der Sitzungen",
-        "Abstimmung und Mehrheiten"
+        "Wiener Berufungssenat",
+        "Verwaltungsinstanzenzug"
       ]
     },
     "72a": {
-      "summary": "Die Bestimmung legt fest, die näheren Einzelheiten. Krankenanstalten und Pflegeheime der Stadt Wien können durch Beschluß des Gemeinderates in einem Krankenanstaltenverbund zusammengefaßt werden.",
+      "summary": "Krankenanstalten und Pflegeheime der Stadt Wien können in einem Krankenanstaltenverbund zusammengefasst werden, der mit erhöhter Selbständigkeit ausgestattet ist, aber den Gemeindeorganen untergeordnet bleibt.",
       "topics": [
-        "Bürgermeister",
-        "Geschäftsordnung",
-        "Gemeindevorstand"
+        "Krankenanstaltenverbund",
+        "Gesundheitswesen"
       ]
     },
     "73d": {
-      "summary": "Der Paragraph befasst sich mit verschiedene Aspekte rund um kontrolle der Mittelverwendung und Einhaltung der Leistungsfrist bei Großvorhaben in 3 Absätzen. Weisen die laufenden Abrechnungen bei Vorhaben, die von der Stadt Wien oder von Rechtsträgern ausgeführt werden, die gemäß § 73b Abs.",
+      "summary": "Bei Großvorhaben, deren Abrechnungen eine Kostenüberschreitung von 30 Prozent oder eine Leistungsfristüberschreitung von 30 Prozent aufweisen, besteht eine Meldepflicht an den Stadtrechnungshof.",
       "topics": [
-        "Haushalt und Finanzen"
+        "Großvorhaben-Kontrolle",
+        "Meldepflicht"
       ]
     },
     "73h": {
-      "summary": "Die Bestimmung legt fest, die näheren Einzelheiten. Die näheren Bestimmungen zum Stadtrechnungshof werden in einem eigenen Organisationsgesetz getroffen.",
+      "summary": "Nähere Bestimmungen zum Stadtrechnungshof werden in einem eigenen Organisationsgesetz getroffen.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Stadtrechnungshof-Organisation"
       ]
     },
     "79a": {
-      "summary": "Die Regelung umfasst geheimhaltungspflicht. Soweit und solange dies aus den in Art.",
+      "summary": "Gemeindeorgane unterliegen einer Geheimhaltungspflicht für amtlich bekannt gewordene Tatsachen, soweit dies verhältnismäßig und aus den in der Bundesverfassung genannten Gründen erforderlich ist. Gegenüber dem Gemeinderat besteht diese Pflicht nicht, wenn dieser die Information ausdrücklich verlangt.",
       "topics": [
-        "Geheimhaltungspflicht"
+        "Geheimhaltungspflicht",
+        "Amtsverschwiegenheit"
       ]
     },
     "86a": {
-      "summary": "Erfasst werden voranschlagsprovisorium. Ist zu Beginn des Finanzjahres der Voranschlag nicht festgestellt, gilt vorläufig bis zu dessen Feststellung, längstens jedoch für die ersten sechs Monate des Finanzjahres, der vorjährige Voranschlag.",
+      "summary": "Wurde der Voranschlag nicht rechtzeitig festgestellt, gilt für maximal sechs Monate der vorjährige Voranschlag als Provisorium. Die zulässigen monatlichen Ausgaben sind auf ein Zwölftel der veranschlagten Beträge begrenzt.",
       "topics": [
-        "Voranschlag",
-        "Haushalt und Finanzen"
+        "Voranschlagsprovisorium",
+        "Budgetprovisorium"
       ]
     },
     "86b": {
-      "summary": "Behandelt wird unter welchen Voraussetzungen Entscheidungen im Bereich „Nachtragsvoranschlag\" getroffen werden können. ",
+      "summary": "Ergibt sich die Notwendigkeit einer Umschichtung innerhalb des Voranschlags ohne Auswirkung auf den Gesamtsaldo, kann der Gemeinderat einen Nachtragsvoranschlag beschließen.",
       "topics": [
-        "Voranschlag"
+        "Nachtragsvoranschlag",
+        "Budgetänderung"
       ]
     },
     "89a": {
-      "summary": "Es werden die Voraussetzungen für die näheren Einzelheiten. ",
+      "summary": "In dringlichen Fällen kann der Gemeinderat unter seiner Verantwortung auch in Angelegenheiten der Bezirksorgane Verfügungen treffen. Die Bezirksvertretung ist davon in Kenntnis zu setzen.",
       "topics": [
-        "Dringlichkeitsanträge"
+        "Dringlichkeitsverfügung",
+        "Bezirksangelegenheiten"
       ]
     },
     "103a": {
-      "summary": "Inhaltlich geht es um voranschlag des Bezirkes. Der Entwurf des Voranschlages für das folgende Finanzjahr ist vom Finanzausschuss der Bezirksvertretung bis spätestens 30.",
+      "summary": "Der Finanzausschuss der Bezirksvertretung erstellt bis 30. September den Voranschlagsentwurf; die Bezirksvertretung stellt den Voranschlag bis 31. Dezember fest.",
       "topics": [
-        "Ausschüsse",
-        "Voranschlag",
-        "Haushalt und Finanzen"
+        "Bezirksvoranschlag"
       ]
     },
     "103b": {
-      "summary": "Vorgesehen ist stellungnahmen zum Voranschlag des Bezirkes. ",
+      "summary": "Voranschlagsentwürfe der Bezirke sind zwei Wochen vor der Beratung im Internet zu veröffentlichen, wobei Gemeindemitglieder Stellungnahmen abgeben können.",
       "topics": [
-        "Voranschlag"
+        "Bürgerbeteiligung",
+        "Transparenz des Bezirksbudgets"
       ]
     },
     "103c": {
-      "summary": "Geregelt wird verschiedene Aspekte rund um grundsätze der Veranschlagung in 4 Absätzen. Mittelaufbringungen der Bezirke sind die aufgrund der Verordnung des Gemeinderates gemäß § 86 Abs.",
+      "summary": "Bezirke erhalten ihre Mittelaufbringungen nach dem vom Gemeinderat festgelegten Verteilungsschlüssel. Mittelverwendungen dürfen die Aufbringungen nur durch verzinsliche Vorgriffe auf künftige Mittel übersteigen, wobei der Rahmen auf das Zweifache begrenzt ist.",
       "topics": [
-        "Kundmachung und Verordnungen",
-        "Haushalt und Finanzen"
+        "Bezirksfinanzierung",
+        "Vorgriffe"
       ]
     },
     "103d": {
-      "summary": "Es wird bestimmt, voranschlagsprovisorium. Wird ein Voranschlag des Bezirkes nicht rechtzeitig festgestellt, dürfen Mittelverwendungen nur insoweit getätigt werden, als sie1.zur Verzinsung und Rückzahlung von Vorgriffen einschließlich des Ersatzes...",
+      "summary": "Wird kein Bezirksvoranschlag rechtzeitig festgestellt, sind Ausgaben auf Vorgriffsrückzahlungen und dringende Schadensabwehr beschränkt. Ein verspäteter Voranschlag darf die Mittelaufbringungen nicht überschreiten.",
       "topics": [
-        "Voranschlag",
-        "Haushalt und Finanzen",
-        "Statutarstadt"
+        "Bezirks-Voranschlagsprovisorium"
       ]
     },
     "103e": {
-      "summary": "Die Regelung umfasst verschiedene Aspekte rund um zusammenwirken der Bezirke in 3 Absätzen. Die Bezirksvorsteher haben das Einvernehmen hinsichtlich jener im § 103 Abs.",
+      "summary": "Bei bezirksübergreifenden Angelegenheiten müssen die Bezirksvorsteher das Einvernehmen herstellen und können dazu schriftliche Kooperationsvereinbarungen schließen. Kommt keine Einigung zustande, entscheidet der Bürgermeister.",
       "topics": [
-        "Bürgermeister"
+        "Bezirksübergreifende Zusammenarbeit"
       ]
     },
     "103f": {
-      "summary": "Die Bestimmung regelt rechnungsabschluß des Bezirkes. Die in Vollziehung der Voranschläge der Bezirke angeordneten Mittelverwendungen sind in den Rechnungsabschluß der Gemeinde aufzunehmen.",
+      "summary": "Die Ausgaben der Bezirke fließen in den Rechnungsabschluss der Gemeinde ein. Daneben erstellt der Magistrat einen eigenen Bezirksrechnungsabschluss; Überschüsse werden einer Bezirksrücklage zugeführt.",
       "topics": [
-        "Rechnungsabschluss",
-        "Gemeindeverwaltung"
+        "Bezirksrechnungsabschluss",
+        "Bezirksrücklage"
       ]
     },
     "103g": {
-      "summary": "Gegenstand ist wirkungsbereich der Bezirksvertretungen. ",
+      "summary": "Bezirksvertretungen wirken in einem breiten Spektrum an Aufgaben mit, von Bezirksentwicklung und Stadterneuerung über Infrastruktur und Soziales bis hin zu Kultur, Bildung und Benennung öffentlicher Einrichtungen. Der Gemeinderat kann ihnen weitere Gegenstände überlassen.",
       "topics": [
-        "Bürgermeisterwahl",
-        "Bürgermeister",
-        "Gemeindevorstand"
+        "Wirkungsbereich der Bezirksvertretungen",
+        "Mitwirkungsrechte"
       ]
     },
     "103h": {
-      "summary": "Es werden die Voraussetzungen für unter welchen Voraussetzungen Entscheidungen im Bereich „Wirkungsbereich der Bezirksvorsteher\" getroffen werden können. ",
+      "summary": "Bezirksvorstehern obliegt ein vielfältiger Aufgabenkatalog, der von der Unterstützung des Bürgermeisters über Repräsentation, Mitwirkung bei Gewerbe- und Bauvollzug bis zum Katastrophenschutz reicht. Der Gemeinderat kann weitere Aufgaben übertragen.",
       "topics": [
-        "Bürgermeister",
-        "Gemeinderatssitzungen",
-        "Gemeindevorstand"
+        "Wirkungsbereich der Bezirksvorsteher"
       ]
     },
     "103i": {
-      "summary": "Es wird verpflichtet, bestimmte Aufgaben im Bereich Wirkungsbereich der Bauausschüsse wahrzunehmen. ",
+      "summary": "Bauausschüsse beraten die auf Grundlage der Bauordnung zugewiesenen Aufgaben vor und nehmen sonstige gesetzlich übertragene Aufgaben wahr.",
       "topics": [
-        "Wirkungsbereich der Bauausschüsse"
+        "Bauausschüsse"
       ]
     },
     "103j": {
-      "summary": "Die Vorschrift enthält Regelungen zu wirkungsbereich der Umweltausschüsse. Den Umweltausschüssen obliegen neben der Wahrnehmung der ihnen gesetzlich übertragenen Aufgaben folgende Aufgaben:",
+      "summary": "Umweltausschüsse nehmen neben gesetzlich übertragenen Aufgaben weitere ihnen zugewiesene Umweltangelegenheiten wahr.",
       "topics": [
-        "Wirkungsbereich der Umweltausschüsse"
+        "Umweltausschüsse"
       ]
     },
     "103k": {
-      "summary": "Bestimmt wird verschiedene Aspekte rund um mitwirkung in 3 Absätzen. Mitwirkung im Sinne der §§ 103g, 103h und 103j ist das Recht des mitwirkenden Organes, in der betreffenden Angelegenheit innerhalb der nach Abs.",
+      "summary": "Mitwirkung bedeutet das Recht, innerhalb einer Frist von mindestens drei Wochen eine Stellungnahme abzugeben, mit der sich das entscheidende Organ auseinandersetzen und eine Beurteilung zurückmelden muss.",
       "topics": [
-        "Dringlichkeitsanträge"
+        "Mitwirkungsrecht",
+        "Stellungnahmerecht"
       ]
     },
     "104a": {
-      "summary": "Die Vorschrift enthält Regelungen zu unter welchen Voraussetzungen Entscheidungen im Bereich „Anhörung und Information der Bezirksvorsteher und Bezirksvertretungen\" getroffen werden können. ",
+      "summary": "Der Bürgermeister kann bestimmen, in welchen Angelegenheiten Bezirksvorsteher oder Bezirksvertretungen vor einer Entscheidung anzuhören sind. Für die Äußerung ist eine Frist von mindestens drei Wochen vorzusehen.",
       "topics": [
-        "Bürgermeister",
-        "Dringlichkeitsanträge"
+        "Anhörungsrecht",
+        "Bezirksinformation"
       ]
     },
     "104b": {
-      "summary": "Bestimmt wird verschiedene Aspekte rund um mitwirkung der Bezirksbevölkerung in 3 Absätzen. Jeder Einwohner (§ 61 Abs.",
+      "summary": "Jeder Bezirkseinwohner hat das Recht, sich mit Wünschen und Beschwerden an den Bezirksvorsteher und die Bezirksvertretungsmitglieder zu wenden. Regelmäßige Sprechstunden sind öffentlich bekannt zu machen.",
       "topics": [
-        "Mitwirkung der Bezirksbevölkerung"
+        "Bürgerbeteiligung",
+        "Sprechstunden"
       ]
     },
     "104c": {
-      "summary": "Erfasst werden verschiedene Aspekte rund um bürgerversammlung in 4 Absätzen. ",
+      "summary": "Bürgerversammlungen dienen der Information und Diskussion über bezirksbezogene Angelegenheiten. Sie müssen auf Beschluss der Bezirksvertretung, auf Verlangen eines Fünftels ihrer Mitglieder oder auf Antrag von fünf Prozent der wahlberechtigten Einwohner abgehalten werden.",
       "topics": [
-        "Zusammensetzung des Gemeinderats",
-        "Wahlen und Wahlrecht"
+        "Bürgerversammlung",
+        "Direkte Demokratie"
       ]
     },
     "104d": {
-      "summary": "Behandelt wird vom Wirkungsbereich des Wiener Berufungssenates. ",
+      "summary": "Sofern der Instanzenzug nicht ausgeschlossen ist, entscheidet der Wiener Berufungssenat über Berufungen gegen Bescheide im eigenen Wirkungsbereich der Gemeinde sowie bei Verletzung der Entscheidungspflicht.",
       "topics": [
-        "Vom Wirkungsbereich des Wiener Berufungssenates"
+        "Berufungsverfahren",
+        "Wiener Berufungssenat"
       ]
     },
     "112a": {
-      "summary": "Definiert werden verschiedene Aspekte rund um volksbefragung in 5 Absätzen. Angelegenheiten des eigenen Wirkungsbereiches der Gemeinde, die in die Zuständigkeit des Gemeinderates fallen, ausgenommen die im Abs.",
+      "summary": "Angelegenheiten des eigenen Wirkungsbereiches, die in die Gemeinderatszuständigkeit fallen, können einer Volksbefragung unterzogen werden. Diese muss durchgeführt werden, wenn der Gemeinderat es beschließt oder fünf Prozent der Wahlberechtigten es verlangen.",
       "topics": [
-        "Zusammensetzung des Gemeinderats",
-        "Gemeindebedienstete",
+        "Volksbefragung",
         "Direkte Demokratie"
       ]
     },
     "112b": {
-      "summary": "Normiert werden anordnung und Ausschreibung. Der Bürgermeister hat die Volksbefragung binnen vier Wochen nach Beschlußfassung durch den Gemeinderat oder Einlangen des von der erforderlichen Mindestanzahl unterstützten Verlangens so auszuschreiben,...",
+      "summary": "Der Bürgermeister hat eine Volksbefragung binnen vier Wochen so auszuschreiben, dass sie innerhalb von zwei Monaten stattfinden kann. Vor Bundespräsidentenwahlen oder Nationalratswahlen ist ein zeitlicher Mindestabstand einzuhalten.",
       "topics": [
-        "Bürgermeister",
-        "Abstimmung und Mehrheiten",
-        "Direkte Demokratie"
+        "Ausschreibung der Volksbefragung"
       ]
     },
     "112c": {
-      "summary": "Im Mittelpunkt steht ergebnis und Kundmachung. Das Ergebnis der Befragung ist im Amtsblatt der Stadt Wien kundzumachen.",
+      "summary": "Das Ergebnis der Volksbefragung wird im Amtsblatt kundgemacht. Eine Frage gilt als bejaht, wenn mehr als die Hälfte der gültigen Stimmen zustimmend ausfällt, und ist dem Gemeinderat zur Behandlung zuzuleiten.",
       "topics": [
-        "Gemeinderatssitzungen",
-        "Geschäftsordnung",
-        "Kundmachung und Verordnungen"
+        "Ergebnis der Volksbefragung"
       ]
     },
     "112d": {
-      "summary": "Inhaltlich geht es um die näheren Einzelheiten. Die näheren Bestimmungen über die Volksbefragung werden in einem eigenen Gesetz erlassen.",
+      "summary": "Nähere Bestimmungen über die Volksbefragung werden in einem eigenen Gesetz geregelt.",
       "topics": [
-        "Direkte Demokratie"
+        "Volksbefragungsgesetz"
       ]
     },
     "112e": {
-      "summary": "Vorgesehen ist unter welchen Voraussetzungen Entscheidungen im Bereich „Volksabstimmung\" getroffen werden können. ",
+      "summary": "Der Gemeinderat kann beschließen, dass einzelne ihm vorliegende Angelegenheiten durch Volksabstimmung entschieden werden. Ausgenommen sind Wahlen, Abgaben, Personalangelegenheiten und Eingriffe in Grundrechte.",
       "topics": [
-        "Abstimmung und Mehrheiten",
-        "Gemeindebedienstete",
+        "Volksabstimmung",
         "Direkte Demokratie"
       ]
     },
     "112f": {
-      "summary": "Geregelt wird verschiedene Aspekte rund um anordnung und Ausschreibung. ",
+      "summary": "Die Volksabstimmung ist vom Bürgermeister binnen vier Wochen so auszuschreiben, dass sie an einem Sonn- oder Feiertag innerhalb von zwei Monaten stattfinden kann.",
       "topics": [
-        "Bürgermeister",
-        "Abstimmung und Mehrheiten",
-        "Direkte Demokratie"
+        "Ausschreibung der Volksabstimmung"
       ]
     },
     "112g": {
-      "summary": "Es wird bestimmt, ergebnis und Kundmachung. Die Annahme ist gegeben, wenn bei einer Beteiligung von wenigstens der Hälfte der nach der Wiener Gemeindewahlordnung 1996 wahlberechtigten Gemeindemitglieder mehr als die Hälfte der abgegebenen gültigen...",
+      "summary": "Ein Volksabstimmungsergebnis gilt als angenommen, wenn bei einer Beteiligung von mindestens der Hälfte der Wahlberechtigten die Mehrheit mit Ja stimmt. Es ist einem Gemeinderatsbeschluss gleichzuhalten und entsprechend zu vollziehen.",
       "topics": [
-        "Abstimmung und Mehrheiten",
-        "Kundmachung und Verordnungen",
-        "Direkte Demokratie"
+        "Ergebnis der Volksabstimmung",
+        "Bindungswirkung"
       ]
     },
     "112h": {
-      "summary": "Die Regelung umfasst die näheren Einzelheiten. Die näheren Bestimmungen über die Volksabstimmung werden in einem eigenen Gesetz erlassen.",
+      "summary": "Nähere Bestimmungen über die Volksabstimmung werden in einem eigenen Gesetz geregelt.",
       "topics": [
-        "Abstimmung und Mehrheiten",
-        "Direkte Demokratie"
+        "Volksabstimmungsgesetz"
       ]
     },
     "124a": {
-      "summary": "Vorgesehen ist die näheren Einzelheiten. Zu einem gültigen Beschluss des Landtages ist die unbedingte Stimmenmehrheit der anwesenden Landtagsabgeordneten erforderlich.",
+      "summary": "Landtagsbeschlüsse erfordern die einfache Mehrheit der Anwesenden, Verfassungsgesetze hingegen eine Zweidrittelmehrheit der abgegebenen Stimmen.",
       "topics": [
-        "Abstimmung und Mehrheiten"
+        "Abstimmungsmehrheiten im Landtag"
       ]
     },
     "125a": {
-      "summary": "Inhaltlich geht es um verschiedene Aspekte rund um verhandlung der Gesetzesvorlagen in 10 Absätzen. Die Gesetzesvorlagen werden im Landtag grundsätzlich in zwei Lesungen verhandelt.",
+      "summary": "Gesetzesvorlagen werden im Landtag in zwei Lesungen verhandelt: eine Generaldebatte über die Vorlage als Ganzes, gefolgt von der Spezialdebatte zur Einzelberatung und Abstimmung über die Teile.",
       "topics": [
-        "Tagesordnung",
-        "Abstimmung und Mehrheiten",
-        "Ausschüsse"
+        "Gesetzgebungsverfahren",
+        "Lesungen"
       ]
     },
     "129a": {
-      "summary": "Diese Vorschrift betrifft verschiedene Aspekte rund um ständiger Ausschuß in 6 Absätzen. Zur Wahrnehmung der im Art.",
+      "summary": "Ein aus 15 Mitgliedern bestehender ständiger Ausschuss nimmt die Aufgaben bei Erlassung vorläufiger gesetzändernder Verordnungen durch die Landesregierung wahr. Die Zusammensetzung erfolgt nach Parteienproporz.",
       "topics": [
-        "Beschlussfähigkeit",
-        "Öffentlichkeit der Sitzungen",
-        "Gemeinderatssitzungen"
+        "Ständiger Ausschuss",
+        "Notverordnungsrecht"
       ]
     },
     "129b": {
-      "summary": "Die Landtagsabgeordneten ist verpflichtet, bestimmte Aufgaben im Bereich Unvereinbarkeitsausschuß wahrzunehmen. Die Landtagsabgeordneten, die eine der im § 4 des Unvereinbarkeitsgesetzes 1983, BGBl.",
+      "summary": "Der Unvereinbarkeitsausschuss prüft die privatwirtschaftlichen Tätigkeiten von Abgeordneten und Regierungsmitgliedern, kontrolliert die Bezüge öffentlich Bediensteter im Landtag und berät über Interessenkonflikte. Er besteht aus 15 Mitgliedern nach Proporz.",
       "topics": [
-        "Bürgermeister",
-        "Beschlussfähigkeit",
-        "Öffentlichkeit der Sitzungen"
+        "Unvereinbarkeitsausschuss",
+        "Interessenkonflikte"
       ]
     },
     "129c": {
-      "summary": "Die Bestimmung legt fest, verschiedene Aspekte rund um untersuchungsausschüsse des Landtages in 3 Absätzen. ",
+      "summary": "Zur Überprüfung der Verwaltungsführung politisch verantwortlicher Landesorgane können Untersuchungsausschüsse eingesetzt werden. Mindestens 25 Landtagsabgeordnete müssen den Antrag mit Darlegung des behaupteten Missstandes einbringen.",
       "topics": [
-        "Gemeinderatssitzungen",
-        "Zusammensetzung des Gemeinderats",
-        "Ausschüsse"
+        "Untersuchungsausschuss des Landtages"
       ]
     },
     "129d": {
-      "summary": "Festgelegt werden die Befugnisse und Entscheidungsmöglichkeiten der zuständigen Organe. ",
+      "summary": "Der Landtagspräsident entscheidet über die Zulässigkeit des Antrags auf Einsetzung eines Untersuchungsausschusses. Bei Meinungsverschiedenheiten wird ein per Los bestellter Richtervorsitzender mit der Gutachtenerstellung beauftragt.",
       "topics": [
-        "Gemeinderatssitzungen",
-        "Ausschüsse"
+        "Zulässigkeitsprüfung",
+        "Untersuchungsausschuss"
       ]
     },
     "129e": {
-      "summary": "Definiert werden die Befugnisse und Entscheidungsmöglichkeiten der zuständigen Organe. ",
+      "summary": "Der Untersuchungsausschuss wird nach Proporz aus Landtagsmitgliedern gebildet, sein Vorsitz per Los aus einer Richterliste bestellt. Ein Schiedsgremium aus dem Vorsitzenden und seinen Stellvertretern entscheidet über Verfahrensfragen.",
       "topics": [
-        "Gemeinderatssitzungen",
-        "Zusammensetzung des Gemeinderats",
-        "Abstimmung und Mehrheiten"
+        "Zusammensetzung des Untersuchungsausschusses",
+        "Richtervorsitz"
       ]
     },
     "129f": {
-      "summary": "Es wird verpflichtet, bestimmte Pflichten zu erfüllen. Zu seinen Sitzungen wird der Untersuchungsausschuss durch den Vorsitzenden (seinen Stellvertreter) einberufen.",
+      "summary": "Untersuchungsausschüsse tagen grundsätzlich öffentlich und wenden für Beweiserhebungen das AVG an. Ein Viertel der Mitglieder kann Zeugenladungen und ergänzende Beweisaufnahmen verlangen; Personen dürfen eine Vertrauensperson zur Einvernahme mitbringen.",
       "topics": [
-        "Beschlussfähigkeit",
-        "Befangenheit",
-        "Verhandlungsschrift"
+        "Verfahren des Untersuchungsausschusses",
+        "Zeugeneinvernahme"
       ]
     },
     "129g": {
-      "summary": "Im Mittelpunkt steht mehrere zusammenhängende Regelungsbereiche in 5 Absätzen. Unbeschadet des Rechtes der Einsetzungsminderheit gemäß Abs.",
+      "summary": "Untersuchungsausschüsse des Landtages enden spätestens zwölf Monate nach Konstituierung, verlängerbar um drei Monate auf Verlangen der Einsetzungsminderheit. Eine vorzeitige Beendigung bedarf deren Zustimmung. Berichte und Minderheitsberichte werden dem Landtag erstattet.",
       "topics": [
-        "Tagesordnung",
-        "Abstimmung und Mehrheiten",
-        "Ausschüsse"
+        "Tätigkeitsdauer",
+        "Berichtspflicht des Untersuchungsausschusses"
       ]
     },
     "130a": {
-      "summary": "Normiert werden verschiedene Aspekte rund um immunitätskollegium in 5 Absätzen. ",
+      "summary": "Das aus 15 Mitgliedern bestehende Immunitätskollegium berät die Immunitätsangelegenheiten der Landtagsabgeordneten und der Wiener Bundesratsmitglieder vor.",
       "topics": [
-        "Beschlussfähigkeit",
-        "Gemeinderatssitzungen",
-        "Abstimmung und Mehrheiten"
+        "Immunitätskollegium"
       ]
     },
     "130b": {
-      "summary": "Im Mittelpunkt steht verarbeitung personenbezogener Daten im Bereich des Landtages. Datenschutzrechtlich Verantwortlicher gemäß Art.",
+      "summary": "Für die Verarbeitung personenbezogener Daten zur Erfüllung der gesetzlichen Aufgaben des Landtages ist der Landtag datenschutzrechtlich verantwortlich im Sinne der DSGVO.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Datenschutz im Landtag"
       ]
     },
     "130c": {
-      "summary": "Inhaltlich geht es um mehrere zusammenhängende Regelungsbereiche in 3 Absätzen. ",
+      "summary": "Der Landtag und seine Mitglieder dürfen personenbezogene Daten, einschließlich besonderer Kategorien und strafrechtlicher Daten, für Zwecke der Gesetzgebung, der Vollziehungskontrolle und der EU-Mitwirkung verarbeiten.",
       "topics": [
-        "Allgemeine Bestimmungen"
+        "Datenverarbeitung",
+        "Datenschutzgrundlage"
       ]
     },
     "130d": {
-      "summary": "Vorgesehen ist verschiedene Aspekte rund um datenschutz bei zugeleiteten Verhandlungsgegenständen. In Bezug auf dem Landtag zugeleitete Verhandlungsgegenstände sind die Rechte der betroffenen Personen gemäß den Art.",
+      "summary": "Betroffene Personen müssen ihre datenschutzrechtlichen Ansprüche bei zugeleiteten Verhandlungsgegenständen und Untersuchungsausschuss-Akten beim jeweiligen Urheber geltend machen, nicht beim Landtag selbst.",
       "topics": [
-        "Ausschüsse"
+        "Datenschutz bei Verhandlungsgegenständen"
       ]
     },
     "130e": {
-      "summary": "Geregelt wird verschiedene Aspekte rund um rechte der betroffenen Personen in 8 Absätzen. ",
+      "summary": "Für parlamentarische Dokumente des Landtages gelten eingeschränkte Betroffenenrechte: Berichtigung ist auf offensichtliche Fehler beschränkt, Löschung nur von der Website möglich, und ein Widerspruchsrecht besteht nur gegen die Veröffentlichung.",
       "topics": [
-        "Öffentlichkeit der Sitzungen"
+        "Eingeschränkte Betroffenenrechte",
+        "Parlamentarischer Datenschutz"
       ]
     },
     "130f": {
-      "summary": "Es wird bestimmt, aufsicht. Das Parlamentarische Datenschutzkomitee (§ 35a Abs.",
+      "summary": "Zuständige Datenschutzaufsichtsbehörde für Datenverarbeitungen des Landtages ist das Parlamentarische Datenschutzkomitee.",
       "topics": [
-        "Gemeindeaufsicht"
+        "Datenschutzaufsicht"
       ]
     },
     "130g": {
-      "summary": "Die Regelung umfasst verweisungen auf andere Rechtsvorschriften. Soweit in diesem Gesetz auf das Bundesgesetz zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten (Datenschutzgesetz – DSG), BGBl.",
+      "summary": "Verweise auf das Datenschutzgesetz in diesem Gesetz beziehen sich auf dessen Fassung BGBl. I Nr. 50/2025.",
       "topics": [
-        "Verweisungen auf andere Rechtsvorschriften"
+        "Datenschutzgesetz-Verweisung"
       ]
     },
     "131a": {
-      "summary": "Es wird bestimmt, antrag auf Gesetzesprüfung. Einem Drittel der Mitglieder des Landtages steht das Recht zu, beim Verfassungsgerichtshof einen Antrag gemäß Artikel 140 Abs.",
+      "summary": "Ein Drittel der Landtagsmitglieder kann beim Verfassungsgerichtshof einen Antrag auf Prüfung eines Landesgesetzes wegen Verfassungswidrigkeit stellen.",
       "topics": [
-        "Antrag auf Gesetzesprüfung"
+        "Gesetzesprüfungsantrag",
+        "Verfassungsgerichtshof"
       ]
     },
     "131b": {
-      "summary": "Die Regelung umfasst verschiedene Aspekte rund um volksbegehren. ",
+      "summary": "Fünf Prozent der zum Landtag Wahlberechtigten können ein Volksbegehren in Form eines Gesetzentwurfs einbringen, das die Landesregierung dem Landtag vorlegen muss.",
       "topics": [
-        "Geschäftsordnung",
-        "Direkte Demokratie",
-        "Wahlen und Wahlrecht"
-      ]
-    },
-    "131c": {
-      "summary": "Die Bestimmung regelt volksabstimmung. Gesetzesbeschlüsse des Landtages sind nach Beendigung des nach bundesverfassungsgesetzlichen Bestimmungen vorgesehenen Verfahrens zur Mitwirkung des Bundes an der Landesgesetzgebung, jedoch vor ihrer Beurkund...",
-      "topics": [
-        "Abstimmung und Mehrheiten",
-        "Kundmachung und Verordnungen",
+        "Volksbegehren",
         "Direkte Demokratie"
       ]
     },
-    "133a": {
-      "summary": "Geregelt wird zustimmung des Landes. Soweit bundesverfassungsgesetzliche Bestimmungen die Zustimmung des Landes zu Akten der Gesetzgebung oder Vollziehung des Bundes vorsehen, entscheidet darüber die Landesregierung.",
+    "131c": {
+      "summary": "Gesetzesbeschlüsse des Landtages können auf dessen Beschluss einer Volksabstimmung unterzogen werden. Lehnt bei einer Beteiligung von mindestens der Hälfte der Wahlberechtigten die Mehrheit den Beschluss ab, unterbleibt die Kundmachung.",
       "topics": [
-        "Zustimmung des Landes"
+        "Volksabstimmung über Landesgesetze"
+      ]
+    },
+    "133a": {
+      "summary": "Über die bundesverfassungsrechtlich vorgesehene Zustimmung des Landes zu Akten der Bundesgesetzgebung oder -vollziehung entscheidet die Landesregierung.",
+      "topics": [
+        "Landeszustimmung",
+        "Bund-Länder-Beziehung"
       ]
     },
     "139a": {
-      "summary": "Erfasst werden volksanwaltschaft. Die Volksanwaltschaft ist auch für den Bereich der Verwaltung des Landes Wien zuständig.",
+      "summary": "Die Volksanwaltschaft ist auch für die Wiener Landesverwaltung zuständig und erstattet dem Landtag jährlich Bericht über ihre Tätigkeit. Ihre Mitglieder haben das Recht, an den relevanten Verhandlungen im Landtag teilzunehmen.",
       "topics": [
-        "Volksanwaltschaft"
+        "Volksanwaltschaft",
+        "Verwaltungskontrolle"
       ]
     }
   }

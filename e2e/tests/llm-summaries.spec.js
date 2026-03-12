@@ -43,7 +43,7 @@ test.describe('LLM Summaries', () => {
     // Verify it contains the full disclaimer message
     const disclaimerBox = page.locator('.bg-gruene-light\\/50:has-text("keine Rechtsberatung")').first();
     await expect(disclaimerBox).toBeVisible();
-    await expect(disclaimerBox).toContainText('Vereinfachte Zusammenfassungen');
+    await expect(disclaimerBox).toContainText('mittels KI (LLM) erstellt');
 
     await page.screenshot({ path: 'e2e/screenshots/llm-disclaimer.png', fullPage: false });
   });
