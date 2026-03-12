@@ -151,6 +151,7 @@ None yet.
 | 4 | Restructure FAQ to remove BL-specific claims | 2026-03-12 | e6c5f34 | [4-restructure-faq-to-remove-bl-specific-cl](./quick/4-restructure-faq-to-remove-bl-specific-cl/) |
 | 5 | Remove "Alle Gemeindeordnungen" links from FAQ topic pages | 2026-03-12 | 26ad32f | [5-remove-alle-gemeindeordnungen-links-from](./quick/5-remove-alle-gemeindeordnungen-links-from/) |
 | 6 | Add gender-inclusive language (Doppelpunkt-Gendern) to FAQ and glossary | 2026-03-12 | 007743a | [6-add-gender-inclusive-language-doppelpunk](./quick/6-add-gender-inclusive-language-doppelpunk/) |
+| 7 | Redesign topic filter: searchable tag-select with multi-select OR filtering | 2026-03-12 | a06e30a | [7-redesign-topic-filter-chips-ui-searchabl](./quick/7-redesign-topic-filter-chips-ui-searchabl/) |
 
 ### Blockers/Concerns
 
@@ -160,6 +161,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T14:39:24Z
-Stopped at: Completed quick task 6: Add gender-inclusive language (Doppelpunkt-Gendern) to FAQ and glossary
+Last session: 2026-03-12T14:56:41Z
+Stopped at: Completed quick task 7: Redesign topic filter chips to searchable tag-select with multi-select OR filtering
 Resume file: None
