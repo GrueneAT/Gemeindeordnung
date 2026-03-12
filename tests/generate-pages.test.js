@@ -208,7 +208,7 @@ describe('generate-pages', () => {
     expect(html).toContain('<header');
     expect(html).toContain('gruene-logo');
     // Site title in header
-    expect(html).toContain('Gemeindeordnung.at');
+    expect(html).toContain('gemeindeordnung.gruene.at');
   });
 
   it('Test 7P2: law page contains breadcrumb nav', async () => {

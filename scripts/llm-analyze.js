@@ -393,6 +393,13 @@ Fuer JEDEN Paragraph erstelle:
    Verwende NIEMALS "Dieser Paragraph regelt..." als Einstieg.
    Verwende IMMER korrekte deutsche Umlaute (ae, oe, ue, ss).
    WICHTIG: Verwende KEINE Anführungszeichen (") im Text. Verwende stattdessen einfache Anführungszeichen (') oder Guillemets.
+   Verwende IMMER geschlechtergerechte Sprache mit Doppelpunkt-Gendern:
+   - FEMININE GRUNDFORM als Basis: "die Bürgermeister:in" (NICHT "der:die Bürgermeister:in").
+   - SATZBAU UMFORMULIEREN: Nicht nur Doppelpunkte einfügen, sondern den ganzen Satz natürlich formulieren. Keine halb-gegenderten Konstruktionen (maskuline Artikel/Adjektive mit gegendertem Nomen).
+   - GESCHLECHTSNEUTRALE ALTERNATIVEN bevorzugen: "Vorsitz" statt "Vorsitzende:r", "Außenvertretung" statt "Außenvertreter:in", "Amtsführung" statt "Amtsführer:in".
+   - Beispiel SCHLECHT: "Der Bürgermeister ist Vorsitzender des Gemeinderats."
+   - Beispiel GUT: "Die Bürgermeister:in führt den Vorsitz im Gemeinderat."
+   - Formen: Bürgermeister:in, Vizebürgermeister:in, Gemeinderät:innen, Stadträt:innen, Gemeindebürger:innen, Ehrenbürger:innen.
 
 2. "topics": 1-3 thematische Labels. Verwende spezifische, praezise Labels
    (NICHT nur "Allgemeine Bestimmungen"). Beispiele guter Labels:
@@ -666,7 +673,21 @@ F\u00fcr jeden Begriff:
 - "references": 3-6 Verweise auf Paragraphen aus VERSCHIEDENEN Bundesl\u00e4ndern und Stadtrechten: { "category", "key", "paragraph", "label" }
 
 WICHTIG:
-- Referenzen m\u00fcssen mehrere Bundesl\u00e4nder abdecken (mindestens 3 verschiedene).
+- Referenzen müssen mehrere Bundesländer abdecken (mindestens 3 verschiedene).
+- Verwende IMMER geschlechtergerechte Sprache mit Doppelpunkt-Gendern. Beachte dabei folgende Regeln:
+  * FEMININE GRUNDFORM: Verwende die weibliche Form als Basis mit Doppelpunkt: "die Bürgermeister:in" (NICHT "der:die Bürgermeister:in"). Der Doppelpunkt signalisiert von der femininen Grundform aus die Inklusion aller Geschlechter.
+  * SATZBAU UMFORMULIEREN: Füge NICHT einfach Doppelpunkte in maskuline Sätze ein. Formuliere den gesamten Satz um, sodass er natürlich und flüssig lesbar ist. Vermeide halb-gegenderte Konstruktionen, in denen Artikel, Adjektive oder Rollenbezeichnungen maskulin bleiben.
+  * GESCHLECHTSNEUTRALE ALTERNATIVEN bevorzugen, wo sie natürlicher klingen:
+    - "Vorsitz" statt "Vorsitzende:r"
+    - "Außenvertretung" statt "Außenvertreter:in"
+    - "Amtsführung" statt "Amtsführer:in"
+    - "Mitglieder des Gemeinderats" statt "Gemeinderät:innen" (wenn es besser lesbar ist)
+  * KONKRETE BEISPIELE:
+    SCHLECHT: "Der Bürgermeister ist Vorsitzender des Gemeinderats."
+    GUT: "Die Bürgermeister:in führt den Vorsitz im Gemeinderat."
+    SCHLECHT: "Ein Gemeinderat ist als gewählter Vertreter tätig."
+    GUT: "Gemeinderät:innen sind als gewählte Vertretung tätig."
+  * REFERENZ-FORMEN: Bürgermeister:in, Vizebürgermeister:in, Gemeinderät:innen, Stadträt:innen, Gemeindebürger:innen, Ehrenbürger:innen.
 - Verwende das korrekte Zitierformat:
 ${citationRef}
 - Format: "Par. {nummer} {Abk\u00fcrzung}", z.B. "Par. 35 Bgld. GO"
