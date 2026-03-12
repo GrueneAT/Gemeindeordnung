@@ -5,16 +5,24 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
     await page.setViewportSize({ width: 375, height: 812 });
   });
 
-  test('index page has single-column cards and no horizontal overflow', async ({ page }) => {
+  test('index page has hero search, discovery chips, and no horizontal overflow', async ({ page }) => {
     await page.goto('./index.html');
 
     // Verify no horizontal overflow
     const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
     expect(scrollWidth).toBeLessThanOrEqual(375);
 
-    // Verify card links exist (a.block elements with rounded-lg class)
-    const cards = page.locator('a.block.rounded-lg');
-    expect(await cards.count()).toBeGreaterThan(0);
+    // Verify hero search input is visible
+    const heroInput = page.locator('#hero-search-input');
+    await expect(heroInput).toBeVisible();
+
+    // Verify discovery chips exist
+    const chips = page.locator('.discovery-chip');
+    expect(await chips.count()).toBeGreaterThan(0);
+
+    // Verify collapsible card grid summary is present
+    const summary = page.locator('details summary');
+    await expect(summary).toBeVisible();
 
     await page.screenshot({ path: 'e2e/screenshots/mobile-index.png', fullPage: true });
   });

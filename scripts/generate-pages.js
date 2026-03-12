@@ -292,9 +292,10 @@ function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
 
   const searchHTML = generateSearchHTML();
 
-  const navLinks = `      <nav class="hidden sm:flex items-center gap-3 text-sm shrink-0 ml-4" data-pagefind-ignore>
-        <a href="${prefix}faq/index.html" class="text-gruene-dark hover:underline">FAQ</a>
-        <a href="${prefix}glossar.html" class="text-gruene-dark hover:underline">Glossar</a>
+  const navLinks = `      <nav class="flex items-center gap-2 text-xs sm:text-sm shrink-0 sm:ml-4" data-pagefind-ignore>
+        <a href="${prefix}faq/index.html" class="text-gruene-dark hover:underline whitespace-nowrap">FAQ</a>
+        <span class="text-gray-300">|</span>
+        <a href="${prefix}glossar.html" class="text-gruene-dark hover:underline whitespace-nowrap">Glossar</a>
       </nav>`;
 
   return `  <header data-pagefind-ignore class="sticky top-0 bg-white border-b border-gray-200 z-10">

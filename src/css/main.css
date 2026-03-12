@@ -47,6 +47,61 @@ h3[id] {
   transition: opacity 0.2s;
 }
 
+/* ---- Hero Section Styles ---- */
+
+.hero-section {
+  background: linear-gradient(135deg, #f0f7ed 0%, #e8f5e3 100%);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+@media (min-width: 640px) {
+  .hero-section { padding: 4rem 1rem; }
+}
+
+/* Hero search container */
+.hero-search-container { position: relative; }
+.hero-search-container .search-dropdown {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 50;
+}
+
+/* ---- Discovery Chip Styles ---- */
+
+.discovery-chip {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid #6BA539;
+  border-radius: 9999px;
+  color: #1a3a1a;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: background-color 0.15s, color 0.15s;
+}
+.discovery-chip:hover {
+  background-color: #6BA539;
+  color: white;
+}
+
+/* ---- Collapsible Card Grid Styles ---- */
+
+details[open] .details-open-rotate {
+  transform: rotate(90deg);
+}
+.details-open-rotate {
+  transition: transform 0.2s;
+}
+
+/* Hide default summary marker */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
 /* ---- Search UI Styles ---- */
 
 /* Search dropdown — expanded panel for grouped results */
