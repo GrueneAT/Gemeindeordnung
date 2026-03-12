@@ -149,6 +149,7 @@ None yet.
 | 2 | Paragraph-level search results using Pagefind sub_results | 2026-03-11 | 1780968 | [2-paragraph-level-search-results-using-pag](./quick/2-paragraph-level-search-results-using-pag/) |
 | 3 | Push-to-main deploy + LLM content review + CI fix | 2026-03-11 | 99d2c9c | [3-implement-push-on-main-to-deploy-to-gith](./quick/3-implement-push-on-main-to-deploy-to-gith/) |
 | 4 | Restructure FAQ to remove BL-specific claims | 2026-03-12 | e6c5f34 | [4-restructure-faq-to-remove-bl-specific-cl](./quick/4-restructure-faq-to-remove-bl-specific-cl/) |
+| 5 | Remove "Alle Gemeindeordnungen" links from FAQ topic pages | 2026-03-12 | 26ad32f | [5-remove-alle-gemeindeordnungen-links-from](./quick/5-remove-alle-gemeindeordnungen-links-from/) |
 
 ### Blockers/Concerns
 
@@ -158,6 +159,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T13:50:21Z
-Stopped at: Completed quick task 4: Restructure FAQ to remove BL-specific claims
+Last session: 2026-03-12T14:07:24Z
+Stopped at: Completed quick task 5: Remove "Alle Gemeindeordnungen" links from FAQ topic pages
 Resume file: None
