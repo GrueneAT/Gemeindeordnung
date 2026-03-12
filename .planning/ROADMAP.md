@@ -169,7 +169,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 04.3-01-PLAN.md -- Create curated FAQ topic list and refactor generateFAQ to per-topic LLM calls
+- [x] 04.3-01-PLAN.md -- Create curated FAQ topic list and refactor generateFAQ to per-topic LLM calls
 - [ ] 04.3-02-PLAN.md -- Run FAQ generation, validate output, and human quality verification
 
 ### Phase 5: Unified Search Engine
@@ -222,7 +222,7 @@ Recommended: 4.3 -> 5 -> 6, with 7 parallelizable at any point after 4.3.
 | 4. LLM Enrichment | v1.0 | 4/4 | Complete | 2026-03-11 |
 | 4.1 Visual Polish & Screenshot Review | v1.0 | 2/2 | Complete | 2026-03-11 |
 | 4.2 Improve LLM Content Quality | v1.0 | 3/3 | Complete | 2026-03-11 |
-| 4.3 Curated FAQ Topics & Fix FAQ Generation | v1.1 | 0/2 | Planning | - |
+| 4.3 Curated FAQ Topics & Fix FAQ Generation | v1.1 | 1/2 | In Progress | - |
 | 5. Unified Search Engine | v1.1 | 0/? | Not started | - |
 | 6. Search-Hero Homepage & Navigation | v1.1 | 0/? | Not started | - |
 | 7. Law Text Readability | v1.1 | 0/? | Not started | - |

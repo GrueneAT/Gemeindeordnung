@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-03-12)
 
 ## Current Position
 
-Phase: 5 of 7 (Unified Search Engine)
-Plan: 0 of ? in current phase
-Status: Ready to plan
-Last activity: 2026-03-12 — v1.1 roadmap created with 3 phases (5-7) covering 16 requirements
+Phase: 4.3 of 7 (Curated FAQ Topics & Fix FAQ Generation)
+Plan: 1 of 2 in current phase
+Status: Executing
+Last activity: 2026-03-12 — Completed 04.3-01 (curated FAQ topic list + per-topic architecture)
 
-Progress: [░░░░░░░░░░] 0% (v1.1 scope)
+Progress: [██░░░░░░░░] 25% (v1.1 scope: 1/4 plans)
 
 ## Performance Metrics
 
@@ -60,6 +60,9 @@ Progress: [░░░░░░░░░░] 0% (v1.1 scope)
 Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
+- [04.3-01]: 15 curated topics covering all major municipal governance themes
+- [04.3-01]: Per-topic LLM calls replace single massive call (fixes 32K token overflow)
+- [04.3-01]: Keyword-based paragraph matching for topic-relevant content collection
 - [v1.1 Roadmap]: Coarse granularity — 3 phases for 16 requirements
 - [v1.1 Roadmap]: Phase 7 (Readability) independent of Phases 5-6 (Search), can run in parallel
 - [v1.1 Roadmap]: Two-pass Pagefind search required — BL filter for laws, no filter for FAQ/Glossar
@@ -86,6 +89,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T17:54:58.038Z
-Stopped at: Phase 04.3 context gathered
-Resume file: .planning/phases/04.3-curated-faq-topic-list-and-fix-broken-faq-generation/04.3-CONTEXT.md
+Last session: 2026-03-12T18:20:10Z
+Stopped at: Completed 04.3-01-PLAN.md
+Resume file: .planning/phases/04.3-curated-faq-topic-list-and-fix-broken-faq-generation/04.3-02-PLAN.md
