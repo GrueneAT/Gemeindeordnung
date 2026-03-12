@@ -584,39 +584,74 @@ function getIndexPath() {
 }
 
 /**
- * Render filter chips below search input.
+ * All 9 Austrian Bundeslaender for BL pill rendering.
  */
-function renderFilterChips() {
-  if (!searchChips) return;
+const ALL_BUNDESLAENDER = [
+  'Burgenland', 'Kaernten', 'Niederoesterreich', 'Oberoesterreich',
+  'Salzburg', 'Steiermark', 'Tirol', 'Vorarlberg', 'Wien',
+];
 
-  const savedBL = activeBundesland || getSavedBundesland();
+/**
+ * Update active state on all BL pills within a container.
+ */
+function updatePillStates(container) {
+  if (!container) return;
+  const pills = container.querySelectorAll('.bl-selector-pill');
+  pills.forEach((pill) => {
+    const bl = pill.dataset.bl || null;
+    const isActive = bl === activeBundesland;
+    pill.classList.toggle('bl-pill-active', isActive);
+    pill.classList.toggle('bl-pill-inactive', !isActive);
+  });
+}
 
-  let html = '';
-  if (savedBL) {
-    const isActive = activeBundesland === savedBL;
-    html += `<button class="search-chip ${isActive ? 'search-chip-active' : 'search-chip-inactive'}" data-bl="${escapeForDisplay(savedBL)}">${escapeForDisplay(savedBL)}</button>`;
-    html += `<button class="search-chip ${!activeBundesland ? 'search-chip-active' : 'search-chip-inactive'}" data-bl="">Alle Bundesl\u00E4nder</button>`;
-  } else {
-    html += `<button class="search-chip search-chip-active" data-bl="">Alle Bundesl\u00E4nder</button>`;
-  }
-
-  searchChips.innerHTML = html;
-
-  // Wire up chip clicks
-  searchChips.querySelectorAll('.search-chip').forEach((chip) => {
-    chip.addEventListener('click', (e) => {
+/**
+ * Wire click handlers on all BL pills in a container.
+ */
+function wirePillHandlers(container) {
+  if (!container) return;
+  container.querySelectorAll('.bl-selector-pill').forEach((pill) => {
+    pill.addEventListener('click', (e) => {
       e.preventDefault();
-      const bl = chip.dataset.bl || null;
+      const bl = pill.dataset.bl || null;
       activeBundesland = bl;
       if (bl) {
         saveBundesland(bl);
       }
-      renderFilterChips();
+      // Update all pill containers
+      updatePillStates(heroChips);
+      updatePillStates(headerChips);
       if (currentQuery.length >= 3) {
         triggerSearch();
       }
     });
   });
+}
+
+/**
+ * Render BL selector pills into a container.
+ * On index page hero, pills are pre-rendered in HTML so we only wire handlers.
+ * For header and non-index pages, we render dynamically.
+ */
+function renderFilterChips() {
+  if (!searchChips) return;
+
+  // Check if pills are already pre-rendered (index page hero)
+  const existingPills = searchChips.querySelectorAll('.bl-selector-pill');
+  if (existingPills.length > 0) {
+    // Just update active states
+    updatePillStates(searchChips);
+    return;
+  }
+
+  // Dynamically render pills (header search, law pages, mobile overlay)
+  let html = '<button class="bl-selector-pill ' + (!activeBundesland ? 'bl-pill-active' : 'bl-pill-inactive') + '" data-bl="">Alle</button>';
+  for (const bl of ALL_BUNDESLAENDER) {
+    const isActive = activeBundesland === bl;
+    html += `<button class="bl-selector-pill ${isActive ? 'bl-pill-active' : 'bl-pill-inactive'}" data-bl="${escapeForDisplay(bl)}">${escapeForDisplay(bl)}</button>`;
+  }
+  searchChips.innerHTML = html;
+  wirePillHandlers(searchChips);
 }
 
 /**
@@ -764,7 +799,7 @@ function openMobileOverlay() {
         class="w-full border border-gray-300 rounded-lg pl-9 pr-3 py-2 text-base bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
       <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
     </div>
-    <div id="search-chips-mobile" class="mt-2"></div>
+    <div id="search-chips-mobile" class="bl-selector-container mt-2 flex flex-wrap gap-1.5"></div>
     <div id="search-dropdown-mobile" class="search-dropdown-mobile mt-2"></div>
   `;
 
@@ -888,8 +923,8 @@ function setupHeroObserver() {
             if (currentQuery && headerInput) headerInput.value = currentQuery;
             // Hide hero dropdown
             heroDropdown?.classList.add('hidden');
-            // Re-render chips in header location
-            renderFilterChips();
+            // Update pill active states in header
+            updatePillStates(headerChips);
           }
         }
       }
@@ -938,8 +973,24 @@ function initSearch() {
     activeBundesland = getSavedBundesland();
   }
 
-  // Render initial filter chips
-  renderFilterChips();
+  // Wire pre-rendered BL pills on index page hero
+  if (heroActive && heroChips) {
+    wirePillHandlers(heroChips);
+    updatePillStates(heroChips);
+  }
+
+  // Render pills into header search chips (dynamically)
+  if (headerChips) {
+    const savedRef = searchChips;
+    searchChips = headerChips;
+    renderFilterChips();
+    searchChips = savedRef;
+  }
+
+  // Update hero pill active states based on saved BL
+  if (heroActive && heroChips) {
+    updatePillStates(heroChips);
+  }
 
   // Pre-load Pagefind WASM
   loadPagefind();

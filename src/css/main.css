@@ -68,15 +68,63 @@ h3[id] {
   z-index: 50;
 }
 
+/* ---- BL Selector Pill Styles ---- */
+
+.bl-selector-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  border: 1px solid;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.bl-pill-active {
+  background-color: var(--color-gruene-dark);
+  color: white;
+  border-color: var(--color-gruene-dark);
+}
+
+.bl-pill-inactive {
+  background-color: white;
+  color: var(--color-gruene-dark);
+  border-color: #d1d5db;
+}
+
+.bl-pill-inactive:hover {
+  border-color: var(--color-gruene-green);
+  background-color: var(--color-gruene-light);
+}
+
 /* ---- Discovery Chip Styles ---- */
+
+.discovery-section-compact {
+  /* Compact inline flow for FAQ + Glossar chips */
+}
+
+.discovery-label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-gruene-dark);
+  opacity: 0.6;
+  margin-right: 0.5rem;
+  white-space: nowrap;
+}
 
 .discovery-chip {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 0.375rem 0.875rem;
   border: 1px solid #6BA539;
   border-radius: 9999px;
   color: #1a3a1a;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   text-decoration: none;
   transition: background-color 0.15s, color 0.15s;
 }

@@ -296,7 +296,7 @@ function generateSearchHTML() {
         <button id="search-toggle" class="sm:hidden absolute right-0 top-0 p-2 text-gruene-dark" aria-label="Suche öffnen" style="display:none;">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         </button>
-        <div id="search-chips" class="mt-1"></div>
+        <div id="search-chips" class="bl-selector-container mt-1 flex flex-wrap gap-1"></div>
         <div id="search-dropdown" class="search-dropdown hidden"></div>
       </div>`;
 }
@@ -537,33 +537,38 @@ ${cards}
   let faqChipsHtml = '';
   if (faqTopics && faqTopics.length > 0) {
     const faqChips = faqTopics.slice(0, 8).map(t =>
-      `            <a href="faq/${t.slug}.html" class="discovery-chip">${genderText(escapeHtml(t.title))}</a>`
-    ).join('\n');
+      `<a href="faq/${t.slug}.html" class="discovery-chip">${genderText(escapeHtml(t.title))}</a>`
+    ).join('\n              ');
 
-    faqChipsHtml = `
-          <div>
-            <h2 class="text-xl font-bold text-gruene-dark mb-3">Häufige Fragen</h2>
-            <div class="flex flex-wrap gap-2">
-${faqChips}
-            </div>
-          </div>`;
+    faqChipsHtml = `<span class="discovery-label">Häufige Fragen</span>
+              ${faqChips}`;
   }
 
   // Build Glossary discovery chips (only if terms.json exists)
   let glossarChipsHtml = '';
   if (glossaryTerms.length > 0) {
     const glossarChips = glossaryTerms.map(t =>
-      `            <a href="glossar.html#${t.slug}" class="discovery-chip">${escapeHtml(t.term)}</a>`
-    ).join('\n');
+      `<a href="glossar.html#${t.slug}" class="discovery-chip">${escapeHtml(t.term)}</a>`
+    ).join('\n              ');
 
-    glossarChipsHtml = `
-          <div>
-            <h2 class="text-xl font-bold text-gruene-dark mb-3">Glossar</h2>
-            <div class="flex flex-wrap gap-2">
-${glossarChips}
-            </div>
-          </div>`;
+    glossarChipsHtml = `<span class="discovery-label">Glossar</span>
+              ${glossarChips}`;
   }
+
+  // Extract unique Bundesland names from LAWS config, sorted alphabetically
+  const blSet = new Set();
+  for (const laws of Object.values(LAWS)) {
+    for (const law of Object.values(laws)) {
+      blSet.add(law.bundesland);
+    }
+  }
+  const sortedBLs = [...blSet].sort((a, b) => a.localeCompare(b, 'de'));
+
+  // Build BL pill buttons HTML
+  const blPillsHtml = [
+    '<button class="bl-selector-pill bl-pill-active" data-bl="">Alle</button>',
+    ...sortedBLs.map(bl => `<button class="bl-selector-pill bl-pill-inactive" data-bl="${escapeHtml(bl)}">${escapeHtml(bl)}</button>`),
+  ].join('\n            ');
 
   const headerHtml = generateHeader(false);
   const footerHtml = generateFooter({ isLawPage: false });
@@ -584,16 +589,20 @@ ${glossarChips}
               class="w-full text-lg py-4 pl-12 pr-4 rounded-xl border-2 border-gruene-green/50 shadow-lg bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
             <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           </div>
-          <div id="hero-search-chips" class="mt-2"></div>
+          <div id="hero-search-chips" class="bl-selector-container mt-3 flex flex-wrap justify-center gap-1.5">
+            ${blPillsHtml}
+          </div>
           <div id="hero-search-dropdown" class="search-dropdown hidden mt-2"></div>
         </div>
       </div>
     </section>`;
 
-  // Discovery links section
+  // Discovery links section — compact inline flow layout
   const hasDiscovery = faqChipsHtml || glossarChipsHtml;
   const discoveryHtml = hasDiscovery ? `    <section class="discovery-section max-w-5xl mx-auto px-4 py-8" data-pagefind-ignore>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">${faqChipsHtml}${glossarChipsHtml}
+        <div class="discovery-section-compact flex flex-wrap items-center gap-2">
+              ${faqChipsHtml}
+              ${glossarChipsHtml}
         </div>
     </section>` : '';
 

@@ -28,7 +28,7 @@
         <button id="search-toggle" class="sm:hidden absolute right-0 top-0 p-2 text-gruene-dark" aria-label="Suche öffnen" style="display:none;">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         </button>
-        <div id="search-chips" class="mt-1"></div>
+        <div id="search-chips" class="bl-selector-container mt-1 flex flex-wrap gap-1"></div>
         <div id="search-dropdown" class="search-dropdown hidden"></div>
       </div>
 
@@ -49,26 +49,34 @@
               class="w-full text-lg py-4 pl-12 pr-4 rounded-xl border-2 border-gruene-green/50 shadow-lg bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
             <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           </div>
-          <div id="hero-search-chips" class="mt-2"></div>
+          <div id="hero-search-chips" class="bl-selector-container mt-3 flex flex-wrap justify-center gap-1.5">
+            <button class="bl-selector-pill bl-pill-active" data-bl="">Alle</button>
+            <button class="bl-selector-pill bl-pill-inactive" data-bl="Burgenland">Burgenland</button>
+            <button class="bl-selector-pill bl-pill-inactive" data-bl="Kaernten">Kaernten</button>
+            <button class="bl-selector-pill bl-pill-inactive" data-bl="Niederoesterreich">Niederoesterreich</button>
+            <button class="bl-selector-pill bl-pill-inactive" data-bl="Oberoesterreich">Oberoesterreich</button>
+            <button class="bl-selector-pill bl-pill-inactive" data-bl="Salzburg">Salzburg</button>
+            <button class="bl-selector-pill bl-pill-inactive" data-bl="Steiermark">Steiermark</button>
+            <button class="bl-selector-pill bl-pill-inactive" data-bl="Tirol">Tirol</button>
+            <button class="bl-selector-pill bl-pill-inactive" data-bl="Vorarlberg">Vorarlberg</button>
+            <button class="bl-selector-pill bl-pill-inactive" data-bl="Wien">Wien</button>
+          </div>
           <div id="hero-search-dropdown" class="search-dropdown hidden mt-2"></div>
         </div>
       </div>
     </section>
     <section class="discovery-section max-w-5xl mx-auto px-4 py-8" data-pagefind-ignore>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          <div>
-            <h2 class="text-xl font-bold text-gruene-dark mb-3">Häufige Fragen</h2>
-            <div class="flex flex-wrap gap-2">
-            <a href="faq/aufgaben-des-gemeinderats.html" class="discovery-chip">Aufgaben des Gemeinderats</a>
-            <a href="faq/ausschuesse-und-kommissionen.html" class="discovery-chip">Ausschüsse und Kommissionen</a>
-            <a href="faq/befangenheit-und-ausschluss.html" class="discovery-chip">Befangenheit und Ausschluss</a>
-            <a href="faq/buergerbeteiligung.html" class="discovery-chip">Bürgerbeteiligung (Volksbegehren, Volksbefragung, Volksabstimmung)</a>
-            <a href="faq/buergermeisterwahl-und-abwahl.html" class="discovery-chip">Bürgermeister:innenwahl und Abwahl</a>
-            <a href="faq/gemeindeaufsicht.html" class="discovery-chip">Gemeindeaufsicht (Aufsichtsbehörde)</a>
-            <a href="faq/gemeindebedienstete-und-personal.html" class="discovery-chip">Gemeindebedienstete und Personal</a>
-            <a href="faq/gemeindehaushalt-und-rechnungsabschluss.html" class="discovery-chip">Gemeindehaushalt und Rechnungsabschluss</a>
-            </div>
-          </div>
+        <div class="discovery-section-compact flex flex-wrap items-center gap-2">
+              <span class="discovery-label">Häufige Fragen</span>
+              <a href="faq/aufgaben-des-gemeinderats.html" class="discovery-chip">Aufgaben des Gemeinderats</a>
+              <a href="faq/ausschuesse-und-kommissionen.html" class="discovery-chip">Ausschüsse und Kommissionen</a>
+              <a href="faq/befangenheit-und-ausschluss.html" class="discovery-chip">Befangenheit und Ausschluss</a>
+              <a href="faq/buergerbeteiligung.html" class="discovery-chip">Bürgerbeteiligung (Volksbegehren, Volksbefragung, Volksabstimmung)</a>
+              <a href="faq/buergermeisterwahl-und-abwahl.html" class="discovery-chip">Bürgermeister:innenwahl und Abwahl</a>
+              <a href="faq/gemeindeaufsicht.html" class="discovery-chip">Gemeindeaufsicht (Aufsichtsbehörde)</a>
+              <a href="faq/gemeindebedienstete-und-personal.html" class="discovery-chip">Gemeindebedienstete und Personal</a>
+              <a href="faq/gemeindehaushalt-und-rechnungsabschluss.html" class="discovery-chip">Gemeindehaushalt und Rechnungsabschluss</a>
+              
         </div>
     </section>
     <details class="max-w-5xl mx-auto px-4 py-4">
