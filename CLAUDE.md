@@ -26,6 +26,11 @@ Use the Read tool on the relevant PNG files in `e2e/screenshots/`. You MUST visu
 - `search-count.png` -- Result count display
 - `search-highlight-target.png` -- On-page search highlighting
 
+**Desktop -- Unified Search:**
+- `unified-search-panel.png` -- Expanded panel with grouped results
+- `unified-search-grouped.png` -- Content-type groups with badges and counts
+- `unified-search-bl-filter.png` -- BL filter active with filter note
+
 **Desktop -- Interactive States:**
 - `toc-collapsed.png` / `toc-expanded.png` -- Table of contents
 - `copy-link-tooltip.png` -- Copy link tooltip
@@ -55,6 +60,7 @@ Use the Read tool on the relevant PNG files in `e2e/screenshots/`. You MUST visu
 - `mobile-index.png` -- Mobile index layout
 - `mobile-law-page.png` -- Mobile law page
 - `search-mobile-overlay.png` -- Mobile search overlay
+- `unified-search-mobile.png` -- Mobile overlay with grouped results
 
 ### Step 3: Check each screenshot against this checklist
 You MUST verify every applicable dimension. Fail any screenshot that does not pass.
