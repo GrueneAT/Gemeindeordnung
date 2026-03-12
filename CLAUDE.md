@@ -25,6 +25,8 @@ Use the Read tool on the relevant PNG files in `e2e/screenshots/`. You MUST visu
 - `search-filter-all.png` -- All-filter state
 - `search-count.png` -- Result count display
 - `search-highlight-target.png` -- On-page search highlighting
+- `hero-search.png` -- Hero search bar layout on index page
+- `hero-search-results.png` -- Hero search with Pagefind results
 
 **Desktop -- Unified Search:**
 - `unified-search-panel.png` -- Expanded panel with grouped results
@@ -50,6 +52,11 @@ Use the Read tool on the relevant PNG files in `e2e/screenshots/`. You MUST visu
 - `faq-topic-page.png` -- FAQ topic detail page
 - `glossar-page.png` -- Glossar overview page
 - `glossar-tooltip.png` -- Glossar tooltip on hover
+- `discovery-links.png` -- FAQ discovery chips on homepage
+- `card-grid-collapsed.png` -- Collapsible card grid closed state
+- `card-grid-expanded.png` -- Card grid expanded with all laws
+- `header-index.png` -- Header on index page with nav links
+- `header-law-page.png` -- Header on law page with nav links
 
 **Desktop -- Accessibility & Typography:**
 - `accessibility-index.png` -- Accessibility on index page
@@ -61,6 +68,8 @@ Use the Read tool on the relevant PNG files in `e2e/screenshots/`. You MUST visu
 - `mobile-law-page.png` -- Mobile law page
 - `search-mobile-overlay.png` -- Mobile search overlay
 - `unified-search-mobile.png` -- Mobile overlay with grouped results
+- `mobile-hero.png` -- Mobile hero section with search and discovery chips
+- `mobile-nav-links.png` -- Mobile header with FAQ and Glossar links
 
 ### Step 3: Check each screenshot against this checklist
 You MUST verify every applicable dimension. Fail any screenshot that does not pass.
