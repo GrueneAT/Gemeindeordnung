@@ -174,6 +174,60 @@ describe('package.json llm scripts', () => {
   });
 });
 
+describe('generateFAQ per-topic architecture', () => {
+  const sourceCode = readFileSync(join(ROOT, 'scripts', 'llm-analyze.js'), 'utf-8');
+
+  it('has loadCuratedTopics helper function', () => {
+    expect(sourceCode).toMatch(/function\s+loadCuratedTopics/);
+  });
+
+  it('has collectParagraphsForTopic helper function', () => {
+    expect(sourceCode).toMatch(/function\s+collectParagraphsForTopic/);
+  });
+
+  it('has buildTopicPrompt helper function', () => {
+    expect(sourceCode).toMatch(/function\s+buildTopicPrompt/);
+  });
+
+  it('has GENDERING_INSTRUCTIONS constant', () => {
+    expect(sourceCode).toMatch(/const\s+GENDERING_INSTRUCTIONS/);
+  });
+
+  it('has FAQ_STYLE_INSTRUCTIONS constant', () => {
+    expect(sourceCode).toMatch(/const\s+FAQ_STYLE_INSTRUCTIONS/);
+  });
+
+  it('generateFAQ calls loadCuratedTopics', () => {
+    const faqFn = sourceCode.slice(sourceCode.indexOf('export async function generateFAQ'));
+    expect(faqFn).toMatch(/loadCuratedTopics/);
+  });
+
+  it('generateFAQ supports --topic option for single-topic regeneration', () => {
+    const faqFn = sourceCode.slice(sourceCode.indexOf('export async function generateFAQ'));
+    expect(faqFn).toMatch(/options\.topic/);
+  });
+
+  it('CLI section parses --topic flag', () => {
+    const cliSection = sourceCode.slice(sourceCode.indexOf('CLI entry point'));
+    expect(cliSection).toMatch(/--topic/);
+  });
+
+  it('generateForLaw and generateGlossary are unchanged', () => {
+    // These functions should NOT reference curated-topics
+    const forLawFn = sourceCode.slice(
+      sourceCode.indexOf('export async function generateForLaw'),
+      sourceCode.indexOf('export async function generateFAQ')
+    );
+    expect(forLawFn).not.toMatch(/curated-topics/);
+
+    const glossaryFn = sourceCode.slice(
+      sourceCode.indexOf('export async function generateGlossary'),
+      sourceCode.indexOf('export async function generateAll')
+    );
+    expect(glossaryFn).not.toMatch(/curated-topics/);
+  });
+});
+
 describe('--force flag support', () => {
   const sourceCode = readFileSync(join(ROOT, 'scripts', 'llm-analyze.js'), 'utf-8');
 
