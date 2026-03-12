@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: UI/UX Improvements
 status: completed
-stopped_at: Completed 07-01-PLAN.md
+stopped_at: Completed 07-02-PLAN.md
 last_updated: "2026-03-12T21:42:51.292Z"
 last_activity: 2026-03-12 — Completed 06-03 (E2E tests and visual verification)
 progress:
   total_phases: 11
   completed_phases: 10
   total_plans: 30
-  completed_plans: 29
-  percent: 97
+  completed_plans: 30
+  percent: 100
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-12)
 ## Current Position
 
 Phase: 7 of 7 (Law Text Readability)
-Plan: 1 of 2 in current phase
-Status: Plan 07-01 complete, ready for Plan 07-02
-Last activity: 2026-03-12 — Completed 07-01 (Typography, section hierarchy, Absatz separation)
+Plan: 2 of 2 in current phase
+Status: Phase 07 complete, all plans executed
+Last activity: 2026-03-12 — Completed 07-02 (Summary-first layout, key term highlighting)
 
-Progress: [█████████░] 97% (v1.1 scope: 1/2 plans in phase 7 complete)
+Progress: [██████████] 100% (v1.1 scope: 2/2 plans in phase 7 complete)
 
 ## Performance Metrics
 
@@ -60,6 +60,7 @@ Progress: [█████████░] 97% (v1.1 scope: 1/2 plans in phase 7
 | Phase 06 P02 | 10min | 1 tasks | 45 files |
 | Phase 06 P03 | 8min | 3 tasks | 3 files |
 | Phase 07 P01 | 6min | 2 tasks | 4 files |
+| Phase 07 P02 | 7min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -95,6 +96,9 @@ Recent decisions affecting current work:
 - [07-01]: Scoped .law-text class for law-page-only typography (17px/1.75/65ch)
 - [07-01]: Semantic CSS classes for section heading hierarchy (hauptstueck-heading, abschnitt-heading)
 - [07-01]: Flex-based Absatz rendering with number labels stripped from text
+- [07-02]: Always-visible summary divs replace collapsible details toggles
+- [07-02]: Structural markers injected before glossary tooltips to prevent regex conflicts
+- [07-02]: Enhanced glossar-term styling scoped under .law-text class
 
 ### Roadmap Evolution
 
@@ -114,6 +118,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T21:49:43Z
-Stopped at: Completed 07-01-PLAN.md
+Last session: 2026-03-12T21:59:39Z
+Stopped at: Completed 07-02-PLAN.md
 Resume file: None
