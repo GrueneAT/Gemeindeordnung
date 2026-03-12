@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-03-10)
 Phase: 4.2 of 6 (Improve LLM Content Quality)
 Plan: 3 of 3 in current phase
 Status: phase-complete
-Last activity: 2026-03-11 - Completed 04.2-03: Regenerated all LLM content with real summaries, FAQ, and glossary
+Last activity: 2026-03-12 - Completed quick task 8: Add gendering instructions to FAQ LLM prompt
 
 Progress: [██████████] 100%
 
