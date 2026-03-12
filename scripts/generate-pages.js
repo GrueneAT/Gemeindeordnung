@@ -66,16 +66,28 @@ function injectGlossaryTerms(bodyHtml, glossaryTerms, categoryPrefix) {
   if (!bodyHtml || glossaryTerms.length === 0) return bodyHtml;
 
   let result = bodyHtml;
+
   for (const term of glossaryTerms) {
-    // Match whole word, first occurrence only, case-insensitive
+    // Match whole word outside HTML tags, first occurrence only
     const pattern = new RegExp(`(?<=>)([^<]*?)\\b(${escapeRegex(term.term)})\\b`, 'i');
-    const match = result.match(pattern);
-    if (match) {
-      // Build tooltip span
-      const tooltipHtml = `<span class="glossar-term" tabindex="0">${match[2]}<span class="glossar-tooltip">${escapeHtml(term.definition)}<a href="${categoryPrefix}glossar.html#${term.slug}" class="glossar-tooltip-link">&#8594; Glossar</a></span></span>`;
-      // Replace only first occurrence
-      result = result.replace(match[2], tooltipHtml);
-    }
+    const match = pattern.exec(result);
+    if (!match) continue;
+
+    // Get the exact position of the matched word within the full match
+    const fullMatchStart = match.index;
+    const wordStart = fullMatchStart + match[0].indexOf(match[2]);
+
+    // Check this position isn't inside an existing glossar-tooltip or glossar-term
+    const before = result.substring(0, wordStart);
+    const inTooltip = (before.match(/class="glossar-tooltip"/g) || []).length >
+                      (before.match(/class="glossar-tooltip-link"/g) || []).length;
+    if (inTooltip) continue;
+
+    const definition = escapeHtml(term.definition);
+    const tooltipHtml = `<span class="glossar-term" tabindex="0">${match[2]}<span class="glossar-tooltip">${definition}<a href="${categoryPrefix}glossar.html#${term.slug}" class="glossar-tooltip-link">&#8594; Glossar</a></span></span>`;
+
+    // Positional replace: splice at exact word position
+    result = result.substring(0, wordStart) + tooltipHtml + result.substring(wordStart + match[2].length);
   }
   return result;
 }
@@ -269,7 +281,7 @@ function generateSearchHTML() {
  */
 function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
   const prefix = pathPrefix !== undefined ? pathPrefix : (isLawPage ? '../' : '');
-  const logoPath = `${prefix}assets/gruene-logo.svg`;
+  const logoPath = `${prefix}assets/gruene-logo.png`;
   const indexPath = `${prefix}index.html`;
 
   const dropdown = isLawPage ? buildBundeslandDropdown(currentKey, currentCategory) : '';
@@ -288,7 +300,7 @@ function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
     <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between">
       <a href="${indexPath}" class="flex items-center gap-2 text-gruene-dark hover:text-gruene-dark no-underline shrink-0">
         <img src="${logoPath}" alt="Gruene Logo" class="w-8 h-8 gruene-logo" />
-        <span class="text-lg font-bold">Gemeindeordnung.at</span>
+        <span class="text-lg font-bold">gemeindeordnung.gruene.at</span>
       </a>
 ${navLinks}
 ${searchHTML}
@@ -415,7 +427,7 @@ ${chipButtons}
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${title} - Gemeindeordnung.at</title>
+    <title>${title} - gemeindeordnung.gruene.at</title>
     <link rel="stylesheet" href="../css/main.css" />
     <meta data-pagefind-filter="bundesland[content]" content="${escapeHtml(law.meta.bundesland)}" />
     <meta data-pagefind-filter="typ[content]" content="${escapeHtml(category)}" />
@@ -549,7 +561,7 @@ function generateFAQIndexPage(topics) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Häufige Fragen - Gemeindeordnung.at</title>
+    <title>Häufige Fragen - gemeindeordnung.gruene.at</title>
     <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
@@ -604,7 +616,7 @@ function generateFAQTopicPage(topic) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${escapeHtml(topic.title)} - FAQ - Gemeindeordnung.at</title>
+    <title>${escapeHtml(topic.title)} - FAQ - gemeindeordnung.gruene.at</title>
     <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
@@ -691,7 +703,7 @@ ${termsHtml}
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Glossar der Rechtsbegriffe - Gemeindeordnung.at</title>
+    <title>Glossar der Rechtsbegriffe - gemeindeordnung.gruene.at</title>
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">

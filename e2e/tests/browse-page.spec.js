@@ -7,7 +7,7 @@ test.describe('Browse Bundesland page (UAT 1)', () => {
     // Header: logo and site name
     const logo = page.locator('.gruene-logo');
     await expect(logo).toBeVisible();
-    const siteName = page.locator('header').getByText('Gemeindeordnung.at');
+    const siteName = page.locator('header').getByText('gemeindeordnung.gruene.at');
     await expect(siteName).toBeVisible();
 
     // Breadcrumb contains Bundesland name
