@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: UI/UX Improvements
-status: completed
-stopped_at: Completed 04.3-02-PLAN.md
-last_updated: "2026-03-12T19:43:06.877Z"
-last_activity: 2026-03-12 — Completed 04.3-02 (FAQ generation execution and validation)
+status: in_progress
+stopped_at: Completed 05-01-PLAN.md
+last_updated: "2026-03-12T20:39:19Z"
+last_activity: 2026-03-12 — Completed 05-01 (Pagefind metadata tagging)
 progress:
   total_phases: 11
   completed_phases: 8
-  total_plans: 22
-  completed_plans: 22
-  percent: 50
+  total_plans: 25
+  completed_plans: 23
+  percent: 55
 ---
 
 # Project State
@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-03-12)
 
 ## Current Position
 
-Phase: 4.3 of 7 (Curated FAQ Topics & Fix FAQ Generation) -- COMPLETE
-Plan: 2 of 2 in current phase (all complete)
-Status: Phase complete
-Last activity: 2026-03-12 — Completed 04.3-02 (FAQ generation execution and validation)
+Phase: 5 of 7 (Unified Search Engine)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-03-12 — Completed 05-01 (Pagefind metadata tagging)
 
-Progress: [█████░░░░░] 50% (v1.1 scope: 2/4 plans in phase 4.3)
+Progress: [█████▒░░░░] 55% (v1.1 scope: 1/3 plans in phase 5)
 
 ## Performance Metrics
 
@@ -53,6 +53,7 @@ Progress: [█████░░░░░] 50% (v1.1 scope: 2/4 plans in phase 4
 
 *Updated after each plan completion*
 | Phase 04.3 P02 | 71min | 2 tasks | 16 files |
+| Phase 05 P01 | 10min | 2 tasks | 42 files |
 
 ## Accumulated Context
 
@@ -72,6 +73,8 @@ Recent decisions affecting current work:
 - [Research]: `data-pagefind-filter` key must be `typ` (not `type` — reserved words: any, all, none, not)
 - [Research]: `@tailwindcss/typography` confirmed broken on v4 — use scoped CSS in main.css
 - [Phase 04.3]: FAQ generation produces 15 topics, 105 questions via per-topic LLM calls
+- [05-01]: Unified typ filter value "Gesetz" for all law pages (replaces category slugs)
+- [05-01]: Glossar typ tag added directly to src/glossar.html (data file missing, script skips regeneration)
 
 ### Roadmap Evolution
 
@@ -84,13 +87,13 @@ None yet.
 
 ### Blockers/Concerns
 
-- Pagefind binary opt-in: FAQ/Glossar pages must have `data-pagefind-body` and `data-pagefind-filter` tags before unified search works
+- RESOLVED: Pagefind typ filter tags now present on all content types (Gesetz, FAQ, Glossar)
 - Mobile overlay assumes header-resident search input — Phase 6 hero refactor must verify overlay still works
 - Phase 4.3 FAQ fix MUST NOT break summary or glossary generation — all three pipelines share code in llm-analyze.js; any changes to JSON extraction, CLI invocation, or prompt handling must be regression-tested against all three generation modes (llm:summaries, llm:glossary, llm:faq)
 - Phase 4.3 executor MUST run actual LLM generation to verify fixes — llm-analyze.js already unsets CLAUDECODE env var (line 192) to allow nested Claude CLI calls; use `npm run llm:faq` (and llm:summaries/llm:glossary for regression) directly during execution
 
 ## Session Continuity
 
-Last session: 2026-03-12T19:35:27.310Z
-Stopped at: Completed 04.3-02-PLAN.md
+Last session: 2026-03-12T20:39:19Z
+Stopped at: Completed 05-01-PLAN.md
 Resume file: None

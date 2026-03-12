@@ -64,7 +64,7 @@ Requirements for UI/UX Improvements milestone. Each maps to roadmap phases.
 ### Search UX
 
 - [ ] **SRCH-01**: User sees a central, prominent search bar as the hero element on the homepage
-- [ ] **SRCH-02**: User can search across Gesetze, FAQ, and Glossar from a single search input
+- [x] **SRCH-02**: User can search across Gesetze, FAQ, and Glossar from a single search input
 - [ ] **SRCH-03**: Search results are grouped by content type (FAQ Antworten, Glossar, Paragraphen) so user can distinguish result sources
 - [ ] **SRCH-04**: Homepage shows quick-access links below search hero (FAQ topics, popular terms) for browsable discovery
 - [ ] **SRCH-05**: Homepage card grid is replaced by search-hero layout (GO/Stadtrechte list minimized or collapsed below)
@@ -160,7 +160,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LLM-05 | Phase 4 | Complete |
 | LLM-06 | Phase 4 | Complete |
 | LLM-07 | Phase 4 | Complete |
-| SRCH-02 | Phase 5 | Pending |
+| SRCH-02 | Phase 5 | Complete |
 | SRCH-03 | Phase 5 | Pending |
 | DSKT-01 | Phase 5 | Pending |
 | DSKT-02 | Phase 5 | Pending |
