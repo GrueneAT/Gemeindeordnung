@@ -77,6 +77,31 @@ test.describe('Absatz separation (READ-04)', () => {
   });
 });
 
+test.describe('Structural marker highlighting (READ-03)', () => {
+  test('Legal references are wrapped in .legal-ref spans', async ({ page }) => {
+    await page.goto('./gemeindeordnungen/wien.html');
+
+    // Verify .legal-ref elements exist on the page (at least 1)
+    const legalRefs = page.locator('.legal-ref');
+    const refCount = await legalRefs.count();
+    expect(refCount).toBeGreaterThan(0);
+
+    // Verify .legal-ref has font-weight >= 500
+    const fontWeight = await legalRefs.first().evaluate((el) => {
+      return parseInt(window.getComputedStyle(el).fontWeight, 10);
+    });
+    expect(fontWeight).toBeGreaterThanOrEqual(500);
+
+    // Verify .legal-ref text content matches expected patterns
+    const firstText = await legalRefs.first().textContent();
+    expect(firstText).toMatch(/Abs\.|§|Z\s*\d|lit\./);
+
+    // Screenshot
+    await legalRefs.first().scrollIntoViewIfNeeded();
+    await page.screenshot({ path: 'e2e/screenshots/structural-markers.png', fullPage: false });
+  });
+});
+
 test.describe('Mobile readability', () => {
   test('no horizontal overflow and correct mobile font size', async ({ browser }) => {
     const context = await browser.newContext({

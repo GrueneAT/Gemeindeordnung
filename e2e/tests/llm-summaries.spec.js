@@ -1,34 +1,36 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('LLM Summaries', () => {
-  test('LLM-01: collapsible summary under paragraph heading', async ({ page }) => {
+  test('LLM-01: always-visible summary above paragraph text', async ({ page }) => {
     await page.goto('./gemeindeordnungen/burgenland.html');
 
-    // Find a details element containing "Vereinfachte Zusammenfassung"
-    const summaryToggle = page.locator('details summary:has-text("Vereinfachte Zusammenfassung")').first();
-    await expect(summaryToggle).toBeVisible();
+    // Verify .law-summary elements exist (at least 5 on the page)
+    const summaries = page.locator('.law-summary');
+    const count = await summaries.count();
+    expect(count).toBeGreaterThan(5);
 
-    // Verify collapsed by default (details element should not have open attribute)
-    const details = summaryToggle.locator('..');
-    await expect(details).not.toHaveAttribute('open', '');
+    // Verify .law-summary is visible WITHOUT any click (no toggle needed)
+    const firstSummary = summaries.first();
+    await expect(firstSummary).toBeVisible();
 
-    // Click to expand
-    await summaryToggle.click();
-    await expect(details).toHaveAttribute('open', '');
-
-    // Verify summary text paragraph is visible inside
-    const summaryText = details.locator('p');
-    await expect(summaryText).toBeVisible();
+    // Verify .law-summary p contains non-empty text
+    const summaryText = firstSummary.locator('p');
     await expect(summaryText).not.toBeEmpty();
 
-    await page.screenshot({ path: 'e2e/screenshots/llm-summary-expanded.png', fullPage: false });
+    // Verify NO old details toggle pattern exists
+    const oldPattern = page.locator('details summary:has-text("Vereinfachte Zusammenfassung")');
+    expect(await oldPattern.count()).toBe(0);
+
+    // Screenshot
+    await firstSummary.scrollIntoViewIfNeeded();
+    await page.screenshot({ path: 'e2e/screenshots/summary-always-visible.png', fullPage: false });
   });
 
   test('LLM-01: multiple summaries exist on law page', async ({ page }) => {
     await page.goto('./gemeindeordnungen/burgenland.html');
 
     // Burgenland should have many paragraph summaries
-    const summaries = page.locator('details summary:has-text("Vereinfachte Zusammenfassung")');
+    const summaries = page.locator('.law-summary');
     const count = await summaries.count();
     expect(count).toBeGreaterThan(5);
   });
