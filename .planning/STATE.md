@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: UI/UX Improvements
 status: in_progress
-stopped_at: Completed 05-01-PLAN.md
-last_updated: "2026-03-12T20:39:19Z"
-last_activity: 2026-03-12 — Completed 05-01 (Pagefind metadata tagging)
+stopped_at: Completed 05-02-PLAN.md
+last_updated: "2026-03-12T20:48:08Z"
+last_activity: 2026-03-12 — Completed 05-02 (Two-pass search and grouped results)
 progress:
   total_phases: 11
   completed_phases: 8
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-12)
 ## Current Position
 
 Phase: 5 of 7 (Unified Search Engine)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-03-12 — Completed 05-01 (Pagefind metadata tagging)
+Last activity: 2026-03-12 — Completed 05-02 (Two-pass search and grouped results)
 
-Progress: [█████▒░░░░] 55% (v1.1 scope: 1/3 plans in phase 5)
+Progress: [██████▒░░░] 60% (v1.1 scope: 2/3 plans in phase 5)
 
 ## Performance Metrics
 
@@ -54,6 +54,7 @@ Progress: [█████▒░░░░] 55% (v1.1 scope: 1/3 plans in phase 5
 *Updated after each plan completion*
 | Phase 04.3 P02 | 71min | 2 tasks | 16 files |
 | Phase 05 P01 | 10min | 2 tasks | 42 files |
+| Phase 05 P02 | 6min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -75,6 +76,9 @@ Recent decisions affecting current work:
 - [Phase 04.3]: FAQ generation produces 15 topics, 105 questions via per-topic LLM calls
 - [05-01]: Unified typ filter value "Gesetz" for all law pages (replaces category slugs)
 - [05-01]: Glossar typ tag added directly to src/glossar.html (data file missing, script skips regeneration)
+- [05-02]: Manual debounce replaces Pagefind debouncedSearch to avoid parallel query cancellation
+- [05-02]: Parallel result data loading in single-pass mode for fast typ classification
+- [05-02]: Legacy renderResults kept alongside renderUnifiedResults for backward compatibility
 
 ### Roadmap Evolution
 
@@ -94,6 +98,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T20:39:19Z
-Stopped at: Completed 05-01-PLAN.md
+Last session: 2026-03-12T20:48:08Z
+Stopped at: Completed 05-02-PLAN.md
 Resume file: None
