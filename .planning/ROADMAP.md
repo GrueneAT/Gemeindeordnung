@@ -3,7 +3,7 @@
 ## Milestones
 
 - v1.0 MVP - Phases 1-4.2 (shipped 2026-03-11)
-- v1.1 UI/UX Improvements - Phases 5-7 (in progress)
+- v1.1 UI/UX Improvements - Phases 4.3, 5-7 (in progress)
 
 ## Phases
 
@@ -28,6 +28,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 ### v1.1 UI/UX Improvements
 
+- [ ] **Phase 4.3: Curated FAQ Topic List & Fix Broken FAQ Generation** (INSERTED) - Research-driven curated topic list, fix FAQ pipeline JSON parse errors, regenerate FAQ content
 - [ ] **Phase 5: Unified Search Engine** - Pagefind metadata tagging for FAQ/Glossar, two-pass search architecture, grouped results by content type with rich metadata
 - [ ] **Phase 6: Search-Hero Homepage & Navigation** - Search-first homepage layout replacing card grid, quick-access discovery links, polished header and navigation across all pages
 - [ ] **Phase 7: Law Text Readability** - Typography overhaul, summary-first layout, visual hierarchy for sections and Absaetze, highlighted key terms
@@ -148,15 +149,32 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 04.2-01-PLAN.md -- Improve LLM prompts, add citation map, separate CLI commands, and validation script
-- [ ] 04.2-02-PLAN.md -- Add client-side glossary filter/search input with E2E tests
-- [ ] 04.2-03-PLAN.md -- Regenerate all LLM content and human quality verification
+- [x] 04.2-01-PLAN.md -- Improve LLM prompts, add citation map, separate CLI commands, and validation script
+- [x] 04.2-02-PLAN.md -- Add client-side glossary filter/search input with E2E tests
+- [x] 04.2-03-PLAN.md -- Regenerate all LLM content and human quality verification
 
 </details>
 
+### Phase 04.3: Curated FAQ Topic List & Fix Broken FAQ Generation (INSERTED)
+**Goal:** Build a curated, research-driven FAQ topic list that persists across regeneration cycles and fix the broken FAQ generation pipeline
+**Depends on:** Phase 4.2
+**Requirements**: LLM-02, LLM-05
+**Success Criteria** (what must be TRUE):
+  1. A curated FAQ topic list exists (e.g. data/llm/faq/curated-topics.json) with predefined topics derived from existing FAQ content, law text analysis, and research — not just LLM serendipity
+  2. FAQ topics cover key municipal governance themes (e.g. Sitzungsoeffentlichkeit, Geheimhaltung, Informationspflicht, Befangenheit, Buergermeisterwahl) across all Bundeslaender
+  3. The curated topic list is the authoritative input for FAQ generation — LLM uses it as basis but can propose additional topics within guardrails
+  4. FAQ generation script (npm run llm:faq) runs without JSON parse errors and produces valid output
+  5. Generated FAQ data passes npm run llm:validate
+  6. Summary and glossary generation still work correctly — no regressions from FAQ pipeline changes (verify with llm:summaries dry-run and llm:glossary dry-run or targeted test)
+**Plans**: 2 plans
+
+Plans:
+- [ ] 04.3-01-PLAN.md -- Create curated FAQ topic list and refactor generateFAQ to per-topic LLM calls
+- [ ] 04.3-02-PLAN.md -- Run FAQ generation, validate output, and human quality verification
+
 ### Phase 5: Unified Search Engine
 **Goal**: Users can search across all content types (Gesetze, FAQ, Glossar) from a single input and see results grouped by source with rich metadata
-**Depends on**: Phase 4.2
+**Depends on**: Phase 4.3
 **Requirements**: SRCH-02, SRCH-03, DSKT-01, DSKT-02, DSKT-03
 **Success Criteria** (what must be TRUE):
   1. User types a query and sees results from Gesetze, FAQ, and Glossar grouped into visually distinct sections with content-type badges and per-group result counts
@@ -192,8 +210,8 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases 5 and 7 can run in parallel (independent). Phase 6 depends on Phase 5.
-Recommended: 5 -> 6, with 7 parallelizable at any point.
+Phase 4.3 first (FAQ fix), then Phases 5 and 7 can run in parallel (independent). Phase 6 depends on Phase 5.
+Recommended: 4.3 -> 5 -> 6, with 7 parallelizable at any point after 4.3.
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
@@ -203,7 +221,8 @@ Recommended: 5 -> 6, with 7 parallelizable at any point.
 | 3. Search | v1.0 | 3/3 | Complete | 2026-03-11 |
 | 4. LLM Enrichment | v1.0 | 4/4 | Complete | 2026-03-11 |
 | 4.1 Visual Polish & Screenshot Review | v1.0 | 2/2 | Complete | 2026-03-11 |
-| 4.2 Improve LLM Content Quality | v1.0 | 0/3 | Planning | - |
+| 4.2 Improve LLM Content Quality | v1.0 | 3/3 | Complete | 2026-03-11 |
+| 4.3 Curated FAQ Topics & Fix FAQ Generation | v1.1 | 0/2 | Planning | - |
 | 5. Unified Search Engine | v1.1 | 0/? | Not started | - |
 | 6. Search-Hero Homepage & Navigation | v1.1 | 0/? | Not started | - |
 | 7. Law Text Readability | v1.1 | 0/? | Not started | - |
