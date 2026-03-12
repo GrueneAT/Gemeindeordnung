@@ -112,8 +112,7 @@ h3[id] {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-gruene-dark);
-  opacity: 0.6;
+  color: #4b5563;
   margin-right: 0.5rem;
   white-space: nowrap;
 }

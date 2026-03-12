@@ -179,10 +179,10 @@ test.describe('Unified search: BL filter behavior', () => {
   });
 
   test('BL filter applies only to Gesetze, shows filter note', async ({ page }) => {
-    // Activate Wien chip
-    const wienChip = page.locator('.search-chip', { hasText: 'Wien' });
-    await wienChip.click();
-    await expect(wienChip).toHaveClass(/search-chip-active/);
+    // Activate Wien pill
+    const wienPill = page.locator('#hero-search-chips .bl-selector-pill', { hasText: 'Wien' });
+    await wienPill.click();
+    await expect(wienPill).toHaveClass(/bl-pill-active/);
 
     // Search
     await page.fill(SEARCH_INPUT, 'Gemeinderat');

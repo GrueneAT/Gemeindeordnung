@@ -15,20 +15,13 @@ test.describe('Search Bundesland filter (SUCH-04, SUCH-05)', () => {
   });
 
   test('SUCH-04: Bundesland selection persists across pages', async ({ page }) => {
-    // Search to populate results, then we need a BL chip to click
-    // First, set a Bundesland in localStorage to make a chip appear
-    await page.evaluate(() => localStorage.setItem('selectedBundesland', 'Wien'));
-    await page.reload();
-    await page.waitForSelector(SEARCH_INPUT, { state: 'visible' });
-    await page.waitForTimeout(500);
+    // Click the Wien pill in the hero BL selector
+    const wienPill = page.locator('#hero-search-chips .bl-selector-pill', { hasText: 'Wien' });
+    await expect(wienPill).toBeVisible();
+    await wienPill.click();
 
-    // Click the Wien chip to make it active
-    const wienChip = page.locator('.search-chip', { hasText: 'Wien' });
-    await expect(wienChip).toBeVisible();
-    await wienChip.click();
-
-    // Verify chip is active
-    await expect(wienChip).toHaveClass(/search-chip-active/);
+    // Verify pill is active
+    await expect(wienPill).toHaveClass(/bl-pill-active/);
 
     await page.screenshot({ path: 'e2e/screenshots/search-filter-active.png', fullPage: false });
 
@@ -41,21 +34,15 @@ test.describe('Search Bundesland filter (SUCH-04, SUCH-05)', () => {
     const savedBL = await page.evaluate(() => localStorage.getItem('selectedBundesland'));
     expect(savedBL).toBe('Wien');
 
-    // Verify Wien chip is rendered
-    const wienChipOnLawPage = page.locator('.search-chip', { hasText: 'Wien' });
-    await expect(wienChipOnLawPage).toBeVisible();
+    // Verify Wien pill is rendered in header and active
+    const wienPillOnLawPage = page.locator('#search-chips .bl-selector-pill', { hasText: 'Wien' });
+    await expect(wienPillOnLawPage).toBeVisible();
   });
 
   test('SUCH-05: search defaults to BL, toggle to all', async ({ page }) => {
-    // Set Wien as saved Bundesland
-    await page.evaluate(() => localStorage.setItem('selectedBundesland', 'Wien'));
-    await page.reload();
-    await page.waitForSelector(SEARCH_INPUT, { state: 'visible' });
-    await page.waitForTimeout(500);
-
-    // Click Wien chip to activate it
-    const wienChip = page.locator('.search-chip', { hasText: 'Wien' });
-    await wienChip.click();
+    // Click Wien pill to activate it
+    const wienPill = page.locator('#hero-search-chips .bl-selector-pill', { hasText: 'Wien' });
+    await wienPill.click();
 
     // Search with Wien active
     await page.fill(SEARCH_INPUT, 'Gemeinderat');
@@ -69,9 +56,9 @@ test.describe('Search Bundesland filter (SUCH-04, SUCH-05)', () => {
     // Extract Wien result count
     const wienCount = parseInt(wienCountText.match(/(\d+)/)[1], 10);
 
-    // Click "Alle Bundesländer" chip
-    const allChip = page.locator('.search-chip', { hasText: 'Alle Bundesländer' });
-    await allChip.click();
+    // Click "Alle" pill
+    const allPill = page.locator('#hero-search-chips .bl-selector-pill', { hasText: 'Alle' }).first();
+    await allPill.click();
 
     // Wait for results to update (count text should no longer say "in Wien")
     await expect(countEl).not.toContainText('in Wien', { timeout: 5000 });

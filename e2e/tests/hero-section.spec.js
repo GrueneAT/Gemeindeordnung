@@ -78,4 +78,65 @@ test.describe('Homepage hero section and discovery links', () => {
 
     await page.screenshot({ path: 'e2e/screenshots/hero-section-mobile.png', fullPage: false });
   });
+
+  test('BL selector pills are visible with all 9 Bundeslaender plus Alle', async ({ page }) => {
+    await page.goto('./index.html');
+
+    const heroPills = page.locator('#hero-search-chips .bl-selector-pill');
+    // 9 BLs + 1 "Alle" = 10
+    await expect(heroPills).toHaveCount(10);
+
+    // "Alle" pill should be first and active by default
+    const allePill = heroPills.first();
+    await expect(allePill).toContainText('Alle');
+    await expect(allePill).toHaveClass(/bl-pill-active/);
+
+    // Verify specific BL names are present
+    const pillTexts = await heroPills.allTextContents();
+    expect(pillTexts).toContain('Wien');
+    expect(pillTexts).toContain('Burgenland');
+    expect(pillTexts).toContain('Tirol');
+
+    // Screenshot
+    await page.screenshot({ path: 'e2e/screenshots/bl-selector-pills.png', fullPage: false });
+  });
+
+  test('clicking a BL pill activates it and deactivates others', async ({ page }) => {
+    await page.goto('./index.html');
+
+    const heroPills = page.locator('#hero-search-chips .bl-selector-pill');
+
+    // Click "Wien" pill
+    const wienPill = heroPills.filter({ hasText: 'Wien' });
+    await wienPill.click();
+
+    // Wien should now be active
+    await expect(wienPill).toHaveClass(/bl-pill-active/);
+
+    // "Alle" should now be inactive
+    const allePill = heroPills.first();
+    await expect(allePill).toHaveClass(/bl-pill-inactive/);
+
+    // Click "Alle" to reset
+    await allePill.click();
+    await expect(allePill).toHaveClass(/bl-pill-active/);
+    await expect(wienPill).toHaveClass(/bl-pill-inactive/);
+  });
+
+  test('discovery section uses compact inline flow layout', async ({ page }) => {
+    await page.goto('./index.html');
+
+    const discovery = page.locator('.discovery-section');
+    await expect(discovery).toBeVisible();
+
+    // Should have discovery-label elements
+    const labels = discovery.locator('.discovery-label');
+    expect(await labels.count()).toBeGreaterThanOrEqual(1);
+
+    // Should use flex wrap container, not grid
+    const compactContainer = discovery.locator('.discovery-section-compact');
+    await expect(compactContainer).toBeVisible();
+
+    await page.screenshot({ path: 'e2e/screenshots/discovery-links.png', fullPage: false });
+  });
 });
