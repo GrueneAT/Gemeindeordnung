@@ -4,8 +4,8 @@ test.describe('Typography readability (UAT 4)', () => {
   test('law text has adequate line-height and constrained max-width', async ({ page }) => {
     await page.goto('./gemeindeordnungen/wien.html');
 
-    // The law text container uses max-w-prose class on <main>
-    const lawContainer = page.locator('main.max-w-prose');
+    // The law text container uses law-text class on <main>
+    const lawContainer = page.locator('main.law-text');
     await expect(lawContainer).toBeVisible();
 
     // Evaluate computed styles
@@ -19,13 +19,16 @@ test.describe('Typography readability (UAT 4)', () => {
       };
     });
 
-    // Line-height check: >= 1.5 ratio
+    // Line-height check: >= 1.7 ratio (target is 1.75)
     const lineHeightPx = parseFloat(styles.lineHeight);
     const fontSizePx = parseFloat(styles.fontSize);
     if (!isNaN(lineHeightPx) && !isNaN(fontSizePx) && fontSizePx > 0) {
       const ratio = lineHeightPx / fontSizePx;
-      expect(ratio).toBeGreaterThanOrEqual(1.5);
+      expect(ratio).toBeGreaterThanOrEqual(1.7);
     }
+
+    // Font-size check: >= 17px on desktop
+    expect(fontSizePx).toBeGreaterThanOrEqual(17);
 
     // Max-width check: should be set (not "none") and in a reasonable range
     expect(styles.maxWidth).not.toBe('none');
