@@ -181,7 +181,12 @@ Plans:
   2. Each search result shows enough context to evaluate relevance without clicking: law name, Bundesland, paragraph number for Gesetze; topic title for FAQ; term name for Glossar
   3. Desktop search results display in a larger panel (not the current small dropdown) that is space-efficient and scannable
   4. Bundesland filter applies only to Gesetze results while FAQ and Glossar results always appear regardless of filter selection
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 05-01-PLAN.md -- Pagefind metadata tagging (typ filter + meta attributes) on law, FAQ, and Glossar page templates
+- [ ] 05-02-PLAN.md -- Two-pass search architecture, grouped result rendering, expanded results panel CSS
+- [ ] 05-03-PLAN.md -- E2E tests for unified search and visual verification checkpoint
 
 ### Phase 6: Search-Hero Homepage & Navigation
 **Goal**: The homepage communicates "search first" with a prominent central search bar, quick-access discovery links, and polished navigation across all pages and viewports
@@ -223,6 +228,6 @@ Recommended: 4.3 -> 5 -> 6, with 7 parallelizable at any point after 4.3.
 | 4.1 Visual Polish & Screenshot Review | v1.0 | 2/2 | Complete | 2026-03-11 |
 | 4.2 Improve LLM Content Quality | v1.0 | 3/3 | Complete | 2026-03-11 |
 | 4.3 Curated FAQ Topics & Fix FAQ Generation | v1.1 | 2/2 | Complete | 2026-03-12 |
-| 5. Unified Search Engine | v1.1 | 0/? | Not started | - |
+| 5. Unified Search Engine | v1.1 | 0/3 | Not started | - |
 | 6. Search-Hero Homepage & Navigation | v1.1 | 0/? | Not started | - |
 | 7. Law Text Readability | v1.1 | 0/? | Not started | - |
