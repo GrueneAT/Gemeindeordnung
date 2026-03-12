@@ -584,19 +584,6 @@ function generateFAQTopicPage(topic) {
   const headerHtml = generateHeader(false, undefined, undefined, '../');
   const footerHtml = generateFooter({ isLawPage: false });
 
-  // Build "Alle Gemeindeordnungen" links from LAWS config (both GO and Stadtrechte)
-  const allLawLinks = [];
-  for (const [cat, laws] of Object.entries(LAWS)) {
-    for (const [key, law] of Object.entries(laws)) {
-      const displayName = law.stadt ? `${law.stadt} (${law.bundesland})` : law.bundesland;
-      allLawLinks.push(`<a href="../${cat}/${key}.html" class="text-gruene-dark hover:underline text-sm">${escapeHtml(displayName)}</a>`);
-    }
-  }
-  const allLawLinksHtml = `<div class="mt-2 text-sm">
-            <span class="text-gray-500 font-medium">Alle Gemeindeordnungen:</span>
-            <span class="ml-1">${allLawLinks.join(', ')}</span>
-          </div>`;
-
   const questionsHtml = topic.questions.map(q => {
     const refsHtml = q.references && q.references.length > 0
       ? `<div class="mt-3 text-sm">
@@ -609,7 +596,6 @@ function generateFAQTopicPage(topic) {
         <h2 class="text-lg font-semibold text-gruene-dark">${escapeHtml(q.question)}</h2>
         <p class="mt-2 text-gruene-dark/80 leading-relaxed">${escapeHtml(q.answer)}</p>
         ${refsHtml}
-        ${allLawLinksHtml}
       </article>`;
   }).join('\n');
 
