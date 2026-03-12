@@ -529,6 +529,7 @@ ${citationRef}
 - Verwende echte Paragraphen-Referenzen aus den folgenden Daten.
 - Verwende KEINE Anführungszeichen (") im Antworttext. Verwende stattdessen einfache Anführungszeichen (') oder Guillemets.
 - Die Antworten dürfen KEINE Bundesländer namentlich nennen oder BL-spezifische Behauptungen aufstellen. Stattdessen allgemeine Aussagen treffen und auf die einzelnen Gesetze verweisen.
+- Verwende IMMER geschlechtergerechte Sprache mit Doppelpunkt-Gendern: Bürgermeister:in, Bürgermeister:innen, Vizebürgermeister:in, Gemeinderät:innen, Stadträt:innen, Gemeindebürger:innen, Ehrenbürger:innen etc. Verwende NICHT die rein männliche Form.
 - "references": MUSS Verweise auf ALLE 9 Gemeindeordnungen enthalten, die das jeweilige Thema regeln (nicht nur 2-3). Verwende die relevantesten Paragraphen aus jeder Gemeindeordnung.
 
 Antworte NUR mit validem JSON (ohne Markdown-Formatierung):
