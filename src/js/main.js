@@ -116,44 +116,147 @@ function initAnchorHighlight() {
 }
 
 /**
- * Initialize topic filter chips on law pages.
- * Clicking a chip filters paragraphs by topic; "Alle" shows all.
+ * Initialize topic filter tag-select on law pages.
+ * Searchable dropdown with multi-select checkboxes, OR-based paragraph filtering.
  */
 function initTopicFilter() {
   const filterContainer = document.getElementById('topic-filter');
   if (!filterContainer) return;
 
-  filterContainer.addEventListener('click', (e) => {
-    const chip = e.target.closest('[data-topic]');
-    if (!chip) return;
+  const topicDataJson = filterContainer.dataset.topicsJson;
+  if (!topicDataJson) return;
+  const topics = JSON.parse(topicDataJson);
 
-    const topic = chip.dataset.topic;
+  const input = document.getElementById('topic-search-input');
+  const dropdown = document.getElementById('topic-dropdown');
+  const chipsContainer = document.getElementById('topic-selected-chips');
+  const selectedTopics = new Set();
 
-    // Update chip active states
-    filterContainer.querySelectorAll('[data-topic]').forEach(c => {
-      c.classList.remove('topic-chip-active');
-      c.classList.add('topic-chip-inactive');
-    });
-    chip.classList.remove('topic-chip-inactive');
-    chip.classList.add('topic-chip-active');
+  function escapeAttr(s) {
+    return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function escapeText(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
 
-    // Filter paragraph articles
+  // Render dropdown items
+  function renderDropdown(filter) {
+    const q = (filter || '').toLowerCase();
+    const filtered = q
+      ? topics.filter(t => t.name.toLowerCase().includes(q))
+      : topics;
+    if (filtered.length === 0) {
+      dropdown.innerHTML = '<div class="topic-dropdown-empty">Kein Thema gefunden</div>';
+      return;
+    }
+    dropdown.innerHTML = filtered.map(t => {
+      const checked = selectedTopics.has(t.name);
+      return `<label class="topic-dropdown-item${checked ? ' topic-item-checked' : ''}">
+        <input type="checkbox" value="${escapeAttr(t.name)}" ${checked ? 'checked' : ''} />
+        <span class="topic-dropdown-name">${escapeText(t.name)}</span>
+        <span class="topic-dropdown-count">(${t.count})</span>
+      </label>`;
+    }).join('');
+  }
+
+  // Render selected chips
+  function renderChips() {
+    if (selectedTopics.size === 0) {
+      chipsContainer.classList.add('hidden');
+      chipsContainer.innerHTML = '';
+      return;
+    }
+    chipsContainer.classList.remove('hidden');
+    const chips = [...selectedTopics].map(t =>
+      `<span class="topic-selected-chip" data-topic="${escapeAttr(t)}">${escapeText(t)} <span class="topic-chip-remove">\u00D7</span></span>`
+    ).join('');
+    chipsContainer.innerHTML = chips + ' <button type="button" class="topic-reset-link">Alle zur\u00FCcksetzen</button>';
+  }
+
+  // Apply OR filter to paragraphs
+  function applyFilter() {
     document.querySelectorAll('article[data-topics]').forEach(article => {
-      if (topic === 'alle') {
+      if (selectedTopics.size === 0) {
         article.style.display = '';
       } else {
-        const topics = article.dataset.topics.split(',');
-        article.style.display = topics.includes(topic) ? '' : 'none';
+        const articleTopics = article.dataset.topics.split(',');
+        const match = articleTopics.some(t => selectedTopics.has(t));
+        article.style.display = match ? '' : 'none';
       }
     });
-
-    // Also hide/show section headings if all their paragraphs are hidden
+    // Hide/show sections where all articles are hidden
     document.querySelectorAll('main section').forEach(section => {
       const articles = section.querySelectorAll('article[data-topics]');
       if (articles.length === 0) return;
       const allHidden = Array.from(articles).every(a => a.style.display === 'none');
       section.style.display = allHidden ? 'none' : '';
     });
+  }
+
+  // Event: input focus opens dropdown
+  input.addEventListener('focus', () => {
+    renderDropdown(input.value);
+    dropdown.classList.remove('hidden');
+  });
+
+  // Event: input typing filters dropdown
+  input.addEventListener('input', () => {
+    renderDropdown(input.value);
+    dropdown.classList.remove('hidden');
+  });
+
+  // Event: checkbox change in dropdown
+  dropdown.addEventListener('change', (e) => {
+    const checkbox = e.target;
+    if (checkbox.type !== 'checkbox') return;
+    if (checkbox.checked) {
+      selectedTopics.add(checkbox.value);
+    } else {
+      selectedTopics.delete(checkbox.value);
+    }
+    // Update the checked item's background
+    const label = checkbox.closest('.topic-dropdown-item');
+    if (label) {
+      label.classList.toggle('topic-item-checked', checkbox.checked);
+    }
+    renderChips();
+    applyFilter();
+  });
+
+  // Event: remove chip
+  chipsContainer.addEventListener('click', (e) => {
+    const removeBtn = e.target.closest('.topic-chip-remove');
+    if (removeBtn) {
+      const chip = removeBtn.closest('.topic-selected-chip');
+      selectedTopics.delete(chip.dataset.topic);
+      renderChips();
+      renderDropdown(input.value);
+      applyFilter();
+      return;
+    }
+    const resetBtn = e.target.closest('.topic-reset-link');
+    if (resetBtn) {
+      selectedTopics.clear();
+      input.value = '';
+      renderChips();
+      renderDropdown('');
+      applyFilter();
+    }
+  });
+
+  // Event: click outside closes dropdown
+  document.addEventListener('click', (e) => {
+    if (!filterContainer.contains(e.target)) {
+      dropdown.classList.add('hidden');
+    }
+  });
+
+  // Event: Escape closes dropdown
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      dropdown.classList.add('hidden');
+      input.blur();
+    }
   });
 }
 

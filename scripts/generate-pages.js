@@ -402,23 +402,28 @@ function generateLawPage(law, key, category, rootDir = ROOT) {
       </div>\n`
     : '';
 
-  // Topic filter chips (only if LLM data has topics)
+  // Topic filter tag-select (only if LLM data has topics)
   let topicChipsHtml = '';
   if (llmData && llmData.paragraphs) {
     const allTopics = new Set();
+    const topicCounts = {};
     for (const pData of Object.values(llmData.paragraphs)) {
       if (pData.topics) {
-        pData.topics.forEach(t => allTopics.add(t));
+        pData.topics.forEach(t => {
+          allTopics.add(t);
+          topicCounts[t] = (topicCounts[t] || 0) + 1;
+        });
       }
     }
     if (allTopics.size > 0) {
       const sortedTopics = [...allTopics].sort((a, b) => a.localeCompare(b, 'de'));
-      const chipButtons = sortedTopics
-        .map(t => `        <button class="topic-chip topic-chip-inactive" data-topic="${escapeHtml(t)}">${escapeHtml(t)}</button>`)
-        .join('\n');
-      topicChipsHtml = `      <div id="topic-filter" class="mb-4 flex flex-wrap gap-2" data-pagefind-ignore>
-        <button class="topic-chip topic-chip-active" data-topic="alle">Alle</button>
-${chipButtons}
+      const topicData = sortedTopics.map(t => ({ name: t, count: topicCounts[t] || 0 }));
+      topicChipsHtml = `      <div id="topic-filter" class="mb-4 relative" data-pagefind-ignore data-topics-json="${escapeHtml(JSON.stringify(topicData))}">
+        <div class="topic-select-container">
+          <input type="text" id="topic-search-input" class="topic-search-input" placeholder="Themen filtern..." autocomplete="off" />
+        </div>
+        <div id="topic-dropdown" class="topic-dropdown hidden"></div>
+        <div id="topic-selected-chips" class="topic-selected-chips hidden"></div>
       </div>\n`;
     }
   }
