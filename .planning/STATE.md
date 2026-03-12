@@ -1,36 +1,36 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: completed
-stopped_at: Completed 04.2-03-PLAN.md
-last_updated: "2026-03-11T19:20:41.659Z"
-last_activity: "2026-03-11 - Completed 04.2-03: Regenerated all LLM content with real summaries, FAQ, and glossary"
+milestone: v1.1
+milestone_name: UI/UX Improvements
+status: defining-requirements
+stopped_at: null
+last_updated: "2026-03-12T15:20:00.000Z"
+last_activity: "2026-03-12 - Milestone v1.1 started"
 progress:
-  total_phases: 7
-  completed_phases: 7
-  total_plans: 20
-  completed_plans: 20
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-10)
+See: .planning/PROJECT.md (updated 2026-03-12)
 
-**Core value:** GemeinderaetInnen koennen in Sekunden jede Bestimmung ueber alle 9 Gemeindeordnungen finden
-**Current focus:** Phase 4 - LLM Enrichment (complete)
+**Core value:** GemeinderätInnen können in Sekunden jede Bestimmung über alle 9 Gemeindeordnungen finden
+**Current focus:** v1.1 UI/UX Improvements
 
 ## Current Position
 
-Phase: 4.2 of 6 (Improve LLM Content Quality)
-Plan: 3 of 3 in current phase
-Status: phase-complete
-Last activity: 2026-03-12 - Completed quick task 8: Add gendering instructions to FAQ LLM prompt
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-12 — Milestone v1.1 started
 
-Progress: [██████████] 100%
+Progress: [░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
@@ -162,6 +162,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T14:56:41Z
-Stopped at: Completed quick task 8: Expand gendering instruction in FAQ LLM prompt
+Last session: 2026-03-12T15:20:00Z
+Stopped at: Milestone v1.1 started — defining requirements
 Resume file: None

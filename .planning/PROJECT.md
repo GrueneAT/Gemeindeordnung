@@ -12,22 +12,17 @@ GemeinderätInnen können in Sekunden jede Bestimmung über alle 9 Gemeindeordnu
 
 ### Validated
 
-(None yet — ship to validate)
+<!-- Shipped in v1.0 and confirmed working. -->
+
+- ✓ Alle 23 Gesetze (9 GO + 14 Stadtrechte) eingelesen und strukturiert — v1.0
+- ✓ Volltextsuche mit Pagefind (German stemming, BL-Filter, Paragraph-Ergebnisse) — v1.0
+- ✓ LLM-generierte Paragraph-Zusammenfassungen, 14 FAQ-Themen, 24 Glossar-Begriffe — v1.0
+- ✓ Grünes Branding, WCAG AA, responsive Mobile — v1.0
+- ✓ GitHub Pages Deployment mit CI — v1.0
 
 ### Active
 
-- [ ] Alle 9 Gemeindeordnungen (eine pro Bundesland) + relevante Statutarstadt-Stadtrechte einlesen und strukturiert verarbeiten
-- [ ] Volltextsuche über alle Gemeindeordnungen mit Ergebnisanzeige
-- [ ] Filter nach Bundesland und Abschnitt/Thema
-- [ ] LLM-generierte Paragraph-Zusammenfassungen in einfacher Sprache (Dev-Time)
-- [ ] LLM-generierte Themen-FAQs (Sitzungen, Abstimmungen, Befangenheit etc.) (Dev-Time)
-- [ ] LLM-generiertes Glossar juristischer Fachbegriffe (Dev-Time)
-- [ ] Modernes Frontend mit TailwindCSS und Grünem CI/Branding
-- [ ] Client-seitige Suche mit geeigneter Library (z.B. Lunr.js, FlexSearch)
-- [ ] Deployment via GitHub Pages mit GitHub Actions
-- [ ] Dev-Scripts zum lokalen Einlesen/Verarbeiten der Gemeindeordnungen
-- [ ] Dev-Scripts für LLM-Analyse (Zusammenfassungen, FAQs, Glossar)
-- [ ] Suchindex wird bei Build/Deployment generiert
+<!-- Current scope: v1.1 UI/UX Improvements — see REQUIREMENTS.md -->
 
 ### Out of Scope
 
@@ -36,6 +31,18 @@ GemeinderätInnen können in Sekunden jede Bestimmung über alle 9 Gemeindeordnu
 - Stadtrechte nicht-relevanter Statutarstädte — Nur relevante Statutarstädte mit eigenen Stadtrechten
 - Echtzeit-API-Abfragen — Statische Seite, Daten werden bei Build verarbeitet
 - Mobile App — Web-first, responsive reicht
+
+## Current Milestone: v1.1 UI/UX Improvements
+
+**Goal:** Transform from content-display site to search-first "find answers fast" tool with great readability.
+
+**Target features:**
+- Search-hero homepage with central, prominent search bar
+- Unified search across Gesetze, FAQ, and Glossar (grouped results)
+- Improved desktop search results (bigger, more context, not a tiny dropdown)
+- Law text readability overhaul (typography, visual hierarchy, summary-first layout)
+- Navigation polish (FAQ/Glossar links, header layout)
+- Fewer clicks to answers — surface relevant content directly in search results
 
 ## Context
 
@@ -71,4 +78,4 @@ GemeinderätInnen können in Sekunden jede Bestimmung über alle 9 Gemeindeordnu
 | Claude Code CLI für LLM | Subscription nutzen statt API-Kosten | — Pending |
 
 ---
-*Last updated: 2026-03-10 after Phase 1 discussion*
+*Last updated: 2026-03-12 after v1.1 milestone start*
