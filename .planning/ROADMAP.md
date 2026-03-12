@@ -28,7 +28,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 ### v1.1 UI/UX Improvements
 
-- [ ] **Phase 4.3: Curated FAQ Topic List & Fix Broken FAQ Generation** (INSERTED) - Research-driven curated topic list, fix FAQ pipeline JSON parse errors, regenerate FAQ content
+- [x] **Phase 4.3: Curated FAQ Topic List & Fix Broken FAQ Generation** (INSERTED) - Research-driven curated topic list, fix FAQ pipeline JSON parse errors, regenerate FAQ content
 - [ ] **Phase 5: Unified Search Engine** - Pagefind metadata tagging for FAQ/Glossar, two-pass search architecture, grouped results by content type with rich metadata
 - [ ] **Phase 6: Search-Hero Homepage & Navigation** - Search-first homepage layout replacing card grid, quick-access discovery links, polished header and navigation across all pages
 - [ ] **Phase 7: Law Text Readability** - Typography overhaul, summary-first layout, visual hierarchy for sections and Absaetze, highlighted key terms
@@ -170,7 +170,7 @@ Plans:
 
 Plans:
 - [x] 04.3-01-PLAN.md -- Create curated FAQ topic list and refactor generateFAQ to per-topic LLM calls
-- [ ] 04.3-02-PLAN.md -- Run FAQ generation, validate output, and human quality verification
+- [x] 04.3-02-PLAN.md -- Run FAQ generation, validate output, and human quality verification
 
 ### Phase 5: Unified Search Engine
 **Goal**: Users can search across all content types (Gesetze, FAQ, Glossar) from a single input and see results grouped by source with rich metadata
@@ -222,7 +222,7 @@ Recommended: 4.3 -> 5 -> 6, with 7 parallelizable at any point after 4.3.
 | 4. LLM Enrichment | v1.0 | 4/4 | Complete | 2026-03-11 |
 | 4.1 Visual Polish & Screenshot Review | v1.0 | 2/2 | Complete | 2026-03-11 |
 | 4.2 Improve LLM Content Quality | v1.0 | 3/3 | Complete | 2026-03-11 |
-| 4.3 Curated FAQ Topics & Fix FAQ Generation | v1.1 | 1/2 | In Progress | - |
+| 4.3 Curated FAQ Topics & Fix FAQ Generation | v1.1 | 2/2 | Complete | 2026-03-12 |
 | 5. Unified Search Engine | v1.1 | 0/? | Not started | - |
 | 6. Search-Hero Homepage & Navigation | v1.1 | 0/? | Not started | - |
 | 7. Law Text Readability | v1.1 | 0/? | Not started | - |
