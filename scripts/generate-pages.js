@@ -94,6 +94,30 @@ function injectGlossaryTerms(bodyHtml, glossaryTerms, categoryPrefix) {
 }
 
 /**
+ * Inject structural marker highlighting into law text HTML.
+ * Wraps legal references (Abs., paragraph signs, Z, lit.) in spans.
+ * Only operates on text content between HTML tags to avoid modifying attributes.
+ * @param {string} html - The HTML string to process
+ * @returns {string} HTML with structural markers wrapped in spans
+ */
+function injectStructuralMarkers(html) {
+  if (!html) return html;
+  // Match text content between > and < to only modify text nodes
+  return html.replace(/>[^<]+</g, (match) => {
+    let text = match.slice(1, -1); // Remove > and <
+    // Abs. N references
+    text = text.replace(/\b(Abs\.\s*\d+[a-z]?)/g, '<span class="legal-ref">$1</span>');
+    // Paragraph sign references
+    text = text.replace(/(§\s*\d+[a-z]?(?:\s*(?:bis|und|iVm)\s*§?\s*\d+[a-z]?)*)/g, '<span class="legal-ref">$1</span>');
+    // Z (Ziffer) references
+    text = text.replace(/\b(Z\s*\d+)/g, '<span class="legal-ref">$1</span>');
+    // lit. references
+    text = text.replace(/\b(lit\.\s*[a-z])/g, '<span class="legal-ref">$1</span>');
+    return '>' + text + '<';
+  });
+}
+
+/**
  * Render a single paragraph to HTML.
  * @param {object} para - Parsed paragraph data
  * @param {object|null} llmData - LLM summary data for the law (optional)
@@ -115,25 +139,25 @@ function renderParagraph(para, llmData, glossaryTerms) {
     body = `<p class="mt-2 whitespace-pre-line">${escapeHtml(para.text)}</p>`;
   }
 
+  // Inject structural markers BEFORE glossary tooltips
+  if (body) {
+    body = injectStructuralMarkers(body);
+  }
+
   // Inject glossary tooltips into body text ONLY (not summary)
   if (glossaryTerms && glossaryTerms.length > 0 && body) {
     body = injectGlossaryTerms(body, glossaryTerms, '../');
   }
 
-  // LLM enrichment: topics attribute and collapsible summary
+  // LLM enrichment: topics attribute and always-visible summary
   const paraLlm = llmData && llmData.paragraphs && llmData.paragraphs[para.nummer];
   const topicsAttr = paraLlm && paraLlm.topics && paraLlm.topics.length > 0
     ? ` data-topics="${paraLlm.topics.map(t => escapeHtml(t)).join(',')}"`
     : '';
   const summaryHtml = paraLlm && paraLlm.summary
-    ? `\n  <details class="mt-1 mb-2">
-    <summary class="text-sm text-gruene-dark/80 cursor-pointer hover:text-gruene-dark">
-      Vereinfachte Zusammenfassung
-    </summary>
-    <p class="text-sm text-gruene-dark/80 mt-1 pl-4 border-l-2 border-gruene-green/30">
-      ${escapeHtml(paraLlm.summary)}
-    </p>
-  </details>`
+    ? `\n  <div class="law-summary">
+    <p>${escapeHtml(paraLlm.summary)}</p>
+  </div>`
     : '';
 
   return `<article class="mb-6 group"${topicsAttr}>

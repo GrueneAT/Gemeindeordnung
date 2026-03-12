@@ -680,6 +680,33 @@ h2[id] {
   flex: 1;
 }
 
+/* Always-visible summary orientation box */
+.law-summary {
+  background-color: var(--color-gruene-light);
+  border-left: 3px solid var(--color-gruene-green);
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0 1rem 0;
+  font-size: 0.9375rem; /* 15px -- slightly smaller than 17px body */
+  line-height: 1.6;
+  color: var(--color-gruene-dark);
+  border-radius: 0 0.375rem 0.375rem 0;
+}
+
+/* Enhanced glossary term styling within law text */
+.law-text .glossar-term {
+  text-decoration-thickness: 2px;
+  background-color: rgba(107, 165, 57, 0.08);
+  padding: 0 0.125rem;
+  border-radius: 0.125rem;
+}
+
+/* Structural marker styling for legal references */
+.legal-ref {
+  color: var(--color-gruene-dark);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 /* On-page highlighting (Pagefind) */
 .pagefind-highlight {
   background-color: rgba(250, 204, 21, 0.5);
