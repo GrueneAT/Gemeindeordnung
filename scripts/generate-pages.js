@@ -436,7 +436,7 @@ function generateLawPage(law, key, category, rootDir = ROOT) {
     <title>${title} - gemeindeordnung.gruene.at</title>
     <link rel="stylesheet" href="../css/main.css" />
     <meta data-pagefind-filter="bundesland[content]" content="${escapeHtml(law.meta.bundesland)}" />
-    <meta data-pagefind-filter="typ[content]" content="${escapeHtml(category)}" />
+    <meta data-pagefind-filter="typ[content]" content="Gesetz" />
   </head>
   <body class="bg-white min-h-screen flex flex-col">
 ${headerHtml}
@@ -582,7 +582,7 @@ ${headerHtml}
       <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
         <strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
       </div>
-      <main>
+      <main data-pagefind-ignore>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 ${cards}
         </div>
@@ -624,6 +624,8 @@ function generateFAQTopicPage(topic) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${genderText(escapeHtml(topic.title))} - FAQ - gemeindeordnung.gruene.at</title>
     <link rel="stylesheet" href="../css/main.css" />
+    <meta data-pagefind-filter="typ[content]" content="FAQ" />
+    <meta data-pagefind-meta="topic_title[content]" content="${genderText(escapeHtml(topic.title))}" />
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
 ${headerHtml}
@@ -711,6 +713,7 @@ ${termsHtml}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Glossar der Rechtsbegriffe - gemeindeordnung.gruene.at</title>
     <link rel="stylesheet" href="css/main.css" />
+    <meta data-pagefind-filter="typ[content]" content="Glossar" />
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
 ${headerHtml}
