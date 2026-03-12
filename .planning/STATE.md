@@ -23,8 +23,14 @@ All 11 phases (v1.0 + v1.1), 30 plans shipped.
 
 Next step: /gsd:new-milestone
 
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 9 | BL selector pills and FAQ layout improvements for first-time visitors | 2026-03-12 | 90b3bba | [9-bl-selector-pills-and-faq-layout-improve](./quick/9-bl-selector-pills-and-faq-layout-improve/) |
+
 ## Session Continuity
 
-Last session: 2026-03-12T23:39:42.814Z
-Stopped at: Completed quick-9 plan
+Last session: 2026-03-12
+Stopped at: Completed quick task 9
 Resume file: None
