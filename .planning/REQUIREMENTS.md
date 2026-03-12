@@ -57,6 +57,38 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **DEPL-03**: Dev-Scripts allow local LLM analysis (summaries, FAQs, glossary generation)
 - [x] **DEPL-04**: LLM-generated content is committed to repo (not regenerated per deploy)
 
+## v1.1 Requirements
+
+Requirements for UI/UX Improvements milestone. Each maps to roadmap phases.
+
+### Search UX
+
+- [ ] **SRCH-01**: User sees a central, prominent search bar as the hero element on the homepage
+- [ ] **SRCH-02**: User can search across Gesetze, FAQ, and Glossar from a single search input
+- [ ] **SRCH-03**: Search results are grouped by content type (FAQ Antworten, Glossar, Paragraphen) so user can distinguish result sources
+- [ ] **SRCH-04**: Homepage shows quick-access links below search hero (FAQ topics, popular terms) for browsable discovery
+- [ ] **SRCH-05**: Homepage card grid is replaced by search-hero layout (GO/Stadtrechte list minimized or collapsed below)
+
+### Desktop Search Results
+
+- [ ] **DSKT-01**: Desktop search results use a larger display area (not the current small dropdown)
+- [ ] **DSKT-02**: Each search result shows enough context (snippet, source type, location) to evaluate relevance without clicking
+- [ ] **DSKT-03**: Search results are space-efficient — rich enough to be useful without overwhelming the view
+
+### Law Text Readability
+
+- [ ] **READ-01**: Law text has improved typography (line height, paragraph spacing, visual hierarchy between sections/Absätze/sub-items)
+- [ ] **READ-02**: LLM summary is visually prominent and always visible as orientation before the law text (not hidden, not replacing law text)
+- [ ] **READ-03**: Important terms, structural markers, or key phrases in law text are visually highlighted (color, weight, or underline) to aid scanning
+- [ ] **READ-04**: Numbered Absätze within paragraphs are clearly separated and indented, not running together as wall of text
+- [ ] **READ-05**: Section headings (Hauptstücke, Abschnitte) have strong visual hierarchy distinguishing them from paragraph headings
+
+### Navigation & Polish
+
+- [ ] **NAV-01**: Header layout is clean and consistent across all pages (search positioning, logo, nav links)
+- [ ] **NAV-02**: FAQ and Glossar navigation links are visually polished and well-integrated into the header
+- [ ] **NAV-03**: Navigation works well on both desktop and mobile without crowding or misalignment
+
 ## v2 Requirements
 
 Deferred to future release. Tracked but not in current roadmap.
@@ -68,6 +100,8 @@ Deferred to future release. Tracked but not in current roadmap.
 
 ### Enhanced Search
 
+- **SRCH-06**: User can search within FAQ pages independently (dedicated FAQ search)
+- **SRCH-07**: Search suggestions/autocomplete as user types
 - **SUCH-07**: User sees recent searches (LocalStorage)
 
 ### Notifications
@@ -85,7 +119,8 @@ Deferred to future release. Tracked but not in current roadmap.
 | PDF Export | Browser Print-to-PDF existiert, Link zu Original-RIS-Dokument |
 | Mehrsprachigkeit | Zielgruppe ausschließlich deutschsprachig |
 | Mobile App | Web-first, responsive reicht |
-| Stadtrechte/Stadtstatute | Nur Gemeindeordnungen in v1 |
+| Full-text search engine replacement | Pagefind validated and working; no need to switch |
+| @tailwindcss/typography plugin | Confirmed broken on TailwindCSS v4; use scoped CSS instead |
 
 ## Traceability
 
@@ -127,10 +162,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LLM-07 | Phase 4 | Complete |
 
 **Coverage:**
-- v1 requirements: 32 total
-- Mapped to phases: 32
-- Unmapped: 0
+- v1 requirements: 32 total — all complete
+- v1.1 requirements: 16 total
+- Mapped to phases: 0
+- Unmapped: 16 (awaiting roadmap)
 
 ---
 *Requirements defined: 2026-03-10*
-*Last updated: 2026-03-10 after roadmap creation*
+*Last updated: 2026-03-12 after v1.1 requirements definition*
