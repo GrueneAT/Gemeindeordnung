@@ -305,6 +305,173 @@ function collectTopicTaxonomy(rootDir = ROOT) {
 }
 
 /**
+ * Shared gendering instructions for all prompts.
+ * Extracted from FAQ prompt for reuse in per-topic calls.
+ */
+const GENDERING_INSTRUCTIONS = `Verwende IMMER geschlechtergerechte Sprache mit Doppelpunkt-Gendern. Beachte dabei folgende Regeln:
+  * FEMININE GRUNDFORM: Verwende die weibliche Form als Basis mit Doppelpunkt: "die Bürgermeister:in" (NICHT "der:die Bürgermeister:in"). Der Doppelpunkt signalisiert von der femininen Grundform aus die Inklusion aller Geschlechter.
+  * SATZBAU UMFORMULIEREN: Füge NICHT einfach Doppelpunkte in maskuline Sätze ein. Formuliere den gesamten Satz um, sodass er natürlich und flüssig lesbar ist. Vermeide halb-gegenderte Konstruktionen, in denen Artikel, Adjektive oder Rollenbezeichnungen maskulin bleiben.
+  * GESCHLECHTSNEUTRALE ALTERNATIVEN bevorzugen, wo sie natürlicher klingen:
+    - "Vorsitz" statt "Vorsitzende:r"
+    - "Außenvertretung" statt "Außenvertreter:in"
+    - "Amtsführung" statt "Amtsführer:in"
+    - "Mitglieder des Gemeinderats" statt "Gemeinderät:innen" (wenn es besser lesbar ist)
+  * KONKRETE BEISPIELE:
+    SCHLECHT: "Der:die Bürgermeister:in ist Vorsitzender des Gemeinderats und Außenvertreter der Gemeinde."
+    GUT: "Die Bürgermeister:in führt den Vorsitz im Gemeinderat und vertritt die Gemeinde nach außen."
+    SCHLECHT: "Ein Gemeinderat ist als gewählter Vertreter der Bürger tätig."
+    GUT: "Gemeinderät:innen sind als gewählte Vertretung der Gemeindebürger:innen tätig."
+    SCHLECHT: "Der Vizebürgermeister vertritt den Bürgermeister bei dessen Abwesenheit."
+    GUT: "Die Vizebürgermeister:in vertritt die Bürgermeister:in bei deren Abwesenheit."
+  * REFERENZ-FORMEN: Bürgermeister:in, Vizebürgermeister:in, Gemeinderät:innen, Stadträt:innen, Gemeindebürger:innen, Ehrenbürger:innen.`;
+
+/**
+ * Shared FAQ style instructions for per-topic prompts.
+ */
+const FAQ_STYLE_INSTRUCTIONS = `- Verwende IMMER korrekte deutsche Umlaute (ä, ö, ü, ß).
+- Verwende KEINE Anführungszeichen (") im Antworttext. Verwende stattdessen einfache Anführungszeichen (') oder Guillemets.
+- Die Antworten dürfen KEINE Bundesländer namentlich nennen oder BL-spezifische Behauptungen aufstellen. Stattdessen allgemeine Aussagen treffen und auf die einzelnen Gesetze verweisen.
+- Beschreibe das ALLGEMEINE Prinzip, das in den meisten österreichischen Gemeindeordnungen gilt. Nenne KEINE einzelnen Bundesländer namentlich. Formuliere stattdessen: 'In den meisten Gemeindeordnungen...', 'Die Regelungen sehen typischerweise vor...', 'Je nach Bundesland variieren die Details...' etc.
+- "references": MUSS Verweise auf ALLE 9 Gemeindeordnungen enthalten, die das jeweilige Thema regeln (nicht nur 2-3). Verwende die relevantesten Paragraphen aus jeder Gemeindeordnung.`;
+
+/**
+ * Load curated FAQ topics from JSON file.
+ *
+ * @param {string} rootDir - Project root
+ * @returns {object} Parsed curated topics object with version and topics array
+ */
+function loadCuratedTopics(rootDir = ROOT) {
+  const topicsPath = join(rootDir, 'data', 'llm', 'faq', 'curated-topics.json');
+  if (!existsSync(topicsPath)) {
+    throw new Error(`Curated topics file not found: ${topicsPath}`);
+  }
+  return JSON.parse(readFileSync(topicsPath, 'utf-8'));
+}
+
+/**
+ * Collect matching paragraphs from summaries for a given curated topic.
+ * Matches by keyword overlap: slug words, title words, and description words (>4 chars).
+ *
+ * @param {object} curatedTopic - Topic with slug, title, description
+ * @param {string} rootDir - Project root
+ * @returns {Array<{category, key, paragraph, summary}>}
+ */
+function collectParagraphsForTopic(curatedTopic, rootDir = ROOT) {
+  // Build keyword set from slug (split on hyphens), title (split on whitespace),
+  // and description (words > 4 chars)
+  const keywords = new Set();
+  for (const word of curatedTopic.slug.split('-')) {
+    if (word.length > 2) keywords.add(word.toLowerCase());
+  }
+  for (const word of curatedTopic.title.split(/\s+/)) {
+    if (word.length > 2) keywords.add(word.toLowerCase());
+  }
+  for (const word of curatedTopic.description.split(/\s+/)) {
+    if (word.length > 4) keywords.add(word.toLowerCase());
+  }
+
+  const results = [];
+
+  for (const category of CATEGORIES) {
+    const summaryDir = join(rootDir, 'data', 'llm', 'summaries', category);
+    if (!existsSync(summaryDir)) continue;
+
+    const files = readdirSync(summaryDir).filter(f => f.endsWith('.json'));
+    for (const file of files) {
+      const lawKey = file.replace('.json', '');
+      const data = JSON.parse(readFileSync(join(summaryDir, file), 'utf-8'));
+      if (!data.paragraphs) continue;
+
+      for (const [paraNum, para] of Object.entries(data.paragraphs)) {
+        if (!para.topics) continue;
+        // Check if any of the paragraph's topic labels contain any of our keywords
+        const topicLabelsLower = para.topics.map(t => t.toLowerCase()).join(' ');
+        const matched = [...keywords].some(kw => topicLabelsLower.includes(kw));
+        if (matched) {
+          results.push({
+            category,
+            key: lawKey,
+            paragraph: paraNum,
+            summary: para.summary,
+          });
+        }
+      }
+    }
+  }
+
+  return results;
+}
+
+/**
+ * Build a per-topic prompt for FAQ generation.
+ *
+ * @param {object} curatedTopic - Topic with slug, title, description, seedQuestions
+ * @param {Array} paragraphRefs - Matching paragraph references
+ * @returns {string} The prompt string
+ */
+function buildTopicPrompt(curatedTopic, paragraphRefs) {
+  // Build citation format reference
+  const citationRef = Object.entries(BL_CITATION)
+    .map(([key, abbr]) => `  ${key} = "${abbr}"`)
+    .join('\n');
+
+  // Cap refs at 6 per law key to keep prompt manageable
+  const refsByLaw = {};
+  for (const ref of paragraphRefs) {
+    const lawId = `${ref.category}/${ref.key}`;
+    if (!refsByLaw[lawId]) refsByLaw[lawId] = [];
+    if (refsByLaw[lawId].length < 6) {
+      refsByLaw[lawId].push(ref);
+    }
+  }
+
+  const cappedRefs = Object.values(refsByLaw).flat();
+  const refDetails = cappedRefs.map(r => {
+    const citation = BL_CITATION[r.key] || r.key;
+    return `  - Par. ${r.paragraph} ${citation}: ${r.summary?.substring(0, 120)}`;
+  }).join('\n');
+
+  const seedQuestionsText = curatedTopic.seedQuestions
+    .map(q => `  - ${q}`)
+    .join('\n');
+
+  return `Du bist ein Experte für österreichisches Gemeinderecht. Erstelle FAQ-Einträge zum Thema "${curatedTopic.title}".
+
+Thema: ${curatedTopic.title}
+Beschreibung: ${curatedTopic.description}
+
+Orientiere dich an diesen Leitfragen (du kannst weitere sinnvolle Fragen ergänzen):
+${seedQuestionsText}
+
+${GENDERING_INSTRUCTIONS}
+
+WICHTIG:
+${FAQ_STYLE_INSTRUCTIONS}
+- Referenzen müssen das korrekte Zitierformat verwenden:
+${citationRef}
+- Format: "Par. {nummer} {Abkürzung}", z.B. "Par. 42 Bgld. GO"
+- Verwende echte Paragraphen-Referenzen aus den folgenden Daten.
+
+Antworte NUR mit validem JSON (ohne Markdown-Formatierung):
+{
+  "slug": "${curatedTopic.slug}",
+  "title": "${curatedTopic.title}",
+  "description": "...",
+  "questions": [
+    {
+      "question": "...",
+      "answer": "...",
+      "references": [{ "category": "gemeindeordnungen", "key": "burgenland", "paragraph": "42", "label": "Par. 42 Bgld. GO" }]
+    }
+  ]
+}
+
+Relevante Paragraphen-Referenzen (${cappedRefs.length} Treffer):
+
+${refDetails}`;
+}
+
+/**
  * Run dry-run analysis: list laws that would be analyzed (no LLM calls).
  *
  * @param {string} rootDir - Project root directory (default: actual project root)
@@ -453,144 +620,101 @@ ${paraTexts}`;
  */
 export async function generateFAQ(rootDir = ROOT, options = {}) {
   const outputDir = join(rootDir, 'data', 'llm', 'faq');
+  const topicsDir = join(outputDir, 'topics');
   const outputPath = join(outputDir, 'topics.json');
 
-  // Clean existing file if --force
-  if (options.force && existsSync(outputPath)) {
-    unlinkSync(outputPath);
-    console.log('  Cleaned existing FAQ file');
-  }
-
-  console.log('Generating FAQ topics...');
-
-  // Collect topic taxonomy from generated summaries
-  const allTopics = collectTopicTaxonomy(rootDir);
-  console.log(`  Found ${allTopics.length} unique topics across all laws`);
-
-  // Collect ALL content for each topic (no truncation)
-  const topicParagraphs = {};
-  for (const category of CATEGORIES) {
-    const summaryDir = join(rootDir, 'data', 'llm', 'summaries', category);
-    if (!existsSync(summaryDir)) continue;
-
-    const files = readdirSync(summaryDir).filter(f => f.endsWith('.json'));
-    for (const file of files) {
-      const lawKey = file.replace('.json', '');
-      const data = JSON.parse(readFileSync(join(summaryDir, file), 'utf-8'));
-      if (!data.paragraphs) continue;
-
-      for (const [paraNum, para] of Object.entries(data.paragraphs)) {
-        if (!para.topics) continue;
-        for (const topic of para.topics) {
-          if (!topicParagraphs[topic]) topicParagraphs[topic] = [];
-          topicParagraphs[topic].push({
-            category,
-            key: lawKey,
-            paragraph: paraNum,
-            summary: para.summary,
-          });
-        }
+  // Clean existing files if --force
+  if (options.force) {
+    if (existsSync(outputPath)) {
+      unlinkSync(outputPath);
+      console.log('  Cleaned existing FAQ topics.json');
+    }
+    if (existsSync(topicsDir)) {
+      for (const file of readdirSync(topicsDir).filter(f => f.endsWith('.json'))) {
+        unlinkSync(join(topicsDir, file));
       }
+      console.log('  Cleaned existing per-topic FAQ files');
     }
   }
 
-  // Keep top 100 most frequent topics to stay within prompt size limits (~200KB)
-  const sortedTopics = Object.entries(topicParagraphs)
-    .sort((a, b) => b[1].length - a[1].length)
-    .slice(0, 100);
+  console.log('Generating FAQ topics (per-topic architecture)...');
 
-  console.log(`  Using top ${sortedTopics.length} topics (by frequency) for FAQ prompt`);
+  // Load curated topics as primary input
+  const curatedData = loadCuratedTopics(rootDir);
+  const allCuratedTopics = curatedData.topics;
+  console.log(`  Loaded ${allCuratedTopics.length} curated topics from curated-topics.json`);
 
-  const topicSummary = sortedTopics
-      .map(([topic, refs]) => {
-        // Show up to 6 refs per topic with short summaries to keep prompt manageable
-        const refDetails = refs.slice(0, 6).map(r => {
-          const citation = BL_CITATION[r.key] || r.key;
-          return `  - Par. ${r.paragraph} ${citation}: ${r.summary?.substring(0, 80)}`;
-        }).join('\n');
-        return `Topic: ${topic} (${refs.length} Paragraphen)\n${refDetails}`;
-      })
-      .join('\n\n');
+  // Filter to single topic if --topic option provided
+  const topicsToGenerate = options.topic
+    ? allCuratedTopics.filter(t => t.slug === options.topic)
+    : allCuratedTopics;
 
-    // Build citation format reference for the prompt
-    const citationRef = Object.entries(BL_CITATION)
-      .map(([key, abbr]) => `  ${key} = "${abbr}"`)
-      .join('\n');
+  if (options.topic && topicsToGenerate.length === 0) {
+    throw new Error(`Topic slug '${options.topic}' not found in curated-topics.json`);
+  }
 
-    const prompt = `Du bist ein Experte f\u00fcr \u00f6sterreichisches Gemeinderecht. Analysiere die folgende Thementaxonomie aus 23 Gemeindeordnungen und Stadtrechten und identifiziere die wichtigsten FAQ-Themen.
+  console.log(`  Generating ${topicsToGenerate.length} topic(s)...`);
 
-Bestimme 10-20 FAQ-Themen basierend auf der H\u00e4ufigkeit und Relevanz der Themen. Erstelle f\u00fcr jedes Thema:
-- "slug": URL-freundlicher Bezeichner (ASCII, lowercase, Bindestriche)
-- "title": Kurzer Titel
-- "description": 1-2 S\u00e4tze Beschreibung
-- "questions": So viele Fragen wie sinnvoll, jede mit:
-  - "question": Eine konkrete, praxisnahe Frage
-  - "answer": Beschreibe das ALLGEMEINE Prinzip, das in den meisten österreichischen Gemeindeordnungen gilt. Nenne KEINE einzelnen Bundesländer namentlich. Schreibe NICHT 'Im Burgenland...', 'In Kärnten...' oder ähnliche BL-spezifische Aussagen. Formuliere stattdessen: 'In den meisten Gemeindeordnungen...', 'Die Regelungen sehen typischerweise vor...', 'Je nach Bundesland variieren die Details...' etc.
-  - "references": Array von Verweisen { "category", "key", "paragraph", "label" }
+  // Ensure topics directory exists
+  mkdirSync(topicsDir, { recursive: true });
 
-WICHTIG:
-- Verwende IMMER korrekte deutsche Umlaute (\u00e4, \u00f6, \u00fc, \u00df).
-- Referenzen m\u00fcssen das korrekte Zitierformat verwenden:
-${citationRef}
-- Format: "Par. {nummer} {Abk\u00fcrzung}", z.B. "Par. 42 Bgld. GO"
-- Verwende echte Paragraphen-Referenzen aus den folgenden Daten.
-- Verwende KEINE Anführungszeichen (") im Antworttext. Verwende stattdessen einfache Anführungszeichen (') oder Guillemets.
-- Die Antworten dürfen KEINE Bundesländer namentlich nennen oder BL-spezifische Behauptungen aufstellen. Stattdessen allgemeine Aussagen treffen und auf die einzelnen Gesetze verweisen.
-- Verwende IMMER geschlechtergerechte Sprache mit Doppelpunkt-Gendern. Beachte dabei folgende Regeln:
-  * FEMININE GRUNDFORM: Verwende die weibliche Form als Basis mit Doppelpunkt: "die Bürgermeister:in" (NICHT "der:die Bürgermeister:in"). Der Doppelpunkt signalisiert von der femininen Grundform aus die Inklusion aller Geschlechter.
-  * SATZBAU UMFORMULIEREN: Füge NICHT einfach Doppelpunkte in maskuline Sätze ein. Formuliere den gesamten Satz um, sodass er natürlich und flüssig lesbar ist. Vermeide halb-gegenderte Konstruktionen, in denen Artikel, Adjektive oder Rollenbezeichnungen maskulin bleiben.
-  * GESCHLECHTSNEUTRALE ALTERNATIVEN bevorzugen, wo sie natürlicher klingen:
-    - "Vorsitz" statt "Vorsitzende:r"
-    - "Außenvertretung" statt "Außenvertreter:in"
-    - "Amtsführung" statt "Amtsführer:in"
-    - "Mitglieder des Gemeinderats" statt "Gemeinderät:innen" (wenn es besser lesbar ist)
-  * KONKRETE BEISPIELE:
-    SCHLECHT: "Der:die Bürgermeister:in ist Vorsitzender des Gemeinderats und Außenvertreter der Gemeinde."
-    GUT: "Die Bürgermeister:in führt den Vorsitz im Gemeinderat und vertritt die Gemeinde nach außen."
-    SCHLECHT: "Ein Gemeinderat ist als gewählter Vertreter der Bürger tätig."
-    GUT: "Gemeinderät:innen sind als gewählte Vertretung der Gemeindebürger:innen tätig."
-    SCHLECHT: "Der Vizebürgermeister vertritt den Bürgermeister bei dessen Abwesenheit."
-    GUT: "Die Vizebürgermeister:in vertritt die Bürgermeister:in bei deren Abwesenheit."
-  * REFERENZ-FORMEN: Bürgermeister:in, Vizebürgermeister:in, Gemeinderät:innen, Stadträt:innen, Gemeindebürger:innen, Ehrenbürger:innen.
-- "references": MUSS Verweise auf ALLE 9 Gemeindeordnungen enthalten, die das jeweilige Thema regeln (nicht nur 2-3). Verwende die relevantesten Paragraphen aus jeder Gemeindeordnung.
+  // Generate per-topic FAQ content
+  for (const curatedTopic of topicsToGenerate) {
+    console.log(`\n  [${curatedTopic.slug}] Collecting matching paragraphs...`);
+    const paragraphRefs = collectParagraphsForTopic(curatedTopic, rootDir);
+    console.log(`  [${curatedTopic.slug}] Found ${paragraphRefs.length} matching paragraphs`);
 
-Antworte NUR mit validem JSON (ohne Markdown-Formatierung):
-{
-  "topics": [
-    {
-      "slug": "...",
-      "title": "...",
-      "description": "...",
-      "questions": [
-        {
-          "question": "...",
-          "answer": "...",
-          "references": [{ "category": "gemeindeordnungen", "key": "burgenland", "paragraph": "42", "label": "Par. 42 Bgld. GO" }]
-        }
-      ]
+    if (paragraphRefs.length === 0) {
+      console.warn(`  [${curatedTopic.slug}] WARNING: No matching paragraphs found, skipping`);
+      continue;
     }
-  ]
-}
 
-Thementaxonomie und vollst\u00e4ndige Paragraphen-Daten:
+    const prompt = buildTopicPrompt(curatedTopic, paragraphRefs);
+    console.log(`  [${curatedTopic.slug}] Calling Claude...`);
 
-${topicSummary}`;
+    const claudeResult = callClaude(prompt);
 
-  const claudeResult = callClaude(prompt);
-  let result;
-  if (claudeResult && claudeResult.topics) {
-    result = {
-      meta: {
-        generatedAt: new Date().toISOString(),
-        topicCount: claudeResult.topics.length,
-      },
-      topics: claudeResult.topics,
-    };
+    if (!claudeResult) {
+      console.error(`  [${curatedTopic.slug}] FAILED: No valid response from Claude`);
+      continue;
+    }
+
+    // Handle response: could be { slug, title, ... } directly or wrapped
+    const topicResult = claudeResult.slug ? claudeResult : (claudeResult.topics ? claudeResult.topics[0] : claudeResult);
+
+    if (!topicResult || !topicResult.questions) {
+      console.error(`  [${curatedTopic.slug}] FAILED: Response missing questions array`);
+      continue;
+    }
+
+    // Ensure slug matches curated topic
+    topicResult.slug = curatedTopic.slug;
+
+    // Write per-topic result
+    const topicPath = join(topicsDir, `${curatedTopic.slug}.json`);
+    writeFileSync(topicPath, JSON.stringify(topicResult, null, 2), 'utf-8');
+    console.log(`  [${curatedTopic.slug}] Written: ${topicPath} (${topicResult.questions.length} questions)`);
   }
 
-  if (!result) {
-    throw new Error('FAILED: Claude did not return valid FAQ content. Check debug files in data/llm/');
+  // Aggregate all per-topic results into topics.json
+  console.log('\n  Aggregating per-topic results...');
+  const allTopicFiles = existsSync(topicsDir)
+    ? readdirSync(topicsDir).filter(f => f.endsWith('.json'))
+    : [];
+
+  const aggregatedTopics = [];
+  for (const file of allTopicFiles) {
+    const topicData = JSON.parse(readFileSync(join(topicsDir, file), 'utf-8'));
+    aggregatedTopics.push(topicData);
   }
+
+  const result = {
+    meta: {
+      generatedAt: new Date().toISOString(),
+      topicCount: aggregatedTopics.length,
+    },
+    topics: aggregatedTopics,
+  };
 
   mkdirSync(outputDir, { recursive: true });
   writeFileSync(outputPath, JSON.stringify(result, null, 2), 'utf-8');
@@ -828,6 +952,8 @@ if (process.argv[1] && process.argv[1].endsWith('llm-analyze.js')) {
   const force = process.argv.includes('--force');
   const lawIdx = process.argv.indexOf('--law');
   const lawFilter = lawIdx !== -1 ? process.argv[lawIdx + 1] : null;
+  const topicIdx = process.argv.indexOf('--topic');
+  const topicFilter = topicIdx !== -1 ? process.argv[topicIdx + 1] : null;
 
   if (isDryRun) {
     dryRun().then(result => {
@@ -853,7 +979,7 @@ if (process.argv[1] && process.argv[1].endsWith('llm-analyze.js')) {
       process.exit(1);
     });
   } else if (isFAQ) {
-    generateFAQ(ROOT, { force }).catch(err => {
+    generateFAQ(ROOT, { force, topic: topicFilter }).catch(err => {
       console.error('FAQ generation failed:', err.message);
       process.exit(1);
     });
@@ -871,6 +997,7 @@ if (process.argv[1] && process.argv[1].endsWith('llm-analyze.js')) {
     console.log('  node scripts/llm-analyze.js --generate --force --law krems  # Force single law');
     console.log('  node scripts/llm-analyze.js --faq                   # FAQ only');
     console.log('  node scripts/llm-analyze.js --faq --force           # Clean + regenerate FAQ');
+    console.log('  node scripts/llm-analyze.js --faq --topic befangenheit  # Single topic only');
     console.log('  node scripts/llm-analyze.js --glossary              # Glossary only');
     console.log('  node scripts/llm-analyze.js --glossary --force      # Clean + regenerate glossary');
   }
