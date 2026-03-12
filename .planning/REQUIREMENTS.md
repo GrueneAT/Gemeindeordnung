@@ -77,11 +77,11 @@ Requirements for UI/UX Improvements milestone. Each maps to roadmap phases.
 
 ### Law Text Readability
 
-- [ ] **READ-01**: Law text has improved typography (line height, paragraph spacing, visual hierarchy between sections/Absätze/sub-items)
+- [x] **READ-01**: Law text has improved typography (line height, paragraph spacing, visual hierarchy between sections/Absätze/sub-items)
 - [ ] **READ-02**: LLM summary is visually prominent and always visible as orientation before the law text (not hidden, not replacing law text)
 - [ ] **READ-03**: Important terms, structural markers, or key phrases in law text are visually highlighted (color, weight, or underline) to aid scanning
-- [ ] **READ-04**: Numbered Absätze within paragraphs are clearly separated and indented, not running together as wall of text
-- [ ] **READ-05**: Section headings (Hauptstücke, Abschnitte) have strong visual hierarchy distinguishing them from paragraph headings
+- [x] **READ-04**: Numbered Absätze within paragraphs are clearly separated and indented, not running together as wall of text
+- [x] **READ-05**: Section headings (Hauptstücke, Abschnitte) have strong visual hierarchy distinguishing them from paragraph headings
 
 ### Navigation & Polish
 
@@ -171,11 +171,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | NAV-01 | Phase 6 | Complete |
 | NAV-02 | Phase 6 | Complete |
 | NAV-03 | Phase 6 | Complete |
-| READ-01 | Phase 7 | Pending |
+| READ-01 | Phase 7 | Complete |
 | READ-02 | Phase 7 | Pending |
 | READ-03 | Phase 7 | Pending |
-| READ-04 | Phase 7 | Pending |
-| READ-05 | Phase 7 | Pending |
+| READ-04 | Phase 7 | Complete |
+| READ-05 | Phase 7 | Complete |
 
 **Coverage:**
 - v1 requirements: 32 total — all complete
