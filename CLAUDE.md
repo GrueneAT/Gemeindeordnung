@@ -77,6 +77,17 @@ If any screenshot fails a checklist item: fix the code, re-run Step 1, re-read t
 - **Quick check (desktop only):** `npx playwright test --config=e2e/playwright.config.js --project=desktop-chromium`
 - **Full with Pagefind:** `npm run build && npx pagefind --site dist --force-language de && npx playwright test --config=e2e/playwright.config.js`
 
+### E2E Test Coverage (MANDATORY for new features)
+
+**Every plan that adds or changes user-facing functionality MUST include E2E tests.** This is not optional.
+
+1. **New features need new test specs** in `e2e/tests/`. If you add a search results panel, there must be a test that verifies it renders correctly with results grouped by type. If you add a hero section, there must be a test that verifies the hero layout, search input, and discovery links.
+2. **New screenshots for new UI elements.** Any new visual element must have a corresponding screenshot captured in the E2E tests and listed in the Visual Review Protocol screenshot list above.
+3. **No regressions.** All existing E2E tests must continue to pass. Run the full suite before committing.
+4. **Mobile coverage.** Any feature that affects layout must be tested at 375px viewport width.
+
+Failing to include E2E tests for new functionality is a blocking issue -- fix it before committing.
+
 ## Tech Stack
 
 - Vite 7, TailwindCSS v4 (CSS-first, no tailwind.config.js)
