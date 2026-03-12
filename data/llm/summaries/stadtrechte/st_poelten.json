@@ -1,42 +1,43 @@
 {
   "meta": {
-    "generatedAt": "2026-03-12T09:27:46.461Z",
+    "generatedAt": "2026-03-12T16:39:35.031Z",
     "lawKey": "st_poelten",
     "category": "stadtrechte"
   },
   "paragraphs": {
     "1": {
-      "summary": "Die Landeshauptstadt St. Pölten ist eine Gebietskörperschaft mit Selbstverwaltungsrecht und besitzt ein eigenes Statut. Ihr Stadtgebiet bildet zugleich einen Verwaltungsbezirk, weshalb die Stadt sowohl Gemeinde- als auch Bezirksverwaltungsaufgaben wahrnimmt.",
+      "summary": "St. Pölten ist als Landeshauptstadt eine Gebietskörperschaft mit Selbstverwaltungsrecht und besitzt ein eigenes Statut. Das Stadtgebiet bildet zugleich einen Verwaltungsbezirk, weshalb die Stadt sowohl Gemeinde- als auch Bezirksverwaltungsaufgaben wahrnimmt.",
       "topics": [
-        "Rechtsstellung der Gemeinde",
-        "Statutarstadt"
+        "Rechtsstellung der Stadt",
+        "Selbstverwaltung"
       ]
     },
     "2": {
-      "summary": "Für die Festlegung des Stadtgebiets verweist das Stadtrecht auf das Landesgesetz über die Gliederung Niederösterreichs in Gemeinden (LGBl. 1030).",
+      "summary": "Die genauen Grenzen des Stadtgebiets ergeben sich aus dem niederösterreichischen Gesetz über die Gemeindegliederung (LGBl. 1030).",
       "topics": [
         "Stadtgebiet"
       ]
     },
     "3": {
-      "summary": "Das Stadtwappen zeigt einen geteilten Schild mit einem grauen Wolf im blauen Feld und einem roten Balken im weißen Feld. Die Stadtfarben sind Rot-Gelb. Für das Stadtsiegel und das Amtssiegel des Magistrats gelten eigene Umschriften.",
+      "summary": "Das Stadtwappen zeigt einen geteilten Schild: links auf blauem Grund einen grauen Wolf, rechts auf weißem Grund einen roten Balken. Rot-Gelb sind die offiziellen Stadtfarben. Für das Stadtsiegel und das Amtssiegel des Magistrats gelten eigene Gestaltungsvorgaben mit entsprechender Umschrift.",
       "topics": [
-        "Wappen und Siegel",
-        "Stadtidentität"
+        "Stadtwappen und Hoheitszeichen",
+        "Stadtfarben"
       ]
     },
     "4": {
-      "summary": "Der Gemeinderat umfasst 42 Mitglieder, der Stadtsenat setzt sich aus dem Ersten und Zweiten Vizebürgermeister sowie elf Stadträten zusammen. Für die Kontrolle ist ein Kontrollausschuss mit mindestens sieben Mitgliedern und Ersatzmitgliedern vorgesehen.",
+      "summary": "Der Gemeinderat setzt sich aus 42 Mitgliedern zusammen. Im Stadtsenat sind neben der ersten und zweiten Vizebürgermeister:in elf Stadträt:innen vertreten. Für den Kontrollausschuss sind mindestens sieben Mitglieder samt Ersatzmitgliedern vorgesehen.",
       "topics": [
-        "Gemeindeorgane",
+        "Organe der Stadt",
+        "Gemeinderat",
         "Kontrollausschuss"
       ]
     },
     "5": {
-      "summary": "Zur laufenden Überprüfung der städtischen Gebarung und Rechnungslegung ist ein eigenes Kontrollamt einzurichten.",
+      "summary": "Zur Überprüfung der städtischen Gebarung und Rechnungsführung muss ein eigenes Kontrollamt eingerichtet werden.",
       "topics": [
-        "Rechnungsprüfung",
-        "Kontrollamt"
+        "Kontrollamt",
+        "Rechnungsprüfung"
       ]
     }
   }

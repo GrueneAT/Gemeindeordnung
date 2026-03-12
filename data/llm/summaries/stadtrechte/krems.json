@@ -1,42 +1,42 @@
 {
   "meta": {
-    "generatedAt": "2026-03-12T09:14:27.349Z",
+    "generatedAt": "2026-03-12T16:25:03.370Z",
     "lawKey": "krems",
     "category": "stadtrechte"
   },
   "paragraphs": {
     "1": {
-      "summary": "Die Stadtgemeinde Krems an der Donau besitzt als Gebietskörperschaft das Recht auf Selbstverwaltung und den Status einer Stadt mit eigenem Statut. Ihr Gebiet bildet zugleich einen politischen Bezirk, weshalb die Stadt sowohl Gemeinde- als auch Bezirksverwaltungsaufgaben wahrnimmt.",
+      "summary": "Krems an der Donau besitzt als Statutarstadt das Recht auf Selbstverwaltung und bildet zugleich einen eigenen politischen Bezirk. Neben den üblichen Gemeindeaufgaben übernimmt die Stadt daher auch sämtliche Agenden der Bezirksverwaltung.",
       "topics": [
-        "Rechtsstellung der Gemeinde",
+        "Rechtliche Stellung",
         "Statutarstadt"
       ]
     },
     "2": {
-      "summary": "Die Grenzen des Stadtgebiets ergeben sich aus dem Landesgesetz über die Gemeindegliederung Niederösterreichs (LGBl. 1030).",
+      "summary": "Die genauen Grenzen des Stadtgebiets ergeben sich aus dem niederösterreichischen Gemeindegliederungsgesetz (LGBl. 1030).",
       "topics": [
         "Stadtgebiet"
       ]
     },
     "3": {
-      "summary": "Krems an der Donau führt einen goldenen Doppeladler mit Kaiserkrone in schwarzem Schild als Stadtwappen. Die Stadtfarben sind Gelb-Schwarz. Sowohl das Stadtsiegel als auch das Amtssiegel des Magistrats zeigen das Wappen mit der jeweiligen Umschrift.",
+      "summary": "Im schwarzen Schild des Stadtwappens ist ein rotbezungter goldener Doppeladler mit darüber schwebender Kaiserkrone abgebildet. Gelb-Schwarz sind die offiziellen Stadtfarben. Sowohl das Stadtsiegel als auch das Amtssiegel des Magistrats tragen das Wappen mit der jeweiligen Umschrift.",
       "topics": [
-        "Wappen und Siegel",
-        "Städtische Identität"
+        "Wappen und Stadtfarben",
+        "Siegel"
       ]
     },
     "4": {
-      "summary": "Der Gemeinderat umfasst 40 Mitglieder, während sich der Stadtsenat aus dem Ersten und Zweiten Vizebürgermeister sowie acht Stadträten zusammensetzt. Für die Kontrolle ist ein Kontrollausschuss mit mindestens sieben Mitgliedern und Ersatzmitgliedern vorgesehen.",
+      "summary": "Der Gemeinderat setzt sich aus 40 Mitgliedern zusammen, während im Stadtsenat neben der Ersten und Zweiten Vizebürgermeister:in acht Stadträt:innen vertreten sind. Für den Kontrollausschuss sind mindestens sieben Mitglieder samt Ersatzmitgliedern vorgesehen.",
       "topics": [
         "Gemeindeorgane",
         "Kontrollausschuss"
       ]
     },
     "5": {
-      "summary": "Neben dem Kontrollausschuss kann der Gemeinderat ein eigenes Kontrollamt zur Überprüfung der Gebarung einrichten.",
+      "summary": "Zur ergänzenden Prüfung der städtischen Gebarung kann der Gemeinderat neben dem Kontrollausschuss ein eigenes Kontrollamt einrichten.",
       "topics": [
-        "Finanzkontrolle",
-        "Kontrollamt"
+        "Kontrollamt",
+        "Rechnungsprüfung"
       ]
     }
   }

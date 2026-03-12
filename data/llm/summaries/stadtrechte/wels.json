@@ -1,133 +1,131 @@
 {
   "meta": {
-    "generatedAt": "2026-03-12T09:42:00.934Z",
+    "generatedAt": "2026-03-12T16:53:09.571Z",
     "lawKey": "wels",
     "category": "stadtrechte"
   },
   "paragraphs": {
     "1": {
-      "summary": "Wels ist eine Stadt mit eigenem Statut und als Gebietskörperschaft sowohl für die Gemeinde- als auch für die Bezirksverwaltung zuständig. Als selbständiger Wirtschaftskörper darf sie Vermögen besitzen, wirtschaftliche Unternehmungen betreiben und ihren Haushalt eigenständig führen.",
+      "summary": "Wels ist eine Stadt mit eigenem Statut und vereint als Gebietskörperschaft sowohl die Gemeinde- als auch die Bezirksverwaltung. Als selbständiger Wirtschaftskörper darf die Stadt Vermögen besitzen, wirtschaftliche Unternehmungen betreiben und ihren Haushalt eigenverantwortlich führen.",
       "topics": [
         "Rechtsstellung",
         "Selbstverwaltung"
       ]
     },
     "2": {
-      "summary": "Das Stadtgebiet umfasst sechs Katastralgemeinden und bildet einen eigenen politischen Bezirk. Änderungen der Stadtgrenzen erfordern eine Zweidrittelmehrheit im Landtag sowie eine Volksbefragung. Zur besseren Verwaltung kann das Gebiet in Stadtbezirke eingeteilt werden.",
+      "summary": "Das Stadtgebiet umfasst sechs Katastralgemeinden und bildet einen eigenen politischen Bezirk. Änderungen der Stadtgrenzen erfordern eine Zweidrittelmehrheit im Landtag sowie eine Volksbefragung. Zur besseren Verwaltung kann der Gemeinderat das Gebiet in Stadtbezirke einteilen.",
       "topics": [
         "Stadtgebiet",
         "Gebietsänderung"
       ]
     },
     "3": {
-      "summary": "Die Stadtfarben sind grün-rot, das Wappen zeigt einen zweitürmigen Torbau mit Bindenschild auf blauem Grund. Wer das Wappen gewerblich nutzen möchte, muss dies der Stadt anzeigen; der Stadtsenat kann die Verwendung bei Missbrauchsgefahr untersagen. Unbefugtes Führen des Stadtsiegels oder Weiterverwendung trotz Untersagung wird mit Geldstrafe geahndet.",
+      "summary": "Grün-Rot sind die Stadtfarben von Wels. Das Stadtwappen zeigt einen zweitürmigen Torbau mit goldenem Fallgitter und dem österreichischen Bindenschild auf blauem Grund. Für die gewerbliche Nutzung des Wappens besteht eine Anzeigepflicht beim Magistrat; Missbrauch kann mit Geldstrafe bis zu 1.000 Euro geahndet werden.",
       "topics": [
         "Stadtwappen",
-        "Stadtsiegel",
         "Hoheitszeichen"
       ]
     },
     "4": {
-      "summary": "Als Einwohnerinnen und Einwohner gelten alle Personen mit Wohnsitz in Wels. Bürgerinnen und Bürger sind jene Einwohner, die nach der oberösterreichischen Kommunalwahlordnung wahlberechtigt sind.",
+      "summary": "Als Einwohner:innen gelten alle Personen mit Wohnsitz in Wels. Gemeindebürger:innen sind jene Einwohner:innen, die nach der Kommunalwahlordnung wahlberechtigt sind.",
       "topics": [
-        "Einwohnerstatus",
-        "Wahlberechtigung"
+        "Gemeindebürger:innenschaft",
+        "Wahlrecht"
       ]
     },
     "5": {
-      "summary": "Besonders verdiente Persönlichkeiten können vom Gemeinderat mit Dreiviertelmehrheit zur Ehrenbürgerin bzw. zum Ehrenbürger ernannt oder mit einem Ehrenring ausgezeichnet werden. Werden nachträglich Tatsachen bekannt, die einer Verleihung entgegengestanden wären, ist die Auszeichnung abzuerkennen. Unbefugtes Tragen von Ehrenzeichen stellt eine Verwaltungsübertretung dar.",
+      "summary": "Personen mit besonderen Verdiensten um die Stadt können durch den Gemeinderat mit Dreiviertelmehrheit zur Ehrenbürger:in ernannt oder mit einem Ehrenring ausgezeichnet werden. Die Auszeichnung ist abzuerkennen, wenn nachträglich Umstände bekannt werden, die einer Verleihung entgegengestanden wären. Unbefugtes Tragen von Ehrenzeichen stellt eine Verwaltungsübertretung dar.",
       "topics": [
         "Ehrungen",
-        "Ehrenbürgerschaft"
+        "Ehrenbürger:innenschaft"
       ]
     },
     "6": {
-      "summary": "Die Stadt gibt ein Amtsblatt heraus, das auf ihrer Internetseite veröffentlicht und zusätzlich am Magistrat zur Einsicht bereitgehalten wird. Jede Ausgabe trägt das Herausgabedatum und wird jahrweise fortlaufend nummeriert. Druckfehler sind in zweckdienlicher Weise zu berichtigen.",
+      "summary": "Die Stadt gibt das Amtsblatt heraus, das auf der städtischen Internetseite veröffentlicht und zusätzlich am Magistrat zur Einsicht bereitgehalten wird. Druckfehler sind in zweckdienlicher Weise zu berichtigen.",
       "topics": [
         "Amtsblatt",
-        "Öffentliche Bekanntmachung"
+        "Kundmachung"
       ]
     },
     "7": {
-      "summary": "Dieser kurze Gliederungsparagraph benennt die Organe der Stadt Wels, ohne deren Zusammensetzung oder Aufgaben näher auszuführen.",
+      "summary": "Dieser kurze Übersichtsparagraph benennt die Organe der Stadt Wels.",
       "topics": [
         "Organe der Stadt"
       ]
     },
     "8": {
-      "summary": "Der Gemeinderat setzt sich aus 36 Mitgliedern zusammen, die auf Grundlage der oberösterreichischen Kommunalwahlordnung gewählt werden. Jedes Mitglied ist berechtigt, den Titel 'Gemeinderat' bzw. 'Gemeinderätin' zu führen.",
+      "summary": "Der Gemeinderat setzt sich aus 36 Mitgliedern zusammen, die auf Grundlage der Kommunalwahlordnung gewählt werden. Gewählte Mitglieder dürfen den Titel Gemeinderat bzw. Gemeinderätin führen.",
       "topics": [
         "Gemeinderatszusammensetzung",
         "Gemeinderatswahl"
       ]
     },
     "9": {
-      "summary": "Gewählte Gemeinderatsmitglieder derselben Wahlpartei bilden eine Fraktion, sofern mindestens zwei Mandate auf ihre Partei entfallen. Jede Fraktion bestellt aus ihrer Mitte eine Vorsitzende oder einen Vorsitzenden sowie Stellvertreter. Den Fraktionsvorsitzenden steht ein Akteneinsichtsrecht zu den Tagesordnungspunkten der nächsten Sitzung zu, einschließlich der Anforderung von Kopien auf Kosten der Stadt.",
+      "summary": "Gewählte Gemeinderatsmitglieder derselben Wahlpartei bilden eine Fraktion, sofern mindestens zwei Mandate auf ihre Partei entfallen. Jede Fraktion bestellt aus ihrer Mitte einen Vorsitz samt Stellvertretung. Fraktionsvorsitzende haben das Recht auf Akteneinsicht und Anfertigung von Kopien zu Tagesordnungspunkten der nächsten Sitzung.",
       "topics": [
         "Fraktionen",
         "Akteneinsicht"
       ]
     },
     "10": {
-      "summary": "Binnen acht Wochen nach Verlautbarung des Wahlergebnisses muss die konstituierende Sitzung stattfinden. Alle Mitglieder legen ein Gelöbnis ab, die Bundes- und Landesverfassung zu beachten und das Wohl der Stadt zu fördern. Ein Gelöbnis unter Bedingungen oder mit Zusätzen gilt als verweigert, eine religiöse Beteuerung ist jedoch zulässig.",
+      "summary": "Die konstituierende Sitzung muss binnen acht Wochen nach Verlautbarung des Wahlergebnisses stattfinden. Alle Gemeinderatsmitglieder legen ein Gelöbnis ab, in dem sie gewissenhafte Gesetzesbeachtung und uneigennützige Pflichterfüllung zusichern. Ein Gelöbnis unter Bedingungen gilt als verweigert.",
       "topics": [
         "Konstituierung",
         "Gelöbnis"
       ]
     },
     "11": {
-      "summary": "Die Funktionsperiode beginnt mit der Angelobung der neuen Mitglieder und endet mit der Angelobung des nachfolgenden Gemeinderats. Eine vorzeitige Selbstauflösung ist jederzeit möglich. Neuwahlen innerhalb einer laufenden Wahlperiode ändern den allgemeinen Wahlrhythmus nicht.",
+      "summary": "Die Funktionsperiode beginnt mit der Angelobung und endet mit der Angelobung des neu gewählten Gemeinderats. Eine Selbstauflösung ist jederzeit möglich, wobei Neuwahlen innerhalb der Wahlperiode die allgemeine Wahlperiode nicht berühren.",
       "topics": [
         "Funktionsperiode",
         "Gemeinderatsauflösung"
       ]
     },
     "12": {
-      "summary": "Gemeinderatsmitglieder haben weitreichende Informations-, Antrags- und Rederechte sowie das Recht auf Akteneinsicht in Verhandlungsschriften. In Angelegenheiten des eigenen Wirkungsbereichs können sie schriftliche Anfragen an Bürgermeister oder Stadtsenatsmitglieder richten, die spätestens in der zweitfolgenden Sitzung mündlich zu beantworten sind. Mitglieder ohne sonstige Funktion erhalten einen Bezug von 15 % des gesetzlichen Ausgangsbetrags; Fraktionsvorsitzende erhalten 22,5 %.",
+      "summary": "Gemeinderatsmitglieder haben umfassende Informations-, Antrags- und Stimmrechte sowie das Recht, Anfragen an die Bürgermeister:in und Stadtsenatsmitglieder zu richten. Anfragen sind spätestens in der zweitfolgenden Sitzung mündlich zu beantworten. Mitglieder ohne zusätzliche Funktion erhalten einen Bezug von 15 % des gesetzlichen Ausgangsbetrags und sind bei der Mandatsausübung weisungsfrei.",
       "topics": [
         "Rechte der Gemeinderatsmitglieder",
         "Anfragen",
-        "Mandatsbezüge"
+        "Bezüge"
       ]
     },
     "13": {
-      "summary": "Jedes Mitglied hat die Pflicht, an den Sitzungen des Gemeinderats und seiner Ausschüsse teilzunehmen. Befreiungen bis zu drei Monaten erteilt der Bürgermeister, darüber hinaus der Gemeinderat. Auch nach dem Ausscheiden besteht eine Geheimhaltungspflicht für Tatsachen, die ausschließlich aus der Tätigkeit bekannt wurden, soweit dies verfassungsrechtlich geboten ist.",
+      "summary": "Jedes Mitglied ist zur Teilnahme an den Sitzungen verpflichtet; Befreiungen erteilt kurzfristig die Bürgermeister:in, längerfristig der Gemeinderat. Bei Verhinderung wird ein Ersatzmitglied einberufen. Auch nach dem Ausscheiden besteht eine Geheimhaltungspflicht, soweit dies aus verfassungsrechtlich genannten Gründen erforderlich ist.",
       "topics": [
         "Pflichten der Gemeinderatsmitglieder",
-        "Geheimhaltung",
-        "Sitzungsteilnahme"
+        "Geheimhaltung"
       ]
     },
     "14": {
-      "summary": "Ein Gemeinderatsmandat kann durch schriftlichen Verzicht, durch Nichterscheinen zur konstituierenden Sitzung, durch Verweigerung des Gelöbnisses oder bei drei aufeinanderfolgenden unentschuldigten Abwesenheiten erlöschen. Ebenso geht das Mandat bei Verlust der Wählbarkeit verloren. In bestimmten Fällen tritt der Mandatsverlust von Gesetzes wegen ein, in anderen spricht der Stadtsenat ihn per Bescheid aus.",
+      "summary": "Ein Mandatsverzicht ist schriftlich zu erklären und wird mit Einlangen wirksam. Das Mandat geht auch verloren bei Nichterscheinen zur konstituierenden Sitzung, Verweigerung des Gelöbnisses oder dreimaligem unentschuldigtem Fehlen. Über den Mandatsverlust entscheidet der Stadtsenat per Bescheid.",
       "topics": [
         "Mandatsverlust",
         "Mandatsverzicht"
       ]
     },
     "15": {
-      "summary": "Gemeinderatssitzungen werden vom Bürgermeister einberufen, wobei die Einladung mindestens fünf Tage vorher – in dringenden Fällen 24 Stunden – zuzustellen ist. Auf Verlangen von mindestens neun Mitgliedern oder der Landesregierung muss innerhalb von zwei Wochen eine Sitzung stattfinden. Kommt der Bürgermeister dem Verlangen der Landesregierung nicht nach, kann diese selbst die Einberufung vornehmen.",
+      "summary": "Gemeinderatssitzungen werden von der Bürgermeister:in unter Angabe der Tagesordnung einberufen, wobei mindestens fünf Tage Vorlaufzeit einzuhalten sind. Auf Verlangen von neun Gemeinderatsmitgliedern oder der Landesregierung ist binnen zwei Wochen eine Sitzung anzuberaumen. Nicht ordnungsgemäß einberufene Sitzungen sind ungesetzlich.",
       "topics": [
         "Sitzungseinberufung",
         "Gemeinderatssitzungen"
       ]
     },
     "16": {
-      "summary": "Gemeinderatssitzungen sind grundsätzlich öffentlich; jedermann darf zuhören und Aufzeichnungen machen. Eine Übertragung im Internet ist zulässig, sofern Zuhörer visuell nicht erfasst werden. Der Ausschluss der Öffentlichkeit ist aus bestimmten Gründen möglich, nicht jedoch bei der Behandlung von Voranschlag, Finanzplan oder Rechnungsabschluss.",
+      "summary": "Gemeinderatssitzungen sind grundsätzlich öffentlich, und die Internetübertragung ist zulässig. Ein Ausschluss der Öffentlichkeit kann auf Antrag beschlossen werden, nicht jedoch bei Beratung über Voranschlag oder Rechnungsabschluss. Auf Beschluss kann eine Bürger:innen-Fragestunde abgehalten werden.",
       "topics": [
         "Öffentlichkeit der Sitzungen",
-        "Gemeinderatssitzungen"
+        "Bürger:innenbeteiligung"
       ]
     },
     "17": {
-      "summary": "Den Vorsitz im Gemeinderat führt der Bürgermeister, der für Ordnung, Ruhe und Einhaltung der Geschäftsordnung sorgt. Zuhörer müssen sich jeder Äußerung enthalten; bei Störungen kann der Vorsitzende sie nach Ermahnung aus dem Saal entfernen lassen. Visuelle und akustische Aufzeichnungen sind zulässig, können aber im Einzelfall eingeschränkt werden.",
+      "summary": "Die Bürgermeister:in führt den Vorsitz im Gemeinderat und sorgt für die Einhaltung der Geschäftsordnung. Störende Zuhörer:innen können nach fruchtloser Mahnung des Saales verwiesen werden. Visuelle und akustische Aufzeichnungen der Sitzung sind grundsätzlich zulässig.",
       "topics": [
         "Sitzungsleitung",
-        "Ordnungsrecht"
+        "Ordnungsgewalt"
       ]
     },
     "18": {
-      "summary": "Beschlussfähig ist der Gemeinderat bei Anwesenheit mindestens der Hälfte seiner Mitglieder; Beschlüsse erfordern die einfache Mehrheit der Anwesenden. Für bestimmte Angelegenheiten wie die Auflösung des Gemeinderats, Statutenänderungen oder größere finanzielle Verpflichtungen ist eine Zweidrittelmehrheit bei Anwesenheit von zwei Dritteln der Mitglieder nötig. Dringlichkeitsanträge müssen spätestens 24 Stunden vor Sitzungsbeginn eingebracht werden und eine Begründung enthalten.",
+      "summary": "Beschlussfähig ist der Gemeinderat bei Anwesenheit mindestens der Hälfte seiner Mitglieder; Beschlüsse erfordern die einfache Mehrheit der Anwesenden. Für bestimmte Angelegenheiten wie Statutenänderungen, Geschäftsordnungen oder große Finanzgeschäfte gilt eine Zweidrittelmehrheit. Dringlichkeitsanträge müssen spätestens 24 Stunden vor Sitzungsbeginn eingebracht und begründet werden.",
       "topics": [
         "Beschlussfähigkeit",
         "Beschlussfassung",
@@ -135,575 +133,585 @@
       ]
     },
     "19": {
-      "summary": "Jedes Mitglied übt sein Stimmrecht persönlich aus; eine Stimmenthaltung gilt als Ablehnung. Abgestimmt wird durch Handzeichen, Aufstehen oder technische Vorrichtung. Auf Beschluss kann namentlich, auf Verlangen eines Drittels geheim abgestimmt werden – bei behördlichen Angelegenheiten ist die geheime Abstimmung jedoch unzulässig.",
+      "summary": "Das Stimmrecht ist persönlich auszuüben; Enthaltungen gelten als Ablehnung. Abgestimmt wird durch Handzeichen, Aufstehen oder technische Vorrichtung, wobei auf Verlangen eines Drittels der Anwesenden geheim mit Stimmzetteln abzustimmen ist. Bei behördlichen Entscheidungen ist eine geheime Abstimmung unzulässig.",
       "topics": [
-        "Abstimmung",
-        "Stimmrecht"
+        "Stimmrecht",
+        "Abstimmungsverfahren"
       ]
     },
     "20": {
-      "summary": "Der Magistratsdirektor nimmt an allen Gemeinderatssitzungen teil und kann vom Vorsitzenden zur sachlichen und rechtlichen Aufklärung das Wort erhalten. Darüber hinaus können Bedienstete der Stadt und andere Personen zur Auskunftserteilung beigezogen werden.",
+      "summary": "Die Magistratsdirektor:in nimmt an allen Gemeinderatssitzungen teil und kann zur sachlichen und rechtlichen Aufklärung das Wort erhalten. Darüber hinaus kann der Vorsitz für bestimmte Tagesordnungspunkte weitere Bedienstete oder externe Personen zur Auskunftserteilung beiziehen.",
       "topics": [
         "Sachkundige Personen",
-        "Magistratsdirektor"
+        "Magistratsdirektion"
       ]
     },
     "21": {
-      "summary": "Über jede Gemeinderatssitzung ist eine Verhandlungsschrift zu führen, die Anträge, Beschlüsse, Abstimmungsergebnis und den wesentlichen Sitzungsverlauf enthält. Sie wird vom Vorsitzenden und zwei weiteren Mitgliedern unterfertigt und kann von jedermann eingesehen werden. Bei Bedenken gegen Fassung oder Inhalt kann ein Berichtigungsantrag an den Gemeinderat gestellt werden.",
+      "summary": "Über jede Gemeinderatssitzung ist eine Verhandlungsschrift zu führen, die sämtliche Anträge, Beschlüsse und den wesentlichen Sitzungsverlauf dokumentiert. Die Schrift wird von Vorsitz und zwei Mitgliedern unterzeichnet und kann von jedermann eingesehen werden, soweit keine gesetzliche Geheimhaltung entgegensteht.",
       "topics": [
         "Verhandlungsschrift",
-        "Protokollierung"
+        "Dokumentation"
       ]
     },
     "22": {
-      "summary": "Gültige Beschlüsse des Gemeinderats werden grundsätzlich vom Bürgermeister vollzogen. Hält der Bürgermeister einen Beschluss für gesetzwidrig oder für die Stadt schädlich, kann er mit der Vollziehung innehalten und die Angelegenheit dem Gemeinderat innerhalb von sechs Wochen zur neuerlichen Beschlussfassung vorlegen. Bestätigt der Gemeinderat seinen Beschluss, ist dieser zu vollziehen.",
+      "summary": "Gültige Gemeinderatsbeschlüsse sind von der Bürgermeister:in zu vollziehen. Bestehen Bedenken wegen Gesetzesverletzung oder wesentlichem Schaden, kann die Bürgermeister:in die Vollziehung aussetzen und die Angelegenheit binnen sechs Wochen dem Gemeinderat erneut vorlegen.",
       "topics": [
         "Beschlussvollzug",
-        "Suspensivrecht des Bürgermeisters"
+        "Sistierungsrecht"
       ]
     },
     "23": {
-      "summary": "Wurde der Bürgermeister nicht direkt gewählt, wählt ihn der Gemeinderat aus seiner Mitte. Wahlvorschläge dürfen nur Fraktionen einbringen, denen ein Anspruch auf Vertretung im Stadtsenat zukommt. Kommt in zwei Wahlgängen keine absolute Mehrheit zustande, findet eine engere Wahl zwischen den beiden Bestplatzierten statt; bei Stimmengleichheit entscheiden Mandatsstärke, Parteisummen oder das Los.",
+      "summary": "Wurde die Bürgermeister:in nicht direkt gewählt, erfolgt die Wahl durch den Gemeinderat auf Basis von Fraktionswahlvorschlägen. Bei fehlender absoluter Mehrheit in den ersten beiden Wahlgängen kommt es zu einer engeren Wahl oder einem dritten Wahlgang mit relativer Mehrheit. Bei Stimmengleichheit entscheidet zunächst die Mandatsstärke der Fraktion, dann die Parteisumme, zuletzt das Los.",
       "topics": [
-        "Bürgermeisterwahl",
+        "Bürgermeister:innenwahl",
         "Wahlverfahren"
       ]
     },
     "24": {
-      "summary": "Vor Amtsantritt leistet der Bürgermeister vor dem Gemeinderat ein Gelöbnis, die Bundes- und Landesverfassung zu beachten und seine Pflichten nach bestem Wissen und Gewissen zu erfüllen. Eine religiöse Beteuerung ist zulässig. Das zusätzlich dem Landeshauptmann zu leistende Gelöbnis bleibt davon unberührt.",
+      "summary": "Vor Amtsantritt leistet die Bürgermeister:in vor dem Gemeinderat ein Gelöbnis auf die Bundes- und Landesverfassung sowie die gewissenhafte Pflichterfüllung. Eine religiöse Beteuerung darf beigefügt werden.",
       "topics": [
-        "Bürgermeistergelöbnis"
+        "Gelöbnis",
+        "Amtsantritt"
       ]
     },
     "25": {
-      "summary": "Nach mindestens zehnjähriger Amtsausübung erhält der Bürgermeister ab dem 65. Lebensjahr oder bei Dienstunfähigkeit monatliche Ruhebezüge. Hinterbliebene haben Anspruch auf Versorgungsbezüge und einen Todesfallbeitrag. Bei vorzeitiger Inanspruchnahme vor dem 65. Lebensjahr wird der Ruhebezug um bis zu 10 % gekürzt.",
+      "summary": "Nach mindestens zehnjähriger Amtszeit hat die Bürgermeister:in ab Vollendung des 65. Lebensjahres oder bei Dienstunfähigkeit Anspruch auf Ruhebezüge. Hinterbliebene erhalten Versorgungsbezüge und einen Todesfallbeitrag. Bei vorzeitiger Inanspruchnahme wird der Ruhebezug um bis zu 10 % gekürzt.",
       "topics": [
-        "Bürgermeisterbezüge",
+        "Bezüge",
         "Ruhebezüge",
-        "Versorgungsbezüge"
+        "Versorgungsansprüche"
       ]
     },
     "26": {
-      "summary": "In allen Befugnissen und Angelegenheiten wird der Bürgermeister durch den geschäftsführenden Vizebürgermeister vertreten. Als Vorstand des Magistrats wird er darüber hinaus auch durch den Magistratsdirektor vertreten.",
+      "summary": "In allen Befugnissen wird die Bürgermeister:in durch die geschäftsführende Vizebürgermeister:in vertreten. Als Vorstand des Magistrats kann die Vertretung auch durch die Magistratsdirektor:in erfolgen.",
       "topics": [
-        "Vertretung des Bürgermeisters"
+        "Vertretung",
+        "Vizebürgermeister:in"
       ]
     },
     "27": {
-      "summary": "Wird die Stelle des Bürgermeisters während der Amtsdauer frei, ist sie durch Neuwahl nachzubesetzen; bis dahin führt der Vizebürgermeister die Geschäfte fort. Je nach Zeitpunkt und Umständen erfolgt die Nachbesetzung entweder durch Direktwahl der Bevölkerung oder durch Wahl im Gemeinderat.",
+      "summary": "Wird das Amt der Bürgermeister:in während der Funktionsperiode frei, ist es durch Neuwahl nachzubesetzen. Bis zur Angelobung führt die vertretungsberufene Vizebürgermeister:in die Geschäfte. Je nach Zeitpunkt der Erledigung erfolgt die Nachbesetzung durch Volkswahl oder durch Wahl im Gemeinderat.",
       "topics": [
-        "Nachbesetzung Bürgermeister",
+        "Nachbesetzung",
         "Geschäftsfortführung"
       ]
     },
     "28": {
-      "summary": "Der Stadtsenat besteht aus dem Bürgermeister, drei Vizebürgermeistern und vier Stadträten. Die Mandatsverteilung auf die Fraktionen erfolgt nach dem d'Hondtschen Verfahren anhand der Gemeinderatsmandate. Vizebürgermeister und Stadträte werden in Fraktionswahl von den Gemeinderatsmitgliedern der jeweiligen Fraktion mit absoluter Mehrheit gewählt.",
+      "summary": "Der Stadtsenat besteht aus der Bürgermeister:in, drei Vizebürgermeister:innen und vier Stadträt:innen. Die Mandate werden nach einem d'Hondt-ähnlichen Verfahren auf die Fraktionen verteilt. Vizebürgermeister:innen und Stadträt:innen werden in Fraktionswahl von den Gemeinderatsmitgliedern der jeweiligen Fraktion mit absoluter Mehrheit gewählt.",
       "topics": [
-        "Stadtsenatzusammensetzung",
-        "Stadtsenatswahl",
-        "Mandatsverteilung"
+        "Stadtsenat",
+        "Mandatsverteilung",
+        "Fraktionswahl"
       ]
     },
     "29": {
-      "summary": "Vizebürgermeister und Stadträte leisten vor Amtsantritt vor dem Gemeinderat ein Gelöbnis auf die Bundes- und Landesverfassung. Eine religiöse Beteuerung ist zulässig. Für die Vizebürgermeister bleibt das zusätzliche Gelöbnis gegenüber dem Landeshauptmann unberührt.",
+      "summary": "Vizebürgermeister:innen und Stadträt:innen leisten vor dem Gemeinderat ein Gelöbnis auf die Bundes- und Landesverfassung. Eine religiöse Beteuerung ist zulässig.",
       "topics": [
-        "Gelöbnis Stadtsenat"
+        "Gelöbnis",
+        "Amtsantritt"
       ]
     },
     "30": {
-      "summary": "Die Bezüge der Vizebürgermeister dürfen höchstens 85 %, jene der Stadträte höchstens 75 % der Bürgermeisterbezüge betragen. Bei der Festsetzung ist die funktionsbedingte Arbeitsbelastung zu berücksichtigen; die Höchstsätze dürfen nur bei hauptberuflicher Ausübung erreicht werden.",
+      "summary": "Die Bezüge der Vizebürgermeister:innen dürfen höchstens 85 %, jene der Stadträt:innen höchstens 75 % der Bezüge der Bürgermeister:in betragen. Maßgeblich ist die tatsächliche Arbeitsbelastung; die Höchstsätze gelten nur bei hauptberuflicher Funktionsausübung.",
       "topics": [
-        "Bezüge Stadtsenat",
-        "Vizebürgermeister",
-        "Stadträte"
+        "Bezüge",
+        "Stadtsenat"
       ]
     },
     "31": {
-      "summary": "Vizebürgermeister und Stadträte werden für die Dauer der Gemeinderatsperiode gewählt und bleiben bis zur Angelobung ihrer Nachfolger im Amt. Das Amt erlischt durch Verzicht, Mandatsverlust oder Abberufung mittels Misstrauensantrag. Bei einem direkt gewählten Bürgermeister bedarf die Abberufung zusätzlich der Bestätigung durch eine Volksabstimmung.",
+      "summary": "Stadtsenatsmitglieder werden für die Dauer der Funktionsperiode gewählt und bleiben bis zur Angelobung der Nachfolger:innen im Amt. Das Amt erlischt durch Verzicht, Mandatsverlust oder Abberufung mittels Misstrauensantrag, der von zwei Dritteln der Antragsberechtigten unterzeichnet sein muss. Bei direkt gewählten Bürgermeister:innen bedarf die Abberufung zusätzlich einer Volksabstimmung.",
       "topics": [
-        "Amtsdauer Stadtsenat",
+        "Amtsdauer",
         "Misstrauensantrag",
         "Abberufung"
       ]
     },
     "32": {
-      "summary": "Der Bürgermeister führt den Vorsitz im Stadtsenat und beruft die Sitzungen ein. Beschlussfähig ist der Stadtsenat bei Anwesenheit von mehr als der Hälfte der Stimmrechte. Eine Geschäftseinteilung weist jedem Mitglied einen Sachbereich zu, wobei grundsätzliche und besonders wichtige Angelegenheiten der kollegialen Beratung vorbehalten bleiben.",
+      "summary": "Die Bürgermeister:in führt den Vorsitz im Stadtsenat und beruft dessen Sitzungen ein. Beschlussfähigkeit setzt die Anwesenheit von mehr als der Hälfte der Stimmrechte voraus. Durch die Geschäftseinteilung werden den einzelnen Mitgliedern Geschäftsbereiche zugewiesen, wobei Angelegenheiten von grundsätzlicher Bedeutung der kollegialen Beschlussfassung vorbehalten bleiben.",
       "topics": [
         "Geschäftsführung Stadtsenat",
         "Geschäftseinteilung"
       ]
     },
     "33": {
-      "summary": "Beschlüsse des Stadtsenats vollzieht der Bürgermeister über das jeweils zuständige Stadtsenatsmitglied. Hält er einen Beschluss für rechtswidrig oder schädlich, kann er die Vollziehung aussetzen und den Stadtsenat zur neuerlichen Beratung auffordern. Werden seine Bedenken nicht ausgeräumt, legt er die Angelegenheit dem Gemeinderat zur endgültigen Entscheidung vor.",
+      "summary": "Gültige Stadtsenatsbeschlüsse werden von der Bürgermeister:in vollzogen. Bestehen Bedenken wegen Gesetzesverletzung oder Schadensgefahr, kann die Vollziehung ausgesetzt und die Angelegenheit binnen zwei Wochen erneut dem Stadtsenat, bei fortbestehenden Bedenken dem Gemeinderat vorgelegt werden.",
       "topics": [
-        "Beschlussvollzug Stadtsenat",
-        "Suspensivrecht"
+        "Beschlussvollzug",
+        "Sistierungsrecht"
       ]
     },
     "34": {
-      "summary": "Jedes Stadtsenatsmitglied ist im Rahmen seines Geschäftsbereichs für die Berichterstattung und Antragstellung zuständig. Einzelne Angelegenheiten der kollegialen Zuständigkeit können mit Dreiviertelmehrheit auf den Bürgermeister oder das zuständige Mitglied übertragen werden. Die Geschäftsführung des Magistrats in diesen Bereichen erfolgt unter Leitung und nach Weisungen des zuständigen Stadtsenatsmitglieds.",
+      "summary": "Im Rahmen ihres Geschäftsbereichs obliegt den Stadtsenatsmitgliedern die Berichterstattung und Antragstellung. Einzelne kollegiale Zuständigkeiten können mit Dreiviertelmehrheit auf die Bürgermeister:in oder das zuständige Senatsmitglied übertragen werden. Über grundsätzliche Entscheidungen ist die Bürgermeister:in zu Koordinierungszwecken zu unterrichten.",
       "topics": [
-        "Zuständigkeit Stadtsenatsmitglieder",
-        "Delegation"
+        "Zuständigkeit Stadtsenat",
+        "Geschäftsbereich"
       ]
     },
     "35": {
-      "summary": "Stadträte, die dem Gemeinderat nicht mehr angehören, sind weiterhin zur Teilnahme an allen Gemeinderatssitzungen verpflichtet. Sie haben das Recht, gehört zu werden, Berichte zu erstatten und Anträge zu stellen.",
+      "summary": "Stadträt:innen, die nicht mehr dem Gemeinderat angehören, sind dennoch zur Teilnahme an Gemeinderatssitzungen verpflichtet. Sie haben Rederecht, können die Aufnahme von Tagesordnungspunkten beantragen und in ihrem Geschäftsbereich Berichte erstatten sowie Dringlichkeitsanträge stellen.",
       "topics": [
-        "Stadträte ohne Gemeinderatsmandat",
+        "Stadträt:innen ohne Gemeinderatsmandat",
         "Teilnahmerecht"
       ]
     },
     "36": {
-      "summary": "Wird die Stelle eines Vizebürgermeisters oder Stadtrats frei, hat binnen vier Wochen eine Neuwahl zu erfolgen; der Bürgermeister bestellt in der Zwischenzeit auf Vorschlag der betroffenen Fraktion einen Vertreter. Bei vorübergehender Verhinderung betraut das betreffende Mitglied selbst ein anderes Stadtsenatsmitglied mit der Vertretung.",
+      "summary": "Bei Erledigung einer Vizebürgermeister:innen- oder Stadtratsstelle ist binnen vier Wochen eine Neuwahl durchzuführen. Verhinderte Stadtsenatsmitglieder haben rechtzeitig ein anderes Senatsmitglied mit der Vertretung zu betrauen; geschieht dies nicht, bestimmt die Bürgermeister:in die Vertretung.",
       "topics": [
         "Vertretung im Stadtsenat",
         "Nachbesetzung"
       ]
     },
     "37": {
-      "summary": "Der Magistrat besteht aus dem Bürgermeister als Vorstand, dem Magistratsdirektor und den übrigen Bediensteten. Die Leitung des inneren Dienstes obliegt dem Magistratsdirektor, der auf Vorschlag des Bürgermeisters vom Stadtsenat befristet auf fünf Jahre bestellt wird und rechtskundig sein muss.",
+      "summary": "Der Magistrat besteht aus der Bürgermeister:in als Vorstand, der Magistratsdirektor:in und den übrigen Bediensteten. Die Magistratsdirektor:in leitet den inneren Dienst und wird auf Vorschlag der Bürgermeister:in vom Stadtsenat für fünf Jahre bestellt.",
       "topics": [
         "Magistrat",
-        "Magistratsdirektor"
+        "Magistratsdirektion"
       ]
     },
     "38": {
-      "summary": "Der Magistrat gliedert sich in Abteilungen und Dienststellen, die nach sachlichem Zusammenhang organisiert sind. Die Geschäftseinteilung legt die Aufgabenverteilung fest, die Geschäftsordnung regelt Geschäftsgang und Schriftverkehr. In der Geschäftsordnung wird auch bestimmt, inwieweit sich Bürgermeister und Stadtsenatsmitglieder bei Amtshandlungen vertreten lassen können.",
+      "summary": "Der Magistrat gliedert sich in Abteilungen und Dienststellen, die bei Bedarf zu Abteilungsgruppen zusammengefasst werden können. Geschäftseinteilung, Geschäftsordnung und Dienstbetriebsordnung regeln die interne Aufgabenverteilung und den Geschäftsgang.",
       "topics": [
         "Magistratsgliederung",
-        "Geschäftsordnung Magistrat"
+        "Geschäftsordnung"
       ]
     },
     "39": {
-      "summary": "Beim Magistrat ist eine weisungsunabhängige Kontrollstelle eingerichtet, die die Gebarung auf rechnerische Richtigkeit, Zweckmäßigkeit, Sparsamkeit und Wirtschaftlichkeit prüft. Prüfaufträge kann sie von Gemeinderat, Stadtsenat, Kontrollausschuss, Bürgermeister oder Magistratsdirektor erhalten; sie darf auch von Amts wegen tätig werden. Prüfberichte werden nach Behandlung im Kontrollausschuss auf der städtischen Internetseite veröffentlicht.",
+      "summary": "Die Kontrollstelle prüft die Gebarung des Magistrats auf Richtigkeit, Sparsamkeit und Wirtschaftlichkeit und kontrolliert auch Beteiligungen und geförderte Institutionen. Ihre Leitung wird vom Gemeinderat mit Zweidrittelmehrheit für sechs Jahre bestellt und ist bei inhaltlichen Feststellungen weisungsfrei. Prüfberichte sind nach Behandlung im Kontrollausschuss auf der städtischen Internetseite zu veröffentlichen.",
       "topics": [
         "Kontrollstelle",
         "Gebarungsprüfung",
-        "Rechnungsprüfung"
+        "Weisungsfreiheit"
       ]
     },
     "40": {
-      "summary": "Der Gemeinderat kann Ausschüsse zur Vorberatung bestellen und muss jedenfalls einen Kontrollausschuss, einen Frauen- und Gleichbehandlungsausschuss sowie einen Integrationsausschuss einrichten. Die Fraktionen haben nach ihrer Stärke Anspruch auf Vertretung in den Ausschüssen. Ausschussmitglieder verfügen über Akteneinsichtsrecht und können eigenständig Anträge stellen.",
+      "summary": "Der Gemeinderat kann Ausschüsse zur Vorberatung bestellen; verpflichtend sind jedenfalls ein Kontrollausschuss, ein Frauenangelegenheiten- und Gleichbehandlungsausschuss sowie ein Integrationsausschuss. Alle Fraktionen haben nach Stärke Anspruch auf Vertretung. Ausschüsse können eigenständig Anträge stellen und Erhebungen durchführen.",
       "topics": [
         "Ausschüsse",
-        "Ausschusszusammensetzung"
+        "Kontrollausschuss",
+        "Gleichbehandlung"
       ]
     },
     "41": {
-      "summary": "Mitglieder von Kollegialorganen sind von Beratung und Abstimmung ausgeschlossen, wenn sie selbst, Angehörige oder von ihnen Vertretene beteiligt sind oder sonstige Gründe ihre Unbefangenheit in Zweifel ziehen. Befangenheit ist eigenverantwortlich wahrzunehmen; im Zweifelsfall entscheidet das Kollegialorgan. Keine Befangenheit liegt vor, wenn jemand nur als Angehöriger einer Berufs- oder Bevölkerungsgruppe betroffen ist.",
+      "summary": "Mitglieder von Kollegialorganen sind von Beratung und Abstimmung ausgeschlossen, wenn sie selbst, Angehörige oder von ihnen vertretene Personen beteiligt sind. Die Befangenheit ist selbst wahrzunehmen; im Zweifel entscheidet das Kollegialorgan. Keine Befangenheit liegt vor bei bloßer Zugehörigkeit zu einer betroffenen Berufs- oder Bevölkerungsgruppe.",
       "topics": [
         "Befangenheit",
-        "Ausschluss von Abstimmung"
+        "Ausschluss"
       ]
     },
     "42": {
-      "summary": "Der Gemeinderat erlässt Geschäftsordnungen für sich selbst, seine Ausschüsse und den Stadtsenat. Die Geschäftsordnung muss unter anderem Vorschriften über Antragsunterstützung, Rednerbeschränkung, Ordnungsmaßnahmen und die Möglichkeit einer 'aktuellen Stunde' enthalten. Anträge auf Tagesordnungsaufnahme sind verpflichtend zu berücksichtigen, wenn sie von mindestens drei Mitgliedern zwei Wochen vor der Sitzung gestellt werden.",
+      "summary": "Der Gemeinderat erlässt Geschäftsordnungen für sich selbst, die Ausschüsse und den Stadtsenat. Die Geschäftsordnung muss unter anderem Regelungen zu Antragsunterstützung, Berichterstattung, Redezeitbeschränkung, Ordnungsmaßnahmen und der Abhaltung einer aktuellen Stunde enthalten.",
       "topics": [
         "Geschäftsordnung",
         "Aktuelle Stunde",
-        "Sitzungsablauf"
+        "Ordnungsmaßnahmen"
       ]
     },
     "43": {
-      "summary": "Der Wirkungsbereich der Stadt gliedert sich in einen eigenen und einen vom Bund oder Land übertragenen Bereich.",
+      "summary": "Der Wirkungsbereich der Stadt gliedert sich in einen eigenen Wirkungsbereich, den die Stadt selbstverantwortlich wahrnimmt, und einen übertragenen, der im Auftrag von Bund oder Land besorgt wird.",
       "topics": [
-        "Wirkungsbereich"
+        "Wirkungsbereich",
+        "Kompetenzverteilung"
       ]
     },
     "44": {
-      "summary": "Im eigenen Wirkungsbereich besorgt die Stadt alle Angelegenheiten, die im überwiegenden Interesse der örtlichen Gemeinschaft liegen – darunter Sicherheits-, Bau-, Gesundheits- und Marktpolizei. Diese Aufgaben erledigt sie frei von Weisungen und unter Ausschluss des Rechtsmittels an übergeordnete Stellen. Zur Abwehr örtlicher Missstände darf sie ortspolizeiliche Verordnungen erlassen.",
+      "summary": "Zum eigenen Wirkungsbereich zählen alle Angelegenheiten im überwiegenden örtlichen Interesse, insbesondere Sicherheits-, Bau-, Gesundheits- und Marktpolizei sowie örtliche Raumplanung. Die Stadt erledigt diese Aufgaben weisungsfrei und kann ortspolizeiliche Verordnungen erlassen. Auf Antrag können einzelne Aufgaben an staatliche Behörden übertragen werden.",
       "topics": [
         "Eigener Wirkungsbereich",
         "Ortspolizeiliche Verordnungen"
       ]
     },
     "45": {
-      "summary": "Im übertragenen Wirkungsbereich handelt die Stadt nach Maßgabe der Bundes- oder Landesgesetze weisungsgebunden für Bund bzw. Land. Auch die Bestrafung von Verwaltungsübertretungen durch den Bürgermeister fällt in diesen Bereich.",
+      "summary": "Im übertragenen Wirkungsbereich handelt die Stadt nach Weisungen des Bundes oder Landes. Auch die Bestrafung von Verwaltungsübertretungen durch die Bürgermeister:in fällt in diesen Bereich.",
       "topics": [
         "Übertragener Wirkungsbereich",
         "Weisungsbindung"
       ]
     },
     "46": {
-      "summary": "Dem Gemeinderat sind zahlreiche grundlegende Angelegenheiten vorbehalten, darunter Statutenänderungen, Oberaufsicht über die Geschäftsführung, Personalangelegenheiten in genereller Hinsicht, Liegenschaftsgeschäfte über 60.000 Euro und Darlehen über 60.000 Euro. Einzelne Zuständigkeiten kann er per Verordnung auf den Stadtsenat übertragen, sofern keine besonderen Quoren vorgesehen sind.",
+      "summary": "Dem Gemeinderat sind zentrale Entscheidungen vorbehalten, darunter Statutenänderungen, die Oberaufsicht über die Geschäftsführung, Personalangelegenheiten in genereller Hinsicht, Liegenschaftsgeschäfte über 60.000 Euro sowie Darlehensaufnahmen über 60.000 Euro. Einzelne Zuständigkeiten kann er per Verordnung an den Stadtsenat delegieren.",
       "topics": [
         "Zuständigkeit Gemeinderat",
-        "Finanzschwellen"
+        "Delegierung"
       ]
     },
     "47": {
-      "summary": "Der Stadtsenat berät Gemeinderatsangelegenheiten vor und ist für Personal-, Rechtsstreit- und Vermögensangelegenheiten unterhalb der Gemeinderatsschwellen zuständig. In dringenden Fällen darf er anstelle des Gemeinderats entscheiden, muss die Entscheidung aber unverzüglich zur nachträglichen Genehmigung vorlegen. Besondere Verwaltungsausschüsse für städtische Unternehmungen haben in ihrem Aufgabenbereich die Stellung des Stadtsenats.",
+      "summary": "Der Stadtsenat berät Gemeinderatsangelegenheiten vor, ist beschließendes Organ in nicht-behördlichen Angelegenheiten und entscheidet über Personalmaßnahmen, Förderungen bis 50.000 Euro, Verträge bis 60.000 Euro und Rechtsstreitigkeiten. In dringenden Fällen kann er anstelle des Gemeinderats entscheiden, muss dies aber unverzüglich zur nachträglichen Genehmigung vorlegen.",
       "topics": [
         "Zuständigkeit Stadtsenat",
-        "Dringlichkeitsentscheidung"
+        "Dringlichkeitskompetenz"
       ]
     },
     "48": {
-      "summary": "Stadtsenatsmitglieder unterstützen den Bürgermeister in Angelegenheiten, die mit ihrem Geschäftsbereich sachlich zusammenhängen. Sie sind über alle wichtigen Vorgänge in ihrem Ressort durch die zuständigen leitenden Bediensteten rechtzeitig und laufend zu informieren.",
+      "summary": "Stadtsenatsmitglieder haben die Bürgermeister:in in allen mit ihrem Geschäftsbereich zusammenhängenden Angelegenheiten zu unterstützen. Die zuständigen leitenden Bediensteten müssen sie über wichtige Vorgänge rechtzeitig und laufend informieren.",
       "topics": [
-        "Zusammenwirken Stadtsenat",
+        "Zusammenwirken",
         "Informationspflicht"
       ]
     },
     "49": {
-      "summary": "Der Bürgermeister vertritt die Stadt nach außen und ist als Vorstand des Magistrats für dessen Geschäftsführung verantwortlich. Bei Gefahr im Verzug kann er anstelle des Stadtsenats entscheiden, muss diese Entscheidung aber unverzüglich zur Genehmigung vorlegen. Alle Bediensteten sind ihm gegenüber verantwortlich.",
+      "summary": "Die Bürgermeister:in vertritt die Stadt nach außen und ist als Vorstand des Magistrats für dessen Geschäftsführung verantwortlich. In dringenden Fällen kann sie anstelle des Stadtsenats entscheiden, wobei die nachträgliche Genehmigung einzuholen ist. Alle Bediensteten sind der Bürgermeister:in verantwortlich.",
       "topics": [
-        "Bürgermeister eigener Wirkungsbereich",
+        "Eigener Wirkungsbereich Bürgermeister:in",
         "Außenvertretung"
       ]
     },
     "50": {
-      "summary": "Im übertragenen Wirkungsbereich ist der Bürgermeister an die Weisungen des Bundes oder Landes gebunden. Er kann einzelne Aufgabengruppen an Stadtsenatsmitglieder oder andere Organe delegieren, bleibt aber verantwortlich. Bei Gesetzesverletzung mit Vorsatz oder grober Fahrlässigkeit kann die Landesregierung die betroffenen Organe ihres Amtes verlustig erklären.",
+      "summary": "Im übertragenen Wirkungsbereich ist die Bürgermeister:in an die Weisungen der zuständigen Bundes- oder Landesorgane gebunden. Einzelne Aufgabengruppen können an Stadtsenatsmitglieder oder andere Organe delegiert werden, die dann ebenfalls weisungsgebunden sind. Bei Gesetzesverletzung mit Vorsatz oder grober Fahrlässigkeit droht die Amtsentbindung durch die Landesregierung.",
       "topics": [
-        "Bürgermeister übertragener Wirkungsbereich",
-        "Amtsverlust"
+        "Übertragener Wirkungsbereich",
+        "Weisungsbindung",
+        "Amtsentbindung"
       ]
     },
     "51": {
-      "summary": "Sämtliche Geschäfte der Stadt besorgt der Magistrat, der in allen behördlichen Angelegenheiten des eigenen Wirkungsbereichs entscheidet, soweit kein anderes Organ zuständig ist. Zum inneren Dienstbetrieb gehören die laufende Vermögensverwaltung, kleinere Veräußerungen bis 1.000 Euro sowie die dienst- und besoldungsrechtlichen Angelegenheiten der Bediensteten.",
+      "summary": "Der Magistrat besorgt sämtliche Geschäfte der Stadt und entscheidet in allen behördlichen Angelegenheiten des eigenen Wirkungsbereichs, die nicht ausdrücklich anderen Organen vorbehalten sind. Zu seinen selbständigen Aufgaben zählen die laufende Vermögensverwaltung, dienstrechtliche Angelegenheiten und die Vorbereitung der Berichterstattung.",
       "topics": [
         "Zuständigkeit Magistrat",
-        "Innerer Dienstbetrieb"
+        "Verwaltungsgeschäfte"
       ]
     },
     "52": {
-      "summary": "Für jedes Kalenderjahr ist ein Voranschlag aufzustellen, der als Grundlage für die Haushaltsführung dient. Die Wirtschaftspläne städtischer Unternehmungen und die Voranschläge verwalteter Fonds sind Bestandteil dieses Voranschlags.",
+      "summary": "Für jedes Kalenderjahr ist ein Voranschlag als Grundlage der Haushaltsführung aufzustellen. Die Wirtschaftspläne städtischer Unternehmungen und Fonds ohne Rechtspersönlichkeit bilden einen Bestandteil des Voranschlags.",
       "topics": [
         "Voranschlag",
         "Haushaltsplanung"
       ]
     },
     "53": {
-      "summary": "Der Gemeinderat stellt den Voranschlag vor Jahresende fest. Der Entwurf muss zuvor eine Woche lang öffentlich aufliegen, und jeder mit berechtigtem Interesse kann Einwendungen einbringen. Ein Vorbericht gibt Überblick über die Entwicklung und aktuelle Lage des Ergebnis- und Finanzierungshaushalts.",
+      "summary": "Der Voranschlag ist vor Jahresende durch den Gemeinderat festzustellen. Vor der Beratung liegt der Entwurf eine Woche öffentlich auf, und jede Person mit berechtigtem Interesse kann schriftliche Einwendungen einbringen. Der beschlossene Voranschlag ist auf der Homepage der Stadt bereitzuhalten.",
       "topics": [
         "Voranschlagsfeststellung",
         "Öffentliche Auflage"
       ]
     },
     "54": {
-      "summary": "Werden während des Jahres neue Ausgaben nötig oder ist der Haushaltsausgleich gefährdet, hat der Stadtsenat dem Gemeinderat einen Nachtragsvoranschlag vorzulegen. Kreditüberschreitungen und -übertragungen über 60.000 Euro im Einzelfall erfordern einen Gemeinderatsbeschluss. Ab einer Gesamthöhe von 10 % der laufenden Einzahlungen ist jedenfalls ein Nachtragsvoranschlag notwendig.",
+      "summary": "Für unvorhergesehene Mittelverwendungen oder bei Gefährdung des Haushaltsausgleichs ist ein Nachtragsvoranschlag zu erstellen. Kreditüberschreitungen über 60.000 Euro oder ab 2 % der veranschlagten Auszahlungen durch den Stadtsenat erfordern die Beschlussfassung des Gemeinderats.",
       "topics": [
         "Nachtragsvoranschlag",
         "Kreditüberschreitung"
       ]
     },
     "55": {
-      "summary": "Liegt zu Jahresbeginn noch kein Voranschlag vor, beschließt der Gemeinderat ein Voranschlagsprovisorium. Fehlt auch dieser Beschluss, dürfen die Organe der Stadt nur im Rahmen der gesetzlich bestimmten Grenzen wirtschaften.",
+      "summary": "Liegt zu Jahresbeginn noch kein Voranschlag vor, hat der Gemeinderat ein Provisorium zu beschließen. Ohne solchen Beschluss dürfen die Organe der Stadt nur die unbedingt notwendigen Mittel verwenden.",
       "topics": [
         "Voranschlagsprovisorium",
-        "Übergangshaushalt"
+        "Haushaltsführung"
       ]
     },
     "56": {
-      "summary": "Nach Ablauf des Rechnungsjahres hat der Magistrat den Rechnungsabschluss bis spätestens 30. Juni vorzulegen. Dieser muss ein getreues Bild der Vermögens-, Finanzierungs- und Ergebnislage vermitteln, sämtliche Haftungen darstellen und die Jahresrechnungen städtischer Unternehmungen enthalten. Vor der Beratung im Gemeinderat ist der Rechnungsabschluss eine Woche lang öffentlich einzusehen.",
+      "summary": "Der Rechnungsabschluss ist bis spätestens 30. Juni dem Stadtsenat vorzulegen und hat ein möglichst getreues Bild der Vermögens-, Finanzierungs- und Ergebnislage zu vermitteln. Vor der Gemeinderatsberatung erfolgt eine öffentliche Auflage mit Einwendungsmöglichkeit. Beanstandungen verpflichten den Gemeinderat zur Herstellung eines geordneten Haushalts.",
       "topics": [
         "Rechnungsabschluss",
-        "Öffentliche Einsicht"
+        "Haushaltskontrolle"
       ]
     },
     "57": {
-      "summary": "Das Stadtvermögen ist ohne Substanzbeeinträchtigung zu erhalten und nach wirtschaftlichen Grundsätzen zu verwalten. Erlöse aus Vermögensveräußerungen dürfen nur für den Haushaltsausgleich, Rücklagenbildung, Instandsetzung, neue Vermögenswerte oder Sondertilgungen verwendet werden. Das Vermögen städtischer Unternehmungen und verwalteter Fonds ist gesondert zu verwalten.",
+      "summary": "Städtisches Vermögen ist substanzerhaltend zu verwalten und nach wirtschaftlichen Grundsätzen zu nutzen. Erlöse aus Vermögensveräußerungen dürfen nur für bestimmte Zwecke wie Haushaltsausgleich, Rücklagenbildung oder Sondertilgung verwendet werden.",
       "topics": [
         "Vermögensverwaltung",
-        "Vermögenserhaltung"
+        "Substanzerhaltung"
       ]
     },
     "58": {
-      "summary": "Darlehen und Finanzgeschäfte darf die Stadt nur zur Bedeckung von Investitionen und Kapitaltransfers aufnehmen, sofern ein öffentliches Interesse besteht und die Risikoanalyse positiv ausfällt. Ab bestimmten Schwellenwerten – etwa wenn die Neuverschuldung oder der Gesamtschuldendienst 15 % der laufenden Einzahlungen übersteigt – ist eine aufsichtsbehördliche Genehmigung erforderlich. Veranlagungsgeschäfte bedürfen ebenfalls der Genehmigung, mit Ausnahme einfacher Euro-Bankeinlagen.",
+      "summary": "Darlehen und Finanzgeschäfte darf die Stadt nur zur Bedeckung von Investitionsausgaben und Kapitaltransfers abschließen, sofern ein öffentliches Interesse besteht und eine Gesamtrisiko-Analyse positiv ausfällt. Euro-Darlehen mit fixem oder EURIBOR-gebundenem Zinssatz sind nur ab bestimmten Schwellenwerten genehmigungspflichtig.",
       "topics": [
         "Darlehen",
         "Finanzgeschäfte",
-        "Aufsichtsbehördliche Genehmigung"
+        "Genehmigungspflicht"
       ]
     },
     "59": {
-      "summary": "Haftungsübernahmen setzen ein besonderes Interesse der Stadt voraus, müssen befristet und betragsmäßig bestimmt sein. Ab einem Gesamtstand von einem Drittel der laufenden Einzahlungen ist eine aufsichtsbehördliche Genehmigung erforderlich, darunter genügt eine Anzeige. Die Genehmigung darf nur versagt werden, wenn Haftungsvoraussetzungen verletzt oder Obergrenzen überschritten würden oder die dauernde Leistungsfähigkeit der Stadt gefährdet wäre.",
+      "summary": "Haftungsübernahmen durch die Stadt setzen ein besonderes städtisches Interesse, Befristung und ziffernmäßige Bestimmtheit voraus. Ab einem Gesamtstand von einem Drittel der laufenden Einzahlungen ist eine aufsichtsbehördliche Genehmigung erforderlich. Die Landesregierung kann Haftungsobergrenzen per Verordnung festlegen.",
       "topics": [
         "Haftungen",
-        "Haftungsobergrenzen"
+        "Aufsichtsbehördliche Genehmigung"
       ]
     },
     "60": {
-      "summary": "Vermögen und Schulden städtischer Unternehmungen sowie verwalteter Fonds und Stiftungen sind getrennt vom allgemeinen Stadthaushalt zu erfassen.",
+      "summary": "Vermögen und Schulden städtischer Unternehmungen sowie verwalteter Fonds und Stiftungen sind getrennt zu erfassen.",
       "topics": [
-        "Vermögens- und Schuldennachweis"
+        "Vermögensnachweis",
+        "Schuldennachweis"
       ]
     },
     "61": {
-      "summary": "Wirtschaftliche Unternehmungen darf die Stadt nur errichten, wenn dies im öffentlichen Interesse liegt und in angemessenem Verhältnis zum Bedarf und zur Leistungsfähigkeit steht. Sie bilden ein Sondervermögen ohne eigene Rechtspersönlichkeit und sind nach kaufmännischen Grundsätzen zu führen. Ihre Einnahmen sollen in der Regel alle Ausgaben decken und angemessene Rücklagen ermöglichen.",
+      "summary": "Wirtschaftliche Unternehmungen darf die Stadt nur im öffentlichen Interesse errichten und muss dabei Sparsamkeit, Wirtschaftlichkeit und dauerhafte Leistungsfähigkeit beachten. Unternehmungen bilden ein Sondervermögen ohne eigene Rechtspersönlichkeit und sind nach kaufmännischen Grundsätzen zu führen.",
       "topics": [
-        "Städtische Unternehmungen",
-        "Wirtschaftliche Betätigung"
+        "Wirtschaftliche Unternehmungen",
+        "Sondervermögen"
       ]
     },
     "62": {
-      "summary": "Für jede städtische Unternehmung erlässt der Gemeinderat ein Organisationsstatut, das die Zuständigkeiten der Stadtorgane und die Geschäftsführung regelt. Dem Gemeinderat bleiben dabei grundsätzliche Entscheidungen wie Errichtung, Auflassung und Jahresrechnungsgenehmigung vorbehalten; dem Stadtsenat obliegt die Aufsicht über Vermögensverwaltung und Geschäftsführung.",
+      "summary": "Für städtische Unternehmungen hat der Gemeinderat Organisationsstatuten zu erlassen, die die Zuständigkeiten der Organe und die Geschäftsführung regeln. Dem Gemeinderat sind dabei Grundsatzentscheidungen wie Errichtung, Wirtschaftsplan und Jahresrechnungen vorzubehalten.",
       "topics": [
-        "Organisationsstatut",
-        "Unternehmungsverwaltung"
+        "Organisationsstatuten",
+        "Unternehmungssteuerung"
       ]
     },
     "63": {
-      "summary": "Alle Kassengeschäfte der Stadt erledigt die Stadtkasse. Für bestimmte Dienststellen können Nebenkassen, für städtische Unternehmungen Sonderkassen eingerichtet werden.",
+      "summary": "Sämtliche Kassengeschäfte werden von der Stadtkasse erledigt. Für einzelne Dienststellen können Nebenkassen, für Unternehmungen Sonderkassen eingerichtet werden.",
       "topics": [
-        "Kassenführung"
+        "Kassengeschäfte",
+        "Stadtkasse"
       ]
     },
     "64": {
-      "summary": "In Landesangelegenheiten des eigenen Wirkungsbereichs ist keine Berufung gegen Bescheide zulässig. Soweit gesetzlich nicht ausgeschlossen, entscheidet der Stadtsenat über Berufungen gegen Magistratsbescheide und übt die oberbehördlichen Befugnisse gegenüber dem Magistrat aus.",
+      "summary": "In landesgesetzlichen Angelegenheiten des eigenen Wirkungsbereichs ist eine Berufung gegen Bescheide eines Stadtorgans ausgeschlossen. Sofern gesetzlich nicht anders geregelt, entscheidet der Stadtsenat als Berufungsinstanz über Bescheide des Magistrats.",
       "topics": [
         "Instanzenzug",
         "Berufung"
       ]
     },
     "65": {
-      "summary": "Verordnungen der Stadt sind elektronisch im Rechtsinformationssystem des Bundes (RIS) kundzumachen und treten grundsätzlich mit Ablauf des Kundmachungstags in Kraft. Bei technischer Unmöglichkeit ist eine anderweitige allgemein zugängliche Kundmachung vorgesehen. Auf dem Gebiet der Sicherheitspolizei können Verordnungen auch per Rundfunk oder akustisch verlautbart werden.",
+      "summary": "Verordnungen der Stadtorgane werden elektronisch im Rechtsinformationssystem des Bundes kundgemacht und treten grundsätzlich mit Ablauf des Kundmachungstags in Kraft. Bei vorübergehender technischer Unmöglichkeit hat die Kundmachung in anderer allgemein zugänglicher Weise zu erfolgen. Für die Sicherheitspolizei können Verordnungen auch per Rundfunk verlautbart werden.",
       "topics": [
         "Verordnungskundmachung",
-        "RIS"
+        "Rechtsinformationssystem"
       ]
     },
     "66": {
-      "summary": "Urkunden über Rechtsgeschäfte, die Gemeinderat oder Stadtsenat beschlossen haben, sind vom Bürgermeister zu unterzeichnen und mit dem Stadtsiegel zu versehen. Die erfolgte Beschlussfassung sowie eine allfällige aufsichtsbehördliche Genehmigung sind in der Urkunde ersichtlich zu machen.",
+      "summary": "Urkunden über Rechtsgeschäfte, die der Beschlussfassung von Gemeinderat oder Stadtsenat bedürfen, sind von der Bürgermeister:in zu unterzeichnen und mit dem Stadtsiegel zu versehen. Allfällige aufsichtsbehördliche Genehmigungen sind in der Urkunde ersichtlich zu machen.",
       "topics": [
-        "Urkundenunterzeichnung",
-        "Stadtsiegel"
+        "Urkundenunterfertigung",
+        "Siegelführung"
       ]
     },
     "67": {
-      "summary": "Auf Beschluss des Gemeinderats kann ein Gemeinderatsbeschluss einer Volksabstimmung unterzogen werden; bestimmte Materien wie Personal, Abgaben und Voranschlag sind davon ausgenommen. Die Abstimmungsfrage ist so zu formulieren, dass sie mit 'Ja' oder 'Nein' beantwortet werden kann. Stimmt mehr als die Hälfte mit 'Nein', gilt der Beschluss als aufgehoben – vorausgesetzt, mindestens ein Viertel der Wahlberechtigten hat teilgenommen.",
+      "summary": "Über einen vom Gemeinderat beschlossenen Antrag kann eine Volksabstimmung durchgeführt werden, wobei Personalangelegenheiten, Abgaben und Voranschläge ausgenommen sind. Die Frage muss mit Ja oder Nein beantwortbar sein. Stimmt mehr als die Hälfte mit Nein, gilt der Gemeinderatsbeschluss als aufgehoben; bei weniger als einem Viertel Beteiligung ist das Ergebnis nicht bindend.",
       "topics": [
         "Volksabstimmung",
         "Direkte Demokratie"
       ]
     },
     "68": {
-      "summary": "Der Gemeinderat kann zu bestimmten Fragen seines Aufgabenbereichs eine Volksbefragung beschließen; diese ist auch auf Verlangen von 4 % der Wahlberechtigten anzuberaumen. Organ- und Personalangelegenheiten sowie individuelle Behördenentscheidungen können nicht Gegenstand sein. Das Ergebnis ist im Amtsblatt kundzumachen und muss in der nächsten Gemeinderatssitzung behandelt werden.",
+      "summary": "Über Angelegenheiten des Gemeinderats kann eine Volksbefragung durchgeführt werden, die auch auf Verlangen von 4 % der Wahlberechtigten anzuberaumen ist. Organ- und Personalangelegenheiten sowie individuelle behördliche Entscheidungen sind von der Befragung ausgeschlossen. Das Ergebnis wird im Amtsblatt kundgemacht und ist in der nächsten Gemeinderatssitzung zu behandeln.",
       "topics": [
         "Volksbefragung",
-        "Bürgerbeteiligung"
+        "Direkte Demokratie"
       ]
     },
     "69": {
-      "summary": "Bürgerinnen und Bürger können die Erlassung, Änderung oder Aufhebung von Gemeinderatsbeschlüssen verlangen, sofern mindestens 2 % der Wahlberechtigten den Antrag unterschreiben. Organ- und Personalangelegenheiten sowie individuelle Behördenentscheidungen sind ausgenommen. Zulässige Initiativen werden in die Tagesordnung der nächsten Gemeinderatssitzung aufgenommen.",
+      "summary": "Mindestens 2 % der Wahlberechtigten können per Bürger:innen-Initiative die Erlassung, Änderung oder Aufhebung von Gemeinderatsbeschlüssen im eigenen Wirkungsbereich verlangen. Organ- und Personalangelegenheiten sowie individuelle behördliche Entscheidungen sind ausgenommen. Zulässige Initiativen sind in die Tagesordnung der nächsten Gemeinderatssitzung aufzunehmen.",
       "topics": [
-        "Bürgerinitiative",
+        "Bürger:innen-Initiative",
         "Direkte Demokratie"
       ]
     },
     "70": {
-      "summary": "Plant die Stadt ein Vorhaben, das Einwohnerinteressen besonders berührt, muss sie die Betroffenen möglichst schon im Planungsstadium ausreichend und zeitgerecht informieren. Die Information erfolgt über Amtsblatt, Amtstafel und zusätzliche Kanäle wie Presse, Rundfunk oder Aussendungen.",
+      "summary": "Bei Vorhaben, die Interessen der Einwohner:innen besonders berühren, hat die Stadt möglichst frühzeitig und umfassend zu informieren. Die Information erfolgt über Amtsblatt, Amtstafel und ergänzende Kanäle wie Aussendungen oder Medienverlautbarungen, um die Zielgruppe bestmöglich zu erreichen.",
       "topics": [
-        "Bürgerinformation",
+        "Bürger:inneninformation",
         "Transparenz"
       ]
     },
     "71": {
-      "summary": "Die Landesregierung übt das Aufsichtsrecht über die Stadt aus und wacht darüber, dass diese im eigenen Wirkungsbereich die Gesetze einhält und ihre Aufgaben erfüllt. Bei begründetem Verdacht auf Rechtsverstöße ist die Stadt zu informieren und ihr Gelegenheit zur Stellungnahme zu geben. Auf die Ausübung der Aufsicht besteht grundsätzlich kein Rechtsanspruch.",
+      "summary": "Die Landesregierung übt das Aufsichtsrecht dahingehend aus, dass die Stadt bei Besorgung des eigenen Wirkungsbereichs Gesetze und Verordnungen einhält. Bei begründetem Verdacht eines Rechtsverstoßes ist der Stadt Gelegenheit zur Stellungnahme zu geben. Auf die Ausübung der Aufsicht besteht grundsätzlich kein Rechtsanspruch.",
       "topics": [
-        "Gemeindeaufsicht",
-        "Landesregierung"
+        "Aufsichtsrecht",
+        "Landesaufsicht"
       ]
     },
     "72": {
-      "summary": "Die Landesregierung kann sich über den Bürgermeister über jede Angelegenheit der Stadt unterrichten und im Einzelfall Aktenvorlage, Beschlussmitteilung oder Prüfungen vor Ort verlangen.",
+      "summary": "Die Landesregierung kann sich über die Bürgermeister:in jederzeit über Angelegenheiten der Stadt informieren lassen, Akten anfordern und Prüfungen vor Ort durchführen.",
       "topics": [
         "Unterrichtungsrecht",
-        "Aufsichtsbefugnisse"
-      ]
-    },
-    "73": {
-      "summary": "Verordnungen des eigenen Wirkungsbereichs sind der Landesregierung unverzüglich mitzuteilen. Gesetzwidrige Verordnungen hat die Landesregierung nach Anhörung der Stadt aufzuheben; die Aufhebungsverordnung ist im Amtsblatt kundzumachen.",
-      "topics": [
-        "Verordnungsprüfung",
         "Aufsicht"
       ]
     },
+    "73": {
+      "summary": "Verordnungen des eigenen Wirkungsbereichs sind der Landesregierung unverzüglich mitzuteilen. Gesetzwidrige Verordnungen kann die Landesregierung nach Anhörung der Stadt aufheben; die Aufhebungsverordnung ist von der Stadt im Amtsblatt kundzumachen.",
+      "topics": [
+        "Verordnungsprüfung",
+        "Aufhebung"
+      ]
+    },
     "74": {
-      "summary": "Jeder kann bei der Landesregierung eine Aufsichtsbeschwerde über die Amtsführung städtischer Organe einbringen. Die Landesregierung gibt dem betroffenen Organ Gelegenheit zur Stellungnahme und beurteilt, ob Gesetze oder Verordnungen verletzt wurden. Anonyme, mutwillige oder bereits erledigte Beschwerden werden nicht weiter behandelt.",
+      "summary": "Aufsichtsbeschwerden über die Amtsführung städtischer Organe sind schriftlich bei der Landesregierung einzubringen. Diese holt eine Stellungnahme ein, beurteilt allfällige Gesetzesverletzungen und informiert alle Beteiligten schriftlich. Die Beantwortung soll binnen sechs Monaten erfolgen.",
       "topics": [
         "Aufsichtsbeschwerde",
-        "Rechtsaufsicht"
+        "Rechtsschutz"
       ]
     },
     "75": {
-      "summary": "Rechtskräftige Bescheide des eigenen Wirkungsbereichs kann die Landesregierung nur aus den engen Gründen des § 68 Abs. 4 AVG aufheben; nach drei Jahren ist eine Aufhebung wegen Rechtswidrigkeit nicht mehr zulässig. Sonstige Beschlüsse und Maßnahmen, die Gesetze verletzen oder den Wirkungsbereich überschreiten, kann die Landesregierung von Amts wegen oder auf Antrag aufheben.",
+      "summary": "Rechtskräftige Bescheide des eigenen Wirkungsbereichs können von der Landesregierung nur aus den Gründen des AVG § 68 Abs. 4 aufgehoben werden, wobei eine Dreijahresfrist gilt. Sonstige gesetzwidrige Beschlüsse oder Maßnahmen können von Amts wegen oder auf Antrag aufgehoben werden.",
       "topics": [
         "Bescheidaufhebung",
-        "Aufsichtsrecht"
+        "Aufsichtsmittel"
       ]
     },
     "76": {
-      "summary": "Erfüllt die Stadt eine gesetzliche Pflicht nicht, kann die Landesregierung per Bescheid Maßnahmen auftragen. Kommt die Stadt dem nicht fristgerecht nach oder besteht Gefahr im Verzug, kann die Landesregierung die Maßnahmen auf Kosten der Stadt selbst durchführen. Diese Ersatzvornahme ist insbesondere bei Gefährdung von Leben oder Gesundheit oder drohendem Finanzschaden zulässig.",
+      "summary": "Erfüllt die Stadt gesetzlich obliegende Aufgaben nicht, kann die Landesregierung per Bescheid Maßnahmen anordnen und bei Fristversäumnis oder Gefahr im Verzug eine Ersatzvornahme auf Kosten der Stadt durchführen. Unbedingt notwendig ist dies insbesondere bei Gefahren für Leben oder Gesundheit.",
       "topics": [
         "Ersatzvornahme",
-        "Aufsichtszwang"
+        "Säumigkeit"
       ]
     },
     "77": {
-      "summary": "Die Landesregierung darf die Gebarung der Stadt auf Sparsamkeit, Wirtschaftlichkeit und Zweckmäßigkeit überprüfen. Das Prüfergebnis wird dem Bürgermeister für den Gemeinderat übermittelt und gleichzeitig im Internet veröffentlicht. Innerhalb von drei Monaten hat der Bürgermeister über die getroffenen Maßnahmen zu berichten.",
+      "summary": "Die Landesregierung darf die Gebarung der Stadt auf Sparsamkeit, Wirtschaftlichkeit und Zweckmäßigkeit prüfen und das Ergebnis zeitgleich im Internet veröffentlichen. Binnen drei Monaten hat die Bürgermeister:in über die getroffenen Maßnahmen zu berichten.",
       "topics": [
         "Gebarungsprüfung",
-        "Finanzaufsicht"
+        "Landesaufsicht"
       ]
     },
     "78": {
-      "summary": "Die Veräußerung oder Verpfändung von unbeweglichem Stadteigentum über 5 % der laufenden Einzahlungen bedarf der aufsichtsbehördlichen Genehmigung. Genehmigungspflichtige Rechtsgeschäfte werden Dritten gegenüber erst mit der Genehmigung wirksam; gilt die Genehmigung nach drei Monaten ohne Einwand als erteilt, tritt die Wirksamkeit automatisch ein.",
+      "summary": "Die Veräußerung oder Verpfändung von städtischem Liegenschaftsvermögen über 5 % der laufenden Einzahlungen bedarf einer aufsichtsbehördlichen Genehmigung. Die Genehmigung darf nur bei Gesetzesverletzung, Gefährdung des Haushaltsausgleichs oder unverhältnismäßigem Risiko versagt werden. Genehmigungspflichtige Rechtsgeschäfte werden Dritten gegenüber erst mit Genehmigung wirksam.",
       "topics": [
         "Genehmigungspflicht",
-        "Liegenschaftsveräußerung"
+        "Liegenschaftsgeschäfte"
       ]
     },
     "79": {
-      "summary": "Die Landesregierung kann den Gemeinderat auflösen, wenn er dauernd beschlussunfähig ist, wiederholt Gesetze verletzt oder die Landesregierung wiederholt zur Ersatzvornahme einschreiten musste. Mit der Auflösung erlöschen auch alle Mandate des Stadtsenats und des Bürgermeisters.",
+      "summary": "Bei dauernder Beschlussunfähigkeit, wiederholter offensichtlicher Gesetzesverletzung oder wiederholtem Einschreiten der Landesregierung kann diese den Gemeinderat auflösen. Mit der Auflösung enden auch alle Mandate des Stadtsenats einschließlich jenes der Bürgermeister:in.",
       "topics": [
         "Gemeinderatsauflösung",
-        "Aufsichtsmaßnahme"
+        "Aufsichtsmittel"
       ]
     },
     "80": {
-      "summary": "Aufsichtsmittel sind unter möglichster Schonung erworbener Rechte Dritter und mit dem jeweils gelindesten noch zielführenden Mittel einzusetzen. Alle Maßnahmen – ausgenommen solche gegen Verordnungen – ergehen als Bescheid nach dem Allgemeinen Verwaltungsverfahrensgesetz.",
+      "summary": "Aufsichtsmittel sind unter Schonung erworbener Rechte Dritter zu handhaben, wobei stets das gelindeste zum Ziel führende Mittel anzuwenden ist. Alle Maßnahmen mit Ausnahme der Verordnungsprüfung ergehen als Bescheid.",
       "topics": [
         "Verhältnismäßigkeit",
-        "Aufsichtsgrundsätze"
+        "Aufsichtsverfahren"
       ]
     },
     "81": {
-      "summary": "Im aufsichtsbehördlichen Verfahren hat die Stadt Parteistellung und kann Beschwerde beim Verwaltungsgericht, Revision beim Verwaltungsgerichtshof und Beschwerde beim Verfassungsgerichtshof erheben. Bei Bescheidaufhebungen gemäß § 75 kommt auch den am Verwaltungsverfahren beteiligten Personen Parteistellung zu.",
+      "summary": "Im aufsichtsbehördlichen Verfahren ist die Stadt Partei und kann Beschwerde beim Verwaltungsgericht sowie Revision beim Verwaltungsgerichtshof und Beschwerde beim Verfassungsgerichtshof erheben.",
       "topics": [
         "Parteistellung",
         "Rechtsschutz"
       ]
     },
     "82": {
-      "summary": "Nach Auflösung des Gemeinderats beschränkt sich die Tätigkeit der gewählten Organe auf laufende und unaufschiebbare Angelegenheiten. Ist die Verwaltungsfortführung nicht gesichert, bestellt die Landesregierung einen Provisorischen Stadtverwalter mit einem ehrenamtlichen Beirat, der sich parteilich wie der frühere Stadtsenat zusammensetzt.",
+      "summary": "Nach Auflösung des Gemeinderats beschränkt sich die Tätigkeit der gewählten Organe auf laufende und unaufschiebbare Angelegenheiten. Ist die Verwaltungsfortführung nicht gesichert, setzt die Landesregierung eine provisorische Stadtverwaltung ein, die von einem ehrenamtlichen Beirat entsprechend der früheren Senatszusammensetzung beraten wird.",
       "topics": [
-        "Provisorische Stadtverwaltung",
-        "Verwaltungskontinuität"
+        "Provisorische Verwaltung",
+        "Gemeinderatsauflösung"
       ]
     },
     "83": {
-      "summary": "Das Gesetz trat mit 31. Dezember 1965 in Kraft und löste das vorläufige Gemeindestatut von 1963 sowie das Übertragungsgesetz von 1961 ab.",
+      "summary": "Das Statut trat am 31. Dezember 1965 in Kraft und ersetzte das vorläufige Gemeindestatut von 1964 sowie ein Gesetz zur Aufgabenübertragung auf die Bundespolizei.",
       "topics": [
         "Inkrafttreten",
-        "Schlussbestimmungen"
+        "Übergangsbestimmungen"
       ]
     },
     "6a": {
-      "summary": "Beim Amtsgebäude des Magistrats ist eine Amtstafel einzurichten, die während der Amtsstunden frei zugänglich sein muss. Kundmachungen können in Papier- oder elektronischer Form erfolgen, wobei die inhaltliche und zeitliche Nachvollziehbarkeit dauerhaft sicherzustellen ist.",
+      "summary": "Beim Amtsgebäude des Magistrats ist eine Amtstafel einzurichten, die während der Amtsstunden frei zugänglich sein muss. Kundmachungen können sowohl in Papierform als auch elektronisch erfolgen, wobei die inhaltliche und zeitliche Nachvollziehbarkeit sicherzustellen ist.",
       "topics": [
         "Amtstafel",
         "Kundmachung"
       ]
     },
     "24a": {
-      "summary": "Auch nach dem Ausscheiden aus dem Amt unterliegt der Bürgermeister einer Geheimhaltungspflicht über Tatsachen, die ihm ausschließlich aus der amtlichen Tätigkeit bekannt geworden sind. Die Entbindung von dieser Pflicht kann durch den zur Vertretung berufenen Vizebürgermeister erfolgen, wenn ein öffentliches Interesse dies rechtfertigt.",
+      "summary": "Auch nach dem Ausscheiden aus dem Amt besteht für die Bürgermeister:in eine Geheimhaltungspflicht über amtlich bekannt gewordene Tatsachen, soweit verfassungsrechtliche Gründe dies erfordern. Eine Entbindung kann durch die zur Vertretung berufene Vizebürgermeister:in erfolgen, wenn ein öffentliches Interesse vorliegt.",
       "topics": [
         "Geheimhaltung",
         "Amtsverschwiegenheit"
       ]
     },
     "40a": {
-      "summary": "Mitglieder besonderer Verwaltungsausschüsse für städtische Unternehmungen müssen dem Gemeinderat nicht angehören, aber wählbar sein. Sie haben ein Informations- und Rederecht im Gemeinderat zu Angelegenheiten ihrer Unternehmung. Bei dreimaligem unentschuldigtem Fehlen oder Verlust der Wählbarkeit kann der Gemeinderat den Mandatsverlust aussprechen.",
+      "summary": "Mitglieder besonderer Verwaltungsausschüsse müssen nicht dem Gemeinderat angehören, jedoch wählbar sein. Sie legen ein Gelöbnis ab und haben im Gemeinderat Informations- und Rederecht zu Angelegenheiten der betreffenden Unternehmung. Bei dreimaligem unentschuldigtem Fehlen kann der Gemeinderat den Mandatsverlust aussprechen.",
       "topics": [
         "Verwaltungsausschüsse",
-        "Städtische Unternehmungen"
+        "Unternehmungsverwaltung"
       ]
     },
     "40b": {
-      "summary": "Dem Kontrollausschuss obliegt die Behandlung aller Berichte der Kontrollstelle sowie die Auftragserteilung an diese. Seine Mitgliederzahl entspricht grundsätzlich jener des Stadtsenats; Stadtsenatsmitglieder dürfen ihm nicht angehören. Den Vorsitz führt die stärkste nicht im Stadtsenat vertretene Fraktion.",
+      "summary": "Der Kontrollausschuss behandelt alle Berichte der Kontrollstelle und erteilt Prüfaufträge. Seine Mitgliederzahl entspricht grundsätzlich jener des Stadtsenats, wobei Senatsmitglieder ihm nicht angehören dürfen. Den Vorsitz führt die stärkste nicht im Stadtsenat mit Stimmrecht vertretene Fraktion.",
       "topics": [
         "Kontrollausschuss",
-        "Kontrolle"
+        "Zusammensetzung"
       ]
     },
     "42a": {
-      "summary": "Der dienstliche Schriftverkehr zwischen Magistrat und Fraktionen bzw. Mandatsträgern – einschließlich Sitzungseinladungen und Verhandlungsschriften – soll nach Möglichkeit elektronisch erfolgen, sofern die Empfänger einverstanden sind.",
+      "summary": "Schriftverkehr zwischen Magistrat und Fraktionen bzw. Mandatar:innen soll nach Möglichkeit elektronisch erfolgen, sofern Einverständnis besteht. Für die Nachweisbarkeit genügt eine Sendebestätigung.",
       "topics": [
-        "Elektronischer Schriftverkehr"
+        "Schriftverkehr",
+        "Elektronische Kommunikation"
       ]
     },
     "51a": {
-      "summary": "Form und Gliederung von Voranschlag und Rechnungsabschluss richten sich nach den bundesgesetzlichen Vorschriften, insbesondere nach der Voranschlags- und Rechnungsabschlussverordnung 2015 (VRV 2015).",
+      "summary": "Form und Gliederung von Voranschlag und Rechnungsabschluss richten sich nach den bundesrechtlichen Vorschriften, insbesondere der Voranschlags- und Rechnungsabschlussverordnung 2015.",
       "topics": [
-        "Haushaltsvorschriften",
+        "Haushaltsrecht",
         "VRV 2015"
       ]
     },
     "51b": {
-      "summary": "In diesem Paragraphen werden die zentralen Begriffe definiert, die im Zusammenhang mit dem Haushaltswesen der Stadt Wels verwendet werden.",
+      "summary": "Hier werden die im Stadtstatut verwendeten haushaltsrechtlichen Begriffe definiert.",
       "topics": [
         "Begriffsbestimmungen",
-        "Haushaltswesen"
+        "Haushaltsrecht"
       ]
     },
     "52a": {
-      "summary": "Einnahmen sind unter Berücksichtigung der Entwicklung der letzten zwei Jahre realistisch einzuschätzen; Ausgaben dürfen nur mit dem sachlich begründeten Jahreserfordernis veranschlagt werden. Soweit die finanzielle Lage es gestattet, sollen Haushaltsrücklagen gebildet werden. Insgesamt ist ein nachhaltiges Haushaltsgleichgewicht mit positivem Nettoergebnis anzustreben.",
+      "summary": "Mittelaufbringungen sind auf Basis der Entwicklung der Vorjahre realistisch einzuschätzen, Mittelverwendungen dürfen nur mit dem sachlich begründeten Erfordernis veranschlagt werden. Ein nachhaltiges Haushaltsgleichgewicht mit positivem Nettoergebnis ist anzustreben.",
       "topics": [
         "Voranschlagsgrundsätze",
-        "Haushaltsgrundsätze"
+        "Haushaltsgleichgewicht"
       ]
     },
     "52b": {
-      "summary": "Dem Voranschlag sind neben den Nachweisen gemäß VRV 2015 weitere Nachweise beizufügen – unter anderem über die Investitionstätigkeit, Vermögensveräußerungen, die laufende Geschäftstätigkeit und das nachhaltige Haushaltsgleichgewicht.",
+      "summary": "Dem Voranschlag sind verschiedene Nachweise beizufügen, darunter Investitionstätigkeit, Vermögensveräußerungen, laufende Geschäftstätigkeit, nachhaltiges Haushaltsgleichgewicht und Investitionszuschüsse.",
       "topics": [
-        "Nachweise Voranschlag",
-        "Haushaltstransparenz"
+        "Nachweise zum Voranschlag",
+        "Transparenz"
       ]
     },
     "53a": {
-      "summary": "Die Stadt erstellt eine mittelfristige Ergebnis- und Finanzplanung über fünf Rechnungsjahre, die jährlich gemeinsam mit dem Voranschlag dem Gemeinderat vorzulegen und fortzuschreiben ist. Bei der Erstellung sind auch die Grundsätze des Österreichischen Stabilitätspakts zu berücksichtigen.",
+      "summary": "Über den Jahresvoranschlag hinaus ist ein mittelfristiger Ergebnis- und Finanzplan für fünf Jahre zu erstellen und jährlich fortzuschreiben. Dieser Plan ist bei der Erstellung des nächsten Voranschlags zu berücksichtigen und muss auch die Vorgaben des Österreichischen Stabilitätspakts beachten.",
       "topics": [
         "Mittelfristige Finanzplanung",
         "Stabilitätspakt"
       ]
     },
     "56a": {
-      "summary": "Dem Rechnungsabschluss sind neben den VRV-Nachweisen weitere Darstellungen beizufügen, darunter über Investitionen, Vermögensveräußerungen, liquide Mittel, Personalleistungen, laufende Geschäftstätigkeit und das nachhaltige Haushaltsgleichgewicht.",
+      "summary": "Dem Rechnungsabschluss sind zahlreiche Nachweise beizufügen, unter anderem über Investitionstätigkeit, Vermögensveräußerungen, liquide Mittel, Personalleistungen und das nachhaltige Haushaltsgleichgewicht.",
       "topics": [
-        "Nachweise Rechnungsabschluss"
+        "Nachweise zum Rechnungsabschluss",
+        "Transparenz"
       ]
     },
     "58a": {
-      "summary": "Kassenkredite zur Überbrückung kurzfristiger Liquiditätsengpässe müssen auf Euro lauten, an EURIBOR gebunden oder fix verzinst sein und binnen Jahresfrist zurückgezahlt werden. Ihre Höhe darf grundsätzlich 40 % der laufenden Einzahlungen nicht übersteigen; die Landesregierung kann diese Grenze in Ausnahmefällen auf 50 % anheben.",
+      "summary": "Kassenkredite für laufende Auszahlungen müssen auf Euro lauten, einen fixen oder EURIBOR-gebundenen Zinssatz haben und binnen Jahresfrist zurückgezahlt werden. Sie dürfen 40 % der laufenden Einzahlungen nicht übersteigen; in Ausnahmefällen kann die Landesregierung diese Grenze auf 50 % anheben.",
       "topics": [
         "Kassenkredite",
-        "Liquidität"
+        "Liquiditätssicherung"
       ]
     },
     "62a": {
-      "summary": "Bei Unternehmungen, an denen die Stadt allein oder mit anderen Gemeinden zu mehr als 50 % beteiligt ist, muss gesellschaftsvertraglich ein Verbot von Rechtsgeschäften mit unverhältnismäßig hohem finanziellen Wagnis verankert werden.",
+      "summary": "Bei Unternehmungen, an denen die Stadt zu mehr als 50 % beteiligt ist, muss ein Verbot von Rechtsgeschäften mit unverhältnismäßig hohem finanziellem Wagnis verankert werden.",
       "topics": [
-        "Beteiligungskontrolle",
-        "Risikovermeidung"
+        "Risikovermeidung",
+        "Beteiligungen"
       ]
     },
     "65a": {
-      "summary": "Im RIS kundgemachte Verordnungen müssen dauerhaft, ohne Identitätsnachweis und unentgeltlich abrufbar sein. Zusätzlich kann beim Magistrat während der Amtsstunden Einsicht in geltende Verordnungen genommen werden.",
+      "summary": "Die im RIS kundgemachten Verordnungen müssen dauerhaft, unentgeltlich und ohne Identitätsnachweis im Internet abrufbar sein. Zusätzlich kann beim Magistrat während der Amtsstunden Einsicht genommen werden.",
       "topics": [
         "Zugang zu Verordnungen",
-        "Informationsfreiheit"
+        "Transparenz"
       ]
     },
     "65b": {
-      "summary": "Verordnungsdokumente müssen mit einer elektronischen Amtssignatur versehen und aufwärtskompatibel gespeichert sein. Nach Erstellung der Signatur dürfen sie weder geändert noch – sobald freigegeben – gelöscht werden.",
+      "summary": "Elektronisch kundgemachte Verordnungen müssen mit einer Amtssignatur versehen sein und in einem aufwärtskompatiblen Format vorliegen. Nach Freigabe dürfen sie weder geändert noch gelöscht werden.",
       "topics": [
         "Authentizität",
         "Elektronische Signatur"
       ]
     },
     "65c": {
-      "summary": "Kundmachungsfehler – also Abweichungen des veröffentlichten Textes vom Original – kann der Bürgermeister durch eine Berichtigungskundmachung korrigieren. Unzulässig ist eine Berichtigung, die den materiellen Inhalt der Verordnung verändern würde.",
+      "summary": "Kundmachungsfehler und formale Verstöße im Verordnungsblatt kann die Bürgermeister:in durch eine Kundmachungsberichtigung korrigieren. Eine inhaltliche Änderung der Rechtsvorschrift ist auf diesem Weg nicht zulässig.",
       "topics": [
-        "Kundmachungsberichtigung"
+        "Kundmachungsberichtigung",
+        "Fehlerkorrektur"
       ]
     },
     "74a": {
-      "summary": "Bei geringfügigen Rechtsverstößen kann die Landesregierung den Verstoß mit Bescheid feststellen und der Stadt eine Belehrung erteilen, wenn dies zur Vermeidung künftiger gleichartiger Verstöße notwendig erscheint. Der Bescheid ist dem verantwortlichen Organ und dem Gemeinderat zur Kenntnis zu bringen.",
+      "summary": "Bei geringfügigen Rechtsverstößen kann die Landesregierung diese per Bescheid feststellen und der Stadt eine Belehrung erteilen, wenn dies zur Vermeidung weiterer gleichartiger Verstöße notwendig erscheint. Der Bescheid ist dem verantwortlichen Organ und dem Gemeinderat zur Kenntnis zu bringen.",
       "topics": [
         "Belehrung",
-        "Aufsichtsmaßnahme"
+        "Aufsichtsmittel"
       ]
     }
   }
