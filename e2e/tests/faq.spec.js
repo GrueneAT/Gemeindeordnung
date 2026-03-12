@@ -21,7 +21,7 @@ test.describe('FAQ Pages', () => {
 
   test('LLM-03: FAQ topic page with questions', async ({ page }) => {
     // Navigate directly to a known FAQ topic page
-    await page.goto('./faq/gemeindeaufsicht-und-rechtsschutz.html');
+    await page.goto('./faq/gemeindeaufsicht.html');
 
     // Verify disclaimer is visible
     const disclaimer = page.locator('[data-pagefind-ignore]:has-text("mittels KI")').first();
@@ -37,7 +37,7 @@ test.describe('FAQ Pages', () => {
   });
 
   test('LLM-04: FAQ answers link to paragraphs across Bundeslaender', async ({ page }) => {
-    await page.goto('./faq/gemeindeaufsicht-und-rechtsschutz.html');
+    await page.goto('./faq/gemeindeaufsicht.html');
 
     // Find cross-BL links (links to gemeindeordnungen pages with #p anchors)
     const paraLinks = page.locator('a[href*="gemeindeordnungen/"][href*="#p"]');

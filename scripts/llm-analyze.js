@@ -518,7 +518,7 @@ Bestimme 10-20 FAQ-Themen basierend auf der H\u00e4ufigkeit und Relevanz der The
 - "description": 1-2 S\u00e4tze Beschreibung
 - "questions": So viele Fragen wie sinnvoll, jede mit:
   - "question": Eine konkrete, praxisnahe Frage
-  - "answer": Beantworte zuerst klar und direkt, dann erg\u00e4nze Bundesl\u00e4nder-spezifische Details.
+  - "answer": Beschreibe das ALLGEMEINE Prinzip, das in den meisten österreichischen Gemeindeordnungen gilt. Nenne KEINE einzelnen Bundesländer namentlich. Schreibe NICHT 'Im Burgenland...', 'In Kärnten...' oder ähnliche BL-spezifische Aussagen. Formuliere stattdessen: 'In den meisten Gemeindeordnungen...', 'Die Regelungen sehen typischerweise vor...', 'Je nach Bundesland variieren die Details...' etc.
   - "references": Array von Verweisen { "category", "key", "paragraph", "label" }
 
 WICHTIG:
@@ -528,6 +528,8 @@ ${citationRef}
 - Format: "Par. {nummer} {Abk\u00fcrzung}", z.B. "Par. 42 Bgld. GO"
 - Verwende echte Paragraphen-Referenzen aus den folgenden Daten.
 - Verwende KEINE Anführungszeichen (") im Antworttext. Verwende stattdessen einfache Anführungszeichen (') oder Guillemets.
+- Die Antworten dürfen KEINE Bundesländer namentlich nennen oder BL-spezifische Behauptungen aufstellen. Stattdessen allgemeine Aussagen treffen und auf die einzelnen Gesetze verweisen.
+- "references": MUSS Verweise auf ALLE 9 Gemeindeordnungen enthalten, die das jeweilige Thema regeln (nicht nur 2-3). Verwende die relevantesten Paragraphen aus jeder Gemeindeordnung.
 
 Antworte NUR mit validem JSON (ohne Markdown-Formatierung):
 {
