@@ -3,11 +3,11 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: UI/UX Improvements
 status: planning
-stopped_at: Phase 5,6,7 context gathered — ready for cloop execute
-last_updated: "2026-03-12T17:28:20.517Z"
+stopped_at: Phase 04.3 context gathered
+last_updated: "2026-03-12T17:54:58.060Z"
 last_activity: 2026-03-12 — v1.1 roadmap created with 3 phases (5-7) covering 16 requirements
 progress:
-  total_phases: 10
+  total_phases: 11
   completed_phases: 7
   total_plans: 20
   completed_plans: 20
@@ -68,6 +68,11 @@ Recent decisions affecting current work:
 - [Research]: `data-pagefind-filter` key must be `typ` (not `type` — reserved words: any, all, none, not)
 - [Research]: `@tailwindcss/typography` confirmed broken on v4 — use scoped CSS in main.css
 
+### Roadmap Evolution
+
+- Phase 4.2 marked complete (2026-03-12): Was already executed (3/3 plans, 3/3 summaries) but roadmap checkboxes were stale — corrected.
+- Phase 4.3 inserted after Phase 4 (2026-03-12): Curated FAQ topic list and fix broken FAQ generation (URGENT) — research-driven topic curation, fix JSON parse errors in FAQ pipeline
+
 ### Pending Todos
 
 None yet.
@@ -76,9 +81,11 @@ None yet.
 
 - Pagefind binary opt-in: FAQ/Glossar pages must have `data-pagefind-body` and `data-pagefind-filter` tags before unified search works
 - Mobile overlay assumes header-resident search input — Phase 6 hero refactor must verify overlay still works
+- Phase 4.3 FAQ fix MUST NOT break summary or glossary generation — all three pipelines share code in llm-analyze.js; any changes to JSON extraction, CLI invocation, or prompt handling must be regression-tested against all three generation modes (llm:summaries, llm:glossary, llm:faq)
+- Phase 4.3 executor MUST run actual LLM generation to verify fixes — llm-analyze.js already unsets CLAUDECODE env var (line 192) to allow nested Claude CLI calls; use `npm run llm:faq` (and llm:summaries/llm:glossary for regression) directly during execution
 
 ## Session Continuity
 
-Last session: 2026-03-12T17:28:20.510Z
-Stopped at: Phase 5,6,7 context gathered — ready for cloop execute
-Resume file: .planning/phases/05-unified-search-engine/05-CONTEXT.md
+Last session: 2026-03-12T17:54:58.038Z
+Stopped at: Phase 04.3 context gathered
+Resume file: .planning/phases/04.3-curated-faq-topic-list-and-fix-broken-faq-generation/04.3-CONTEXT.md
