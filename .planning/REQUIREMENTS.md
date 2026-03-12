@@ -63,11 +63,11 @@ Requirements for UI/UX Improvements milestone. Each maps to roadmap phases.
 
 ### Search UX
 
-- [ ] **SRCH-01**: User sees a central, prominent search bar as the hero element on the homepage
+- [x] **SRCH-01**: User sees a central, prominent search bar as the hero element on the homepage
 - [x] **SRCH-02**: User can search across Gesetze, FAQ, and Glossar from a single search input
 - [x] **SRCH-03**: Search results are grouped by content type (FAQ Antworten, Glossar, Paragraphen) so user can distinguish result sources
-- [ ] **SRCH-04**: Homepage shows quick-access links below search hero (FAQ topics, popular terms) for browsable discovery
-- [ ] **SRCH-05**: Homepage card grid is replaced by search-hero layout (GO/Stadtrechte list minimized or collapsed below)
+- [x] **SRCH-04**: Homepage shows quick-access links below search hero (FAQ topics, popular terms) for browsable discovery
+- [x] **SRCH-05**: Homepage card grid is replaced by search-hero layout (GO/Stadtrechte list minimized or collapsed below)
 
 ### Desktop Search Results
 
@@ -85,9 +85,9 @@ Requirements for UI/UX Improvements milestone. Each maps to roadmap phases.
 
 ### Navigation & Polish
 
-- [ ] **NAV-01**: Header layout is clean and consistent across all pages (search positioning, logo, nav links)
-- [ ] **NAV-02**: FAQ and Glossar navigation links are visually polished and well-integrated into the header
-- [ ] **NAV-03**: Navigation works well on both desktop and mobile without crowding or misalignment
+- [x] **NAV-01**: Header layout is clean and consistent across all pages (search positioning, logo, nav links)
+- [x] **NAV-02**: FAQ and Glossar navigation links are visually polished and well-integrated into the header
+- [x] **NAV-03**: Navigation works well on both desktop and mobile without crowding or misalignment
 
 ## v2 Requirements
 
@@ -165,12 +165,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DSKT-01 | Phase 5 | Complete |
 | DSKT-02 | Phase 5 | Complete |
 | DSKT-03 | Phase 5 | Complete |
-| SRCH-01 | Phase 6 | Pending |
-| SRCH-04 | Phase 6 | Pending |
-| SRCH-05 | Phase 6 | Pending |
-| NAV-01 | Phase 6 | Pending |
-| NAV-02 | Phase 6 | Pending |
-| NAV-03 | Phase 6 | Pending |
+| SRCH-01 | Phase 6 | Complete |
+| SRCH-04 | Phase 6 | Complete |
+| SRCH-05 | Phase 6 | Complete |
+| NAV-01 | Phase 6 | Complete |
+| NAV-02 | Phase 6 | Complete |
+| NAV-03 | Phase 6 | Complete |
 | READ-01 | Phase 7 | Pending |
 | READ-02 | Phase 7 | Pending |
 | READ-03 | Phase 7 | Pending |

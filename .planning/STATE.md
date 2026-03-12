@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: UI/UX Improvements
 status: completed
-stopped_at: Completed 05-03-PLAN.md
+stopped_at: Completed 06-01-PLAN.md
 last_updated: "2026-03-12T21:02:05.953Z"
-last_activity: 2026-03-12 — Completed 05-03 (E2E tests and visual verification)
+last_activity: 2026-03-12 — Completed 06-01 (Hero homepage layout with discovery links)
 progress:
   total_phases: 11
   completed_phases: 9
   total_plans: 30
-  completed_plans: 25
-  percent: 83
+  completed_plans: 26
+  percent: 87
 ---
 
 # Project State
@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-03-12)
 
 ## Current Position
 
-Phase: 5 of 7 (Unified Search Engine) -- COMPLETE
-Plan: 3 of 3 in current phase (all complete)
-Status: Phase 5 complete, ready for Phase 6
-Last activity: 2026-03-12 — Completed 05-03 (E2E tests and visual verification)
+Phase: 6 of 7 (Search-Hero Homepage & Navigation)
+Plan: 1 of 3 in current phase
+Status: Executing Phase 6
+Last activity: 2026-03-12 — Completed 06-01 (Hero homepage layout with discovery links)
 
-Progress: [████████░░] 83% (v1.1 scope: 3/3 plans in phase 5 complete)
+Progress: [████████░░] 87% (v1.1 scope: 1/3 plans in phase 6 complete)
 
 ## Performance Metrics
 
@@ -56,6 +56,7 @@ Progress: [████████░░] 83% (v1.1 scope: 3/3 plans in phase 5
 | Phase 05 P01 | 10min | 2 tasks | 42 files |
 | Phase 05 P02 | 6min | 2 tasks | 2 files |
 | Phase 05 P03 | 3min | 3 tasks | 2 files |
+| Phase 06 P01 | 5min | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -81,6 +82,9 @@ Recent decisions affecting current work:
 - [05-02]: Parallel result data loading in single-pass mode for fast typ classification
 - [05-02]: Legacy renderResults kept alongside renderUnifiedResults for backward compatibility
 - [Phase 05]: Visual verification approved by human -- all unified search screenshots pass quality check
+- [06-01]: FAQ discovery chips show first 8 of 15 topics for balanced discoverability
+- [06-01]: Card grid collapsed by default in details/summary for search-first UX
+- [06-01]: Header nav uses text-xs/text-sm responsive sizing instead of hamburger menu
 
 ### Roadmap Evolution
 
@@ -100,6 +104,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T20:57:07.273Z
-Stopped at: Completed 05-03-PLAN.md
+Last session: 2026-03-12T21:08:42Z
+Stopped at: Completed 06-01-PLAN.md
 Resume file: None
