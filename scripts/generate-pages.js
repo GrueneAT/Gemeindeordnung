@@ -479,44 +479,104 @@ function generateCard(law, category) {
  * Generate the index page listing all laws grouped by category.
  */
 function generateIndexPage(lawsByCategory, faqTopics) {
-  let categorySections = '';
+  // Read glossary terms for discovery links (graceful fallback if missing)
+  const glossaryPath = join(ROOT, 'data', 'llm', 'glossary', 'terms.json');
+  let glossaryTerms = [];
+  if (existsSync(glossaryPath)) {
+    try {
+      const data = JSON.parse(readFileSync(glossaryPath, 'utf-8'));
+      glossaryTerms = (data.terms || []).slice(0, 8);
+    } catch { /* ignore parse errors */ }
+  }
 
+  // Build card grid sections for collapsible details
+  let categorySections = '';
   for (const [category, laws] of Object.entries(lawsByCategory)) {
     const label = CATEGORY_LABELS[category] || category;
     const cards = laws.map(l => generateCard(l, category)).join('\n');
 
     categorySections += `
-        <section class="mb-10">
-          <h2 class="text-2xl font-bold text-gruene-dark mb-4">${label}</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <section class="mb-10">
+            <h2 class="text-2xl font-bold text-gruene-dark mb-4">${label}</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 ${cards}
-          </div>
-        </section>`;
+            </div>
+          </section>`;
   }
 
-  // FAQ section on index page (only if FAQ data exists)
-  let faqSection = '';
+  // Build FAQ discovery chips
+  let faqChipsHtml = '';
   if (faqTopics && faqTopics.length > 0) {
-    const faqCards = faqTopics.map(t => {
-      return `          <a href="faq/${t.slug}.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">${genderText(escapeHtml(t.title))}</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">${genderText(escapeHtml(t.description))}</p>
-            <p class="text-xs text-gray-500 mt-2">${t.questions.length} Fragen</p>
-          </a>`;
-    }).join('\n');
+    const faqChips = faqTopics.slice(0, 8).map(t =>
+      `            <a href="faq/${t.slug}.html" class="discovery-chip">${genderText(escapeHtml(t.title))}</a>`
+    ).join('\n');
 
-    faqSection = `
-        <section class="mb-10">
-          <h2 class="text-2xl font-bold text-gruene-dark mb-4">Häufige Fragen</h2>
-          <p class="text-gruene-dark/80 mb-4">Thematische Übersichten mit Vergleich aller Bundesländer</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-${faqCards}
-          </div>
-        </section>`;
+    faqChipsHtml = `
+          <div>
+            <h2 class="text-xl font-bold text-gruene-dark mb-3">Häufige Fragen</h2>
+            <div class="flex flex-wrap gap-2">
+${faqChips}
+            </div>
+          </div>`;
+  }
+
+  // Build Glossary discovery chips (only if terms.json exists)
+  let glossarChipsHtml = '';
+  if (glossaryTerms.length > 0) {
+    const glossarChips = glossaryTerms.map(t =>
+      `            <a href="glossar.html#${t.slug}" class="discovery-chip">${escapeHtml(t.term)}</a>`
+    ).join('\n');
+
+    glossarChipsHtml = `
+          <div>
+            <h2 class="text-xl font-bold text-gruene-dark mb-3">Glossar</h2>
+            <div class="flex flex-wrap gap-2">
+${glossarChips}
+            </div>
+          </div>`;
   }
 
   const headerHtml = generateHeader(false);
   const footerHtml = generateFooter({ isLawPage: false });
+
+  // Hero section with large centered search
+  const heroHtml = `    <section class="hero-section" data-pagefind-ignore>
+      <div class="max-w-3xl mx-auto px-4">
+        <h1 class="text-3xl sm:text-4xl font-bold text-gruene-dark mb-2">
+          Gemeindeordnungen der österreichischen Bundesländer
+        </h1>
+        <p class="text-lg text-gruene-dark/80 mb-6">
+          Alle Gemeindeordnungen und Stadtrechte durchsuchen, vergleichen und verstehen.
+        </p>
+        <div class="hero-search-container max-w-2xl mx-auto relative">
+          <div class="relative">
+            <input id="hero-search-input" type="search" minlength="3" autocomplete="off"
+              placeholder="Gesetz, Thema oder Begriff suchen..."
+              class="w-full text-lg py-4 pl-12 pr-4 rounded-xl border-2 border-gruene-green/50 shadow-lg bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
+            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <div id="hero-search-chips" class="mt-2"></div>
+          <div id="hero-search-dropdown" class="search-dropdown hidden mt-2"></div>
+        </div>
+      </div>
+    </section>`;
+
+  // Discovery links section
+  const hasDiscovery = faqChipsHtml || glossarChipsHtml;
+  const discoveryHtml = hasDiscovery ? `    <section class="discovery-section max-w-5xl mx-auto px-4 py-8" data-pagefind-ignore>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">${faqChipsHtml}${glossarChipsHtml}
+        </div>
+    </section>` : '';
+
+  // Collapsible card grid
+  const chevronSvg = `<svg class="w-5 h-5 details-open-rotate inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>`;
+  const collapsibleGrid = `    <details class="max-w-5xl mx-auto px-4 py-4">
+      <summary class="cursor-pointer text-lg font-semibold text-gruene-dark hover:text-gruene-green py-3 list-none flex items-center">
+        ${chevronSvg}Alle Gesetze durchblättern
+      </summary>
+      <main class="mt-4">${categorySections}
+      </main>
+    </details>`;
 
   return `<!doctype html>
 <html lang="de">
@@ -528,18 +588,9 @@ ${faqCards}
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
 ${headerHtml}
-    <div class="max-w-5xl mx-auto px-4 py-8 flex-1 w-full">
-      <div class="mb-8">
-        <h1 class="text-3xl font-bold text-gruene-dark">
-          Gemeindeordnungen der österreichischen Bundesländer
-        </h1>
-        <p class="mt-2 text-lg text-gruene-dark/80">
-          Alle 9 Gemeindeordnungen und 14 Statutarstadt-Stadtrechte durchsuchbar aufbereitet.
-        </p>
-      </div>
-      <main>${categorySections}${faqSection}
-      </main>
-    </div>
+${heroHtml}
+${discoveryHtml}
+${collapsibleGrid}
 ${footerHtml}
 ${generateScrollToTop()}
     <script type="module" src="js/main.js"></script>
