@@ -152,6 +152,7 @@ None yet.
 | 5 | Remove "Alle Gemeindeordnungen" links from FAQ topic pages | 2026-03-12 | 26ad32f | [5-remove-alle-gemeindeordnungen-links-from](./quick/5-remove-alle-gemeindeordnungen-links-from/) |
 | 6 | Add gender-inclusive language (Doppelpunkt-Gendern) to FAQ and glossary | 2026-03-12 | 007743a | [6-add-gender-inclusive-language-doppelpunk](./quick/6-add-gender-inclusive-language-doppelpunk/) |
 | 7 | Redesign topic filter: searchable tag-select with multi-select OR filtering | 2026-03-12 | a06e30a | [7-redesign-topic-filter-chips-ui-searchabl](./quick/7-redesign-topic-filter-chips-ui-searchabl/) |
+| 8 | Expand gendering instruction in FAQ LLM prompt | 2026-03-12 | d278e08 | [8-add-gendering-instructions-to-faq-llm-pr](./quick/8-add-gendering-instructions-to-faq-llm-pr/) |
 
 ### Blockers/Concerns
 
@@ -162,5 +163,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-12T14:56:41Z
-Stopped at: Completed quick task 7: Redesign topic filter chips to searchable tag-select with multi-select OR filtering
+Stopped at: Completed quick task 8: Expand gendering instruction in FAQ LLM prompt
 Resume file: None
