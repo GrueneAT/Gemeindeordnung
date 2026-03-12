@@ -13,6 +13,7 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { LAWS } from './config.js';
+import { genderText } from './gender.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -493,8 +494,8 @@ ${cards}
   if (faqTopics && faqTopics.length > 0) {
     const faqCards = faqTopics.map(t => {
       return `          <a href="faq/${t.slug}.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">${escapeHtml(t.title)}</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">${escapeHtml(t.description)}</p>
+            <p class="font-bold text-gruene-dark">${genderText(escapeHtml(t.title))}</p>
+            <p class="text-sm text-gruene-dark/80 mt-1">${genderText(escapeHtml(t.description))}</p>
             <p class="text-xs text-gray-500 mt-2">${t.questions.length} Fragen</p>
           </a>`;
     }).join('\n');
@@ -550,8 +551,8 @@ function generateFAQIndexPage(topics) {
 
   const cards = topics.map(t => {
     return `          <a href="${t.slug}.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">${escapeHtml(t.title)}</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">${escapeHtml(t.description)}</p>
+            <p class="font-bold text-gruene-dark">${genderText(escapeHtml(t.title))}</p>
+            <p class="text-sm text-gruene-dark/80 mt-1">${genderText(escapeHtml(t.description))}</p>
             <p class="text-xs text-gray-500 mt-2">${t.questions.length} Fragen</p>
           </a>`;
   }).join('\n');
@@ -605,8 +606,8 @@ function generateFAQTopicPage(topic) {
       : '';
 
     return `      <article class="mb-8 bg-white rounded-lg border border-gray-200 p-5">
-        <h2 class="text-lg font-semibold text-gruene-dark">${escapeHtml(q.question)}</h2>
-        <p class="mt-2 text-gruene-dark/80 leading-relaxed">${escapeHtml(q.answer)}</p>
+        <h2 class="text-lg font-semibold text-gruene-dark">${genderText(escapeHtml(q.question))}</h2>
+        <p class="mt-2 text-gruene-dark/80 leading-relaxed">${genderText(escapeHtml(q.answer))}</p>
         ${refsHtml}
       </article>`;
   }).join('\n');
@@ -616,7 +617,7 @@ function generateFAQTopicPage(topic) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${escapeHtml(topic.title)} - FAQ - gemeindeordnung.gruene.at</title>
+    <title>${genderText(escapeHtml(topic.title))} - FAQ - gemeindeordnung.gruene.at</title>
     <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
@@ -627,13 +628,13 @@ ${headerHtml}
         <li class="text-gray-400">/</li>
         <li><a href="index.html" class="text-gruene-dark hover:underline">FAQ</a></li>
         <li class="text-gray-400">/</li>
-        <li class="text-gray-500">${escapeHtml(topic.title)}</li>
+        <li class="text-gray-500">${genderText(escapeHtml(topic.title))}</li>
       </ol>
     </nav>
     <div class="max-w-5xl mx-auto px-4 py-6 flex-1 w-full">
       <header class="mb-6">
-        <h1 class="text-3xl font-bold text-gruene-dark">${escapeHtml(topic.title)}</h1>
-        <p class="mt-1 text-gruene-dark/80">${escapeHtml(topic.description)}</p>
+        <h1 class="text-3xl font-bold text-gruene-dark">${genderText(escapeHtml(topic.title))}</h1>
+        <p class="mt-1 text-gruene-dark/80">${genderText(escapeHtml(topic.description))}</p>
       </header>
       <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
         <strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
@@ -688,7 +689,7 @@ function generateGlossaryPage(terms) {
         : '';
       return `      <div id="${t.slug}" class="mb-4">
         <h3 class="text-lg font-semibold text-gruene-dark">${escapeHtml(t.term)}</h3>
-        <p class="text-gruene-dark/80 mt-1">${escapeHtml(t.definition)}</p>${refsHtml}
+        <p class="text-gruene-dark/80 mt-1">${genderText(escapeHtml(t.definition))}</p>${refsHtml}
       </div>`;
     }).join('\n');
 
