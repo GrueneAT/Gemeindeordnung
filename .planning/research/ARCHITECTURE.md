@@ -1,328 +1,466 @@
 # Architecture Patterns
 
-**Domain:** Static legal document search platform (Austrian Gemeindeordnungen)
-**Researched:** 2026-03-10
-**Confidence:** HIGH
+**Domain:** Static legal document search platform — v1.1 UI/UX Improvements
+**Researched:** 2026-03-12
+**Confidence:** HIGH (based on direct code inspection, no assumptions)
 
-## System Overview
+---
 
-Three distinct execution contexts, architecturally separated:
+## Executive Context
 
-1. **Dev-time pipeline** -- local, infrequent: fetches laws, runs LLM analysis, commits static artifacts
-2. **Deploy-time build** -- GitHub Actions: re-fetches law texts, generates HTML pages, runs Pagefind indexing, deploys
-3. **Client runtime** -- browser: static HTML/CSS/JS, Pagefind WASM search, zero server dependencies
+This document focuses on **integration architecture for v1.1 features** — specifically how unified
+search, homepage redesign, and readability improvements integrate with the existing system.
+The existing v1 architecture is already built and working; this research maps what changes and
+what can be left untouched.
 
-```
-DEV-TIME (local, infrequent)                DEPLOY-TIME (GitHub Actions)
-================================            ================================
+---
 
- +--------------+                            +--------------+
- |  RIS OGD API |                            |  RIS OGD API |
- |  (Landesrecht|                            |  (Landesrecht)|
- +------+-------+                            +------+-------+
-        |                                           |
-        v                                           v
- +--------------+                            +--------------+
- |  Fetcher     |                            |  Fetcher     |
- |  (same code) |                            |  (same code) |
- +------+-------+                            +------+-------+
-        |                                           |
-        v                                           v
- +--------------+                            +--------------+
- |  Parser      |                            |  Parser      |
- |  (structure) |                            |  (structure) |
- +------+-------+                            +------+-------+
-        |                                           |
-        v                                           v
- +--------------+                            +--------------+
- |  LLM Analyzer|                            |  Vite Build  |
- |  (summaries, |                            |  (HTML + CSS |
- |   FAQs,      |                            |   + JS)      |
- |   glossary)  |                            +------+-------+
- +------+-------+                                   |
-        |                                           v
-        v                                    +--------------+
- +--------------+                            |  Pagefind    |
- |  JSON output |                            |  (index gen) |
- |  (committed  |                            +------+-------+
- |   to repo)   |                                   |
- +--------------+                                   v
-                                             +--------------+
-                                             |  GitHub Pages|
-                                             +--------------+
+## Existing Architecture (v1 — What Is Already Built)
 
-CLIENT RUNTIME (browser)
-================================
- +---------------------------------------------+
- |  Static HTML pages (per Bundesland)          |
- |  +-------------+  +----------------------+  |
- |  | Pagefind UI |  | Bundesland pages     |  |
- |  | (search box |  | (paragraphs with     |  |
- |  |  + results) |  |  summaries, anchors) |  |
- |  +------+------+  +----------------------+  |
- |         |                                    |
- |         v                                    |
- |  +------------------+                        |
- |  | Pagefind WASM    |                        |
- |  | (chunked index   |                        |
- |  |  loaded on       |                        |
- |  |  demand)         |                        |
- |  +------------------+                        |
- +---------------------------------------------+
-```
+### Execution Contexts
 
-### Component Responsibilities
-
-| Component | Responsibility | Execution Context |
-|-----------|----------------|-------------------|
-| **Fetcher** | Downloads Gemeindeordnungen from RIS OGD API v2.6 Landesrecht endpoint | Dev-time + Deploy-time |
-| **Parser** | Extracts structured paragraph data (section, title, text, numbering) from RIS HTML | Dev-time + Deploy-time |
-| **LLM Analyzer** | Generates plain-language summaries, thematic FAQs, legal glossary | Dev-time only |
-| **Vite Build** | Compiles TailwindCSS, bundles JS, processes HTML templates | Deploy-time |
-| **Pagefind** | Indexes generated HTML pages, creates chunked WASM search index | Deploy-time (post-Vite) |
-| **Pagefind UI** | Client-side search interface with filtering and result display | Client runtime |
-
-## Recommended Project Structure
+The system has three distinct execution contexts:
 
 ```
-gemeindeordnung/
-+-- src/                          # Vite source (what Vite processes)
-|   +-- index.html                # Landing page with search
-|   +-- pages/                    # Generated law pages (one per Bundesland)
-|   |   +-- burgenland.html
-|   |   +-- kaernten.html
-|   |   +-- niederoesterreich.html
-|   |   +-- oberoesterreich.html
-|   |   +-- salzburg.html
-|   |   +-- steiermark.html
-|   |   +-- tirol.html
-|   |   +-- vorarlberg.html
-|   |   +-- wien.html
-|   +-- faq.html                  # Generated FAQ page (if LLM content exists)
-|   +-- glossar.html              # Generated glossary page
-|   +-- css/
-|   |   +-- main.css              # @import "tailwindcss" + Gruene theme
-|   +-- js/
-|       +-- main.js               # Pagefind UI initialization + nav logic
-|
-+-- scripts/                      # Build & dev scripts (Node.js)
-|   +-- fetch-laws.js             # Download from RIS API
-|   +-- parse-laws.js             # Parse HTML into structured JSON
-|   +-- generate-pages.js         # Generate HTML pages from data + templates
-|   +-- generate-summaries.js     # LLM analysis (dev-time, manual trigger)
-|   +-- config.js                 # Bundesland names, RIS query mappings
-|
-+-- data/                         # Data directory
-|   +-- raw/                      # Cached RIS API responses (.gitignored)
-|   +-- parsed/                   # Structured JSON per Bundesland (committed)
-|   |   +-- burgenland.json
-|   |   +-- ...
-|   |   +-- wien.json
-|   +-- llm/                      # LLM-generated content (committed)
-|       +-- summaries/            # Per-paragraph summaries per Bundesland
-|       +-- faqs.json             # Thematic FAQs
-|       +-- glossary.json         # Legal term glossary
-|
-+-- dist/                         # Build output (gitignored)
-|   +-- (Vite output)
-|   +-- pagefind/                 # Pagefind index + WASM (generated post-build)
-|
-+-- .github/
-|   +-- workflows/
-|       +-- deploy.yml            # fetch -> parse -> generate-pages -> vite build -> pagefind -> deploy
-|
-+-- vite.config.js
-+-- package.json
-+-- .nojekyll                     # Prevent GitHub Pages Jekyll processing
+DEV-TIME (local, infrequent)      DEPLOY-TIME (CI)           CLIENT RUNTIME (browser)
+=========================         ===================        ==========================
+fetch-laws.js                     generate-pages.js          Static HTML pages
+parse-laws.js                     vite build                 Pagefind WASM (chunked)
+llm-analyze.js         =>  =>     pagefind --site dist  =>   main.js (vanilla JS)
+generate-llm-content.js           GitHub Pages deploy        search.js (Pagefind client)
+                                                             main.css (TailwindCSS v4)
 ```
 
-### Structure Rationale
+### File Map (Actual, Verified)
 
-- **src/pages/ are generated files**: `generate-pages.js` writes HTML files into `src/pages/` using data from `data/parsed/`. Vite then processes these along with CSS/JS. This keeps the Vite pipeline simple -- it just builds what it finds in `src/`.
-- **data/parsed/ is committed**: Deploy pipeline can use committed parsed data or re-fetch. Avoids RIS API dependency for every single build.
-- **data/llm/ is committed**: LLM analysis is expensive and infrequent. Deploy pipeline reads but never regenerates.
-- **Pagefind runs after Vite**: `npx pagefind --site dist` indexes the built HTML. This is a post-build step, not part of Vite's pipeline.
-
-## Architectural Patterns
-
-### Pattern 1: Two-Phase Build Pipeline
-
-**What:** Separate "analysis" (dev-time, costly, committed) from "assembly" (deploy-time, cheap, ephemeral).
-
-**Why:** LLM analysis costs money and takes time. Law text changes infrequently (yearly legislative cycles). Treating LLM outputs as committed source data makes deploys fast, cheap, and deterministic.
-
-**Flow:**
 ```
-Developer runs:  npm run fetch && npm run parse && npm run analyze
-                 -> reviews data/llm/ outputs
-                 -> commits to repo
+src/
+  index.html                       # Generated by generate-pages.js
+  gemeindeordnungen/*.html         # Generated per Bundesland (9 files)
+  stadtrechte/*.html               # Generated per Statutarstadt (14 files)
+  faq/index.html                   # Generated FAQ index
+  faq/{slug}.html                  # Generated FAQ topic pages (14 topics)
+  glossar.html                     # Generated glossary page
+  css/main.css                     # TailwindCSS v4 (@theme) + custom CSS classes
+  js/main.js                       # Entry: wires up all JS behaviors
+  js/search.js                     # Pagefind client: executeSearch, renderResults, UI
+  assets/gruene-logo.png           # Gruene branding
 
-GitHub Actions:  npm run fetch && npm run parse && npm run generate
-                 && npm run build && npx pagefind --site dist
-                 -> deploys dist/ to GitHub Pages
-```
+scripts/
+  generate-pages.js                # ALL HTML generation (index, laws, FAQ, glossary)
+  config.js                        # LAWS mapping: key -> bundesland + RIS params
+  fetch-laws.js                    # RIS API fetcher
+  parse-laws.js                    # RIS HTML -> structured JSON
+  llm-analyze.js                   # LLM analysis runner
+  generate-llm-content.js          # Orchestrates LLM content generation
 
-### Pattern 2: Pagefind Post-Build Indexing
+data/
+  llm/summaries/{category}/        # Per-law LLM paragraph summaries (JSON)
+  llm/faq/topics.json              # FAQ topics array (MISSING — not committed)
+  llm/glossary/terms.json          # Glossary terms array
+  parsed/{category}/*.json         # Structured law data per Bundesland
 
-**What:** Generate all HTML pages first (via Vite build), then run Pagefind as a post-build step. Pagefind scans the HTML output and generates its own chunked search index alongside it.
-
-**Why:** Pagefind is designed to work this way. It needs finished HTML to index. No custom serialization, no index format to manage. Pagefind's output (`pagefind/` directory) goes into `dist/` and is deployed alongside the site.
-
-**Implementation:**
-```json
-{
-  "scripts": {
-    "build": "vite build && npx pagefind --site dist"
-  }
-}
+dist/                              # Vite build output + Pagefind index
+  pagefind/                        # Pagefind WASM + chunked index
 ```
 
-HTML markup for Pagefind:
+### Key HTML Generation Functions in generate-pages.js
+
+| Function | Generates | Data Sources |
+|----------|-----------|--------------|
+| `generateLawPage()` | Single law page (paragraphs, TOC, summaries) | parsed JSON + LLM summaries JSON + glossary terms |
+| `generateIndexPage()` | Homepage (cards + FAQ section) | lawsByCategory + faqTopics array |
+| `generateFAQIndexPage()` | FAQ landing page | faqTopics array |
+| `generateFAQTopicPage()` | Single FAQ topic with Q&A | single topic object with questions + references |
+| `generateGlossaryPage()` | Glossary A-Z with filter | glossary terms array |
+| `generateHeader()` | Shared sticky header | isLawPage flag, pathPrefix |
+| `generateSearchHTML()` | Search input + dropdown HTML | inline, no data |
+| `renderParagraph()` | Single `<article>` with summary | paragraph data + LLM data + glossary terms |
+
+### Pagefind Index — What Is Currently Indexed
+
+| Page Type | `data-pagefind-body` | Filters Available |
+|-----------|---------------------|-------------------|
+| Law pages (gemeindeordnungen/, stadtrechte/) | YES — `<main data-pagefind-body>` | `bundesland` (from `<meta data-pagefind-filter>`) + `typ` |
+| FAQ topic pages (faq/{slug}.html) | YES — `<main data-pagefind-body>` | NONE (no `data-pagefind-filter` set) |
+| Glossary page (glossar.html) | YES — `<main data-pagefind-body>` | NONE |
+| Index page | NO | — |
+| FAQ index page | NO | — |
+
+**Critical observation:** FAQ and glossary pages already have `data-pagefind-body` and ARE indexed
+by Pagefind. However, they have no `typ` or content-type filter, so search.js cannot distinguish
+them from law results. The Bundesland filter in `executeSearch()` only adds `{ bundesland }` to
+the filter object — it never filters by `typ`, so applying the BL filter would hide FAQ/glossary
+results silently.
+
+### Current Search Architecture (search.js)
+
+```
+initSearch()
+  -> loadPagefind()        # WASM import, sets highlightParam
+  -> executeSearch(q, bl)  # debouncedSearch + filter: { bundesland }
+  -> renderResults()       # renderGroupedResults() or renderPageResult()
+                           # Groups by bundesland filter value
+  -> renderFilterChips()   # Shows saved BL chip + "Alle Bundesländer"
+```
+
+The search dropdown is a fixed-width absolutely-positioned panel anchored below the input.
+On mobile, a separate overlay DOM is injected with its own input/dropdown refs,
+and the module-level variables (`searchInput`, `searchDropdown`, `searchChips`) are swapped
+to point at the overlay elements during mobile search.
+
+---
+
+## v1.1 Features and Their Integration Points
+
+### Feature 1: Unified Search (FAQ + Glossary in Results)
+
+**Current state:** FAQ and glossary pages are indexed by Pagefind but have no `typ` metadata,
+so search.js cannot distinguish or group them separately.
+
+**What needs to change:**
+
+1. **generate-pages.js — `generateFAQTopicPage()`:** Add `<meta data-pagefind-filter="typ[content]" content="faq" />` to the `<head>`. Same pattern already used for law pages.
+
+2. **generate-pages.js — `generateGlossaryPage()`:** Add `<meta data-pagefind-filter="typ[content]" content="glossar" />`.
+
+3. **search.js — `executeSearch()`:** When `activeBundesland` is null, do NOT pass `bundesland` filter — this already works. But the result rendering needs to group results by `typ` (laws vs FAQ vs glossary) not just by `bundesland`.
+
+4. **search.js — `renderResults()` / `renderGroupedResults()`:** Add a new grouping strategy that partitions results into three buckets: Gesetze, FAQ, Glossar. Each bucket renders with its own section heading and appropriate result item style.
+
+5. **search.js — filter chip UI:** Optionally add a content-type toggle (Gesetze / FAQ / Glossar / Alle) alongside the existing BL filter. This is additive, not a replacement.
+
+**No generate-pages.js structural changes required** — the FAQ and glossary page templates stay
+the same, just gain a `<meta>` tag. The Pagefind index automatically picks up new filter values
+on next build.
+
+**Data flow for unified search:**
+```
+User types query
+  -> Pagefind debouncedSearch (no filters, or typ filter)
+  -> Results contain mix of law, FAQ, glossary pages
+  -> search.js partitions by result.filters?.typ[0]
+  -> Renders three sections: "Gesetze", "FAQ-Themen", "Glossar"
+  -> Each section uses appropriate item renderer
+```
+
+**Constraint:** Pagefind `debouncedSearch` with combined filters (e.g., `bundesland` AND `typ`)
+uses AND logic. A user filtering by "Wien" would get zero FAQ/glossary results since those pages
+have no `bundesland` filter. Solution: when `bundesland` filter is active, only pass it for
+law-type results — or show FAQ/Glossar results always regardless of BL filter. The cleanest
+approach is a two-pass search: one call with `{ bundesland }` filter for law results, one call
+without any filter for FAQ/glossary results, then merge into grouped display.
+
+### Feature 2: Homepage Redesign (Search-Hero Layout)
+
+**Current state:** `generateIndexPage()` produces a header + card grid layout.
+The search bar is in the shared header (small, top-right positioned).
+
+**What needs to change:**
+
+1. **generate-pages.js — `generateIndexPage()`:** Restructure the page body to include a hero section with a large, centered search bar before the card grid. The hero search is the SAME search input (`id="search-input"`) — no new JS needed. The dropdown (`id="search-dropdown"`) moves to be positioned relative to the hero container, not the header.
+
+2. **generate-pages.js — `generateHeader()`:** On the index page (`isLawPage = false`), the header currently renders a search bar via `generateSearchHTML()`. For the homepage redesign, the header should NOT render the search bar (or render a minimal version) because the hero has it. This requires a new flag or condition in `generateHeader()`. One approach: add an `options` parameter to `generateHeader()` to control whether `generateSearchHTML()` is included.
+
+3. **search.js — `initSearch()`:** No changes needed — it finds `#search-input` regardless of where in the DOM it lives.
+
+4. **main.css:** The search dropdown is currently styled with `position: absolute` relative to `.search-container`. Moving the hero search requires `.search-container` to be in the hero div. The existing dropdown CSS already supports this since it uses `position: absolute; top: 100%; left: 0; right: 0`.
+
+**Desktop search results — bigger layout:** The current dropdown is a narrow panel (max-width `max-w-md` from the header search container). On the homepage with a full-width hero search, the dropdown can be wider. This is a CSS-only change to `.search-dropdown` or a wrapper width change.
+
+**What does NOT change:** The law page header still shows the header-integrated search. Only the
+index page gets the hero layout.
+
+**generate-pages.js change scope:**
+- Modify: `generateHeader()` — add `options.hideSearch` param
+- Modify: `generateIndexPage()` — add hero section HTML before card grid, call `generateHeader(false, undefined, undefined, '', { hideSearch: true })`
+- No new functions required
+
+### Feature 3: Law Text Readability
+
+**Current state:** `renderParagraph()` in generate-pages.js produces `<article class="mb-6 group">` with an `<h3>`, optional `<details>` summary, and `<ol>` or `<p>` body. The `<main>` wrapper has `class="max-w-prose mx-auto leading-relaxed"`.
+
+**What needs to change:**
+
+1. **generate-pages.js — `renderParagraph()`:** Adjust the article HTML for improved visual hierarchy:
+   - Increase paragraph heading prominence (font size, spacing)
+   - Add more breathing room between paragraphs
+   - Consider visual separator between paragraphs
+   - The summary `<details>` block is already collapsible; consider making it more prominent
+
+2. **generate-pages.js — `renderSection()`:** Adjust section heading spacing and visual separators.
+
+3. **main.css:** Typography improvements can go here — line-height, max-width, font-size for legal body text. These are CSS-only and do NOT require template changes.
+
+4. **generate-pages.js — `generateLawPage()`:** The law page header currently shows title, Bundesland, and Stand date. A "summary-first" layout would surface the LLM law-level overview (if present in `llmData`) as a collapsed or visible summary card before the TOC.
+
+**No data changes required** — LLM summaries are already embedded in the generated HTML via
+`renderParagraph()`. No new JSON loading needed.
+
+---
+
+## Component Boundaries: What Changes vs What Stays
+
+### Modified Components
+
+| Component | Change Type | Scope |
+|-----------|-------------|-------|
+| `generate-pages.js` | Modify `generateIndexPage()` | Add hero section with search |
+| `generate-pages.js` | Modify `generateHeader()` | Add `hideSearch` option |
+| `generate-pages.js` | Modify `generateFAQTopicPage()` | Add `typ=faq` filter meta tag |
+| `generate-pages.js` | Modify `generateGlossaryPage()` | Add `typ=glossar` filter meta tag |
+| `generate-pages.js` | Modify `renderParagraph()` | Readability improvements |
+| `generate-pages.js` | Modify `renderSection()` | Spacing/hierarchy improvements |
+| `generate-pages.js` | Modify `generateLawPage()` | Optional: summary-first layout |
+| `src/js/search.js` | Modify `renderResults()` | Grouped by content type |
+| `src/js/search.js` | Modify `renderGroupedResults()` | New typ-based grouping |
+| `src/js/search.js` | Modify `executeSearch()` | Two-pass search for unified results |
+| `src/css/main.css` | Add styles | Hero search, wider dropdown, typography |
+
+### Untouched Components
+
+| Component | Why Untouched |
+|-----------|---------------|
+| `src/js/main.js` | All init functions stay the same |
+| `vite.config.js` | `discoverInputs()` already handles all page types |
+| `scripts/config.js` | No new law types |
+| `scripts/fetch-laws.js` | Data pipeline unchanged |
+| `scripts/parse-laws.js` | Data structure unchanged |
+| `data/llm/` structure | No new data sources needed |
+| `scripts/llm-analyze.js` | LLM pipeline unchanged |
+| Pagefind core config | `--force-language de` still correct |
+| Mobile overlay in search.js | Overlay mechanism unchanged |
+
+---
+
+## Data Flow Changes
+
+### Unified Search Data Flow (New)
+
+```
+User types query in hero (index) or header (law page)
+  |
+  v
+search.js: executeSearch(query, activeBundesland)
+  |
+  +-- If activeBundesland set:
+  |     Pass 1: debouncedSearch(query, { filters: { bundesland, typ: ['gemeindeordnungen', 'stadtrechte'] } })
+  |     Pass 2: debouncedSearch(query, {})  [or typ: ['faq','glossar']]
+  |     Merge results
+  |
+  +-- If no BL filter:
+        Single debouncedSearch(query, {}) — all types
+  |
+  v
+renderResults()
+  |
+  v
+Partition by result.filters?.typ[0]:
+  -> 'gemeindeordnungen' | 'stadtrechte' | undefined -> Gesetze section
+  -> 'faq'                                            -> FAQ-Themen section
+  -> 'glossar'                                        -> Glossar section
+  |
+  v
+Render each section with section heading + appropriate item template
+```
+
+**Note on Pagefind filter behavior:** Pagefind filter logic is AND-based within a single
+`debouncedSearch` call. Passing `{ bundesland: 'Wien', typ: 'faq' }` would find pages that
+have BOTH filters — which FAQ pages won't have. The two-pass approach is the correct pattern.
+
+### Homepage Hero Search Flow (New)
+
+```
+Index page loads
+  -> search.js initSearch() finds #search-input (now in hero div, not header)
+  -> loadPagefind() pre-warms WASM
+  -> No BL pre-selection (index page has no bundesland meta tag)
+  -> activeBundesland = getSavedBundesland() from localStorage
+
+User types in hero input
+  -> dropdown renders below hero input (not header)
+  -> On desktop: full-width dropdown (wider than current max-w-md)
+  -> Results grouped by: Gesetze | FAQ | Glossar
+```
+
+---
+
+## Build Order for v1.1 Features
+
+The features have these dependencies:
+
+```
+1. Pagefind filter metadata (typ tags in FAQ/glossary pages)
+     |
+     Required by: Unified search result grouping
+     Change in:   generate-pages.js (generateFAQTopicPage, generateGlossaryPage)
+     Rebuild:     npm run build && npx pagefind --site dist
+
+2. search.js unified search logic
+     |
+     Depends on:  Pagefind filter metadata being indexed (step 1)
+     Change in:   search.js (executeSearch, renderResults)
+     Test with:   E2E screenshot tests
+
+3. Homepage hero layout
+     |
+     Depends on:  search.js working correctly (result rendering)
+     Change in:   generate-pages.js (generateIndexPage, generateHeader)
+     No JS changes needed
+     Test with:   Visual review screenshots
+
+4. Law text readability
+     |
+     Independent: No deps on 1-3
+     Change in:   generate-pages.js (renderParagraph, renderSection) + main.css
+     Can be done in parallel with 1-3
+```
+
+**Recommended build order:**
+
+| Step | Work | Files Changed | Verify With |
+|------|------|---------------|-------------|
+| 1 | Add `typ` filter meta to FAQ/glossary | `generate-pages.js` | Rebuild, check Pagefind filters() output |
+| 2 | Unified search logic in search.js | `search.js` | E2E tests, screenshot: search-results.png |
+| 3 | Readability CSS and template | `main.css`, `generate-pages.js` | Screenshot: typography-law-text.png |
+| 4 | Homepage hero layout | `generate-pages.js` | Screenshot: card-grid-index.png |
+| 5 | Desktop search dropdown polish | `main.css` | Screenshot: search-results.png |
+
+Steps 1+2 must be sequential (index rebuild needed before JS can verify). Steps 3+4 can be done
+in either order. Step 5 depends on step 4 (hero container width affects dropdown sizing).
+
+---
+
+## Architectural Patterns for v1.1
+
+### Pattern: Additive Pagefind Metadata
+
+Adding `data-pagefind-filter` to FAQ and glossary pages does not affect existing law page
+search behavior. Filter values are optional — pages without a given filter value simply don't
+appear when that filter is active. This makes the change backward-compatible.
+
 ```html
-<html lang="de">
-<body>
-  <!-- Mark searchable content -->
-  <article data-pagefind-body>
-    <h1 data-pagefind-meta="title">Oberoesterreichische Gemeindeordnung</h1>
-    <div data-pagefind-filter="bundesland">Oberoesterreich</div>
+<!-- Add to FAQ topic page <head> -->
+<meta data-pagefind-filter="typ[content]" content="faq" />
 
-    <section id="p1">
-      <h2>Paragraph 1: Wirkungsbereich</h2>
-      <p>Die Gemeinde ist Gebietskoerperschaft...</p>
-    </section>
-  </article>
-
-  <!-- Non-searchable nav/footer -->
-  <nav>...</nav>
-</body>
-</html>
+<!-- Add to glossary page <head> -->
+<meta data-pagefind-filter="typ[content]" content="glossar" />
 ```
 
-### Pattern 3: Content-Addressable RIS Caching
+Law pages already have `typ` set to `gemeindeordnungen` or `stadtrechte`. The unified search
+renderer checks `result.filters?.typ[0]` to decide which section to place results in.
 
-**What:** Hash fetched law content. Skip re-parsing if content unchanged. Store hash in a manifest.
+### Pattern: Two-Pass Search for Mixed-Type Results
 
-**Why:** Avoids unnecessary rebuilds. Provides clear signal when laws have actually changed (can trigger LLM re-analysis notification).
+When a Bundesland filter is active, law results and FAQ/glossary results need separate queries
+because Pagefind's AND filter logic would exclude FAQ pages (they have no `bundesland` value).
 
-**Implementation:**
 ```javascript
-// In fetch-laws.js
-const content = await fetchFromRIS(bundesland);
-const hash = crypto.createHash('sha256').update(content).digest('hex');
-const manifest = JSON.parse(fs.readFileSync('data/manifest.json'));
-if (manifest[bundesland] === hash) {
-  console.log(`${bundesland}: unchanged, skipping`);
-  return;
+async function executeUnifiedSearch(query, bundesland) {
+  const pf = await loadPagefind();
+  if (!pf) return { totalCount: 0, results: [] };
+
+  // Query 1: law results (with BL filter if active)
+  const lawFilters = bundesland
+    ? { bundesland, typ: ['gemeindeordnungen', 'stadtrechte'] }
+    : {};
+  const lawSearch = await pf.debouncedSearch(query, { filters: lawFilters }, 200);
+
+  // Query 2: FAQ + glossary (never filtered by BL)
+  const enrichedSearch = await pf.debouncedSearch(query, {
+    filters: { typ: ['faq', 'glossar'] }
+  }, 200);
+
+  if (lawSearch === null || enrichedSearch === null) return null; // Superseded
+
+  const allResults = [
+    ...(await Promise.all(lawSearch.results.slice(0, 12).map(r => r.data()))),
+    ...(await Promise.all(enrichedSearch.results.slice(0, 5).map(r => r.data()))),
+  ];
+
+  return {
+    totalCount: lawSearch.results.length + enrichedSearch.results.length,
+    results: allResults,
+  };
 }
-manifest[bundesland] = hash;
-fs.writeFileSync(`data/raw/${bundesland}.html`, content);
-fs.writeFileSync('data/manifest.json', JSON.stringify(manifest, null, 2));
 ```
 
-## Data Flow
+Note: `debouncedSearch` with multiple calls for the same user input works correctly — each call
+is independent and returns null if superseded by a newer query.
 
-### Deploy-Time Build Flow
+### Pattern: Hero Search with Header Fallback
 
-```
-RIS OGD API v2.6
-    |  GET /Landesrecht?Applikation=LrKons&Bundesland=...&Titel=Gemeindeordnung
-    v
-Fetcher (scripts/fetch-laws.js)
-    |  Raw HTML per Bundesland
-    v
-Parser (scripts/parse-laws.js)
-    |  Structured JSON: { bundesland, sections: [{ title, paragraphs: [{ number, text }] }] }
-    v
-Page Generator (scripts/generate-pages.js)
-    |  HTML pages in src/pages/ with Pagefind data attributes
-    v
-Vite Build (vite build)
-    |  Compiled CSS, bundled JS, optimized HTML in dist/
-    v
-Pagefind (npx pagefind --site dist)
-    |  Chunked WASM search index in dist/pagefind/
-    v
-GitHub Pages Deploy
+The homepage hero has the primary search input. Law pages and other pages keep the header search.
+Both use the same `id="search-input"` element ID — `initSearch()` finds whichever one is present
+in the DOM. No branching needed in search.js.
+
+The key change in `generateHeader()` is gating `generateSearchHTML()` behind an option:
+
+```javascript
+function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix, options = {}) {
+  const { hideSearch = false } = options;
+  // ...
+  const searchHTML = hideSearch ? '' : generateSearchHTML();
+  // ...
+}
 ```
 
-### Client-Side Search Flow
+And in `generateIndexPage()`, call `generateHeader(false, ..., { hideSearch: true })` and include
+the hero div inline with a larger search input.
 
-```
-User types query in Pagefind search UI
-    |
-    v
-Pagefind JS loads relevant index chunks (on demand, <300KB total)
-    |
-    v
-WASM search engine processes query with German stemming
-    |
-    v
-Results displayed with:
-  - Highlighted matching text
-  - Bundesland badge (from filter metadata)
-  - Link to full paragraph (URL with hash anchor)
-    |
-    v
-User clicks result -> navigates to Bundesland page at specific paragraph
-```
+---
 
-## RIS OGD API Integration
+## Anti-Patterns to Avoid in v1.1
 
-**Verified by live testing** (HIGH confidence):
+### Anti-Pattern: Separate Search Module for Each Content Type
 
-| Detail | Value |
-|--------|-------|
-| Base URL | `https://data.bka.gv.at/ris/api/v2.6/Landesrecht` |
-| Method | GET |
-| Key params | `Applikation=LrKons`, `Bundesland=<name>`, `Titel=<search>`, `Dokumenttyp=Norm` |
-| Pagination | `DokumenteProSeite=Ten\|Twenty\|Fifty\|OneHundred`, `Seitennummer=<n>` |
-| Response | JSON with `OgdSearchResult.OgdDocumentResults.OgdDocumentReference[]` |
-| Content URLs | Each document has `ContentUrl` with `DataType=Html\|Xml\|Pdf\|Rtf` |
-| Auth | None required |
-| Rate limiting | Not documented, add polite delays (1s between requests) |
+Do NOT create a separate `faqSearch.js` or `glossarSearch.js`. Pagefind handles all content
+types through the same WASM index. The grouping is a rendering concern, not a data concern.
+Keep all search logic in `search.js`.
 
-**Bundesland naming in API:**
-Burgenland, Kaernten, Niederoesterreich, Oberoesterreich, Salzburg, Steiermark, Tirol, Vorarlberg, Wien
+### Anti-Pattern: Duplicating the Search Input
 
-**Important:** Each Bundesland names its Gemeindeordnung differently. The fetcher must map Bundesland to correct law title or use `Gesetzesnummer` for precise retrieval.
+Do NOT have two `#search-input` elements on the homepage (one in hero, one in header).
+Use a single input in the hero, hide the header search. Having two inputs with the same ID
+would cause JS to only bind to the first one found.
 
-## Anti-Patterns to Avoid
+### Anti-Pattern: Storing FAQ/Glossary Results in a Separate Index
 
-### Anti-Pattern 1: Running LLM in CI/CD Pipeline
-**What:** Call LLM API during GitHub Actions deploy.
-**Why bad:** Costs money on every deploy, makes builds slow and non-deterministic, API failures break deploys.
-**Instead:** Run LLM analysis locally. Commit outputs. Deploy reads committed data only.
+Do NOT build a separate client-side index (FlexSearch, JSON array) for FAQ/glossary to
+supplement Pagefind. Pagefind already indexes these pages. Adding a second search system
+creates sync complexity and inconsistent results.
 
-### Anti-Pattern 2: Using FlexSearch/Lunr with Client-Side Indexing
-**What:** Ship raw document data to browser, build search index on page load.
-**Why bad:** Delays search availability by seconds. Wastes bandwidth. Index building is identical every time.
-**Instead:** Use Pagefind -- it pre-builds a chunked index at build time. Client loads only needed chunks.
+### Anti-Pattern: Rebuilding the Pagefind Index in JS
 
-### Anti-Pattern 3: Single Monolithic Build Script
-**What:** One giant script that fetches, parses, analyzes, indexes, and generates HTML.
-**Why bad:** Cannot run steps independently. Cannot skip unchanged steps. Dev-time and deploy-time concerns tangled.
-**Instead:** Separate scripts per step, orchestrated via npm scripts.
+Pagefind's index is built at deploy time by `npx pagefind --site dist`. Do not attempt to
+update or supplement it at runtime. Any content changes require a build+deploy cycle.
 
-### Anti-Pattern 4: Framework Overkill
-**What:** React/Next.js/Astro for 15-20 static pages.
-**Why bad:** Bundle size, build complexity, learning curve. Site is fundamentally documents + search.
-**Instead:** Generated HTML + vanilla JS + Pagefind UI + TailwindCSS. Total client JS: Pagefind WASM (~100KB) + minimal UI logic.
+---
 
-## Scalability Considerations
+## Integration Checklist for v1.1
 
-| Concern | At 9 laws (v1) | At 50 laws | At 1000+ laws |
-|---------|----------------|------------|---------------|
-| Search index | <300KB chunked, loads on demand | Still fine, Pagefind scales to 10K pages | Still fine per Pagefind benchmarks |
-| Build time | <30 seconds | ~2 minutes | Consider parallel fetching |
-| Page count | 10-15 pages | ~60 pages | Paginate within Bundesland |
-| LLM cost | EUR 1-3 | EUR 10-20 | Needs cost monitoring |
+- [ ] `data-pagefind-filter="typ[content]"` added to FAQ topic pages in `generateFAQTopicPage()`
+- [ ] `data-pagefind-filter="typ[content]"` added to glossary page in `generateGlossaryPage()`
+- [ ] `npm run build && npx pagefind --site dist` run after template changes to verify filter values appear
+- [ ] `search.js` renders three sections (Gesetze / FAQ / Glossar) when results include mixed types
+- [ ] BL filter still works correctly for law results (does not hide FAQ/glossary — they appear regardless)
+- [ ] Index page hero search input has `id="search-input"` (same as header input on other pages)
+- [ ] Header on index page does NOT render duplicate search input
+- [ ] Dropdown on index page is full-width relative to hero container
+- [ ] Readability changes to `renderParagraph()` / `renderSection()` do not break Pagefind indexing
+- [ ] `data-pagefind-body` on `<main>` in law pages is unchanged
+- [ ] Mobile overlay still works (it injects its own input with `id="search-input-mobile"`)
+- [ ] E2E test screenshots pass all visual review criteria
+
+---
 
 ## Sources
 
-- RIS OGD API v2.6: https://data.bka.gv.at/ris/api/v2.6/ (live-tested)
-- RIS API documentation: https://data.bka.gv.at/ris/ogd/v2.6/Documents/Dokumentation_OGD-RIS_API.pdf
-- Pagefind architecture: https://pagefind.app/
-- Pagefind scaling: https://cfe.dev/sessions/static-search-with-pagefind/
-- Vite static deploy: https://vite.dev/guide/static-deploy
-- GrueneAT/bildgenerator: https://github.com/GrueneAT/bildgenerator
-- GitHub Pages actions: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+All findings from direct code inspection of:
+- `/root/workspace/src/js/search.js` — Pagefind client implementation
+- `/root/workspace/src/js/main.js` — Behavior initialization
+- `/root/workspace/scripts/generate-pages.js` — All HTML template generation
+- `/root/workspace/vite.config.js` — Build configuration
+- `/root/workspace/src/css/main.css` — Styling
+- Pagefind filter docs: https://pagefind.app/docs/filtering/ (for AND/OR behavior)
+- Pagefind metadata docs: https://pagefind.app/docs/metadata/

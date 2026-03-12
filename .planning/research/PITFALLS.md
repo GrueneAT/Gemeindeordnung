@@ -1,182 +1,303 @@
-# Domain Pitfalls
+# Pitfalls Research
 
-**Domain:** Static legal document search platform (Austrian Gemeindeordnungen)
-**Researched:** 2026-03-10
-**Confidence:** HIGH
+**Domain:** Static legal search tool — UI/UX milestone: unified search, search-hero homepage, readability overhaul
+**Researched:** 2026-03-12
+**Confidence:** HIGH (Pagefind-specific), MEDIUM (UX patterns)
+
+---
 
 ## Critical Pitfalls
 
-### Pitfall 1: Inconsistent Gemeindeordnung Structure Across Bundeslaender
+### Pitfall 1: data-pagefind-body Opt-In Breaks Entire Site Index
 
-**What goes wrong:** Each of the 9 Bundeslaender has its own legislative tradition. Paragraph numbering, section hierarchy, heading styles, and HTML formatting differ significantly. A parser built for one Bundesland silently fails or produces garbage on another.
+**What goes wrong:**
+Once `data-pagefind-body` appears on ANY page in the site, Pagefind stops indexing every page that lacks it. FAQ pages and glossary pages added without this attribute silently disappear from search. The law pages already use `data-pagefind-body` in the generated HTML. Adding new content types (FAQ, glossary) without the attribute means they are invisible to search — no error, no warning.
 
-**Why it happens:** Austria's federalism means each Bundesland maintains its own data in RIS. The Steiermärkische Gemeindeordnung dates from 1967, the Tiroler from 2001, the Burgenlaendische from 2003. Different eras, different naming conventions, different HTML structures.
+**Why it happens:**
+Pagefind's "opt-in" indexing model is binary: either no page uses `data-pagefind-body` (index everything) or some page uses it (index only tagged pages). Developers add `data-pagefind-body` to new pages piecemeal and miss some.
 
-**Consequences:** Missing paragraphs, broken TOC, search results pointing to wrong content, summary-paragraph misalignment.
+**How to avoid:**
+Before adding unified search, audit every content page (law pages, FAQ pages, glossary page, index page if desired) and confirm each has `data-pagefind-body` on the correct element. Add a CI check: build and run `grep -rL 'data-pagefind-body' src/faq/ src/glossar.html` to detect untagged pages. Keep a content-type inventory table.
 
-**Prevention:**
-- Fetch ALL 9 Gemeindeordnungen in Phase 1 (not Phase 3).
-- Build a test suite validating parsed output for each Bundesland (paragraph count, section structure, known content).
-- Design parser with per-Bundesland adapters if HTML structures diverge.
-- Manual spot-check of parsed output for each Bundesland before proceeding.
+**Warning signs:**
+Searching for a known FAQ phrase returns zero results. Glossary terms produce no search hits. Pagefind index reports unexpectedly low page count.
 
-**Detection:** Paragraph counts that seem too low. Missing sections in TOC. Search returning no results for known terms in specific Bundeslaender.
+**Phase to address:**
+Unified search phase (the first phase adding FAQ/glossary to search). Must be verified before any other search UI work.
 
-### Pitfall 2: Wien Is Not a Normal Gemeinde
+---
 
-**What goes wrong:** Wien has unique constitutional status as both Bundesland AND Gemeinde (Statutarstadt). Its "Gemeindeordnung" is actually the Wiener Stadtverfassung, which has fundamentally different structure, scope, and naming conventions.
+### Pitfall 2: Pagefind Sub-Results Require Heading IDs — Without Them, Results Are Page-Level Only
 
-**Why it happens:** PROJECT.md says "9 Bundeslaender, each with a Gemeindeordnung." Wien's situation is structurally different, and RIS data reflects this.
+**What goes wrong:**
+Sub-results (paragraph-level search hits shown grouped under their parent law/FAQ page) only work when headings have `id` attributes. The current law pages already inject IDs on `h3[id]` elements. FAQ pages and the glossary page may not have this structure. Without IDs, search returns "Gemeinderatssitzungen FAQ page" as a single result, not the individual Q&A items. Users cannot jump directly to the relevant answer.
 
-**Consequences:** Wien's content may be missing, mislabeled, or structurally broken.
+**Why it happens:**
+Sub-results are an explicit Pagefind feature requiring structured HTML. Hand-authored FAQ/glossary pages often use flat `<dt>/<dd>` or `<h3>` without IDs. The current CSS already has `scroll-margin-top` scoped to `h3[id]` — other heading levels are uncompensated.
 
-**Prevention:**
-- Research Wien's specific legal text early (is it "Wiener Stadtverfassung"?).
-- Query RIS API specifically for Wien to understand actual document name and structure.
-- Consider whether Wien needs special-case handling in parser and UI.
+**How to avoid:**
+For every content type entering the search index:
+1. Ensure heading elements (h2 or h3) carry `id` attributes that match the anchor scheme.
+2. Verify `scroll-margin-top` covers all anchor-targeted heading levels (not only h3).
+3. Test sub-results explicitly after indexing: a known FAQ term should produce a sub-result link, not just a page link.
 
-**Detection:** Wien page significantly shorter or longer than other Bundeslaender. Wien paragraphs reference concepts not found in other Gemeindeordnungen.
+**Warning signs:**
+Search result for an FAQ query shows the FAQ page title but no sub-result accordion. Clicking the result lands on top of the FAQ page, not the relevant answer.
 
-### Pitfall 3: LLM Hallucination in Legal Summaries
+**Phase to address:**
+Unified search phase — verify before building the grouped result UI.
 
-**What goes wrong:** LLM summaries contain inaccurate simplifications, omit critical exceptions, or add interpretations not in the original text. Users rely on summaries for decisions.
+---
 
-**Why it happens:** LLMs optimize for readable, confident output. Legal text has precise conditions, exceptions, and cross-references that summaries naturally lose. Research shows LLMs hallucinate 58-88% of the time on verifiable legal questions (Stanford/Oxford, 2024). For Austrian Gemeindeordnungen in German, risk is even higher (sparse training data).
+### Pitfall 3: Unified Search Groups Confuse Users When Content Types Look the Same
 
-**Consequences:** Legal liability risk. Wrong decisions in Gemeinderat meetings. Trust in platform destroyed.
+**What goes wrong:**
+Displaying law paragraphs, FAQ answers, and glossary terms in one results list with no visual differentiation makes results unreadable. Users cannot tell whether a result is "the actual law text" vs. "an FAQ interpretation" vs. "a glossary definition." For a legal tool, this distinction is critical — a glossary entry is not the authoritative source.
 
-**Prevention:**
-- Every summary MUST display original legal text alongside (toggle/accordion).
-- Clear "Keine Rechtsberatung" disclaimer on every page with LLM content.
-- Summaries reviewed by at least one person with legal/Gemeinderat knowledge before deployment.
-- LLM prompt: "Do not add information not in the original text. If conditions/exceptions exist, mention them."
-- Use "Einfache Sprache" guidelines (not "Leichte Sprache" -- different standard).
-- Store source paragraph hash with each summary to detect staleness after law changes.
+**Why it happens:**
+The current search code renders all results as `search-result-item` links, with only a "Stadtrecht" badge as differentiation. Adding FAQ/glossary without distinct visual treatment is a one-line copy-paste that looks done but is actively harmful.
 
-**Detection:** Compare summary against original. Check for claims in summary not traceable to source.
+**How to avoid:**
+Add a `data-pagefind-meta` attribute (e.g. `content-type: Gesetz`, `content-type: FAQ`, `content-type: Glossar`) to every page type at build time. In the search rendering code, read `result.meta['content-type']` and render a content-type badge with distinct color/icon per type. Group results by content type in the rendered list (Gesetze first, then FAQ, then Glossar). Never mix them in a flat list.
 
-## Moderate Pitfalls
+**Warning signs:**
+A glossary definition appears directly above a law paragraph with no visual separation. Users click a glossary result expecting authoritative law text.
 
-### Pitfall 4: RIS API Returns Paginated Results
+**Phase to address:**
+Unified search phase — part of the rendering layer design, not an afterthought.
 
-**What goes wrong:** A Gemeindeordnung has hundreds of paragraphs. Fetching only the first page misses most of the law.
+---
 
-**Prevention:**
-- Always check `Hits` count in API response.
-- Implement pagination loop: fetch until `pageNumber * pageSize >= Hits`.
-- Use `DokumenteProSeite=OneHundred` to minimize requests.
-- Validate: assert fetched paragraph count matches expected per Bundesland.
+### Pitfall 4: Search-Hero Homepage Breaks the Pagefind Index If Not Tagged Correctly
 
-### Pitfall 5: RIS Content HTML Is Not Clean
+**What goes wrong:**
+The redesigned homepage (search-hero with prominent search bar, no card grid or with a collapsed card grid) must still be indexed (or explicitly excluded) by Pagefind. If the homepage had `data-pagefind-body` in v1.0 and the hero redesign removes the content area, the homepage page count in the index drops silently. Conversely, if the hero text gets indexed, users find the homepage when searching "Gemeindeordnung" — a useless result.
 
-**What goes wrong:** RIS HTML contains inline styles, `<br/>` tags instead of proper paragraphs, HTML entities, links with complex attributes, inconsistent encoding.
+**Why it happens:**
+Homepage redesigns commonly move or remove structural elements. The current `index.html` does not appear to use `data-pagefind-body`, so the homepage is currently NOT in the index (correct). A redesign that accidentally adds `data-pagefind-body` to the hero section will index marketing copy.
 
-**Prevention:**
-- Use `cheerio` for robust HTML parsing, not regex.
-- Normalize whitespace and strip inline styles early.
-- Handle RIS patterns: `<br/><br/>` as paragraph breaks, `<A HREF=...>` for cross-references.
-- Keep raw HTML cached for debugging.
+**How to avoid:**
+The homepage should NOT be in the search index (it adds no legal content). Confirm the homepage has NO `data-pagefind-body` attribute after redesign. Add `data-pagefind-ignore` to the hero section explicitly if needed. Test: searching for headline text from the hero should return zero results.
 
-### Pitfall 6: Pagefind Indexes Non-Content Elements
+**Warning signs:**
+Search for "Gemeindeordnungen der österreichischen Bundesländer" returns the homepage as a result.
 
-**What goes wrong:** Pagefind indexes navigation, footer, sidebar, disclaimers. Search returns matches from "Impressum" or navigation text.
+**Phase to address:**
+Search-hero homepage redesign phase.
 
-**Prevention:**
-- Use `data-pagefind-body` on main content area ONLY.
-- Use `data-pagefind-ignore` on disclaimers within content area.
-- Test: search for "Impressum" or "Navigation" should return zero results.
+---
 
-### Pitfall 7: TailwindCSS v4 Migration Confusion
+### Pitfall 5: Desktop Search Expansion from Dropdown to Panel Loses Keyboard Focus and ARIA State
 
-**What goes wrong:** Most tutorials, Stack Overflow, and AI training data reference TailwindCSS v3. Using v3 patterns with v4 causes silent failures.
+**What goes wrong:**
+Transitioning the desktop search from a small dropdown to a full-width results panel (or modal-style overlay) breaks keyboard navigation. Focus does not move to the results panel, screen readers do not announce new content, and the `aria-expanded` state on the search input is not updated. The current code uses `hidden`/`search-dropdown-expanded` CSS classes without ARIA updates.
 
-**Prevention:**
-- Key v4 differences:
-  - NO `tailwind.config.js` -- use `@theme` in CSS
-  - NO `postcss.config.js` -- use `@tailwindcss/vite` plugin
-  - NO `@tailwind base/components/utilities` -- use `@import "tailwindcss"`
-  - NO `npx tailwindcss init` -- no init command exists
-- Reference ONLY official v4 docs, not pre-2025 blog posts.
+**Why it happens:**
+CSS visibility changes do not notify assistive technologies. The transition from a small dropdown (in the DOM flow) to an expanded panel (potentially repositioned) requires explicit focus management and ARIA live region announcements. Developers commonly focus on the visual result and skip the screen reader experience.
 
-### Pitfall 8: GitHub Pages Path Handling
+**How to avoid:**
+- Add `aria-expanded="true/false"` on the search input element, toggled by JS on every state change.
+- Add `role="region"` and `aria-label="Suchergebnisse"` to the results container.
+- When the panel expands significantly (e.g. height transition from 200px to 600px), use an `aria-live="polite"` region to announce the result count.
+- When Escape closes the expanded panel, move focus back to the search input explicitly.
+- Test with keyboard-only navigation (Tab, Arrow, Escape) on the final design.
 
-**What goes wrong:** Site works on `localhost` but breaks on GitHub Pages because assets use absolute paths that don't account for repo-name subdirectory (`username.github.io/repo-name/`).
+**Warning signs:**
+Pressing Tab after searching does not land inside the results list. Screen reader does not announce how many results were found.
 
-**Prevention:**
-- Set `base` in `vite.config.js` to match GitHub Pages deployment path.
-- Or use a custom domain (no subdirectory issue).
-- Test with `vite preview` using same base path.
-- All internal links relative or using configured base.
+**Phase to address:**
+Desktop search results UX phase — design the ARIA semantics before writing CSS for the panel.
 
-### Pitfall 9: Green Brand Colors Fail Accessibility
+---
 
-**What goes wrong:** Green-on-white or green-on-green color combinations fail WCAG AA contrast ratio (4.5:1). The Gruene brand palette is inherently challenging for accessibility.
+### Pitfall 6: Collapsible Law Sections Hide Content from Pagefind Index
 
-**Prevention:**
-- Check all color combinations against WCAG AA from day one.
-- Use darker green variants for text, lighter for backgrounds.
-- Test with axe or Lighthouse accessibility audit.
-- Include Barrierefreiheitserklaerung (accessibility statement).
+**What goes wrong:**
+Implementing collapsible sections on law pages (e.g. `<details>/<summary>` or JS-toggled `hidden` divs) to improve readability may cause Pagefind to skip the hidden content during indexing. If paragraphs are inside `<details>` that are closed by default, Pagefind should still index them — but any use of `data-pagefind-ignore` on collapsed wrapper elements will make entire sections invisible to search.
 
-**Detection:** Lighthouse accessibility score below 90. Users report readability issues.
+**Why it happens:**
+Pagefind indexes the static HTML at build time. `<details>` content is in the DOM regardless of open/closed state, so Pagefind indexes it correctly. However, if a developer adds `data-pagefind-ignore` to hide "boilerplate" section headers, they may inadvertently hide the paragraphs nested inside.
 
-## Minor Pitfalls
+**How to avoid:**
+- Use `<details>/<summary>` natively — Pagefind indexes the content inside correctly.
+- Never wrap paragraph content in `data-pagefind-ignore` elements.
+- After adding collapsible sections, rebuild the index and search for a term known to be inside a collapsed section. Verify it appears.
+- If using JS-toggled `hidden` attribute instead of `<details>`, confirm the attribute is NOT present in the static build output (it should only be toggled at runtime).
 
-### Pitfall 10: Gemeindeordnung vs Gemeindegesetz vs Related Laws
+**Warning signs:**
+Search for a term inside a collapsible section returns zero results after the readability refactor.
 
-**What goes wrong:** Searching for "Gemeindeordnung" in RIS returns related but different laws (Gemeindehaushaltsordnung, Gemeindewahlordnung, etc.).
+**Phase to address:**
+Law text readability overhaul phase — indexing must be re-verified after each structural HTML change.
 
-**Prevention:** Use `Gesetzesnummer` (unique law ID) instead of title search once correct law per Bundesland is identified. Maintain config mapping Bundesland -> Gesetzesnummer.
+---
 
-### Pitfall 11: Large HTML Pages on Mobile
+### Pitfall 7: Sticky Header Scroll Compensation Breaks on New Page Sections
 
-**What goes wrong:** Some Gemeindeordnungen have 200+ paragraphs. A single page with all content may be 500KB+ and slow on mobile.
+**What goes wrong:**
+The current CSS sets `scroll-margin-top` only on `h3[id]`. Adding new sections (hero, FAQ sections, collapsible groups) with anchors linked from search results will cause the sticky header to obscure the target heading. Users navigate to a search result anchor and see the paragraph title cut off behind the header.
 
-**Prevention:**
-- Measure actual page size after generating all content.
-- If too large: split into sub-pages per Abschnitt.
-- Collapse LLM summaries by default (load on expand if needed).
+**Why it happens:**
+`scroll-margin-top` must be set on every element type that serves as an anchor target. When new content structures are introduced (h2 anchors in FAQ, dt anchors in glossary, section-level anchors in law pages), the CSS rule is narrow and does not cover them.
 
-### Pitfall 12: Stale "Stand" Date Misleading Users
+**How to avoid:**
+Change the CSS rule from `h3[id]` to a broader selector covering all anchor-targetable elements: `h2[id], h3[id], [id].anchor-target { scroll-margin-top: 5rem; }`. Alternatively use the HTML `scroll-padding-top` on `:root`. Test every new content type by navigating directly to its anchor URL and verifying the heading is fully visible below the sticky header.
 
-**What goes wrong:** Site shows "Stand: 2026-03-10" but the law was last updated in 2024.
+**Warning signs:**
+Clicking a search result anchor link shows the heading partially hidden behind the sticky header.
 
-**Prevention:** Show two dates: "Gesetzesstand: [RIS metadata date]" and "Website aktualisiert: [deploy date]".
+**Phase to address:**
+Law text readability overhaul phase (when new section structures are introduced) and unified search phase (when anchor links from search results are widened to new content types).
 
-## Phase-Specific Warnings
+---
 
-| Phase Topic | Likely Pitfall | Mitigation |
-|-------------|---------------|------------|
-| Data pipeline | Inconsistent HTML across Bundeslaender (#1) | Build per-Bundesland test fixtures early |
-| Data pipeline | Wien special case (#2) | Research Wien's document structure first |
-| Data pipeline | RIS pagination (#4) | Paginate all requests, validate counts |
-| Data pipeline | Wrong law fetched (#10) | Use Gesetzesnummer, not title search |
-| Data pipeline | RIS HTML quality (#5) | Use cheerio, normalize early |
-| Page generation | Pagefind indexing scope (#6) | Use `data-pagefind-body` consistently |
-| Styling | TailwindCSS v4 confusion (#7) | Only follow official v4 docs |
-| Styling | Green brand accessibility (#9) | WCAG AA contrast check from start |
-| Deployment | GitHub Pages paths (#8) | Set Vite `base` config correctly |
-| LLM analysis | Hallucination (#3) | Side-by-side display, review, disclaimers |
+### Pitfall 8: Pagefind WASM First-Load Latency Blocks the Search-Hero Experience
+
+**What goes wrong:**
+The search-hero homepage makes search the primary interaction. If Pagefind's WASM module has not loaded by the time a user types their first query, there is a noticeable delay (300-800ms on slow connections) before any results appear. This feels broken for a homepage where search is the entire value proposition.
+
+**Why it happens:**
+Pagefind loads WASM and index chunks lazily. The current code already calls `loadPagefind()` on DOMContentLoaded, which is good practice. But on the homepage, the user may type before WASM initialization completes, especially on mobile. The current code returns `{ totalCount: 0, results: [] }` if Pagefind is unavailable — indistinguishable from "no results" to the user.
+
+**How to avoid:**
+- Keep the existing eager `loadPagefind()` call on DOMContentLoaded.
+- On the search-hero homepage, show a loading indicator in the search bar while WASM is initializing (not the full results area — just the input placeholder or a subtle spinner on the icon).
+- Track initialization state separately from "no results" state; never render "Keine Treffer" during initialization.
+- The Pagefind index for 23 law pages + FAQ + glossary is small (estimated <500KB total); load time is not a structural problem at this scale.
+
+**Warning signs:**
+User types 3+ characters immediately on page load and sees "Keine Treffer" flash briefly before real results appear.
+
+**Phase to address:**
+Search-hero homepage redesign phase.
+
+---
+
+## Technical Debt Patterns
+
+| Shortcut | Immediate Benefit | Long-term Cost | When Acceptable |
+|----------|-------------------|----------------|-----------------|
+| Hard-code content-type labels in render code instead of reading from Pagefind metadata | Faster initial implementation | Cannot add new content types without code changes | Never — use `data-pagefind-meta` from day one |
+| Inline `onclick` handlers in dynamically rendered search result HTML | Simpler than event delegation | XSS risk if escaping is ever missed; memory leaks on result re-render | Never — use `data-action` + event delegation (already the pattern in the codebase) |
+| Duplicate the search UI for the homepage vs. law pages | Avoids refactoring existing search module | Two codepaths to maintain, state diverges | Only if homepage search is genuinely a different component; prefer parameterizing existing `initSearch()` |
+| Use `display:none` on collapsed sections instead of `<details>` | Simpler JS | If `display:none` is in static HTML, content is not read by some screen readers; Pagefind may skip it | Never for law text — always use `<details>` or runtime-only JS toggling |
+| Skip `aria-expanded` / `aria-live` on search panel | Saves a few lines | Fails WCAG 2.1.2, fails keyboard users | Never on a public tool with WCAG AA requirement |
+
+---
+
+## Integration Gotchas
+
+| Integration | Common Mistake | Correct Approach |
+|-------------|----------------|------------------|
+| Pagefind + mixed content types | Tagging only some pages with `data-pagefind-body` | Audit ALL pages in the site; every page must either be tagged or explicitly ignored |
+| Pagefind + collapsible sections | Adding `data-pagefind-ignore` to section containers | Only use `data-pagefind-ignore` on navigation, disclaimers, and structural chrome — never on content paragraphs |
+| Pagefind + search-hero homepage | Re-using Pagefind's `highlightParam` URL parameter from law pages on the homepage | The homepage has no in-page content to highlight; ensure the highlight script is not loaded on pages with no indexable content |
+| Pagefind + filters | Using `any`, `all`, `none`, `not` as filter key names | These four keys are reserved and silently fail; name content-type filter `type` or `content-type` |
+| Pagefind + multiple indexes | Building separate indexes per content directory | A single unified index is always more performant; use filter attributes to separate content types, not separate index builds |
+| Pagefind + Node API | Using Node API in isolation for custom content ingestion | Node-API-only builds produce empty pagefind-ui.css and pagefind-ui.js; always run the full CLI indexing step after Node API ingestion |
+| TailwindCSS v4 + dynamic class names | Generating class names dynamically in JS search result HTML (`"text-" + color`) | Tailwind v4 scans static source; dynamic strings are not in the build output; use complete class names in JS strings |
+
+---
+
+## Performance Traps
+
+| Trap | Symptoms | Prevention | When It Breaks |
+|------|----------|------------|----------------|
+| Loading all search results at once ("show all" path) | UI freezes when user clicks "Alle X Gesetze" — `Promise.all(allResults.map(r => r.data()))` fetches all chunks simultaneously | Already mitigated in existing code with the 15-result initial load; keep this pattern for the expanded UI | At ~50+ results with slow connections; rare at current site scale |
+| Re-rendering the entire results dropdown on every filter chip click | Flickering, lost scroll position | Diff the results before re-render; or clear and re-render only if the result set has changed | Immediately visible with fast typing |
+| Rendering law text readability improvements via JavaScript | FOUC (flash of unstyled content) as JS applies collapsible structure after HTML paint | Use `<details>/<summary>` natively — no JS needed for collapse behavior; JS only for analytics or enhanced behavior | Every page load |
+| Long inline SVGs in dynamically generated search result HTML | Each result item includes full SVG icon markup — large DOMs on many results | Use CSS classes with background-image or an SVG sprite; never inline full SVGs in JS string templates | At >20 results visible simultaneously |
+
+---
+
+## UX Pitfalls
+
+| Pitfall | User Impact | Better Approach |
+|---------|-------------|-----------------|
+| Hero search bar that looks identical to the header search bar | Users on law pages try to use a "hero" that does not exist; brand dilution | Use a distinct visual treatment for the hero search (larger, centered, different background) but same interaction model |
+| Collapsible sections collapsed by default with no visual affordance | Users don't know content exists, miss relevant paragraphs | Use a clear "Abschnitt anzeigen" button with chevron; or collapse only LLM summaries (supplementary content), not the law text itself |
+| Content-type badges in search that look like interactive filters | Users click "FAQ" badge expecting to filter to only FAQ results | Either make them genuinely clickable (filter action) or use non-interactive visual styling (colored dot, not a button) |
+| "Keine Treffer" shown during WASM initialization | Users think the search is broken or their query is wrong | Show a loading state, not an empty state, during initialization |
+| Search results grouped by Bundesland when searching across all content types | FAQ and glossary results mixed into Bundesland groups confuses hierarchy | Group by content type first (Gesetze / FAQ / Glossar), then by Bundesland within Gesetze group |
+| Mobile search overlay not dismissible by tapping outside | Users trapped in overlay, no obvious exit | Current code wires `backdrop.addEventListener('click', closeMobileOverlay)` — verify this is preserved in any refactor |
+| Summary-first layout that hides the actual law text | Users cannot find the authoritative text; "Keine Rechtsberatung" disclaimer becomes ironic | Always keep law text visible (not behind another click); summaries are supplementary, expandable — law text is the primary content |
+
+---
 
 ## "Looks Done But Isn't" Checklist
 
-- [ ] **Parser:** Returns content for all 9 Bundeslaender with expected paragraph counts
-- [ ] **Search:** Pagefind returns results with German stemming (searching "Abstimmungen" finds "Abstimmung")
-- [ ] **LLM Summaries:** Every summary links back to source paragraph, no orphaned summaries
-- [ ] **LLM Summaries:** Spot-check 10% -- no references to content not in source
-- [ ] **Filters:** Bundesland filter actually restricts Pagefind results
-- [ ] **Accessibility:** Green brand colors pass WCAG AA, keyboard navigation works
-- [ ] **Deployment:** Site works at correct GitHub Pages path (base config)
-- [ ] **Performance:** Search works within 2 seconds on throttled 3G
-- [ ] **Data freshness:** Two dates shown (law version + site update)
+- [ ] **Unified search:** All 3 content types (Gesetze, FAQ, Glossar) appear in search results — not just law pages
+- [ ] **Unified search:** Content-type badge visible on every result so users know what kind of content they are seeing
+- [ ] **Unified search:** Sub-results work for FAQ pages (individual Q&As linkable, not just the FAQ page title)
+- [ ] **Search hero:** Searching for homepage headline text returns zero Pagefind results (homepage not indexed)
+- [ ] **Search hero:** WASM loading state shown; "Keine Treffer" never appears during initialization
+- [ ] **Search panel expansion:** `aria-expanded` on input, `aria-live` on result count, focus managed correctly on Escape
+- [ ] **Collapsible sections:** Searching for content inside a collapsed section still returns that result
+- [ ] **Scroll compensation:** Every anchor-linked element (h2, h3, dt, section) has `scroll-margin-top` matching header height
+- [ ] **Mobile:** Overlay close-by-tap-outside still works after any search UI refactor
+- [ ] **Mobile:** Touch targets on filter chips and content-type badges are at least 44px
+- [ ] **WCAG:** All new interactive elements (badges, chips, collapse toggles) keyboard-navigable and labeled with aria
+- [ ] **Pagefind rebuild:** After ANY HTML structure change to indexed pages, re-run `npx pagefind --site dist --force-language de` before testing search
+
+---
+
+## Recovery Strategies
+
+| Pitfall | Recovery Cost | Recovery Steps |
+|---------|---------------|----------------|
+| FAQ/glossary pages missing from index | LOW | Add `data-pagefind-body` to the correct element on each page, rebuild Pagefind index, redeploy |
+| Sub-results not working for FAQ | LOW-MEDIUM | Add `id` attributes to all FAQ answer headings, rebuild index |
+| Homepage appearing in search results | LOW | Remove `data-pagefind-body` from homepage, rebuild index |
+| Collapsible sections hiding content from search | MEDIUM | Restructure HTML to use `<details>` without `data-pagefind-ignore` wrappers; rebuild index |
+| ARIA/keyboard navigation broken on search panel | MEDIUM | Add `aria-expanded`, `aria-live`, focus management — test with screen reader; no rebuild needed |
+| Search result grouping confuses content types | MEDIUM | Refactor render functions to group by content-type metadata before Bundesland; no index rebuild needed |
+| scroll-margin-top missing on new anchor types | LOW | Add CSS selector to cover new element types; no rebuild needed |
+| WASM loading shows "Keine Treffer" flash | LOW | Add initialization flag to distinguish "loading" from "no results" state |
+
+---
+
+## Pitfall-to-Phase Mapping
+
+| Pitfall | Prevention Phase | Verification |
+|---------|------------------|--------------|
+| data-pagefind-body opt-in breaks index (#1) | Unified search — first task | Build and search for known FAQ term; check index page count |
+| Sub-results require heading IDs (#2) | Unified search — HTML structure design | Search for FAQ term; verify sub-result links appear |
+| Content types look the same in results (#3) | Unified search — result renderer | Visual review of search results showing all 3 content types |
+| Homepage indexed after hero redesign (#4) | Search-hero homepage redesign | Search for hero headline text; expect zero results |
+| Keyboard/ARIA on expanded search panel (#5) | Desktop search UX phase | Tab through results with keyboard only; test with screen reader |
+| Collapsible sections hide indexed content (#6) | Law text readability overhaul | Search for term inside a collapsed section after rebuild |
+| Scroll compensation on new anchor types (#7) | Readability overhaul + unified search | Navigate to each new anchor type via URL; verify heading visibility |
+| WASM load latency on hero (#8) | Search-hero homepage redesign | Throttle network to Slow 3G; type query immediately on load |
+
+---
+
+## Previously Identified Pitfalls (v1.0 — Still Relevant)
+
+The following pitfalls from the v1.0 research remain relevant for the v1.1 milestone and are not superseded:
+
+- **Pagefind indexes non-content elements** (Pitfall 6 in original) — `data-pagefind-ignore` must stay on header, footer, nav; any new chrome added to law pages must also carry this attribute.
+- **TailwindCSS v4 migration confusion** (Pitfall 7 in original) — new components must use `@theme` CSS variables, not `tailwind.config.js` patterns. Especially relevant for search panel, hero section.
+- **Green brand colors fail WCAG AA** (Pitfall 9 in original) — new badges, chips, and hero elements must be contrast-checked. Green-on-green badge backgrounds are a particular risk.
+- **GitHub Pages path handling** (Pitfall 8 in original) — new assets (icons for content-type badges, etc.) must use Vite's `BASE_URL` pattern.
+- **LLM hallucination in summaries** (Pitfall 3 in original) — the readability overhaul showing summaries more prominently increases this risk; disclaimer must remain prominent.
+
+---
 
 ## Sources
 
-- RIS OGD API v2.6: https://data.bka.gv.at/ris/api/v2.6/ (live-tested)
-- RIS API documentation: https://data.bka.gv.at/ris/ogd/v2.6/Documents/Dokumentation_OGD-RIS_API.pdf
-- Large Legal Fictions (Stanford/Oxford hallucination study): https://academic.oup.com/jla/article/16/1/64/7699227
-- Pagefind docs: https://pagefind.app/docs/
-- TailwindCSS v4 upgrade guide: https://tailwindcss.com/docs/upgrade-guide
-- Vite base config: https://vite.dev/config/shared-options.html#base
-- GitHub Pages deployment: https://vite.dev/guide/static-deploy#github-pages
-- GitHub Pages limits: https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits
+- Pagefind indexing docs: https://pagefind.app/docs/indexing/
+- Pagefind filtering docs: https://pagefind.app/docs/filtering/
+- Pagefind sub-results docs: https://pagefind.app/docs/sub-results/
+- Pagefind highlighting docs: https://pagefind.app/docs/highlighting/
+- Pagefind content-type discussion: https://github.com/pagefind/pagefind/discussions/699
+- Pagefind known issues: https://github.com/pagefind/pagefind/issues
+- W3C Accordion Pattern (ARIA): https://www.w3.org/WAI/ARIA/apg/patterns/accordion/
+- WCAG 2.1 Keyboard Accessibility: https://www.w3.org/WAI/WCAG21/Understanding/keyboard.html
+- Accessible accordions with details/summary: https://www.hassellinclusion.com/blog/accessible-accordions-part-2-using-details-summary/
+- Sticky header anchor compensation: https://gomakethings.com/how-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header-with-one-line-of-css/
+- NN/G dropdown usability: https://www.nngroup.com/articles/drop-down-menus/
+- Search UX best practices: https://www.pencilandpaper.io/articles/search-ux
+
+---
+*Pitfalls research for: Gemeindeordnung.gruene.at — v1.1 UI/UX milestone*
+*Researched: 2026-03-12*
