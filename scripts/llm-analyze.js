@@ -529,7 +529,22 @@ ${citationRef}
 - Verwende echte Paragraphen-Referenzen aus den folgenden Daten.
 - Verwende KEINE Anführungszeichen (") im Antworttext. Verwende stattdessen einfache Anführungszeichen (') oder Guillemets.
 - Die Antworten dürfen KEINE Bundesländer namentlich nennen oder BL-spezifische Behauptungen aufstellen. Stattdessen allgemeine Aussagen treffen und auf die einzelnen Gesetze verweisen.
-- Verwende IMMER geschlechtergerechte Sprache mit Doppelpunkt-Gendern: Bürgermeister:in, Bürgermeister:innen, Vizebürgermeister:in, Gemeinderät:innen, Stadträt:innen, Gemeindebürger:innen, Ehrenbürger:innen etc. Verwende NICHT die rein männliche Form.
+- Verwende IMMER geschlechtergerechte Sprache mit Doppelpunkt-Gendern. Beachte dabei folgende Regeln:
+  * FEMININE GRUNDFORM: Verwende die weibliche Form als Basis mit Doppelpunkt: "die Bürgermeister:in" (NICHT "der:die Bürgermeister:in"). Der Doppelpunkt signalisiert von der femininen Grundform aus die Inklusion aller Geschlechter.
+  * SATZBAU UMFORMULIEREN: Füge NICHT einfach Doppelpunkte in maskuline Sätze ein. Formuliere den gesamten Satz um, sodass er natürlich und flüssig lesbar ist. Vermeide halb-gegenderte Konstruktionen, in denen Artikel, Adjektive oder Rollenbezeichnungen maskulin bleiben.
+  * GESCHLECHTSNEUTRALE ALTERNATIVEN bevorzugen, wo sie natürlicher klingen:
+    - "Vorsitz" statt "Vorsitzende:r"
+    - "Außenvertretung" statt "Außenvertreter:in"
+    - "Amtsführung" statt "Amtsführer:in"
+    - "Mitglieder des Gemeinderats" statt "Gemeinderät:innen" (wenn es besser lesbar ist)
+  * KONKRETE BEISPIELE:
+    SCHLECHT: "Der:die Bürgermeister:in ist Vorsitzender des Gemeinderats und Außenvertreter der Gemeinde."
+    GUT: "Die Bürgermeister:in führt den Vorsitz im Gemeinderat und vertritt die Gemeinde nach außen."
+    SCHLECHT: "Ein Gemeinderat ist als gewählter Vertreter der Bürger tätig."
+    GUT: "Gemeinderät:innen sind als gewählte Vertretung der Gemeindebürger:innen tätig."
+    SCHLECHT: "Der Vizebürgermeister vertritt den Bürgermeister bei dessen Abwesenheit."
+    GUT: "Die Vizebürgermeister:in vertritt die Bürgermeister:in bei deren Abwesenheit."
+  * REFERENZ-FORMEN: Bürgermeister:in, Vizebürgermeister:in, Gemeinderät:innen, Stadträt:innen, Gemeindebürger:innen, Ehrenbürger:innen.
 - "references": MUSS Verweise auf ALLE 9 Gemeindeordnungen enthalten, die das jeweilige Thema regeln (nicht nur 2-3). Verwende die relevantesten Paragraphen aus jeder Gemeindeordnung.
 
 Antworte NUR mit validem JSON (ohne Markdown-Formatierung):
