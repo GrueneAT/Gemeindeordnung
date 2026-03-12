@@ -13,9 +13,10 @@
         <img src="assets/gruene-logo.png" alt="Gruene Logo" class="w-8 h-8 gruene-logo" />
         <span class="text-lg font-bold">gemeindeordnung.gruene.at</span>
       </a>
-      <nav class="hidden sm:flex items-center gap-3 text-sm shrink-0 ml-4" data-pagefind-ignore>
-        <a href="faq/index.html" class="text-gruene-dark hover:underline">FAQ</a>
-        <a href="glossar.html" class="text-gruene-dark hover:underline">Glossar</a>
+      <nav class="flex items-center gap-2 text-xs sm:text-sm shrink-0 sm:ml-4" data-pagefind-ignore>
+        <a href="faq/index.html" class="text-gruene-dark hover:underline whitespace-nowrap">FAQ</a>
+        <span class="text-gray-300">|</span>
+        <a href="glossar.html" class="text-gruene-dark hover:underline whitespace-nowrap">Glossar</a>
       </nav>
       <div class="search-container relative flex-1 max-w-md mx-0 sm:mx-4 mt-2 sm:mt-0">
         <div class="relative">
@@ -33,19 +34,51 @@
 
     </div>
   </header>
-    <div class="max-w-5xl mx-auto px-4 py-8 flex-1 w-full">
-      <div class="mb-8">
-        <h1 class="text-3xl font-bold text-gruene-dark">
+    <section class="hero-section" data-pagefind-ignore>
+      <div class="max-w-3xl mx-auto px-4">
+        <h1 class="text-3xl sm:text-4xl font-bold text-gruene-dark mb-2">
           Gemeindeordnungen der österreichischen Bundesländer
         </h1>
-        <p class="mt-2 text-lg text-gruene-dark/80">
-          Alle 9 Gemeindeordnungen und 14 Statutarstadt-Stadtrechte durchsuchbar aufbereitet.
+        <p class="text-lg text-gruene-dark/80 mb-6">
+          Alle Gemeindeordnungen und Stadtrechte durchsuchen, vergleichen und verstehen.
         </p>
+        <div class="hero-search-container max-w-2xl mx-auto relative">
+          <div class="relative">
+            <input id="hero-search-input" type="search" minlength="3" autocomplete="off"
+              placeholder="Gesetz, Thema oder Begriff suchen..."
+              class="w-full text-lg py-4 pl-12 pr-4 rounded-xl border-2 border-gruene-green/50 shadow-lg bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
+            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <div id="hero-search-chips" class="mt-2"></div>
+          <div id="hero-search-dropdown" class="search-dropdown hidden mt-2"></div>
+        </div>
       </div>
-      <main>
-        <section class="mb-10">
-          <h2 class="text-2xl font-bold text-gruene-dark mb-4">Gemeindeordnungen</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    </section>
+    <section class="discovery-section max-w-5xl mx-auto px-4 py-8" data-pagefind-ignore>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div>
+            <h2 class="text-xl font-bold text-gruene-dark mb-3">Häufige Fragen</h2>
+            <div class="flex flex-wrap gap-2">
+            <a href="faq/aufgaben-des-gemeinderats.html" class="discovery-chip">Aufgaben des Gemeinderats</a>
+            <a href="faq/ausschuesse-und-kommissionen.html" class="discovery-chip">Ausschüsse und Kommissionen</a>
+            <a href="faq/befangenheit-und-ausschluss.html" class="discovery-chip">Befangenheit und Ausschluss</a>
+            <a href="faq/buergerbeteiligung.html" class="discovery-chip">Bürgerbeteiligung (Volksbegehren, Volksbefragung, Volksabstimmung)</a>
+            <a href="faq/buergermeisterwahl-und-abwahl.html" class="discovery-chip">Bürgermeister:innenwahl und Abwahl</a>
+            <a href="faq/gemeindeaufsicht.html" class="discovery-chip">Gemeindeaufsicht (Aufsichtsbehörde)</a>
+            <a href="faq/gemeindebedienstete-und-personal.html" class="discovery-chip">Gemeindebedienstete und Personal</a>
+            <a href="faq/gemeindehaushalt-und-rechnungsabschluss.html" class="discovery-chip">Gemeindehaushalt und Rechnungsabschluss</a>
+            </div>
+          </div>
+        </div>
+    </section>
+    <details class="max-w-5xl mx-auto px-4 py-4">
+      <summary class="cursor-pointer text-lg font-semibold text-gruene-dark hover:text-gruene-green py-3 list-none flex items-center">
+        <svg class="w-5 h-5 details-open-rotate inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>Alle Gesetze durchblättern
+      </summary>
+      <main class="mt-4">
+          <section class="mb-10">
+            <h2 class="text-2xl font-bold text-gruene-dark mb-4">Gemeindeordnungen</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <a href="gemeindeordnungen/burgenland.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
             <p class="font-bold text-gruene-dark">Burgenland</p>
             <p class="text-sm text-gruene-dark/80 mt-1">Bgld. Gemeindeordnung 2003</p>
@@ -91,11 +124,11 @@
             <p class="text-sm text-gruene-dark/80 mt-1">Wiener Stadtverfassung</p>
             <p class="text-xs text-gray-500 mt-2">Stand: 11.03.2026</p>
           </a>
-          </div>
-        </section>
-        <section class="mb-10">
-          <h2 class="text-2xl font-bold text-gruene-dark mb-4">Stadtrechte</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            </div>
+          </section>
+          <section class="mb-10">
+            <h2 class="text-2xl font-bold text-gruene-dark mb-4">Stadtrechte</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <a href="stadtrechte/eisenstadt.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
             <p class="font-bold text-gruene-dark">Burgenland (Eisenstadt)</p>
             <p class="text-sm text-gruene-dark/80 mt-1">Eisenstaedter Stadtrecht 2003</p>
@@ -166,91 +199,10 @@
             <p class="text-sm text-gruene-dark/80 mt-1">Wr. Neustaedter Stadtrecht 1977</p>
             <p class="text-xs text-gray-500 mt-2">Stand: 11.03.2026</p>
           </a>
-          </div>
-        </section>
-        <section class="mb-10">
-          <h2 class="text-2xl font-bold text-gruene-dark mb-4">Häufige Fragen</h2>
-          <p class="text-gruene-dark/80 mb-4">Thematische Übersichten mit Vergleich aller Bundesländer</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <a href="faq/aufgaben-des-gemeinderats.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">Aufgaben des Gemeinderats</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">Der Gemeinderat als oberstes Organ der Gemeinde: Zusammensetzung, Zuständigkeiten und Beschlussfassung nach den österreichischen Gemeindeordnungen.</p>
-            <p class="text-xs text-gray-500 mt-2">10 Fragen</p>
-          </a>
-          <a href="faq/ausschuesse-und-kommissionen.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">Ausschüsse und Kommissionen</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">Einrichtung, Besetzung und Aufgaben der Gemeinderatsausschüsse sowie besonderer Kommissionen in österreichischen Gemeinden.</p>
-            <p class="text-xs text-gray-500 mt-2">7 Fragen</p>
-          </a>
-          <a href="faq/befangenheit-und-ausschluss.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">Befangenheit und Ausschluss</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">Regelungen zur Befangenheit von Gemeinderatsmitgliedern und deren Ausschluss von Beratung und Abstimmung bei persönlicher Beteiligung.</p>
-            <p class="text-xs text-gray-500 mt-2">7 Fragen</p>
-          </a>
-          <a href="faq/buergerbeteiligung.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">Bürgerbeteiligung (Volksbegehren, Volksbefragung, Volksabstimmung)</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">Instrumente der direkten Demokratie auf Gemeindeebene: Volksbegehren, Volksbefragungen, Volksabstimmungen und weitere Beteiligungsformen in österreichischen Gemeinden.</p>
-            <p class="text-xs text-gray-500 mt-2">9 Fragen</p>
-          </a>
-          <a href="faq/buergermeisterwahl-und-abwahl.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">Bürgermeister:innenwahl und Abwahl</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">Verfahren zur Wahl und Abwahl der Bürgermeister:in sowie der Vizebürgermeister:in durch den Gemeinderat oder die Gemeindebevölkerung, einschließlich der Vertretungsregelungen bei Verhinderung.</p>
-            <p class="text-xs text-gray-500 mt-2">5 Fragen</p>
-          </a>
-          <a href="faq/gemeindeaufsicht.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">Gemeindeaufsicht (Aufsichtsbehörde)</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">Aufsicht des Landes über die Gemeinden: Aufsichtsbehörden, Genehmigungsvorbehalte, Aufsichtsmittel, Informationsrechte und Rechtsschutz der Gemeinde gegen aufsichtsbehördliche Maßnahmen.</p>
-            <p class="text-xs text-gray-500 mt-2">8 Fragen</p>
-          </a>
-          <a href="faq/gemeindebedienstete-und-personal.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">Gemeindebedienstete und Personal</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">Regelungen zur Anstellung, zu Rechten und Pflichten der Gemeindebediensteten sowie zur Personalhoheit der Gemeinde im österreichischen Gemeinderecht.</p>
-            <p class="text-xs text-gray-500 mt-2">7 Fragen</p>
-          </a>
-          <a href="faq/gemeindehaushalt-und-rechnungsabschluss.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">Gemeindehaushalt und Rechnungsabschluss</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">Regelungen zum Voranschlag (Budget), zur Haushaltsführung und zum Rechnungsabschluss der Gemeinde nach den österreichischen Gemeindeordnungen.</p>
-            <p class="text-xs text-gray-500 mt-2">7 Fragen</p>
-          </a>
-          <a href="faq/gemeindevermoegen-und-liegenschaftsverwaltung.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">Gemeindevermögen und Liegenschaftsverwaltung</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">Regelungen zur Verwaltung des Gemeindevermögens, zum Erwerb und zur Veräußerung von Liegenschaften und zur Vermögenssicherung in den österreichischen Gemeindeordnungen.</p>
-            <p class="text-xs text-gray-500 mt-2">6 Fragen</p>
-          </a>
-          <a href="faq/gemeindevorstand-stadtrat.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">Gemeindevorstand und Stadtrat</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">Zusammensetzung, Aufgaben und Arbeitsweise des Gemeindevorstands (bzw. Stadtrats oder Stadtsenats) als kollegiales Verwaltungsorgan der Gemeinde in Österreich.</p>
-            <p class="text-xs text-gray-500 mt-2">7 Fragen</p>
-          </a>
-          <a href="faq/gemeindezusammenlegung-und-trennung.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">Gemeindezusammenlegung und -trennung</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">Verfahren und Voraussetzungen für die Zusammenlegung, Trennung oder Grenzänderung von Gemeinden nach den österreichischen Gemeindeordnungen.</p>
-            <p class="text-xs text-gray-500 mt-2">7 Fragen</p>
-          </a>
-          <a href="faq/informationspflichten-und-akteneinsicht.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">Informationspflichten und Akteneinsicht</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">Auskunfts- und Informationspflichten der Gemeinde gegenüber Gemeinderät:innen und Gemeindebürger:innen sowie das Recht auf Akteneinsicht in der österreichischen Gemeindeverwaltung.</p>
-            <p class="text-xs text-gray-500 mt-2">6 Fragen</p>
-          </a>
-          <a href="faq/ortspolizeiliche-verordnungen.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">Ortspolizeiliche Verordnungen</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">Befugnis der Gemeinde zum Erlass ortspolizeilicher Verordnungen zur Abwehr von Gefahren und Missständen im örtlichen Gemeinschaftsleben.</p>
-            <p class="text-xs text-gray-500 mt-2">6 Fragen</p>
-          </a>
-          <a href="faq/pruefungsausschuss-kontrollausschuss.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">Prüfungsausschuss und Kontrollausschuss</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">Einrichtung, Zusammensetzung und Aufgaben des Prüfungs- bzw. Kontrollausschusses zur Kontrolle der Gemeindeverwaltung und Gebarungsprüfung in österreichischen Gemeinden.</p>
-            <p class="text-xs text-gray-500 mt-2">7 Fragen</p>
-          </a>
-          <a href="faq/sitzungsoeffentlichkeit-und-vertraulichkeit.html" class="block bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-4">
-            <p class="font-bold text-gruene-dark">Sitzungsöffentlichkeit und Vertraulichkeit</p>
-            <p class="text-sm text-gruene-dark/80 mt-1">Regelungen zur Öffentlichkeit und zum Ausschluss der Öffentlichkeit bei Gemeinderatssitzungen sowie Verschwiegenheitspflichten der Mandatar:innen in österreichischen Gemeinden.</p>
-            <p class="text-xs text-gray-500 mt-2">6 Fragen</p>
-          </a>
-          </div>
-        </section>
+            </div>
+          </section>
       </main>
-    </div>
+    </details>
   <footer data-pagefind-ignore class="border-t border-gray-200 mt-12">
     <div class="max-w-5xl mx-auto px-4 py-6 text-sm text-gray-600">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">

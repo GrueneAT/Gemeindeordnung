@@ -1,14 +1,18 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('On-page highlighting after search click-through', () => {
+  // On the index page, hero search is the primary input
+  const SEARCH_INPUT = '#hero-search-input';
+  const SEARCH_DROPDOWN = '#hero-search-dropdown';
+
   test('search result click navigates with highlight param and marks text', async ({ page }) => {
     await page.goto('./index.html');
-    await page.waitForSelector('#search-input', { state: 'visible' });
+    await page.waitForSelector(SEARCH_INPUT, { state: 'visible' });
     await page.waitForTimeout(500);
 
     // Search for a term
-    await page.fill('#search-input', 'Gemeinderat');
-    await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
+    await page.fill(SEARCH_INPUT, 'Gemeinderat');
+    await page.waitForSelector(`${SEARCH_DROPDOWN}:not(.hidden)`, { timeout: 5000 });
 
     // Click the first sub-result (paragraph-level match)
     const firstResult = page.locator('.search-sub-result').first();
@@ -38,12 +42,12 @@ test.describe('On-page highlighting after search click-through', () => {
 
   test('page scrolls to first highlighted match after search click-through', async ({ page }) => {
     await page.goto('./index.html');
-    await page.waitForSelector('#search-input', { state: 'visible' });
+    await page.waitForSelector(SEARCH_INPUT, { state: 'visible' });
     await page.waitForTimeout(500);
 
     // Search for a term that appears deep in a law page (not in the header)
-    await page.fill('#search-input', 'Gemeinderat');
-    await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
+    await page.fill(SEARCH_INPUT, 'Gemeinderat');
+    await page.waitForSelector(`${SEARCH_DROPDOWN}:not(.hidden)`, { timeout: 5000 });
 
     // Click the first sub-result (paragraph-level match)
     const firstResult = page.locator('.search-sub-result').first();

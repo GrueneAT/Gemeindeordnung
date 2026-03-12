@@ -15,6 +15,15 @@ let searchToggle = null;
 let mobileOverlayActive = false;
 let searchTimer = null;
 
+// Hero search state (index page only)
+let heroInput = null;
+let heroDropdown = null;
+let heroChips = null;
+let headerInput = null;
+let headerDropdown = null;
+let headerChips = null;
+let heroActive = false; // true when hero elements exist (index page)
+
 /**
  * Initialize Pagefind -- call eagerly on page load to pre-load WASM index.
  * Silently fails in dev mode (no pagefind bundle available).
@@ -619,6 +628,15 @@ async function handleSearchInput(e) {
   const query = e.target.value.trim();
   currentQuery = query;
 
+  // Sync value between hero and header inputs on index page
+  if (heroActive) {
+    if (e.target === heroInput && headerInput) {
+      headerInput.value = e.target.value;
+    } else if (e.target === headerInput && heroInput) {
+      heroInput.value = e.target.value;
+    }
+  }
+
   if (query.length === 0) {
     hideDropdown();
     return;
@@ -683,9 +701,13 @@ function setupKeyboardShortcuts() {
       // On mobile, open overlay first
       if (window.innerWidth < 640 && !mobileOverlayActive) {
         openMobileOverlay();
+        return;
       }
 
-      if (searchInput) {
+      // On index page, focus hero input when it's visible
+      if (heroActive && isHeroVisible() && heroInput) {
+        heroInput.focus();
+      } else if (searchInput) {
         searchInput.focus();
       }
     }
@@ -812,21 +834,98 @@ function closeMobileOverlay() {
 function setupClickOutside() {
   document.addEventListener('click', (e) => {
     if (mobileOverlayActive) return;
-    const container = e.target.closest('.search-container');
-    if (!container) {
+    const inSearchContainer = e.target.closest('.search-container');
+    const inHeroContainer = e.target.closest('.hero-search-container');
+    if (!inSearchContainer && !inHeroContainer) {
       hideDropdown();
+      // Also hide the other dropdown on index page
+      if (heroActive) {
+        heroDropdown?.classList.add('hidden');
+        headerDropdown?.classList.add('hidden');
+      }
     }
   });
+}
+
+/**
+ * Track whether the hero section is currently visible in the viewport.
+ */
+let heroIsVisible = true;
+
+function isHeroVisible() {
+  return heroActive && heroIsVisible;
+}
+
+/**
+ * Set up IntersectionObserver to track hero section visibility.
+ * When hero scrolls out of view, switch primary search to header.
+ * When hero scrolls back in, switch back to hero.
+ */
+function setupHeroObserver() {
+  const heroSection = document.querySelector('.hero-section');
+  if (!heroSection) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        heroIsVisible = entry.isIntersecting;
+        if (!mobileOverlayActive) {
+          if (entry.isIntersecting) {
+            // Hero visible -- use hero as primary
+            searchInput = heroInput;
+            searchDropdown = heroDropdown;
+            searchChips = heroChips;
+            // Sync query to hero
+            if (currentQuery) heroInput.value = currentQuery;
+            // Hide header dropdown
+            headerDropdown?.classList.add('hidden');
+          } else {
+            // Hero scrolled out -- use header as primary
+            searchInput = headerInput;
+            searchDropdown = headerDropdown;
+            searchChips = headerChips;
+            // Sync query to header
+            if (currentQuery && headerInput) headerInput.value = currentQuery;
+            // Hide hero dropdown
+            heroDropdown?.classList.add('hidden');
+            // Re-render chips in header location
+            renderFilterChips();
+          }
+        }
+      }
+    },
+    { threshold: 0 },
+  );
+
+  observer.observe(heroSection);
 }
 
 /**
  * Main search initialization -- called from main.js on DOMContentLoaded.
  */
 function initSearch() {
-  searchInput = document.getElementById('search-input');
-  searchDropdown = document.getElementById('search-dropdown');
-  searchChips = document.getElementById('search-chips');
+  // Header search elements (present on all pages)
+  headerInput = document.getElementById('search-input');
+  headerDropdown = document.getElementById('search-dropdown');
+  headerChips = document.getElementById('search-chips');
   searchToggle = document.getElementById('search-toggle');
+
+  // Hero search elements (index page only)
+  heroInput = document.getElementById('hero-search-input');
+  heroDropdown = document.getElementById('hero-search-dropdown');
+  heroChips = document.getElementById('hero-search-chips');
+
+  // Set primary search refs -- hero takes priority on index page
+  if (heroInput) {
+    heroActive = true;
+    searchInput = heroInput;
+    searchDropdown = heroDropdown;
+    searchChips = heroChips;
+  } else {
+    searchInput = headerInput;
+    searchDropdown = headerDropdown;
+    searchChips = headerChips;
+  }
 
   if (!searchInput) return; // No search on this page
 
@@ -845,13 +944,34 @@ function initSearch() {
   // Pre-load Pagefind WASM
   loadPagefind();
 
-  // Set up event listeners
+  // Set up event listeners on primary input (hero or header)
   searchInput.addEventListener('input', handleSearchInput);
   searchInput.addEventListener('focus', () => {
     if (currentQuery.length >= 3) {
       searchDropdown?.classList.remove('hidden');
     }
   });
+
+  // On index page: wire header input to sync with hero
+  if (heroActive && headerInput) {
+    headerInput.addEventListener('focus', () => {
+      if (isHeroVisible()) {
+        // When hero is visible, redirect focus to hero input
+        heroInput.focus();
+      } else if (currentQuery.length >= 3) {
+        // When hero is scrolled out, show results in header dropdown
+        headerDropdown?.classList.remove('hidden');
+      }
+    });
+
+    // Wire header input events for when hero is scrolled out of view
+    headerInput.addEventListener('input', handleSearchInput);
+  }
+
+  // Set up IntersectionObserver for hero visibility tracking
+  if (heroActive) {
+    setupHeroObserver();
+  }
 
   setupKeyboardShortcuts();
   setupMobileSearch();

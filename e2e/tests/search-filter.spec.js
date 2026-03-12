@@ -1,12 +1,16 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Search Bundesland filter (SUCH-04, SUCH-05)', () => {
+  // On the index page, hero search is the primary input
+  const SEARCH_INPUT = '#hero-search-input';
+  const SEARCH_DROPDOWN = '#hero-search-dropdown';
+
   test.beforeEach(async ({ page }) => {
     // Clear any saved Bundesland from previous tests
     await page.goto('./index.html');
     await page.evaluate(() => localStorage.removeItem('selectedBundesland'));
     await page.reload();
-    await page.waitForSelector('#search-input', { state: 'visible' });
+    await page.waitForSelector(SEARCH_INPUT, { state: 'visible' });
     await page.waitForTimeout(500);
   });
 
@@ -15,7 +19,7 @@ test.describe('Search Bundesland filter (SUCH-04, SUCH-05)', () => {
     // First, set a Bundesland in localStorage to make a chip appear
     await page.evaluate(() => localStorage.setItem('selectedBundesland', 'Wien'));
     await page.reload();
-    await page.waitForSelector('#search-input', { state: 'visible' });
+    await page.waitForSelector(SEARCH_INPUT, { state: 'visible' });
     await page.waitForTimeout(500);
 
     // Click the Wien chip to make it active
@@ -46,7 +50,7 @@ test.describe('Search Bundesland filter (SUCH-04, SUCH-05)', () => {
     // Set Wien as saved Bundesland
     await page.evaluate(() => localStorage.setItem('selectedBundesland', 'Wien'));
     await page.reload();
-    await page.waitForSelector('#search-input', { state: 'visible' });
+    await page.waitForSelector(SEARCH_INPUT, { state: 'visible' });
     await page.waitForTimeout(500);
 
     // Click Wien chip to activate it
@@ -54,8 +58,8 @@ test.describe('Search Bundesland filter (SUCH-04, SUCH-05)', () => {
     await wienChip.click();
 
     // Search with Wien active
-    await page.fill('#search-input', 'Gemeinderat');
-    await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
+    await page.fill(SEARCH_INPUT, 'Gemeinderat');
+    await page.waitForSelector(`${SEARCH_DROPDOWN}:not(.hidden)`, { timeout: 5000 });
 
     const countEl = page.locator('.search-count');
     await expect(countEl).toBeVisible();

@@ -1,17 +1,21 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Search core functionality', () => {
+  // On the index page, hero search is the primary input
+  const SEARCH_INPUT = '#hero-search-input';
+  const SEARCH_DROPDOWN = '#hero-search-dropdown';
+
   test.beforeEach(async ({ page }) => {
     await page.goto('./index.html');
-    // Wait for search input to be ready
-    await page.waitForSelector('#search-input', { state: 'visible' });
+    // Wait for hero search input to be ready (primary on index page)
+    await page.waitForSelector(SEARCH_INPUT, { state: 'visible' });
     // Give Pagefind WASM a moment to initialize
     await page.waitForTimeout(500);
   });
 
   test('SUCH-01: full-text search returns results', async ({ page }) => {
-    await page.fill('#search-input', 'Gemeinderat');
-    await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
+    await page.fill(SEARCH_INPUT, 'Gemeinderat');
+    await page.waitForSelector(`${SEARCH_DROPDOWN}:not(.hidden)`, { timeout: 5000 });
 
     // Sub-results should appear (paragraph-level matches)
     const subResults = page.locator('.search-sub-result');
@@ -25,8 +29,8 @@ test.describe('Search core functionality', () => {
   });
 
   test('SUCH-02: search terms highlighted in results', async ({ page }) => {
-    await page.fill('#search-input', 'Gemeinderat');
-    await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
+    await page.fill(SEARCH_INPUT, 'Gemeinderat');
+    await page.waitForSelector(`${SEARCH_DROPDOWN}:not(.hidden)`, { timeout: 5000 });
 
     // Pagefind wraps matches in <mark> tags within sub-result excerpts
     const marks = page.locator('.search-sub-result mark');
@@ -34,8 +38,8 @@ test.describe('Search core functionality', () => {
   });
 
   test('SUCH-03: contextual snippets shown in results', async ({ page }) => {
-    await page.fill('#search-input', 'Gemeinderat');
-    await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
+    await page.fill(SEARCH_INPUT, 'Gemeinderat');
+    await page.waitForSelector(`${SEARCH_DROPDOWN}:not(.hidden)`, { timeout: 5000 });
 
     const excerpts = page.locator('.search-sub-result .search-result-excerpt');
     expect(await excerpts.count()).toBeGreaterThan(0);
@@ -46,8 +50,8 @@ test.describe('Search core functionality', () => {
   });
 
   test('SUCH-06: result count displayed', async ({ page }) => {
-    await page.fill('#search-input', 'Gemeinderat');
-    await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
+    await page.fill(SEARCH_INPUT, 'Gemeinderat');
+    await page.waitForSelector(`${SEARCH_DROPDOWN}:not(.hidden)`, { timeout: 5000 });
 
     const countEl = page.locator('.search-count');
     await expect(countEl).toBeVisible();
@@ -59,8 +63,8 @@ test.describe('Search core functionality', () => {
 
   test('SUCH-07: empty state shown for non-matching query', async ({ page }) => {
     // Use a term that Pagefind's fuzzy matching won't find in German legal text
-    await page.fill('#search-input', 'zxjkwpqy');
-    await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
+    await page.fill(SEARCH_INPUT, 'zxjkwpqy');
+    await page.waitForSelector(`${SEARCH_DROPDOWN}:not(.hidden)`, { timeout: 5000 });
     // Wait for debounced search to complete
     await page.waitForTimeout(800);
 
@@ -74,15 +78,15 @@ test.describe('Search core functionality', () => {
   });
 
   test('minimum 3 characters hint shown for short queries', async ({ page }) => {
-    await page.fill('#search-input', 'ab');
-    await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
+    await page.fill(SEARCH_INPUT, 'ab');
+    await page.waitForSelector(`${SEARCH_DROPDOWN}:not(.hidden)`, { timeout: 5000 });
 
     const hint = page.locator('.search-hint');
     await expect(hint).toBeVisible();
     await expect(hint).toContainText('3 Zeichen');
 
     // Type one more character -- should trigger search
-    await page.fill('#search-input', 'abc');
+    await page.fill(SEARCH_INPUT, 'abc');
     await page.waitForTimeout(500);
     const hint2 = page.locator('.search-hint');
     // Hint should be gone (replaced by results or empty state)
@@ -90,8 +94,8 @@ test.describe('Search core functionality', () => {
   });
 
   test('SUCH-10: results grouped by law with paragraph sub-results', async ({ page }) => {
-    await page.fill('#search-input', 'Initiativantrag');
-    await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
+    await page.fill(SEARCH_INPUT, 'Initiativantrag');
+    await page.waitForSelector(`${SEARCH_DROPDOWN}:not(.hidden)`, { timeout: 5000 });
 
     // Law headings should be visible
     const lawHeadings = page.locator('.search-law-heading');
@@ -117,18 +121,18 @@ test.describe('Search core functionality', () => {
     await page.locator('h1').first().click();
     await page.waitForTimeout(200);
 
-    // Press Ctrl+K to focus search
+    // Press Ctrl+K to focus hero search on index page
     await page.keyboard.press('Control+k');
-    const searchInput = page.locator('#search-input');
-    await expect(searchInput).toBeFocused({ timeout: 3000 });
+    const heroSearchInput = page.locator(SEARCH_INPUT);
+    await expect(heroSearchInput).toBeFocused({ timeout: 3000 });
 
     // Type something to open dropdown
-    await page.fill('#search-input', 'Gemeinderat');
-    await page.waitForSelector('#search-dropdown:not(.hidden)', { timeout: 5000 });
+    await page.fill(SEARCH_INPUT, 'Gemeinderat');
+    await page.waitForSelector(`${SEARCH_DROPDOWN}:not(.hidden)`, { timeout: 5000 });
 
     // Press Escape to close
     await page.keyboard.press('Escape');
-    const dropdown = page.locator('#search-dropdown');
+    const dropdown = page.locator(SEARCH_DROPDOWN);
     await expect(dropdown).toHaveClass(/hidden/);
   });
 });
