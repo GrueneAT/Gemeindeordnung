@@ -198,7 +198,12 @@ Plans:
   3. The former card grid of Gesetze is minimized or collapsed below the search hero, not the primary visual element
   4. Header layout is clean and consistent across all pages with FAQ and Glossar links visible and well-integrated on both desktop and mobile
   5. Navigation works on mobile without crowding or misalignment, with FAQ/Glossar links accessible at all breakpoints
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 06-01-PLAN.md — Hero section layout, discovery links, collapsible card grid, and header nav polish
+- [ ] 06-02-PLAN.md — Hero search JS integration (dual-input sync, hero dropdown, mobile overlay compatibility)
+- [ ] 06-03-PLAN.md — E2E tests for hero, navigation, update existing tests, and visual verification
 
 ### Phase 7: Law Text Readability
 **Goal**: Law text pages use improved typography, visual hierarchy, and summary-first layout so users can scan and understand content faster
@@ -229,5 +234,5 @@ Recommended: 4.3 -> 5 -> 6, with 7 parallelizable at any point after 4.3.
 | 4.2 Improve LLM Content Quality | v1.0 | 3/3 | Complete | 2026-03-11 |
 | 4.3 Curated FAQ Topics & Fix FAQ Generation | v1.1 | 2/2 | Complete | 2026-03-12 |
 | 5. Unified Search Engine | v1.1 | 0/3 | Not started | - |
-| 6. Search-Hero Homepage & Navigation | v1.1 | 0/? | Not started | - |
+| 6. Search-Hero Homepage & Navigation | v1.1 | 0/3 | Not started | - |
 | 7. Law Text Readability | v1.1 | 0/? | Not started | - |
