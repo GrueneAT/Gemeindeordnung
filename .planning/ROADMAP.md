@@ -30,7 +30,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 4.3: Curated FAQ Topic List & Fix Broken FAQ Generation** (INSERTED) - Research-driven curated topic list, fix FAQ pipeline JSON parse errors, regenerate FAQ content
 - [ ] **Phase 5: Unified Search Engine** - Pagefind metadata tagging for FAQ/Glossar, two-pass search architecture, grouped results by content type with rich metadata
-- [ ] **Phase 6: Search-Hero Homepage & Navigation** - Search-first homepage layout replacing card grid, quick-access discovery links, polished header and navigation across all pages
+- [x] **Phase 6: Search-Hero Homepage & Navigation** - Search-first homepage layout replacing card grid, quick-access discovery links, polished header and navigation across all pages (completed 2026-03-12)
 - [ ] **Phase 7: Law Text Readability** - Typography overhaul, summary-first layout, visual hierarchy for sections and Absaetze, highlighted key terms
 
 ## Phase Details
@@ -238,5 +238,5 @@ Recommended: 4.3 -> 5 -> 6, with 7 parallelizable at any point after 4.3.
 | 4.2 Improve LLM Content Quality | v1.0 | 3/3 | Complete | 2026-03-11 |
 | 4.3 Curated FAQ Topics & Fix FAQ Generation | v1.1 | 2/2 | Complete | 2026-03-12 |
 | 5. Unified Search Engine | v1.1 | 0/3 | Not started | - |
-| 6. Search-Hero Homepage & Navigation | v1.1 | 0/3 | Not started | - |
+| 6. Search-Hero Homepage & Navigation | 3/3 | Complete   | 2026-03-12 | - |
 | 7. Law Text Readability | v1.1 | 0/2 | Not started | - |
