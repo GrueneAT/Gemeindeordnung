@@ -1,0 +1,427 @@
+{
+  "slug": "ausschuesse-und-kommissionen",
+  "title": "Ausschüsse und Kommissionen",
+  "description": "Einrichtung, Besetzung und Aufgaben der Gemeinderatsausschüsse sowie besonderer Kommissionen in österreichischen Gemeinden.",
+  "questions": [
+    {
+      "question": "Welche Ausschüsse muss ein Gemeinderat bilden?",
+      "answer": "Die Gemeindeordnungen unterscheiden zwischen Pflichtausschüssen und freiwilligen Ausschüssen. In den meisten Bundesländern ist zumindest ein Prüfungs- bzw. Kontrollausschuss verpflichtend einzurichten, der die Gebarung und Verwaltung der Gemeinde überwacht. Darüber hinaus sehen mehrere Gemeindeordnungen einen Finanzausschuss vor, der eine umfassende Zuständigkeit in Haushaltsangelegenheiten hat. In manchen Bundesländern ist zusätzlich für jede Verwaltungsgruppe ein eigener Ausschuss zu bestellen. Weitere Pflichtausschüsse können je nach Gemeindeordnung etwa ein Unvereinbarkeitsausschuss oder ein Frauenausschuss sein. Neben diesen Pflichtausschüssen steht es dem Gemeinderat frei, für einzelne Verwaltungszweige oder Sonderaufgaben weitere Ausschüsse aus seiner Mitte zu bilden.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "34",
+          "label": "Par. 34 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "34",
+          "label": "Par. 34 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "30",
+          "label": "Par. 30 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "44",
+          "label": "Par. 44 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "38",
+          "label": "Par. 38 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "14",
+          "label": "Par. 14 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "24",
+          "label": "Par. 24 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "51",
+          "label": "Par. 51 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "49",
+          "label": "Par. 49 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Nach welchem Verfahren werden Ausschüsse besetzt?",
+      "answer": "Die Besetzung der Ausschüsse erfolgt in den meisten Gemeindeordnungen nach dem Verhältniswahlgrundsatz. Damit wird sichergestellt, dass alle im Gemeinderat vertretenen Fraktionen entsprechend ihrer Mandatsstärke in den Ausschüssen repräsentiert sind. Die Mitgliederzahl wird in der Regel vom Gemeinderat selbst festgelegt, wobei manche Gemeindeordnungen Mindest- und Höchstzahlen vorgeben – häufig zwischen drei und neun Mitgliedern. Die Ausschussmitglieder werden typischerweise aus der Mitte des Gemeinderats gewählt. Die jeweilige Obfrau bzw. der Vorsitz eines Ausschusses wird entweder vom Gemeinderat bestimmt oder vom Ausschuss selbst gewählt. Für die Dauer der Funktionsperiode des Gemeinderats bleiben die Ausschüsse grundsätzlich bestehen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "34",
+          "label": "Par. 34 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "34",
+          "label": "Par. 34 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "30",
+          "label": "Par. 30 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "44",
+          "label": "Par. 44 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "38",
+          "label": "Par. 38 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "14",
+          "label": "Par. 14 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "24",
+          "label": "Par. 24 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "51",
+          "label": "Par. 51 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "49",
+          "label": "Par. 49 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Können auch gemeindefremde Personen in Ausschüsse berufen werden?",
+      "answer": "Grundsätzlich werden Ausschüsse aus der Mitte des Gemeinderats besetzt, das heißt, nur gewählte Gemeinderatsmitglieder können als stimmberechtigte Ausschussmitglieder bestellt werden. Einige Gemeindeordnungen ermöglichen es jedoch, sachkundige Personen mit beratender Stimme zu Ausschusssitzungen beizuziehen. Diese sachverständigen Personen müssen nicht dem Gemeinderat angehören und können auch gemeindefremd sein. Sie haben in der Regel kein Stimmrecht, sondern unterstützen den Ausschuss durch fachliche Expertise. Die Bürgermeister:in hat in den meisten Gemeindeordnungen das Recht, an allen Ausschusssitzungen mit beratender Stimme teilzunehmen, auch wenn sie nicht Mitglied des jeweiligen Ausschusses ist.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "34",
+          "label": "Par. 34 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "34",
+          "label": "Par. 34 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "30",
+          "label": "Par. 30 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "55",
+          "label": "Par. 55 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "38",
+          "label": "Par. 38 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "14",
+          "label": "Par. 14 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "24",
+          "label": "Par. 24 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "51",
+          "label": "Par. 51 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "54",
+          "label": "Par. 54 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Welche Aufgaben haben Gemeinderatsausschüsse?",
+      "answer": "Die Hauptaufgabe der Ausschüsse liegt in der Vorberatung und Begutachtung von Angelegenheiten, die dem Gemeinderat zur Beschlussfassung vorgelegt werden. Ausschüsse erarbeiten Empfehlungen und stellen Anträge an den Gemeinderat, treffen in der Regel aber keine eigenständigen Entscheidungen. Daneben dienen sie der Überwachung bestimmter Verwaltungsbereiche. In manchen Gemeindeordnungen kann der Gemeinderat den Ausschüssen mit qualifizierter Mehrheit auch die selbständige Erledigung bestimmter Angelegenheiten übertragen. Der Kontroll- bzw. Prüfungsausschuss hat eine besondere Stellung: Er überprüft die Gebarung der Gemeinde und kontrolliert die Einhaltung der Beschlüsse des Gemeinderats. Verwaltungsausschüsse können darüber hinaus für die Führung wirtschaftlicher Unternehmungen der Gemeinde eingerichtet werden.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "34",
+          "label": "Par. 34 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "34",
+          "label": "Par. 34 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "30",
+          "label": "Par. 30 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "44",
+          "label": "Par. 44 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "38",
+          "label": "Par. 38 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "14",
+          "label": "Par. 14 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "24",
+          "label": "Par. 24 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "51",
+          "label": "Par. 51 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "49",
+          "label": "Par. 49 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Sind Ausschusssitzungen öffentlich?",
+      "answer": "Im Gegensatz zu den Sitzungen des Gemeinderats, die in der Regel öffentlich sind, tagen Ausschüsse in den meisten Gemeindeordnungen nicht öffentlich. Die Sitzungen werden von der jeweiligen Obfrau einberufen und geleitet. Die Bürgermeister:in hat typischerweise das Recht, an allen Ausschusssitzungen teilzunehmen und gehört zu werden, auch ohne formelle Mitgliedschaft im jeweiligen Ausschuss. In einigen Gemeindeordnungen können auch die Magistratsdirektion oder andere leitende Gemeindebedienstete mit beratender Stimme teilnehmen. Die Beschlussfähigkeit und Abstimmungsregeln der Ausschüsse richten sich nach den jeweiligen Geschäftsordnungen, wobei in der Regel die Anwesenheit eines bestimmten Anteils der Mitglieder erforderlich ist und Beschlüsse mit einfacher Stimmenmehrheit gefasst werden.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "34",
+          "label": "Par. 34 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "34",
+          "label": "Par. 34 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "30",
+          "label": "Par. 30 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "55",
+          "label": "Par. 55 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "38",
+          "label": "Par. 38 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "14",
+          "label": "Par. 14 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "24",
+          "label": "Par. 24 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "51",
+          "label": "Par. 51 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "54",
+          "label": "Par. 54 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Wie unterscheiden sich ständige und nichtständige Ausschüsse?",
+      "answer": "Die Gemeindeordnungen kennen in der Regel zwei Arten von Ausschüssen: Ständige Ausschüsse werden für die gesamte Dauer der Gemeinderatsperiode eingerichtet und befassen sich dauerhaft mit bestimmten Verwaltungsbereichen wie Finanzen, Bau, Soziales oder Kultur. Sie bestehen fort, bis der Gemeinderat in neuer Zusammensetzung wieder zusammentritt. Nichtständige Ausschüsse werden hingegen für besondere Zwecke oder zeitlich begrenzte Aufgaben gebildet – etwa für die Bearbeitung eines konkreten Projekts oder die Klärung einer bestimmten Sachfrage. Sie lösen sich nach Erledigung ihrer Aufgabe auf. Beide Arten werden nach dem Verhältniswahlgrundsatz besetzt. Die Pflichtausschüsse wie Kontroll- und Finanzausschuss sind typischerweise als ständige Ausschüsse eingerichtet.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "34",
+          "label": "Par. 34 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "34",
+          "label": "Par. 34 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "30",
+          "label": "Par. 30 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "44",
+          "label": "Par. 44 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "38",
+          "label": "Par. 38 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "14",
+          "label": "Par. 14 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "24",
+          "label": "Par. 24 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "51",
+          "label": "Par. 51 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "49",
+          "label": "Par. 49 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Welche Sonderstellung hat der Kontroll- bzw. Prüfungsausschuss?",
+      "answer": "Der Kontroll- bzw. Prüfungsausschuss nimmt unter allen Ausschüssen eine besondere Stellung ein, da er in den meisten Gemeindeordnungen verpflichtend einzurichten ist. Seine zentrale Aufgabe ist die Überprüfung der gesamten Gebarung der Gemeinde – also die Kontrolle, ob Gemeindemittel ordnungsgemäß, sparsam und wirtschaftlich verwendet werden. In vielen Gemeindeordnungen steht der Vorsitz im Kontrollausschuss der stärksten Oppositionspartei zu, um eine wirksame Kontrolle der Gemeindeverwaltung sicherzustellen. Die Mitglieder des Kontrollausschusses haben in der Regel umfassende Einsichtsrechte in Akten und Unterlagen der Gemeinde. Der Ausschuss erstattet dem Gemeinderat Bericht über seine Prüfungsergebnisse und kann Empfehlungen zur Verbesserung der Verwaltung aussprechen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "34",
+          "label": "Par. 34 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "34",
+          "label": "Par. 34 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "30",
+          "label": "Par. 30 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "44",
+          "label": "Par. 44 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "38",
+          "label": "Par. 38 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "14",
+          "label": "Par. 14 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "24",
+          "label": "Par. 24 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "51",
+          "label": "Par. 51 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "49",
+          "label": "Par. 49 Wr. StV"
+        }
+      ]
+    }
+  ]
+}

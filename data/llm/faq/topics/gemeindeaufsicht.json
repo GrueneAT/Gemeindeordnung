@@ -1,0 +1,487 @@
+{
+  "slug": "gemeindeaufsicht",
+  "title": "Gemeindeaufsicht (Aufsichtsbehörde)",
+  "description": "Aufsicht des Landes über die Gemeinden: Aufsichtsbehörden, Genehmigungsvorbehalte, Aufsichtsmittel, Informationsrechte und Rechtsschutz der Gemeinde gegen aufsichtsbehördliche Maßnahmen.",
+  "questions": [
+    {
+      "question": "Welche Behörde übt die Aufsicht über die Gemeinden aus?",
+      "answer": "Die Gemeindeaufsicht wird in allen österreichischen Bundesländern grundsätzlich von der Landesregierung ausgeübt. Sie wacht darüber, dass die Gemeinden bei der Besorgung des eigenen Wirkungsbereichs die Gesetze und Verordnungen nicht verletzen und die ihnen gesetzlich obliegenden Aufgaben erfüllen. In einigen Gemeindeordnungen kann die Landesregierung bestimmte Aufsichtsaufgaben an die Bezirksverwaltungsbehörden (Bezirkshauptmannschaften) delegieren. So sehen manche Regelungen vor, dass die Bezirkshauptmannschaft als Aufsichtsbehörde erster Instanz fungiert, während die Landesregierung für bestimmte gewichtigere Angelegenheiten – etwa die Gebarungskontrolle oder Genehmigungsvorbehalte – unmittelbar zuständig bleibt. In Wien fallen Landes- und Gemeindeverwaltung zusammen, sodass die Aufsicht über die Bezirksvertretungen vom Gemeinderat im Rahmen seines Oberaufsichtsrechts wahrgenommen wird.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "86",
+          "label": "Par. 86 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "96",
+          "label": "Par. 96 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "85-86",
+          "label": "Par. 85–86 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "77",
+          "label": "Par. 77 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "65-66",
+          "label": "Par. 65–66 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "96",
+          "label": "Par. 96 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "114-115",
+          "label": "Par. 114–115 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "81",
+          "label": "Par. 81 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "83",
+          "label": "Par. 83 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Welche Gemeinderatsbeschlüsse bedürfen der Genehmigung der Aufsichtsbehörde?",
+      "answer": "Die Gemeindeordnungen sehen für bestimmte Rechtsgeschäfte und Beschlüsse einen aufsichtsbehördlichen Genehmigungsvorbehalt vor. Typischerweise genehmigungspflichtig sind: die Aufnahme von Darlehen und sonstigen Finanzgeschäften (insbesondere ab bestimmten Wertgrenzen), die Übernahme von Haftungen und Bürgschaften, die Veräußerung und Belastung von unbeweglichem Gemeindevermögen, die Einräumung von Baurechten, die Gründung oder Beteiligung an wirtschaftlichen Unternehmungen sowie Leasingverträge ab festgelegten Schwellenwerten. In manchen Gemeindeordnungen unterliegen auch Voranschläge ohne ausgeglichenen Haushalt oder Finanzierungspläne für größere Bauvorhaben der Genehmigungspflicht. Die konkreten Wertgrenzen und der Umfang der genehmigungspflichtigen Geschäfte variieren je nach Bundesland erheblich. Die Genehmigung wird in der Regel von der Landesregierung erteilt und kann an Bedingungen oder Auflagen geknüpft werden.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "87",
+          "label": "Par. 87 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "85",
+          "label": "Par. 85 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "84",
+          "label": "Par. 84 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "69",
+          "label": "Par. 69 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "90",
+          "label": "Par. 90 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "123",
+          "label": "Par. 123 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "74",
+          "label": "Par. 74 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "85",
+          "label": "Par. 85 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "innsbruck",
+          "paragraph": "78",
+          "label": "Par. 78 Innsbrucker StR"
+        }
+      ]
+    },
+    {
+      "question": "Welche Aufsichtsmittel stehen der Landesregierung zur Verfügung?",
+      "answer": "Den Aufsichtsbehörden steht ein abgestuftes Instrumentarium zur Verfügung, das in den meisten Gemeindeordnungen ähnlich ausgestaltet ist. Die wichtigsten Aufsichtsmittel sind: das Informations- und Auskunftsrecht, mit dem sich die Aufsichtsbehörde über jede Gemeindeangelegenheit unterrichten und die Vorlage von Unterlagen und Beschlüssen verlangen kann; die Prüfung der Gebarung auf Sparsamkeit, Wirtschaftlichkeit und Zweckmäßigkeit; die Aufhebung gesetzwidriger Verordnungen durch eigene Verordnung nach Anhörung der Gemeinde; die Aufhebung gesetzwidriger Bescheide und Beschlüsse von Amts wegen; die Erteilung von Belehrungen mit Fristsetzung zur Behebung von Gesetzesverletzungen; sowie die Ersatzvornahme, wenn eine Gemeinde trotz Fristsetzung eine ihr obliegende Aufgabe nicht erfüllt – in diesem Fall kann die Aufsichtsbehörde die Maßnahme auf Kosten der Gemeinde selbst durchführen. Als schärfstes Mittel sehen einige Gemeindeordnungen die Auflösung des Gemeinderats vor, wenn dieser trotz Vorhalts wiederholt gegen Gesetze verstößt oder seine Aufgaben nicht erfüllt.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "88-89",
+          "label": "Par. 88–89 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "97-101",
+          "label": "Par. 97–101 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "85",
+          "label": "Par. 85 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "71",
+          "label": "Par. 71 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "87",
+          "label": "Par. 87 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "116-118",
+          "label": "Par. 116–118 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "83",
+          "label": "Par. 83 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "93-99",
+          "label": "Par. 93–99 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "graz",
+          "paragraph": "102-106",
+          "label": "Par. 102–106 Grazer StR"
+        }
+      ]
+    },
+    {
+      "question": "Wie kann sich die Aufsichtsbehörde über Gemeindeangelegenheiten informieren?",
+      "answer": "In allen Gemeindeordnungen ist ein umfassendes Informationsrecht der Aufsichtsbehörde verankert. Die Landesregierung kann sich über jede Angelegenheit der Gemeinde unterrichten lassen. Im Einzelnen umfasst dieses Recht: die Einholung von Auskünften bei der Bürgermeister:in und anderen Gemeindeorganen, die Vorlage von Akten, Beschlüssen der Kollegialorgane und sonstigen Unterlagen, die Einsichtnahme in die Gemeindeverwaltung vor Ort sowie die Anfertigung von Kopien relevanter Dokumente. Die Bürgermeister:in ist verpflichtet, den Auskunftsersuchen der Aufsichtsbehörde unverzüglich nachzukommen. In manchen Gemeindeordnungen kann die Aufsichtsbehörde darüber hinaus verlangen, dass die Bürgermeister:in innerhalb einer bestimmten Frist – typischerweise einer Woche – das zuständige Kollegialorgan einberuft, um bestimmte Angelegenheiten zu behandeln. Der beschlossene Gemeindevoranschlag ist in der Regel der Aufsichtsbehörde von Amts wegen zur Kenntnis zu bringen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "88",
+          "label": "Par. 88 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "97-98",
+          "label": "Par. 97–98 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "77",
+          "label": "Par. 77 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "65",
+          "label": "Par. 65 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "87",
+          "label": "Par. 87 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "117-118",
+          "label": "Par. 117–118 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "83",
+          "label": "Par. 83 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "72",
+          "label": "Par. 72 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "97",
+          "label": "Par. 97 Villacher StR"
+        }
+      ]
+    },
+    {
+      "question": "Wie geht die Aufsichtsbehörde gegen gesetzwidrige Verordnungen und Bescheide der Gemeinde vor?",
+      "answer": "Die Gemeindeordnungen sehen ein abgestuftes Vorgehen gegen rechtswidrige Akte der Gemeinde vor. Bei Verordnungen gilt: Alle im eigenen Wirkungsbereich erlassenen Verordnungen sind der Aufsichtsbehörde unverzüglich mitzuteilen. Stellt die Aufsichtsbehörde eine Gesetzwidrigkeit fest, hebt sie die Verordnung nach Anhörung der Gemeinde durch eigene Verordnung auf. Bei gesetzwidrigen Bescheiden kann die Aufsichtsbehörde rechtskräftige Bescheide des eigenen Wirkungsbereichs unter bestimmten, eng begrenzten Voraussetzungen von Amts wegen aufheben oder abändern. Darüber hinaus kann die Bürgermeister:in selbst die Vollziehung eines Kollegialbeschlusses aussetzen, wenn sie diesen für gesetzwidrig hält, und muss die Aufsichtsbehörde unverzüglich davon in Kenntnis setzen. Die Aufsichtsbehörde entscheidet dann, ob der Beschluss aufrecht bleibt oder aufzuheben ist. Dieses System stellt sicher, dass sowohl eine interne Kontrolle durch die Bürgermeister:in als auch eine externe Kontrolle durch die Landesregierung besteht.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "89",
+          "label": "Par. 89 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "99-100",
+          "label": "Par. 99–100 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "46",
+          "label": "Par. 46 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "114",
+          "label": "Par. 114 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "68",
+          "label": "Par. 68 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "graz",
+          "paragraph": "106",
+          "label": "Par. 106 Grazer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "innsbruck",
+          "paragraph": "77",
+          "label": "Par. 77 Innsbrucker StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "75",
+          "label": "Par. 75 Sbg. StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "18",
+          "label": "Par. 18 Eisenstädter StR"
+        }
+      ]
+    },
+    {
+      "question": "Welchen Rechtsschutz hat die Gemeinde gegen aufsichtsbehördliche Maßnahmen?",
+      "answer": "Die Gemeinde ist gegen Maßnahmen der Aufsichtsbehörde nicht schutzlos gestellt. In den meisten Gemeindeordnungen ergehen aufsichtsbehördliche Maßnahmen als Bescheide, gegen die der Gemeinde Parteistellung zukommt und sie Beschwerde beim Verwaltungsgericht erheben kann. Darüber hinaus ist das Aufsichtsrecht nach dem Grundsatz der Verhältnismäßigkeit auszuüben: Die Aufsichtsbehörde muss stets das gelindeste zum Ziel führende Mittel wählen und die Eigenverantwortlichkeit der Gemeinde möglichst wahren. Einige Gemeindeordnungen schreiben ausdrücklich vor, dass die Gemeinde vor belastenden Maßnahmen angehört werden muss – etwa bevor eine Verordnung aufgehoben oder eine Ersatzvornahme angeordnet wird. Gegen besonders schwerwiegende Eingriffe wie die Auflösung des Gemeinderats bestehen zusätzliche verfahrensrechtliche Sicherungen, da diese Maßnahme typischerweise nur bei wiederholten, schwerwiegenden Gesetzesverletzungen trotz vorheriger Vorhalte zulässig ist. Die Gemeinde kann zudem den Verfassungsgerichtshof anrufen, wenn sie sich in ihrem verfassungsrechtlich garantierten Recht auf Selbstverwaltung verletzt sieht.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "95",
+          "label": "Par. 95 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "116",
+          "label": "Par. 116 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "graz",
+          "paragraph": "103",
+          "label": "Par. 103 Grazer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "innsbruck",
+          "paragraph": "79-80",
+          "label": "Par. 79–80 Innsbrucker StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "76",
+          "label": "Par. 76 Sbg. StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "99",
+          "label": "Par. 99 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "99",
+          "label": "Par. 99 Villacher StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "75",
+          "label": "Par. 75 Welser StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "75",
+          "label": "Par. 75 Steyrer StR"
+        }
+      ]
+    },
+    {
+      "question": "Können Gemeindebürger:innen eine Aufsichtsbeschwerde einbringen?",
+      "answer": "In den meisten Gemeindeordnungen besteht die Möglichkeit, eine Aufsichtsbeschwerde bei der zuständigen Aufsichtsbehörde einzubringen. Diese Beschwerde steht typischerweise allen Personen offen, die eine Gesetzes- oder Verordnungsverletzung durch ein Gemeindeorgan behaupten. Die Aufsichtsbeschwerde ist in der Regel schriftlich bei der Landesregierung oder der zuständigen Bezirksverwaltungsbehörde einzubringen und muss den beanstandeten Sachverhalt konkret darlegen. Wichtig ist: Die Aufsichtsbeschwerde begründet keinen Rechtsanspruch auf ein bestimmtes Einschreiten der Aufsichtsbehörde. Sie löst lediglich eine Prüfpflicht aus – die Aufsichtsbehörde muss den Sachverhalt untersuchen und gegebenenfalls mit den ihr zur Verfügung stehenden Aufsichtsmitteln reagieren. Das Ergebnis der Prüfung wird den Beschwerdeführenden in der Regel mitgeteilt.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "68",
+          "label": "Par. 68 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "115",
+          "label": "Par. 115 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "82",
+          "label": "Par. 82 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "74",
+          "label": "Par. 74 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "74",
+          "label": "Par. 74 Welser StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "86",
+          "label": "Par. 86 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "86",
+          "label": "Par. 86 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "96",
+          "label": "Par. 96 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "96",
+          "label": "Par. 96 Stmk. GO"
+        }
+      ]
+    },
+    {
+      "question": "Was umfasst die Gebarungskontrolle durch die Aufsichtsbehörde?",
+      "answer": "Die Aufsichtsbehörde ist berechtigt, die Gebarung der Gemeinde einschließlich ihrer wirtschaftlichen Unternehmungen, Beteiligungen, Fonds und Stiftungen auf Sparsamkeit, Wirtschaftlichkeit und Zweckmäßigkeit zu überprüfen. Diese Gebarungskontrolle geht über die reine Rechtmäßigkeitskontrolle hinaus, da sie auch wirtschaftliche Aspekte der Gemeindeverwaltung einbezieht. Die Prüfung kann sowohl anlassbezogen als auch routinemäßig erfolgen. Der Gemeinde ist das Prüfungsergebnis mitzuteilen, und sie hat dazu Stellung zu nehmen. In einigen Gemeindeordnungen ist vorgesehen, dass die Prüfungsergebnisse dem Gemeinderat zur Kenntnis gebracht werden müssen. Die Gebarungskontrolle ergänzt die Prüfungstätigkeit der Landesrechnungshöfe und dient als wichtiges Instrument zur Sicherstellung einer ordnungsgemäßen Haushaltsführung auf Gemeindeebene.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "79",
+          "label": "Par. 79 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "87",
+          "label": "Par. 87 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "77",
+          "label": "Par. 77 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "76",
+          "label": "Par. 76 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "98",
+          "label": "Par. 98 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "100",
+          "label": "Par. 100 Villacher StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "77",
+          "label": "Par. 77 Welser StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "86",
+          "label": "Par. 86 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "74",
+          "label": "Par. 74 Sbg. StR"
+        }
+      ]
+    }
+  ]
+}

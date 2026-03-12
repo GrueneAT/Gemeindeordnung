@@ -1,0 +1,427 @@
+{
+  "slug": "gemeindevorstand-stadtrat",
+  "title": "Gemeindevorstand und Stadtrat",
+  "description": "Zusammensetzung, Aufgaben und Arbeitsweise des Gemeindevorstands (bzw. Stadtrats oder Stadtsenats) als kollegiales Verwaltungsorgan der Gemeinde in Österreich.",
+  "questions": [
+    {
+      "question": "Was ist der Gemeindevorstand und welche Stellung hat er im Gemeindesystem?",
+      "answer": "Der Gemeindevorstand ist das kollegiale Verwaltungsorgan der Gemeinde und steht zwischen dem Gemeinderat als oberstem Beschlussorgan und der Bürgermeister:in als Vollzugsorgan. In den meisten Gemeindeordnungen bildet er das zweite der drei zentralen Gemeindeorgane. Der Gemeindevorstand fungiert typischerweise als vorberatendes und ausführendes Gremium: Einerseits bereitet er Beschlüsse des Gemeinderats vor, andererseits entscheidet er in bestimmten Verwaltungsangelegenheiten selbständig. In Stadtgemeinden trägt dieses Organ je nach Bundesland die Bezeichnung 'Stadtrat', 'Stadtsenat' oder 'Gemeindevorstehung'. Die genaue Kompetenzabgrenzung zwischen Gemeindevorstand und Gemeinderat variiert je nach Gemeindeordnung, wobei dem Gemeindevorstand in der Regel eine wichtige Mittlerfunktion im gemeindlichen Willensbildungsprozess zukommt.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "24",
+          "label": "Par. 24 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "22",
+          "label": "Par. 22 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "36",
+          "label": "Par. 36 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "24",
+          "label": "Par. 24 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "43",
+          "label": "Par. 43 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "44",
+          "label": "Par. 44 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "31",
+          "label": "Par. 31 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "54",
+          "label": "Par. 54 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "76",
+          "label": "Par. 76 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Wie wird der Gemeindevorstand zusammengesetzt?",
+      "answer": "Der Gemeindevorstand setzt sich typischerweise aus der Bürgermeister:in, einer oder mehreren Vizebürgermeister:innen und weiteren Mitgliedern zusammen. Die genaue Größe richtet sich in den meisten Gemeindeordnungen nach der Einwohnerzahl oder der Anzahl der Gemeinderatsmitglieder. So sehen die Regelungen in manchen Bundesländern drei bis sieben Mitglieder vor, in anderen kann die Mitgliederzahl je nach Gemeindegröße variieren. Die Bürgermeister:in führt den Vorsitz im Gemeindevorstand. Die übrigen Mitglieder werden aus der Mitte des Gemeinderats gewählt, wobei in den meisten Gemeindeordnungen das Verhältniswahlrecht gilt. Das bedeutet, dass die im Gemeinderat vertretenen Fraktionen entsprechend ihrer Stärke im Gemeindevorstand vertreten sind. Wählbar sind in der Regel nur Gemeinderatsmitglieder mit österreichischer Staatsbürgerschaft.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "17",
+          "label": "Par. 17 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "22",
+          "label": "Par. 22 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "24",
+          "label": "Par. 24 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "24",
+          "label": "Par. 24 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "43",
+          "label": "Par. 43 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "18",
+          "label": "Par. 18 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "23",
+          "label": "Par. 23 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "54",
+          "label": "Par. 54 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "76",
+          "label": "Par. 76 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Welche Aufgaben hat der Gemeindevorstand?",
+      "answer": "Die Aufgaben des Gemeindevorstands lassen sich in mehrere Kernbereiche gliedern. Erstens obliegt ihm die Vorberatung und Antragstellung für Angelegenheiten des Gemeinderats – damit bereitet er Beschlüsse vor und trägt zur fundierten Entscheidungsfindung bei. Zweitens ist der Gemeindevorstand in den meisten Gemeindeordnungen als Berufungsbehörde gegen Bescheide der Bürgermeister:in zuständig. Drittens entscheidet er selbständig über bestimmte Verwaltungsangelegenheiten, etwa Personalentscheidungen wie befristete Aufnahmen oder Kündigungen von Gemeindebediensteten und über den Erwerb und die Vergabe von Gütern bis zu bestimmten Wertgrenzen. In manchen Bundesländern obliegen ihm auch Rechtsgeschäfte mittlerer Größenordnung, die nicht dem Gemeinderat vorbehalten sind. Die Regelungen sehen typischerweise vor, dass alle Angelegenheiten des eigenen Wirkungsbereichs, die weder dem Gemeinderat noch der Bürgermeister:in zugewiesen sind, in die Zuständigkeit des Gemeindevorstands fallen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "24",
+          "label": "Par. 24 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "22",
+          "label": "Par. 22 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "36",
+          "label": "Par. 36 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "26",
+          "label": "Par. 26 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "43",
+          "label": "Par. 43 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "44",
+          "label": "Par. 44 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "31",
+          "label": "Par. 31 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "50",
+          "label": "Par. 50 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "89",
+          "label": "Par. 89 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Was ist der Unterschied zwischen Gemeindevorstand und Stadtrat?",
+      "answer": "Funktional handelt es sich um dasselbe Organ – der Unterschied liegt in der Bezeichnung, die vom Gemeindestatus abhängt. In Gemeinden ohne Stadtrecht heißt das kollegiale Verwaltungsorgan 'Gemeindevorstand', in Stadtgemeinden wird es als 'Stadtrat' oder 'Stadtsenat' bezeichnet. Manche Gemeindeordnungen verwenden auch den Begriff 'Gemeindevorstehung'. Die Mitglieder tragen entsprechend die Bezeichnung 'Gemeindevorstandsmitglieder' bzw. 'Stadträt:innen'. In Städten mit eigenem Statut (Statutarstädte) ist die Bezeichnung 'Stadtsenat' verbreitet, und die Kompetenzen können aufgrund des Stadtrechts umfangreicher sein als in nicht-statutarischen Gemeinden. Das Stadtrecht enthält oft detailliertere Regelungen zur Geschäftsordnung und zu den Zuständigkeiten der einzelnen Stadtsenatsmitglieder. Die Aufgaben und Grundprinzipien – Vorberatung, Personalentscheidungen, Berufungsinstanz – bleiben jedoch im Kern gleich.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "3",
+          "label": "Par. 3 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "4",
+          "label": "Par. 4 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "3",
+          "label": "Par. 3 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "3",
+          "label": "Par. 3 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "2",
+          "label": "Par. 2 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "18",
+          "label": "Par. 18 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "10",
+          "label": "Par. 10 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "54",
+          "label": "Par. 54 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "76",
+          "label": "Par. 76 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Wie werden die Mitglieder des Gemeindevorstands gewählt?",
+      "answer": "Die Wahl der Gemeindevorstandsmitglieder erfolgt in den meisten Gemeindeordnungen durch den Gemeinderat nach dem Verhältniswahlrecht. Das bedeutet, dass die im Gemeinderat vertretenen Fraktionen entsprechend ihrer Mandatsstärke Mitglieder in den Gemeindevorstand entsenden können. Die Vizebürgermeister:innen und die weiteren Vorstandsmitglieder werden aus der Mitte des Gemeinderats gewählt. In manchen Bundesländern müssen Wahlvorschläge von der absoluten Mehrheit der jeweiligen Fraktionsmitglieder unterstützt werden. Die Bürgermeister:in gehört dem Gemeindevorstand kraft ihres Amtes an und wird – je nach Bundesland – entweder direkt von der Bevölkerung oder durch den Gemeinderat gewählt. Nach der Wahl legen die Gemeindevorstandsmitglieder typischerweise ein Gelöbnis ab. Die Mitglieder des Gemeindevorstands benötigen in der Regel das Vertrauen jener Fraktion, die sie nominiert hat.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "17",
+          "label": "Par. 17 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "24",
+          "label": "Par. 24 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "24",
+          "label": "Par. 24 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "28",
+          "label": "Par. 28 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "43",
+          "label": "Par. 43 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "20",
+          "label": "Par. 20 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "23",
+          "label": "Par. 23 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "31",
+          "label": "Par. 31 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "76",
+          "label": "Par. 76 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Kann die Bürgermeister:in Aufgaben an einzelne Gemeindevorstandsmitglieder übertragen?",
+      "answer": "In den meisten Gemeindeordnungen kann die Bürgermeister:in bestimmte Aufgabenbereiche an einzelne Mitglieder des Gemeindevorstands delegieren. Diese Mitglieder übernehmen dann die Verantwortung für bestimmte Geschäftsbereiche der Gemeindeverwaltung – ähnlich einer Ressortverteilung. Die Regelungen sehen typischerweise vor, dass diese Mitglieder weisungsgebunden gegenüber der Bürgermeister:in bleiben und sie bei der Amtsführung unterstützen. In Statutarstädten ist die Aufteilung der Geschäftsbereiche auf einzelne Stadtsenatsmitglieder besonders verbreitet und oft detailliert geregelt. Die delegierten Mitglieder berichten über ihre Geschäftsbereiche im Gemeindevorstand und können in Gemeinderatssitzungen zu Fragen aus ihrem Zuständigkeitsbereich befragt werden. Diese Aufgabenteilung ermöglicht eine effiziente Verwaltungsführung, wobei die Gesamtverantwortung bei der Bürgermeister:in verbleibt.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "25",
+          "label": "Par. 25 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "25",
+          "label": "Par. 25 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "38",
+          "label": "Par. 38 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "29",
+          "label": "Par. 29 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "49",
+          "label": "Par. 49 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "44",
+          "label": "Par. 44 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "31",
+          "label": "Par. 31 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "54",
+          "label": "Par. 54 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "9",
+          "label": "Par. 9 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Wie werden Rechtsgeschäfte der Gemeinde rechtsgültig beurkundet?",
+      "answer": "Urkunden über Rechtsgeschäfte, die einen Beschluss des Gemeinderats oder des Gemeindevorstands erfordern, müssen in den meisten Gemeindeordnungen von der Bürgermeister:in und weiteren Gemeinderatsmitgliedern oder Gemeindevorstandsmitgliedern unterzeichnet werden. Typischerweise ist die Unterschrift der Bürgermeister:in zusammen mit zwei weiteren Mitgliedern des Gemeinderats erforderlich. In Statutarstädten können die Regelungen abweichen – dort unterzeichnet häufig die Bürgermeister:in gemeinsam mit dem zuständigen Stadtsenatsmitglied und einer weiteren berechtigten Person. Bei laufenden Geschäften geringerer Bedeutung kann die Bürgermeister:in allein zeichnungsberechtigt sein. Diese Formvorschriften dienen dem Schutz der Gemeinde vor unüberlegten Verpflichtungen und stellen sicher, dass Rechtsgeschäfte auf ordnungsgemäßen Beschlüssen beruhen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "50",
+          "label": "Par. 50 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "36",
+          "label": "Par. 36 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "26",
+          "label": "Par. 26 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "25",
+          "label": "Par. 25 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "42",
+          "label": "Par. 42 Sbg. StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "31",
+          "label": "Par. 31 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "50",
+          "label": "Par. 50 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "9",
+          "label": "Par. 9 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "graz",
+          "paragraph": "59",
+          "label": "Par. 59 Grazer StR"
+        }
+      ]
+    }
+  ]
+}

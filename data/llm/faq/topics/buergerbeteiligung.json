@@ -1,0 +1,823 @@
+{
+  "slug": "buergerbeteiligung",
+  "title": "Bürgerbeteiligung (Volksbegehren, Volksbefragung, Volksabstimmung)",
+  "description": "Instrumente der direkten Demokratie auf Gemeindeebene: Volksbegehren, Volksbefragungen, Volksabstimmungen und weitere Beteiligungsformen in österreichischen Gemeinden.",
+  "questions": [
+    {
+      "question": "Welche Formen der Bürgerbeteiligung gibt es auf Gemeindeebene?",
+      "answer": "Die österreichischen Gemeindeordnungen sehen typischerweise drei Hauptinstrumente der direkten Demokratie vor: die Volksbefragung, die Volksabstimmung (auch Volksentscheid oder Bürgerabstimmung genannt) und das Volksbegehren (auch als Bürgerinitiative oder Bürgerbegehren bezeichnet). Bei der Volksbefragung wird die Meinung der Gemeindebürger:innen zu einer bestimmten Frage eingeholt, ohne dass das Ergebnis rechtlich bindend ist. Die Volksabstimmung hingegen entscheidet verbindlich über die Geltung eines Gemeinderatsbeschlusses. Durch ein Volksbegehren oder eine Bürgerinitiative können Wahlberechtigte verlangen, dass sich der Gemeinderat mit einer bestimmten Angelegenheit befasst oder bestimmte Maßnahmen setzt. Darüber hinaus kennen einige Gemeindeordnungen weitere Beteiligungsformen wie Gemeindeversammlungen bzw. Bürgerversammlungen, bei denen die Bevölkerung über wichtige Gemeindeangelegenheiten informiert wird und Fragen stellen kann. Vereinzelt gibt es auch neuere Instrumente wie dialogorientierte Bürgerbeteiligung oder Bürgerräte, bei denen zufällig ausgewählte Gemeindebürger:innen Empfehlungen zu bestimmten Themen erarbeiten.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "52",
+          "label": "Par. 52 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "53",
+          "label": "Par. 53 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "54",
+          "label": "Par. 54 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "51",
+          "label": "Par. 51 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "55",
+          "label": "Par. 55 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "57",
+          "label": "Par. 57 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "38",
+          "label": "Par. 38 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "38b",
+          "label": "Par. 38b OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "11",
+          "label": "Par. 11 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "12",
+          "label": "Par. 12 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "13",
+          "label": "Par. 13 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "14",
+          "label": "Par. 14 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "61",
+          "label": "Par. 61 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "21",
+          "label": "Par. 21 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "22",
+          "label": "Par. 22 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "23",
+          "label": "Par. 23 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "112a",
+          "label": "Par. 112a Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "112e",
+          "label": "Par. 112e Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "131b",
+          "label": "Par. 131b Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Wie viele Unterschriften sind für ein Volksbegehren bzw. eine Bürgerinitiative auf Gemeindeebene nötig?",
+      "answer": "Die erforderliche Anzahl an Unterstützungserklärungen variiert je nach Bundesland und Gemeinde erheblich. In den meisten Gemeindeordnungen liegt die Schwelle zwischen zwei und fünf Prozent der Wahlberechtigten. So verlangen einige Gemeindeordnungen mindestens fünf Prozent der wahlberechtigten Gemeindebürger:innen, um ein Volksbegehren einzubringen. Andere Regelungen setzen die Hürde niedriger an und ermöglichen bereits ab zwei Prozent der Wahlberechtigten die Einbringung einer Bürgerinitiative. In manchen Fällen sind auch absolute Zahlen vorgesehen, etwa wenn eine bestimmte Mindestanzahl an Unterschriften unabhängig von der Gemeindegröße erforderlich ist. Die genauen Quoren und Verfahrensvorschriften sind in der jeweiligen Gemeindeordnung oder dem jeweiligen Stadtrecht geregelt. Gemeinsam ist allen Regelungen, dass die Unterschriften von zum Gemeinderat wahlberechtigten Personen stammen müssen und innerhalb einer bestimmten Frist gesammelt werden müssen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "53",
+          "label": "Par. 53 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "55",
+          "label": "Par. 55 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "38b",
+          "label": "Par. 38b OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "14",
+          "label": "Par. 14 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "61",
+          "label": "Par. 61 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "21",
+          "label": "Par. 21 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "131b",
+          "label": "Par. 131b Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "51",
+          "label": "Par. 51 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "50",
+          "label": "Par. 50 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "54",
+          "label": "Par. 54 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "55",
+          "label": "Par. 55 Villacher StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "69",
+          "label": "Par. 69 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "69",
+          "label": "Par. 69 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "69",
+          "label": "Par. 69 Welser StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "innsbruck",
+          "paragraph": "44",
+          "label": "Par. 44 Innsbrucker StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "53a",
+          "label": "Par. 53a Sbg. StR"
+        }
+      ]
+    },
+    {
+      "question": "Ist das Ergebnis einer Volksabstimmung für den Gemeinderat bindend?",
+      "answer": "Ja, das Ergebnis einer Volksabstimmung ist in der Regel für den Gemeinderat bindend. Die Volksabstimmung unterscheidet sich von der Volksbefragung gerade dadurch, dass sie rechtlich verbindliche Wirkung entfaltet. In den meisten Gemeindeordnungen entscheiden die wahlberechtigten Gemeindebürger:innen bei einer Volksabstimmung darüber, ob ein bestimmter Gemeinderatsbeschluss Geltung erlangen soll oder nicht. Das Ergebnis ist für die Gemeindeorgane bindend, sofern die gesetzlich vorgeschriebenen Quoren (etwa eine Mindestbeteiligung) erreicht werden. Im Gegensatz dazu hat die Volksbefragung lediglich empfehlenden Charakter – sie dient der Erforschung des Willens der Bevölkerung, verpflichtet den Gemeinderat aber nicht zu einem bestimmten Beschluss. Die Gemeindeordnungen verwenden teilweise unterschiedliche Begriffe: Volksabstimmung, Volksentscheid oder Bürgerabstimmung bezeichnen aber im Wesentlichen dasselbe bindende Instrument.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "54",
+          "label": "Par. 54 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "51",
+          "label": "Par. 51 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "38",
+          "label": "Par. 38 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "12",
+          "label": "Par. 12 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "22",
+          "label": "Par. 22 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "112e",
+          "label": "Par. 112e Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "52",
+          "label": "Par. 52 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "51",
+          "label": "Par. 51 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "50",
+          "label": "Par. 50 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "51",
+          "label": "Par. 51 Villacher StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "67",
+          "label": "Par. 67 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "67",
+          "label": "Par. 67 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "67",
+          "label": "Par. 67 Welser StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "53a",
+          "label": "Par. 53a Sbg. StR"
+        }
+      ]
+    },
+    {
+      "question": "Können Gemeindebürger:innen eine Befassung des Gemeinderats mit einem bestimmten Thema erzwingen?",
+      "answer": "Ja, über das Instrument des Volksbegehrens bzw. der Bürgerinitiative können Gemeindebürger:innen den Gemeinderat dazu verpflichten, sich mit einem bestimmten Thema zu befassen. Wenn die erforderliche Anzahl an Unterstützungserklärungen erreicht wird, muss der Gemeinderat das Anliegen auf die Tagesordnung setzen und darüber beraten. Das bedeutet allerdings nicht, dass der Gemeinderat dem Anliegen auch zustimmen muss – die Entscheidung über das Thema selbst verbleibt beim Gemeinderat. Typischerweise können Gemeindebürger:innen auf diesem Weg die Erlassung, Änderung oder Aufhebung von Verordnungen oder bestimmten Maßnahmen verlangen. In einigen Gemeindeordnungen ist darüber hinaus vorgesehen, dass ab einem höheren Quorum an Unterstützungserklärungen sogar eine Volksabstimmung über das Anliegen durchgeführt werden muss, wenn der Gemeinderat dem Begehren nicht entspricht.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "53",
+          "label": "Par. 53 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "55",
+          "label": "Par. 55 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "38b",
+          "label": "Par. 38b OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "14",
+          "label": "Par. 14 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "61",
+          "label": "Par. 61 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "21",
+          "label": "Par. 21 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "131b",
+          "label": "Par. 131b Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "51",
+          "label": "Par. 51 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "50",
+          "label": "Par. 50 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "54",
+          "label": "Par. 54 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "55",
+          "label": "Par. 55 Villacher StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "69",
+          "label": "Par. 69 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "69",
+          "label": "Par. 69 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "69",
+          "label": "Par. 69 Welser StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "innsbruck",
+          "paragraph": "44",
+          "label": "Par. 44 Innsbrucker StR"
+        }
+      ]
+    },
+    {
+      "question": "Welche Themen sind von Volksbegehren, Volksbefragungen und Volksabstimmungen ausgeschlossen?",
+      "answer": "Die Gemeindeordnungen schließen bestimmte Angelegenheiten von allen Formen der direkten Demokratie aus. Typischerweise sind folgende Themen von Volksbegehren, Volksbefragungen und Volksabstimmungen ausgenommen: Wahlen und Abberufungsverfahren, konkrete Personalangelegenheiten (etwa die Bestellung oder Entlassung von Gemeindebediensteten), Gemeindeabgaben und Tarife sowie Angelegenheiten, die in einem behördlichen Bescheidverfahren zu entscheiden sind. Diese Ausnahmen sollen verhindern, dass die direkte Demokratie für sachfremde Zwecke instrumentalisiert wird oder individuelle Rechte durch Mehrheitsentscheidungen beeinträchtigt werden. Auch Angelegenheiten des übertragenen Wirkungsbereichs – also jene Aufgaben, die der Gemeinde von Bund oder Land zur Besorgung übertragen wurden – können nicht Gegenstand einer Bürgerbeteiligung sein, da die Gemeinde hier weisungsgebunden handelt.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "56",
+          "label": "Par. 56 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "16",
+          "label": "Par. 16 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "61",
+          "label": "Par. 61 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "22",
+          "label": "Par. 22 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "112a",
+          "label": "Par. 112a Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "54",
+          "label": "Par. 54 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "53",
+          "label": "Par. 53 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "50",
+          "label": "Par. 50 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "67",
+          "label": "Par. 67 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "67",
+          "label": "Par. 67 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "67",
+          "label": "Par. 67 Welser StR"
+        }
+      ]
+    },
+    {
+      "question": "Was ist der Unterschied zwischen einer Volksbefragung und einer Volksabstimmung?",
+      "answer": "Der wesentliche Unterschied liegt in der rechtlichen Wirkung: Eine Volksbefragung hat beratenden Charakter, eine Volksabstimmung ist hingegen rechtlich bindend. Bei einer Volksbefragung wird die Meinung der wahlberechtigten Gemeindebürger:innen zu einer bestimmten Frage eingeholt. Das Ergebnis dient dem Gemeinderat als Orientierungshilfe, verpflichtet ihn aber nicht zu einem bestimmten Beschluss. Die Volksbefragung wird typischerweise eingesetzt, um den Willen der Bevölkerung vor einer wichtigen Entscheidung zu erforschen. Bei einer Volksabstimmung entscheiden die Wahlberechtigten hingegen verbindlich darüber, ob ein bereits gefasster Gemeinderatsbeschluss Geltung erlangen soll. Die Gemeindeorgane sind an das Ergebnis gebunden, sofern die erforderlichen Beteiligungsquoren erreicht werden. In den meisten Gemeindeordnungen geht die Initiative zur Volksabstimmung vom Gemeinderat selbst aus – dieser beschließt, einen eigenen Beschluss der Abstimmung zu unterziehen. In manchen Fällen kann aber auch durch ein erfolgreiches Volksbegehren eine Volksabstimmung ausgelöst werden.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "52",
+          "label": "Par. 52 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "54",
+          "label": "Par. 54 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "51",
+          "label": "Par. 51 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "57",
+          "label": "Par. 57 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "38",
+          "label": "Par. 38 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "12",
+          "label": "Par. 12 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "13",
+          "label": "Par. 13 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "22",
+          "label": "Par. 22 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "23",
+          "label": "Par. 23 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "112a",
+          "label": "Par. 112a Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "112e",
+          "label": "Par. 112e Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "50",
+          "label": "Par. 50 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "52",
+          "label": "Par. 52 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "50",
+          "label": "Par. 50 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "56",
+          "label": "Par. 56 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "67",
+          "label": "Par. 67 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "68",
+          "label": "Par. 68 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "53a",
+          "label": "Par. 53a Sbg. StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "53d",
+          "label": "Par. 53d Sbg. StR"
+        }
+      ]
+    },
+    {
+      "question": "Welche Rolle spielen Gemeindeversammlungen und Bürgerversammlungen?",
+      "answer": "Gemeindeversammlungen und Bürgerversammlungen sind ein niederschwelliges Instrument der Bürgerbeteiligung, das in vielen Gemeindeordnungen vorgesehen ist. Sie dienen primär der Information und dem Dialog zwischen der Gemeindeverwaltung und der Bevölkerung. Bei einer Gemeindeversammlung berichtet typischerweise die Bürgermeister:in über die wichtigsten Angelegenheiten der Gemeinde, und die anwesenden Gemeindebürger:innen können Fragen stellen, Anregungen einbringen oder Wünsche äußern. Im Unterschied zu Volksbegehren oder Volksabstimmungen haben Gemeindeversammlungen keine rechtlich bindende Wirkung – sie treffen keine Entscheidungen, sondern fördern den Informationsaustausch. In manchen Gemeinden sind regelmäßige Versammlungen vorgeschrieben, etwa mindestens einmal jährlich. Die Einberufung obliegt in der Regel der Bürgermeister:in. Einige Gemeindeordnungen sehen darüber hinaus vor, dass auch die Bevölkerung selbst die Abhaltung einer Versammlung verlangen kann. Auf Bezirksebene gibt es vergleichbare Formate wie Bezirksversammlungen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "11",
+          "label": "Par. 11 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "104b",
+          "label": "Par. 104b Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "104c",
+          "label": "Par. 104c Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "48",
+          "label": "Par. 48 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "59",
+          "label": "Par. 59 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "graz",
+          "paragraph": "13g",
+          "label": "Par. 13g Grazer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "innsbruck",
+          "paragraph": "49a",
+          "label": "Par. 49a Innsbrucker StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "53j",
+          "label": "Par. 53j Sbg. StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "53k",
+          "label": "Par. 53k Sbg. StR"
+        }
+      ]
+    },
+    {
+      "question": "Wer darf an Volksbegehren, Volksbefragungen und Volksabstimmungen teilnehmen?",
+      "answer": "Teilnahmeberechtigt sind grundsätzlich die zum Gemeinderat wahlberechtigten Gemeindebürger:innen. Das bedeutet, dass in der Regel die österreichische Staatsbürgerschaft sowie ein Hauptwohnsitz in der Gemeinde erforderlich sind. Zusätzlich müssen die Teilnehmenden das Wahlalter erreicht haben und dürfen keinem Wahlausschlussgrund unterliegen. Bei Volksbefragungen sehen einige Gemeindeordnungen einen erweiterten Kreis der Teilnahmeberechtigten vor, der auch EU-Bürger:innen mit Hauptwohnsitz in der Gemeinde einschließen kann. Die genauen Voraussetzungen richten sich nach der jeweiligen Gemeindeordnung und den Gemeindewahlordnungen. Für die Unterstützung eines Volksbegehrens oder einer Bürgerinitiative durch Unterschrift gelten dieselben Voraussetzungen wie für die Teilnahme an einer Volksabstimmung – nur Wahlberechtigte können gültig unterschreiben.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "52",
+          "label": "Par. 52 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "55",
+          "label": "Par. 55 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "38",
+          "label": "Par. 38 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "12",
+          "label": "Par. 12 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "61",
+          "label": "Par. 61 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "21",
+          "label": "Par. 21 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "112a",
+          "label": "Par. 112a Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "50",
+          "label": "Par. 50 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "49",
+          "label": "Par. 49 Ruster StR"
+        }
+      ]
+    },
+    {
+      "question": "Kann eine Volksbefragung auch auf Verlangen der Bevölkerung durchgeführt werden?",
+      "answer": "In den meisten Gemeindeordnungen wird eine Volksbefragung durch Beschluss des Gemeinderats angeordnet. Einige Regelungen sehen jedoch zusätzlich vor, dass auch auf Verlangen eines bestimmten Anteils der wahlberechtigten Gemeindebürger:innen eine Volksbefragung durchgeführt werden muss. Die erforderlichen Quoren variieren dabei je nach Bundesland. So kann etwa in manchen Gemeinden bereits auf Verlangen von vier Prozent der Wahlberechtigten eine Volksbefragung erzwungen werden. Andere Gemeindeordnungen setzen die Schwelle höher an. Darüber hinaus kann in einigen Fällen auch eine qualifizierte Minderheit im Gemeinderat – etwa ein Drittel der Gemeinderatsmitglieder – die Durchführung einer Volksbefragung verlangen. Die Fragestellung muss dabei so formuliert sein, dass sie mit Ja oder Nein beantwortet werden kann, und darf sich nur auf Angelegenheiten des eigenen Wirkungsbereichs beziehen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "52",
+          "label": "Par. 52 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "57",
+          "label": "Par. 57 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "38",
+          "label": "Par. 38 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "13",
+          "label": "Par. 13 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "23",
+          "label": "Par. 23 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "112a",
+          "label": "Par. 112a Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "50",
+          "label": "Par. 50 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "49",
+          "label": "Par. 49 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "56",
+          "label": "Par. 56 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "57",
+          "label": "Par. 57 Villacher StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "68",
+          "label": "Par. 68 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "68",
+          "label": "Par. 68 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "68",
+          "label": "Par. 68 Welser StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "innsbruck",
+          "paragraph": "43",
+          "label": "Par. 43 Innsbrucker StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "53d",
+          "label": "Par. 53d Sbg. StR"
+        }
+      ]
+    }
+  ]
+}

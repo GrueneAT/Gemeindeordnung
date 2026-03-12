@@ -1,0 +1,409 @@
+{
+  "slug": "ortspolizeiliche-verordnungen",
+  "title": "Ortspolizeiliche Verordnungen",
+  "description": "Befugnis der Gemeinde zum Erlass ortspolizeilicher Verordnungen zur Abwehr von Gefahren und Missständen im örtlichen Gemeinschaftsleben.",
+  "questions": [
+    {
+      "question": "Was sind ortspolizeiliche Verordnungen?",
+      "answer": "Ortspolizeiliche Verordnungen sind generelle Rechtsvorschriften, die eine Gemeinde im eigenen Wirkungsbereich erlassen kann, um bestimmte Missstände im örtlichen Gemeinschaftsleben abzuwehren oder zu beseitigen. Sie sind in Art. 118 Abs. 6 B-VG verfassungsrechtlich verankert und stellen ein zentrales Instrument der kommunalen Selbstverwaltung dar. Damit eine solche Verordnung erlassen werden darf, muss ein Missstand im örtlichen Zusammenleben vorliegen, der die betroffene Gemeinschaft spürbar beeinträchtigt. Die Verordnung muss zudem zur Abwehr dieses Missstands geeignet und erforderlich sein. Typische Regelungsgegenstände betreffen etwa Lärmschutz, Tierhaltung, Benützung öffentlicher Anlagen oder die Aufrechterhaltung von Ordnung und Sicherheit im Gemeindegebiet. Die konkreten Voraussetzungen und Verfahrensbestimmungen richten sich nach der jeweiligen Gemeindeordnung bzw. dem jeweiligen Stadtrecht.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "13",
+          "label": "Par. 13 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "13",
+          "label": "Par. 13 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "13",
+          "label": "Par. 13 Villacher StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "8",
+          "label": "Par. 8 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "1",
+          "label": "Par. 1 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "1",
+          "label": "Par. 1 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "1",
+          "label": "Par. 1 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "2",
+          "label": "Par. 2 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "2",
+          "label": "Par. 2 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "1",
+          "label": "Par. 1 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "8",
+          "label": "Par. 8 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Wer beschließt ortspolizeiliche Verordnungen?",
+      "answer": "Die Zuständigkeit zum Erlass ortspolizeilicher Verordnungen liegt grundsätzlich beim Gemeinderat als dem allgemeinen Vertretungskörper der Gemeinde. Da es sich um generelle Rechtsvorschriften im eigenen Wirkungsbereich handelt, fällt die Beschlussfassung in die Kompetenz des Gemeinderats. In den meisten Gemeindeordnungen ist vorgesehen, dass der Gemeinderat sämtliche Verordnungen im eigenen Wirkungsbereich erlässt, sofern nicht ausdrücklich ein anderes Organ zuständig ist. Durchführungsverordnungen im übertragenen Wirkungsbereich erlässt hingegen typischerweise die Bürgermeister:in. Auch bei Gefahr im Verzug kann die Bürgermeister:in in vielen Gemeindeordnungen einstweilige Verfügungen und Anordnungen treffen, die keinen Aufschub dulden – diese sind dem Gemeinderat jedoch nachträglich zur Genehmigung vorzulegen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "15",
+          "label": "Par. 15 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "15",
+          "label": "Par. 15 Villacher StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "40",
+          "label": "Par. 40 Sbg. StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "12",
+          "label": "Par. 12 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "12",
+          "label": "Par. 12 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "8",
+          "label": "Par. 8 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "8",
+          "label": "Par. 8 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "8",
+          "label": "Par. 8 Welser StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "innsbruck",
+          "paragraph": "9",
+          "label": "Par. 9 Innsbrucker StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "graz",
+          "paragraph": "15",
+          "label": "Par. 15 Grazer StR"
+        }
+      ]
+    },
+    {
+      "question": "Welche Gegenstände können durch ortspolizeiliche Verordnungen geregelt werden?",
+      "answer": "Ortspolizeiliche Verordnungen können alle Angelegenheiten regeln, die zur Abwehr oder Beseitigung von Missständen im örtlichen Gemeinschaftsleben erforderlich sind. Der Regelungsgegenstand muss dabei im eigenen Wirkungsbereich der Gemeinde liegen, also eine Angelegenheit betreffen, die im überwiegenden Interesse der örtlichen Gemeinschaft gelegen ist und von der Gemeinde eigenständig besorgt werden kann. Typische Regelungsbereiche umfassen: die Benützung öffentlicher Plätze, Straßen und Anlagen (etwa Spielplatzordnungen oder Marktordnungen), Lärmschutzbestimmungen (z. B. Einschränkung von Rasenmähen zu bestimmten Zeiten), Vorschriften zur Tierhaltung und Leinenpflicht, Regelungen zur Sauberkeit und Ordnung im Gemeindegebiet sowie Maßnahmen zur Abwehr von Gefahren für das Zusammenleben. Nicht geregelt werden dürfen hingegen Angelegenheiten, die bereits durch Bundes- oder Landesgesetz abschließend normiert sind, oder Sachverhalte, die keinen Bezug zum örtlichen Gemeinschaftsleben aufweisen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "11",
+          "label": "Par. 11 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "13",
+          "label": "Par. 13 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "11",
+          "label": "Par. 11 Villacher StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "13",
+          "label": "Par. 13 Villacher StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "8",
+          "label": "Par. 8 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "38",
+          "label": "Par. 38 Sbg. StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "innsbruck",
+          "paragraph": "7",
+          "label": "Par. 7 Innsbrucker StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "1",
+          "label": "Par. 1 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "1",
+          "label": "Par. 1 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "1",
+          "label": "Par. 1 NÖ. GO"
+        }
+      ]
+    },
+    {
+      "question": "Welche Voraussetzungen müssen für den Erlass einer ortspolizeilichen Verordnung erfüllt sein?",
+      "answer": "Für den rechtmäßigen Erlass einer ortspolizeilichen Verordnung müssen mehrere Voraussetzungen kumulativ vorliegen. Erstens muss ein konkreter Missstand im örtlichen Gemeinschaftsleben bestehen oder unmittelbar drohen – eine bloß abstrakte Gefahr reicht in der Regel nicht aus. Zweitens muss die Verordnung geeignet sein, diesen Missstand tatsächlich zu beseitigen oder abzuwehren. Drittens darf der geregelte Sachverhalt nicht bereits durch übergeordnetes Bundes- oder Landesrecht abschließend normiert sein, da die Gemeinde sonst keine Regelungskompetenz besitzt. Viertens muss die Verordnung verhältnismäßig sein: Die angeordneten Maßnahmen dürfen nicht über das zur Missstandsbekämpfung erforderliche Maß hinausgehen. Die Verordnung muss ordnungsgemäß kundgemacht werden, um Rechtswirksamkeit zu erlangen. Je nach Gemeindeordnung sind dafür der Anschlag an der Amtstafel, die Verlautbarung in einem Amtsblatt oder andere ortsübliche Formen der Kundmachung vorgesehen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "13",
+          "label": "Par. 13 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "13",
+          "label": "Par. 13 Villacher StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "15",
+          "label": "Par. 15 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "15",
+          "label": "Par. 15 Villacher StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "8",
+          "label": "Par. 8 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "38",
+          "label": "Par. 38 Sbg. StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "innsbruck",
+          "paragraph": "7",
+          "label": "Par. 7 Innsbrucker StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "1",
+          "label": "Par. 1 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "2",
+          "label": "Par. 2 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "2",
+          "label": "Par. 2 Vbg. GG"
+        }
+      ]
+    },
+    {
+      "question": "Kann die Bürgermeister:in bei Gefahr im Verzug ortspolizeiliche Maßnahmen erlassen?",
+      "answer": "In den meisten Gemeindeordnungen ist vorgesehen, dass die Bürgermeister:in bei Gefahr im Verzug einstweilige, unaufschiebbare Verfügungen treffen darf. Diese Notstandskompetenz ermöglicht rasches Handeln, wenn eine ordentliche Beschlussfassung durch den Gemeinderat zeitlich nicht abgewartet werden kann, etwa bei akuten Gefahren für Leben, Gesundheit oder Eigentum. Solche Sofortmaßnahmen sind jedoch zeitlich begrenzt und müssen dem Gemeinderat unverzüglich zur nachträglichen Genehmigung vorgelegt werden. Verweigert der Gemeinderat die Genehmigung, tritt die Verfügung außer Kraft. Die Bürgermeister:in handelt in solchen Fällen nicht als eigenständige Verordnungsgeberin, sondern als Notstandsbehörde im Rahmen einer eng begrenzten Ausnahmekompetenz. Dauerhafte Regelungen erfordern stets einen ordnungsgemäßen Gemeinderatsbeschluss.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "19",
+          "label": "Par. 19 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "19",
+          "label": "Par. 19 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "15",
+          "label": "Par. 15 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "15",
+          "label": "Par. 15 Villacher StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "40",
+          "label": "Par. 40 Sbg. StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "17",
+          "label": "Par. 17 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "15",
+          "label": "Par. 15 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "15",
+          "label": "Par. 15 Welser StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "graz",
+          "paragraph": "17",
+          "label": "Par. 17 Grazer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "innsbruck",
+          "paragraph": "9",
+          "label": "Par. 9 Innsbrucker StR"
+        }
+      ]
+    },
+    {
+      "question": "Wie unterscheiden sich ortspolizeiliche Verordnungen von Durchführungsverordnungen?",
+      "answer": "Ortspolizeiliche Verordnungen und Durchführungsverordnungen unterscheiden sich grundlegend in Rechtsgrundlage, Zweck und Zuständigkeit. Ortspolizeiliche Verordnungen werden auf Basis von Art. 118 Abs. 6 B-VG im eigenen Wirkungsbereich der Gemeinde erlassen. Sie dienen der Abwehr und Beseitigung von Missständen im örtlichen Gemeinschaftsleben und begründen eigenständige Verhaltensvorschriften, ohne dass es einer speziellen gesetzlichen Ermächtigung für den konkreten Regelungsgegenstand bedarf. Durchführungsverordnungen hingegen konkretisieren bestehende Gesetze und setzen eine ausdrückliche gesetzliche Ermächtigung voraus. Im eigenen Wirkungsbereich erlässt sie der Gemeinderat, im übertragenen Wirkungsbereich die Bürgermeister:in. Während ortspolizeiliche Verordnungen originäres Gemeinderecht schaffen, führen Durchführungsverordnungen lediglich übergeordnetes Recht näher aus. In den meisten Gemeindeordnungen sind beide Verordnungstypen in eigenen Bestimmungen geregelt.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "13",
+          "label": "Par. 13 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "klagenfurt",
+          "paragraph": "15",
+          "label": "Par. 15 Klagenfurter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "13",
+          "label": "Par. 13 Villacher StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "villach",
+          "paragraph": "15",
+          "label": "Par. 15 Villacher StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "8",
+          "label": "Par. 8 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "54",
+          "label": "Par. 54 Sbg. StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "12",
+          "label": "Par. 12 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "12",
+          "label": "Par. 12 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "innsbruck",
+          "paragraph": "7",
+          "label": "Par. 7 Innsbrucker StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "graz",
+          "paragraph": "15",
+          "label": "Par. 15 Grazer StR"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "slug": "informationspflichten-und-akteneinsicht",
+  "title": "Informationspflichten und Akteneinsicht",
+  "description": "Auskunfts- und Informationspflichten der Gemeinde gegenüber Gemeinderät:innen und Gemeindebürger:innen sowie das Recht auf Akteneinsicht in der österreichischen Gemeindeverwaltung.",
+  "questions": [
+    {
+      "question": "Welches Auskunftsrecht haben Gemeinderät:innen gegenüber der Gemeindeverwaltung?",
+      "answer": "Gemeinderät:innen verfügen in allen österreichischen Gemeindeordnungen über ein umfassendes Auskunfts- und Fragerecht. Dieses Recht ist ein zentrales Instrument der demokratischen Kontrolle und ermöglicht es den Mitgliedern des Gemeinderats, sich über sämtliche Angelegenheiten des eigenen Wirkungsbereichs zu informieren. In den meisten Gemeindeordnungen umfasst dieses Recht das Stellen mündlicher und schriftlicher Anfragen an die Bürgermeister:in und an die Mitglieder des Gemeindevorstands bzw. Stadtsenats. Die Anfragen müssen in der Regel innerhalb einer bestimmten Frist beantwortet werden. Darüber hinaus können Gemeinderät:innen typischerweise Anträge auf Aufnahme bestimmter Punkte in die Tagesordnung stellen. In manchen Gemeindeordnungen besteht auch das Recht, an Sitzungen der Ausschüsse mit beratender Stimme teilzunehmen, selbst wenn die betreffende Person nicht Mitglied des jeweiligen Ausschusses ist. Die Auskunftspflicht erstreckt sich auf alle Bereiche der Gemeindeverwaltung im eigenen Wirkungsbereich. Je nach Bundesland können auch Dringliche Anfragen vorgesehen sein, die eine kürzere Beantwortungsfrist auslösen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "45",
+          "label": "Par. 45 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "29",
+          "label": "Par. 29 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "19",
+          "label": "Par. 19 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "28",
+          "label": "Par. 28 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "17",
+          "label": "Par. 17 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "16",
+          "label": "Par. 16 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "26",
+          "label": "Par. 26 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "29",
+          "label": "Par. 29 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "34",
+          "label": "Par. 34 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Haben Gemeindebürger:innen ein Recht auf Akteneinsicht bei der Gemeinde?",
+      "answer": "Das Recht auf Akteneinsicht für Gemeindebürger:innen ergibt sich aus mehreren Rechtsgrundlagen. Auf Bundesebene gewährleistet Art. 20 Abs. 4 B-VG eine allgemeine Auskunftspflicht aller Organe der Verwaltung, einschließlich der Gemeinden. Demnach haben alle Personen das Recht, Auskünfte über Angelegenheiten ihres Wirkungsbereichs zu erhalten, sofern dem keine gesetzliche Verschwiegenheitspflicht entgegensteht. Die Auskunftspflichtgesetze der Bundesländer konkretisieren dieses Recht. Darüber hinaus sehen die meisten Gemeindeordnungen eigene Bestimmungen über das Auskunftsrecht der Gemeindebürger:innen vor. In Verwaltungsverfahren steht Parteien nach dem Allgemeinen Verwaltungsverfahrensgesetz (AVG) ein weitergehendes Recht auf Akteneinsicht zu. Einschränkungen bestehen insbesondere zum Schutz personenbezogener Daten, bei Amtsgeheimnissen und wenn überwiegende berechtigte Interessen Dritter entgegenstehen. Je nach Bundesland variieren die Details der Auskunftserteilung, etwa hinsichtlich der Form (mündlich oder schriftlich) und der Fristen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "46",
+          "label": "Par. 46 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "67",
+          "label": "Par. 67 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "40",
+          "label": "Par. 40 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "52",
+          "label": "Par. 52 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "56",
+          "label": "Par. 56 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "38",
+          "label": "Par. 38 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "58",
+          "label": "Par. 58 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "55",
+          "label": "Par. 55 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "109",
+          "label": "Par. 109 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Wie müssen Gemeinderatsbeschlüsse und Verordnungen veröffentlicht werden?",
+      "answer": "Die Kundmachung von Verordnungen und Beschlüssen des Gemeinderats ist in allen Gemeindeordnungen geregelt und folgt dem rechtsstaatlichen Grundsatz, dass Rechtsvorschriften erst nach ordnungsgemäßer Veröffentlichung wirksam werden. In den meisten Gemeindeordnungen erfolgt die Kundmachung durch Anschlag an der Amtstafel der Gemeinde für eine bestimmte Dauer, typischerweise zwei Wochen. Zunehmend sehen die Regelungen auch eine elektronische Kundmachung auf der Website der Gemeinde oder in einem elektronisch geführten Amtsblatt vor. In manchen Bundesländern ist die Kundmachung im Amtsblatt der jeweiligen Statutarstadt vorgeschrieben. Verordnungen treten in der Regel mit dem auf den letzten Tag der Kundmachungsfrist folgenden Tag in Kraft, sofern kein anderer Zeitpunkt bestimmt ist. Neben der formellen Kundmachung gibt es in den meisten Gemeindeordnungen auch Bestimmungen über die Öffentlichkeit von Gemeinderatssitzungen, sodass Gemeindebürger:innen die Beschlussfassung direkt mitverfolgen können. Ausnahmen von der Öffentlichkeit bestehen für vertrauliche Angelegenheiten, etwa bei Personalfragen oder wenn berechtigte Interessen Dritter betroffen sind.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "72",
+          "label": "Par. 72 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "62",
+          "label": "Par. 62 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "38",
+          "label": "Par. 38 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "56",
+          "label": "Par. 56 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "48",
+          "label": "Par. 48 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "55",
+          "label": "Par. 55 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "60",
+          "label": "Par. 60 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "52",
+          "label": "Par. 52 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "108",
+          "label": "Par. 108 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Welche Berichtspflichten hat die Bürgermeister:in gegenüber dem Gemeinderat?",
+      "answer": "Die Bürgermeister:in unterliegt in allen österreichischen Gemeindeordnungen umfassenden Berichtspflichten gegenüber dem Gemeinderat. Als Vorsitz des Gemeinderats und als Leitung der Gemeindeverwaltung muss die Bürgermeister:in dem Gemeinderat regelmäßig über den Stand der Verwaltungsgeschäfte berichten. In den meisten Gemeindeordnungen ist vorgesehen, dass die Bürgermeister:in den Gemeinderat über wichtige Angelegenheiten der Gemeinde informiert und auf Verlangen des Gemeinderats über bestimmte Verwaltungsbereiche Auskunft erteilt. Die Berichtspflicht erstreckt sich typischerweise auf die Ausführung von Gemeinderatsbeschlüssen, die finanzielle Lage der Gemeinde sowie auf Angelegenheiten des übertragenen Wirkungsbereichs, soweit dies gesetzlich zulässig ist. Darüber hinaus sehen viele Gemeindeordnungen vor, dass die Bürgermeister:in den Gemeinderat unverzüglich über dringliche Verfügungen informieren muss, die sie ohne vorherige Beschlussfassung des zuständigen Organs getroffen hat. Diese dringlichen Anordnungen bedürfen in der Regel der nachträglichen Genehmigung durch den Gemeinderat in der nächsten Sitzung.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "48",
+          "label": "Par. 48 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "44",
+          "label": "Par. 44 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "30",
+          "label": "Par. 30 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "38",
+          "label": "Par. 38 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "29",
+          "label": "Par. 29 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "30",
+          "label": "Par. 30 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "36",
+          "label": "Par. 36 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "37",
+          "label": "Par. 37 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "47",
+          "label": "Par. 47 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Sind Gemeinderatssitzungen öffentlich und können Gemeindebürger:innen daran teilnehmen?",
+      "answer": "In allen österreichischen Gemeindeordnungen gilt der Grundsatz der Öffentlichkeit von Gemeinderatssitzungen. Gemeindebürger:innen und die allgemeine Öffentlichkeit haben das Recht, den Sitzungen des Gemeinderats als Zuhörer:innen beizuwohnen. Dieser Grundsatz dient der demokratischen Transparenz und ermöglicht es der Bevölkerung, die Arbeit der gewählten Vertretung mitzuverfolgen. Allerdings sehen die Gemeindeordnungen auch Ausnahmen von der Öffentlichkeit vor. Die Öffentlichkeit kann auf Antrag ausgeschlossen werden, wenn dies zum Schutz überwiegender berechtigter Interessen erforderlich ist, beispielsweise bei Personalangelegenheiten, bei der Erörterung persönlicher Verhältnisse einzelner Personen oder bei bestimmten Vergabeverfahren. Der Ausschluss der Öffentlichkeit muss in der Regel durch einen Beschluss des Gemeinderats erfolgen. Die Zeiten und Orte der Gemeinderatssitzungen werden typischerweise in ortsüblicher Weise bekanntgegeben, etwa durch Anschlag an der Amtstafel oder auf der Gemeinde-Website. In manchen Bundesländern ist auch die Veröffentlichung der Tagesordnung vorgeschrieben, damit sich die Öffentlichkeit gezielt informieren kann.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "42",
+          "label": "Par. 42 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "24",
+          "label": "Par. 24 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "18",
+          "label": "Par. 18 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "24",
+          "label": "Par. 24 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "14",
+          "label": "Par. 14 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "14",
+          "label": "Par. 14 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "24",
+          "label": "Par. 24 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "25",
+          "label": "Par. 25 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "29",
+          "label": "Par. 29 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Welche Einsichtsrechte haben Gemeinderät:innen in Verwaltungsakten und Unterlagen?",
+      "answer": "Die Einsichtsrechte von Gemeinderät:innen gehen deutlich über das allgemeine Auskunftsrecht der Gemeindebürger:innen hinaus. In den meisten Gemeindeordnungen ist vorgesehen, dass Mitglieder des Gemeinderats in alle Akten und Unterlagen Einsicht nehmen können, die sich auf Angelegenheiten des eigenen Wirkungsbereichs der Gemeinde beziehen. Dieses Recht steht in engem Zusammenhang mit der Kontrollfunktion des Gemeinderats gegenüber der Verwaltung. Typischerweise kann die Akteneinsicht von einzelnen Gemeinderät:innen verlangt werden, in manchen Bundesländern ist sie jedoch an die Unterstützung einer bestimmten Anzahl von Mitgliedern oder an einen Beschluss eines Ausschusses geknüpft. Einschränkungen bestehen in der Regel bei Akten des übertragenen Wirkungsbereichs, da hier die weisungsgebundene Verwaltung betroffen ist. Auch der Datenschutz und die Verschwiegenheitspflicht können die Akteneinsicht begrenzen. Gemeinderät:innen unterliegen ihrerseits einer Verschwiegenheitspflicht bezüglich der Inhalte, die ihnen im Rahmen der Akteneinsicht bekannt werden, insbesondere wenn die Angelegenheit in nichtöffentlicher Sitzung behandelt wurde.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "45",
+          "label": "Par. 45 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "30",
+          "label": "Par. 30 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "20",
+          "label": "Par. 20 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "29",
+          "label": "Par. 29 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "18",
+          "label": "Par. 18 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "17",
+          "label": "Par. 17 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "27",
+          "label": "Par. 27 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "30",
+          "label": "Par. 30 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "35",
+          "label": "Par. 35 Wr. StV"
+        }
+      ]
+    }
+  ]
+}

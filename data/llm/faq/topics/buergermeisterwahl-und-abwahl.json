@@ -1,0 +1,421 @@
+{
+  "slug": "buergermeisterwahl-und-abwahl",
+  "title": "Bürgermeister:innenwahl und Abwahl",
+  "description": "Verfahren zur Wahl und Abwahl der Bürgermeister:in sowie der Vizebürgermeister:in durch den Gemeinderat oder die Gemeindebevölkerung, einschließlich der Vertretungsregelungen bei Verhinderung.",
+  "questions": [
+    {
+      "question": "Wie wird die Bürgermeister:in gewählt?",
+      "answer": "In Österreich bestehen zwei grundsätzliche Modelle für die Wahl der Bürgermeister:in. In den meisten Bundesländern erfolgt die Wahl direkt durch die Gemeindebürger:innen im Rahmen der Gemeinderatswahl. Die wahlberechtigte Bevölkerung wählt dabei die Bürgermeister:in in einer eigenen, gleichzeitig mit der Gemeinderatswahl stattfindenden Wahl. In einigen Bundesländern hingegen wählt der Gemeinderat die Bürgermeister:in aus seiner Mitte. Kann bei Direktwahl keine Kandidatur die erforderliche Mehrheit erreichen, sehen die Gemeindeordnungen typischerweise eine Stichwahl oder eine Wahl durch den Gemeinderat als Ersatzverfahren vor. So wird etwa in manchen Regelungen vorgesehen, dass die Gemeindevertretung die Bürgermeister:in in bis zu drei Wahlgängen wählt, wobei im dritten Wahlgang die einfache Mehrheit genügt. Wählbar sind in der Regel alle Personen, die auch zum Gemeinderat wählbar sind. Nach der Wahl ist ein Gelöbnis abzulegen, bevor die Amtsführung beginnt.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "25",
+          "label": "Par. 25 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "19",
+          "label": "Par. 19 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "22",
+          "label": "Par. 22 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "26",
+          "label": "Par. 26 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "61",
+          "label": "Par. 61 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "20",
+          "label": "Par. 20 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "15",
+          "label": "Par. 15 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "17",
+          "label": "Par. 17 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "22",
+          "label": "Par. 22 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "10",
+          "label": "Par. 10 Wr. StV"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "villach",
+          "paragraph": "23",
+          "label": "Par. 23 Villacher StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "innsbruck",
+          "paragraph": "10",
+          "label": "Par. 10 Innsbrucker StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "klagenfurt",
+          "paragraph": "19",
+          "label": "Par. 19 Klagenfurter StR"
+        }
+      ]
+    },
+    {
+      "question": "Unter welchen Voraussetzungen kann die Bürgermeister:in abgewählt werden?",
+      "answer": "Die Möglichkeit, eine Bürgermeister:in vor Ablauf der Amtsperiode abzuwählen, ist in den österreichischen Gemeindeordnungen unterschiedlich geregelt. In mehreren Bundesländern sehen die Regelungen ein Misstrauensvotum durch den Gemeinderat vor. Typischerweise ist dafür eine qualifizierte Mehrheit erforderlich – häufig eine Zweidrittelmehrheit der Gemeinderatsmitglieder. Manche Gemeindeordnungen verlangen zusätzlich eine bestätigende Volksabstimmung der Gemeindebürger:innen, damit die Abwahl wirksam wird. Daneben kann das Amt der Bürgermeister:in auch durch den Verlust der Wählbarkeit, durch dauernde Amtsunfähigkeit oder durch eine rechtskräftige gerichtliche Verurteilung enden. In Bundesländern mit Direktwahl genießt die Bürgermeister:in eine stärkere demokratische Legitimation, weshalb die Hürden für eine Abwahl durch den Gemeinderat dort in der Regel höher liegen. Die Selbstauflösung des Gemeinderats, die ebenfalls in manchen Gemeindeordnungen vorgesehen ist, führt zwar zu Neuwahlen, betrifft aber primär den Gemeinderat selbst und nur mittelbar die Bürgermeister:in.",
+      "references": [
+        {
+          "category": "statutarstaedte",
+          "key": "innsbruck",
+          "paragraph": "17",
+          "label": "Par. 17 Innsbrucker StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "21",
+          "label": "Par. 21 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "16",
+          "label": "Par. 16 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "16",
+          "label": "Par. 16 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "20",
+          "label": "Par. 20 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "20",
+          "label": "Par. 20 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "22",
+          "label": "Par. 22 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "61",
+          "label": "Par. 61 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "15",
+          "label": "Par. 15 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "13",
+          "label": "Par. 13 Wr. StV"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "graz",
+          "paragraph": "18",
+          "label": "Par. 18 Grazer StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "villach",
+          "paragraph": "20",
+          "label": "Par. 20 Villacher StR"
+        }
+      ]
+    },
+    {
+      "question": "Welche Rolle spielt die Vizebürgermeister:in bei Verhinderung?",
+      "answer": "Die Vizebürgermeister:in übernimmt bei Verhinderung der Bürgermeister:in deren sämtliche Aufgaben und Befugnisse. Dies umfasst den Vorsitz im Gemeinderat, die Außenvertretung der Gemeinde sowie die Leitung der laufenden Verwaltung. Sind mehrere Vizebürgermeister:innen bestellt, erfolgt die Vertretung in der Reihenfolge ihrer Bestellung. Ist auch die Vizebürgermeister:in verhindert, übernimmt in der Regel das an Lebensjahren älteste Mitglied des Gemeindevorstands. Die Vertretung gilt nicht nur bei kurzfristiger Abwesenheit, sondern auch beim Erlöschen des Amts – etwa durch Rücktritt, Tod oder Amtsenthebung der Bürgermeister:in. In diesem Fall führt die Vizebürgermeister:in die Geschäfte bis zur Neuwahl fort. Die Wahl der Vizebürgermeister:in erfolgt typischerweise durch den Gemeinderat aus dessen Mitte, wobei je nach Gemeindeordnung ein oder mehrere Vizebürgermeister:innen bestellt werden können.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "30",
+          "label": "Par. 30 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "27",
+          "label": "Par. 27 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "24",
+          "label": "Par. 24 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "29",
+          "label": "Par. 29 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "22",
+          "label": "Par. 22 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "37",
+          "label": "Par. 37 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "20",
+          "label": "Par. 20 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "61",
+          "label": "Par. 61 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "30",
+          "label": "Par. 30 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "15",
+          "label": "Par. 15 Wr. StV"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "eisenstadt",
+          "paragraph": "16",
+          "label": "Par. 16 Eisenstädter StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "st_poelten",
+          "paragraph": "4",
+          "label": "Par. 4 St. Pöltner StR"
+        }
+      ]
+    },
+    {
+      "question": "Wie läuft die konstituierende Sitzung des Gemeinderats ab?",
+      "answer": "Nach jeder Gemeinderatswahl muss innerhalb einer gesetzlich festgelegten Frist – je nach Gemeindeordnung zwischen vier und acht Wochen nach dem Wahltag – die konstituierende Sitzung des neu gewählten Gemeinderats stattfinden. Die Einberufung obliegt in der Regel der bisherigen Bürgermeister:in. Den Vorsitz in der konstituierenden Sitzung führt zunächst häufig das älteste Mitglied des Gemeinderats oder die bisherige Bürgermeister:in. Alle neu gewählten Mitglieder des Gemeinderats legen in dieser Sitzung das Gelöbnis ab, wodurch ihre Funktion offiziell beginnt. Im Anschluss an die Angelobung werden die Bürgermeister:in und die Vizebürgermeister:in gewählt, sofern keine Direktwahl stattgefunden hat. Ebenso erfolgt die Wahl des Gemeindevorstands und die Bestellung der Ausschüsse. Über die konstituierende Sitzung ist eine Niederschrift aufzunehmen, die von allen Anwesenden zu unterfertigen ist.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "25",
+          "label": "Par. 25 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "26",
+          "label": "Par. 26 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "16",
+          "label": "Par. 16 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "20",
+          "label": "Par. 20 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "20",
+          "label": "Par. 20 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "19",
+          "label": "Par. 19 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "33",
+          "label": "Par. 33 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "24",
+          "label": "Par. 24 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "30",
+          "label": "Par. 30 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "13",
+          "label": "Par. 13 Wr. StV"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "graz",
+          "paragraph": "17",
+          "label": "Par. 17 Grazer StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "klagenfurt",
+          "paragraph": "21",
+          "label": "Par. 21 Klagenfurter StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "villach",
+          "paragraph": "21",
+          "label": "Par. 21 Villacher StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "linz",
+          "paragraph": "11",
+          "label": "Par. 11 Linzer StR"
+        }
+      ]
+    },
+    {
+      "question": "Welche Aufgaben und Befugnisse hat die Bürgermeister:in?",
+      "answer": "Die Bürgermeister:in steht an der Spitze der Gemeindeverwaltung und vereint mehrere zentrale Funktionen. Sie führt den Vorsitz im Gemeinderat, eröffnet und schließt die Sitzungen, leitet die Verhandlungen und sorgt für deren ordnungsgemäßen Verlauf. Als Außenvertretung repräsentiert die Bürgermeister:in die Gemeinde gegenüber Behörden, Gerichten und Dritten und fertigt Urkunden über Rechtsgeschäfte und Ehrungen. In der laufenden Verwaltung obliegt der Bürgermeister:in die Leitung des Gemeindeamts bzw. Magistrats. Sie beruft den Gemeinderat in der Regel mindestens vierteljährlich ein und setzt die Tagesordnung fest. In Angelegenheiten des übertragenen Wirkungsbereichs handelt die Bürgermeister:in als staatliches Organ und ist dabei an Weisungen gebunden. Darüber hinaus kommen der Bürgermeister:in je nach Gemeindeordnung auch Personalentscheidungen und die Besorgung unaufschiebbarer Angelegenheiten zu.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "37",
+          "label": "Par. 37 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "23",
+          "label": "Par. 23 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "14",
+          "label": "Par. 14 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "27",
+          "label": "Par. 27 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "25",
+          "label": "Par. 25 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "26",
+          "label": "Par. 26 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "19",
+          "label": "Par. 19 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "30",
+          "label": "Par. 30 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "9",
+          "label": "Par. 9 Wr. StV"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "eisenstadt",
+          "paragraph": "16",
+          "label": "Par. 16 Eisenstädter StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "salzburg_stadt",
+          "paragraph": "13",
+          "label": "Par. 13 Sbg. StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "salzburg_stadt",
+          "paragraph": "36",
+          "label": "Par. 36 Sbg. StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "eisenstadt",
+          "paragraph": "33",
+          "label": "Par. 33 Eisenstädter StR"
+        }
+      ]
+    }
+  ]
+}

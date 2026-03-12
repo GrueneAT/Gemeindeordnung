@@ -1,0 +1,475 @@
+{
+  "slug": "gemeindevermoegen-und-liegenschaftsverwaltung",
+  "title": "Gemeindevermögen und Liegenschaftsverwaltung",
+  "description": "Regelungen zur Verwaltung des Gemeindevermögens, zum Erwerb und zur Veräußerung von Liegenschaften und zur Vermögenssicherung in den österreichischen Gemeindeordnungen.",
+  "questions": [
+    {
+      "question": "Wer entscheidet über den Verkauf von Gemeindegrundstücken?",
+      "answer": "Die Entscheidung über den Verkauf von Gemeindegrundstücken liegt in den meisten Gemeindeordnungen beim Gemeinderat als oberstem beschließendem Organ. Da es sich bei Liegenschaftsveräußerungen um bedeutende Vermögensverfügungen handelt, ist dafür typischerweise ein Beschluss des Gemeinderats erforderlich. In vielen Gemeindeordnungen ist dafür sogar eine qualifizierte Mehrheit (z. B. Zweidrittelmehrheit) vorgesehen, insbesondere wenn der Wert eine bestimmte Schwelle überschreitet. Die Bürgermeister:in ist dann für die Umsetzung des Beschlusses und die Unterfertigung der entsprechenden Verträge zuständig. Je nach Bundesland können bestimmte geringfügige Veräußerungen auch an den Gemeindevorstand oder Stadtsenat delegiert werden, wobei die genauen Wertgrenzen variieren.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "25",
+          "label": "Par. 25 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "10",
+          "label": "Par. 10 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "55",
+          "label": "Par. 55 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "29",
+          "label": "Par. 29 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "18",
+          "label": "Par. 18 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "45",
+          "label": "Par. 45 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "2",
+          "label": "Par. 2 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "17",
+          "label": "Par. 17 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "9",
+          "label": "Par. 9 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "12",
+          "label": "Par. 12 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "12",
+          "label": "Par. 12 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "44",
+          "label": "Par. 44 Linzer StR"
+        }
+      ]
+    },
+    {
+      "question": "Welche Genehmigungen sind für größere Vermögensverfügungen erforderlich?",
+      "answer": "Für größere Vermögensverfügungen sehen die Gemeindeordnungen abgestufte Genehmigungsverfahren vor. In der Regel bedürfen wesentliche Veräußerungen, Belastungen oder Verpfändungen von Gemeindevermögen der Genehmigung durch den Gemeinderat. Viele Gemeindeordnungen legen darüber hinaus Wertgrenzen fest, bei deren Überschreitung eine aufsichtsbehördliche Genehmigung durch die Landesregierung einzuholen ist. Dies dient dem Schutz des Gemeindevermögens vor nachteiligen Geschäften. Typischerweise gilt: Je höher der Wert der Vermögensverfügung, desto strenger sind die Genehmigungserfordernisse. Bei Statutarstädten können zusätzlich der Stadtsenat oder eigene Ausschüsse in die Genehmigungskette eingebunden sein. Urkunden über solche Rechtsgeschäfte bedürfen in den meisten Gemeindeordnungen der Unterschrift der Bürgermeister:in sowie einer weiteren berechtigten Person.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "25",
+          "label": "Par. 25 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "10",
+          "label": "Par. 10 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "55",
+          "label": "Par. 55 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "29",
+          "label": "Par. 29 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "53",
+          "label": "Par. 53 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "39",
+          "label": "Par. 39 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "60",
+          "label": "Par. 60 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "3",
+          "label": "Par. 3 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "9",
+          "label": "Par. 9 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "42",
+          "label": "Par. 42 Sbg. StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "57",
+          "label": "Par. 57 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "66",
+          "label": "Par. 66 Steyrer StR"
+        }
+      ]
+    },
+    {
+      "question": "Wie wird das Gemeindevermögen geschützt?",
+      "answer": "Der Schutz des Gemeindevermögens wird in den österreichischen Gemeindeordnungen durch mehrere Mechanismen sichergestellt. Grundsätzlich ist das Gemeindevermögen substanzerhaltend, pfleglich und nach wirtschaftlichen Grundsätzen zu verwalten. Ertragsfähiges Vermögen soll den bestmöglichen Ertrag abwerfen. Die Gemeindeordnungen verpflichten die Gemeinden zur Beachtung der Grundsätze der Sparsamkeit, Wirtschaftlichkeit und Zweckmäßigkeit. Veräußerungen unter dem Verkehrswert sind in der Regel unzulässig, sofern nicht besondere öffentliche Interessen vorliegen. Darüber hinaus unterliegt die Vermögensverwaltung der Prüfung durch den Rechnungshof, den Landesrechnungshof sowie gemeindeinterne Kontrollorgane wie den Prüfungsausschuss. Auch die aufsichtsbehördliche Genehmigungspflicht für bestimmte Vermögensverfügungen trägt zum Schutz bei.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "1",
+          "label": "Par. 1 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "10",
+          "label": "Par. 10 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "1",
+          "label": "Par. 1 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "1",
+          "label": "Par. 1 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "3",
+          "label": "Par. 3 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "39",
+          "label": "Par. 39 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "2",
+          "label": "Par. 2 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "3",
+          "label": "Par. 3 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "9",
+          "label": "Par. 9 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "57",
+          "label": "Par. 57 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "57",
+          "label": "Par. 57 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "57",
+          "label": "Par. 57 Welser StR"
+        }
+      ]
+    },
+    {
+      "question": "Welche Formvorschriften gelten für Rechtsgeschäfte über Gemeindevermögen?",
+      "answer": "Die Gemeindeordnungen stellen strenge Formvorschriften für Rechtsgeschäfte auf, durch die das Gemeindevermögen betroffen ist. Urkunden über Rechtsgeschäfte bedürfen in der Regel der Unterschrift der Bürgermeister:in und eines weiteren Mitglieds des Gemeindevorstands oder einer dazu befugten Bediensteten. Rechtsgeschäfte, aus denen die Gemeinde verpflichtet werden soll, erfordern typischerweise die Schriftform. Ausgenommen sind laufende Geschäfte des täglichen Bedarfs. Für die Verbindlichkeit ist in den meisten Gemeindeordnungen zusätzlich ein gültiger Beschluss des zuständigen Organs – je nach Wertgrenze Gemeinderat, Gemeindevorstand oder Bürgermeister:in – erforderlich. Bei Statutarstädten kann die Unterfertigung auch durch amtsführende Stadträt:innen oder die Magistratsdirektion erfolgen. Fehlt ein erforderlicher Beschluss oder die vorgeschriebene Unterschrift, ist das Rechtsgeschäft für die Gemeinde nicht verbindlich.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "25",
+          "label": "Par. 25 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "10",
+          "label": "Par. 10 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "55",
+          "label": "Par. 55 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "5",
+          "label": "Par. 5 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "53",
+          "label": "Par. 53 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "45",
+          "label": "Par. 45 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "60",
+          "label": "Par. 60 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "32",
+          "label": "Par. 32 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "9",
+          "label": "Par. 9 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "42",
+          "label": "Par. 42 Sbg. StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "66",
+          "label": "Par. 66 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "16",
+          "label": "Par. 16 Eisenstädter StR"
+        }
+      ]
+    },
+    {
+      "question": "Was passiert mit Erlösen aus dem Verkauf von Gemeindevermögen?",
+      "answer": "Die meisten Gemeindeordnungen schreiben vor, dass Erlöse aus der Veräußerung von Gemeindevermögen dem Gemeindevermögen wieder zuzuführen sind. Das bedeutet, dass Verkaufserlöse nicht einfach zur Deckung laufender Ausgaben verwendet werden dürfen, sondern zweckgebunden für den Erwerb neuen Vermögens oder für werterhaltende Investitionen einzusetzen sind. Dieser Grundsatz der Substanzerhaltung stellt sicher, dass das Gemeindevermögen nicht durch Veräußerungen geschmälert wird. In Statutarstädten ist dies besonders explizit geregelt: Erlöse aus Vermögensveräußerungen sind substanzerhaltend zu verwenden und dürfen grundsätzlich nicht für den laufenden Betrieb herangezogen werden. Je nach Bundesland können Ausnahmen für bestimmte Zwecke, etwa dringende Infrastrukturmaßnahmen, bestehen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "1",
+          "label": "Par. 1 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "10",
+          "label": "Par. 10 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "1",
+          "label": "Par. 1 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "1",
+          "label": "Par. 1 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "3",
+          "label": "Par. 3 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "39",
+          "label": "Par. 39 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "2",
+          "label": "Par. 2 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "3",
+          "label": "Par. 3 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "9",
+          "label": "Par. 9 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "57",
+          "label": "Par. 57 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "57",
+          "label": "Par. 57 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "57",
+          "label": "Par. 57 Welser StR"
+        }
+      ]
+    },
+    {
+      "question": "Welche Rolle spielt die Bürgermeister:in bei der Vermögensverwaltung?",
+      "answer": "Die Bürgermeister:in hat bei der Verwaltung des Gemeindevermögens eine zentrale Funktion. Als Vertretung der Gemeinde nach außen und als Vorstand des Gemeindeamts ist sie für die Umsetzung der Beschlüsse des Gemeinderats in Vermögensangelegenheiten verantwortlich. Sie unterzeichnet Verträge und Urkunden über Rechtsgeschäfte, wobei in den meisten Gemeindeordnungen eine zweite Unterschrift erforderlich ist. Im Rahmen der laufenden Verwaltung kann die Bürgermeister:in je nach Gemeindeordnung über geringfügige Vermögensangelegenheiten eigenständig entscheiden, sofern die jeweiligen Wertgrenzen nicht überschritten werden. Die Bürgermeister:in ist auch für die ordnungsgemäße Bewirtschaftung und Instandhaltung des Gemeindevermögens verantwortlich und hat dem Gemeinderat regelmäßig über den Stand des Vermögens zu berichten. Bei Statutarstädten kann ein Teil dieser Aufgaben an die Magistratsdirektion delegiert sein.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "25",
+          "label": "Par. 25 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "10",
+          "label": "Par. 10 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "55",
+          "label": "Par. 55 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "29",
+          "label": "Par. 29 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "53",
+          "label": "Par. 53 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "45",
+          "label": "Par. 45 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "2",
+          "label": "Par. 2 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "17",
+          "label": "Par. 17 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "9",
+          "label": "Par. 9 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "16",
+          "label": "Par. 16 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "16",
+          "label": "Par. 16 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "graz",
+          "paragraph": "14",
+          "label": "Par. 14 Grazer StR"
+        }
+      ]
+    }
+  ]
+}

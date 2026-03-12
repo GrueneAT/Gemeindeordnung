@@ -1,0 +1,613 @@
+{
+  "slug": "gemeindehaushalt-und-rechnungsabschluss",
+  "title": "Gemeindehaushalt und Rechnungsabschluss",
+  "description": "Regelungen zum Voranschlag (Budget), zur Haushaltsführung und zum Rechnungsabschluss der Gemeinde nach den österreichischen Gemeindeordnungen.",
+  "questions": [
+    {
+      "question": "Welche Grundsätze gelten für die Haushaltsführung der Gemeinde?",
+      "answer": "Die Gemeindeordnungen verpflichten die Gemeinden durchgehend zur Einhaltung der Grundsätze der Sparsamkeit, Wirtschaftlichkeit und Zweckmäßigkeit bei der Haushaltsführung. Die Gemeinde muss ihren Haushalt so führen, dass sie ihre Aufgaben ordnungsgemäß besorgen kann. In den meisten Gemeindeordnungen wird zusätzlich auf die Grundsätze der Transparenz und Vergleichbarkeit verwiesen. Der Haushalt wird als integrierter Ergebnis-, Finanzierungs- und Vermögenshaushalt geführt, wobei die Voranschlagsverordnung (VRV 2015) den einheitlichen Rahmen für die Darstellung vorgibt. Die Einschätzung der Einnahmen muss auf Basis tatsächlicher Entwicklungen erfolgen; Steuereinnahmen dürfen nur bei nachweislicher Grundlage höher angesetzt werden als im Vorjahr.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "67",
+          "label": "Par. 67 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "72",
+          "label": "Par. 72 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "74",
+          "label": "Par. 74 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "75",
+          "label": "Par. 75 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "55",
+          "label": "Par. 55 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "74",
+          "label": "Par. 74 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "88",
+          "label": "Par. 88 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "90",
+          "label": "Par. 90 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "73",
+          "label": "Par. 73 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "3",
+          "label": "Par. 3 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "graz",
+          "paragraph": "88",
+          "label": "Par. 88 Grazer StR"
+        }
+      ]
+    },
+    {
+      "question": "Wie wird der Gemeindevoranschlag beschlossen?",
+      "answer": "Der Voranschlag bildet die verbindliche Grundlage der Haushaltsführung und ist für jedes Kalenderjahr (Finanzjahr) zu erstellen. Die Bürgermeister:in erstellt den Voranschlagsentwurf – in den meisten Gemeindeordnungen nach Anhörung des Gemeindevorstands bzw. Stadtsenats. Der Entwurf wird vor der Beschlussfassung öffentlich aufgelegt, sodass Gemeindebürger:innen Einsicht nehmen und in manchen Bundesländern schriftliche Einwendungen einbringen können. Die Auflagefrist beträgt je nach Gemeindeordnung ein bis zwei Wochen. Anschließend berät der Gemeinderat über den Entwurf und beschließt den Voranschlag. Die Regelungen sehen typischerweise vor, dass der Voranschlag vor Beginn des neuen Haushaltsjahres beschlossen sein soll. Der Voranschlag besteht aus dem Ergebnis- und dem Finanzierungshaushalt, in manchen Bundesländern ergänzt durch einen Vermögenshaushalt gemäß der VRV 2015.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "67",
+          "label": "Par. 67 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "68",
+          "label": "Par. 68 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "73",
+          "label": "Par. 73 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "74",
+          "label": "Par. 74 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "76",
+          "label": "Par. 76 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "55",
+          "label": "Par. 55 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "57",
+          "label": "Par. 57 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "75",
+          "label": "Par. 75 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "90",
+          "label": "Par. 90 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "93",
+          "label": "Par. 93 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "73",
+          "label": "Par. 73 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "86",
+          "label": "Par. 86 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "graz",
+          "paragraph": "89",
+          "label": "Par. 89 Grazer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "52",
+          "label": "Par. 52 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "53",
+          "label": "Par. 53 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "65",
+          "label": "Par. 65 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "66",
+          "label": "Par. 66 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "64",
+          "label": "Par. 64 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "65",
+          "label": "Par. 65 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "52",
+          "label": "Par. 52 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "53",
+          "label": "Par. 53 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "52",
+          "label": "Par. 52 Welser StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "53",
+          "label": "Par. 53 Welser StR"
+        }
+      ]
+    },
+    {
+      "question": "Was passiert, wenn der Voranschlag nicht rechtzeitig beschlossen wird?",
+      "answer": "Kann der Voranschlag nicht vor Beginn des neuen Haushaltsjahres beschlossen werden, sehen die meisten Gemeindeordnungen die Beschlussfassung eines Voranschlagsprovisoriums vor. Dieses wird typischerweise für das erste Quartal des neuen Jahres beschlossen und ermächtigt die Gemeinde zur vorläufigen Haushaltsführung im Rahmen des Vorjahresvoranschlags. In manchen Bundesländern ist die Bürgermeister:in bereits kraft Gesetzes zur vorläufigen Haushaltsführung ermächtigt, wenn zu Jahresbeginn noch kein Voranschlag vorliegt. Dabei dürfen in der Regel nur die zur Aufrechterhaltung des ordentlichen Gemeindebetriebs notwendigen Ausgaben getätigt werden. Neue Vorhaben, die über den bisherigen Rahmen hinausgehen, sind bis zur Beschlussfassung des neuen Voranschlags grundsätzlich nicht zulässig. Fehlt auch ein Provisorium, darf die Gemeindeverwaltung nur die unbedingt notwendigen laufenden Ausgaben tätigen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "69",
+          "label": "Par. 69 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "58",
+          "label": "Par. 58 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "90",
+          "label": "Par. 90 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "86",
+          "label": "Par. 86 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "74",
+          "label": "Par. 74 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "75",
+          "label": "Par. 75 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "73",
+          "label": "Par. 73 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "73",
+          "label": "Par. 73 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "67",
+          "label": "Par. 67 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "66",
+          "label": "Par. 66 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "55",
+          "label": "Par. 55 Steyrer StR"
+        }
+      ]
+    },
+    {
+      "question": "Welche Rolle spielt die öffentliche Auflage des Voranschlagsentwurfs?",
+      "answer": "In den meisten Gemeindeordnungen ist vorgesehen, dass der Voranschlagsentwurf vor der Beschlussfassung durch den Gemeinderat öffentlich aufgelegt wird. Während der Auflagefrist – je nach Bundesland ein bis zwei Wochen – können Gemeindebürger:innen den Entwurf einsehen. In einigen Bundesländern besteht darüber hinaus die Möglichkeit, schriftliche Einwendungen zum Entwurf einzubringen, die dem Gemeinderat vor der Beschlussfassung zur Kenntnis gebracht werden. Die öffentliche Auflage dient der Transparenz und ermöglicht eine demokratische Kontrolle der geplanten Haushaltsführung durch die Bevölkerung. Die Bürgermeister:in ist für die rechtzeitige Erstellung und Auflage des Entwurfs verantwortlich.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "68",
+          "label": "Par. 68 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "73",
+          "label": "Par. 73 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "76",
+          "label": "Par. 76 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "57",
+          "label": "Par. 57 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "75",
+          "label": "Par. 75 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "93",
+          "label": "Par. 93 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "73",
+          "label": "Par. 73 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "86",
+          "label": "Par. 86 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "66",
+          "label": "Par. 66 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "65",
+          "label": "Par. 65 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "53",
+          "label": "Par. 53 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "53",
+          "label": "Par. 53 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "53",
+          "label": "Par. 53 Welser StR"
+        }
+      ]
+    },
+    {
+      "question": "Was geschieht bei Überschreitungen des Voranschlags während des Haushaltsjahres?",
+      "answer": "Werden während des Haushaltsjahres Ausgaben notwendig, die im Voranschlag nicht vorgesehen waren, oder ist der Haushaltsausgleich gefährdet, müssen die Gemeindeordnungen beachtet werden. In den meisten Bundesländern sind Überschreitungen von Voranschlagsbeträgen grundsätzlich nur mit Zustimmung des Gemeinderats zulässig. Die Bedeckung kann innerhalb der jeweiligen Gruppe durch Umschichtungen oder durch Kreditübertragungen erfolgen. Ist eine Bedeckung innerhalb des bestehenden Rahmens nicht möglich, muss ein Nachtragsvoranschlag erstellt und vom Gemeinderat beschlossen werden. Die Regelungen sehen typischerweise vor, dass die Bürgermeister:in den Gemeinderat unverzüglich über die Notwendigkeit solcher Überschreitungen zu informieren hat. Je nach Bundesland variieren die Schwellenwerte und Genehmigungsverfahren.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "70",
+          "label": "Par. 70 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "74",
+          "label": "Par. 74 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "55",
+          "label": "Par. 55 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "75",
+          "label": "Par. 75 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "90",
+          "label": "Par. 90 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "72",
+          "label": "Par. 72 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "73",
+          "label": "Par. 73 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "68",
+          "label": "Par. 68 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "54",
+          "label": "Par. 54 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "54",
+          "label": "Par. 54 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "54",
+          "label": "Par. 54 Welser StR"
+        }
+      ]
+    },
+    {
+      "question": "Wer prüft den Rechnungsabschluss der Gemeinde?",
+      "answer": "Nach Ablauf des Haushaltsjahres ist der Rechnungsabschluss zu erstellen und dem Gemeinderat zur Prüfung und Beschlussfassung vorzulegen. In den meisten Gemeindeordnungen wird der Rechnungsabschluss zunächst vom Gemeindeamt bzw. Magistrat erstellt, anschließend vom Gemeindevorstand bzw. Stadtsenat vorberaten und schließlich dem Gemeinderat zur Genehmigung vorgelegt. Der Gemeinderat ist das zentrale Organ für die Prüfung und Erledigung des Rechnungsabschlusses. In vielen Gemeinden gibt es darüber hinaus einen Prüfungsausschuss des Gemeinderats, der den Rechnungsabschluss im Detail prüft und dem Gemeinderat einen Bericht erstattet. Zusätzlich unterliegen die Gemeinden der externen Kontrolle durch den jeweiligen Landesrechnungshof bzw. – bei Gemeinden ab einer bestimmten Größe – auch durch den Bundesrechnungshof. Die Aufsichtsbehörde (Landesregierung) kann ebenfalls Einsicht in die Gebarung nehmen. Der Rechnungsabschluss umfasst typischerweise den Ergebnishaushalt, den Finanzierungshaushalt und die Vermögensrechnung einschließlich aller Fonds, Anstalten und Betriebe der Gemeinde.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "87",
+          "label": "Par. 87 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "67",
+          "label": "Par. 67 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "72",
+          "label": "Par. 72 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "74",
+          "label": "Par. 74 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "55",
+          "label": "Par. 55 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "74",
+          "label": "Par. 74 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "88",
+          "label": "Par. 88 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "73",
+          "label": "Par. 73 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "56",
+          "label": "Par. 56 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "graz",
+          "paragraph": "88",
+          "label": "Par. 88 Grazer StR"
+        }
+      ]
+    },
+    {
+      "question": "Woraus besteht der Gemeindevoranschlag?",
+      "answer": "Der Gemeindevoranschlag ist nach den Vorgaben der Voranschlags- und Rechnungsabschlussverordnung (VRV 2015) aufzustellen und gliedert sich in den Ergebnishaushalt und den Finanzierungshaushalt. Der Ergebnishaushalt stellt Erträge und Aufwendungen gegenüber und zeigt, ob die laufende Gebarung ausgeglichen ist. Der Finanzierungshaushalt bildet Ein- und Auszahlungen ab und gibt Auskunft über die Liquidität der Gemeinde. In einigen Bundesländern ist zusätzlich ein Vermögenshaushalt zu führen. Neben dem eigentlichen Voranschlag sind in den meisten Gemeindeordnungen auch Beilagen vorgesehen, wie etwa der Dienstpostenplan, ein Stellenplan oder Wirtschaftspläne für gemeindeeigene Betriebe und Unternehmungen. Die Veranschlagung der Einnahmen muss auf Basis tatsächlicher Entwicklungen erfolgen und darf nicht willkürlich überhöht werden.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "67",
+          "label": "Par. 67 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "73",
+          "label": "Par. 73 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "74",
+          "label": "Par. 74 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "75",
+          "label": "Par. 75 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "55",
+          "label": "Par. 55 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "75",
+          "label": "Par. 75 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "88",
+          "label": "Par. 88 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "73",
+          "label": "Par. 73 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "86",
+          "label": "Par. 86 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "eisenstadt",
+          "paragraph": "65",
+          "label": "Par. 65 Eisenstädter StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "rust",
+          "paragraph": "64",
+          "label": "Par. 64 Ruster StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "52",
+          "label": "Par. 52 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steyr",
+          "paragraph": "52",
+          "label": "Par. 52 Steyrer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "52",
+          "label": "Par. 52 Welser StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "graz",
+          "paragraph": "89",
+          "label": "Par. 89 Grazer StR"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,475 @@
+{
+  "slug": "gemeindebedienstete-und-personal",
+  "title": "Gemeindebedienstete und Personal",
+  "description": "Regelungen zur Anstellung, zu Rechten und Pflichten der Gemeindebediensteten sowie zur Personalhoheit der Gemeinde im österreichischen Gemeinderecht.",
+  "questions": [
+    {
+      "question": "Wer ist für die Anstellung von Gemeindebediensteten zuständig?",
+      "answer": "Die Zuständigkeit für die Anstellung von Gemeindebediensteten ist in den österreichischen Gemeindeordnungen unterschiedlich geregelt, folgt aber einem gemeinsamen Grundmuster. In den meisten Gemeindeordnungen liegt die Personalhoheit beim Gemeindevorstand (bzw. Stadtsenat oder Stadtrat), der über Aufnahme, Beförderung und Kündigung von Bediensteten entscheidet. In einigen Regelungen ist die Bürgermeister:in für die Aufnahme in den Gemeindedienst zuständig und kann diese Befugnis an geeignete Dienststellen delegieren. Bei größeren Gemeinden und Statutarstädten bestehen häufig differenzierte Zuständigkeitsregelungen: So kann etwa die Bürgermeister:in Personalentscheidungen im Einzelfall treffen, während für leitende Positionen wie Abteilungsleitungen der Stadtsenat zuständig ist. Der Gemeinderat ist in der Regel nicht unmittelbar mit Einzelpersonalentscheidungen befasst, legt aber über den Dienstposten- und Stellenplan den Rahmen für die Personalausstattung fest.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "43",
+          "label": "Par. 43 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "59",
+          "label": "Par. 59 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "69",
+          "label": "Par. 69 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "36",
+          "label": "Par. 36 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "29",
+          "label": "Par. 29 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "54",
+          "label": "Par. 54 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "50",
+          "label": "Par. 50 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "27",
+          "label": "Par. 27 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "67",
+          "label": "Par. 67 Vbg. GG"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "salzburg_stadt",
+          "paragraph": "36",
+          "label": "Par. 36 Sbg. StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "graz",
+          "paragraph": "38",
+          "label": "Par. 38 Grazer StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "steyr",
+          "paragraph": "47",
+          "label": "Par. 47 Steyrer StR"
+        }
+      ]
+    },
+    {
+      "question": "Welche dienstrechtlichen Regelungen gelten für Gemeindepersonal?",
+      "answer": "Gemeindebedienstete stehen in den meisten österreichischen Gemeindeordnungen entweder in einem öffentlich-rechtlichen oder in einem privatrechtlichen Dienstverhältnis zur Gemeinde. Öffentlich-rechtliche Dienstverhältnisse werden typischerweise durch Bescheid begründet, privatrechtliche durch Vertrag. Die konkreten Rechte und Pflichten der Bediensteten werden in eigenen Dienstordnungen, Besoldungsordnungen und weiteren grundsätzlichen Bestimmungen geregelt, die der Gemeinderat beschließt. Dazu gehören unter anderem Regelungen zu Arbeitszeit, Entlohnung, Urlaub, Disziplinarrecht, Versetzung und Beendigung des Dienstverhältnisses. Die jeweiligen Landes-Gemeindebedienstetengesetze bilden den gesetzlichen Rahmen, innerhalb dessen die Gemeinden ihre Personalangelegenheiten regeln. Je nach Bundesland variieren die Details erheblich, insbesondere hinsichtlich der Unterscheidung zwischen pragmatisierten und vertraglichen Bediensteten.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "52",
+          "label": "Par. 52 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "59",
+          "label": "Par. 59 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "70",
+          "label": "Par. 70 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "36",
+          "label": "Par. 36 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "29",
+          "label": "Par. 29 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "33",
+          "label": "Par. 33 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "50",
+          "label": "Par. 50 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "27",
+          "label": "Par. 27 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "67",
+          "label": "Par. 67 Vbg. GG"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "rust",
+          "paragraph": "29",
+          "label": "Par. 29 Ruster StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "salzburg_stadt",
+          "paragraph": "36",
+          "label": "Par. 36 Sbg. StR"
+        }
+      ]
+    },
+    {
+      "question": "Kann die Bürgermeister:in Personal ohne Gemeinderatsbeschluss einstellen?",
+      "answer": "In den meisten Gemeindeordnungen ist der Gemeinderat nicht direkt für einzelne Personalentscheidungen zuständig. Vielmehr obliegt die Aufnahme von Bediensteten typischerweise dem Gemeindevorstand, dem Stadtsenat oder – in manchen Regelungen – direkt der Bürgermeister:in. Der Gemeinderat legt allerdings den übergeordneten Rahmen fest, indem er den Dienstposten- und Stellenplan beschließt und die Dienstordnung erlässt. Die Bürgermeister:in kann somit in vielen Gemeinden Personalentscheidungen im Einzelfall treffen, ist dabei aber an die vom Gemeinderat beschlossenen Rahmenbedingungen gebunden. In einigen Gemeindeordnungen ist die Bürgermeister:in berechtigt, die Aufnahmebefugnis an nachgeordnete Dienststellen zu delegieren. Für leitende Positionen wie die Magistratsdirektion oder Abteilungsleitungen sehen die Regelungen typischerweise vor, dass der Stadtsenat oder der Gemeindevorstand entscheidet. Die Bürgermeister:in handelt also innerhalb des vom Gemeinderat vorgegebenen Personal- und Budgetrahmens, benötigt aber für die einzelne Einstellung in der Regel keinen gesonderten Gemeinderatsbeschluss.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "69",
+          "label": "Par. 69 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "43",
+          "label": "Par. 43 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "91",
+          "label": "Par. 91 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "36",
+          "label": "Par. 36 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "29",
+          "label": "Par. 29 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "54",
+          "label": "Par. 54 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "50",
+          "label": "Par. 50 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "27",
+          "label": "Par. 27 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "67",
+          "label": "Par. 67 Vbg. GG"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "salzburg_stadt",
+          "paragraph": "36",
+          "label": "Par. 36 Sbg. StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "steyr",
+          "paragraph": "47",
+          "label": "Par. 47 Steyrer StR"
+        }
+      ]
+    },
+    {
+      "question": "Was ist der Dienstposten- und Stellenplan und welche Rolle spielt er?",
+      "answer": "Der Dienstposten- und Stellenplan ist ein zentrales Instrument der kommunalen Personalplanung. Er wird in der Regel dem Voranschlag (Gemeindebudget) als Beilage angefügt und vom Gemeinderat beschlossen. Im Stellenplan sind alle erforderlichen Planstellen nach Verwendungsgruppen und Funktionen aufgelistet. Er legt damit verbindlich fest, wie viele Bedienstete die Gemeinde in welchen Bereichen beschäftigen darf. Die Personalverantwortlichen – sei es die Bürgermeister:in, der Gemeindevorstand oder der Stadtsenat – sind bei ihren Personalentscheidungen an diesen Plan gebunden. Neue Stellen können nur geschaffen werden, wenn der Gemeinderat den Stellenplan entsprechend ändert. Damit behält der Gemeinderat die strategische Kontrolle über den Personalumfang und die Personalkosten, auch wenn die operative Personalführung anderen Organen obliegt.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "91",
+          "label": "Par. 91 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "43",
+          "label": "Par. 43 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "75",
+          "label": "Par. 75 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "36",
+          "label": "Par. 36 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "39",
+          "label": "Par. 39 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "69",
+          "label": "Par. 69 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "50",
+          "label": "Par. 50 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "27",
+          "label": "Par. 27 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "3",
+          "label": "Par. 3 Vbg. GG"
+        }
+      ]
+    },
+    {
+      "question": "Welche Rolle spielt die Magistratsdirektion im Personalbereich?",
+      "answer": "In Statutarstädten und größeren Gemeinden kommt der Magistratsdirektion eine bedeutende Rolle in der Personalverwaltung zu. Die Magistratsdirektor:in leitet den inneren Dienst des Magistrats und nimmt an den Sitzungen des Gemeinderats mit beratender Stimme teil. In Personalangelegenheiten fungiert die Magistratsdirektion häufig als zentrale Koordinierungsstelle, die Personalentscheidungen vorbereitet und den ordnungsgemäßen Vollzug der dienstrechtlichen Bestimmungen sicherstellt. Die Regelungen sehen typischerweise vor, dass die Magistratsdirektor:in zur sachlichen und rechtlichen Aufklärung in Gemeinderatssitzungen das Wort ergreifen kann, was auch bei personalrelevanten Beschlüssen von Bedeutung ist. In manchen Stadtrechten können auf Vorschlag einer bestimmten Anzahl von Gemeinderatsmitgliedern auch leitende Bedienstete zur Auskunftserteilung herangezogen werden.",
+      "references": [
+        {
+          "category": "statutarstaedte",
+          "key": "salzburg_stadt",
+          "paragraph": "17",
+          "label": "Par. 17 Sbg. StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "graz",
+          "paragraph": "52",
+          "label": "Par. 52 Grazer StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "innsbruck",
+          "paragraph": "24",
+          "label": "Par. 24 Innsbrucker StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "steyr",
+          "paragraph": "20",
+          "label": "Par. 20 Steyrer StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "wels",
+          "paragraph": "20",
+          "label": "Par. 20 Welser StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "linz",
+          "paragraph": "12",
+          "label": "Par. 12 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "69",
+          "label": "Par. 69 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "52",
+          "label": "Par. 52 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "59",
+          "label": "Par. 59 Tir. GO"
+        }
+      ]
+    },
+    {
+      "question": "In welchem Verhältnis stehen Gemeindebedienstete zur Gemeinde – öffentlich-rechtlich oder privatrechtlich?",
+      "answer": "Die Gemeindeordnungen sehen in der Regel zwei Formen des Dienstverhältnisses vor: ein öffentlich-rechtliches und ein privatrechtliches. Öffentlich-rechtliche Dienstverhältnisse (oft als Pragmatisierung bezeichnet) werden durch Bescheid begründet und bieten den Bediensteten einen besonderen Bestandsschutz. Privatrechtliche Dienstverhältnisse basieren auf einem Dienstvertrag und unterliegen im Wesentlichen den allgemeinen arbeitsrechtlichen Bestimmungen, ergänzt durch die jeweiligen Landes-Gemeindebedienstetengesetze. Die Tendenz geht in vielen Gemeinden dahin, neue Bedienstete vorwiegend in privatrechtliche Dienstverhältnisse aufzunehmen und die Pragmatisierung nur noch in Ausnahmefällen vorzusehen. Die Gemeinde regelt die näheren Bestimmungen zu beiden Formen in der Dienstordnung und der Besoldungsordnung, die vom Gemeinderat beschlossen werden. Unabhängig von der Form des Dienstverhältnisses gelten für alle Gemeindebediensteten die Grundsätze der Gesetzmäßigkeit, Sparsamkeit, Wirtschaftlichkeit und Zweckmäßigkeit bei der Aufgabenerfüllung.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "52",
+          "label": "Par. 52 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "59",
+          "label": "Par. 59 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "70",
+          "label": "Par. 70 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "3",
+          "label": "Par. 3 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "36",
+          "label": "Par. 36 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "29",
+          "label": "Par. 29 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "33",
+          "label": "Par. 33 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "50",
+          "label": "Par. 50 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "27",
+          "label": "Par. 27 Ktn. AGO"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "rust",
+          "paragraph": "29",
+          "label": "Par. 29 Ruster StR"
+        }
+      ]
+    },
+    {
+      "question": "Welche besonderen Regelungen gelten für Personalausschüsse im Gemeinderat?",
+      "answer": "In vielen Gemeindeordnungen und Stadtrechten können eigene Ausschüsse für Personalangelegenheiten eingerichtet werden. Diese Personalausschüsse bereiten personalrelevante Entscheidungen vor und beraten den Gemeinderat oder den Stadtsenat in dienstrechtlichen Fragen. Die Regelungen sehen typischerweise vor, dass bei Ausschüssen für Personalangelegenheiten von den allgemeinen Bestimmungen über Zusammensetzung und Vorbereitung abgewichen werden kann, um die Vertraulichkeit sensibler Personaldaten zu wahren. Die genaue Ausgestaltung – etwa ob es sich um einen ständigen Ausschuss oder einen Sonderausschuss handelt – wird in der Geschäftsordnung des Gemeinderats festgelegt, die mit qualifizierter Mehrheit beschlossen wird. In Statutarstädten übernimmt häufig der Stadtsenat selbst die Funktion eines Personalausschusses, insbesondere bei Entscheidungen über leitende Positionen wie Abteilungsleitungen oder die Magistratsdirektion.",
+      "references": [
+        {
+          "category": "statutarstaedte",
+          "key": "graz",
+          "paragraph": "38",
+          "label": "Par. 38 Grazer StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "salzburg_stadt",
+          "paragraph": "36",
+          "label": "Par. 36 Sbg. StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "steyr",
+          "paragraph": "47",
+          "label": "Par. 47 Steyrer StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "innsbruck",
+          "paragraph": "27",
+          "label": "Par. 27 Innsbrucker StR"
+        },
+        {
+          "category": "statutarstaedte",
+          "key": "wels",
+          "paragraph": "42",
+          "label": "Par. 42 Welser StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "43",
+          "label": "Par. 43 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "69",
+          "label": "Par. 69 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "36",
+          "label": "Par. 36 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "59",
+          "label": "Par. 59 Tir. GO"
+        }
+      ]
+    }
+  ]
+}

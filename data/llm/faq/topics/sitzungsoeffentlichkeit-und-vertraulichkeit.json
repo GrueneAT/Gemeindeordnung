@@ -1,0 +1,367 @@
+{
+  "slug": "sitzungsoeffentlichkeit-und-vertraulichkeit",
+  "title": "Sitzungsöffentlichkeit und Vertraulichkeit",
+  "description": "Regelungen zur Öffentlichkeit und zum Ausschluss der Öffentlichkeit bei Gemeinderatssitzungen sowie Verschwiegenheitspflichten der Mandatar:innen in österreichischen Gemeinden.",
+  "questions": [
+    {
+      "question": "Sind Gemeinderatssitzungen grundsätzlich öffentlich?",
+      "answer": "Ja, in allen österreichischen Gemeindeordnungen gilt der Grundsatz der Öffentlichkeit von Gemeinderatssitzungen. Das bedeutet, dass jede Person nach Maßgabe des vorhandenen Platzes als Zuhörer:in an der Sitzung teilnehmen darf. Dieser Grundsatz dient der demokratischen Kontrolle und Transparenz der kommunalen Verwaltung. Die Öffentlichkeit bezieht sich dabei auf die Sitzungen des Gemeinderats als oberstes beschlussfassendes Organ – für Sitzungen des Gemeindevorstands oder der Ausschüsse gelten in der Regel abweichende Bestimmungen, die häufig Nichtöffentlichkeit vorsehen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "44",
+          "label": "Par. 44 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "36",
+          "label": "Par. 36 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "47",
+          "label": "Par. 47 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "53",
+          "label": "Par. 53 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "33",
+          "label": "Par. 33 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "59",
+          "label": "Par. 59 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "36",
+          "label": "Par. 36 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "46",
+          "label": "Par. 46 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "22",
+          "label": "Par. 22 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Wann darf die Öffentlichkeit von einer Gemeinderatssitzung ausgeschlossen werden?",
+      "answer": "Die Öffentlichkeit darf nur in bestimmten Ausnahmefällen ausgeschlossen werden. Die häufigsten Gründe sind: individuelle Personalangelegenheiten, Vergabe- und Beschaffungsverfahren, Angelegenheiten des Datenschutzes sowie Fälle, in denen die öffentliche Ordnung oder berechtigte Interessen Einzelner gefährdet wären. In manchen Gemeindeordnungen ist der Ausschluss bei bestimmten Materien – etwa individuellen Personalentscheidungen – zwingend vorgeschrieben. Das Verfahren für den Ausschluss variiert je nach Bundesland: Einige Gemeindeordnungen verlangen eine Zweidrittelmehrheit für den Beschluss, andere setzen einen Antrag des Vorsitzes oder einer bestimmten Anzahl von Mitgliedern voraus. In jedem Fall muss über den Ausschluss der Öffentlichkeit in öffentlicher Sitzung abgestimmt werden, und die Gründe sind zu protokollieren.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "44",
+          "label": "Par. 44 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "36",
+          "label": "Par. 36 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "47",
+          "label": "Par. 47 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "53",
+          "label": "Par. 53 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "33",
+          "label": "Par. 33 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "59",
+          "label": "Par. 59 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "36",
+          "label": "Par. 36 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "46",
+          "label": "Par. 46 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "22",
+          "label": "Par. 22 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Welche Verschwiegenheitspflichten gelten für Gemeinderät:innen?",
+      "answer": "Gemeinderät:innen unterliegen einer gesetzlichen Verschwiegenheitspflicht hinsichtlich aller Informationen, die ihnen im Rahmen nichtöffentlicher Sitzungen oder vertraulicher Beratungen bekannt werden. Diese Pflicht erstreckt sich insbesondere auf Inhalte aus Sitzungen, bei denen die Öffentlichkeit ausgeschlossen wurde, sowie auf Beratungen in Ausschüssen und im Gemeindevorstand, die grundsätzlich nichtöffentlich tagen. Die Verschwiegenheitspflicht gilt auch nach dem Ausscheiden aus dem Amt fort. Verstöße können disziplinarrechtliche oder aufsichtsbehördliche Konsequenzen nach sich ziehen. Einzelne Gemeindeordnungen sehen ausdrücklich vor, dass vertrauliche Informationen aus Vorstands- oder Ausschusssitzungen nicht weitergegeben werden dürfen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "44",
+          "label": "Par. 44 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "36",
+          "label": "Par. 36 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "47",
+          "label": "Par. 47 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "53",
+          "label": "Par. 53 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "33",
+          "label": "Par. 33 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "59",
+          "label": "Par. 59 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "36",
+          "label": "Par. 36 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "59",
+          "label": "Par. 59 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "22",
+          "label": "Par. 22 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Haben Gemeindebürger:innen ein Recht auf Teilnahme an Gemeinderatssitzungen?",
+      "answer": "Gemeindebürger:innen haben aufgrund des Öffentlichkeitsgrundsatzes das Recht, öffentlichen Gemeinderatssitzungen als Zuhörer:innen beizuwohnen. Dieses Recht steht grundsätzlich allen Personen zu – nicht nur Gemeindebürger:innen im engeren Sinn. Allerdings ist die Teilnahme nach Maßgabe des vorhandenen Platzes beschränkt, und Zuhörer:innen haben kein Rede- oder Stimmrecht. Sie dürfen die Verhandlung nicht stören und können bei Störung des Sitzungsablaufs durch den Vorsitz von der Sitzung ausgeschlossen werden. In einigen Gemeindeordnungen gibt es darüber hinaus das Instrument der Fragestunde, in der Gemeindebürger:innen oder Gemeinderät:innen Anfragen an die Gemeindeorgane richten können. Die konkreten Regelungen zur Fragestunde variieren je nach Bundesland.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "44",
+          "label": "Par. 44 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "46",
+          "label": "Par. 46 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "47",
+          "label": "Par. 47 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "53",
+          "label": "Par. 53 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "33",
+          "label": "Par. 33 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "59",
+          "label": "Par. 59 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "36",
+          "label": "Par. 36 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "46",
+          "label": "Par. 46 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "22",
+          "label": "Par. 22 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Dürfen Gemeinderatssitzungen im Internet übertragen werden?",
+      "answer": "Mehrere Gemeindeordnungen sehen ausdrücklich die Möglichkeit vor, öffentliche Gemeinderatssitzungen live im Internet zu übertragen oder als Aufzeichnung zum späteren Abruf bereitzustellen. Diese Regelung dient der erweiterten Transparenz und ermöglicht auch jenen Gemeindebürger:innen die Teilhabe, die nicht persönlich an der Sitzung teilnehmen können. Die Internetübertragung bezieht sich dabei nur auf den öffentlichen Teil der Sitzung – werden Tagesordnungspunkte unter Ausschluss der Öffentlichkeit behandelt, ist die Übertragung zu unterbrechen. Ob eine Gemeinde dieses Angebot tatsächlich nutzt, hängt von der jeweiligen Geschäftsordnung und den technischen Möglichkeiten ab. In einzelnen Städten ist die Livestream-Übertragung bereits verpflichtend vorgesehen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "53",
+          "label": "Par. 53 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "36",
+          "label": "Par. 36 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "22",
+          "label": "Par. 22 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "linz",
+          "paragraph": "16",
+          "label": "Par. 16 Linzer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wels",
+          "paragraph": "16",
+          "label": "Par. 16 Welser StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "14",
+          "label": "Par. 14 Sbg. StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "graz",
+          "paragraph": "50",
+          "label": "Par. 50 Grazer StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "innsbruck",
+          "paragraph": "25",
+          "label": "Par. 25 Innsbrucker StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "59",
+          "label": "Par. 59 Stmk. GO"
+        }
+      ]
+    },
+    {
+      "question": "Sind Sitzungen des Gemeindevorstands und der Ausschüsse ebenfalls öffentlich?",
+      "answer": "Im Gegensatz zu den Gemeinderatssitzungen sind Sitzungen des Gemeindevorstands (bzw. Stadtsenats) und der Ausschüsse in den meisten Gemeindeordnungen grundsätzlich nichtöffentlich. Diese Regelung trägt dem Umstand Rechnung, dass in diesen Gremien häufig Vorberatungen, individuelle Personalangelegenheiten oder sensible Verwaltungsakte behandelt werden. Die Teilnahme an nichtöffentlichen Sitzungen ist auf die jeweiligen Mitglieder sowie geladene Sachverständige und die Magistrats- oder Amtsdirektion beschränkt. Die Ergebnisse fließen in der Regel über Anträge und Berichte in die öffentliche Gemeinderatssitzung ein, sodass die demokratische Kontrolle gewahrt bleibt.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "59",
+          "label": "Par. 59 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "59",
+          "label": "Par. 59 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "33",
+          "label": "Par. 33 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "29",
+          "label": "Par. 29 Sbg. StR"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "36",
+          "label": "Par. 36 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "53",
+          "label": "Par. 53 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "47",
+          "label": "Par. 47 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "36",
+          "label": "Par. 36 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "44",
+          "label": "Par. 44 Bgld. GO"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,427 @@
+{
+  "slug": "pruefungsausschuss-kontrollausschuss",
+  "title": "Prüfungsausschuss und Kontrollausschuss",
+  "description": "Einrichtung, Zusammensetzung und Aufgaben des Prüfungs- bzw. Kontrollausschusses zur Kontrolle der Gemeindeverwaltung und Gebarungsprüfung in österreichischen Gemeinden.",
+  "questions": [
+    {
+      "question": "Welche Aufgaben hat der Prüfungsausschuss?",
+      "answer": "Die zentrale Aufgabe des Prüfungs- bzw. Kontrollausschusses ist die Überwachung der gesamten Gebarung der Gemeinde. Das umfasst insbesondere die Prüfung der Haushaltsführung auf rechnerische Richtigkeit, Sparsamkeit, Wirtschaftlichkeit und Zweckmäßigkeit. Der Ausschuss kontrolliert, ob die finanziellen Mittel der Gemeinde ordnungsgemäß verwendet werden und ob Beschlüsse des Gemeinderats korrekt umgesetzt wurden. Darüber hinaus prüft er in der Regel den Rechnungsabschluss und erstattet dem Gemeinderat Bericht über die Ergebnisse seiner Prüfungen. In manchen Gemeindeordnungen erstreckt sich die Prüfungskompetenz auch auf gemeindeeigene Betriebe und Beteiligungen. Der Ausschuss kann auch Sonderprüfungen zu bestimmten Themen durchführen, wenn der Gemeinderat dies beschließt oder der Ausschuss selbst dies für notwendig erachtet.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "23",
+          "label": "Par. 23 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "26",
+          "label": "Par. 26 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "30",
+          "label": "Par. 30 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "44",
+          "label": "Par. 44 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "22",
+          "label": "Par. 22 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "28",
+          "label": "Par. 28 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "24",
+          "label": "Par. 24 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "52",
+          "label": "Par. 52 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "73",
+          "label": "Par. 73 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Wer kann Mitglied des Prüfungs- bzw. Kontrollausschusses werden?",
+      "answer": "Die Mitglieder des Prüfungs- bzw. Kontrollausschusses werden aus der Mitte des Gemeinderats gewählt. In den meisten Gemeindeordnungen ist vorgesehen, dass die Zusammensetzung nach dem Verhältniswahlgrundsatz erfolgt, sodass alle im Gemeinderat vertretenen Fraktionen anteilsmäßig berücksichtigt werden. Eine wichtige Unvereinbarkeitsregelung besteht in vielen Bundesländern: Die Bürgermeister:in und die Mitglieder des Gemeindevorstands bzw. Stadtsenats dürfen dem Prüfungsausschuss typischerweise nicht angehören, da sie als Teil der zu kontrollierenden Gemeindeführung in einem Interessenkonflikt stünden. In einigen Gemeindeordnungen ist außerdem festgelegt, dass der Vorsitz des Prüfungsausschusses einer Oppositionspartei zustehen soll, um die Unabhängigkeit der Kontrolle zu gewährleisten. Die genaue Mitgliederzahl variiert je nach Bundesland und Gemeindegröße.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "23",
+          "label": "Par. 23 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "26",
+          "label": "Par. 26 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "30",
+          "label": "Par. 30 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "44",
+          "label": "Par. 44 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "22",
+          "label": "Par. 22 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "28",
+          "label": "Par. 28 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "24",
+          "label": "Par. 24 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "52",
+          "label": "Par. 52 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "73",
+          "label": "Par. 73 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Wie oft muss der Prüfungsausschuss die Gebarung prüfen?",
+      "answer": "Die Prüfungshäufigkeit variiert je nach Bundesland. In den meisten Gemeindeordnungen ist vorgesehen, dass der Prüfungsausschuss die Gebarung der Gemeinde mindestens einmal jährlich umfassend prüft, insbesondere im Zusammenhang mit dem Rechnungsabschluss. Darüber hinaus sehen viele Regelungen vor, dass der Ausschuss vierteljährlich oder in regelmäßigen Abständen die laufende Kassenführung und Buchführung kontrolliert. Neben diesen regelmäßigen Prüfungen kann der Ausschuss jederzeit anlassbezogene Sonderprüfungen durchführen. Der Gemeinderat kann den Prüfungsausschuss ebenfalls mit konkreten Prüfungsaufträgen betrauen. Die Ergebnisse der Prüfungen sind dem Gemeinderat in Form von Berichten vorzulegen, die in der Regel in einer Gemeinderatssitzung behandelt werden müssen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "23",
+          "label": "Par. 23 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "26",
+          "label": "Par. 26 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "30",
+          "label": "Par. 30 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "44",
+          "label": "Par. 44 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "22",
+          "label": "Par. 22 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "28",
+          "label": "Par. 28 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "24",
+          "label": "Par. 24 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "52",
+          "label": "Par. 52 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "73",
+          "label": "Par. 73 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Ist die Einrichtung eines Prüfungsausschusses verpflichtend?",
+      "answer": "In den meisten österreichischen Gemeindeordnungen ist die Einrichtung eines Prüfungs- bzw. Kontrollausschusses verpflichtend vorgesehen. Die Regelungen verwenden typischerweise Formulierungen wie 'ist zu wählen' oder 'muss jedenfalls bestellt werden', was den zwingenden Charakter unterstreicht. Diese Pflicht zur Einrichtung eines Kontrollorgans spiegelt den verfassungsrechtlichen Grundsatz wider, dass die Gemeindeverwaltung einer wirksamen Kontrolle durch gewählte Vertretungsorgane unterliegen muss. In Statutarstädten übernehmen teilweise eigene Kontrollämter oder Stadtrechnungshöfe die laufende Prüfungstätigkeit, wobei ein Kontrollausschuss des Gemeinderats die politische Kontrollfunktion ergänzt. Die Kombination aus Prüfungsausschuss und professionellem Kontrollamt stellt sicher, dass sowohl die politische als auch die fachliche Kontrolle gewährleistet ist.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "23",
+          "label": "Par. 23 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "26",
+          "label": "Par. 26 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "30",
+          "label": "Par. 30 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "44",
+          "label": "Par. 44 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "22",
+          "label": "Par. 22 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "28",
+          "label": "Par. 28 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "24",
+          "label": "Par. 24 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "52",
+          "label": "Par. 52 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "73",
+          "label": "Par. 73 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Welche Rechte hat der Prüfungsausschuss bei der Durchführung seiner Prüfungen?",
+      "answer": "Damit der Prüfungs- bzw. Kontrollausschuss seine Kontrollfunktion wirksam ausüben kann, stehen ihm in den meisten Gemeindeordnungen weitreichende Informations- und Einsichtsrechte zu. Dazu gehört insbesondere das Recht auf Einsicht in alle Bücher, Belege, Akten und sonstigen Unterlagen der Gemeindeverwaltung. Die Mitglieder des Ausschusses können von allen Bediensteten der Gemeinde Auskünfte verlangen, die für die Prüfungstätigkeit erforderlich sind. In vielen Regelungen ist vorgesehen, dass der Ausschuss auch Zutritt zu allen Dienststellen und Einrichtungen der Gemeinde hat. Die Gemeindeverwaltung ist verpflichtet, dem Prüfungsausschuss alle angeforderten Unterlagen zeitnah zur Verfügung zu stellen. Diese umfassenden Prüfungsrechte erstrecken sich typischerweise auch auf gemeindeeigene Betriebe und Unternehmungen sowie auf Bereiche, in denen die Gemeinde Zuschüsse oder Förderungen gewährt.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "23",
+          "label": "Par. 23 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "26",
+          "label": "Par. 26 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "30",
+          "label": "Par. 30 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "44",
+          "label": "Par. 44 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "22",
+          "label": "Par. 22 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "28",
+          "label": "Par. 28 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "24",
+          "label": "Par. 24 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "52",
+          "label": "Par. 52 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "73",
+          "label": "Par. 73 Wr. StV"
+        }
+      ]
+    },
+    {
+      "question": "Wie unterscheiden sich Prüfungsausschuss, Kontrollausschuss und Kontrollamt?",
+      "answer": "Die Begriffe variieren je nach Bundesland, bezeichnen aber im Kern verwandte Kontrollfunktionen. Der Prüfungsausschuss (so etwa in der Vorarlberger Regelung) und der Kontrollausschuss (so in mehreren oberösterreichischen Stadtrechten) sind politische Kontrollorgane, die aus Mitgliedern des Gemeinderats gebildet werden. Sie üben die parlamentarische Kontrolle über die Gemeindeverwaltung aus. Das Kontrollamt hingegen ist eine verwaltungsinterne, professionell besetzte Prüfeinrichtung, die insbesondere in größeren Städten und Statutarstädten eingerichtet wird. Es wird von fachlich qualifizierten Bediensteten geführt und führt laufende Prüfungen durch. In Wien übernimmt der Stadtrechnungshof diese Funktion mit besonderer Unabhängigkeit. In der Praxis arbeiten Kontrollausschuss und Kontrollamt häufig zusammen: Das Kontrollamt liefert die fachliche Prüfarbeit, während der Ausschuss die politische Bewertung vornimmt und dem Gemeinderat berichtet.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "52",
+          "label": "Par. 52 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "73",
+          "label": "Par. 73 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "44",
+          "label": "Par. 44 OÖ. GO"
+        },
+        {
+          "category": "stadtrechte",
+          "key": "linz",
+          "paragraph": "39",
+          "label": "Par. 39 Linzer StR"
+        },
+        {
+          "category": "stadtrechte",
+          "key": "linz",
+          "paragraph": "40",
+          "label": "Par. 40 Linzer StR"
+        },
+        {
+          "category": "stadtrechte",
+          "key": "steyr",
+          "paragraph": "40",
+          "label": "Par. 40 Steyrer StR"
+        },
+        {
+          "category": "stadtrechte",
+          "key": "wels",
+          "paragraph": "40",
+          "label": "Par. 40 Welser StR"
+        },
+        {
+          "category": "stadtrechte",
+          "key": "wr_neustadt",
+          "paragraph": "5",
+          "label": "Par. 5 Wr. Neustädter StR"
+        },
+        {
+          "category": "stadtrechte",
+          "key": "klagenfurt",
+          "paragraph": "26",
+          "label": "Par. 26 Klagenfurter StR"
+        }
+      ]
+    },
+    {
+      "question": "Wer führt den Vorsitz im Prüfungs- bzw. Kontrollausschuss?",
+      "answer": "Die Regelungen zum Vorsitz des Prüfungs- bzw. Kontrollausschusses variieren je nach Bundesland, folgen aber einem gemeinsamen Grundgedanken: Die Kontrolle soll möglichst unabhängig von der regierenden Mehrheit erfolgen. In vielen Gemeindeordnungen ist daher vorgesehen, dass der Vorsitz einer Oppositionsfraktion zusteht – typischerweise der stärksten nicht an der Gemeindeführung beteiligten Partei. Dieses Prinzip soll verhindern, dass die zu kontrollierende Gemeindeführung die Kontrollarbeit steuern oder behindern kann. In manchen Bundesländern wird die Vorsitzperson vom Gemeinderat aus den Ausschussmitgliedern gewählt, wobei ein Vorschlagsrecht der Opposition bestehen kann. Jedenfalls ist in den meisten Gemeindeordnungen festgelegt, dass weder die Bürgermeister:in noch Mitglieder des Gemeindevorstands den Vorsitz führen dürfen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "23",
+          "label": "Par. 23 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "26",
+          "label": "Par. 26 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "30",
+          "label": "Par. 30 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "44",
+          "label": "Par. 44 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "22",
+          "label": "Par. 22 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "28",
+          "label": "Par. 28 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "24",
+          "label": "Par. 24 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "52",
+          "label": "Par. 52 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "50",
+          "label": "Par. 50 Wr. StV"
+        }
+      ]
+    }
+  ]
+}

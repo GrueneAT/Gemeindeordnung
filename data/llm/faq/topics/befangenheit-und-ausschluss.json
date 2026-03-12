@@ -1,0 +1,427 @@
+{
+  "slug": "befangenheit-und-ausschluss",
+  "title": "Befangenheit und Ausschluss",
+  "description": "Regelungen zur Befangenheit von Gemeinderatsmitgliedern und deren Ausschluss von Beratung und Abstimmung bei persönlicher Beteiligung.",
+  "questions": [
+    {
+      "question": "Wann gilt ein Gemeinderatsmitglied als befangen?",
+      "answer": "In den meisten Gemeindeordnungen liegt Befangenheit vor, wenn Mitglieder eines Kollegialorgans selbst, nahe Angehörige oder von ihnen vertretene Personen an einem Beratungs- oder Beschlussgegenstand persönlich beteiligt sind. Typische Befangenheitsgründe umfassen: eine unmittelbare persönliche Beteiligung am Verhandlungsgegenstand, familiäre oder verwandtschaftliche Naheverhältnisse zu betroffenen Personen, eine Bevollmächtigung oder Vertretung einer beteiligten Partei sowie sonstige Umstände, die geeignet sind, die volle Unbefangenheit in Zweifel zu ziehen. Einige Gemeindeordnungen formulieren den Befangenheitstatbestand bewusst weit und erfassen neben konkreten Verwandtschaftsverhältnissen auch allgemeine Interessenkonflikte. Die Regelungen sehen typischerweise vor, dass bereits der Anschein einer möglichen Voreingenommenheit ausreicht, um die Befangenheit zu begründen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "49",
+          "label": "Par. 49 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "40",
+          "label": "Par. 40 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "50",
+          "label": "Par. 50 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "64",
+          "label": "Par. 64 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "58",
+          "label": "Par. 58 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "29",
+          "label": "Par. 29 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "28",
+          "label": "Par. 28 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "20",
+          "label": "Par. 20 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "16",
+          "label": "Par. 16 Sbg. StR"
+        }
+      ]
+    },
+    {
+      "question": "Welche Angehörigen lösen eine Befangenheit aus?",
+      "answer": "Die Gemeindeordnungen definieren den Kreis der relevanten Angehörigen unterschiedlich weit, wobei die meisten Regelungen zumindest folgende Personengruppen erfassen: Ehepartner:innen und eingetragene Partner:innen, Eltern, Kinder, Geschwister sowie Personen, die in einem Lebensgemeinschaftsverhältnis mit dem Mitglied stehen. In vielen Gemeindeordnungen erstreckt sich die Befangenheit auch auf Schwägerschaftsverhältnisse, also etwa Schwiegereltern oder Schwäger:innen. Einzelne Regelungen beziehen darüber hinaus Pflegeeltern und Pflegekinder mit ein. Entscheidend ist, dass durch das Naheverhältnis ein privater Vorteil oder Nachteil für die betreffende Person entstehen könnte, der die unparteiische Entscheidungsfindung gefährdet. Je nach Bundesland variieren die Details hinsichtlich des genauen Verwandtschaftsgrades, ab dem Befangenheit angenommen wird.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "49",
+          "label": "Par. 49 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "40",
+          "label": "Par. 40 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "50",
+          "label": "Par. 50 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "64",
+          "label": "Par. 64 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "58",
+          "label": "Par. 58 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "29",
+          "label": "Par. 29 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "28",
+          "label": "Par. 28 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "20",
+          "label": "Par. 20 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "16",
+          "label": "Par. 16 Sbg. StR"
+        }
+      ]
+    },
+    {
+      "question": "Muss ein befangenes Mitglied den Sitzungssaal verlassen?",
+      "answer": "Die Regelungen hierzu variieren je nach Bundesland. In einigen Gemeindeordnungen ist ausdrücklich vorgesehen, dass befangene Mitglieder den Sitzungssaal für die Dauer der betreffenden Beratung und Abstimmung verlassen müssen. Die Wiener Stadtverfassung etwa verpflichtet befangene Gemeinderatsmitglieder und Stadträt:innen explizit dazu, den Sitzungssaal zu verlassen. Andere Gemeindeordnungen formulieren lediglich, dass befangene Mitglieder an Beratung und Beschlussfassung nicht teilnehmen dürfen, ohne ausdrücklich das Verlassen des Saals zu verlangen. In der Praxis wird jedoch auch dort häufig erwartet, dass befangene Mitglieder den Raum verlassen, um jeglichen Einfluss auf die Diskussion und Entscheidungsfindung auszuschließen. Die Befangenheit ist typischerweise dem Vorsitz zu melden, bevor der betreffende Tagesordnungspunkt aufgerufen wird.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "20",
+          "label": "Par. 20 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "42",
+          "label": "Par. 42 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "49",
+          "label": "Par. 49 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "40",
+          "label": "Par. 40 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "50",
+          "label": "Par. 50 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "64",
+          "label": "Par. 64 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "58",
+          "label": "Par. 58 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "29",
+          "label": "Par. 29 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "28",
+          "label": "Par. 28 Vbg. GG"
+        }
+      ]
+    },
+    {
+      "question": "Wer stellt die Befangenheit fest?",
+      "answer": "Die Befangenheitsregelungen sehen in den meisten Gemeindeordnungen zunächst eine Selbstanzeigepflicht vor: Befangene Mitglieder sind verpflichtet, ihre Befangenheit selbst zu erkennen und dem Vorsitz mitzuteilen. Die Bürgermeister:in als Vorsitzende des Gemeinderats beziehungsweise die jeweilige Sitzungsleitung hat darüber hinaus die Aufgabe, auf die Einhaltung der Befangenheitsbestimmungen zu achten. Wird eine Befangenheit von anderen Mitgliedern vermutet, kann dies ebenfalls angesprochen werden. Im Streitfall entscheidet typischerweise das jeweilige Kollegialorgan selbst über das Vorliegen der Befangenheit. Darüber hinaus kann die Aufsichtsbehörde im Rahmen der Gemeindeaufsicht die Einhaltung der Befangenheitsregeln prüfen, insbesondere wenn ein Beschluss angefochten wird.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "49",
+          "label": "Par. 49 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "40",
+          "label": "Par. 40 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "50",
+          "label": "Par. 50 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "64",
+          "label": "Par. 64 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "58",
+          "label": "Par. 58 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "29",
+          "label": "Par. 29 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "28",
+          "label": "Par. 28 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "20",
+          "label": "Par. 20 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "16",
+          "label": "Par. 16 Sbg. StR"
+        }
+      ]
+    },
+    {
+      "question": "Was passiert, wenn ein befangenes Mitglied trotzdem abstimmt?",
+      "answer": "Die Mitwirkung eines befangenen Mitglieds an einer Beschlussfassung stellt einen Verfahrensmangel dar, der die Rechtmäßigkeit des Beschlusses in Frage stellen kann. In den meisten Gemeindeordnungen führt die Teilnahme eines befangenen Mitglieds dazu, dass der betreffende Beschluss anfechtbar wird. Die Aufsichtsbehörde kann einen solchen Beschluss im Rahmen der Gemeindeaufsicht aufheben, wenn die Mitwirkung des befangenen Mitglieds für das Abstimmungsergebnis kausal war – das heißt, wenn ohne dessen Stimme ein anderes Ergebnis zustande gekommen wäre. War die Stimme des befangenen Mitglieds hingegen nicht ausschlaggebend, kann der Beschluss unter Umständen trotz des Verfahrensfehlers bestehen bleiben. In jedem Fall stellt die Missachtung der Befangenheitsregeln eine Pflichtverletzung dar, die disziplinarrechtliche Konsequenzen nach sich ziehen kann.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "49",
+          "label": "Par. 49 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "40",
+          "label": "Par. 40 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "50",
+          "label": "Par. 50 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "64",
+          "label": "Par. 64 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "58",
+          "label": "Par. 58 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "29",
+          "label": "Par. 29 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "28",
+          "label": "Par. 28 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "20",
+          "label": "Par. 20 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "16",
+          "label": "Par. 16 Sbg. StR"
+        }
+      ]
+    },
+    {
+      "question": "Gilt die Befangenheit auch für die Bürgermeister:in und den Gemeindevorstand?",
+      "answer": "Ja, die Befangenheitsregelungen gelten in den meisten Gemeindeordnungen nicht nur für Gemeinderatsmitglieder, sondern für alle Mitglieder von Kollegialorganen – also auch für Mitglieder des Gemeindevorstands, des Stadtsenats und für die Bürgermeister:in selbst. Einzelne Gemeindeordnungen erstrecken die Befangenheitsregeln ausdrücklich auch auf Gemeindebedienstete, die an Entscheidungsprozessen mitwirken. Wenn die Bürgermeister:in bei einem Tagesordnungspunkt befangen ist, übernimmt typischerweise die Vizebürgermeister:in den Vorsitz für diesen Punkt. In der Wiener Stadtverfassung ist die Befangenheit von Stadträt:innen eigens geregelt: Befangene Stadträt:innen müssen dies der Bürgermeister:in mitteilen und den Sitzungssaal verlassen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "50",
+          "label": "Par. 50 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "28",
+          "label": "Par. 28 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "42",
+          "label": "Par. 42 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "49",
+          "label": "Par. 49 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "40",
+          "label": "Par. 40 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "64",
+          "label": "Par. 64 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "58",
+          "label": "Par. 58 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "29",
+          "label": "Par. 29 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg_stadt",
+          "paragraph": "16",
+          "label": "Par. 16 Sbg. StR"
+        }
+      ]
+    },
+    {
+      "question": "Wie wirkt sich eine Befangenheit auf die Beschlussfähigkeit aus?",
+      "answer": "Wenn befangene Mitglieder von der Beratung und Abstimmung ausgeschlossen werden, verringert sich die Zahl der anwesenden stimmberechtigten Mitglieder. Dies kann im Extremfall dazu führen, dass die für die Beschlussfähigkeit erforderliche Mindestanzahl nicht mehr erreicht wird. Die meisten Gemeindeordnungen verlangen für die Beschlussfähigkeit die Anwesenheit von mehr als der Hälfte der Mitglieder. Befangene Mitglieder, die zwar physisch anwesend, aber von der Abstimmung ausgeschlossen sind, werden bei der Berechnung der Beschlussfähigkeit typischerweise nicht mitgezählt. Wird ein Kollegialorgan durch zahlreiche Befangenheiten beschlussunfähig, muss die Entscheidung in der Regel an ein übergeordnetes Organ verwiesen oder die Angelegenheit vertagt werden, bis die Beschlussfähigkeit wiederhergestellt ist.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "42",
+          "label": "Par. 42 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "49",
+          "label": "Par. 49 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "51",
+          "label": "Par. 51 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "51",
+          "label": "Par. 51 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "57",
+          "label": "Par. 57 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "45",
+          "label": "Par. 45 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "wien",
+          "paragraph": "27",
+          "label": "Par. 27 Wr. StV"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "40",
+          "label": "Par. 40 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "28",
+          "label": "Par. 28 Vbg. GG"
+        }
+      ]
+    }
+  ]
+}

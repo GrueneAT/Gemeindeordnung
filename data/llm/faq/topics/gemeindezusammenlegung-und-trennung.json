@@ -1,0 +1,367 @@
+{
+  "slug": "gemeindezusammenlegung-und-trennung",
+  "title": "Gemeindezusammenlegung und -trennung",
+  "description": "Verfahren und Voraussetzungen für die Zusammenlegung, Trennung oder Grenzänderung von Gemeinden nach den österreichischen Gemeindeordnungen.",
+  "questions": [
+    {
+      "question": "Unter welchen Voraussetzungen können Gemeinden zusammengelegt werden?",
+      "answer": "Die Zusammenlegung (Vereinigung) von Gemeinden ist in den Gemeindeordnungen an strenge Voraussetzungen geknüpft. In den meisten Bundesländern müssen die beteiligten Gemeinden übereinstimmende Gemeinderatsbeschlüsse fassen, die in der Regel eine qualifizierte Mehrheit (typischerweise Zweidrittelmehrheit) erfordern. Die Landesregierung muss die Zusammenlegung anschließend genehmigen, wobei öffentliche Interessen – etwa wirtschaftliche Leistungsfähigkeit, verwaltungsmäßige Zweckmäßigkeit und die Wahrung der örtlichen Verbundenheit – gewahrt bleiben müssen. In einzelnen Bundesländern bedarf die Vereinigung oder Neubildung von Gemeinden sogar eines eigenen Landesgesetzes. Die vermögensrechtliche Auseinandersetzung zwischen den betroffenen Gemeinden muss in jedem Fall geregelt werden.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "7",
+          "label": "Par. 7 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "8",
+          "label": "Par. 8 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "7",
+          "label": "Par. 7 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "7",
+          "label": "Par. 7 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "5",
+          "label": "Par. 5 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "7",
+          "label": "Par. 7 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "6",
+          "label": "Par. 6 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "7",
+          "label": "Par. 7 Vbg. GG"
+        }
+      ]
+    },
+    {
+      "question": "Wie läuft eine Gemeindetrennung ab und welche Mehrheiten sind dafür erforderlich?",
+      "answer": "Die Trennung einer bestehenden Gemeinde in mehrere neue Gemeinden unterliegt besonders hohen Anforderungen. Die Regelungen sehen typischerweise vor, dass der Gemeinderat einen Trennungsbeschluss mit qualifizierter Mehrheit fasst – in den meisten Gemeindeordnungen ist eine Zweidrittelmehrheit erforderlich, in einzelnen Bundesländern sogar eine Dreiviertelmehrheit. Der Beschluss muss in der Regel einen detaillierten Plan zur vermögensrechtlichen Auseinandersetzung enthalten, der die Aufteilung von Gemeindevermögen, Schulden und laufenden Verpflichtungen regelt. Die Trennung wird anschließend durch Verordnung der Landesregierung oder durch ein eigenes Landesgesetz verfügt. Je nach Bundesland variieren die Details, insbesondere hinsichtlich der Frage, ob die Landesregierung eine Trennung auch ohne Zustimmung des Gemeinderats anordnen kann.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "9",
+          "label": "Par. 9 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "9",
+          "label": "Par. 9 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "9",
+          "label": "Par. 9 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "7",
+          "label": "Par. 7 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "7",
+          "label": "Par. 7 Vbg. GG"
+        }
+      ]
+    },
+    {
+      "question": "Haben die betroffenen Gemeindebürger:innen ein Mitspracherecht bei Zusammenlegungen oder Trennungen?",
+      "answer": "Die Beteiligung der Gemeindebürger:innen ist in den Gemeindeordnungen unterschiedlich stark ausgeprägt. In den meisten Bundesländern erfolgt die Entscheidung über Gebietsänderungen primär durch die gewählten Gemeinderät:innen als demokratisch legitimierte Vertretung. Einige Gemeindeordnungen sehen jedoch ausdrücklich vor, dass die betroffene Bevölkerung nicht benachteiligt werden darf und ihre Interessen zu berücksichtigen sind. Darüber hinaus bestehen in mehreren Bundesländern allgemeine Instrumente der direkten Demokratie wie Bürgerabstimmungen, Bürgerbefragungen oder Bürgerbegehren, die grundsätzlich auch bei Fragen der Gebietsänderung herangezogen werden können. Die Beschlüsse des Gemeinderats über Gebietsänderungen müssen zudem öffentlich kundgemacht werden, sodass die Gemeindebürger:innen Einsicht nehmen können.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "5",
+          "label": "Par. 5 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "15",
+          "label": "Par. 15 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "17",
+          "label": "Par. 17 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "13",
+          "label": "Par. 13 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "24",
+          "label": "Par. 24 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "7",
+          "label": "Par. 7 Tir. GO"
+        }
+      ]
+    },
+    {
+      "question": "Wer entscheidet endgültig über eine Gemeindezusammenlegung oder -trennung?",
+      "answer": "Die endgültige Entscheidung über Gebietsänderungen liegt in allen Bundesländern bei übergeordneten Organen der Landesverwaltung, nicht bei den Gemeinden selbst. In den meisten Gemeindeordnungen genehmigt die Landesregierung die Zusammenlegung oder Trennung durch Verordnung, nachdem die erforderlichen Gemeinderatsbeschlüsse vorliegen. In einzelnen Bundesländern bedarf es sogar eines eigenen Landesgesetzes – also eines Beschlusses des Landtags. Die Landesregierung prüft dabei, ob die gesetzlichen Voraussetzungen erfüllt sind, die öffentlichen Interessen gewahrt bleiben und die vermögensrechtliche Auseinandersetzung geregelt ist. Gebietsänderungen treten in der Regel zu einem bestimmten Stichtag in Kraft, typischerweise mit Beginn eines Kalenderjahres.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "7",
+          "label": "Par. 7 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "8",
+          "label": "Par. 8 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "7",
+          "label": "Par. 7 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "7",
+          "label": "Par. 7 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "5",
+          "label": "Par. 5 Sbg. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "7",
+          "label": "Par. 7 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "6",
+          "label": "Par. 6 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "7",
+          "label": "Par. 7 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "6",
+          "label": "Par. 6 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "7",
+          "label": "Par. 7 Vbg. GG"
+        }
+      ]
+    },
+    {
+      "question": "Welche Unterschiede bestehen zwischen Grenzänderungen und vollständigen Zusammenlegungen?",
+      "answer": "Die Gemeindeordnungen unterscheiden klar zwischen Grenzänderungen, bei denen die beteiligten Gemeinden als eigenständige Gebietskörperschaften weiterbestehen, und vollständigen Zusammenlegungen oder Trennungen, bei denen Gemeinden aufgelöst oder neu gebildet werden. Grenzänderungen betreffen typischerweise den Wechsel einzelner Ortschaften oder Gebietsteile von einer Gemeinde zur anderen. Sie erfordern in den meisten Gemeindeordnungen übereinstimmende Gemeinderatsbeschlüsse der beteiligten Gemeinden und die Genehmigung der Landesregierung. Vollständige Zusammenlegungen oder Trennungen haben weitreichendere Folgen und unterliegen daher strengeren Verfahrensvorschriften – bis hin zum Erfordernis eines eigenen Landesgesetzes. Bei Grenzänderungen sind die vermögensrechtlichen Fragen meist einfacher zu lösen als bei vollständigen Zusammenlegungen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "7",
+          "label": "Par. 7 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "9",
+          "label": "Par. 9 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "8",
+          "label": "Par. 8 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "7",
+          "label": "Par. 7 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "9",
+          "label": "Par. 9 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "7",
+          "label": "Par. 7 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "9",
+          "label": "Par. 9 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "6",
+          "label": "Par. 6 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "7",
+          "label": "Par. 7 Vbg. GG"
+        }
+      ]
+    },
+    {
+      "question": "Was geschieht mit dem Vermögen und den Schulden bei einer Gemeindezusammenlegung oder -trennung?",
+      "answer": "Die vermögensrechtliche Auseinandersetzung ist ein zentraler Bestandteil jeder Gebietsänderung. Die Regelungen sehen typischerweise vor, dass bei einer Trennung der Gemeinderatsbeschluss einen detaillierten Plan zur Aufteilung des Gemeindevermögens, der Schulden und der laufenden Verpflichtungen enthalten muss. Bei Zusammenlegungen geht das gesamte Vermögen aller beteiligten Gemeinden in der Regel auf die neue oder aufnehmende Gemeinde über. In manchen Gemeindeordnungen wird ausdrücklich geregelt, dass auch die vermögensrechtlichen Folgen durch die Genehmigung der Landesregierung oder das jeweilige Landesgesetz miterfasst werden. Urkunden über die entsprechenden Rechtsgeschäfte sind von der Bürgermeister:in und weiteren Gemeinderatsmitgliedern zu unterfertigen und mit dem Gemeindesiegel zu versehen.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "oberoesterreich",
+          "paragraph": "9",
+          "label": "Par. 9 OÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "7",
+          "label": "Par. 7 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "9",
+          "label": "Par. 9 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "50",
+          "label": "Par. 50 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "55",
+          "label": "Par. 55 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "steiermark",
+          "paragraph": "63",
+          "label": "Par. 63 Stmk. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "5",
+          "label": "Par. 5 Sbg. GO"
+        }
+      ]
+    },
+    {
+      "question": "Wann treten Gebietsänderungen in Kraft und wie werden sie kundgemacht?",
+      "answer": "Gebietsänderungen treten in der Regel zu einem festgelegten Stichtag in Kraft. In manchen Gemeindeordnungen ist vorgeschrieben, dass sie stets mit Beginn eines Kalenderjahres wirksam werden, um eine geordnete Verwaltungsübergabe zu ermöglichen. Die Kundmachung erfolgt je nach Bundesland unterschiedlich: durch Veröffentlichung im Landesgesetzblatt, durch Anschlag an der Amtstafel, durch Veröffentlichung im elektronischen Amtsblatt oder im Rechtsinformationssystem des Bundes (RIS). Gemeinderatsbeschlüsse zu Gebietsänderungen müssen in der Regel für eine bestimmte Frist – typischerweise zwei Wochen – öffentlich aufgelegt werden, damit alle Gemeindebürger:innen Einsicht nehmen können.",
+      "references": [
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "7",
+          "label": "Par. 7 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "tirol",
+          "paragraph": "60",
+          "label": "Par. 60 Tir. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "13",
+          "label": "Par. 13 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "niederoesterreich",
+          "paragraph": "59",
+          "label": "Par. 59 NÖ. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "burgenland",
+          "paragraph": "81",
+          "label": "Par. 81 Bgld. GO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "kaernten",
+          "paragraph": "15",
+          "label": "Par. 15 Ktn. AGO"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "vorarlberg",
+          "paragraph": "32",
+          "label": "Par. 32 Vbg. GG"
+        },
+        {
+          "category": "gemeindeordnungen",
+          "key": "salzburg",
+          "paragraph": "18",
+          "label": "Par. 18 Sbg. GO"
+        }
+      ]
+    }
+  ]
+}
