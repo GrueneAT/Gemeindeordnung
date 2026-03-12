@@ -215,7 +215,11 @@ Plans:
   3. Numbered Absaetze within paragraphs are clearly separated and indented, not running together as a wall of text
   4. Important terms, structural markers, or key phrases in law text are visually highlighted to aid scanning
   5. Section headings (Hauptstuecke, Abschnitte) have strong visual hierarchy clearly distinguishing them from individual paragraph headings
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 07-01-PLAN.md -- Typography overhaul, section heading hierarchy, and Absatz separation (CSS + template)
+- [ ] 07-02-PLAN.md -- Summary-first layout, key term highlighting, and E2E test updates
 
 ## Progress
 
@@ -235,4 +239,4 @@ Recommended: 4.3 -> 5 -> 6, with 7 parallelizable at any point after 4.3.
 | 4.3 Curated FAQ Topics & Fix FAQ Generation | v1.1 | 2/2 | Complete | 2026-03-12 |
 | 5. Unified Search Engine | v1.1 | 0/3 | Not started | - |
 | 6. Search-Hero Homepage & Navigation | v1.1 | 0/3 | Not started | - |
-| 7. Law Text Readability | v1.1 | 0/? | Not started | - |
+| 7. Law Text Readability | v1.1 | 0/2 | Not started | - |
