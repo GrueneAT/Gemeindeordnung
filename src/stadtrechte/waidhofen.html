@@ -82,19 +82,14 @@
         <p class="mt-1 text-sm text-gray-600">Stand: 11.03.2026</p>
       </header>
       <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
-        <strong>Hinweis:</strong> Diese Zusammenfassungen wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
+        <strong>Hinweis:</strong> Der Gesetzestext ist im Original wiedergegeben. Die Zusammenfassungen zu den einzelnen Paragraphen wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
       </div>
-      <div id="topic-filter" class="mb-4 flex flex-wrap gap-2" data-pagefind-ignore>
-        <button class="topic-chip topic-chip-active" data-topic="alle">Alle</button>
-        <button class="topic-chip topic-chip-inactive" data-topic="Gemeindeorgane">Gemeindeorgane</button>
-        <button class="topic-chip topic-chip-inactive" data-topic="Kontrollamt">Kontrollamt</button>
-        <button class="topic-chip topic-chip-inactive" data-topic="Kontrollausschuss">Kontrollausschuss</button>
-        <button class="topic-chip topic-chip-inactive" data-topic="Rechnungsprüfung">Rechnungsprüfung</button>
-        <button class="topic-chip topic-chip-inactive" data-topic="Rechtsstellung der Gemeinde">Rechtsstellung der Gemeinde</button>
-        <button class="topic-chip topic-chip-inactive" data-topic="Stadtgebiet">Stadtgebiet</button>
-        <button class="topic-chip topic-chip-inactive" data-topic="Städtische Hoheitszeichen">Städtische Hoheitszeichen</button>
-        <button class="topic-chip topic-chip-inactive" data-topic="Statutarstadt">Statutarstadt</button>
-        <button class="topic-chip topic-chip-inactive" data-topic="Wappen und Siegel">Wappen und Siegel</button>
+      <div id="topic-filter" class="mb-4 relative" data-pagefind-ignore data-topics-json="[{&quot;name&quot;:&quot;Gemeindeorgane&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Kontrollamt&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Kontrollausschuss&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Rechnungsprüfung&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Rechtsstellung der Gemeinde&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Stadtgebiet&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Städtische Hoheitszeichen&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Statutarstadt&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Wappen und Siegel&quot;,&quot;count&quot;:1}]">
+        <div class="topic-select-container">
+          <input type="text" id="topic-search-input" class="topic-search-input" placeholder="Themen filtern..." autocomplete="off" />
+        </div>
+        <div id="topic-dropdown" class="topic-dropdown hidden"></div>
+        <div id="topic-selected-chips" class="topic-selected-chips hidden"></div>
       </div>
     <nav data-pagefind-ignore aria-label="Inhaltsverzeichnis" class="mb-8 bg-white rounded-lg border border-gray-200 p-4">
       <h2 class="text-lg font-bold text-gruene-dark mb-3">Inhaltsverzeichnis</h2>
