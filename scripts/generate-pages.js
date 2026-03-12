@@ -104,8 +104,13 @@ function renderParagraph(para, llmData, glossaryTerms) {
   let body = '';
 
   if (para.absaetze && para.absaetze.length > 0) {
-    const items = para.absaetze.map(a => `<li class="mb-1">${escapeHtml(a.text)}</li>`).join('\n');
-    body = `<ol class="list-decimal list-inside ml-4 mt-2">\n${items}\n</ol>`;
+    const items = para.absaetze.map(a => {
+      const numLabel = a.nummer ? `<span class="absatz-num">(${a.nummer})</span>` : '';
+      // Strip leading "(N)" from text since we render the number separately
+      const cleanText = a.nummer ? a.text.replace(new RegExp(`^\\(${escapeRegex(String(a.nummer))}\\)\\s*`), '') : a.text;
+      return `<div class="absatz">${numLabel}<span class="absatz-text">${escapeHtml(cleanText)}</span></div>`;
+    }).join('\n');
+    body = `<div class="absaetze-container">\n${items}\n</div>`;
   } else if (para.text) {
     body = `<p class="mt-2 whitespace-pre-line">${escapeHtml(para.text)}</p>`;
   }
@@ -147,15 +152,14 @@ function renderParagraph(para, llmData, glossaryTerms) {
  */
 function renderSection(section, llmData, glossaryTerms) {
   const isHaupt = section.typ === 'hauptstueck';
-  const borderClass = isHaupt ? 'border-t-2 border-gruene-green/20' : 'border-t border-gray-200';
 
   const sectionSlug = isHaupt
     ? `hauptstueck-${section.nummer}`
     : `abschnitt-${section.nummer}`;
 
   const heading = isHaupt
-    ? `<h2 id="${sectionSlug}" class="text-2xl font-bold mt-12 mb-6 text-gruene-dark">${escapeHtml(section.nummer)}. Hauptstück: ${escapeHtml(section.titel)}</h2>`
-    : `<h2 id="${sectionSlug}" class="text-xl font-semibold mt-8 mb-4 text-gruene-dark">${escapeHtml(section.nummer)}. Abschnitt: ${escapeHtml(section.titel)}</h2>`;
+    ? `<h2 id="${sectionSlug}" class="hauptstueck-heading">${escapeHtml(section.nummer)}. Hauptstück: ${escapeHtml(section.titel)}</h2>`
+    : `<h2 id="${sectionSlug}" class="abschnitt-heading">${escapeHtml(section.nummer)}. Abschnitt: ${escapeHtml(section.titel)}</h2>`;
 
   let content = '';
 
@@ -165,7 +169,7 @@ function renderSection(section, llmData, glossaryTerms) {
     content = section.paragraphen.map(p => renderParagraph(p, llmData, glossaryTerms)).join('\n');
   }
 
-  return `<section class="mb-8 ${borderClass} pt-4">\n${heading}\n${content}\n</section>`;
+  return `<section class="mb-8 pt-4">\n${heading}\n${content}\n</section>`;
 }
 
 /**
@@ -449,7 +453,7 @@ ${breadcrumbHtml}
         <p class="mt-1 text-sm text-gray-600">Stand: ${standDatum}</p>
       </header>
 ${disclaimerHtml}${topicChipsHtml}${tocHtml}
-      <main data-pagefind-body class="max-w-prose mx-auto leading-relaxed">
+      <main data-pagefind-body class="law-text max-w-prose mx-auto leading-relaxed">
         ${strukturHtml}
       </main>
     </div>

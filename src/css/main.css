@@ -596,6 +596,90 @@ details > summary::-webkit-details-marker {
   margin-top: 0.25rem;
 }
 
+/* ---- Law Text Readability Styles ---- */
+
+/* Scoped typography for law pages */
+.law-text {
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.75;
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 639px) {
+  .law-text {
+    font-size: 1rem; /* 16px on mobile */
+  }
+}
+
+.law-text article {
+  margin-bottom: 2rem;
+}
+
+/* Hauptstueck headings -- top-level, most prominent */
+.hauptstueck-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-top: 3px solid var(--color-gruene-green);
+  color: var(--color-gruene-dark);
+}
+
+/* Abschnitt headings -- mid-level with left accent */
+.abschnitt-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--color-gruene-green);
+  color: var(--color-gruene-dark);
+}
+
+/* Paragraph headings -- subordinate */
+.law-text h3 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+
+/* Scroll margin for section headings (match h3[id] rule) */
+h2[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Absatz separation styles */
+.absaetze-container {
+  margin-top: 0.75rem;
+}
+
+.absatz {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.absatz:last-child {
+  border-bottom: none;
+}
+
+.absatz-num {
+  color: var(--color-gruene-dark);
+  opacity: 0.5;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+  min-width: 2rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.absatz-text {
+  flex: 1;
+}
+
 /* On-page highlighting (Pagefind) */
 .pagefind-highlight {
   background-color: rgba(250, 204, 21, 0.5);
