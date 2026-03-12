@@ -10,8 +10,8 @@ progress:
   total_phases: 11
   completed_phases: 9
   total_plans: 30
-  completed_plans: 26
-  percent: 87
+  completed_plans: 27
+  percent: 90
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-12)
 ## Current Position
 
 Phase: 6 of 7 (Search-Hero Homepage & Navigation)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: Executing Phase 6
-Last activity: 2026-03-12 — Completed 06-01 (Hero homepage layout with discovery links)
+Last activity: 2026-03-12 — Completed 06-02 (Hero search integration with Pagefind)
 
-Progress: [████████░░] 87% (v1.1 scope: 1/3 plans in phase 6 complete)
+Progress: [█████████░] 90% (v1.1 scope: 2/3 plans in phase 6 complete)
 
 ## Performance Metrics
 
@@ -57,6 +57,7 @@ Progress: [████████░░] 87% (v1.1 scope: 1/3 plans in phase 6
 | Phase 05 P02 | 6min | 2 tasks | 2 files |
 | Phase 05 P03 | 3min | 3 tasks | 2 files |
 | Phase 06 P01 | 5min | 2 tasks | 5 files |
+| Phase 06 P02 | 10min | 1 tasks | 45 files |
 
 ## Accumulated Context
 
@@ -85,6 +86,8 @@ Recent decisions affecting current work:
 - [06-01]: FAQ discovery chips show first 8 of 15 topics for balanced discoverability
 - [06-01]: Card grid collapsed by default in details/summary for search-first UX
 - [06-01]: Header nav uses text-xs/text-sm responsive sizing instead of hamburger menu
+- [06-02]: Hero input is primary searchInput on index page; IntersectionObserver swaps to header on scroll
+- [06-02]: E2E tests updated in Plan 02 (not deferred to Plan 03) to prevent regression failures
 
 ### Roadmap Evolution
 
@@ -104,6 +107,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T21:08:42Z
-Stopped at: Completed 06-01-PLAN.md
+Last session: 2026-03-12T21:21:18Z
+Stopped at: Completed 06-02-PLAN.md
 Resume file: None
