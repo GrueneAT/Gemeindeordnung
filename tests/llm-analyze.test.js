@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = join(__dirname, '..');
 
-import { dryRun, generateForLaw, generateFAQ, generateGlossary, generateAll, BL_CITATION, mergeParagraphSummary, mergeFAQQuestion, mergeGlossaryTerm } from '../scripts/llm-analyze.js';
+import { dryRun, generateForLaw, generateFAQ, generateGlossary, generateAll, BL_CITATION, mergeParagraphSummary, mergeFAQQuestion, mergeGlossaryTerm, regenerateParagraph, regenerateQuestion, regenerateTerm } from '../scripts/llm-analyze.js';
 
 describe('llm-analyze exports', () => {
   it('exports dryRun as a function', () => {
@@ -220,10 +220,9 @@ describe('generateFAQ per-topic architecture', () => {
     );
     expect(forLawFn).not.toMatch(/curated-topics/);
 
-    const glossaryFn = sourceCode.slice(
-      sourceCode.indexOf('export async function generateGlossary'),
-      sourceCode.indexOf('export async function generateAll')
-    );
+    const glossaryStart = sourceCode.indexOf('export async function generateGlossary');
+    const glossaryEnd = sourceCode.indexOf('export async function regenerateParagraph');
+    const glossaryFn = sourceCode.slice(glossaryStart, glossaryEnd !== -1 ? glossaryEnd : sourceCode.indexOf('export async function generateAll'));
     expect(glossaryFn).not.toMatch(/curated-topics/);
   });
 });
@@ -312,6 +311,44 @@ describe('granular merge helpers', () => {
       expect(result.terms[2]).toEqual(newTerm);
       expect(result.meta.termCount).toBe(3);
     });
+  });
+});
+
+describe('granular regeneration CLI flags', () => {
+  const sourceCode = readFileSync(join(ROOT, 'scripts', 'llm-analyze.js'), 'utf-8');
+
+  it('source code contains --paragraph flag parsing', () => {
+    expect(sourceCode).toMatch(/--paragraph/);
+    expect(sourceCode).toMatch(/paragraphIdx/);
+  });
+
+  it('source code contains --question flag parsing', () => {
+    expect(sourceCode).toMatch(/--question/);
+    expect(sourceCode).toMatch(/questionIdx/);
+  });
+
+  it('source code contains --term flag parsing', () => {
+    expect(sourceCode).toMatch(/--term/);
+    expect(sourceCode).toMatch(/termIdx/);
+  });
+
+  it('regenerateParagraph is exported as a function', () => {
+    expect(typeof regenerateParagraph).toBe('function');
+  });
+
+  it('regenerateQuestion is exported as a function', () => {
+    expect(typeof regenerateQuestion).toBe('function');
+  });
+
+  it('regenerateTerm is exported as a function', () => {
+    expect(typeof regenerateTerm).toBe('function');
+  });
+
+  it('usage help text includes --paragraph, --question, --term examples', () => {
+    const helpSection = sourceCode.slice(sourceCode.indexOf("console.log('Usage:')"));
+    expect(helpSection).toMatch(/--paragraph/);
+    expect(helpSection).toMatch(/--question/);
+    expect(helpSection).toMatch(/--term/);
   });
 });
 

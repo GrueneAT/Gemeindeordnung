@@ -13,10 +13,13 @@
  *   node scripts/llm-analyze.js --dry-run              # Preview: list laws needing analysis
  *   node scripts/llm-analyze.js --generate              # Run full pipeline
  *   node scripts/llm-analyze.js --generate --law krems  # Single law only
+ *   node scripts/llm-analyze.js --generate --law tirol --paragraph §3   # Regenerate single paragraph
  *   node scripts/llm-analyze.js --faq                   # Regenerate FAQ only
  *   node scripts/llm-analyze.js --faq --force           # Clean + regenerate FAQ
+ *   node scripts/llm-analyze.js --faq --topic befangenheit --question "Was ist...?"  # Single question
  *   node scripts/llm-analyze.js --glossary              # Regenerate glossary only
  *   node scripts/llm-analyze.js --glossary --force      # Clean + regenerate glossary
+ *   node scripts/llm-analyze.js --glossary --term Befangenheit  # Regenerate single term
  */
 
 import { readFileSync, readdirSync, existsSync, writeFileSync, mkdirSync, unlinkSync } from 'fs';
@@ -922,6 +925,224 @@ ${lawContent}`;
 }
 
 /**
+ * Regenerate a single paragraph summary and merge it back into the existing summary JSON.
+ *
+ * @param {string} lawKey - e.g. "tirol"
+ * @param {string} paragraphNum - e.g. "§3" or "3"
+ * @param {string} rootDir - Project root
+ * @returns {object} Updated summary data
+ */
+export async function regenerateParagraph(lawKey, paragraphNum, rootDir = ROOT) {
+  // Normalize paragraph number: strip leading § if present
+  const paraNum = paragraphNum.replace(/^§/, '');
+
+  // Find the law in parsed data (search both categories)
+  let category = null;
+  let parsedPath = null;
+  for (const cat of CATEGORIES) {
+    const p = join(rootDir, 'data', 'parsed', cat, `${lawKey}.json`);
+    if (existsSync(p)) {
+      category = cat;
+      parsedPath = p;
+      break;
+    }
+  }
+  if (!parsedPath) {
+    throw new Error(`Parsed law not found for key: ${lawKey}`);
+  }
+
+  // Read existing summary (must exist for merge)
+  const summaryPath = join(rootDir, 'data', 'llm', 'summaries', category, `${lawKey}.json`);
+  if (!existsSync(summaryPath)) {
+    throw new Error(`Existing summary not found: ${summaryPath}. Run full generation first.`);
+  }
+  const existingData = JSON.parse(readFileSync(summaryPath, 'utf-8'));
+
+  // Extract the single paragraph text
+  const law = JSON.parse(readFileSync(parsedPath, 'utf-8'));
+  const paragraphs = flattenParagraphs(law.struktur);
+  const targetPara = paragraphs.find(p => String(p.nummer) === paraNum);
+  if (!targetPara) {
+    throw new Error(`Paragraph ${paraNum} not found in ${lawKey}`);
+  }
+
+  const paraText = targetPara.text || targetPara.absaetze?.map(a => a.text).join('\n') || '';
+  const citation = BL_CITATION[lawKey] || lawKey;
+
+  const prompt = `Du bist ein Experte fuer oesterreichisches Gemeinderecht. Analysiere den folgenden Paragraph aus "${law.meta.kurztitel}" (${law.meta.bundesland}).
+
+Erstelle:
+1. "summary": Eine sachlich-verstaendliche Zusammenfassung in 1-3 Saetzen.
+   Verwende IMMER korrekte deutsche Umlaute (ae, oe, ue, ss).
+   Verwende KEINE Anführungszeichen (") im Text.
+   ${GENDERING_INSTRUCTIONS}
+
+2. "topics": 1-3 thematische Labels.
+
+Referenz-Format: "Par. ${paraNum} ${citation}"
+
+Antworte NUR mit validem JSON (ohne Markdown-Formatierung):
+{
+  "summary": "...",
+  "topics": ["Topic1", "Topic2"]
+}
+
+--- Paragraph ${targetPara.nummer}${targetPara.titel ? ': ' + targetPara.titel : ''} ---
+${paraText}`;
+
+  console.log(`Regenerating paragraph ${paraNum} for ${category}/${lawKey}...`);
+  const claudeResult = callClaude(prompt);
+  if (!claudeResult || !claudeResult.summary) {
+    throw new Error(`Claude did not return valid content for paragraph ${paraNum}`);
+  }
+
+  const merged = mergeParagraphSummary(existingData, paraNum, claudeResult);
+  writeFileSync(summaryPath, JSON.stringify(merged, null, 2), 'utf-8');
+  console.log(`  Updated: ${summaryPath} (paragraph ${paraNum} regenerated)`);
+  return merged;
+}
+
+/**
+ * Regenerate a single FAQ question and merge it back into the existing topic JSON.
+ *
+ * @param {string} topicSlug - e.g. "befangenheit-und-ausschluss"
+ * @param {string} questionText - Text to match the question
+ * @param {string} rootDir - Project root
+ * @returns {object} Updated topic data
+ */
+export async function regenerateQuestion(topicSlug, questionText, rootDir = ROOT) {
+  const topicPath = join(rootDir, 'data', 'llm', 'faq', 'topics', `${topicSlug}.json`);
+  if (!existsSync(topicPath)) {
+    throw new Error(`Topic file not found: ${topicPath}. Run FAQ generation first.`);
+  }
+  const existingTopicData = JSON.parse(readFileSync(topicPath, 'utf-8'));
+
+  // Load curated topic for context
+  const curatedData = loadCuratedTopics(rootDir);
+  const curatedTopic = curatedData.topics.find(t => t.slug === topicSlug);
+  if (!curatedTopic) {
+    throw new Error(`Topic slug '${topicSlug}' not found in curated-topics.json`);
+  }
+
+  // Collect paragraph references for context
+  const paragraphRefs = collectParagraphsForTopic(curatedTopic, rootDir);
+
+  // Build citation format reference
+  const citationRef = Object.entries(BL_CITATION)
+    .map(([key, abbr]) => `  ${key} = "${abbr}"`)
+    .join('\n');
+
+  const refDetails = paragraphRefs.slice(0, 30).map(r => {
+    const citation = BL_CITATION[r.key] || r.key;
+    return `  - Par. ${r.paragraph} ${citation}: ${r.summary?.substring(0, 120)}`;
+  }).join('\n');
+
+  const prompt = `Du bist ein Experte für österreichisches Gemeinderecht. Regeneriere eine einzelne FAQ-Frage zum Thema "${curatedTopic.title}".
+
+Thema: ${curatedTopic.title}
+Beschreibung: ${curatedTopic.description}
+
+Die zu regenerierende Frage lautet sinngemäß: "${questionText}"
+
+${GENDERING_INSTRUCTIONS}
+
+WICHTIG:
+${FAQ_STYLE_INSTRUCTIONS}
+- Referenzen müssen das korrekte Zitierformat verwenden:
+${citationRef}
+- Format: "Par. {nummer} {Abkürzung}", z.B. "Par. 42 Bgld. GO"
+
+Antworte NUR mit validem JSON (ohne Markdown-Formatierung):
+{
+  "question": "...",
+  "answer": "...",
+  "references": [{ "category": "gemeindeordnungen", "key": "burgenland", "paragraph": "42", "label": "Par. 42 Bgld. GO" }]
+}
+
+Relevante Paragraphen-Referenzen:
+${refDetails}`;
+
+  console.log(`Regenerating question "${questionText}" for topic ${topicSlug}...`);
+  const claudeResult = callClaude(prompt);
+  if (!claudeResult || !claudeResult.question) {
+    throw new Error(`Claude did not return valid content for question regeneration`);
+  }
+
+  const merged = mergeFAQQuestion(existingTopicData, questionText, claudeResult);
+  writeFileSync(topicPath, JSON.stringify(merged, null, 2), 'utf-8');
+  console.log(`  Updated: ${topicPath}`);
+
+  // Re-aggregate topics.json
+  const topicsDir = join(rootDir, 'data', 'llm', 'faq', 'topics');
+  const outputPath = join(rootDir, 'data', 'llm', 'faq', 'topics.json');
+  const allTopicFiles = readdirSync(topicsDir).filter(f => f.endsWith('.json'));
+  const aggregatedTopics = [];
+  for (const file of allTopicFiles) {
+    aggregatedTopics.push(JSON.parse(readFileSync(join(topicsDir, file), 'utf-8')));
+  }
+  const aggregated = {
+    meta: { generatedAt: new Date().toISOString(), topicCount: aggregatedTopics.length },
+    topics: aggregatedTopics,
+  };
+  writeFileSync(outputPath, JSON.stringify(aggregated, null, 2), 'utf-8');
+  console.log(`  Re-aggregated: ${outputPath}`);
+
+  return merged;
+}
+
+/**
+ * Regenerate a single glossary term and merge it back into the existing terms JSON.
+ *
+ * @param {string} termName - e.g. "Befangenheit"
+ * @param {string} rootDir - Project root
+ * @returns {object} Updated glossary data
+ */
+export async function regenerateTerm(termName, rootDir = ROOT) {
+  const glossaryPath = join(rootDir, 'data', 'llm', 'glossary', 'terms.json');
+  if (!existsSync(glossaryPath)) {
+    throw new Error(`Glossary file not found: ${glossaryPath}. Run glossary generation first.`);
+  }
+  const existingData = JSON.parse(readFileSync(glossaryPath, 'utf-8'));
+
+  // Build citation format reference
+  const citationRef = Object.entries(BL_CITATION)
+    .map(([key, abbr]) => `  ${key} = "${abbr}"`)
+    .join('\n');
+
+  const prompt = `Du bist ein Experte für österreichisches Gemeinderecht. Regeneriere die Definition für den Fachbegriff "${termName}".
+
+${GENDERING_INSTRUCTIONS}
+
+WICHTIG:
+- Verwende IMMER korrekte deutsche Umlaute (ä, ö, ü, ß).
+- Verwende KEINE Anführungszeichen (") im Antworttext.
+- "definition": Verständliche Definition in 1-3 Sätzen.
+- "references": 3-6 Verweise auf Paragraphen aus VERSCHIEDENEN Bundesländern: { "category", "key", "paragraph", "label" }
+- Referenzen müssen das korrekte Zitierformat verwenden:
+${citationRef}
+- Format: "Par. {nummer} {Abkürzung}", z.B. "Par. 35 Bgld. GO"
+
+Antworte NUR mit validem JSON (ohne Markdown-Formatierung):
+{
+  "term": "${termName}",
+  "slug": "...",
+  "definition": "...",
+  "references": [{ "category": "gemeindeordnungen", "key": "burgenland", "paragraph": "35", "label": "Par. 35 Bgld. GO" }]
+}`;
+
+  console.log(`Regenerating glossary term "${termName}"...`);
+  const claudeResult = callClaude(prompt);
+  if (!claudeResult || !claudeResult.term) {
+    throw new Error(`Claude did not return valid content for term "${termName}"`);
+  }
+
+  const merged = mergeGlossaryTerm(existingData, termName, claudeResult);
+  writeFileSync(glossaryPath, JSON.stringify(merged, null, 2), 'utf-8');
+  console.log(`  Updated: ${glossaryPath} (term "${termName}" regenerated)`);
+  return merged;
+}
+
+/**
  * Generate all LLM content: summaries, FAQ, and glossary.
  *
  * @param {object} options - { rootDir, lawFilter, force }
@@ -1019,6 +1240,12 @@ if (process.argv[1] && process.argv[1].endsWith('llm-analyze.js')) {
   const lawFilter = lawIdx !== -1 ? process.argv[lawIdx + 1] : null;
   const topicIdx = process.argv.indexOf('--topic');
   const topicFilter = topicIdx !== -1 ? process.argv[topicIdx + 1] : null;
+  const paragraphIdx = process.argv.indexOf('--paragraph');
+  const paragraphFilter = paragraphIdx !== -1 ? process.argv[paragraphIdx + 1] : null;
+  const questionIdx = process.argv.indexOf('--question');
+  const questionFilter = questionIdx !== -1 ? process.argv[questionIdx + 1] : null;
+  const termIdx = process.argv.indexOf('--term');
+  const termFilter = termIdx !== -1 ? process.argv[termIdx + 1] : null;
 
   if (isDryRun) {
     dryRun().then(result => {
@@ -1039,20 +1266,41 @@ if (process.argv[1] && process.argv[1].endsWith('llm-analyze.js')) {
       }
     });
   } else if (isGenerate) {
-    generateAll({ lawFilter, force }).catch(err => {
-      console.error('Generation failed:', err.message);
-      process.exit(1);
-    });
+    if (lawFilter && paragraphFilter) {
+      regenerateParagraph(lawFilter, paragraphFilter).catch(err => {
+        console.error('Paragraph regeneration failed:', err.message);
+        process.exit(1);
+      });
+    } else {
+      generateAll({ lawFilter, force }).catch(err => {
+        console.error('Generation failed:', err.message);
+        process.exit(1);
+      });
+    }
   } else if (isFAQ) {
-    generateFAQ(ROOT, { force, topic: topicFilter }).catch(err => {
-      console.error('FAQ generation failed:', err.message);
-      process.exit(1);
-    });
+    if (topicFilter && questionFilter) {
+      regenerateQuestion(topicFilter, questionFilter).catch(err => {
+        console.error('Question regeneration failed:', err.message);
+        process.exit(1);
+      });
+    } else {
+      generateFAQ(ROOT, { force, topic: topicFilter }).catch(err => {
+        console.error('FAQ generation failed:', err.message);
+        process.exit(1);
+      });
+    }
   } else if (isGlossary) {
-    generateGlossary(ROOT, { force }).catch(err => {
-      console.error('Glossary generation failed:', err.message);
-      process.exit(1);
-    });
+    if (termFilter) {
+      regenerateTerm(termFilter).catch(err => {
+        console.error('Term regeneration failed:', err.message);
+        process.exit(1);
+      });
+    } else {
+      generateGlossary(ROOT, { force }).catch(err => {
+        console.error('Glossary generation failed:', err.message);
+        process.exit(1);
+      });
+    }
   } else {
     console.log('Usage:');
     console.log('  node scripts/llm-analyze.js --dry-run              # Preview');
@@ -1060,10 +1308,13 @@ if (process.argv[1] && process.argv[1].endsWith('llm-analyze.js')) {
     console.log('  node scripts/llm-analyze.js --generate --force      # Clean + regenerate everything');
     console.log('  node scripts/llm-analyze.js --generate --law krems  # Single law only');
     console.log('  node scripts/llm-analyze.js --generate --force --law krems  # Force single law');
+    console.log('  node scripts/llm-analyze.js --generate --law tirol --paragraph §3   # Regenerate single paragraph summary');
     console.log('  node scripts/llm-analyze.js --faq                   # FAQ only');
     console.log('  node scripts/llm-analyze.js --faq --force           # Clean + regenerate FAQ');
     console.log('  node scripts/llm-analyze.js --faq --topic befangenheit  # Single topic only');
+    console.log('  node scripts/llm-analyze.js --faq --topic befangenheit --question "Was ist Befangenheit?"  # Regenerate single FAQ question');
     console.log('  node scripts/llm-analyze.js --glossary              # Glossary only');
     console.log('  node scripts/llm-analyze.js --glossary --force      # Clean + regenerate glossary');
+    console.log('  node scripts/llm-analyze.js --glossary --term Befangenheit          # Regenerate single glossary term');
   }
 }
