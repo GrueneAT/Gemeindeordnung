@@ -49,6 +49,33 @@ async function loadPagefind() {
  * @param {string|null} bundesland - Filter to specific BL, or null for all
  * @returns {Promise<{faq, glossar, gesetz}>} Structured result object
  */
+/**
+ * Post-filter Pagefind results to remove false positives from aggressive German stemming.
+ * Drops results where neither the query nor a reasonable prefix appears in the content.
+ * Only affects words not in the corpus (e.g., "werbung" stemmed to "wer").
+ *
+ * @param {Array} results - Loaded Pagefind result data objects
+ * @param {string} query - Original search query
+ * @returns {Array} Filtered results
+ */
+function filterStemmingFalsePositives(results, query) {
+  if (query.length < 4) return results; // Short queries: stemming is fine
+  const qLower = query.toLowerCase();
+  // Use a 4-char prefix to allow morphological variants (e.g., "Ausschuss" matches "Ausschüsse")
+  const prefix = qLower.slice(0, Math.max(4, Math.ceil(qLower.length * 0.6)));
+
+  return results.filter(r => {
+    // Check excerpt (contains <mark> tags), title, and sub_results
+    const excerpt = (r.excerpt || '').replace(/<[^>]+>/g, '').toLowerCase();
+    const title = (r.meta?.title || '').toLowerCase();
+    const subText = (r.sub_results || []).map(s =>
+      ((s.excerpt || '') + ' ' + (s.title || '')).replace(/<[^>]+>/g, '')
+    ).join(' ').toLowerCase();
+    const text = `${excerpt} ${title} ${subText}`;
+    return text.includes(prefix);
+  });
+}
+
 async function executeUnifiedSearch(query, bundesland = null) {
   const pf = await loadPagefind();
   if (!pf) return { faq: { results: [], totalCount: 0 }, glossar: { results: [], totalCount: 0 }, gesetz: { results: [], totalCount: 0, hasMore: false, allResults: [] } };
@@ -63,25 +90,25 @@ async function executeUnifiedSearch(query, bundesland = null) {
     ]);
 
     // Load FAQ and Glossar results from separate searches
-    const faqRaw = await Promise.all(
+    const faqRaw = filterStemmingFalsePositives(await Promise.all(
       (faqSearch?.results || []).map(r => r.data())
-    );
-    const glossarRaw = await Promise.all(
+    ), query);
+    const glossarRaw = filterStemmingFalsePositives(await Promise.all(
       (glossarSearch?.results || []).map(r => r.data())
-    );
+    ), query);
 
-    // Load first 5 Gesetze results
+    // Load first 5 Gesetze results, then filter
     const gesetzResults = gesetzSearch?.results || [];
-    const gesetzLoaded = await Promise.all(
+    const gesetzLoaded = filterStemmingFalsePositives(await Promise.all(
       gesetzResults.slice(0, 5).map((r) => r.data()),
-    );
+    ), query);
 
     return {
       faq: { results: faqRaw, totalCount: faqRaw.length },
       glossar: { results: glossarRaw, totalCount: glossarRaw.length },
       gesetz: {
         results: gesetzLoaded,
-        totalCount: gesetzResults.length,
+        totalCount: gesetzLoaded.length,
         hasMore: gesetzResults.length > 5,
         allResults: gesetzResults,
       },
@@ -107,17 +134,34 @@ async function executeUnifiedSearch(query, bundesland = null) {
       else gesetzRawResults.push(entry);
     }
 
+    // Post-filter false positives from aggressive stemming
+    const filteredFaq = filterStemmingFalsePositives(faqResults, query);
+    const filteredGlossar = filterStemmingFalsePositives(glossarResults, query);
+    const filteredGesetz = gesetzRawResults.filter(entry => {
+      const r = entry.data;
+      const excerpt = (r.excerpt || '').replace(/<[^>]+>/g, '').toLowerCase();
+      const title = (r.meta?.title || '').toLowerCase();
+      const subText = (r.sub_results || []).map(s =>
+        ((s.excerpt || '') + ' ' + (s.title || '')).replace(/<[^>]+>/g, '')
+      ).join(' ').toLowerCase();
+      const text = `${excerpt} ${title} ${subText}`;
+      const qLower = query.toLowerCase();
+      if (qLower.length < 4) return true;
+      const prefix = qLower.slice(0, Math.max(4, Math.ceil(qLower.length * 0.6)));
+      return text.includes(prefix);
+    });
+
     // For Gesetze, take first 5 loaded results
-    const gesetzLoaded = gesetzRawResults.slice(0, 5).map((r) => r.data);
-    const gesetzAllRaw = gesetzRawResults.map((r) => r.raw);
+    const gesetzLoaded = filteredGesetz.slice(0, 5).map((r) => r.data);
+    const gesetzAllRaw = filteredGesetz.map((r) => r.raw);
 
     return {
-      faq: { results: faqResults, totalCount: faqResults.length },
-      glossar: { results: glossarResults, totalCount: glossarResults.length },
+      faq: { results: filteredFaq, totalCount: filteredFaq.length },
+      glossar: { results: filteredGlossar, totalCount: filteredGlossar.length },
       gesetz: {
         results: gesetzLoaded,
-        totalCount: gesetzRawResults.length,
-        hasMore: gesetzRawResults.length > 5,
+        totalCount: filteredGesetz.length,
+        hasMore: filteredGesetz.length > 5,
         allResults: gesetzAllRaw,
       },
     };
@@ -388,6 +432,8 @@ function countGlossarResults(results) {
  * Groups with zero results are hidden entirely.
  */
 function renderUnifiedResults(searchResult) {
+  // Fall back to heroDropdown if searchDropdown was nulled by IntersectionObserver
+  if (!searchDropdown && heroDropdown) searchDropdown = heroDropdown;
   if (!searchDropdown) return;
 
   const { faq, glossar, gesetz } = searchResult;
@@ -533,6 +579,7 @@ function renderResults(searchResult) {
  * Render empty state when no results found.
  */
 function renderEmptyState(query, bundesland) {
+  if (!searchDropdown && heroDropdown) searchDropdown = heroDropdown;
   if (!searchDropdown) return;
 
   const blText = bundesland || 'Alle Bundesl\u00E4nder';
@@ -659,6 +706,10 @@ async function handleSearchInput(e) {
   const query = e.target.value.trim();
   currentQuery = query;
 
+  // Capture the dropdown ref at call time — the global ref may be nulled
+  // by IntersectionObserver if the hero scrolls out of view during async search
+  const targetDropdown = searchDropdown || heroDropdown;
+
   if (query.length === 0) {
     hideDropdown();
     return;
@@ -674,6 +725,10 @@ async function handleSearchInput(e) {
   searchTimer = setTimeout(async () => {
     const result = await executeUnifiedSearch(query, activeBundesland);
     if (result && generation === searchGeneration) {
+      // Restore dropdown ref if it was nulled by observer during search
+      if (!searchDropdown && targetDropdown) {
+        searchDropdown = targetDropdown;
+      }
       renderUnifiedResults(result);
     }
   }, 200);
@@ -695,18 +750,20 @@ async function triggerSearch() {
  * Show hint when query is too short.
  */
 function showMinCharsHint() {
-  if (!searchDropdown) return;
-  searchDropdown.classList.remove('hidden');
-  searchDropdown.innerHTML = '<div class="search-hint">Bitte mindestens 3 Zeichen eingeben</div>';
+  const dd = searchDropdown || heroDropdown;
+  if (!dd) return;
+  dd.classList.remove('hidden');
+  dd.innerHTML = '<div class="search-hint">Bitte mindestens 3 Zeichen eingeben</div>';
 }
 
 /**
  * Hide the search dropdown.
  */
 function hideDropdown() {
-  if (!searchDropdown) return;
-  searchDropdown.classList.add('hidden');
-  searchDropdown.classList.remove('search-dropdown-expanded');
+  const dd = searchDropdown || heroDropdown;
+  if (!dd) return;
+  dd.classList.add('hidden');
+  dd.classList.remove('search-dropdown-expanded');
 }
 
 // ---- Search Modal ----

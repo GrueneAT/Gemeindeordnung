@@ -124,21 +124,22 @@ test.describe('Search core functionality', () => {
     // Record the result count text for "wer"
     const oldCount = await page.locator('.search-count').textContent();
 
-    // Now type "werbung" -- results should update
-    await page.fill(SEARCH_INPUT, 'werbung');
+    // Now type "Sitzung" -- a real term that returns different results
+    await page.fill(SEARCH_INPUT, 'Sitzung');
     // Wait for debounce + search
     await page.waitForTimeout(600);
 
     // Results should have changed (different query = different results)
-    const dropdown = page.locator(SEARCH_DROPDOWN);
-    const dropdownHtml = await dropdown.innerHTML();
-    // The dropdown should contain results or empty state -- either way it should differ
-    // "werbung" is more specific than "wer" so count should differ
-    const newCount = await page.locator('.search-count').textContent().catch(() => '');
+    const countLocator = page.locator('.search-count');
+    const hasCount = await countLocator.count() > 0;
     const hasEmptyState = await page.locator('.search-empty-state').count() > 0;
 
-    // Either the count changed, or we got empty state (which is valid -- "werbung" is specific)
-    expect(newCount !== oldCount || hasEmptyState).toBeTruthy();
+    // Must have either new results or empty state
+    expect(hasCount || hasEmptyState).toBeTruthy();
+    if (hasCount) {
+      const newCount = await countLocator.textContent();
+      expect(newCount).not.toBe(oldCount);
+    }
   });
 
   test('search results reflect final query, not intermediate', async ({ page }) => {
@@ -220,6 +221,30 @@ test.describe('Search core functionality', () => {
       }
     }
     expect(foundNewTerm).toBeTruthy();
+  });
+
+  test('stemming filter removes false positives for non-corpus terms', async ({ page }) => {
+    // "werbung" is not in the corpus -- stemmer would match "wer" without the filter
+    await page.fill(SEARCH_INPUT, 'werbung');
+    await page.waitForTimeout(600);
+
+    const dropdown = page.locator(SEARCH_DROPDOWN);
+    await expect(dropdown).not.toHaveClass(/hidden/);
+
+    // Should show empty state, not false "wer" matches
+    const hasEmptyState = await dropdown.locator('.search-empty-state').count() > 0;
+    const hasResults = await dropdown.locator('.search-result-item, .search-sub-result').count();
+    expect(hasEmptyState).toBeTruthy();
+    expect(hasResults).toBe(0);
+  });
+
+  test('stemming filter preserves valid morphological matches', async ({ page }) => {
+    // "Ausschuss" should still match "Ausschüsse" (valid German morphology)
+    await page.fill(SEARCH_INPUT, 'Ausschuss');
+    await page.waitForSelector('.search-sub-result, .search-result-item', { timeout: 5000 });
+
+    const count = await page.locator('.search-count').textContent();
+    expect(count).toContain('Treffer');
   });
 
   test('keyboard shortcut Ctrl+K focuses search and Escape closes', async ({ page, browserName }, testInfo) => {
