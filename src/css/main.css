@@ -849,6 +849,8 @@ h2[id] {
 
 .bl-switcher {
   margin-top: 0.5rem;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .bl-switcher-group {
@@ -886,13 +888,13 @@ h2[id] {
 }
 
 .bl-switcher-active {
-  background-color: var(--color-gruene-green);
+  background-color: var(--color-gruene-dark);
   color: white;
-  border-color: var(--color-gruene-green);
+  border-color: var(--color-gruene-dark);
 }
 
 .bl-switcher-active:hover {
-  background-color: var(--color-gruene-green);
+  background-color: var(--color-gruene-dark);
   color: white;
 }
 
@@ -902,15 +904,11 @@ h2[id] {
   padding: 0.125rem 0.5rem;
 }
 
-/* Mobile: horizontal scroll for BL switcher */
+/* Mobile: smaller pills for BL switcher */
 @media (max-width: 639px) {
-  .bl-switcher-group > div {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    gap: 0.375rem;
-    padding-bottom: 0.25rem;
+  .bl-switcher-pill {
+    font-size: 0.625rem;
+    padding: 0.0625rem 0.375rem;
   }
 }
 

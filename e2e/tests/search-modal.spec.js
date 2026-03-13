@@ -46,18 +46,20 @@ test.describe('Search modal behavior', () => {
     await expect(modal).toBeHidden({ timeout: 3000 });
   });
 
-  test('BL pills rendered in modal with all 9 BL + Alle', async ({ page }) => {
+  test('BL pills rendered in modal with all BLs + Statutarstaedte + Alle', async ({ page }) => {
     await page.click('#search-modal-trigger');
     await page.waitForSelector('.search-modal', { state: 'visible' });
 
     const pills = page.locator('#search-modal-chips .bl-selector-pill');
-    // 9 BLs + 1 "Alle" = 10
-    await expect(pills).toHaveCount(10);
+    // 23 entities (9 BLs + 14 Statutarstaedte) + 1 "Alle" = 24
+    await expect(pills).toHaveCount(24);
 
     const pillTexts = await pills.allTextContents();
     expect(pillTexts).toContain('Alle');
     expect(pillTexts).toContain('Wien');
     expect(pillTexts).toContain('Burgenland');
+    expect(pillTexts).toContain('Graz');
+    expect(pillTexts).toContain('Innsbruck');
   });
 
   test('search results appear in modal', async ({ page }) => {

@@ -1,25 +1,46 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Bundesland dropdown navigation (UAT 7)', () => {
-  test('navigates to selected Bundesland page', async ({ page }) => {
+test.describe('BL switcher pill navigation', () => {
+  test('BL switcher pills visible on law page', async ({ page }) => {
     await page.goto('./gemeindeordnungen/wien.html');
 
-    // Find the dropdown select element
-    const select = page.locator('#bundesland-nav');
-    await expect(select).toBeVisible();
+    // Find the BL switcher container
+    const switcher = page.locator('.bl-switcher');
+    await expect(switcher).toBeVisible();
 
-    // Verify it has multiple options
-    const options = select.locator('option');
-    expect(await options.count()).toBeGreaterThan(1);
+    // Should have pill links
+    const pills = switcher.locator('.bl-switcher-pill');
+    expect(await pills.count()).toBeGreaterThan(5);
 
-    // Select Burgenland - the JS handler prepends '../' to the value
-    await select.selectOption('gemeindeordnungen/burgenland.html');
+    // Active pill should be Wien
+    const activePill = switcher.locator('.bl-switcher-active');
+    await expect(activePill).toBeVisible();
+    await expect(activePill).toContainText('Wien');
 
-    // Wait for navigation to complete
+    await page.screenshot({ path: 'e2e/screenshots/bl-switcher-pills.png' });
+  });
+
+  test('BL switcher navigates to selected Bundesland', async ({ page }) => {
+    await page.goto('./gemeindeordnungen/wien.html');
+
+    // Click on Burgenland pill
+    const burgenlandPill = page.locator('.bl-switcher-pill', { hasText: 'Burgenland' });
+    await expect(burgenlandPill).toBeVisible();
+    await burgenlandPill.click();
+
+    // Wait for navigation
     await page.waitForURL(/burgenland/);
-
-    // Verify the new page loaded (URL contains burgenland)
     expect(page.url()).toContain('burgenland');
-    await page.screenshot({ path: 'e2e/screenshots/dropdown-nav-result.png' });
+  });
+
+  test('active pill highlighted for current page', async ({ page }) => {
+    await page.goto('./stadtrechte/graz.html');
+
+    const switcher = page.locator('.bl-switcher');
+    await expect(switcher).toBeVisible();
+
+    // Active pill should be Graz (Statutarstadt)
+    const activePill = switcher.locator('.bl-switcher-active');
+    await expect(activePill).toContainText('Graz');
   });
 });
