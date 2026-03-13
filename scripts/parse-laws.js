@@ -43,6 +43,7 @@ export function parseLaw(html, lawKey, lawConfig) {
     fetchedAt: new Date().toISOString(),
     sourceUrl: lawConfig.url,
     contentHash,
+    fassungVom: extractFassungVom($),
   };
 
   // Extract all document content blocks (each is typically one paragraph)
@@ -94,6 +95,18 @@ export function parseLaw(html, lawKey, lawConfig) {
   const struktur = buildStruktur(rawParagraphen);
 
   return { meta, struktur };
+}
+
+/**
+ * Extract "Fassung vom DD.MM.YYYY" date from the h1#Title element.
+ * Returns ISO date string (YYYY-MM-DD) or null if not found.
+ */
+function extractFassungVom($) {
+  const titleText = $('h1#Title').text();
+  const match = titleText.match(/Fassung vom (\d{2})\.(\d{2})\.(\d{4})/);
+  if (!match) return null;
+  const [, day, month, year] = match;
+  return `${year}-${month}-${day}`;
 }
 
 /**

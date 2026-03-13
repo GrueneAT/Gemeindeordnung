@@ -146,6 +146,8 @@ describe('parseLaw', () => {
       expect(result.meta.fetchedAt).toMatch(/^\d{4}-\d{2}-\d{2}T/);
       expect(result.meta.sourceUrl).toBe(lawConfigs.burgenland.url);
       expect(result.meta.contentHash).toMatch(/^sha256:[a-f0-9]{64}$/);
+      expect(result.meta).toHaveProperty('fassungVom');
+      expect(typeof result.meta.fassungVom === 'string' || result.meta.fassungVom === null).toBe(true);
     });
   });
 
@@ -160,6 +162,32 @@ describe('parseLaw', () => {
       expect(p1.absaetze.length).toBeGreaterThanOrEqual(3);
       expect(p1.absaetze[0].nummer).toBe(1);
       expect(p1.absaetze[0].text).toContain('(1)');
+    });
+  });
+
+  describe('fassungVom extraction', () => {
+    it('extracts fassungVom date from RIS HTML title', () => {
+      const result = parseLaw(fixtures.burgenland, 'burgenland', lawConfigs.burgenland);
+      expect(result.meta.fassungVom).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    });
+
+    it('returns null fassungVom for HTML without Fassung vom', () => {
+      // Minimal HTML that has paragraphs but no "Fassung vom" in title
+      const minimalHtml = `<html><body>
+        <div class="documentContent"><div class="contentBlock">
+          <h4 class="ParagraphAbs">§ 1 Test</h4>
+          <div class="Abs">(1) Test paragraph content here with enough text.</div>
+        </div></div>
+      </body></html>`;
+      const result = parseLaw(minimalHtml, 'test', lawConfigs.burgenland);
+      expect(result.meta.fassungVom).toBeNull();
+    });
+
+    it('produces valid fassungVom for all fixture-based test suites', () => {
+      for (const [key, html] of Object.entries(fixtures)) {
+        const result = parseLaw(html, key, lawConfigs[key]);
+        expect(result.meta.fassungVom).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      }
     });
   });
 
