@@ -252,33 +252,34 @@ ${items}
 }
 
 /**
- * Build styled BL switcher pills for the header on law pages.
- * Two rows: Gemeindeordnungen (9 BLs) and Stadtrechte (14 cities).
+ * Build styled BL switcher select dropdown for the header on law pages.
+ * Two optgroups: Gemeindeordnungen (9 BLs) and Stadtrechte (14 cities).
  */
 function buildBundeslandSwitcher(currentKey, currentCategory) {
-  const goPills = [];
+  const goOptions = [];
   for (const [key, law] of Object.entries(LAWS.gemeindeordnungen)) {
-    const isActive = key === currentKey && currentCategory === 'gemeindeordnungen';
-    const cls = isActive ? 'bl-switcher-pill bl-switcher-active' : 'bl-switcher-pill';
-    goPills.push(`<a href="../gemeindeordnungen/${key}.html" class="${cls}">${escapeHtml(law.bundesland)}</a>`);
+    const isSelected = key === currentKey && currentCategory === 'gemeindeordnungen';
+    const selected = isSelected ? ' selected' : '';
+    goOptions.push(`            <option value="../gemeindeordnungen/${key}.html"${selected}>${escapeHtml(law.bundesland)}</option>`);
   }
 
-  const stadtPills = [];
+  const stadtOptions = [];
   for (const [key, law] of Object.entries(LAWS.stadtrechte)) {
-    const isActive = key === currentKey && currentCategory === 'stadtrechte';
-    const cls = isActive ? 'bl-switcher-pill bl-switcher-active' : 'bl-switcher-pill';
-    stadtPills.push(`<a href="../stadtrechte/${key}.html" class="${cls}">${escapeHtml(law.bundesland)}</a>`);
+    const isSelected = key === currentKey && currentCategory === 'stadtrechte';
+    const selected = isSelected ? ' selected' : '';
+    stadtOptions.push(`            <option value="../stadtrechte/${key}.html"${selected}>${escapeHtml(law.bundesland)}</option>`);
   }
 
   return `        <div class="bl-switcher" data-pagefind-ignore>
-          <div class="bl-switcher-group">
-            <span class="bl-switcher-label">Gemeindeordnungen</span>
-            <div class="flex flex-wrap gap-1.5">${goPills.join('\n              ')}</div>
-          </div>
-          <div class="bl-switcher-group">
-            <span class="bl-switcher-label">Stadtrechte</span>
-            <div class="flex flex-wrap gap-1.5">${stadtPills.join('\n              ')}</div>
-          </div>
+          <label for="bl-switcher-select" class="bl-switcher-label">Andere Gemeindeordnung anzeigen</label>
+          <select id="bl-switcher-select" class="bl-switcher-select" onchange="if(this.value) window.location.href=this.value">
+            <optgroup label="Gemeindeordnungen">
+${goOptions.join('\n')}
+            </optgroup>
+            <optgroup label="Stadtrechte">
+${stadtOptions.join('\n')}
+            </optgroup>
+          </select>
         </div>`;
 }
 

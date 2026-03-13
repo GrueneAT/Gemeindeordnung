@@ -25,35 +25,36 @@
       </button>
       <div class="mt-2 sm:mt-0">
         <div class="bl-switcher" data-pagefind-ignore>
-          <div class="bl-switcher-group">
-            <span class="bl-switcher-label">Gemeindeordnungen</span>
-            <div class="flex flex-wrap gap-1.5"><a href="../gemeindeordnungen/burgenland.html" class="bl-switcher-pill">Burgenland</a>
-              <a href="../gemeindeordnungen/kaernten.html" class="bl-switcher-pill">Kaernten</a>
-              <a href="../gemeindeordnungen/niederoesterreich.html" class="bl-switcher-pill">Niederoesterreich</a>
-              <a href="../gemeindeordnungen/oberoesterreich.html" class="bl-switcher-pill">Oberoesterreich</a>
-              <a href="../gemeindeordnungen/salzburg.html" class="bl-switcher-pill">Salzburg</a>
-              <a href="../gemeindeordnungen/steiermark.html" class="bl-switcher-pill">Steiermark</a>
-              <a href="../gemeindeordnungen/tirol.html" class="bl-switcher-pill">Tirol</a>
-              <a href="../gemeindeordnungen/vorarlberg.html" class="bl-switcher-pill">Vorarlberg</a>
-              <a href="../gemeindeordnungen/wien.html" class="bl-switcher-pill">Wien</a></div>
-          </div>
-          <div class="bl-switcher-group">
-            <span class="bl-switcher-label">Stadtrechte</span>
-            <div class="flex flex-wrap gap-1.5"><a href="../stadtrechte/eisenstadt.html" class="bl-switcher-pill">Eisenstadt</a>
-              <a href="../stadtrechte/rust.html" class="bl-switcher-pill">Rust</a>
-              <a href="../stadtrechte/klagenfurt.html" class="bl-switcher-pill">Klagenfurt</a>
-              <a href="../stadtrechte/villach.html" class="bl-switcher-pill">Villach</a>
-              <a href="../stadtrechte/krems.html" class="bl-switcher-pill">Krems</a>
-              <a href="../stadtrechte/st_poelten.html" class="bl-switcher-pill">St. Poelten</a>
-              <a href="../stadtrechte/waidhofen.html" class="bl-switcher-pill">Waidhofen/Ybbs</a>
-              <a href="../stadtrechte/wr_neustadt.html" class="bl-switcher-pill">Wr. Neustadt</a>
-              <a href="../stadtrechte/linz.html" class="bl-switcher-pill">Linz</a>
-              <a href="../stadtrechte/steyr.html" class="bl-switcher-pill">Steyr</a>
-              <a href="../stadtrechte/wels.html" class="bl-switcher-pill">Wels</a>
-              <a href="../stadtrechte/salzburg_stadt.html" class="bl-switcher-pill">Salzburg Stadt</a>
-              <a href="../stadtrechte/graz.html" class="bl-switcher-pill bl-switcher-active">Graz</a>
-              <a href="../stadtrechte/innsbruck.html" class="bl-switcher-pill">Innsbruck</a></div>
-          </div>
+          <label for="bl-switcher-select" class="bl-switcher-label">Andere Gemeindeordnung anzeigen</label>
+          <select id="bl-switcher-select" class="bl-switcher-select" onchange="if(this.value) window.location.href=this.value">
+            <optgroup label="Gemeindeordnungen">
+            <option value="../gemeindeordnungen/burgenland.html">Burgenland</option>
+            <option value="../gemeindeordnungen/kaernten.html">Kaernten</option>
+            <option value="../gemeindeordnungen/niederoesterreich.html">Niederoesterreich</option>
+            <option value="../gemeindeordnungen/oberoesterreich.html">Oberoesterreich</option>
+            <option value="../gemeindeordnungen/salzburg.html">Salzburg</option>
+            <option value="../gemeindeordnungen/steiermark.html">Steiermark</option>
+            <option value="../gemeindeordnungen/tirol.html">Tirol</option>
+            <option value="../gemeindeordnungen/vorarlberg.html">Vorarlberg</option>
+            <option value="../gemeindeordnungen/wien.html">Wien</option>
+            </optgroup>
+            <optgroup label="Stadtrechte">
+            <option value="../stadtrechte/eisenstadt.html">Eisenstadt</option>
+            <option value="../stadtrechte/rust.html">Rust</option>
+            <option value="../stadtrechte/klagenfurt.html">Klagenfurt</option>
+            <option value="../stadtrechte/villach.html">Villach</option>
+            <option value="../stadtrechte/krems.html">Krems</option>
+            <option value="../stadtrechte/st_poelten.html">St. Poelten</option>
+            <option value="../stadtrechte/waidhofen.html">Waidhofen/Ybbs</option>
+            <option value="../stadtrechte/wr_neustadt.html">Wr. Neustadt</option>
+            <option value="../stadtrechte/linz.html">Linz</option>
+            <option value="../stadtrechte/steyr.html">Steyr</option>
+            <option value="../stadtrechte/wels.html">Wels</option>
+            <option value="../stadtrechte/salzburg_stadt.html">Salzburg Stadt</option>
+            <option value="../stadtrechte/graz.html" selected>Graz</option>
+            <option value="../stadtrechte/innsbruck.html">Innsbruck</option>
+            </optgroup>
+          </select>
         </div>
       </div>
     </div>
