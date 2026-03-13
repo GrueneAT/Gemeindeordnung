@@ -807,8 +807,7 @@ h2[id] {
 }
 
 .absatz-num {
-  color: var(--color-gruene-dark);
-  opacity: 0.5;
+  color: #4a7c59;
   font-size: 0.875rem;
   flex-shrink: 0;
   min-width: 2rem;

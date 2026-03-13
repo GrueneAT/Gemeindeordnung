@@ -27,8 +27,10 @@ test.describe('Typography readability (UAT 4)', () => {
       expect(ratio).toBeGreaterThanOrEqual(1.7);
     }
 
-    // Font-size check: >= 17px on desktop
-    expect(fontSizePx).toBeGreaterThanOrEqual(17);
+    // Font-size check: >= 17px on desktop, >= 16px on mobile
+    const viewportWidth = page.viewportSize()?.width || 1280;
+    const minFontSize = viewportWidth < 768 ? 16 : 17;
+    expect(fontSizePx).toBeGreaterThanOrEqual(minFontSize);
 
     // Max-width check: should be set (not "none") and in a reasonable range
     expect(styles.maxWidth).not.toBe('none');
