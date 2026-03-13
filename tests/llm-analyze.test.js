@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = join(__dirname, '..');
 
-import { dryRun, generateForLaw, generateFAQ, generateGlossary, generateAll, BL_CITATION } from '../scripts/llm-analyze.js';
+import { dryRun, generateForLaw, generateFAQ, generateGlossary, generateAll, BL_CITATION, mergeParagraphSummary, mergeFAQQuestion, mergeGlossaryTerm } from '../scripts/llm-analyze.js';
 
 describe('llm-analyze exports', () => {
   it('exports dryRun as a function', () => {
@@ -225,6 +225,93 @@ describe('generateFAQ per-topic architecture', () => {
       sourceCode.indexOf('export async function generateAll')
     );
     expect(glossaryFn).not.toMatch(/curated-topics/);
+  });
+});
+
+describe('granular merge helpers', () => {
+  describe('mergeParagraphSummary', () => {
+    const existingData = {
+      meta: { generatedAt: '2026-01-01T00:00:00Z', lawKey: 'tirol', category: 'gemeindeordnungen' },
+      paragraphs: {
+        '1': { summary: 'Old summary for 1', topics: ['Topic1'] },
+        '3': { summary: 'Old summary for 3', topics: ['Topic2', 'Topic3'] },
+      },
+    };
+
+    it('replaces one paragraph and preserves others', () => {
+      const newSummary = { summary: 'New summary for 1', topics: ['NewTopic'] };
+      const result = mergeParagraphSummary(existingData, '1', newSummary);
+      expect(result.paragraphs['1']).toEqual(newSummary);
+      expect(result.paragraphs['3']).toEqual(existingData.paragraphs['3']);
+      expect(result.meta.generatedAt).not.toBe(existingData.meta.generatedAt);
+      // Must not mutate input
+      expect(existingData.paragraphs['1'].summary).toBe('Old summary for 1');
+    });
+
+    it('adds new paragraph if key does not exist', () => {
+      const newSummary = { summary: 'Summary for 5', topics: ['Topic5'] };
+      const result = mergeParagraphSummary(existingData, '5', newSummary);
+      expect(result.paragraphs['5']).toEqual(newSummary);
+      expect(result.paragraphs['1']).toEqual(existingData.paragraphs['1']);
+      expect(result.paragraphs['3']).toEqual(existingData.paragraphs['3']);
+    });
+  });
+
+  describe('mergeFAQQuestion', () => {
+    const existingTopicData = {
+      slug: 'befangenheit-und-ausschluss',
+      title: 'Befangenheit',
+      description: 'Test description',
+      questions: [
+        { question: 'Wann gilt Befangenheit?', answer: 'Old answer 1', references: [] },
+        { question: 'Wer entscheidet?', answer: 'Old answer 2', references: [] },
+      ],
+    };
+
+    it('replaces matching question (case-insensitive)', () => {
+      const newQuestion = { question: 'Wann gilt Befangenheit?', answer: 'New answer', references: [{ label: 'Par. 1' }] };
+      const result = mergeFAQQuestion(existingTopicData, 'wann gilt befangenheit', newQuestion);
+      expect(result.questions[0].answer).toBe('New answer');
+      expect(result.questions[1]).toEqual(existingTopicData.questions[1]);
+      // Must not mutate input
+      expect(existingTopicData.questions[0].answer).toBe('Old answer 1');
+    });
+
+    it('appends if no match found', () => {
+      const newQuestion = { question: 'Neue Frage?', answer: 'Neue Antwort', references: [] };
+      const result = mergeFAQQuestion(existingTopicData, 'Neue Frage', newQuestion);
+      expect(result.questions.length).toBe(3);
+      expect(result.questions[2]).toEqual(newQuestion);
+    });
+  });
+
+  describe('mergeGlossaryTerm', () => {
+    const existingData = {
+      meta: { generatedAt: '2026-01-01T00:00:00Z', termCount: 2 },
+      terms: [
+        { term: 'Befangenheit', slug: 'befangenheit', definition: 'Old def', references: [] },
+        { term: 'Kollegialorgan', slug: 'kollegialorgan', definition: 'Old def 2', references: [] },
+      ],
+    };
+
+    it('replaces matching term (case-insensitive)', () => {
+      const newTerm = { term: 'Befangenheit', slug: 'befangenheit', definition: 'New def', references: [{ label: 'Par. 1' }] };
+      const result = mergeGlossaryTerm(existingData, 'befangenheit', newTerm);
+      expect(result.terms[0].definition).toBe('New def');
+      expect(result.terms[1]).toEqual(existingData.terms[1]);
+      expect(result.meta.termCount).toBe(2);
+      expect(result.meta.generatedAt).not.toBe(existingData.meta.generatedAt);
+      // Must not mutate input
+      expect(existingData.terms[0].definition).toBe('Old def');
+    });
+
+    it('appends if no match found and updates termCount', () => {
+      const newTerm = { term: 'Beschlussfähigkeit', slug: 'beschlussfaehigkeit', definition: 'New term', references: [] };
+      const result = mergeGlossaryTerm(existingData, 'Beschlussfähigkeit', newTerm);
+      expect(result.terms.length).toBe(3);
+      expect(result.terms[2]).toEqual(newTerm);
+      expect(result.meta.termCount).toBe(3);
+    });
   });
 });
 

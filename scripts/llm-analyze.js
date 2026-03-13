@@ -472,6 +472,71 @@ ${refDetails}`;
 }
 
 /**
+ * Merge a single regenerated paragraph summary into existing summary data.
+ * Returns a new object (does not mutate input).
+ *
+ * @param {object} existingData - Existing summary JSON with meta and paragraphs
+ * @param {string} paragraphNum - Paragraph number key (e.g. "1", "3")
+ * @param {object} newSummary - New summary object { summary, topics }
+ * @returns {object} Updated summary data
+ */
+export function mergeParagraphSummary(existingData, paragraphNum, newSummary) {
+  const result = JSON.parse(JSON.stringify(existingData));
+  result.paragraphs[paragraphNum] = newSummary;
+  result.meta.generatedAt = new Date().toISOString();
+  return result;
+}
+
+/**
+ * Merge a single regenerated FAQ question into existing topic data.
+ * Finds by case-insensitive substring match on question field; appends if not found.
+ * Returns a new object (does not mutate input).
+ *
+ * @param {object} existingTopicData - Existing topic JSON with questions array
+ * @param {string} questionText - Text to match against (case-insensitive substring)
+ * @param {object} newQuestion - New question object { question, answer, references }
+ * @returns {object} Updated topic data
+ */
+export function mergeFAQQuestion(existingTopicData, questionText, newQuestion) {
+  const result = JSON.parse(JSON.stringify(existingTopicData));
+  const searchLower = questionText.toLowerCase();
+  const idx = result.questions.findIndex(q =>
+    q.question.toLowerCase().includes(searchLower)
+  );
+  if (idx !== -1) {
+    result.questions[idx] = newQuestion;
+  } else {
+    result.questions.push(newQuestion);
+  }
+  return result;
+}
+
+/**
+ * Merge a single regenerated glossary term into existing glossary data.
+ * Finds by case-insensitive match on term field; appends if not found.
+ * Updates meta.termCount and meta.generatedAt.
+ * Returns a new object (does not mutate input).
+ *
+ * @param {object} existingData - Existing glossary JSON with meta and terms array
+ * @param {string} termName - Term name to match (case-insensitive)
+ * @param {object} newTerm - New term object { term, slug, definition, references }
+ * @returns {object} Updated glossary data
+ */
+export function mergeGlossaryTerm(existingData, termName, newTerm) {
+  const result = JSON.parse(JSON.stringify(existingData));
+  const searchLower = termName.toLowerCase();
+  const idx = result.terms.findIndex(t => t.term.toLowerCase() === searchLower);
+  if (idx !== -1) {
+    result.terms[idx] = newTerm;
+  } else {
+    result.terms.push(newTerm);
+  }
+  result.meta.termCount = result.terms.length;
+  result.meta.generatedAt = new Date().toISOString();
+  return result;
+}
+
+/**
  * Run dry-run analysis: list laws that would be analyzed (no LLM calls).
  *
  * @param {string} rootDir - Project root directory (default: actual project root)
