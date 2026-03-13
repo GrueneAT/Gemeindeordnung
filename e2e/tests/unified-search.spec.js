@@ -207,33 +207,33 @@ test.describe('Unified search: BL filter behavior', () => {
   });
 });
 
-test.describe('Unified search: mobile overlay', () => {
-  test('mobile grouped results in overlay', async ({ page }) => {
+test.describe('Unified search: mobile modal', () => {
+  test('mobile grouped results in modal', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
-    await page.goto('./index.html');
-    await page.waitForSelector('#hero-search-input', { state: 'visible' });
+    await page.goto('./gemeindeordnungen/wien.html');
+    await page.waitForSelector('#search-modal-trigger', { state: 'visible' });
     await page.waitForTimeout(500);
 
-    // Open mobile overlay via keyboard shortcut
+    // Open modal via keyboard shortcut
     await page.keyboard.press('/');
-    const overlay = page.locator('#search-overlay');
-    await expect(overlay).toBeVisible({ timeout: 3000 });
+    const modal = page.locator('.search-modal');
+    await expect(modal).toBeVisible({ timeout: 3000 });
 
-    // Type in mobile search input
-    const mobileInput = page.locator('#search-input-mobile');
-    await expect(mobileInput).toBeVisible();
-    await mobileInput.fill('Gemeinderat');
+    // Type in modal search input
+    const modalInput = page.locator('#search-modal-input');
+    await expect(modalInput).toBeVisible();
+    await modalInput.fill('Gemeinderat');
 
-    // Wait for grouped results to appear in mobile dropdown
-    const mobileDropdown = page.locator('#search-dropdown-mobile');
+    // Wait for grouped results to appear in modal results
+    const modalResults = page.locator('#search-modal-results');
     await page.waitForTimeout(2000);
 
-    // Content-type groups should appear in mobile overlay
-    const groups = mobileDropdown.locator('.search-type-group');
+    // Content-type groups should appear in modal
+    const groups = modalResults.locator('.search-type-group');
     expect(await groups.count()).toBeGreaterThanOrEqual(1);
 
     // Groups should have badges
-    const badges = mobileDropdown.locator('.search-type-badge');
+    const badges = modalResults.locator('.search-type-badge');
     expect(await badges.count()).toBeGreaterThanOrEqual(1);
 
     await page.screenshot({ path: 'e2e/screenshots/unified-search-mobile.png', fullPage: false });

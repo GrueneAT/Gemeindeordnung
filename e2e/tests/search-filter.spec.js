@@ -27,16 +27,20 @@ test.describe('Search Bundesland filter (SUCH-04, SUCH-05)', () => {
 
     // Navigate to a law page
     await page.goto('./gemeindeordnungen/wien.html');
-    await page.waitForSelector('#search-input', { state: 'visible' });
+    await page.waitForSelector('#search-modal-trigger', { state: 'visible' });
     await page.waitForTimeout(500);
 
     // Verify Wien is still saved in LocalStorage
     const savedBL = await page.evaluate(() => localStorage.getItem('selectedBundesland'));
     expect(savedBL).toBe('Wien');
 
-    // Verify Wien pill is rendered in header and active
-    const wienPillOnLawPage = page.locator('#search-chips .bl-selector-pill', { hasText: 'Wien' });
-    await expect(wienPillOnLawPage).toBeVisible();
+    // Open the search modal and verify Wien pill is active
+    await page.click('#search-modal-trigger');
+    await page.waitForSelector('.search-modal', { state: 'visible' });
+
+    const wienPillInModal = page.locator('#search-modal-chips .bl-selector-pill', { hasText: 'Wien' });
+    await expect(wienPillInModal).toBeVisible();
+    await expect(wienPillInModal).toHaveClass(/bl-pill-active/);
   });
 
   test('SUCH-05: search defaults to BL, toggle to all', async ({ page }) => {
