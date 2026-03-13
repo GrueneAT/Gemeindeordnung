@@ -115,6 +115,113 @@ test.describe('Search core functionality', () => {
     await page.screenshot({ path: 'e2e/screenshots/search-results.png', fullPage: false });
   });
 
+  test('search results update when typing beyond initial 3-char trigger', async ({ page }) => {
+    // Type "wer" to trigger initial search
+    await page.fill(SEARCH_INPUT, 'wer');
+    await page.waitForSelector(`${SEARCH_DROPDOWN}:not(.hidden)`, { timeout: 5000 });
+    await page.waitForSelector('.search-sub-result', { timeout: 5000 });
+
+    // Record the result count text for "wer"
+    const oldCount = await page.locator('.search-count').textContent();
+
+    // Now type "werbung" -- results should update
+    await page.fill(SEARCH_INPUT, 'werbung');
+    // Wait for debounce + search
+    await page.waitForTimeout(600);
+
+    // Results should have changed (different query = different results)
+    const dropdown = page.locator(SEARCH_DROPDOWN);
+    const dropdownHtml = await dropdown.innerHTML();
+    // The dropdown should contain results or empty state -- either way it should differ
+    // "werbung" is more specific than "wer" so count should differ
+    const newCount = await page.locator('.search-count').textContent().catch(() => '');
+    const hasEmptyState = await page.locator('.search-empty-state').count() > 0;
+
+    // Either the count changed, or we got empty state (which is valid -- "werbung" is specific)
+    expect(newCount !== oldCount || hasEmptyState).toBeTruthy();
+  });
+
+  test('search results reflect final query, not intermediate', async ({ page }) => {
+    // Type "Gemeinderat" character by character with realistic typing speed
+    await page.locator(SEARCH_INPUT).pressSequentially('Gemeinderat', { delay: 50 });
+
+    // Wait for final debounce to settle
+    await page.waitForTimeout(1000);
+    await page.waitForSelector(`${SEARCH_DROPDOWN}:not(.hidden)`, { timeout: 5000 });
+
+    // Results should contain the full word "Gemeinderat" in mark tags
+    const marks = page.locator('.search-sub-result mark');
+    const markCount = await marks.count();
+    expect(markCount).toBeGreaterThan(0);
+
+    // At least one mark should contain "Gemeinderat" (not just "Gem" or "Gemei")
+    let foundFullWord = false;
+    for (let i = 0; i < Math.min(markCount, 10); i++) {
+      const text = await marks.nth(i).textContent();
+      if (text.toLowerCase().includes('gemeinderat')) {
+        foundFullWord = true;
+        break;
+      }
+    }
+    // Pagefind may stem or split marks, so also check excerpt text
+    if (!foundFullWord) {
+      const excerpts = page.locator('.search-sub-result .search-result-excerpt');
+      const excerptCount = await excerpts.count();
+      for (let i = 0; i < Math.min(excerptCount, 5); i++) {
+        const text = await excerpts.nth(i).textContent();
+        if (text.toLowerCase().includes('gemeinderat')) {
+          foundFullWord = true;
+          break;
+        }
+      }
+    }
+    expect(foundFullWord).toBeTruthy();
+  });
+
+  test('clearing and retyping produces fresh results', async ({ page }) => {
+    // Type "Gemeinderat", wait for results
+    await page.fill(SEARCH_INPUT, 'Gemeinderat');
+    await page.waitForSelector(`${SEARCH_DROPDOWN}:not(.hidden)`, { timeout: 5000 });
+    await page.waitForSelector('.search-sub-result', { timeout: 5000 });
+
+    // Clear input
+    await page.fill(SEARCH_INPUT, '');
+    const dropdown = page.locator(SEARCH_DROPDOWN);
+    await expect(dropdown).toHaveClass(/hidden/, { timeout: 3000 });
+
+    // Type "Initiativantrag", wait for results
+    await page.fill(SEARCH_INPUT, 'Initiativantrag');
+    await page.waitForSelector(`${SEARCH_DROPDOWN}:not(.hidden)`, { timeout: 5000 });
+    await page.waitForSelector('.search-sub-result', { timeout: 5000 });
+
+    // Results should contain "Initiativantrag", not leftover "Gemeinderat"
+    const excerpts = page.locator('.search-sub-result .search-result-excerpt');
+    const excerptCount = await excerpts.count();
+    expect(excerptCount).toBeGreaterThan(0);
+
+    // Check that at least one excerpt or mark contains the new query term
+    let foundNewTerm = false;
+    const marks = page.locator('.search-sub-result mark');
+    const markCount = await marks.count();
+    for (let i = 0; i < Math.min(markCount, 10); i++) {
+      const text = await marks.nth(i).textContent();
+      if (text.toLowerCase().includes('initiativantrag')) {
+        foundNewTerm = true;
+        break;
+      }
+    }
+    if (!foundNewTerm) {
+      for (let i = 0; i < Math.min(excerptCount, 5); i++) {
+        const text = await excerpts.nth(i).textContent();
+        if (text.toLowerCase().includes('initiativantrag')) {
+          foundNewTerm = true;
+          break;
+        }
+      }
+    }
+    expect(foundNewTerm).toBeTruthy();
+  });
+
   test('keyboard shortcut Ctrl+K focuses search and Escape closes', async ({ page, browserName }, testInfo) => {
     test.skip(testInfo.project.name === 'mobile', 'Ctrl+K not applicable on mobile');
     // Click on a non-input element to ensure search is not focused
