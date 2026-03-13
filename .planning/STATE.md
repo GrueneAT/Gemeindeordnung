@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed quick-11 plan
-last_updated: "2026-03-13T00:09:00.000Z"
+stopped_at: Completed quick-12 plan
+last_updated: "2026-03-13T04:42:00.000Z"
 ---
 
 # Project State
@@ -29,9 +29,10 @@ Next step: /gsd:new-milestone
 |---|-------------|------|--------|-----------|
 | 9 | BL selector pills and FAQ layout improvements for first-time visitors | 2026-03-12 | 90b3bba | [9-bl-selector-pills-and-faq-layout-improve](./quick/9-bl-selector-pills-and-faq-layout-improve/) |
 | 11 | Redesign search: replace header search bar with modal overlay | 2026-03-13 | 9de7f93 | [11-redesign-search-remove-header-searchbar-](./quick/11-redesign-search-remove-header-searchbar-/) |
+| 12 | Inline search bars on FAQ and BL pages, fix unified search BL filter bug | 2026-03-13 | 2b3e640 | [12-inline-search-bars-on-faq-and-bl-pages-f](./quick/12-inline-search-bars-on-faq-and-bl-pages-f/) |
 
 ## Session Continuity
 
 Last session: 2026-03-13
-Stopped at: Completed quick task 11
+Stopped at: Completed quick task 12
 Resume file: None
