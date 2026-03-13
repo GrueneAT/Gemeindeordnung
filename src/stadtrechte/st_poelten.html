@@ -20,19 +20,9 @@
         <span class="text-gray-300">|</span>
         <a href="../glossar.html" class="text-gruene-dark hover:underline whitespace-nowrap">Glossar</a>
       </nav>
-      <div class="search-container relative flex-1 max-w-md mx-0 sm:mx-4 mt-2 sm:mt-0">
-        <div class="relative">
-          <input id="search-input" type="search" minlength="3" autocomplete="off"
-            placeholder="Suche... (Ctrl+K)"
-            class="w-full border border-gray-300 rounded-lg pl-9 pr-3 py-1.5 text-sm bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
-          <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-        </div>
-        <button id="search-toggle" class="sm:hidden absolute right-0 top-0 p-2 text-gruene-dark" aria-label="Suche öffnen" style="display:none;">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-        </button>
-        <div id="search-chips" class="mt-1"></div>
-        <div id="search-dropdown" class="search-dropdown hidden"></div>
-      </div>
+      <button id="search-modal-trigger" class="search-trigger-btn" aria-label="Suche oeffnen (Ctrl+K)" title="Suche (Ctrl+K)">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      </button>
       <div class="mt-2 sm:mt-0">
         <select id="bundesland-nav" class="max-w-full border border-gray-300 rounded px-3 py-1.5 text-sm bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50" aria-label="Bundesland wechseln">
         <optgroup label="Gemeindeordnungen">
@@ -109,9 +99,9 @@
       </li>
       </ul>
     </nav>
-      <main data-pagefind-body class="max-w-prose mx-auto leading-relaxed">
-        <section class="mb-8 border-t border-gray-200 pt-4">
-<h2 id="abschnitt-1" class="text-xl font-semibold mt-8 mb-4 text-gruene-dark">1. Abschnitt: </h2>
+      <main data-pagefind-body class="law-text max-w-prose mx-auto leading-relaxed">
+        <section class="mb-8 pt-4">
+<h2 id="abschnitt-1" class="abschnitt-heading">1. Abschnitt: </h2>
 <article class="mb-6 group" data-topics="Rechtsstellung der Stadt,Selbstverwaltung">
   <h3 id="p1" class="text-lg font-semibold text-gruene-dark flex items-center gap-2">
     <span>&sect; 1 <span class="text-gruene-dark/80">Rechtliche Stellung der Stadt</span></span>
@@ -119,18 +109,13 @@
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
     </button>
   </h3>
-  <details class="mt-1 mb-2">
-    <summary class="text-sm text-gruene-dark/80 cursor-pointer hover:text-gruene-dark">
-      Vereinfachte Zusammenfassung
-    </summary>
-    <p class="text-sm text-gruene-dark/80 mt-1 pl-4 border-l-2 border-gruene-green/30">
-      St. Pölten ist als Landeshauptstadt eine Gebietskörperschaft mit Selbstverwaltungsrecht und besitzt ein eigenes Statut. Das Stadtgebiet bildet zugleich einen Verwaltungsbezirk, weshalb die Stadt sowohl Gemeinde- als auch Bezirksverwaltungsaufgaben wahrnimmt.
-    </p>
-  </details>
-  <ol class="list-decimal list-inside ml-4 mt-2">
-<li class="mb-1">(1)Die Landeshauptstadt St. Pölten ist eine Gebietskörperschaft mit dem Recht auf Selbstverwaltung. Sie ist eine Stadt mit eigenem Statut.</li>
-<li class="mb-1">(2)Das Gebiet der Stadt ist zugleich Verwaltungsbezirk. Die Stadt hat neben den Aufgaben der Gemeindeverwaltung auch die der Bezirksverwaltung zu besorgen.</li>
-</ol>
+  <div class="law-summary">
+    <p>St. Pölten ist als Landeshauptstadt eine Gebietskörperschaft mit Selbstverwaltungsrecht und besitzt ein eigenes Statut. Das Stadtgebiet bildet zugleich einen Verwaltungsbezirk, weshalb die Stadt sowohl Gemeinde- als auch Bezirksverwaltungsaufgaben wahrnimmt.</p>
+  </div>
+  <div class="absaetze-container">
+<div class="absatz"><span class="absatz-num">(1)</span><span class="absatz-text">Die Landeshauptstadt St. Pölten ist eine Gebietskörperschaft mit dem Recht auf Selbstverwaltung. Sie ist eine Stadt mit eigenem Statut.</span></div>
+<div class="absatz"><span class="absatz-num">(2)</span><span class="absatz-text">Das Gebiet der Stadt ist zugleich Verwaltungsbezirk. Die Stadt hat neben den Aufgaben der Gemeindeverwaltung auch die der Bezirksverwaltung zu besorgen.</span></div>
+</div>
 </article>
 <article class="mb-6 group" data-topics="Stadtgebiet">
   <h3 id="p2" class="text-lg font-semibold text-gruene-dark flex items-center gap-2">
@@ -139,14 +124,9 @@
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
     </button>
   </h3>
-  <details class="mt-1 mb-2">
-    <summary class="text-sm text-gruene-dark/80 cursor-pointer hover:text-gruene-dark">
-      Vereinfachte Zusammenfassung
-    </summary>
-    <p class="text-sm text-gruene-dark/80 mt-1 pl-4 border-l-2 border-gruene-green/30">
-      Die genauen Grenzen des Stadtgebiets ergeben sich aus dem niederösterreichischen Gesetz über die Gemeindegliederung (LGBl. 1030).
-    </p>
-  </details>
+  <div class="law-summary">
+    <p>Die genauen Grenzen des Stadtgebiets ergeben sich aus dem niederösterreichischen Gesetz über die Gemeindegliederung (LGBl. 1030).</p>
+  </div>
   <p class="mt-2 whitespace-pre-line">Das Stadtgebiet wird durch das Gesetz über die Gliederung des Landes Niederösterreich in Gemeinden, LGBl. 1030, festgelegt.</p>
 </article>
 <article class="mb-6 group" data-topics="Stadtwappen und Hoheitszeichen,Stadtfarben">
@@ -156,20 +136,15 @@
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
     </button>
   </h3>
-  <details class="mt-1 mb-2">
-    <summary class="text-sm text-gruene-dark/80 cursor-pointer hover:text-gruene-dark">
-      Vereinfachte Zusammenfassung
-    </summary>
-    <p class="text-sm text-gruene-dark/80 mt-1 pl-4 border-l-2 border-gruene-green/30">
-      Das Stadtwappen zeigt einen geteilten Schild: links auf blauem Grund einen grauen Wolf, rechts auf weißem Grund einen roten Balken. Rot-Gelb sind die offiziellen Stadtfarben. Für das Stadtsiegel und das Amtssiegel des Magistrats gelten eigene Gestaltungsvorgaben mit entsprechender Umschrift.
-    </p>
-  </details>
-  <ol class="list-decimal list-inside ml-4 mt-2">
-<li class="mb-1">(1)Das Wappen der Landeshauptstadt St. Pölten besteht aus einem der Länge nach in zwei Hälften geteilten Schild, von dem der heraldisch linke Teil blau, der heraldisch rechte Teil weiß ist. Im blauen Feld steht ein rechtsgewendeter, wachsender grauer Wolf mit aufrecht stehendem Schwanze und offenem Maul. Klauen, Zähne und Innenseite der Ohren sind gelb, die heraushängende Zunge rot. Durch die Mitte des rechten Feldes geht ein waagrechter roter Balken.</li>
-<li class="mb-1">(2)Die Farben der Stadt sind rot-gelb.</li>
-<li class="mb-1">(3)Das Siegel der Stadt weist das Stadtwappen (Abs. 1) mit der Umschrift “Stadt St. Pölten” auf.</li>
-<li class="mb-1">(4)Das Amtssiegel des Magistrates weist das Wappen und die Umschrift “Magistrat der Stadt St. Pölten” auf.</li>
-</ol>
+  <div class="law-summary">
+    <p>Das Stadtwappen zeigt einen geteilten Schild: links auf blauem Grund einen grauen Wolf, rechts auf weißem Grund einen roten Balken. Rot-Gelb sind die offiziellen Stadtfarben. Für das Stadtsiegel und das Amtssiegel des Magistrats gelten eigene Gestaltungsvorgaben mit entsprechender Umschrift.</p>
+  </div>
+  <div class="absaetze-container">
+<div class="absatz"><span class="absatz-num">(1)</span><span class="absatz-text">Das Wappen der Landeshauptstadt St. Pölten besteht aus einem der Länge nach in zwei Hälften geteilten Schild, von dem der heraldisch linke Teil blau, der heraldisch rechte Teil weiß ist. Im blauen Feld steht ein rechtsgewendeter, wachsender grauer Wolf mit aufrecht stehendem Schwanze und offenem Maul. Klauen, Zähne und Innenseite der Ohren sind gelb, die heraushängende Zunge rot. Durch die Mitte des rechten Feldes geht ein waagrechter roter Balken.</span></div>
+<div class="absatz"><span class="absatz-num">(2)</span><span class="absatz-text">Die Farben der Stadt sind rot-gelb.</span></div>
+<div class="absatz"><span class="absatz-num">(3)</span><span class="absatz-text">Das Siegel der Stadt weist das Stadtwappen (<span class="legal-ref">Abs. 1</span>) mit der Umschrift “Stadt St. Pölten” auf.</span></div>
+<div class="absatz"><span class="absatz-num">(4)</span><span class="absatz-text">Das Amtssiegel des Magistrates weist das Wappen und die Umschrift “Magistrat der Stadt St. Pölten” auf.</span></div>
+</div>
 </article>
 <article class="mb-6 group" data-topics="Organe der Stadt,Gemeinderat,Kontrollausschuss">
   <h3 id="p4" class="text-lg font-semibold text-gruene-dark flex items-center gap-2">
@@ -178,18 +153,13 @@
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
     </button>
   </h3>
-  <details class="mt-1 mb-2">
-    <summary class="text-sm text-gruene-dark/80 cursor-pointer hover:text-gruene-dark">
-      Vereinfachte Zusammenfassung
-    </summary>
-    <p class="text-sm text-gruene-dark/80 mt-1 pl-4 border-l-2 border-gruene-green/30">
-      Der Gemeinderat setzt sich aus 42 Mitgliedern zusammen. Im Stadtsenat sind neben der ersten und zweiten Vizebürgermeister:in elf Stadträt:innen vertreten. Für den Kontrollausschuss sind mindestens sieben Mitglieder samt Ersatzmitgliedern vorgesehen.
-    </p>
-  </details>
-  <ol class="list-decimal list-inside ml-4 mt-2">
-<li class="mb-1">(1)Für die Organe der Stadt gilt:1.Der Gemeinderat besteht aus 42 Mitgliedern.2.Der Stadtsenat besteht aus dem Ersten und dem Zweiten Vizebürgermeister sowie 11 Stadträten.</li>
-<li class="mb-1">(2)Der Kontrollausschuss besteht aus mindestens 7 Mitgliedern und Ersatzmitgliedern.</li>
-</ol>
+  <div class="law-summary">
+    <p>Der Gemeinderat setzt sich aus 42 Mitgliedern zusammen. Im Stadtsenat sind neben der ersten und zweiten Vizebürgermeister:in elf Stadträt:innen vertreten. Für den Kontrollausschuss sind mindestens sieben Mitglieder samt Ersatzmitgliedern vorgesehen.</p>
+  </div>
+  <div class="absaetze-container">
+<div class="absatz"><span class="absatz-num">(1)</span><span class="absatz-text">Für die Organe der Stadt gilt:1.Der Gemeinderat besteht aus 42 Mitgliedern.2.Der Stadtsenat besteht aus dem Ersten und dem Zweiten Vizebürgermeister sowie 11 Stadträten.</span></div>
+<div class="absatz"><span class="absatz-num">(2)</span><span class="absatz-text">Der Kontrollausschuss besteht aus mindestens 7 Mitgliedern und Ersatzmitgliedern.</span></div>
+</div>
 </article>
 <article class="mb-6 group" data-topics="Kontrollamt,Rechnungsprüfung">
   <h3 id="p5" class="text-lg font-semibold text-gruene-dark flex items-center gap-2">
@@ -198,14 +168,9 @@
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
     </button>
   </h3>
-  <details class="mt-1 mb-2">
-    <summary class="text-sm text-gruene-dark/80 cursor-pointer hover:text-gruene-dark">
-      Vereinfachte Zusammenfassung
-    </summary>
-    <p class="text-sm text-gruene-dark/80 mt-1 pl-4 border-l-2 border-gruene-green/30">
-      Zur Überprüfung der städtischen Gebarung und Rechnungsführung muss ein eigenes Kontrollamt eingerichtet werden.
-    </p>
-  </details>
+  <div class="law-summary">
+    <p>Zur Überprüfung der städtischen Gebarung und Rechnungsführung muss ein eigenes Kontrollamt eingerichtet werden.</p>
+  </div>
   <p class="mt-2 whitespace-pre-line">Zur Prüfung der Gebarung und Rechnung der Stadt ist ein Kontrollamt einzurichten.</p>
 </article>
 </section>

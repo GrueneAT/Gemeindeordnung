@@ -1,6 +1,7 @@
 // Pagefind search module
 // Handles: initialization, search execution, filtering, result formatting, UI rendering
 // Supports unified search across Gesetze, FAQ, and Glossar content types
+// Uses a modal overlay for search (desktop centered, mobile full-screen)
 
 let pagefind = null;
 let searchInitialized = false;
@@ -11,17 +12,13 @@ let currentQuery = '';
 let searchInput = null;
 let searchDropdown = null;
 let searchChips = null;
-let searchToggle = null;
-let mobileOverlayActive = false;
+let modalActive = false;
 let searchTimer = null;
 
 // Hero search state (index page only)
 let heroInput = null;
 let heroDropdown = null;
 let heroChips = null;
-let headerInput = null;
-let headerDropdown = null;
-let headerChips = null;
 let heroActive = false; // true when hero elements exist (index page)
 
 /**
@@ -66,9 +63,6 @@ async function executeUnifiedSearch(query, bundesland = null) {
     const faqRaw = [];
     const glossarRaw = [];
     for (const r of (otherSearch?.results || [])) {
-      // We need to load data to check typ - but we can use a lightweight approach
-      // Actually Pagefind results don't expose filters before loading data
-      // Load all FAQ/Glossar results (they are few)
       const data = await r.data();
       const typ = data.filters?.typ?.[0];
       if (typ === 'FAQ') faqRaw.push(data);
@@ -222,8 +216,6 @@ function renderResultItem(result, query) {
   const stadtrechtBadge = isStadtrecht(result)
     ? '<span class="search-badge-stadtrecht">Stadtrecht</span>'
     : '';
-  // Pagefind already appends ?highlight= when highlightParam option is set
-  // Only add our own if the URL doesn't already have the highlight param
   const hasHighlight = result.url && result.url.includes('highlight=');
   const highlightUrl = hasHighlight
     ? result.url
@@ -620,7 +612,7 @@ function wirePillHandlers(container) {
       }
       // Update all pill containers
       updatePillStates(heroChips);
-      updatePillStates(headerChips);
+      updatePillStates(searchChips);
       if (currentQuery.length >= 3) {
         triggerSearch();
       }
@@ -631,7 +623,7 @@ function wirePillHandlers(container) {
 /**
  * Render BL selector pills into a container.
  * On index page hero, pills are pre-rendered in HTML so we only wire handlers.
- * For header and non-index pages, we render dynamically.
+ * For modal and non-index pages, we render dynamically.
  */
 function renderFilterChips() {
   if (!searchChips) return;
@@ -644,7 +636,7 @@ function renderFilterChips() {
     return;
   }
 
-  // Dynamically render pills (header search, law pages, mobile overlay)
+  // Dynamically render pills (modal, law pages)
   let html = '<button class="bl-selector-pill ' + (!activeBundesland ? 'bl-pill-active' : 'bl-pill-inactive') + '" data-bl="">Alle</button>';
   for (const bl of ALL_BUNDESLAENDER) {
     const isActive = activeBundesland === bl;
@@ -662,15 +654,6 @@ function renderFilterChips() {
 async function handleSearchInput(e) {
   const query = e.target.value.trim();
   currentQuery = query;
-
-  // Sync value between hero and header inputs on index page
-  if (heroActive) {
-    if (e.target === heroInput && headerInput) {
-      headerInput.value = e.target.value;
-    } else if (e.target === headerInput && heroInput) {
-      heroInput.value = e.target.value;
-    }
-  }
 
   if (query.length === 0) {
     hideDropdown();
@@ -720,36 +703,157 @@ function hideDropdown() {
   searchDropdown.classList.remove('search-dropdown-expanded');
 }
 
+// ---- Search Modal ----
+
 /**
- * Set up keyboard shortcuts (/ and Ctrl+K to focus, Escape to close).
+ * Open the search modal overlay.
+ * Desktop: centered ~700px wide modal with backdrop.
+ * Mobile (<640px): full-screen overlay.
+ */
+function openSearchModal() {
+  if (modalActive) return;
+  modalActive = true;
+
+  // Create backdrop
+  const backdrop = document.createElement('div');
+  backdrop.className = 'search-modal-backdrop';
+  backdrop.id = 'search-modal-backdrop';
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) closeSearchModal();
+  });
+
+  // Create modal
+  const modal = document.createElement('div');
+  modal.className = 'search-modal';
+  modal.id = 'search-modal';
+  modal.innerHTML = `
+    <div class="search-modal-header">
+      <span class="text-lg font-bold text-gruene-dark">Suche</span>
+      <div class="search-modal-shortcut">ESC</div>
+      <button class="search-modal-close" aria-label="Schliessen">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="search-modal-body">
+      <div class="relative">
+        <input id="search-modal-input" type="search" autocomplete="off"
+          placeholder="Gesetz, Thema oder Begriff suchen..."
+          class="w-full border border-gray-300 rounded-lg pl-9 pr-3 py-2.5 text-base bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
+        <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      </div>
+      <div id="search-modal-chips" class="bl-selector-container mt-2 flex flex-wrap gap-1.5"></div>
+    </div>
+    <div id="search-modal-results" class="search-modal-results"></div>
+  `;
+
+  backdrop.appendChild(modal);
+  document.body.appendChild(backdrop);
+
+  // Prevent body scrolling while modal is open
+  document.body.style.overflow = 'hidden';
+
+  // Get modal elements
+  const modalInput = document.getElementById('search-modal-input');
+  const modalResults = document.getElementById('search-modal-results');
+  const modalChips = document.getElementById('search-modal-chips');
+
+  // Store previous refs to restore on close
+  const prevInput = searchInput;
+  const prevDropdown = searchDropdown;
+  const prevChips = searchChips;
+
+  // Swap to modal refs
+  searchInput = modalInput;
+  searchDropdown = modalResults;
+  searchChips = modalChips;
+
+  // Auto-select current page BL on law pages
+  const pageBL = document.querySelector('meta[data-pagefind-filter="bundesland[content]"]')?.getAttribute('content');
+  if (pageBL && !activeBundesland) {
+    activeBundesland = pageBL;
+  }
+
+  // Render BL pills
+  renderFilterChips();
+
+  // Pre-fill query if exists
+  if (currentQuery) {
+    modalInput.value = currentQuery;
+    // Trigger search with existing query
+    if (currentQuery.length >= 3) {
+      triggerSearch();
+    }
+  }
+
+  // Wire input handler
+  modalInput.addEventListener('input', handleSearchInput);
+
+  // Focus input
+  modalInput.focus();
+
+  // Wire close button
+  modal.querySelector('.search-modal-close').addEventListener('click', closeSearchModal);
+
+  // Wire result link clicks to close modal
+  modalResults.addEventListener('click', (e) => {
+    const link = e.target.closest('a.search-result-item');
+    if (link) {
+      closeSearchModal();
+    }
+  });
+
+  // Store restore function on backdrop element
+  backdrop._restore = () => {
+    searchInput = prevInput;
+    searchDropdown = prevDropdown;
+    searchChips = prevChips;
+  };
+}
+
+/**
+ * Close the search modal overlay.
+ */
+function closeSearchModal() {
+  if (!modalActive) return;
+  modalActive = false;
+
+  const backdrop = document.getElementById('search-modal-backdrop');
+  if (backdrop) {
+    if (backdrop._restore) backdrop._restore();
+    backdrop.remove();
+  }
+
+  // Restore body scrolling
+  document.body.style.overflow = '';
+}
+
+// ---- Keyboard Shortcuts ----
+
+/**
+ * Set up keyboard shortcuts (/ and Ctrl+K to open modal, Escape to close).
  */
 function setupKeyboardShortcuts() {
   document.addEventListener('keydown', (e) => {
-    // Don't trigger when already in an input/textarea
+    // Don't trigger when already in an input/textarea (unless Escape)
     const tag = document.activeElement?.tagName;
     const isInput = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
 
     if ((e.key === '/' && !isInput) || (e.key === 'k' && (e.ctrlKey || e.metaKey))) {
       e.preventDefault();
-      if (mobileOverlayActive) return;
+      if (modalActive) return;
 
-      // On mobile, open overlay first
-      if (window.innerWidth < 640 && !mobileOverlayActive) {
-        openMobileOverlay();
+      // On index page with hero visible, focus hero input instead
+      if (heroActive && isHeroVisible() && heroInput) {
+        heroInput.focus();
         return;
       }
 
-      // On index page, focus hero input when it's visible
-      if (heroActive && isHeroVisible() && heroInput) {
-        heroInput.focus();
-      } else if (searchInput) {
-        searchInput.focus();
-      }
+      openSearchModal();
     }
 
     if (e.key === 'Escape') {
-      if (mobileOverlayActive) {
-        closeMobileOverlay();
+      if (modalActive) {
+        closeSearchModal();
       } else {
         hideDropdown();
         if (searchInput) searchInput.blur();
@@ -758,129 +862,7 @@ function setupKeyboardShortcuts() {
   });
 }
 
-/**
- * Set up mobile search overlay.
- */
-function setupMobileSearch() {
-  // The search toggle button opens the overlay on mobile
-  if (searchToggle) {
-    searchToggle.addEventListener('click', () => {
-      openMobileOverlay();
-    });
-  }
-}
-
-/**
- * Open mobile fullscreen search overlay.
- */
-function openMobileOverlay() {
-  mobileOverlayActive = true;
-
-  // Create backdrop
-  const backdrop = document.createElement('div');
-  backdrop.className = 'search-overlay-backdrop';
-  backdrop.id = 'search-backdrop';
-  backdrop.addEventListener('click', closeMobileOverlay);
-
-  // Create overlay
-  const overlay = document.createElement('div');
-  overlay.className = 'search-overlay';
-  overlay.id = 'search-overlay';
-  overlay.innerHTML = `
-    <div class="flex items-center justify-between mb-4">
-      <span class="text-lg font-bold text-gruene-dark">Suche</span>
-      <button id="search-overlay-close" class="text-gruene-dark p-2" aria-label="Suche schliessen">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <div class="relative">
-      <input id="search-input-mobile" type="search" minlength="3" autocomplete="off"
-        placeholder="Suche..."
-        class="w-full border border-gray-300 rounded-lg pl-9 pr-3 py-2 text-base bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
-      <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-    </div>
-    <div id="search-chips-mobile" class="bl-selector-container mt-2 flex flex-wrap gap-1.5"></div>
-    <div id="search-dropdown-mobile" class="search-dropdown-mobile mt-2"></div>
-  `;
-
-  document.body.appendChild(backdrop);
-  document.body.appendChild(overlay);
-
-  // Wire up mobile input
-  const mobileInput = document.getElementById('search-input-mobile');
-  const mobileDropdown = document.getElementById('search-dropdown-mobile');
-  const mobileChips = document.getElementById('search-chips-mobile');
-
-  // Store desktop refs and swap to mobile
-  const desktopInput = searchInput;
-  const desktopDropdown = searchDropdown;
-  const desktopChips = searchChips;
-
-  searchInput = mobileInput;
-  searchDropdown = mobileDropdown;
-  searchChips = mobileChips;
-
-  // Sync current query
-  if (currentQuery) {
-    mobileInput.value = currentQuery;
-  }
-
-  renderFilterChips();
-
-  mobileInput.addEventListener('input', handleSearchInput);
-  mobileInput.focus();
-
-  // Close button
-  document.getElementById('search-overlay-close').addEventListener('click', () => {
-    // Restore desktop refs before closing
-    searchInput = desktopInput;
-    searchDropdown = desktopDropdown;
-    searchChips = desktopChips;
-    closeMobileOverlay();
-  });
-
-  // Store restore function
-  overlay._restoreDesktop = () => {
-    searchInput = desktopInput;
-    searchDropdown = desktopDropdown;
-    searchChips = desktopChips;
-  };
-}
-
-/**
- * Close mobile search overlay.
- */
-function closeMobileOverlay() {
-  mobileOverlayActive = false;
-  const overlay = document.getElementById('search-overlay');
-  const backdrop = document.getElementById('search-backdrop');
-
-  if (overlay?._restoreDesktop) {
-    overlay._restoreDesktop();
-  }
-
-  if (backdrop) backdrop.remove();
-  if (overlay) overlay.remove();
-}
-
-/**
- * Set up click-outside handler to close dropdown.
- */
-function setupClickOutside() {
-  document.addEventListener('click', (e) => {
-    if (mobileOverlayActive) return;
-    const inSearchContainer = e.target.closest('.search-container');
-    const inHeroContainer = e.target.closest('.hero-search-container');
-    if (!inSearchContainer && !inHeroContainer) {
-      hideDropdown();
-      // Also hide the other dropdown on index page
-      if (heroActive) {
-        heroDropdown?.classList.add('hidden');
-        headerDropdown?.classList.add('hidden');
-      }
-    }
-  });
-}
+// ---- Hero Section ----
 
 /**
  * Track whether the hero section is currently visible in the viewport.
@@ -893,18 +875,27 @@ function isHeroVisible() {
 
 /**
  * Set up IntersectionObserver to track hero section visibility.
- * When hero scrolls out of view, switch primary search to header.
- * When hero scrolls back in, switch back to hero.
+ * When hero scrolls out of view, show the header search trigger button.
+ * When hero is visible, hide the header search trigger button.
  */
 function setupHeroObserver() {
   const heroSection = document.querySelector('.hero-section');
+  const triggerBtn = document.getElementById('search-modal-trigger');
   if (!heroSection) return;
+
+  // Initially hide the trigger button on index page (hero is visible on load)
+  if (triggerBtn) {
+    triggerBtn.style.display = 'none';
+  }
 
   const observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
         heroIsVisible = entry.isIntersecting;
-        if (!mobileOverlayActive) {
+        if (triggerBtn) {
+          triggerBtn.style.display = entry.isIntersecting ? 'none' : '';
+        }
+        if (!modalActive) {
           if (entry.isIntersecting) {
             // Hero visible -- use hero as primary
             searchInput = heroInput;
@@ -912,19 +903,13 @@ function setupHeroObserver() {
             searchChips = heroChips;
             // Sync query to hero
             if (currentQuery) heroInput.value = currentQuery;
-            // Hide header dropdown
-            headerDropdown?.classList.add('hidden');
           } else {
-            // Hero scrolled out -- use header as primary
-            searchInput = headerInput;
-            searchDropdown = headerDropdown;
-            searchChips = headerChips;
-            // Sync query to header
-            if (currentQuery && headerInput) headerInput.value = currentQuery;
+            // Hero scrolled out -- primary refs are null (search via modal only)
+            searchInput = null;
+            searchDropdown = null;
+            searchChips = null;
             // Hide hero dropdown
             heroDropdown?.classList.add('hidden');
-            // Update pill active states in header
-            updatePillStates(headerChips);
           }
         }
       }
@@ -936,15 +921,24 @@ function setupHeroObserver() {
 }
 
 /**
+ * Set up click-outside handler for hero dropdown on index page.
+ */
+function setupHeroClickOutside() {
+  document.addEventListener('click', (e) => {
+    if (modalActive) return;
+    const inHeroContainer = e.target.closest('.hero-search-container');
+    if (!inHeroContainer && heroActive) {
+      heroDropdown?.classList.add('hidden');
+    }
+  });
+}
+
+// ---- Init ----
+
+/**
  * Main search initialization -- called from main.js on DOMContentLoaded.
  */
 function initSearch() {
-  // Header search elements (present on all pages)
-  headerInput = document.getElementById('search-input');
-  headerDropdown = document.getElementById('search-dropdown');
-  headerChips = document.getElementById('search-chips');
-  searchToggle = document.getElementById('search-toggle');
-
   // Hero search elements (index page only)
   heroInput = document.getElementById('hero-search-input');
   heroDropdown = document.getElementById('hero-search-dropdown');
@@ -956,13 +950,7 @@ function initSearch() {
     searchInput = heroInput;
     searchDropdown = heroDropdown;
     searchChips = heroChips;
-  } else {
-    searchInput = headerInput;
-    searchDropdown = headerDropdown;
-    searchChips = headerChips;
   }
-
-  if (!searchInput) return; // No search on this page
 
   // Auto-detect Bundesland from current page, fall back to saved
   const pageBundesland = document.querySelector('meta[data-pagefind-filter="bundesland[content]"]')?.getAttribute('content');
@@ -979,44 +967,25 @@ function initSearch() {
     updatePillStates(heroChips);
   }
 
-  // Render pills into header search chips (dynamically)
-  if (headerChips) {
-    const savedRef = searchChips;
-    searchChips = headerChips;
-    renderFilterChips();
-    searchChips = savedRef;
-  }
-
-  // Update hero pill active states based on saved BL
-  if (heroActive && heroChips) {
-    updatePillStates(heroChips);
-  }
-
   // Pre-load Pagefind WASM
   loadPagefind();
 
-  // Set up event listeners on primary input (hero or header)
-  searchInput.addEventListener('input', handleSearchInput);
-  searchInput.addEventListener('focus', () => {
-    if (currentQuery.length >= 3) {
-      searchDropdown?.classList.remove('hidden');
-    }
-  });
-
-  // On index page: wire header input to sync with hero
-  if (heroActive && headerInput) {
-    headerInput.addEventListener('focus', () => {
-      if (isHeroVisible()) {
-        // When hero is visible, redirect focus to hero input
-        heroInput.focus();
-      } else if (currentQuery.length >= 3) {
-        // When hero is scrolled out, show results in header dropdown
-        headerDropdown?.classList.remove('hidden');
+  // Set up event listeners on hero input (if present)
+  if (heroActive && heroInput) {
+    heroInput.addEventListener('input', handleSearchInput);
+    heroInput.addEventListener('focus', () => {
+      if (currentQuery.length >= 3) {
+        heroDropdown?.classList.remove('hidden');
       }
     });
+  }
 
-    // Wire header input events for when hero is scrolled out of view
-    headerInput.addEventListener('input', handleSearchInput);
+  // Wire up search modal trigger button
+  const triggerBtn = document.getElementById('search-modal-trigger');
+  if (triggerBtn) {
+    triggerBtn.addEventListener('click', () => {
+      openSearchModal();
+    });
   }
 
   // Set up IntersectionObserver for hero visibility tracking
@@ -1025,8 +994,11 @@ function initSearch() {
   }
 
   setupKeyboardShortcuts();
-  setupMobileSearch();
-  setupClickOutside();
+
+  // Hero click-outside handler (for hero dropdown on index page)
+  if (heroActive) {
+    setupHeroClickOutside();
+  }
 }
 
 export {
