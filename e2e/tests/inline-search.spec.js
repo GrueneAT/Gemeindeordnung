@@ -19,7 +19,22 @@ test.describe('Inline scoped search on law pages', () => {
     const results = dropdown.locator('.search-result-item, .search-sub-result, .search-law-heading');
     expect(await results.count()).toBeGreaterThan(0);
 
+    // Verify dropdown is full-width (not constrained to 24rem/384px)
+    const dropdownBox = await dropdown.boundingBox();
+    expect(dropdownBox.width).toBeGreaterThan(500);
+
     await page.screenshot({ path: 'e2e/screenshots/inline-search-law.png' });
+  });
+
+  test('inline search input spans full container width on desktop', async ({ page }) => {
+    const container = page.locator('.inline-search-container');
+    const containerBox = await container.boundingBox();
+
+    // The container's parent is max-w-5xl (~1024px) with px-4 padding
+    // Container should use at least 80% of parent width
+    const parent = page.locator('.inline-search-container').locator('..');
+    const parentBox = await parent.boundingBox();
+    expect(containerBox.width).toBeGreaterThan(parentBox.width * 0.8);
   });
 
   test('inline search dropdown closes on click outside', async ({ page }) => {
@@ -53,6 +68,10 @@ test.describe('Inline scoped search on FAQ pages', () => {
     // Should have result items
     const results = dropdown.locator('.search-result-item');
     expect(await results.count()).toBeGreaterThan(0);
+
+    // Verify dropdown is full-width (not constrained to 24rem/384px)
+    const dropdownBox = await dropdown.boundingBox();
+    expect(dropdownBox.width).toBeGreaterThan(500);
 
     await page.screenshot({ path: 'e2e/screenshots/inline-search-faq.png' });
   });
