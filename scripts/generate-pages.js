@@ -467,6 +467,14 @@ ${breadcrumbHtml}
         <p class="mt-1 text-gruene-dark/80">${bundesland}${stadtInfo}</p>
         <p class="mt-1 text-sm text-gray-600">Stand: ${standDatum}</p>
       </header>
+      <div class="inline-search-bar" data-pagefind-ignore>
+        <button class="inline-search-trigger" data-bundesland="${escapeHtml(law.meta.bundesland)}">
+          <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <span>In ${escapeHtml(law.meta.bundesland)} suchen...</span>
+        </button>
+      </div>
 ${disclaimerHtml}${topicChipsHtml}${tocHtml}
       <main data-pagefind-body class="law-text max-w-prose mx-auto leading-relaxed">
         ${strukturHtml}
@@ -662,6 +670,14 @@ ${headerHtml}
       <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
         <strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
       </div>
+      <div class="inline-search-bar" data-pagefind-ignore>
+        <button class="inline-search-trigger">
+          <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <span>FAQ und Gesetze durchsuchen...</span>
+        </button>
+      </div>
       <main data-pagefind-ignore>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 ${cards}
@@ -723,6 +739,14 @@ ${headerHtml}
         <h1 class="text-3xl font-bold text-gruene-dark">${genderText(escapeHtml(topic.title))}</h1>
         <p class="mt-1 text-gruene-dark/80">${genderText(escapeHtml(topic.description))}</p>
       </header>
+      <div class="inline-search-bar" data-pagefind-ignore>
+        <button class="inline-search-trigger">
+          <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <span>FAQ und Gesetze durchsuchen...</span>
+        </button>
+      </div>
       <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
         <strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
       </div>

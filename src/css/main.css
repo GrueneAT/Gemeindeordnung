@@ -846,6 +846,37 @@ h2[id] {
   white-space: nowrap;
 }
 
+/* Inline search bar -- compact trigger on law/FAQ pages */
+.inline-search-bar {
+  margin-bottom: 1rem;
+}
+.inline-search-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 24rem;
+  padding: 0.5rem 0.75rem;
+  border: 1.5px solid var(--color-gruene-green, #6BA539);
+  border-radius: 0.5rem;
+  background: white;
+  color: var(--color-gruene-dark, #333);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.inline-search-trigger:hover {
+  border-color: var(--color-gruene-green, #6BA539);
+  box-shadow: 0 0 0 2px rgba(107, 165, 57, 0.15);
+}
+.inline-search-trigger:focus-visible {
+  outline: 2px solid var(--color-gruene-green, #6BA539);
+  outline-offset: 2px;
+}
+.inline-search-trigger span {
+  color: #9ca3af; /* placeholder gray */
+}
+
 /* On-page highlighting (Pagefind) */
 .pagefind-highlight {
   background-color: rgba(250, 204, 21, 0.5);
