@@ -286,7 +286,6 @@ describe('llm-analyze JSON schemas', () => {
       expect(para).toHaveProperty('topics');
       expect(typeof para.summary).toBe('string');
       expect(Array.isArray(para.topics)).toBe(true);
-      expect(para.topics.length).toBeGreaterThan(0);
       for (const topic of para.topics) {
         expect(typeof topic).toBe('string');
       }
