@@ -358,7 +358,7 @@ describe('generate-pages', () => {
     const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
 
     expect(html).toContain('class="bl-switcher"');
-    expect(html).toContain('bl-switcher-pill');
+    expect(html).toContain('bl-switcher-select');
     expect(html).toContain('bl-switcher-label');
     expect(html).toContain('Gemeindeordnungen');
     expect(html).toContain('Stadtrechte');

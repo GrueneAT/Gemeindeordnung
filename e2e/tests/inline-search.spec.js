@@ -19,9 +19,12 @@ test.describe('Inline scoped search on law pages', () => {
     const results = dropdown.locator('.search-result-item, .search-sub-result, .search-law-heading');
     expect(await results.count()).toBeGreaterThan(0);
 
-    // Verify dropdown is full-width (not constrained to 24rem/384px)
-    const dropdownBox = await dropdown.boundingBox();
-    expect(dropdownBox.width).toBeGreaterThan(500);
+    // Verify dropdown is full-width on desktop (not constrained to 24rem/384px)
+    const viewport = page.viewportSize();
+    if (viewport && viewport.width > 768) {
+      const dropdownBox = await dropdown.boundingBox();
+      expect(dropdownBox.width).toBeGreaterThan(500);
+    }
 
     await page.screenshot({ path: 'e2e/screenshots/inline-search-law.png' });
   });
@@ -69,9 +72,12 @@ test.describe('Inline scoped search on FAQ pages', () => {
     const results = dropdown.locator('.search-result-item');
     expect(await results.count()).toBeGreaterThan(0);
 
-    // Verify dropdown is full-width (not constrained to 24rem/384px)
-    const dropdownBox = await dropdown.boundingBox();
-    expect(dropdownBox.width).toBeGreaterThan(500);
+    // Verify dropdown is full-width on desktop (not constrained to 24rem/384px)
+    const viewport = page.viewportSize();
+    if (viewport && viewport.width > 768) {
+      const dropdownBox = await dropdown.boundingBox();
+      expect(dropdownBox.width).toBeGreaterThan(500);
+    }
 
     await page.screenshot({ path: 'e2e/screenshots/inline-search-faq.png' });
   });
