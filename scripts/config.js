@@ -106,7 +106,7 @@ export const LAWS = {
       url: risUrl('LrBgld', '20000222'),
       category: 'stadtrecht',
       stadt: 'Eisenstadt',
-      bundesland: 'Burgenland',
+      bundesland: 'Eisenstadt',
     },
     rust: {
       name: 'Ruster Stadtrecht 2003',
@@ -115,7 +115,7 @@ export const LAWS = {
       url: risUrl('LrBgld', '20000224'),
       category: 'stadtrecht',
       stadt: 'Rust',
-      bundesland: 'Burgenland',
+      bundesland: 'Rust',
     },
     klagenfurt: {
       name: 'Klagenfurter Stadtrecht 1998 (K-KStR)',
@@ -124,7 +124,7 @@ export const LAWS = {
       url: risUrl('LrK', '10000279'),
       category: 'stadtrecht',
       stadt: 'Klagenfurt',
-      bundesland: 'Kaernten',
+      bundesland: 'Klagenfurt',
     },
     villach: {
       name: 'Villacher Stadtrecht 1998 (K-VStR)',
@@ -133,7 +133,7 @@ export const LAWS = {
       url: risUrl('LrK', '10000278'),
       category: 'stadtrecht',
       stadt: 'Villach',
-      bundesland: 'Kaernten',
+      bundesland: 'Villach',
     },
     krems: {
       name: 'Kremser Stadtrecht 1977',
@@ -142,7 +142,7 @@ export const LAWS = {
       url: risUrl('LrNO', '20000064'),
       category: 'stadtrecht',
       stadt: 'Krems',
-      bundesland: 'Niederoesterreich',
+      bundesland: 'Krems',
     },
     st_poelten: {
       name: 'St. Poeltner Stadtrecht 1977',
@@ -151,7 +151,7 @@ export const LAWS = {
       url: risUrl('LrNO', '20000101'),
       category: 'stadtrecht',
       stadt: 'St. Poelten',
-      bundesland: 'Niederoesterreich',
+      bundesland: 'St. Poelten',
     },
     waidhofen: {
       name: 'Waidhofner Stadtrecht 1977',
@@ -160,7 +160,7 @@ export const LAWS = {
       url: risUrl('LrNO', '20000100'),
       category: 'stadtrecht',
       stadt: 'Waidhofen/Ybbs',
-      bundesland: 'Niederoesterreich',
+      bundesland: 'Waidhofen/Ybbs',
     },
     wr_neustadt: {
       name: 'Wr. Neustaedter Stadtrecht 1977',
@@ -169,7 +169,7 @@ export const LAWS = {
       url: risUrl('LrNO', '20000066'),
       category: 'stadtrecht',
       stadt: 'Wr. Neustadt',
-      bundesland: 'Niederoesterreich',
+      bundesland: 'Wr. Neustadt',
     },
     linz: {
       name: 'Statut fuer die Landeshauptstadt Linz 1992',
@@ -178,7 +178,7 @@ export const LAWS = {
       url: risUrl('LrOO', '10000341'),
       category: 'stadtrecht',
       stadt: 'Linz',
-      bundesland: 'Oberoesterreich',
+      bundesland: 'Linz',
     },
     steyr: {
       name: 'Statut fuer die Stadt Steyr 1992',
@@ -187,7 +187,7 @@ export const LAWS = {
       url: risUrl('LrOO', '10000342'),
       category: 'stadtrecht',
       stadt: 'Steyr',
-      bundesland: 'Oberoesterreich',
+      bundesland: 'Steyr',
     },
     wels: {
       name: 'Statut fuer die Stadt Wels 1992',
@@ -196,7 +196,7 @@ export const LAWS = {
       url: risUrl('LrOO', '10000345'),
       category: 'stadtrecht',
       stadt: 'Wels',
-      bundesland: 'Oberoesterreich',
+      bundesland: 'Wels',
     },
     salzburg_stadt: {
       name: 'Salzburger Stadtrecht 1966',
@@ -205,7 +205,7 @@ export const LAWS = {
       url: risUrl('LrSbg', '10000140'),
       category: 'stadtrecht',
       stadt: 'Salzburg',
-      bundesland: 'Salzburg',
+      bundesland: 'Salzburg Stadt',
     },
     graz: {
       name: 'Statut der Landeshauptstadt Graz 1967',
@@ -214,7 +214,7 @@ export const LAWS = {
       url: risUrl('LrStmk', '20000217'),
       category: 'stadtrecht',
       stadt: 'Graz',
-      bundesland: 'Steiermark',
+      bundesland: 'Graz',
     },
     innsbruck: {
       name: 'Innsbrucker Stadtrecht 1975',
@@ -223,7 +223,7 @@ export const LAWS = {
       url: risUrl('LrT', '20000196'),
       category: 'stadtrecht',
       stadt: 'Innsbruck',
-      bundesland: 'Tirol',
+      bundesland: 'Innsbruck',
     },
   },
 };

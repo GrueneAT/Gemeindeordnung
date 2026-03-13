@@ -351,16 +351,17 @@ describe('generate-pages', () => {
     }
   });
 
-  it('Test 18P2: law page contains Bundesland dropdown with id', async () => {
+  it('Test 18P2: law page contains BL switcher pills', async () => {
     const { generatePages } = await import('../scripts/generate-pages.js');
     await generatePages(TEST_DIR);
 
     const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
 
-    expect(html).toContain('id="bundesland-nav"');
-    expect(html).toContain('aria-label="Bundesland wechseln"');
-    expect(html).toContain('<select');
-    expect(html).toContain('<optgroup');
+    expect(html).toContain('class="bl-switcher"');
+    expect(html).toContain('bl-switcher-pill');
+    expect(html).toContain('bl-switcher-label');
+    expect(html).toContain('Gemeindeordnungen');
+    expect(html).toContain('Stadtrechte');
   });
 
   it('Test 19P2: index page also contains scroll-to-top button', async () => {

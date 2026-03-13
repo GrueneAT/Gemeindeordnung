@@ -579,8 +579,11 @@ function getIndexPath() {
  * All 9 Austrian Bundeslaender for BL pill rendering.
  */
 const ALL_BUNDESLAENDER = [
-  'Burgenland', 'Kaernten', 'Niederoesterreich', 'Oberoesterreich',
-  'Salzburg', 'Steiermark', 'Tirol', 'Vorarlberg', 'Wien',
+  'Burgenland', 'Eisenstadt', 'Graz', 'Innsbruck', 'Kaernten',
+  'Klagenfurt', 'Krems', 'Linz', 'Niederoesterreich', 'Oberoesterreich',
+  'Rust', 'Salzburg', 'Salzburg Stadt', 'St. Poelten', 'Steiermark',
+  'Steyr', 'Tirol', 'Villach', 'Vorarlberg', 'Waidhofen/Ybbs',
+  'Wels', 'Wien', 'Wr. Neustadt',
 ];
 
 /**
@@ -969,6 +972,13 @@ function initSearch() {
   if (heroActive && heroChips) {
     wirePillHandlers(heroChips);
     updatePillStates(heroChips);
+  }
+
+  // Wire Statutarstadt pills on index page hero (second row)
+  const heroChipsStadt = document.getElementById('hero-search-chips-stadt');
+  if (heroActive && heroChipsStadt) {
+    wirePillHandlers(heroChipsStadt);
+    updatePillStates(heroChipsStadt);
   }
 
   // Pre-load Pagefind WASM

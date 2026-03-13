@@ -252,23 +252,34 @@ ${items}
 }
 
 /**
- * Build Bundesland dropdown HTML for the header.
+ * Build styled BL switcher pills for the header on law pages.
+ * Two rows: Gemeindeordnungen (9 BLs) and Stadtrechte (14 cities).
  */
-function buildBundeslandDropdown(currentKey, currentCategory) {
-  let options = '';
-  for (const [cat, laws] of Object.entries(LAWS)) {
-    const label = CATEGORY_LABELS[cat] || cat;
-    let groupOptions = '';
-    for (const [key, law] of Object.entries(laws)) {
-      const selected = (key === currentKey && cat === currentCategory) ? ' selected' : '';
-      const stadtSuffix = law.stadt ? ` (${law.stadt})` : '';
-      groupOptions += `          <option value="${cat}/${key}.html"${selected}>${law.bundesland}${stadtSuffix}</option>\n`;
-    }
-    options += `        <optgroup label="${label}">\n${groupOptions}        </optgroup>\n`;
+function buildBundeslandSwitcher(currentKey, currentCategory) {
+  const goPills = [];
+  for (const [key, law] of Object.entries(LAWS.gemeindeordnungen)) {
+    const isActive = key === currentKey && currentCategory === 'gemeindeordnungen';
+    const cls = isActive ? 'bl-switcher-pill bl-switcher-active' : 'bl-switcher-pill';
+    goPills.push(`<a href="../gemeindeordnungen/${key}.html" class="${cls}">${escapeHtml(law.bundesland)}</a>`);
   }
 
-  return `        <select id="bundesland-nav" class="max-w-full border border-gray-300 rounded px-3 py-1.5 text-sm bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50" aria-label="Bundesland wechseln">
-${options}        </select>`;
+  const stadtPills = [];
+  for (const [key, law] of Object.entries(LAWS.stadtrechte)) {
+    const isActive = key === currentKey && currentCategory === 'stadtrechte';
+    const cls = isActive ? 'bl-switcher-pill bl-switcher-active' : 'bl-switcher-pill';
+    stadtPills.push(`<a href="../stadtrechte/${key}.html" class="${cls}">${escapeHtml(law.bundesland)}</a>`);
+  }
+
+  return `        <div class="bl-switcher" data-pagefind-ignore>
+          <div class="bl-switcher-group">
+            <span class="bl-switcher-label">Gemeindeordnungen</span>
+            <div class="flex flex-wrap gap-1.5">${goPills.join('\n              ')}</div>
+          </div>
+          <div class="bl-switcher-group">
+            <span class="bl-switcher-label">Stadtrechte</span>
+            <div class="flex flex-wrap gap-1.5">${stadtPills.join('\n              ')}</div>
+          </div>
+        </div>`;
 }
 
 /**
@@ -304,9 +315,9 @@ function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
   const logoPath = `${prefix}assets/gruene-logo.png`;
   const indexPath = `${prefix}index.html`;
 
-  const dropdown = isLawPage ? buildBundeslandDropdown(currentKey, currentCategory) : '';
-  const rightSection = dropdown
-    ? `      <div class="mt-2 sm:mt-0">\n${dropdown}\n      </div>`
+  const switcher = isLawPage ? buildBundeslandSwitcher(currentKey, currentCategory) : '';
+  const rightSection = switcher
+    ? `      <div class="mt-2 sm:mt-0">\n${switcher}\n      </div>`
     : '';
 
   const searchHTML = generateSearchHTML();
@@ -554,20 +565,29 @@ ${cards}
               ${glossarChips}`;
   }
 
-  // Extract unique Bundesland names from LAWS config, sorted alphabetically
-  const blSet = new Set();
-  for (const laws of Object.values(LAWS)) {
-    for (const law of Object.values(laws)) {
-      blSet.add(law.bundesland);
-    }
+  // Extract BL names (Gemeindeordnungen) and Statutarstadt names separately
+  const blNames = [];
+  for (const law of Object.values(LAWS.gemeindeordnungen)) {
+    blNames.push(law.bundesland);
   }
-  const sortedBLs = [...blSet].sort((a, b) => a.localeCompare(b, 'de'));
+  blNames.sort((a, b) => a.localeCompare(b, 'de'));
 
-  // Build BL pill buttons HTML
+  const stadtNames = [];
+  for (const law of Object.values(LAWS.stadtrechte)) {
+    stadtNames.push(law.bundesland);
+  }
+  stadtNames.sort((a, b) => a.localeCompare(b, 'de'));
+
+  // Build BL pill buttons HTML - all values for Pagefind filter
   const blPillsHtml = [
     '<button class="bl-selector-pill bl-pill-active" data-bl="">Alle</button>',
-    ...sortedBLs.map(bl => `<button class="bl-selector-pill bl-pill-inactive" data-bl="${escapeHtml(bl)}">${escapeHtml(bl)}</button>`),
+    ...blNames.map(bl => `<button class="bl-selector-pill bl-pill-inactive" data-bl="${escapeHtml(bl)}">${escapeHtml(bl)}</button>`),
   ].join('\n            ');
+
+  // Statutarstadt pills (smaller, secondary row)
+  const stadtPillsHtml = stadtNames.map(bl =>
+    `<button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="${escapeHtml(bl)}">${escapeHtml(bl)}</button>`
+  ).join('\n            ');
 
   const headerHtml = generateHeader(false);
   const footerHtml = generateFooter({ isLawPage: false });
@@ -590,6 +610,9 @@ ${cards}
           </div>
           <div id="hero-search-chips" class="bl-selector-container mt-3 flex flex-wrap justify-center gap-1.5">
             ${blPillsHtml}
+          </div>
+          <div id="hero-search-chips-stadt" class="bl-selector-container mt-2 flex flex-wrap justify-center gap-1">
+            ${stadtPillsHtml}
           </div>
           <div id="hero-search-dropdown" class="search-dropdown hidden mt-2"></div>
         </div>

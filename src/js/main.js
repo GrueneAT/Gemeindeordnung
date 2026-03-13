@@ -72,20 +72,11 @@ function initScrollToTop() {
 }
 
 /**
- * Initialize Bundesland dropdown navigation.
- * On change: navigates to selected law page via relative URL.
+ * BL switcher navigation -- no JS needed, uses <a> links.
+ * Kept as placeholder for any future BL switcher interactivity.
  */
-function initBundeslandDropdown() {
-  const select = document.getElementById('bundesland-nav');
-  if (!select) return;
-
-  select.addEventListener('change', (e) => {
-    if (e.target.value) {
-      // Option values are relative to site root (e.g. "gemeindeordnungen/wien.html")
-      // From a law page under a category subdir, we need "../" prefix
-      window.location.href = '../' + e.target.value;
-    }
-  });
+function initBundeslandSwitcher() {
+  // BL switcher uses <a> tags, no JS handler needed
 }
 
 /**
@@ -329,7 +320,7 @@ function initGlossaryFilter() {
 document.addEventListener('DOMContentLoaded', async () => {
   initCopyLinks();
   initScrollToTop();
-  initBundeslandDropdown();
+  initBundeslandSwitcher();
   initAnchorHighlight();
   initTopicFilter();
   initGlossaryTooltips();
