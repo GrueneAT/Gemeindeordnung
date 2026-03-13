@@ -874,7 +874,7 @@ h2[id] {
   outline-offset: 2px;
 }
 .inline-search-trigger span {
-  color: #9ca3af; /* placeholder gray */
+  color: #6b7280; /* gray-500, 5.5:1 contrast on white -- WCAG AA compliant */
 }
 
 /* On-page highlighting (Pagefind) */
