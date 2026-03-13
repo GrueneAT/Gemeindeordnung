@@ -35,7 +35,7 @@ Next step: /gsd:new-milestone
 | 15 | Full-width inline search bars on BL and FAQ pages | 2026-03-13 | dcba8d6 | [15-full-width-inline-search-bars-on-bl-and-](./quick/15-full-width-inline-search-bars-on-bl-and-/) |
 | 16 | Staleness detection: extract fassungVom, add --check flag | 2026-03-13 | 7ad2ab6 | [16-add-staleness-detection-extract-fassungv](./quick/16-add-staleness-detection-extract-fassungv/) |
 | 17 | Granular LLM regeneration: --paragraph, --question, --term flags | 2026-03-13 | 7f20dae | [17-granular-llm-regeneration-per-paragraph-](./quick/17-granular-llm-regeneration-per-paragraph-/) |
-| 18 | Fix search race condition: generation counters prevent stale results | 2026-03-13 | 07ade54 | [18-fix-search-not-updating-after-initial-3-](./quick/18-fix-search-not-updating-after-initial-3-/) |
+| 18 | Fix search: stemming false positive filter + dropdown ref race + generation counters | 2026-03-13 | 4323b1a | [18-fix-search-not-updating-after-initial-3-](./quick/18-fix-search-not-updating-after-initial-3-/) |
 
 ## Session Continuity
 
