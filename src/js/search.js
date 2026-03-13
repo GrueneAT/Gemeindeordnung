@@ -54,20 +54,20 @@ async function executeUnifiedSearch(query, bundesland = null) {
 
   if (bundesland) {
     // Two-pass search: Gesetze with BL filter, FAQ+Glossar without
-    const [gesetzSearch, otherSearch] = await Promise.all([
+    // Split FAQ and Glossar into separate searches (Pagefind array filter is unreliable)
+    const [gesetzSearch, faqSearch, glossarSearch] = await Promise.all([
       pf.search(query, { filters: { typ: 'Gesetz', bundesland } }),
-      pf.search(query, { filters: { typ: ['FAQ', 'Glossar'] } }),
+      pf.search(query, { filters: { typ: 'FAQ' } }),
+      pf.search(query, { filters: { typ: 'Glossar' } }),
     ]);
 
-    // Separate FAQ and Glossar from otherSearch
-    const faqRaw = [];
-    const glossarRaw = [];
-    for (const r of (otherSearch?.results || [])) {
-      const data = await r.data();
-      const typ = data.filters?.typ?.[0];
-      if (typ === 'FAQ') faqRaw.push(data);
-      else if (typ === 'Glossar') glossarRaw.push(data);
-    }
+    // Load FAQ and Glossar results from separate searches
+    const faqRaw = await Promise.all(
+      (faqSearch?.results || []).map(r => r.data())
+    );
+    const glossarRaw = await Promise.all(
+      (glossarSearch?.results || []).map(r => r.data())
+    );
 
     // Load first 5 Gesetze results
     const gesetzResults = gesetzSearch?.results || [];
@@ -710,7 +710,7 @@ function hideDropdown() {
  * Desktop: centered ~700px wide modal with backdrop.
  * Mobile (<640px): full-screen overlay.
  */
-function openSearchModal() {
+function openSearchModal(prefilterBundesland = null) {
   if (modalActive) return;
   modalActive = true;
 
@@ -767,10 +767,14 @@ function openSearchModal() {
   searchDropdown = modalResults;
   searchChips = modalChips;
 
-  // Auto-select current page BL on law pages
-  const pageBL = document.querySelector('meta[data-pagefind-filter="bundesland[content]"]')?.getAttribute('content');
-  if (pageBL && !activeBundesland) {
-    activeBundesland = pageBL;
+  // Apply pre-filter if provided (from inline search trigger), otherwise auto-detect from page
+  if (prefilterBundesland) {
+    activeBundesland = prefilterBundesland;
+  } else {
+    const pageBL = document.querySelector('meta[data-pagefind-filter="bundesland[content]"]')?.getAttribute('content');
+    if (pageBL && !activeBundesland) {
+      activeBundesland = pageBL;
+    }
   }
 
   // Render BL pills
@@ -987,6 +991,14 @@ function initSearch() {
       openSearchModal();
     });
   }
+
+  // Inline search triggers (law pages, FAQ pages)
+  document.querySelectorAll('.inline-search-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const prefilterBl = btn.dataset.bundesland || null;
+      openSearchModal(prefilterBl);
+    });
+  });
 
   // Set up IntersectionObserver for hero visibility tracking
   if (heroActive) {
