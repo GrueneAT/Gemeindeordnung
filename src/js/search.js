@@ -940,6 +940,124 @@ function setupHeroClickOutside() {
   });
 }
 
+// ---- Inline Scoped Search ----
+
+/**
+ * Initialize inline scoped Pagefind search on law and FAQ pages.
+ * Each `.inline-search-container` gets its own debounced search handler
+ * that filters results by scope (gesetz+bundesland or faq).
+ */
+function initInlineSearch() {
+  const containers = document.querySelectorAll('.inline-search-container');
+  if (containers.length === 0) return;
+
+  containers.forEach(container => {
+    const input = container.querySelector('.inline-search-input');
+    const dropdown = container.querySelector('.inline-search-dropdown');
+    if (!input || !dropdown) return;
+
+    const scope = container.dataset.searchScope || 'gesetz';
+    const filterBl = container.dataset.searchFilterBundesland || null;
+    let inlineTimer = null;
+
+    function hideInlineDropdown() {
+      dropdown.classList.add('hidden');
+      dropdown.innerHTML = '';
+    }
+
+    function showInlineResults(html) {
+      dropdown.innerHTML = html;
+      dropdown.classList.remove('hidden');
+    }
+
+    async function doInlineSearch(query) {
+      const pf = await loadPagefind();
+      if (!pf) return;
+
+      let filters = {};
+      if (scope === 'gesetz') {
+        filters = { typ: 'Gesetz' };
+        if (filterBl) filters.bundesland = filterBl;
+      } else if (scope === 'faq') {
+        filters = { typ: 'FAQ' };
+      }
+
+      const search = await pf.search(query, { filters });
+      if (!search || !search.results) {
+        showInlineResults('<div class="inline-search-empty">Keine Treffer</div>');
+        return;
+      }
+
+      const maxResults = 8;
+      const loaded = await Promise.all(
+        search.results.slice(0, maxResults).map(r => r.data())
+      );
+
+      if (loaded.length === 0) {
+        showInlineResults('<div class="inline-search-empty">Keine Treffer</div>');
+        return;
+      }
+
+      let html = '';
+      for (const result of loaded) {
+        if (scope === 'faq') {
+          html += renderFAQResult(result);
+        } else {
+          html += renderPageResult(result, query);
+        }
+      }
+
+      // "Show all" link that opens the global modal
+      if (search.results.length > maxResults) {
+        html += `<button class="inline-search-show-all" data-query="${escapeForDisplay(query)}">Alle ${search.results.length} Ergebnisse anzeigen</button>`;
+      }
+
+      showInlineResults(html);
+
+      // Wire "show all" to open global modal
+      const showAllBtn = dropdown.querySelector('.inline-search-show-all');
+      if (showAllBtn) {
+        showAllBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          currentQuery = query;
+          hideInlineDropdown();
+          openSearchModal(filterBl);
+        });
+      }
+    }
+
+    // Input handler with debounce
+    input.addEventListener('input', () => {
+      const query = input.value.trim();
+      if (query.length === 0) {
+        hideInlineDropdown();
+        return;
+      }
+      if (query.length < 3) {
+        showInlineResults('<div class="search-hint">Bitte mindestens 3 Zeichen eingeben</div>');
+        return;
+      }
+      clearTimeout(inlineTimer);
+      inlineTimer = setTimeout(() => doInlineSearch(query), 200);
+    });
+
+    // Click outside closes dropdown
+    document.addEventListener('click', (e) => {
+      if (!container.contains(e.target)) {
+        hideInlineDropdown();
+      }
+    });
+
+    // Escape closes dropdown
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        hideInlineDropdown();
+        input.blur();
+      }
+    });
+  });
+}
+
 // ---- Init ----
 
 /**
@@ -1002,13 +1120,8 @@ function initSearch() {
     });
   }
 
-  // Inline search triggers (law pages, FAQ pages)
-  document.querySelectorAll('.inline-search-trigger').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const prefilterBl = btn.dataset.bundesland || null;
-      openSearchModal(prefilterBl);
-    });
-  });
+  // Initialize inline scoped search on law/FAQ pages
+  initInlineSearch();
 
   // Set up IntersectionObserver for hero visibility tracking
   if (heroActive) {

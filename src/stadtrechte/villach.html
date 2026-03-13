@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Villacher Stadtrecht 1998 (K-VStR) - gemeindeordnung.gruene.at</title>
     <link rel="stylesheet" href="../css/main.css" />
-    <meta data-pagefind-filter="bundesland[content]" content="Kaernten" />
+    <meta data-pagefind-filter="bundesland[content]" content="Villach" />
     <meta data-pagefind-filter="typ[content]" content="Gesetz" />
   </head>
   <body class="bg-white min-h-screen flex flex-col">
@@ -24,35 +24,37 @@
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
       </button>
       <div class="mt-2 sm:mt-0">
-        <select id="bundesland-nav" class="max-w-full border border-gray-300 rounded px-3 py-1.5 text-sm bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50" aria-label="Bundesland wechseln">
-        <optgroup label="Gemeindeordnungen">
-          <option value="gemeindeordnungen/burgenland.html">Burgenland</option>
-          <option value="gemeindeordnungen/kaernten.html">Kaernten</option>
-          <option value="gemeindeordnungen/niederoesterreich.html">Niederoesterreich</option>
-          <option value="gemeindeordnungen/oberoesterreich.html">Oberoesterreich</option>
-          <option value="gemeindeordnungen/salzburg.html">Salzburg</option>
-          <option value="gemeindeordnungen/steiermark.html">Steiermark</option>
-          <option value="gemeindeordnungen/tirol.html">Tirol</option>
-          <option value="gemeindeordnungen/vorarlberg.html">Vorarlberg</option>
-          <option value="gemeindeordnungen/wien.html">Wien</option>
-        </optgroup>
-        <optgroup label="Stadtrechte">
-          <option value="stadtrechte/eisenstadt.html">Burgenland (Eisenstadt)</option>
-          <option value="stadtrechte/rust.html">Burgenland (Rust)</option>
-          <option value="stadtrechte/klagenfurt.html">Kaernten (Klagenfurt)</option>
-          <option value="stadtrechte/villach.html" selected>Kaernten (Villach)</option>
-          <option value="stadtrechte/krems.html">Niederoesterreich (Krems)</option>
-          <option value="stadtrechte/st_poelten.html">Niederoesterreich (St. Poelten)</option>
-          <option value="stadtrechte/waidhofen.html">Niederoesterreich (Waidhofen/Ybbs)</option>
-          <option value="stadtrechte/wr_neustadt.html">Niederoesterreich (Wr. Neustadt)</option>
-          <option value="stadtrechte/linz.html">Oberoesterreich (Linz)</option>
-          <option value="stadtrechte/steyr.html">Oberoesterreich (Steyr)</option>
-          <option value="stadtrechte/wels.html">Oberoesterreich (Wels)</option>
-          <option value="stadtrechte/salzburg_stadt.html">Salzburg (Salzburg)</option>
-          <option value="stadtrechte/graz.html">Steiermark (Graz)</option>
-          <option value="stadtrechte/innsbruck.html">Tirol (Innsbruck)</option>
-        </optgroup>
-        </select>
+        <div class="bl-switcher" data-pagefind-ignore>
+          <div class="bl-switcher-group">
+            <span class="bl-switcher-label">Gemeindeordnungen</span>
+            <div class="flex flex-wrap gap-1.5"><a href="../gemeindeordnungen/burgenland.html" class="bl-switcher-pill">Burgenland</a>
+              <a href="../gemeindeordnungen/kaernten.html" class="bl-switcher-pill">Kaernten</a>
+              <a href="../gemeindeordnungen/niederoesterreich.html" class="bl-switcher-pill">Niederoesterreich</a>
+              <a href="../gemeindeordnungen/oberoesterreich.html" class="bl-switcher-pill">Oberoesterreich</a>
+              <a href="../gemeindeordnungen/salzburg.html" class="bl-switcher-pill">Salzburg</a>
+              <a href="../gemeindeordnungen/steiermark.html" class="bl-switcher-pill">Steiermark</a>
+              <a href="../gemeindeordnungen/tirol.html" class="bl-switcher-pill">Tirol</a>
+              <a href="../gemeindeordnungen/vorarlberg.html" class="bl-switcher-pill">Vorarlberg</a>
+              <a href="../gemeindeordnungen/wien.html" class="bl-switcher-pill">Wien</a></div>
+          </div>
+          <div class="bl-switcher-group">
+            <span class="bl-switcher-label">Stadtrechte</span>
+            <div class="flex flex-wrap gap-1.5"><a href="../stadtrechte/eisenstadt.html" class="bl-switcher-pill">Eisenstadt</a>
+              <a href="../stadtrechte/rust.html" class="bl-switcher-pill">Rust</a>
+              <a href="../stadtrechte/klagenfurt.html" class="bl-switcher-pill">Klagenfurt</a>
+              <a href="../stadtrechte/villach.html" class="bl-switcher-pill bl-switcher-active">Villach</a>
+              <a href="../stadtrechte/krems.html" class="bl-switcher-pill">Krems</a>
+              <a href="../stadtrechte/st_poelten.html" class="bl-switcher-pill">St. Poelten</a>
+              <a href="../stadtrechte/waidhofen.html" class="bl-switcher-pill">Waidhofen/Ybbs</a>
+              <a href="../stadtrechte/wr_neustadt.html" class="bl-switcher-pill">Wr. Neustadt</a>
+              <a href="../stadtrechte/linz.html" class="bl-switcher-pill">Linz</a>
+              <a href="../stadtrechte/steyr.html" class="bl-switcher-pill">Steyr</a>
+              <a href="../stadtrechte/wels.html" class="bl-switcher-pill">Wels</a>
+              <a href="../stadtrechte/salzburg_stadt.html" class="bl-switcher-pill">Salzburg Stadt</a>
+              <a href="../stadtrechte/graz.html" class="bl-switcher-pill">Graz</a>
+              <a href="../stadtrechte/innsbruck.html" class="bl-switcher-pill">Innsbruck</a></div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -60,7 +62,7 @@
     <ol class="flex items-center gap-1 text-gruene-dark">
       <li><a href="../index.html" class="text-gruene-dark hover:underline">Startseite</a></li>
       <li class="text-gray-400">/</li>
-      <li><span class="text-gruene-dark">Kaernten</span></li>
+      <li><span class="text-gruene-dark">Villach</span></li>
       <li class="text-gray-400">/</li>
       <li class="text-gray-500">Villacher Stadtrecht 1998 (K-VStR)</li>
     </ol>
@@ -69,16 +71,18 @@
     <div class="max-w-5xl mx-auto px-4 py-6 flex-1 w-full">
       <header class="mb-6">
         <h1 class="text-3xl font-bold text-gruene-dark">Villacher Stadtrecht 1998 (K-VStR)</h1>
-        <p class="mt-1 text-gruene-dark/80">Kaernten (Villach)</p>
+        <p class="mt-1 text-gruene-dark/80">Villach (Villach)</p>
         <p class="mt-1 text-sm text-gray-600">Stand: 11.03.2026</p>
       </header>
-      <div class="inline-search-bar" data-pagefind-ignore>
-        <button class="inline-search-trigger" data-bundesland="Kaernten">
-          <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="inline-search-container" data-pagefind-ignore data-search-scope="gesetz" data-search-filter-bundesland="Villach">
+        <div class="relative">
+          <input type="search" class="inline-search-input" autocomplete="off"
+            placeholder="In Villach suchen..." minlength="3" />
+          <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
           </svg>
-          <span>In Kaernten suchen...</span>
-        </button>
+        </div>
+        <div class="inline-search-dropdown hidden"></div>
       </div>
       <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
         <strong>Hinweis:</strong> Der Gesetzestext ist im Original wiedergegeben. Die Zusammenfassungen zu den einzelnen Paragraphen wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
