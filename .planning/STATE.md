@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed quick-14 plan
-last_updated: "2026-03-13T07:59:00.000Z"
+stopped_at: Completed quick-15 plan
+last_updated: "2026-03-13T08:05:00.000Z"
 ---
 
 # Project State
@@ -32,9 +32,10 @@ Next step: /gsd:new-milestone
 | 12 | Inline search bars on FAQ and BL pages, fix unified search BL filter bug | 2026-03-13 | 2b3e640 | [12-inline-search-bars-on-faq-and-bl-pages-f](./quick/12-inline-search-bars-on-faq-and-bl-pages-f/) |
 | 13 | Scoped inline Pagefind search, independent Statutarstadt filters, BL switcher redesign | 2026-03-13 | 4245c17 | [13-scoped-inline-pagefind-search-on-bl-and-](./quick/13-scoped-inline-pagefind-search-on-bl-and-/) |
 | 14 | Replace BL switcher pills with styled select dropdown | 2026-03-13 | 0863028 | [14-replace-bl-switcher-pills-with-styled-se](./quick/14-replace-bl-switcher-pills-with-styled-se/) |
+| 15 | Full-width inline search bars on BL and FAQ pages | 2026-03-13 | dcba8d6 | [15-full-width-inline-search-bars-on-bl-and-](./quick/15-full-width-inline-search-bars-on-bl-and-/) |
 
 ## Session Continuity
 
 Last session: 2026-03-13
-Stopped at: Completed quick task 14
+Stopped at: Completed quick task 15
 Resume file: None
