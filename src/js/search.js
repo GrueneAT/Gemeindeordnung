@@ -14,6 +14,7 @@ let searchDropdown = null;
 let searchChips = null;
 let modalActive = false;
 let searchTimer = null;
+let searchGeneration = 0;
 
 // Hero search state (index page only)
 let heroInput = null;
@@ -668,10 +669,11 @@ async function handleSearchInput(e) {
     return;
   }
 
+  const generation = ++searchGeneration;
   clearTimeout(searchTimer);
   searchTimer = setTimeout(async () => {
     const result = await executeUnifiedSearch(query, activeBundesland);
-    if (result) {
+    if (result && generation === searchGeneration) {
       renderUnifiedResults(result);
     }
   }, 200);
@@ -682,8 +684,9 @@ async function handleSearchInput(e) {
  */
 async function triggerSearch() {
   if (currentQuery.length < 3) return;
+  const generation = ++searchGeneration;
   const result = await executeUnifiedSearch(currentQuery, activeBundesland);
-  if (result) {
+  if (result && generation === searchGeneration) {
     renderUnifiedResults(result);
   }
 }
@@ -959,6 +962,7 @@ function initInlineSearch() {
     const scope = container.dataset.searchScope || 'gesetz';
     const filterBl = container.dataset.searchFilterBundesland || null;
     let inlineTimer = null;
+    let inlineGeneration = 0;
 
     function hideInlineDropdown() {
       dropdown.classList.add('hidden');
@@ -970,7 +974,7 @@ function initInlineSearch() {
       dropdown.classList.remove('hidden');
     }
 
-    async function doInlineSearch(query) {
+    async function doInlineSearch(query, generation) {
       const pf = await loadPagefind();
       if (!pf) return;
 
@@ -983,6 +987,7 @@ function initInlineSearch() {
       }
 
       const search = await pf.search(query, { filters });
+      if (generation !== inlineGeneration) return;
       if (!search || !search.results) {
         showInlineResults('<div class="inline-search-empty">Keine Treffer</div>');
         return;
@@ -992,6 +997,7 @@ function initInlineSearch() {
       const loaded = await Promise.all(
         search.results.slice(0, maxResults).map(r => r.data())
       );
+      if (generation !== inlineGeneration) return;
 
       if (loaded.length === 0) {
         showInlineResults('<div class="inline-search-empty">Keine Treffer</div>');
@@ -1037,8 +1043,9 @@ function initInlineSearch() {
         showInlineResults('<div class="search-hint">Bitte mindestens 3 Zeichen eingeben</div>');
         return;
       }
+      const generation = ++inlineGeneration;
       clearTimeout(inlineTimer);
-      inlineTimer = setTimeout(() => doInlineSearch(query), 200);
+      inlineTimer = setTimeout(() => doInlineSearch(query, generation), 200);
     });
 
     // Click outside closes dropdown
