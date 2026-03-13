@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+import { createHash } from 'crypto';
 import { LAWS } from './config.js';
+import { parseLaw } from './parse-laws.js';
 
 const DATA_RAW_DIR = 'data/raw';
 const RATE_LIMIT_MS = 1500;
@@ -68,9 +70,79 @@ async function fetchAll() {
   console.log(`\nDone. ${fetched} laws fetched successfully.`);
 }
 
+/**
+ * Check all 23 laws for staleness by comparing contentHash.
+ * For changed laws, reports old and new fassungVom dates.
+ *
+ * @returns {Promise<Array<{key: string, changed: boolean, oldHash: string|null, newHash: string, oldFassungVom: string|null, newFassungVom: string|null}>>}
+ */
+export async function checkAll() {
+  const categories = ['gemeindeordnungen', 'stadtrechte'];
+  const results = [];
+  let total = 0;
+  let checked = 0;
+  let changedCount = 0;
+
+  for (const category of categories) {
+    total += Object.keys(LAWS[category]).length;
+  }
+
+  console.log(`Checking ${total} laws for changes...`);
+
+  for (const category of categories) {
+    for (const [key, config] of Object.entries(LAWS[category])) {
+      checked++;
+      const html = await fetchLaw(key, config);
+      const newHash = 'sha256:' + createHash('sha256').update(html).digest('hex');
+
+      const storedPath = path.join(DATA_RAW_DIR, '..', 'parsed', category, `${key}.json`);
+      let oldHash = null;
+      let oldFassungVom = null;
+      let stored = null;
+
+      if (fs.existsSync(storedPath)) {
+        stored = JSON.parse(fs.readFileSync(storedPath, 'utf-8'));
+        oldHash = stored.meta.contentHash;
+        oldFassungVom = stored.meta.fassungVom || null;
+      }
+
+      const changed = oldHash !== newHash;
+      let newFassungVom = null;
+
+      if (changed) {
+        changedCount++;
+        const freshResult = parseLaw(html, key, config);
+        newFassungVom = freshResult.meta.fassungVom;
+
+        if (!stored) {
+          console.log(`[${checked}/${total}] ${config.name} (${key}): NEW (no stored data)`);
+        } else {
+          console.log(`[${checked}/${total}] ${config.name} (${key}): CHANGED (Fassung vom ${oldFassungVom} -> ${newFassungVom})`);
+        }
+      } else {
+        console.log(`[${checked}/${total}] ${config.name} (${key}): unchanged`);
+      }
+
+      results.push({ key, changed, oldHash, newHash, oldFassungVom, newFassungVom });
+
+      // Rate limit between requests (skip after last)
+      if (checked < total) {
+        await new Promise((resolve) => setTimeout(resolve, RATE_LIMIT_MS));
+      }
+    }
+  }
+
+  const unchangedCount = total - changedCount;
+  console.log(`\n${changedCount}/${total} laws changed, ${unchangedCount}/${total} unchanged.`);
+
+  return results;
+}
+
 // Run when executed directly
 if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replace(/\\/g, '/'))) {
-  fetchAll().catch((err) => {
+  const runCheck = process.argv.includes('--check');
+  const main = runCheck ? checkAll : fetchAll;
+  main().catch((err) => {
     console.error(`\nFATAL: ${err.message}`);
     process.exit(1);
   });

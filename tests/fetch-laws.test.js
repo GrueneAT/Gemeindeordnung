@@ -85,6 +85,14 @@ describe('scripts/fetch-laws.js', () => {
     ).rejects.toThrow('HTTP 503');
   });
 
+  // Note: checkAll() requires network access and real data files,
+  // so no unit test for its full logic. Integration tested via:
+  //   node scripts/fetch-laws.js --check
+  it('exports checkAll function', async () => {
+    const mod = await import('../scripts/fetch-laws.js');
+    expect(typeof mod.checkAll).toBe('function');
+  });
+
   it('throws if response body < 10000 bytes (error page detection)', async () => {
     vi.stubGlobal(
       'fetch',
