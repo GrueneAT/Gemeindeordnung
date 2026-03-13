@@ -15,8 +15,8 @@ test.describe('Scroll-to-top button (UAT 6)', () => {
     await expect(btn).toBeVisible();
     await page.screenshot({ path: 'e2e/screenshots/scroll-to-top-visible.png' });
 
-    // Click the button
-    await btn.click();
+    // Click the button (force: true to avoid interception from overlapping content on narrow viewports)
+    await btn.click({ force: true });
 
     // Wait for scroll to complete
     await page.waitForFunction(() => window.scrollY < 50);

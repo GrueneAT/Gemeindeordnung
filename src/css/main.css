@@ -9,6 +9,11 @@
   --color-gruene-link-hover: #2D5016;
 }
 
+/* Prevent horizontal overflow on mobile */
+html, body {
+  overflow-x: hidden;
+}
+
 /* Anchor highlight animation for deep-linked paragraphs */
 @keyframes anchor-highlight {
   from {
@@ -816,6 +821,9 @@ h2[id] {
 
 .absatz-text {
   flex: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* Always-visible summary orientation box */
