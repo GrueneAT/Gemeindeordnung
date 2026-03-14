@@ -46,20 +46,17 @@ test.describe('Search modal behavior', () => {
     await expect(modal).toBeHidden({ timeout: 3000 });
   });
 
-  test('BL pills rendered in modal with all BLs + Statutarstaedte + Alle', async ({ page }) => {
+  test('Modal has no BL pills (BL filtering via hero select only)', async ({ page }) => {
     await page.click('#search-modal-trigger');
     await page.waitForSelector('.search-modal', { state: 'visible' });
 
-    const pills = page.locator('#search-modal-chips .bl-selector-pill');
-    // 23 entities (9 BLs + 14 Statutarstaedte) + 1 "Alle" = 24
-    await expect(pills).toHaveCount(24);
+    // No BL pills should exist in the modal
+    const pills = page.locator('.search-modal .bl-selector-pill');
+    await expect(pills).toHaveCount(0);
 
-    const pillTexts = await pills.allTextContents();
-    expect(pillTexts).toContain('Alle');
-    expect(pillTexts).toContain('Wien');
-    expect(pillTexts).toContain('Burgenland');
-    expect(pillTexts).toContain('Graz');
-    expect(pillTexts).toContain('Innsbruck');
+    // Modal should have search input
+    const input = page.locator('#search-modal-input');
+    await expect(input).toBeVisible();
   });
 
   test('search results appear in modal', async ({ page }) => {

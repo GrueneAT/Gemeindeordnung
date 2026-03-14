@@ -457,57 +457,38 @@ details > summary::-webkit-details-marker {
   }
 }
 
-/* ---- Content-type group styles (unified search) ---- */
+/* ---- Search Tab Styles ---- */
 
-/* Content-type group container */
-.search-type-group {
-  border-top: 2px solid #e5e7eb;
-  padding-top: 0.5rem;
-  margin-top: 0.5rem;
-}
-.search-type-group:first-child {
-  border-top: none;
-  margin-top: 0;
-}
-
-/* Group heading with badge */
-.search-type-group-heading {
+.search-tabs {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.375rem 0.75rem;
-  font-weight: 600;
+  gap: 0;
+  border-bottom: 2px solid #e5e7eb;
+  margin: 0.5rem 0.75rem 0;
+}
+.search-tab-btn {
+  padding: 0.5rem 1rem;
   font-size: 0.8125rem;
-  color: var(--color-gruene-dark);
-}
-.search-type-group-count {
-  font-weight: 400;
+  font-weight: 500;
   color: #6b7280;
-  font-size: 0.75rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
 }
-
-/* Content-type badges */
-.search-type-badge {
-  display: inline-flex;
-  align-items: center;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  padding: 0.125rem 0.5rem;
-  border-radius: 9999px;
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
-}
-.search-type-faq {
-  background-color: #dbeafe;
-  color: #1e40af;
-}
-.search-type-glossar {
-  background-color: #fef3c7;
-  color: #92400e;
-}
-.search-type-gesetz {
-  background-color: var(--color-gruene-light);
+.search-tab-btn:hover:not(:disabled) {
   color: var(--color-gruene-dark);
+}
+.search-tab-active {
+  color: var(--color-gruene-dark);
+  border-bottom-color: var(--color-gruene-green);
+  font-weight: 600;
+}
+.search-tab-btn:disabled {
+  color: #d1d5db;
+  cursor: default;
 }
 
 /* BL filter note (shown when BL filter active) */

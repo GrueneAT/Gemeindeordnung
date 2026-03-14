@@ -79,48 +79,37 @@ test.describe('Homepage hero section and discovery links', () => {
     await page.screenshot({ path: 'e2e/screenshots/hero-section-mobile.png', fullPage: false });
   });
 
-  test('BL selector pills are visible with all 9 Bundeslaender plus Alle', async ({ page }) => {
+  test('BL select dropdown is visible with Bundeslaender options', async ({ page }) => {
     await page.goto('./index.html');
 
-    const heroPills = page.locator('#hero-search-chips .bl-selector-pill');
-    // 9 BLs + 1 "Alle" = 10
-    await expect(heroPills).toHaveCount(10);
+    const heroSelect = page.locator('#hero-bl-select');
+    await expect(heroSelect).toBeVisible();
 
-    // "Alle" pill should be first and active by default
-    const allePill = heroPills.first();
-    await expect(allePill).toContainText('Alle');
-    await expect(allePill).toHaveClass(/bl-pill-active/);
+    // Default value should be "Alle Bundeslaender" (empty value)
+    await expect(heroSelect).toHaveValue('');
 
-    // Verify specific BL names are present
-    const pillTexts = await heroPills.allTextContents();
-    expect(pillTexts).toContain('Wien');
-    expect(pillTexts).toContain('Burgenland');
-    expect(pillTexts).toContain('Tirol');
+    // Verify it has optgroups with BL names
+    const options = heroSelect.locator('option');
+    const optionTexts = await options.allTextContents();
+    expect(optionTexts).toContain('Wien');
+    expect(optionTexts).toContain('Burgenland');
+    expect(optionTexts).toContain('Tirol');
 
-    // Screenshot
-    await page.screenshot({ path: 'e2e/screenshots/bl-selector-pills.png', fullPage: false });
+    await page.screenshot({ path: 'e2e/screenshots/hero-bl-select.png', fullPage: false });
   });
 
-  test('clicking a BL pill activates it and deactivates others', async ({ page }) => {
+  test('selecting a BL in dropdown changes filter value', async ({ page }) => {
     await page.goto('./index.html');
 
-    const heroPills = page.locator('#hero-search-chips .bl-selector-pill');
+    const heroSelect = page.locator('#hero-bl-select');
 
-    // Click "Wien" pill
-    const wienPill = heroPills.filter({ hasText: 'Wien' });
-    await wienPill.click();
+    // Select Wien
+    await heroSelect.selectOption('Wien');
+    await expect(heroSelect).toHaveValue('Wien');
 
-    // Wien should now be active
-    await expect(wienPill).toHaveClass(/bl-pill-active/);
-
-    // "Alle" should now be inactive
-    const allePill = heroPills.first();
-    await expect(allePill).toHaveClass(/bl-pill-inactive/);
-
-    // Click "Alle" to reset
-    await allePill.click();
-    await expect(allePill).toHaveClass(/bl-pill-active/);
-    await expect(wienPill).toHaveClass(/bl-pill-inactive/);
+    // Reset to Alle
+    await heroSelect.selectOption('');
+    await expect(heroSelect).toHaveValue('');
   });
 
   test('discovery section uses compact inline flow layout', async ({ page }) => {

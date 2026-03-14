@@ -347,19 +347,7 @@ function renderGroupedResults(results, query) {
   return html;
 }
 
-// ---- Content-type group rendering ----
-
-/**
- * Render a content-type group heading with badge and count.
- */
-function renderTypeGroupHeading(label, count, type) {
-  return `<div class="search-type-group">
-  <div class="search-type-group-heading">
-    <span class="search-type-badge search-type-${type}">${label}</span>
-    <span class="search-type-group-count">(${count})</span>
-  </div>
-</div>`;
-}
+// ---- Content-type tab rendering ----
 
 /**
  * Render a single FAQ result card.
@@ -425,9 +413,8 @@ function countGlossarResults(results) {
 }
 
 /**
- * Render unified search results grouped by content type.
- * Order: FAQ Antworten, Glossar, Paragraphen (Gesetze).
- * Groups with zero results are hidden entirely.
+ * Render unified search results with tabbed interface.
+ * Tabs: Paragraphen, FAQ, Glossar. Active tab shows results, empty tabs disabled.
  */
 function renderUnifiedResults(searchResult) {
   // Fall back to heroDropdown if searchDropdown was nulled by IntersectionObserver
@@ -455,42 +442,91 @@ function renderUnifiedResults(searchResult) {
     html += `<div class="search-filter-note">Filter gilt nur f\u00FCr Gesetzestexte</div>`;
   }
 
-  // FAQ section (first)
-  if (faq.results.length > 0) {
-    html += renderTypeGroupHeading('FAQ Antworten', totalFaq, 'faq');
-    for (const r of faq.results) {
-      html += renderFAQResult(r);
-    }
-  }
-
-  // Glossar section (second)
-  if (glossar.results.length > 0) {
-    html += renderTypeGroupHeading('Glossar', totalGlossar, 'glossar');
-    for (const r of glossar.results) {
-      html += renderGlossarResult(r);
-    }
-  }
-
-  // Gesetze section (third)
+  // Pre-render content HTML for each tab
+  let gesetzHtml = '';
   if (gesetz.results.length > 0) {
-    html += renderTypeGroupHeading('Paragraphen', totalGesetzSub, 'gesetz');
     if (!activeBundesland) {
-      html += renderGroupedResults(gesetz.results, currentQuery);
+      gesetzHtml += renderGroupedResults(gesetz.results, currentQuery);
     } else {
       for (const result of gesetz.results) {
-        html += renderPageResult(result, currentQuery);
+        gesetzHtml += renderPageResult(result, currentQuery);
       }
+    }
+    if (gesetz.hasMore) {
+      gesetzHtml += `<button class="search-show-all" data-action="show-all">Alle ${gesetz.totalCount} Paragraphen anzeigen</button>`;
     }
   }
 
-  // Show all button for Gesetze
-  if (gesetz.hasMore) {
-    html += `<button class="search-show-all" data-action="show-all">Alle ${gesetz.totalCount} Paragraphen anzeigen</button>`;
+  let faqHtml = '';
+  for (const r of faq.results) {
+    faqHtml += renderFAQResult(r);
   }
+
+  let glossarHtml = '';
+  for (const r of glossar.results) {
+    glossarHtml += renderGlossarResult(r);
+  }
+
+  // Determine tabs and default active
+  const tabs = [
+    { key: 'gesetz', label: 'Paragraphen', count: totalGesetzSub, content: gesetzHtml },
+    { key: 'faq', label: 'FAQ', count: totalFaq, content: faqHtml },
+    { key: 'glossar', label: 'Glossar', count: totalGlossar, content: glossarHtml },
+  ];
+
+  const defaultTab = tabs.find(t => t.count > 0)?.key || 'gesetz';
+
+  // Render tab bar
+  html += '<div class="search-tabs">';
+  for (const tab of tabs) {
+    const isActive = tab.key === defaultTab;
+    const disabled = tab.count === 0 ? ' disabled' : '';
+    const activeClass = isActive ? ' search-tab-active' : '';
+    html += `<button class="search-tab-btn${activeClass}" data-tab="${tab.key}"${disabled}>${tab.label} (${tab.count})</button>`;
+  }
+  html += '</div>';
+
+  // Render active tab content
+  const activeTab = tabs.find(t => t.key === defaultTab);
+  html += `<div id="search-tab-content">${activeTab?.content || ''}</div>`;
 
   searchDropdown.innerHTML = html;
 
-  // Wire up "show all" button
+  // Wire tab switching
+  const tabBtns = searchDropdown.querySelectorAll('.search-tab-btn');
+  const tabContent = searchDropdown.querySelector('#search-tab-content');
+  const tabData = {};
+  for (const tab of tabs) {
+    tabData[tab.key] = tab.content;
+  }
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabKey = btn.dataset.tab;
+      if (btn.disabled) return;
+      // Update active state
+      tabBtns.forEach(b => b.classList.remove('search-tab-active'));
+      btn.classList.add('search-tab-active');
+      // Switch content
+      tabContent.innerHTML = tabData[tabKey] || '';
+      // Re-wire show-all for gesetz tab
+      if (tabKey === 'gesetz') {
+        wireShowAllButton(gesetz, faq, glossar);
+      }
+    });
+  });
+
+  // Wire show-all button for initial render (if gesetz is default tab)
+  if (defaultTab === 'gesetz') {
+    wireShowAllButton(gesetz, faq, glossar);
+  }
+}
+
+/**
+ * Wire up the "show all" button within the Paragraphen tab.
+ */
+function wireShowAllButton(gesetz, faq, glossar) {
+  if (!searchDropdown) return;
   const showAllBtn = searchDropdown.querySelector('[data-action="show-all"]');
   if (showAllBtn && gesetz.allResults) {
     showAllBtn.addEventListener('click', async (e) => {
