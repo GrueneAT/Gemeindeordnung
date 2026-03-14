@@ -90,6 +90,18 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
     await expect(blSelect).toBeVisible();
   });
 
+  test('floating search FAB visible on mobile, opens modal on tap', async ({ page }) => {
+    await page.goto('./gemeindeordnungen/wien.html');
+
+    const fab = page.locator('#fab-search');
+    await expect(fab).toBeVisible();
+
+    // Tap should open search modal
+    await fab.click();
+    const modal = page.locator('.search-modal');
+    await expect(modal).toBeVisible({ timeout: 3000 });
+  });
+
   test('header nav links visible on mobile', async ({ page }) => {
     await page.goto('./gemeindeordnungen/wien.html');
 

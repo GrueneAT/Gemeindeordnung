@@ -237,11 +237,16 @@
       </div>
     </div>
   </footer>
-  <button id="scroll-to-top" class="fixed bottom-6 right-6 z-50 bg-gruene-dark text-white rounded-full p-3 shadow-lg hidden hover:bg-gruene-green transition-colors" aria-label="Zurück nach oben">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-      <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
-    </svg>
-  </button>
+  <div id="fab-container" class="fab-container">
+    <button id="fab-search" class="fab-btn fab-search" aria-label="Suche oeffnen">
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+    </button>
+    <button id="scroll-to-top" class="fab-btn fab-scroll-top hidden" aria-label="Zurück nach oben">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
+      </svg>
+    </button>
+  </div>
     <script type="module" src="js/main.js"></script>
   </body>
 </html>

@@ -1151,6 +1151,14 @@ function initSearch() {
     });
   }
 
+  // Wire up floating search FAB (mobile bottom-right)
+  const fabSearch = document.getElementById('fab-search');
+  if (fabSearch) {
+    fabSearch.addEventListener('click', () => {
+      openSearchModal();
+    });
+  }
+
   // Initialize inline scoped search on law/FAQ pages
   initInlineSearch();
 
