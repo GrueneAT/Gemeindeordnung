@@ -10,23 +10,13 @@
   </head>
   <body class="bg-white min-h-screen flex flex-col">
   <header data-pagefind-ignore class="sticky top-0 bg-white border-b border-gray-200 z-10">
-    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-      <a href="../index.html" class="flex items-center gap-2 text-gruene-dark hover:text-gruene-dark no-underline shrink-0">
-        <img src="../assets/gruene-logo.png" alt="Gruene Logo" class="w-8 h-8 gruene-logo" />
-        <span class="text-lg font-bold">gemeindeordnung.gruene.at</span>
+    <div class="max-w-5xl mx-auto px-4 py-2 flex items-center gap-2">
+      <a href="../index.html" class="flex items-center gap-1.5 text-gruene-dark hover:text-gruene-dark no-underline shrink-0">
+        <img src="../assets/gruene-logo.png" alt="Gruene Logo" class="w-7 h-7 gruene-logo" />
+        <span class="header-site-name text-sm sm:text-lg font-bold">gemeindeordnung.gruene.at</span>
       </a>
-      <nav class="flex items-center gap-2 text-xs sm:text-sm shrink-0 sm:ml-4" data-pagefind-ignore>
-        <a href="../faq/index.html" class="text-gruene-dark hover:underline whitespace-nowrap">FAQ</a>
-        <span class="text-gray-300">|</span>
-        <a href="../glossar.html" class="text-gruene-dark hover:underline whitespace-nowrap">Glossar</a>
-      </nav>
-      <button id="search-modal-trigger" class="search-trigger-btn" aria-label="Suche oeffnen (Ctrl+K)" title="Suche (Ctrl+K)">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-      </button>
-      <div class="mt-2 sm:mt-0">
-        <div class="bl-switcher" data-pagefind-ignore>
-          <label for="bl-switcher-select" class="bl-switcher-label">Andere Gemeindeordnung anzeigen</label>
-          <select id="bl-switcher-select" class="bl-switcher-select" onchange="if(this.value) window.location.href=this.value">
+      <div class="flex-1"></div>
+          <select id="bl-switcher-select" class="bl-header-select" aria-label="Andere Gemeindeordnung anzeigen" data-pagefind-ignore onchange="if(this.value) window.location.href=this.value">
             <optgroup label="Gemeindeordnungen">
             <option value="../gemeindeordnungen/burgenland.html">Burgenland</option>
             <option value="../gemeindeordnungen/kaernten.html">Kaernten</option>
@@ -55,8 +45,14 @@
             <option value="../stadtrechte/innsbruck.html">Innsbruck</option>
             </optgroup>
           </select>
-        </div>
-      </div>
+      <nav class="flex items-center gap-1.5 text-xs shrink-0" data-pagefind-ignore>
+        <a href="../faq/index.html" class="text-gruene-dark hover:underline whitespace-nowrap">FAQ</a>
+        <span class="text-gray-300">|</span>
+        <a href="../glossar.html" class="text-gruene-dark hover:underline whitespace-nowrap">Glossar</a>
+      </nav>
+      <button id="search-modal-trigger" class="search-trigger-btn" aria-label="Suche oeffnen (Ctrl+K)" title="Suche (Ctrl+K)">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      </button>
     </div>
   </header>
   <nav data-pagefind-ignore aria-label="Breadcrumb" class="max-w-5xl mx-auto px-4 py-2 text-sm">
@@ -75,7 +71,7 @@
         <p class="mt-1 text-gruene-dark/80">Wr. Neustadt (Wr. Neustadt)</p>
         <p class="mt-1 text-sm text-gray-600">Stand: 13.03.2026</p>
       </header>
-      <div class="inline-search-container" data-pagefind-ignore data-search-scope="gesetz" data-search-filter-bundesland="Wr. Neustadt">
+      <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="gesetz" data-search-filter-bundesland="Wr. Neustadt">
         <div class="relative">
           <input type="search" class="inline-search-input" autocomplete="off"
             placeholder="In Wr. Neustadt suchen..." minlength="3" />
