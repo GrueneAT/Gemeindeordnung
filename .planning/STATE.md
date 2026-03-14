@@ -39,7 +39,7 @@ Next step: /gsd:new-milestone
 | 19 | Compact mobile BL selector in header, hide mobile inline search | 2026-03-14 | 6a682bc | [19-compact-mobile-bl-selector-in-header-mob](./quick/19-compact-mobile-bl-selector-in-header-mob/) |
 | 20 | Remove BL filter pills, add tabbed search results | 2026-03-14 | 1268c7a | [20-remove-bl-filter-pills-use-select-in-hea](./quick/20-remove-bl-filter-pills-use-select-in-hea/) |
 | 21 | Make header non-sticky on mobile, keep sticky on desktop | 2026-03-14 | ee9f49f | [21-make-header-non-sticky-on-mobile-keep-st](./quick/21-make-header-non-sticky-on-mobile-keep-st/) |
-| 22 | Mobile header search field, revert sticky header | 2026-03-14 | ff10f7b | [22-add-floating-search-fab-on-mobile-bottom](./quick/22-add-floating-search-fab-on-mobile-bottom/) |
+| 22 | Mobile header search field + floating search FAB, revert sticky header | 2026-03-14 | a6fa8b7 | [22-add-floating-search-fab-on-mobile-bottom](./quick/22-add-floating-search-fab-on-mobile-bottom/) |
 
 ## Session Continuity
 
