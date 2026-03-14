@@ -1136,6 +1136,21 @@ function initSearch() {
     });
   }
 
+  // Wire up mobile header search field (opens modal on focus)
+  const headerSearchField = document.getElementById('header-search-field');
+  if (headerSearchField) {
+    headerSearchField.addEventListener('focus', (e) => {
+      e.preventDefault();
+      headerSearchField.blur();
+      openSearchModal();
+    });
+    headerSearchField.addEventListener('click', (e) => {
+      e.preventDefault();
+      headerSearchField.blur();
+      openSearchModal();
+    });
+  }
+
   // Initialize inline scoped search on law/FAQ pages
   initInlineSearch();
 

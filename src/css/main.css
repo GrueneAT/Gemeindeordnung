@@ -26,12 +26,7 @@ html, body {
 
 /* Scroll margin for sticky header clearance on anchored paragraphs */
 h3[id] {
-  scroll-margin-top: 1rem;
-}
-@media (min-width: 640px) {
-  h3[id] {
-    scroll-margin-top: 5rem;
-  }
+  scroll-margin-top: 5rem;
 }
 
 /* Anchor highlight applied via JS */
@@ -350,6 +345,34 @@ details > summary::-webkit-details-marker {
   padding: 0.5rem 0.75rem;
   font-size: 0.8125rem;
   color: #6b7280;
+}
+
+/* ---- Header Search Field (mobile) / Search Icon (desktop) ---- */
+
+.header-search-field {
+  flex: 1;
+  min-width: 0;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8125rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background: #f9fafb;
+  color: #6b7280;
+  cursor: pointer;
+  caret-color: transparent;
+}
+
+/* Mobile: show search field, hide icon button */
+/* Desktop: hide search field, show icon button */
+@media (min-width: 640px) {
+  .header-search-field {
+    display: none;
+  }
+}
+@media (max-width: 639px) {
+  .search-trigger-btn {
+    display: none !important;
+  }
 }
 
 /* ---- Search Modal ---- */

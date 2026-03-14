@@ -47,8 +47,8 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
     const main = page.locator('main');
     await expect(main).toBeVisible();
 
-    // Navigation header should be visible
-    const header = page.locator('header[data-pagefind-ignore]');
+    // Navigation header (sticky top bar) should be visible
+    const header = page.locator('header.sticky');
     await expect(header).toBeVisible();
 
     await page.screenshot({ path: 'e2e/screenshots/mobile-law-page.png', fullPage: false });
@@ -57,7 +57,7 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
   test('header fits on one line at 375px viewport (compact)', async ({ page }) => {
     await page.goto('./gemeindeordnungen/wien.html');
 
-    const header = page.locator('header[data-pagefind-ignore]');
+    const header = page.locator('header.sticky');
     const headerBox = await header.boundingBox();
     // Header should be compact -- single line should be under 60px height
     expect(headerBox.height).toBeLessThan(60);
@@ -71,11 +71,16 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
     await expect(inlineSearch).toBeHidden();
   });
 
-  test('search modal trigger button is visible on mobile', async ({ page }) => {
+  test('header search field is visible on mobile and opens modal', async ({ page }) => {
     await page.goto('./gemeindeordnungen/wien.html');
 
-    const searchBtn = page.locator('#search-modal-trigger');
-    await expect(searchBtn).toBeVisible();
+    const searchField = page.locator('#header-search-field');
+    await expect(searchField).toBeVisible();
+    await expect(searchField).toHaveAttribute('placeholder', 'Suchen...');
+
+    // Icon button should be hidden on mobile
+    const iconBtn = page.locator('#search-modal-trigger');
+    await expect(iconBtn).toBeHidden();
   });
 
   test('BL header select is visible on mobile law page', async ({ page }) => {
