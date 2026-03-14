@@ -270,17 +270,14 @@ function buildBundeslandSwitcher(currentKey, currentCategory) {
     stadtOptions.push(`            <option value="../stadtrechte/${key}.html"${selected}>${escapeHtml(law.bundesland)}</option>`);
   }
 
-  return `        <div class="bl-switcher" data-pagefind-ignore>
-          <label for="bl-switcher-select" class="bl-switcher-label">Andere Gemeindeordnung anzeigen</label>
-          <select id="bl-switcher-select" class="bl-switcher-select" onchange="if(this.value) window.location.href=this.value">
+  return `          <select id="bl-switcher-select" class="bl-header-select" aria-label="Andere Gemeindeordnung anzeigen" data-pagefind-ignore onchange="if(this.value) window.location.href=this.value">
             <optgroup label="Gemeindeordnungen">
 ${goOptions.join('\n')}
             </optgroup>
             <optgroup label="Stadtrechte">
 ${stadtOptions.join('\n')}
             </optgroup>
-          </select>
-        </div>`;
+          </select>`;
 }
 
 /**
@@ -317,27 +314,25 @@ function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
   const indexPath = `${prefix}index.html`;
 
   const switcher = isLawPage ? buildBundeslandSwitcher(currentKey, currentCategory) : '';
-  const rightSection = switcher
-    ? `      <div class="mt-2 sm:mt-0">\n${switcher}\n      </div>`
-    : '';
 
   const searchHTML = generateSearchHTML();
 
-  const navLinks = `      <nav class="flex items-center gap-2 text-xs sm:text-sm shrink-0 sm:ml-4" data-pagefind-ignore>
+  const navLinks = `      <nav class="flex items-center gap-1.5 text-xs shrink-0" data-pagefind-ignore>
         <a href="${prefix}faq/index.html" class="text-gruene-dark hover:underline whitespace-nowrap">FAQ</a>
         <span class="text-gray-300">|</span>
         <a href="${prefix}glossar.html" class="text-gruene-dark hover:underline whitespace-nowrap">Glossar</a>
       </nav>`;
 
   return `  <header data-pagefind-ignore class="sticky top-0 bg-white border-b border-gray-200 z-10">
-    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-      <a href="${indexPath}" class="flex items-center gap-2 text-gruene-dark hover:text-gruene-dark no-underline shrink-0">
-        <img src="${logoPath}" alt="Gruene Logo" class="w-8 h-8 gruene-logo" />
-        <span class="text-lg font-bold">gemeindeordnung.gruene.at</span>
+    <div class="max-w-5xl mx-auto px-4 py-2 flex items-center gap-2">
+      <a href="${indexPath}" class="flex items-center gap-1.5 text-gruene-dark hover:text-gruene-dark no-underline shrink-0">
+        <img src="${logoPath}" alt="Gruene Logo" class="w-7 h-7 gruene-logo" />
+        <span class="header-site-name text-sm sm:text-lg font-bold">gemeindeordnung.gruene.at</span>
       </a>
+      <div class="flex-1"></div>
+${switcher}
 ${navLinks}
 ${searchHTML}
-${rightSection}
     </div>
   </header>`;
 }
@@ -484,7 +479,7 @@ ${breadcrumbHtml}
         <p class="mt-1 text-gruene-dark/80">${bundesland}${stadtInfo}</p>
         <p class="mt-1 text-sm text-gray-600">Stand: ${standDatum}</p>
       </header>
-      <div class="inline-search-container" data-pagefind-ignore data-search-scope="gesetz" data-search-filter-bundesland="${escapeHtml(law.meta.bundesland)}">
+      <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="gesetz" data-search-filter-bundesland="${escapeHtml(law.meta.bundesland)}">
         <div class="relative">
           <input type="search" class="inline-search-input" autocomplete="off"
             placeholder="In ${escapeHtml(law.meta.bundesland)} suchen..." minlength="3" />
@@ -701,7 +696,7 @@ ${headerHtml}
       <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
         <strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
       </div>
-      <div class="inline-search-container" data-pagefind-ignore data-search-scope="faq">
+      <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="faq">
         <div class="relative">
           <input type="search" class="inline-search-input" autocomplete="off"
             placeholder="FAQ durchsuchen..." minlength="3" />
@@ -772,7 +767,7 @@ ${headerHtml}
         <h1 class="text-3xl font-bold text-gruene-dark">${genderText(escapeHtml(topic.title))}</h1>
         <p class="mt-1 text-gruene-dark/80">${genderText(escapeHtml(topic.description))}</p>
       </header>
-      <div class="inline-search-container" data-pagefind-ignore data-search-scope="faq">
+      <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="faq">
         <div class="relative">
           <input type="search" class="inline-search-input" autocomplete="off"
             placeholder="FAQ durchsuchen..." minlength="3" />
