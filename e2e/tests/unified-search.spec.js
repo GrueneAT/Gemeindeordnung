@@ -168,11 +168,11 @@ test.describe('Unified search: mobile modal', () => {
   test('mobile tabbed results in modal', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto('./gemeindeordnungen/wien.html');
-    await page.waitForSelector('#search-modal-trigger', { state: 'visible' });
+    await page.waitForSelector('#header-search-field', { state: 'visible' });
     await page.waitForTimeout(500);
 
-    // Open modal via keyboard shortcut
-    await page.keyboard.press('/');
+    // Open modal via header search field tap
+    await page.click('#header-search-field');
     const modal = page.locator('.search-modal');
     await expect(modal).toBeVisible({ timeout: 3000 });
 

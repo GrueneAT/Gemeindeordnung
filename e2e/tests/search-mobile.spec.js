@@ -1,14 +1,14 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Mobile search modal', () => {
-  test('mobile modal opens via keyboard shortcut, shows results, and closes', async ({ page }) => {
+  test('mobile modal opens via header search field, shows results, and closes', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto('./gemeindeordnungen/wien.html');
-    await page.waitForSelector('#search-modal-trigger', { state: 'visible' });
+    await page.waitForSelector('#header-search-field', { state: 'visible' });
     await page.waitForTimeout(500);
 
-    // On mobile, pressing / should open the search modal
-    await page.keyboard.press('/');
+    // On mobile, tapping the header search field should open the search modal
+    await page.click('#header-search-field');
 
     // Wait for modal to appear
     const modal = page.locator('.search-modal');

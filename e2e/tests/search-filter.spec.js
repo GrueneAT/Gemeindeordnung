@@ -24,7 +24,6 @@ test.describe('Search Bundesland filter (SUCH-04, SUCH-05)', () => {
 
     // Navigate to a law page
     await page.goto('./gemeindeordnungen/wien.html');
-    await page.waitForSelector('#search-modal-trigger', { state: 'visible' });
     await page.waitForTimeout(500);
 
     // Verify Wien is still saved in LocalStorage
