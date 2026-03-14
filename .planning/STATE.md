@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed quick-18 plan
-last_updated: "2026-03-13T16:34:00.000Z"
+stopped_at: Completed quick-19 plan
+last_updated: "2026-03-14T08:51:28Z"
 ---
 
 # Project State
@@ -36,9 +36,10 @@ Next step: /gsd:new-milestone
 | 16 | Staleness detection: extract fassungVom, add --check flag | 2026-03-13 | 7ad2ab6 | [16-add-staleness-detection-extract-fassungv](./quick/16-add-staleness-detection-extract-fassungv/) |
 | 17 | Granular LLM regeneration: --paragraph, --question, --term flags | 2026-03-13 | 7f20dae | [17-granular-llm-regeneration-per-paragraph-](./quick/17-granular-llm-regeneration-per-paragraph-/) |
 | 18 | Fix search: stemming false positive filter + dropdown ref race + generation counters | 2026-03-13 | 4323b1a | [18-fix-search-not-updating-after-initial-3-](./quick/18-fix-search-not-updating-after-initial-3-/) |
+| 19 | Compact mobile BL selector in header, hide mobile inline search | 2026-03-14 | 89d11a1 | [19-compact-mobile-bl-selector-in-header-mob](./quick/19-compact-mobile-bl-selector-in-header-mob/) |
 
 ## Session Continuity
 
-Last session: 2026-03-13
-Stopped at: Completed quick task 18
+Last session: 2026-03-14
+Stopped at: Completed quick task 19
 Resume file: None
