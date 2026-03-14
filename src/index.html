@@ -40,33 +40,37 @@
               class="w-full text-lg py-4 pl-12 pr-4 rounded-xl border-2 border-gruene-green/50 shadow-lg bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
             <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           </div>
-          <div id="hero-search-chips" class="bl-selector-container mt-3 flex flex-wrap justify-center gap-1.5">
-            <button class="bl-selector-pill bl-pill-active" data-bl="">Alle</button>
-            <button class="bl-selector-pill bl-pill-inactive" data-bl="Burgenland">Burgenland</button>
-            <button class="bl-selector-pill bl-pill-inactive" data-bl="Kaernten">Kaernten</button>
-            <button class="bl-selector-pill bl-pill-inactive" data-bl="Niederoesterreich">Niederoesterreich</button>
-            <button class="bl-selector-pill bl-pill-inactive" data-bl="Oberoesterreich">Oberoesterreich</button>
-            <button class="bl-selector-pill bl-pill-inactive" data-bl="Salzburg">Salzburg</button>
-            <button class="bl-selector-pill bl-pill-inactive" data-bl="Steiermark">Steiermark</button>
-            <button class="bl-selector-pill bl-pill-inactive" data-bl="Tirol">Tirol</button>
-            <button class="bl-selector-pill bl-pill-inactive" data-bl="Vorarlberg">Vorarlberg</button>
-            <button class="bl-selector-pill bl-pill-inactive" data-bl="Wien">Wien</button>
-          </div>
-          <div id="hero-search-chips-stadt" class="bl-selector-container mt-2 flex flex-wrap justify-center gap-1">
-            <button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="Eisenstadt">Eisenstadt</button>
-            <button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="Graz">Graz</button>
-            <button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="Innsbruck">Innsbruck</button>
-            <button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="Klagenfurt">Klagenfurt</button>
-            <button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="Krems">Krems</button>
-            <button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="Linz">Linz</button>
-            <button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="Rust">Rust</button>
-            <button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="Salzburg Stadt">Salzburg Stadt</button>
-            <button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="St. Poelten">St. Poelten</button>
-            <button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="Steyr">Steyr</button>
-            <button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="Villach">Villach</button>
-            <button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="Waidhofen/Ybbs">Waidhofen/Ybbs</button>
-            <button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="Wels">Wels</button>
-            <button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="Wr. Neustadt">Wr. Neustadt</button>
+          <div class="mt-3 flex justify-center">
+                      <select id="hero-bl-select" class="bl-header-select" aria-label="Bundesland filtern" data-pagefind-ignore>
+              <option value="">Alle Bundesländer</option>
+              <optgroup label="Gemeindeordnungen">
+              <option value="Burgenland">Burgenland</option>
+              <option value="Kaernten">Kaernten</option>
+              <option value="Niederoesterreich">Niederoesterreich</option>
+              <option value="Oberoesterreich">Oberoesterreich</option>
+              <option value="Salzburg">Salzburg</option>
+              <option value="Steiermark">Steiermark</option>
+              <option value="Tirol">Tirol</option>
+              <option value="Vorarlberg">Vorarlberg</option>
+              <option value="Wien">Wien</option>
+              </optgroup>
+              <optgroup label="Stadtrechte">
+              <option value="Eisenstadt">Eisenstadt</option>
+              <option value="Rust">Rust</option>
+              <option value="Klagenfurt">Klagenfurt</option>
+              <option value="Villach">Villach</option>
+              <option value="Krems">Krems</option>
+              <option value="St. Poelten">St. Poelten</option>
+              <option value="Waidhofen/Ybbs">Waidhofen/Ybbs</option>
+              <option value="Wr. Neustadt">Wr. Neustadt</option>
+              <option value="Linz">Linz</option>
+              <option value="Steyr">Steyr</option>
+              <option value="Wels">Wels</option>
+              <option value="Salzburg Stadt">Salzburg Stadt</option>
+              <option value="Graz">Graz</option>
+              <option value="Innsbruck">Innsbruck</option>
+              </optgroup>
+            </select>
           </div>
           <div id="hero-search-dropdown" class="search-dropdown hidden mt-2"></div>
         </div>

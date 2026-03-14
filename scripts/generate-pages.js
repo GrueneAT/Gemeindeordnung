@@ -281,6 +281,32 @@ ${stadtOptions.join('\n')}
 }
 
 /**
+ * Build BL select dropdown for the index page hero (filter-only, does not navigate).
+ * Used to set the Bundesland filter for search on the index page.
+ */
+function buildHeroBundeslandSelect() {
+  const goOptions = [];
+  for (const [, law] of Object.entries(LAWS.gemeindeordnungen)) {
+    goOptions.push(`              <option value="${escapeHtml(law.bundesland)}">${escapeHtml(law.bundesland)}</option>`);
+  }
+
+  const stadtOptions = [];
+  for (const [, law] of Object.entries(LAWS.stadtrechte)) {
+    stadtOptions.push(`              <option value="${escapeHtml(law.bundesland)}">${escapeHtml(law.bundesland)}</option>`);
+  }
+
+  return `          <select id="hero-bl-select" class="bl-header-select" aria-label="Bundesland filtern" data-pagefind-ignore>
+              <option value="">Alle Bundesl\u00E4nder</option>
+              <optgroup label="Gemeindeordnungen">
+${goOptions.join('\n')}
+              </optgroup>
+              <optgroup label="Stadtrechte">
+${stadtOptions.join('\n')}
+              </optgroup>
+            </select>`;
+}
+
+/**
  * Generate the scroll-to-top floating button HTML.
  */
 function generateScrollToTop() {
@@ -568,29 +594,8 @@ ${cards}
               ${glossarChips}`;
   }
 
-  // Extract BL names (Gemeindeordnungen) and Statutarstadt names separately
-  const blNames = [];
-  for (const law of Object.values(LAWS.gemeindeordnungen)) {
-    blNames.push(law.bundesland);
-  }
-  blNames.sort((a, b) => a.localeCompare(b, 'de'));
-
-  const stadtNames = [];
-  for (const law of Object.values(LAWS.stadtrechte)) {
-    stadtNames.push(law.bundesland);
-  }
-  stadtNames.sort((a, b) => a.localeCompare(b, 'de'));
-
-  // Build BL pill buttons HTML - all values for Pagefind filter
-  const blPillsHtml = [
-    '<button class="bl-selector-pill bl-pill-active" data-bl="">Alle</button>',
-    ...blNames.map(bl => `<button class="bl-selector-pill bl-pill-inactive" data-bl="${escapeHtml(bl)}">${escapeHtml(bl)}</button>`),
-  ].join('\n            ');
-
-  // Statutarstadt pills (smaller, secondary row)
-  const stadtPillsHtml = stadtNames.map(bl =>
-    `<button class="bl-selector-pill bl-selector-stadt bl-pill-inactive" data-bl="${escapeHtml(bl)}">${escapeHtml(bl)}</button>`
-  ).join('\n            ');
+  // Build hero BL select dropdown (filter-only, does not navigate)
+  const heroBlSelectHtml = buildHeroBundeslandSelect();
 
   const headerHtml = generateHeader(false);
   const footerHtml = generateFooter({ isLawPage: false });
@@ -611,11 +616,8 @@ ${cards}
               class="w-full text-lg py-4 pl-12 pr-4 rounded-xl border-2 border-gruene-green/50 shadow-lg bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
             <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           </div>
-          <div id="hero-search-chips" class="bl-selector-container mt-3 flex flex-wrap justify-center gap-1.5">
-            ${blPillsHtml}
-          </div>
-          <div id="hero-search-chips-stadt" class="bl-selector-container mt-2 flex flex-wrap justify-center gap-1">
-            ${stadtPillsHtml}
+          <div class="mt-3 flex justify-center">
+            ${heroBlSelectHtml}
           </div>
           <div id="hero-search-dropdown" class="search-dropdown hidden mt-2"></div>
         </div>

@@ -11,7 +11,6 @@ let activeBundesland = null;
 let currentQuery = '';
 let searchInput = null;
 let searchDropdown = null;
-let searchChips = null;
 let modalActive = false;
 let searchTimer = null;
 let searchGeneration = 0;
@@ -19,7 +18,6 @@ let searchGeneration = 0;
 // Hero search state (index page only)
 let heroInput = null;
 let heroDropdown = null;
-let heroChips = null;
 let heroActive = false; // true when hero elements exist (index page)
 
 /**
@@ -603,7 +601,9 @@ function renderEmptyState(query, bundesland) {
     searchAllBtn.addEventListener('click', (e) => {
       e.preventDefault();
       activeBundesland = null;
-      renderFilterChips();
+      // Sync hero BL select if present
+      const heroBlSelect = document.getElementById('hero-bl-select');
+      if (heroBlSelect) heroBlSelect.value = '';
       if (currentQuery.length >= 3) {
         triggerSearch();
       }
@@ -623,79 +623,6 @@ function getIndexPath() {
   return 'index.html';
 }
 
-/**
- * All 9 Austrian Bundeslaender for BL pill rendering.
- */
-const ALL_BUNDESLAENDER = [
-  'Burgenland', 'Eisenstadt', 'Graz', 'Innsbruck', 'Kaernten',
-  'Klagenfurt', 'Krems', 'Linz', 'Niederoesterreich', 'Oberoesterreich',
-  'Rust', 'Salzburg', 'Salzburg Stadt', 'St. Poelten', 'Steiermark',
-  'Steyr', 'Tirol', 'Villach', 'Vorarlberg', 'Waidhofen/Ybbs',
-  'Wels', 'Wien', 'Wr. Neustadt',
-];
-
-/**
- * Update active state on all BL pills within a container.
- */
-function updatePillStates(container) {
-  if (!container) return;
-  const pills = container.querySelectorAll('.bl-selector-pill');
-  pills.forEach((pill) => {
-    const bl = pill.dataset.bl || null;
-    const isActive = bl === activeBundesland;
-    pill.classList.toggle('bl-pill-active', isActive);
-    pill.classList.toggle('bl-pill-inactive', !isActive);
-  });
-}
-
-/**
- * Wire click handlers on all BL pills in a container.
- */
-function wirePillHandlers(container) {
-  if (!container) return;
-  container.querySelectorAll('.bl-selector-pill').forEach((pill) => {
-    pill.addEventListener('click', (e) => {
-      e.preventDefault();
-      const bl = pill.dataset.bl || null;
-      activeBundesland = bl;
-      if (bl) {
-        saveBundesland(bl);
-      }
-      // Update all pill containers
-      updatePillStates(heroChips);
-      updatePillStates(searchChips);
-      if (currentQuery.length >= 3) {
-        triggerSearch();
-      }
-    });
-  });
-}
-
-/**
- * Render BL selector pills into a container.
- * On index page hero, pills are pre-rendered in HTML so we only wire handlers.
- * For modal and non-index pages, we render dynamically.
- */
-function renderFilterChips() {
-  if (!searchChips) return;
-
-  // Check if pills are already pre-rendered (index page hero)
-  const existingPills = searchChips.querySelectorAll('.bl-selector-pill');
-  if (existingPills.length > 0) {
-    // Just update active states
-    updatePillStates(searchChips);
-    return;
-  }
-
-  // Dynamically render pills (modal, law pages)
-  let html = '<button class="bl-selector-pill ' + (!activeBundesland ? 'bl-pill-active' : 'bl-pill-inactive') + '" data-bl="">Alle</button>';
-  for (const bl of ALL_BUNDESLAENDER) {
-    const isActive = activeBundesland === bl;
-    html += `<button class="bl-selector-pill ${isActive ? 'bl-pill-active' : 'bl-pill-inactive'}" data-bl="${escapeForDisplay(bl)}">${escapeForDisplay(bl)}</button>`;
-  }
-  searchChips.innerHTML = html;
-  wirePillHandlers(searchChips);
-}
 
 /**
  * Handle search input events with manual debounce.
@@ -804,7 +731,6 @@ function openSearchModal(prefilterBundesland = null) {
           class="w-full border border-gray-300 rounded-lg pl-9 pr-3 py-2.5 text-base bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
         <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
       </div>
-      <div id="search-modal-chips" class="bl-selector-container mt-2 flex flex-wrap gap-1.5"></div>
     </div>
     <div id="search-modal-results" class="search-modal-results"></div>
   `;
@@ -818,17 +744,14 @@ function openSearchModal(prefilterBundesland = null) {
   // Get modal elements
   const modalInput = document.getElementById('search-modal-input');
   const modalResults = document.getElementById('search-modal-results');
-  const modalChips = document.getElementById('search-modal-chips');
 
   // Store previous refs to restore on close
   const prevInput = searchInput;
   const prevDropdown = searchDropdown;
-  const prevChips = searchChips;
 
   // Swap to modal refs
   searchInput = modalInput;
   searchDropdown = modalResults;
-  searchChips = modalChips;
 
   // Apply pre-filter if provided (from inline search trigger), otherwise auto-detect from page
   if (prefilterBundesland) {
@@ -839,9 +762,6 @@ function openSearchModal(prefilterBundesland = null) {
       activeBundesland = pageBL;
     }
   }
-
-  // Render BL pills
-  renderFilterChips();
 
   // Pre-fill query if exists
   if (currentQuery) {
@@ -873,7 +793,6 @@ function openSearchModal(prefilterBundesland = null) {
   backdrop._restore = () => {
     searchInput = prevInput;
     searchDropdown = prevDropdown;
-    searchChips = prevChips;
   };
 }
 
@@ -967,14 +886,12 @@ function setupHeroObserver() {
             // Hero visible -- use hero as primary
             searchInput = heroInput;
             searchDropdown = heroDropdown;
-            searchChips = heroChips;
             // Sync query to hero
             if (currentQuery) heroInput.value = currentQuery;
           } else {
             // Hero scrolled out -- primary refs are null (search via modal only)
             searchInput = null;
             searchDropdown = null;
-            searchChips = null;
             // Hide hero dropdown
             heroDropdown?.classList.add('hidden');
           }
@@ -1131,14 +1048,12 @@ function initSearch() {
   // Hero search elements (index page only)
   heroInput = document.getElementById('hero-search-input');
   heroDropdown = document.getElementById('hero-search-dropdown');
-  heroChips = document.getElementById('hero-search-chips');
 
   // Set primary search refs -- hero takes priority on index page
   if (heroInput) {
     heroActive = true;
     searchInput = heroInput;
     searchDropdown = heroDropdown;
-    searchChips = heroChips;
   }
 
   // Auto-detect Bundesland from current page, fall back to saved
@@ -1150,17 +1065,23 @@ function initSearch() {
     activeBundesland = getSavedBundesland();
   }
 
-  // Wire pre-rendered BL pills on index page hero
-  if (heroActive && heroChips) {
-    wirePillHandlers(heroChips);
-    updatePillStates(heroChips);
-  }
-
-  // Wire Statutarstadt pills on index page hero (second row)
-  const heroChipsStadt = document.getElementById('hero-search-chips-stadt');
-  if (heroActive && heroChipsStadt) {
-    wirePillHandlers(heroChipsStadt);
-    updatePillStates(heroChipsStadt);
+  // Wire hero BL select dropdown on index page
+  const heroBlSelect = document.getElementById('hero-bl-select');
+  if (heroActive && heroBlSelect) {
+    // Sync initial value from saved state
+    if (activeBundesland) {
+      heroBlSelect.value = activeBundesland;
+    }
+    heroBlSelect.addEventListener('change', () => {
+      const val = heroBlSelect.value;
+      activeBundesland = val || null;
+      if (val) {
+        saveBundesland(val);
+      }
+      if (currentQuery.length >= 3) {
+        triggerSearch();
+      }
+    });
   }
 
   // Pre-load Pagefind WASM
@@ -1211,5 +1132,4 @@ export {
   initSearch,
   renderResults,
   renderUnifiedResults,
-  renderFilterChips,
 };
