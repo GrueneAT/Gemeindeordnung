@@ -47,8 +47,8 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
     const main = page.locator('main');
     await expect(main).toBeVisible();
 
-    // Navigation header (sticky top bar) should be visible
-    const header = page.locator('header.sticky');
+    // Navigation header should be visible
+    const header = page.locator('header[data-pagefind-ignore]');
     await expect(header).toBeVisible();
 
     await page.screenshot({ path: 'e2e/screenshots/mobile-law-page.png', fullPage: false });
@@ -57,7 +57,7 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
   test('header fits on one line at 375px viewport (compact)', async ({ page }) => {
     await page.goto('./gemeindeordnungen/wien.html');
 
-    const header = page.locator('header.sticky');
+    const header = page.locator('header[data-pagefind-ignore]');
     const headerBox = await header.boundingBox();
     // Header should be compact -- single line should be under 60px height
     expect(headerBox.height).toBeLessThan(60);

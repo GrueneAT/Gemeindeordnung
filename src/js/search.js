@@ -437,11 +437,6 @@ function renderUnifiedResults(searchResult) {
 
   let html = renderCountHeader(totalAll, activeBundesland);
 
-  // BL filter note
-  if (activeBundesland) {
-    html += `<div class="search-filter-note">Filter gilt nur f\u00FCr Gesetzestexte</div>`;
-  }
-
   // Pre-render content HTML for each tab
   let gesetzHtml = '';
   if (gesetz.results.length > 0) {

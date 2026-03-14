@@ -26,7 +26,12 @@ html, body {
 
 /* Scroll margin for sticky header clearance on anchored paragraphs */
 h3[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 1rem;
+}
+@media (min-width: 640px) {
+  h3[id] {
+    scroll-margin-top: 5rem;
+  }
 }
 
 /* Anchor highlight applied via JS */
@@ -489,14 +494,6 @@ details > summary::-webkit-details-marker {
 .search-tab-btn:disabled {
   color: #d1d5db;
   cursor: default;
-}
-
-/* BL filter note (shown when BL filter active) */
-.search-filter-note {
-  font-size: 0.75rem;
-  color: #6b7280;
-  padding: 0.25rem 0.75rem;
-  font-style: italic;
 }
 
 /* Inline type label for FAQ/Glossar result cards */

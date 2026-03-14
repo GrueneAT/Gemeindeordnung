@@ -4,8 +4,8 @@ test.describe('Navigation consistency and header links', () => {
   test('NAV-01: header consistent across pages', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name === 'mobile', 'Nav links hidden on mobile for non-index pages by design');
 
-    // Use sticky header selector to avoid matching content <header> elements on law pages
-    const stickyHeader = 'header.sticky';
+    // Use data-pagefind-ignore selector to target site header (not content <header> on law pages)
+    const stickyHeader = 'header[data-pagefind-ignore]';
 
     // Check index page header
     await page.goto('./index.html');

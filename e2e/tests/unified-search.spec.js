@@ -156,12 +156,6 @@ test.describe('Unified search: BL filter behavior', () => {
     await page.fill(SEARCH_INPUT, 'Gemeinderat');
     await page.waitForSelector('.search-tabs', { timeout: 8000 });
 
-    // Filter note should be visible
-    const filterNote = page.locator('.search-filter-note');
-    await expect(filterNote).toBeVisible();
-    await expect(filterNote).toContainText('Filter gilt nur');
-    await expect(filterNote).toContainText('Gesetzestexte');
-
     // Tabs should still show results
     const tabs = page.locator('.search-tab-btn');
     await expect(tabs).toHaveCount(3);

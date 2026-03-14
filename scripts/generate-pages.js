@@ -349,7 +349,7 @@ function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
         <a href="${prefix}glossar.html" class="text-gruene-dark hover:underline whitespace-nowrap">Glossar</a>
       </nav>`;
 
-  return `  <header data-pagefind-ignore class="sticky top-0 bg-white border-b border-gray-200 z-10">
+  return `  <header data-pagefind-ignore class="sm:sticky top-0 bg-white border-b border-gray-200 z-10">
     <div class="max-w-5xl mx-auto px-4 py-2 flex items-center gap-2">
       <a href="${indexPath}" class="flex items-center gap-1.5 text-gruene-dark hover:text-gruene-dark no-underline shrink-0">
         <img src="${logoPath}" alt="Gruene Logo" class="w-7 h-7 gruene-logo" />
