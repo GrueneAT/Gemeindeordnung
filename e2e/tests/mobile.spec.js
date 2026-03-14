@@ -53,4 +53,47 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
 
     await page.screenshot({ path: 'e2e/screenshots/mobile-law-page.png', fullPage: false });
   });
+
+  test('header fits on one line at 375px viewport (compact)', async ({ page }) => {
+    await page.goto('./gemeindeordnungen/wien.html');
+
+    const header = page.locator('header.sticky');
+    const headerBox = await header.boundingBox();
+    // Header should be compact -- single line should be under 60px height
+    expect(headerBox.height).toBeLessThan(60);
+  });
+
+  test('inline search is hidden on mobile law page', async ({ page }) => {
+    await page.goto('./gemeindeordnungen/wien.html');
+
+    // Inline search container should NOT be visible at 375px
+    const inlineSearch = page.locator('.inline-search-container');
+    await expect(inlineSearch).toBeHidden();
+  });
+
+  test('search modal trigger button is visible on mobile', async ({ page }) => {
+    await page.goto('./gemeindeordnungen/wien.html');
+
+    const searchBtn = page.locator('#search-modal-trigger');
+    await expect(searchBtn).toBeVisible();
+  });
+
+  test('BL header select is visible on mobile law page', async ({ page }) => {
+    await page.goto('./gemeindeordnungen/wien.html');
+
+    const blSelect = page.locator('select.bl-header-select');
+    await expect(blSelect).toBeVisible();
+  });
+
+  test('header nav links visible on mobile', async ({ page }) => {
+    await page.goto('./gemeindeordnungen/wien.html');
+
+    const faqLink = page.locator('header nav a[href*="faq"]');
+    await expect(faqLink).toBeVisible();
+
+    const glossarLink = page.locator('header nav a[href*="glossar"]');
+    await expect(glossarLink).toBeVisible();
+
+    await page.screenshot({ path: 'e2e/screenshots/mobile-nav-links.png' });
+  });
 });

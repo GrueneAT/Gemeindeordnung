@@ -4,11 +4,14 @@ test.describe('Browse Bundesland page (UAT 1)', () => {
   test('displays header, law text content, and footer', async ({ page }) => {
     await page.goto('./gemeindeordnungen/wien.html');
 
-    // Header: logo and site name
+    // Header: logo always visible; site name visible on desktop, hidden on mobile
     const logo = page.locator('.gruene-logo');
     await expect(logo).toBeVisible();
-    const siteName = page.locator('header').getByText('gemeindeordnung.gruene.at');
-    await expect(siteName).toBeVisible();
+    const viewport = page.viewportSize();
+    if (viewport && viewport.width >= 640) {
+      const siteName = page.locator('header').getByText('gemeindeordnung.gruene.at');
+      await expect(siteName).toBeVisible();
+    }
 
     // Breadcrumb contains Bundesland name
     const breadcrumb = page.locator('nav[aria-label="Breadcrumb"]');

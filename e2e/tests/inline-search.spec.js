@@ -2,6 +2,9 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Inline scoped search on law pages', () => {
   test.beforeEach(async ({ page }) => {
+    // Inline search is hidden on mobile (< 640px), skip these tests on mobile viewports
+    const viewport = page.viewportSize();
+    test.skip(viewport && viewport.width < 640, 'Inline search is hidden on mobile');
     await page.goto('./gemeindeordnungen/wien.html');
     await page.waitForSelector('.inline-search-input', { state: 'visible' });
     await page.waitForTimeout(500);
@@ -58,6 +61,9 @@ test.describe('Inline scoped search on law pages', () => {
 
 test.describe('Inline scoped search on FAQ pages', () => {
   test('inline search on FAQ page shows FAQ results', async ({ page }) => {
+    // Inline search is hidden on mobile (< 640px)
+    const viewport = page.viewportSize();
+    test.skip(viewport && viewport.width < 640, 'Inline search is hidden on mobile');
     await page.goto('./faq/index.html');
     await page.waitForSelector('.inline-search-input', { state: 'visible' });
     await page.waitForTimeout(500);
@@ -73,8 +79,8 @@ test.describe('Inline scoped search on FAQ pages', () => {
     expect(await results.count()).toBeGreaterThan(0);
 
     // Verify dropdown is full-width on desktop (not constrained to 24rem/384px)
-    const viewport = page.viewportSize();
-    if (viewport && viewport.width > 768) {
+    const vp = page.viewportSize();
+    if (vp && vp.width > 768) {
       const dropdownBox = await dropdown.boundingBox();
       expect(dropdownBox.width).toBeGreaterThan(500);
     }
