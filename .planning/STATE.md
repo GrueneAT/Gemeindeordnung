@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed quick-19 plan
-last_updated: "2026-03-14T08:51:28Z"
+stopped_at: Completed quick-20 plan
+last_updated: "2026-03-14T09:17:57.013Z"
 ---
 
 # Project State
@@ -37,9 +37,10 @@ Next step: /gsd:new-milestone
 | 17 | Granular LLM regeneration: --paragraph, --question, --term flags | 2026-03-13 | 7f20dae | [17-granular-llm-regeneration-per-paragraph-](./quick/17-granular-llm-regeneration-per-paragraph-/) |
 | 18 | Fix search: stemming false positive filter + dropdown ref race + generation counters | 2026-03-13 | 4323b1a | [18-fix-search-not-updating-after-initial-3-](./quick/18-fix-search-not-updating-after-initial-3-/) |
 | 19 | Compact mobile BL selector in header, hide mobile inline search | 2026-03-14 | 6a682bc | [19-compact-mobile-bl-selector-in-header-mob](./quick/19-compact-mobile-bl-selector-in-header-mob/) |
+| 20 | Remove BL filter pills, add tabbed search results | 2026-03-14 | 08bb2d7 | [20-remove-bl-filter-pills-use-select-in-hea](./quick/20-remove-bl-filter-pills-use-select-in-hea/) |
 
 ## Session Continuity
 
-Last session: 2026-03-14
-Stopped at: Completed quick task 19
+Last session: 2026-03-14T09:17:57.009Z
+Stopped at: Completed quick-20 plan
 Resume file: None
