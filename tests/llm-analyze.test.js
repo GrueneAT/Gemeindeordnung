@@ -37,13 +37,14 @@ describe('BL_CITATION constant', () => {
     expect(BL_CITATION).not.toBeNull();
   });
 
-  it('maps all 23 law keys', () => {
+  it('maps all 24 law keys', () => {
     const expectedKeys = [
       'burgenland', 'kaernten', 'niederoesterreich', 'oberoesterreich',
       'salzburg', 'steiermark', 'tirol', 'vorarlberg', 'wien',
       'eisenstadt', 'rust', 'klagenfurt', 'villach', 'krems',
       'st_poelten', 'waidhofen', 'wr_neustadt', 'linz', 'steyr',
       'wels', 'salzburg_stadt', 'graz', 'innsbruck',
+      'noestrog',
     ];
     expect(Object.keys(BL_CITATION).sort()).toEqual(expectedKeys.sort());
   });

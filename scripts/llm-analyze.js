@@ -31,7 +31,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = join(__dirname, '..');
 
-const CATEGORIES = ['gemeindeordnungen', 'stadtrechte'];
+const CATEGORIES = ['gemeindeordnungen', 'stadtrechte', 'organisationsgesetze'];
 
 /**
  * Map of all 23 law keys to proper Austrian legal citation abbreviations.
@@ -63,6 +63,8 @@ export const BL_CITATION = {
   salzburg_stadt: 'Sbg. StR',
   graz: 'Grazer StR',
   innsbruck: 'Innsbrucker StR',
+  // Organisationsgesetze
+  noestrog: 'NÖ STROG',
 };
 
 /**

@@ -26,7 +26,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = join(__dirname, '..');
 
-const CATEGORIES = ['gemeindeordnungen', 'stadtrechte'];
+const CATEGORIES = ['gemeindeordnungen', 'stadtrechte', 'organisationsgesetze'];
 
 // Common ASCII-safe spellings that should be proper umlauts in German
 const ASCII_SAFE_PATTERNS = [
