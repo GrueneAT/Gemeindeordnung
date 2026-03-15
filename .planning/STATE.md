@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed quick-20 plan
-last_updated: "2026-03-14T09:17:57.013Z"
+stopped_at: Completed quick-23 plan
+last_updated: "2026-03-15T09:57:00.000Z"
 ---
 
 # Project State
@@ -40,9 +40,10 @@ Next step: /gsd:new-milestone
 | 20 | Remove BL filter pills, add tabbed search results | 2026-03-14 | 1268c7a | [20-remove-bl-filter-pills-use-select-in-hea](./quick/20-remove-bl-filter-pills-use-select-in-hea/) |
 | 21 | Make header non-sticky on mobile, keep sticky on desktop | 2026-03-14 | ee9f49f | [21-make-header-non-sticky-on-mobile-keep-st](./quick/21-make-header-non-sticky-on-mobile-keep-st/) |
 | 22 | Mobile header search field + floating search FAB, revert sticky header | 2026-03-14 | a6fa8b7 | [22-add-floating-search-fab-on-mobile-bottom](./quick/22-add-floating-search-fab-on-mobile-bottom/) |
+| 23 | BL-grouped navigation, NOeSTROG as first Organisationsgesetz | 2026-03-15 | 67f1608 | [23-add-statutarstadt-gemeinderecht-laws-noe](./quick/23-add-statutarstadt-gemeinderecht-laws-noe/) |
 
 ## Session Continuity
 
-Last session: 2026-03-14
-Stopped at: Completed quick task 22
+Last session: 2026-03-15
+Stopped at: Completed quick task 23
 Resume file: None
