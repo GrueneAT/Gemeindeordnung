@@ -1,10 +1,12 @@
 /**
- * Complete registry of all 23 Austrian laws:
+ * Complete registry of all 24 Austrian laws:
  * - 9 Gemeindeordnungen (one per Bundesland, Wien uses Wiener Stadtverfassung)
  * - 14 Statutarstadt-Stadtrechte
+ * - 1 Organisationsgesetz (NOeSTROG)
  *
  * Each entry uses verified GeltendeFassung.wxe URLs from RIS.
  * Composite key: abfrage + gesetzesnummer (gesetzesnummer alone is NOT unique).
+ * parentBundesland maps each law to its actual parent Bundesland for grouping.
  */
 
 const RIS_BASE = 'https://www.ris.bka.gv.at/GeltendeFassung.wxe';
@@ -23,6 +25,7 @@ export const LAWS = {
       category: 'gemeindeordnung',
       stadt: null,
       bundesland: 'Burgenland',
+      parentBundesland: 'Burgenland',
     },
     kaernten: {
       name: 'Kaerntner Allgemeine Gemeindeordnung (K-AGO)',
@@ -32,6 +35,7 @@ export const LAWS = {
       category: 'gemeindeordnung',
       stadt: null,
       bundesland: 'Kaernten',
+      parentBundesland: 'Kaernten',
     },
     niederoesterreich: {
       name: 'NOe. Gemeindeordnung 1973',
@@ -41,6 +45,7 @@ export const LAWS = {
       category: 'gemeindeordnung',
       stadt: null,
       bundesland: 'Niederoesterreich',
+      parentBundesland: 'Niederoesterreich',
     },
     oberoesterreich: {
       name: 'OOe. Gemeindeordnung 1990',
@@ -50,6 +55,7 @@ export const LAWS = {
       category: 'gemeindeordnung',
       stadt: null,
       bundesland: 'Oberoesterreich',
+      parentBundesland: 'Oberoesterreich',
     },
     salzburg: {
       name: 'Salzburger Gemeindeordnung 2019',
@@ -59,6 +65,7 @@ export const LAWS = {
       category: 'gemeindeordnung',
       stadt: null,
       bundesland: 'Salzburg',
+      parentBundesland: 'Salzburg',
     },
     steiermark: {
       name: 'Steierm. Gemeindeordnung 1967',
@@ -68,6 +75,7 @@ export const LAWS = {
       category: 'gemeindeordnung',
       stadt: null,
       bundesland: 'Steiermark',
+      parentBundesland: 'Steiermark',
     },
     tirol: {
       name: 'Tiroler Gemeindeordnung 2001',
@@ -77,6 +85,7 @@ export const LAWS = {
       category: 'gemeindeordnung',
       stadt: null,
       bundesland: 'Tirol',
+      parentBundesland: 'Tirol',
     },
     vorarlberg: {
       name: 'Vorarlberger Gemeindegesetz',
@@ -86,6 +95,7 @@ export const LAWS = {
       category: 'gemeindeordnung',
       stadt: null,
       bundesland: 'Vorarlberg',
+      parentBundesland: 'Vorarlberg',
     },
     wien: {
       name: 'Wiener Stadtverfassung',
@@ -95,6 +105,7 @@ export const LAWS = {
       category: 'gemeindeordnung',
       stadt: null,
       bundesland: 'Wien',
+      parentBundesland: 'Wien',
     },
   },
 
@@ -107,6 +118,7 @@ export const LAWS = {
       category: 'stadtrecht',
       stadt: 'Eisenstadt',
       bundesland: 'Eisenstadt',
+      parentBundesland: 'Burgenland',
     },
     rust: {
       name: 'Ruster Stadtrecht 2003',
@@ -116,6 +128,7 @@ export const LAWS = {
       category: 'stadtrecht',
       stadt: 'Rust',
       bundesland: 'Rust',
+      parentBundesland: 'Burgenland',
     },
     klagenfurt: {
       name: 'Klagenfurter Stadtrecht 1998 (K-KStR)',
@@ -125,6 +138,7 @@ export const LAWS = {
       category: 'stadtrecht',
       stadt: 'Klagenfurt',
       bundesland: 'Klagenfurt',
+      parentBundesland: 'Kaernten',
     },
     villach: {
       name: 'Villacher Stadtrecht 1998 (K-VStR)',
@@ -134,6 +148,7 @@ export const LAWS = {
       category: 'stadtrecht',
       stadt: 'Villach',
       bundesland: 'Villach',
+      parentBundesland: 'Kaernten',
     },
     krems: {
       name: 'Kremser Stadtrecht 1977',
@@ -143,6 +158,7 @@ export const LAWS = {
       category: 'stadtrecht',
       stadt: 'Krems',
       bundesland: 'Krems',
+      parentBundesland: 'Niederoesterreich',
     },
     st_poelten: {
       name: 'St. Poeltner Stadtrecht 1977',
@@ -152,6 +168,7 @@ export const LAWS = {
       category: 'stadtrecht',
       stadt: 'St. Poelten',
       bundesland: 'St. Poelten',
+      parentBundesland: 'Niederoesterreich',
     },
     waidhofen: {
       name: 'Waidhofner Stadtrecht 1977',
@@ -161,6 +178,7 @@ export const LAWS = {
       category: 'stadtrecht',
       stadt: 'Waidhofen/Ybbs',
       bundesland: 'Waidhofen/Ybbs',
+      parentBundesland: 'Niederoesterreich',
     },
     wr_neustadt: {
       name: 'Wr. Neustaedter Stadtrecht 1977',
@@ -170,6 +188,7 @@ export const LAWS = {
       category: 'stadtrecht',
       stadt: 'Wr. Neustadt',
       bundesland: 'Wr. Neustadt',
+      parentBundesland: 'Niederoesterreich',
     },
     linz: {
       name: 'Statut fuer die Landeshauptstadt Linz 1992',
@@ -179,6 +198,7 @@ export const LAWS = {
       category: 'stadtrecht',
       stadt: 'Linz',
       bundesland: 'Linz',
+      parentBundesland: 'Oberoesterreich',
     },
     steyr: {
       name: 'Statut fuer die Stadt Steyr 1992',
@@ -188,6 +208,7 @@ export const LAWS = {
       category: 'stadtrecht',
       stadt: 'Steyr',
       bundesland: 'Steyr',
+      parentBundesland: 'Oberoesterreich',
     },
     wels: {
       name: 'Statut fuer die Stadt Wels 1992',
@@ -197,6 +218,7 @@ export const LAWS = {
       category: 'stadtrecht',
       stadt: 'Wels',
       bundesland: 'Wels',
+      parentBundesland: 'Oberoesterreich',
     },
     salzburg_stadt: {
       name: 'Salzburger Stadtrecht 1966',
@@ -206,6 +228,7 @@ export const LAWS = {
       category: 'stadtrecht',
       stadt: 'Salzburg',
       bundesland: 'Salzburg Stadt',
+      parentBundesland: 'Salzburg',
     },
     graz: {
       name: 'Statut der Landeshauptstadt Graz 1967',
@@ -215,6 +238,7 @@ export const LAWS = {
       category: 'stadtrecht',
       stadt: 'Graz',
       bundesland: 'Graz',
+      parentBundesland: 'Steiermark',
     },
     innsbruck: {
       name: 'Innsbrucker Stadtrecht 1975',
@@ -224,6 +248,21 @@ export const LAWS = {
       category: 'stadtrecht',
       stadt: 'Innsbruck',
       bundesland: 'Innsbruck',
+      parentBundesland: 'Tirol',
+    },
+  },
+
+  organisationsgesetze: {
+    noestrog: {
+      name: 'NOe. Statutarstadt-Organisationsgesetz (NOeSTROG)',
+      abfrage: 'LrNO',
+      // TODO: verify gesetzesnummer -- searched RIS for NOeSTROG in LrNO
+      gesetzesnummer: '20001325',
+      url: risUrl('LrNO', '20001325'),
+      category: 'organisationsgesetz',
+      stadt: null,
+      bundesland: 'Niederoesterreich',
+      parentBundesland: 'Niederoesterreich',
     },
   },
 };
