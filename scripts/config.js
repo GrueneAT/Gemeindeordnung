@@ -254,11 +254,10 @@ export const LAWS = {
 
   organisationsgesetze: {
     noestrog: {
-      name: 'NOe. Statutarstadt-Organisationsgesetz (NOeSTROG)',
+      name: 'NOe. Stadtrechtsorganisationsgesetz (NOe STROG)',
       abfrage: 'LrNO',
-      // TODO: verify gesetzesnummer -- searched RIS for NOeSTROG in LrNO
-      gesetzesnummer: '20001325',
-      url: risUrl('LrNO', '20001325'),
+      gesetzesnummer: '20000300',
+      url: risUrl('LrNO', '20000300'),
       category: 'organisationsgesetz',
       stadt: null,
       bundesland: 'Niederoesterreich',

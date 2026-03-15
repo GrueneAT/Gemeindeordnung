@@ -35,7 +35,7 @@ export async function fetchLaw(key, config) {
  * Fails fast on any error (no partial results).
  */
 async function fetchAll() {
-  const categories = ['gemeindeordnungen', 'stadtrechte'];
+  const categories = ['gemeindeordnungen', 'stadtrechte', 'organisationsgesetze'];
   let total = 0;
   let fetched = 0;
 
@@ -77,7 +77,7 @@ async function fetchAll() {
  * @returns {Promise<Array<{key: string, changed: boolean, oldHash: string|null, newHash: string, oldFassungVom: string|null, newFassungVom: string|null}>>}
  */
 export async function checkAll() {
-  const categories = ['gemeindeordnungen', 'stadtrechte'];
+  const categories = ['gemeindeordnungen', 'stadtrechte', 'organisationsgesetze'];
   const results = [];
   let total = 0;
   let checked = 0;

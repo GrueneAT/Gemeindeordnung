@@ -47,9 +47,9 @@ test.describe('Homepage hero section and discovery links', () => {
     // Details should now be open
     await expect(details).toHaveAttribute('open', '');
 
-    // Cards should be visible
-    const goCards = details.locator('section').filter({ hasText: 'Gemeindeordnungen' }).locator('.grid > a');
-    expect(await goCards.count()).toBe(9);
+    // Cards should be visible (grouped by BL, total 24 cards)
+    const allCards = details.locator('.grid > a');
+    expect(await allCards.count()).toBe(24);
 
     await page.screenshot({ path: 'e2e/screenshots/card-grid-expanded.png', fullPage: false });
   });
@@ -88,12 +88,17 @@ test.describe('Homepage hero section and discovery links', () => {
     // Default value should be "Alle Bundeslaender" (empty value)
     await expect(heroSelect).toHaveValue('');
 
-    // Verify it has optgroups with BL names
+    // Verify it has optgroups named by Bundesland
+    const optgroups = heroSelect.locator('optgroup');
+    const optgroupLabels = await optgroups.evaluateAll(els => els.map(el => el.label));
+    expect(optgroupLabels).toContain('Wien');
+    expect(optgroupLabels).toContain('Burgenland');
+    expect(optgroupLabels).toContain('Tirol');
+
+    // Verify options exist (e.g. Gemeindeordnung within each BL group)
     const options = heroSelect.locator('option');
     const optionTexts = await options.allTextContents();
-    expect(optionTexts).toContain('Wien');
-    expect(optionTexts).toContain('Burgenland');
-    expect(optionTexts).toContain('Tirol');
+    expect(optionTexts).toContain('Gemeindeordnung');
 
     await page.screenshot({ path: 'e2e/screenshots/hero-bl-select.png', fullPage: false });
   });

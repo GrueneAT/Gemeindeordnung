@@ -10,7 +10,7 @@ import { join, resolve } from 'path';
 function discoverInputs() {
   const srcDir = resolve('src');
   const inputs = { main: join(srcDir, 'index.html') };
-  const categories = ['gemeindeordnungen', 'stadtrechte'];
+  const categories = ['gemeindeordnungen', 'stadtrechte', 'organisationsgesetze'];
 
   for (const category of categories) {
     const dir = join(srcDir, category);

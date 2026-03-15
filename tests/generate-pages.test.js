@@ -351,17 +351,16 @@ describe('generate-pages', () => {
     }
   });
 
-  it('Test 18P2: law page contains BL switcher pills', async () => {
+  it('Test 18P2: law page contains BL switcher dropdown', async () => {
     const { generatePages } = await import('../scripts/generate-pages.js');
     await generatePages(TEST_DIR);
 
     const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
 
-    expect(html).toContain('class="bl-switcher"');
+    // BL switcher uses a select with BL-grouped optgroups
+    expect(html).toContain('bl-header-select');
     expect(html).toContain('bl-switcher-select');
-    expect(html).toContain('bl-switcher-label');
-    expect(html).toContain('Gemeindeordnungen');
-    expect(html).toContain('Stadtrechte');
+    expect(html).toContain('<optgroup');
   });
 
   it('Test 19P2: index page also contains scroll-to-top button', async () => {

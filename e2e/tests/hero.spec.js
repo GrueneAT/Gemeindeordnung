@@ -82,17 +82,12 @@ test.describe('Hero section and discovery links', () => {
     await details.locator('summary').click();
     await expect(details).toHaveAttribute('open', '');
 
-    // Gemeindeordnungen cards (9)
-    const goSection = details.locator('section').filter({ hasText: 'Gemeindeordnungen' }).first();
-    await expect(goSection).toBeVisible();
-    const goCards = goSection.locator('.grid > a');
-    expect(await goCards.count()).toBe(9);
+    // Cards grouped by Bundesland (9 BL sections, 24 total cards)
+    const sections = details.locator('main > section');
+    expect(await sections.count()).toBe(9);
 
-    // Stadtrechte cards (14)
-    const srSection = details.locator('section').filter({ hasText: 'Stadtrechte' }).first();
-    await expect(srSection).toBeVisible();
-    const srCards = srSection.locator('.grid > a');
-    expect(await srCards.count()).toBe(14);
+    const allCards = details.locator('.grid > a');
+    expect(await allCards.count()).toBe(24);
 
     // Screenshot expanded state
     await page.screenshot({ path: 'e2e/screenshots/card-grid-expanded.png', fullPage: true });

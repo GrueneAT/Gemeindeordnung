@@ -5,8 +5,8 @@
  *   node scripts/generate-pages.js           # Generate all pages
  *   import { generatePages } from './generate-pages.js'  # Use as module
  *
- * Reads: data/parsed/{gemeindeordnungen,stadtrechte}/*.json
- * Writes: src/{gemeindeordnungen,stadtrechte}/*.html + src/index.html
+ * Reads: data/parsed/{gemeindeordnungen,stadtrechte,organisationsgesetze}/*.json
+ * Writes: src/{gemeindeordnungen,stadtrechte,organisationsgesetze}/*.html + src/index.html
  */
 
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'fs';
@@ -19,10 +19,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = join(__dirname, '..');
 
-const CATEGORIES = ['gemeindeordnungen', 'stadtrechte'];
+const CATEGORIES = ['gemeindeordnungen', 'stadtrechte', 'organisationsgesetze'];
 const CATEGORY_LABELS = {
   gemeindeordnungen: 'Gemeindeordnungen',
   stadtrechte: 'Stadtrechte',
+  organisationsgesetze: 'Organisationsgesetze',
 };
 
 /**
@@ -252,57 +253,99 @@ ${items}
 }
 
 /**
- * Build styled BL switcher select dropdown for the header on law pages.
- * Two optgroups: Gemeindeordnungen (9 BLs) and Stadtrechte (14 cities).
+ * Collect all laws grouped by parentBundesland.
+ * Returns a Map sorted alphabetically by BL name.
+ * Each BL entry has: GO first, then Stadtrechte alphabetically, then Organisationsgesetze.
  */
-function buildBundeslandSwitcher(currentKey, currentCategory) {
-  const goOptions = [];
-  for (const [key, law] of Object.entries(LAWS.gemeindeordnungen)) {
-    const isSelected = key === currentKey && currentCategory === 'gemeindeordnungen';
-    const selected = isSelected ? ' selected' : '';
-    goOptions.push(`            <option value="../gemeindeordnungen/${key}.html"${selected}>${escapeHtml(law.bundesland)}</option>`);
+function collectLawsByBundesland() {
+  const blMap = new Map();
+
+  for (const category of CATEGORIES) {
+    const laws = LAWS[category];
+    if (!laws) continue;
+    for (const [key, law] of Object.entries(laws)) {
+      const bl = law.parentBundesland || law.bundesland;
+      if (!blMap.has(bl)) blMap.set(bl, []);
+      blMap.get(bl).push({ key, category, law });
+    }
   }
 
-  const stadtOptions = [];
-  for (const [key, law] of Object.entries(LAWS.stadtrechte)) {
-    const isSelected = key === currentKey && currentCategory === 'stadtrechte';
-    const selected = isSelected ? ' selected' : '';
-    stadtOptions.push(`            <option value="../stadtrechte/${key}.html"${selected}>${escapeHtml(law.bundesland)}</option>`);
+  // Sort BLs alphabetically
+  const sorted = new Map([...blMap.entries()].sort((a, b) => a[0].localeCompare(b[0], 'de')));
+
+  // Sort within each BL: GO first, then stadtrechte alpha, then organisationsgesetze alpha
+  const categoryOrder = { gemeindeordnungen: 0, stadtrechte: 1, organisationsgesetze: 2 };
+  for (const [, entries] of sorted) {
+    entries.sort((a, b) => {
+      const orderDiff = (categoryOrder[a.category] || 99) - (categoryOrder[b.category] || 99);
+      if (orderDiff !== 0) return orderDiff;
+      return (a.law.name || '').localeCompare(b.law.name || '', 'de');
+    });
+  }
+
+  return sorted;
+}
+
+/**
+ * Get display label for a law entry in the BL switcher dropdown.
+ */
+function getSwitcherLabel(entry) {
+  if (entry.category === 'gemeindeordnungen') return 'Gemeindeordnung';
+  if (entry.category === 'stadtrechte') return `${entry.law.stadt} (Stadtrecht)`;
+  if (entry.category === 'organisationsgesetze') return entry.law.name.replace(/^NOe\.\s*/, '');
+  return entry.law.name;
+}
+
+/**
+ * Build styled BL switcher select dropdown for the header on law pages.
+ * Optgroups by Bundesland, with sub-items per BL (GO, Stadtrechte, Organisationsgesetze).
+ */
+function buildBundeslandSwitcher(currentKey, currentCategory) {
+  const blMap = collectLawsByBundesland();
+  const optgroups = [];
+
+  for (const [bl, entries] of blMap) {
+    const options = entries.map(entry => {
+      const isSelected = entry.key === currentKey && entry.category === currentCategory;
+      const selected = isSelected ? ' selected' : '';
+      const label = getSwitcherLabel(entry);
+      return `            <option value="../${entry.category}/${entry.key}.html"${selected}>${escapeHtml(label)}</option>`;
+    }).join('\n');
+
+    optgroups.push(`            <optgroup label="${escapeHtml(bl)}">
+${options}
+            </optgroup>`);
   }
 
   return `          <select id="bl-switcher-select" class="bl-header-select" aria-label="Andere Gemeindeordnung anzeigen" data-pagefind-ignore onchange="if(this.value) window.location.href=this.value">
-            <optgroup label="Gemeindeordnungen">
-${goOptions.join('\n')}
-            </optgroup>
-            <optgroup label="Stadtrechte">
-${stadtOptions.join('\n')}
-            </optgroup>
+${optgroups.join('\n')}
           </select>`;
 }
 
 /**
  * Build BL select dropdown for the index page hero (filter-only, does not navigate).
  * Used to set the Bundesland filter for search on the index page.
+ * Grouped by actual Bundesland with sub-items showing individual law filter values.
  */
 function buildHeroBundeslandSelect() {
-  const goOptions = [];
-  for (const [, law] of Object.entries(LAWS.gemeindeordnungen)) {
-    goOptions.push(`              <option value="${escapeHtml(law.bundesland)}">${escapeHtml(law.bundesland)}</option>`);
-  }
+  const blMap = collectLawsByBundesland();
+  const optgroups = [];
 
-  const stadtOptions = [];
-  for (const [, law] of Object.entries(LAWS.stadtrechte)) {
-    stadtOptions.push(`              <option value="${escapeHtml(law.bundesland)}">${escapeHtml(law.bundesland)}</option>`);
+  for (const [bl, entries] of blMap) {
+    const options = entries.map(entry => {
+      const filterValue = entry.law.bundesland;
+      const label = getSwitcherLabel(entry);
+      return `              <option value="${escapeHtml(filterValue)}">${escapeHtml(label)}</option>`;
+    }).join('\n');
+
+    optgroups.push(`              <optgroup label="${escapeHtml(bl)}">
+${options}
+              </optgroup>`);
   }
 
   return `          <select id="hero-bl-select" class="bl-header-select" aria-label="Bundesland filtern" data-pagefind-ignore>
               <option value="">Alle Bundesl\u00E4nder</option>
-              <optgroup label="Gemeindeordnungen">
-${goOptions.join('\n')}
-              </optgroup>
-              <optgroup label="Stadtrechte">
-${stadtOptions.join('\n')}
-              </optgroup>
+${optgroups.join('\n')}
             </select>`;
 }
 
@@ -565,15 +608,38 @@ function generateIndexPage(lawsByCategory, faqTopics) {
     } catch { /* ignore parse errors */ }
   }
 
-  // Build card grid sections for collapsible details
-  let categorySections = '';
+  // Build card grid sections grouped by Bundesland
+  // Group parsed laws by parentBundesland (from config), falling back to bundesland
+  const blGrouped = new Map();
+
   for (const [category, laws] of Object.entries(lawsByCategory)) {
-    const label = CATEGORY_LABELS[category] || category;
-    const cards = laws.map(l => generateCard(l, category)).join('\n');
+    for (const law of laws) {
+      const configLaw = LAWS[category]?.[law.key];
+      const bl = configLaw?.parentBundesland || configLaw?.bundesland || law.meta.bundesland;
+      if (!blGrouped.has(bl)) blGrouped.set(bl, []);
+      // Store with category order for sorting
+      const categoryOrder = { gemeindeordnungen: 0, stadtrechte: 1, organisationsgesetze: 2 };
+      blGrouped.get(bl).push({ law, category, order: categoryOrder[category] || 99 });
+    }
+  }
+
+  // Sort BLs alphabetically and within each BL by category order then name
+  const sortedBls = new Map([...blGrouped.entries()].sort((a, b) => a[0].localeCompare(b[0], 'de')));
+  for (const [, entries] of sortedBls) {
+    entries.sort((a, b) => {
+      if (a.order !== b.order) return a.order - b.order;
+      return (a.law.meta.kurztitel || '').localeCompare(b.law.meta.kurztitel || '', 'de');
+    });
+  }
+
+  let categorySections = '';
+
+  for (const [bl, entries] of sortedBls) {
+    const cards = entries.map(entry => generateCard(entry.law, entry.category)).join('\n');
 
     categorySections += `
           <section class="mb-10">
-            <h2 class="text-2xl font-bold text-gruene-dark mb-4">${label}</h2>
+            <h2 class="text-2xl font-bold text-gruene-dark mb-4">${escapeHtml(bl)}</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 ${cards}
             </div>

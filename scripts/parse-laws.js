@@ -445,7 +445,7 @@ function cleanParagraph(para) {
  * Parse all laws from data/raw/ and write JSON to data/parsed/.
  */
 export async function parseAll() {
-  const categories = ['gemeindeordnungen', 'stadtrechte'];
+  const categories = ['gemeindeordnungen', 'stadtrechte', 'organisationsgesetze'];
 
   for (const category of categories) {
     const lawEntries = LAWS[category];
