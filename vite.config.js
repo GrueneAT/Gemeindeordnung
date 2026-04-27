@@ -39,6 +39,12 @@ function discoverInputs() {
     inputs['glossar'] = glossarPath;
   }
 
+  // Impressum page
+  const impressumPath = join(srcDir, 'impressum.html');
+  if (existsSync(impressumPath)) {
+    inputs['impressum'] = impressumPath;
+  }
+
   return inputs;
 }
 

@@ -26,6 +26,21 @@ const CATEGORY_LABELS = {
   organisationsgesetze: 'Organisationsgesetze',
 };
 
+const SUPPORT_EMAIL = 'florian.motlik@gruene.at';
+
+/**
+ * Render the favicon / theme-color link block for a page <head>.
+ * `prefix` should be '' for pages at /src or '../' for subpages.
+ */
+function generateFaviconLinks(prefix = '') {
+  return `    <link rel="icon" href="${prefix}assets/favicon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="${prefix}assets/favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="${prefix}assets/favicon/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="${prefix}assets/favicon/apple-touch-icon.png" />
+    <link rel="mask-icon" href="${prefix}assets/favicon/safari-pinned-tab.svg" color="#2d793c" />
+    <meta name="theme-color" content="#ffffff" />`;
+}
+
 /**
  * Format ISO date string to German date format DD.MM.YYYY.
  */
@@ -398,6 +413,11 @@ function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
         <a href="${prefix}faq/index.html" class="text-gruene-dark hover:underline whitespace-nowrap">FAQ</a>
         <span class="text-gray-300">|</span>
         <a href="${prefix}glossar.html" class="text-gruene-dark hover:underline whitespace-nowrap">Glossar</a>
+        <span class="text-gray-300 hidden md:inline">|</span>
+        <a href="mailto:${SUPPORT_EMAIL}" class="hidden md:inline text-gruene-dark hover:underline whitespace-nowrap" title="Fragen oder Feedback zu dieser Seite">${SUPPORT_EMAIL}</a>
+        <a href="mailto:${SUPPORT_EMAIL}" class="md:hidden text-gruene-dark hover:underline" title="${SUPPORT_EMAIL}" aria-label="Kontakt">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
       </nav>`;
 
   return `  <header data-pagefind-ignore class="sticky top-0 bg-white border-b border-gray-200 z-10">
@@ -435,6 +455,7 @@ function generateBreadcrumb(bundesland, kurztitel) {
  */
 function generateFooter(options = {}) {
   const { sourceUrl, standDatum, isLawPage } = options;
+  const prefix = isLawPage ? '../' : '';
   const risLink = sourceUrl
     ? `<a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener" class="text-gruene-dark hover:underline">Quelle: RIS</a>`
     : `<a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener" class="text-gruene-dark hover:underline">Quelle: RIS (ris.bka.gv.at)</a>`;
@@ -443,14 +464,18 @@ function generateFooter(options = {}) {
 
   return `  <footer data-pagefind-ignore class="border-t border-gray-200 mt-12">
     <div class="max-w-5xl mx-auto px-4 py-6 text-sm text-gray-600">
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-        <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
           ${risLink}
           <span>Stand: ${stand}</span>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
           <span class="font-medium">Keine Rechtsberatung</span>
-          <a href="#" class="text-gruene-dark hover:underline">GitHub</a>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+          <a href="${prefix}impressum.html" class="text-gruene-dark hover:underline">Impressum</a>
+          <span class="hidden sm:inline text-gray-300">|</span>
+          <a href="https://gruene.at/datenschutzerklarung/" target="_blank" rel="noopener" class="text-gruene-dark hover:underline">Datenschutz</a>
+          <span class="hidden sm:inline text-gray-300">|</span>
+          <a href="mailto:${SUPPORT_EMAIL}" class="text-gruene-dark hover:underline">${SUPPORT_EMAIL}</a>
         </div>
       </div>
     </div>
@@ -544,6 +569,7 @@ function generateLawPage(law, key, category, rootDir = ROOT) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${title} - gemeindeordnung.gruene.at</title>
     <link rel="stylesheet" href="../css/main.css" />
+${generateFaviconLinks('../')}
     <meta data-pagefind-filter="bundesland[content]" content="${escapeHtml(law.meta.bundesland)}" />
     <meta data-pagefind-filter="typ[content]" content="Gesetz" />
   </head>
@@ -724,6 +750,7 @@ ${cards}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gemeindeordnungen der österreichischen Bundesländer</title>
     <link rel="stylesheet" href="css/main.css" />
+${generateFaviconLinks('')}
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
 ${headerHtml}
@@ -759,6 +786,7 @@ function generateFAQIndexPage(topics) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Häufige Fragen - gemeindeordnung.gruene.at</title>
     <link rel="stylesheet" href="../css/main.css" />
+${generateFaviconLinks('../')}
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
 ${headerHtml}
@@ -824,6 +852,7 @@ function generateFAQTopicPage(topic) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${genderText(escapeHtml(topic.title))} - FAQ - gemeindeordnung.gruene.at</title>
     <link rel="stylesheet" href="../css/main.css" />
+${generateFaviconLinks('../')}
     <meta data-pagefind-filter="typ[content]" content="FAQ" />
     <meta data-pagefind-meta="topic_title[content]" content="${genderText(escapeHtml(topic.title))}" />
   </head>
@@ -923,6 +952,7 @@ ${termsHtml}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Glossar der Rechtsbegriffe - gemeindeordnung.gruene.at</title>
     <link rel="stylesheet" href="css/main.css" />
+${generateFaviconLinks('')}
     <meta data-pagefind-filter="typ[content]" content="Glossar" />
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
@@ -1038,7 +1068,98 @@ export async function generatePages(rootDir = ROOT) {
     }
   }
 
+  // Generate Impressum page
+  writeFileSync(join(rootDir, 'src', 'impressum.html'), generateImpressumPage());
+  console.log('Generated: src/impressum.html');
+
   return lawsByCategory;
+}
+
+/**
+ * Generate the Impressum page. Content mirrored from gruene.at/impressum.
+ */
+function generateImpressumPage() {
+  const headerHtml = generateHeader(false);
+  const footerHtml = generateFooter({ isLawPage: false });
+
+  return `<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impressum - gemeindeordnung.gruene.at</title>
+    <link rel="stylesheet" href="css/main.css" />
+${generateFaviconLinks('')}
+    <meta name="robots" content="noindex" />
+  </head>
+  <body class="bg-gray-50 min-h-screen flex flex-col">
+${headerHtml}
+    <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full" data-pagefind-ignore>
+      <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 sm:p-8">
+        <h1 class="text-2xl font-bold text-gruene-dark mb-2">Impressum &amp; Offenlegung</h1>
+        <p class="text-sm text-gray-500 mb-6">
+          Übernommen von
+          <a href="https://www.gruene.at/impressum" target="_blank" rel="noopener" class="text-gruene-dark hover:underline">gruene.at/impressum</a>.
+        </p>
+
+        <section class="mb-6">
+          <h2 class="text-lg font-semibold text-gruene-dark mb-2">Herausgeberin</h2>
+          <p class="text-gruene-dark/90 leading-relaxed">
+            Die Grünen – Die Grüne Alternative, Bundespartei<br />
+            Mariahilfer Straße 37–39, 1060 Wien<br />
+            Der Bundesvorstand<br />
+            <a href="mailto:dialogbuero@gruene.at" class="text-gruene-dark hover:underline">dialogbuero@gruene.at</a>
+          </p>
+        </section>
+
+        <section class="mb-6">
+          <h2 class="text-lg font-semibold text-gruene-dark mb-2">Medieninhaberin</h2>
+          <p class="text-gruene-dark/90 leading-relaxed">
+            Grüner Klub im Parlament<br />
+            Dr.-Karl-Renner-Ring 3, 1017 Wien<br />
+            +43-1-40110-6698<br />
+            <a href="mailto:dialogbuero@gruene.at" class="text-gruene-dark hover:underline">dialogbuero@gruene.at</a>
+          </p>
+        </section>
+
+        <section class="mb-6">
+          <h2 class="text-lg font-semibold text-gruene-dark mb-2">Grundlegende Richtung</h2>
+          <p class="text-gruene-dark/90 leading-relaxed">
+            „Statuten der Grünen 2021" (siehe
+            <a href="https://www.gruene.at/impressum" target="_blank" rel="noopener" class="text-gruene-dark hover:underline">gruene.at/impressum</a>).
+          </p>
+        </section>
+
+        <section class="mb-6">
+          <h2 class="text-lg font-semibold text-gruene-dark mb-2">Kennzeichnung (KL)</h2>
+          <p class="text-gruene-dark/90 leading-relaxed">
+            Beiträge zur Information über die parlamentarische Arbeit werden mit Unterstützung von
+            Mitarbeiter:innen im Grünen Klub erstellt und durch das Textkürzel „(KL)" oder durch das
+            Logo „Grüner Klub im Parlament" gekennzeichnet.
+          </p>
+        </section>
+
+        <section class="mb-6">
+          <h2 class="text-lg font-semibold text-gruene-dark mb-2">Datenschutz</h2>
+          <p class="text-gruene-dark/90 leading-relaxed">
+            Die
+            <a href="https://gruene.at/datenschutzerklarung/" target="_blank" rel="noopener" class="text-gruene-dark hover:underline">Datenschutzerklärung</a>
+            ist auf gruene.at verfügbar.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-semibold text-gruene-dark mb-2">Kontakt zu dieser Seite</h2>
+          <p class="text-gruene-dark/90 leading-relaxed">
+            Fragen oder Feedback zu gemeindeordnung.gruene.at:
+            <a href="mailto:${SUPPORT_EMAIL}" class="text-gruene-dark hover:underline">${SUPPORT_EMAIL}</a>
+          </p>
+        </section>
+      </article>
+    </main>
+${footerHtml}
+  </body>
+</html>`;
 }
 
 // Run directly
