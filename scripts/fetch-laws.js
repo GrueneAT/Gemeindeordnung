@@ -6,9 +6,14 @@ import { parseLaw } from './parse-laws.js';
 
 const DATA_RAW_DIR = 'data/raw';
 const RATE_LIMIT_MS = 1500;
+const MAX_ATTEMPTS = 5;
+const RETRY_BASE_MS = 2000;
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /**
  * Fetch a single law from RIS GeltendeFassung URL.
+ * Retries on transient errors (5xx, network failures); fails fast on 4xx.
  * Validates HTTP status and response size (error pages are < 10KB).
  *
  * @param {string} key - Law identifier (e.g., 'burgenland', 'graz')
@@ -16,17 +21,36 @@ const RATE_LIMIT_MS = 1500;
  * @returns {Promise<string>} HTML content
  */
 export async function fetchLaw(key, config) {
-  const response = await fetch(config.url);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch ${key} (${config.name}): HTTP ${response.status}`);
+  let lastError;
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    let transient = false;
+    try {
+      const response = await fetch(config.url);
+      if (!response.ok) {
+        transient = response.status >= 500 || response.status === 408 || response.status === 429;
+        throw new Error(`Failed to fetch ${key} (${config.name}): HTTP ${response.status}`);
+      }
+      const html = await response.text();
+      if (html.length < 10000) {
+        // Body too small is treated as a content error, not a transient one — RIS
+        // sometimes returns short HTML for unknown laws; retrying won't help.
+        throw new Error(
+          `${key} (${config.name}): Response too small (${html.length} bytes), likely error page`,
+        );
+      }
+      return html;
+    } catch (err) {
+      lastError = err;
+      // Treat network errors (TypeError from fetch) as transient.
+      if (!transient && !(err instanceof TypeError)) throw err;
+    }
+    if (attempt < MAX_ATTEMPTS) {
+      const delay = RETRY_BASE_MS * Math.pow(2, attempt - 1);
+      console.warn(`  ${key}: attempt ${attempt} failed (${lastError.message}); retrying in ${delay}ms`);
+      await sleep(delay);
+    }
   }
-  const html = await response.text();
-  if (html.length < 10000) {
-    throw new Error(
-      `${key} (${config.name}): Response too small (${html.length} bytes), likely error page`,
-    );
-  }
-  return html;
+  throw lastError;
 }
 
 /**

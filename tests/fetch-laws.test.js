@@ -68,22 +68,41 @@ describe('scripts/fetch-laws.js', () => {
     vi.restoreAllMocks();
   });
 
-  it('throws on HTTP error', async () => {
-    vi.stubGlobal(
-      'fetch',
-      vi.fn().mockResolvedValue({
-        ok: false,
-        status: 503,
-      }),
-    );
+  it('throws immediately on 4xx (non-transient)', async () => {
+    const stub = vi.fn().mockResolvedValue({ ok: false, status: 404 });
+    vi.stubGlobal('fetch', stub);
 
     await expect(
       fetchLaw('test-law', {
         url: 'https://example.com',
         name: 'Test Law',
       }),
-    ).rejects.toThrow('HTTP 503');
+    ).rejects.toThrow('HTTP 404');
+
+    expect(stub).toHaveBeenCalledTimes(1);
   });
+
+  it('retries on 5xx and recovers on success', async () => {
+    const longBody = 'x'.repeat(20000);
+    const stub = vi
+      .fn()
+      .mockResolvedValueOnce({ ok: false, status: 502 })
+      .mockResolvedValueOnce({ ok: false, status: 503 })
+      .mockResolvedValueOnce({
+        ok: true,
+        status: 200,
+        text: () => Promise.resolve(longBody),
+      });
+    vi.stubGlobal('fetch', stub);
+
+    const result = await fetchLaw('test-law', {
+      url: 'https://example.com',
+      name: 'Test Law',
+    });
+
+    expect(result).toBe(longBody);
+    expect(stub).toHaveBeenCalledTimes(3);
+  }, 30000);
 
   // Note: checkAll() requires network access and real data files,
   // so no unit test for its full logic. Integration tested via:
