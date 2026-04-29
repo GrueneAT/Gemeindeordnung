@@ -45,6 +45,9 @@ jobs:
       - name: Index with Pagefind
         run: npx pagefind --site dist --force-language de
 
+      - name: Write CNAME for custom domain
+        run: echo 'gemeindeordnung.gruene.at' > dist/CNAME
+
       - name: Install Playwright browsers
         run: npx playwright install chromium --with-deps
 

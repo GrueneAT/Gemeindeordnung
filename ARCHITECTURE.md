@@ -26,7 +26,7 @@ dist/                    Production bundle
 dist/pagefind/           Client-side search index
   │  GitHub Actions
   ▼
-GitHub Pages             https://gruene-it.github.io/Gemeindeordnung/
+GitHub Pages             https://gemeindeordnung.gruene.at/
 ```
 
 ## Data Pipeline
@@ -139,7 +139,7 @@ Law pages include:
 
 ### Tech Stack
 
-- **Vite 7** — build tool, base path `/Gemeindeordnung/`
+- **Vite 7** — build tool, base path `/` (custom domain `gemeindeordnung.gruene.at`)
 - **TailwindCSS v4** — CSS-first config (no tailwind.config.js)
 - **Pagefind** — client-side search with German stemming
 
