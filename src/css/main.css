@@ -1,17 +1,52 @@
 @import "tailwindcss";
 
+/*
+ * Local brand tokens for Tailwind v4 (`text-gruene-*` / `bg-gruene-*` etc.).
+ *
+ * Values aliased to the shared Gruene-AT design-system tokens (loaded via
+ * <link rel="stylesheet" href="https://grueneat.github.io/design-system/design-system.css">)
+ * so any future DS color tweak propagates here automatically -- no silent drift.
+ * Local utility-class names are preserved so existing markup keeps working.
+ *
+ * The hex fallback values mirror the historical local palette and are used
+ * only when the DS stylesheet has not loaded (offline build, network blip).
+ *
+ * `--color-gruene-dark` keeps the historical #005538 as primary because the
+ * site uses it at 80% opacity (e.g. `text-gruene-dark/80`) on white. The DS
+ * `--gat-color-dunkelgruen` (#257639) only reaches 3.77:1 at that opacity,
+ * which fails WCAG AA. Body-text contrast is a hard a11y constraint, so this
+ * one token diverges from DS until the markup-side migration (Phase 2) drops
+ * the `/80` opacity utilities.
+ */
 @theme {
-  --color-gruene-green: #6BA539;
+  --color-gruene-green: var(--gat-color-hellgruen, #6BA539);
   --color-gruene-dark: #005538;
-  --color-gruene-light: #E8F5E9;
-  --color-gruene-accent: #8AB414;
+  --color-gruene-light: var(--gat-web-green-tint, #E8F5E9);
+  --color-gruene-accent: var(--gat-color-hellgruen, #8AB414);
   --color-gruene-link: #005538;
-  --color-gruene-link-hover: #2D5016;
+  --color-gruene-link-hover: var(--gat-web-green-deep, #2D5016);
 }
 
 /* Prevent horizontal overflow on mobile */
 html, body {
   overflow-x: hidden;
+}
+
+/*
+ * Preserve the historical Tailwind sans-serif typography on body text.
+ *
+ * The shared design-system stylesheet sets `body { font-family: var(--gat-font-copy) }`
+ * (Barlow Semi Condensed). On the laws site the Tailwind utility classes
+ * (`text-3xl`, `font-bold`, `text-lg`, ...) were tuned against the system
+ * sans-serif metrics, so swapping the body font shifts the layout (visible
+ * regression: the index hero heading clips on 375px mobile).
+ *
+ * Phase 0 leaves the local typography untouched. The proper migration to the
+ * DS typography scale (Barlow Semi Condensed for copy, Vollkorn for emphasis,
+ * the `gat-headline` / `gat-fliesstext` utilities) belongs to Phase 2.
+ */
+body {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* Anchor highlight animation for deep-linked paragraphs */
@@ -1055,4 +1090,39 @@ h2[id] {
   background-color: rgba(250, 204, 21, 0.5);
   border-radius: 0.125rem;
   padding: 0 0.125rem;
+}
+
+/*
+ * Respect the user's motion preference -- WCAG 2.1 (2.3.3 Animation
+ * from Interactions). Disables the three local keyframe animations:
+ *   - .anchor-highlight   (paragraph fade-out after deep-link)
+ *   - .search-modal-backdrop fade-in
+ *   - .search-modal slide-in
+ * Also cancels CSS transitions on the FAB and copy-link buttons so
+ * tap / hover state changes are instant rather than animated.
+ *
+ * The shared design-system stylesheet adds a global reduced-motion rule
+ * too (covers .gat-* components); this local block makes the behaviour
+ * resilient to a CDN-less build (offline / cache miss).
+ */
+@media (prefers-reduced-motion: reduce) {
+  .anchor-highlight,
+  .search-modal-backdrop,
+  .search-modal {
+    animation: none !important;
+  }
+
+  .fab-btn,
+  .copy-link-btn {
+    transition: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
