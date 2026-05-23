@@ -33,6 +33,25 @@ html, body {
 }
 
 /*
+ * App-specific sticky-search header. The DS ships `.gat-header` (single-row
+ * brand bar, 56px logo) but it does not accommodate the sticky-search-trigger
+ * layout this site requires. The local `.app-header` therefore stays — but
+ * background, bottom hairline and color all pull from DS tokens so a future
+ * DS-palette change propagates.
+ */
+.app-header {
+  background: var(--gat-web-surface, #ffffff);
+  border-bottom: 1px solid var(--gat-web-hairline, #e5e7eb);
+}
+
+/*
+ * Footer mirrors the header — top hairline from `--gat-web-hairline`.
+ */
+.app-footer {
+  border-top: 1px solid var(--gat-web-hairline, #e5e7eb);
+}
+
+/*
  * Preserve the historical Tailwind sans-serif typography on body text.
  *
  * The shared design-system stylesheet sets `body { font-family: var(--gat-font-copy) }`

@@ -475,7 +475,15 @@ function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
         </a>
       </nav>`;
 
-  return `  <header data-pagefind-ignore class="sticky top-0 bg-white border-b border-gray-200 z-10">
+  // `.app-header` is the local sticky-search-trigger header. The DS ships a
+  // `.gat-header` atom but it is built around a single-row brand bar with a
+  // fixed 56px logo and wraps to multiple rows once nav + search trigger
+  // are added; that breaks the compact search-first layout this site needs.
+  // We therefore keep an app-specific `<header class="app-header">` shell but
+  // use DS color / hairline tokens (`--gat-web-surface`, `--gat-web-hairline`)
+  // for the background and bottom border so a future DS palette shift
+  // propagates.
+  return `  <header data-pagefind-ignore class="app-header sticky top-0 z-10">
     <div class="max-w-5xl mx-auto px-4 py-2 flex items-center gap-2">
       <a href="${indexPath}" class="flex items-center gap-1.5 text-gruene-dark hover:text-gruene-dark no-underline shrink-0">
         <img src="${logoPath}" alt="Die Gruenen" class="w-7 h-7 gruene-logo" />
@@ -517,7 +525,10 @@ function generateFooter(options = {}) {
 
   const stand = standDatum || formatGermanDate(new Date().toISOString());
 
-  return `  <footer data-pagefind-ignore class="border-t border-gray-200 mt-12">
+  // `.app-footer` mirrors `.app-header` — top hairline pulls from
+  // `--gat-web-hairline` via the app-namespace CSS rule so the line color
+  // tracks the design system without us repeating Tailwind utility colors.
+  return `  <footer data-pagefind-ignore class="app-footer mt-12">
     <div class="max-w-5xl mx-auto px-4 py-6 text-sm text-gray-600">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
