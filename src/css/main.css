@@ -25,6 +25,18 @@
   --color-gruene-accent: var(--gat-color-hellgruen, #8AB414);
   --color-gruene-link: #005538;
   --color-gruene-link-hover: var(--gat-web-green-deep, #2D5016);
+
+  /*
+   * App-local micro-text size. The DS type scale starts at `--gat-text-small`
+   * (~0.875rem); the laws-site uses 11px for the tightest UI chrome (Stadtrecht
+   * badge, Search-Modal-Shortcut, Search-Tab-Label, BL-Switcher-Label).
+   * Documented as an app-specific Sonderwert -- not part of the DS scale.
+   *
+   * Follow-up for the DS maintainers (see notes/iteration-abschluss.md):
+   * if a `--gat-text-micro` 11px tier ever lands in v2.3+, this can be
+   * aliased to it.
+   */
+  --app-text-micro: 0.6875rem;
 }
 
 /* Prevent horizontal overflow on mobile */
@@ -156,7 +168,16 @@ h3[id] {
 /* ---- Hero Section Styles ---- */
 
 .hero-section {
-  background: linear-gradient(135deg, #f0f7ed 0%, #e8f5e3 100%);
+  /*
+   * The hero is a soft green wash from the DS green-tint token. The end stop
+   * fades slightly toward the surface color so the gradient has perceptible
+   * direction without competing with the headline text.
+   */
+  background: linear-gradient(
+    135deg,
+    var(--color-gruene-light) 0%,
+    color-mix(in srgb, var(--color-gruene-light) 70%, white) 100%
+  );
   padding: 3rem 1rem;
   text-align: center;
 }
@@ -209,15 +230,15 @@ h3[id] {
 .discovery-chip {
   display: inline-block;
   padding: 0.375rem 0.875rem;
-  border: 1px solid #6BA539;
+  border: 1px solid var(--color-gruene-green);
   border-radius: 9999px;
-  color: #1a3a1a;
+  color: var(--color-gruene-dark);
   font-size: 0.8125rem;
   text-decoration: none;
   transition: background-color 0.15s, color 0.15s;
 }
 .discovery-chip:hover {
-  background-color: #6BA539;
+  background-color: var(--color-gruene-green);
   color: white;
 }
 
@@ -335,7 +356,7 @@ details > summary::-webkit-details-marker {
 
 /* Stadtrecht badge */
 .search-badge-stadtrecht {
-  font-size: 0.6875rem;
+  font-size: var(--app-text-micro);
   font-weight: 500;
   background-color: var(--color-gruene-light);
   color: var(--color-gruene-dark);
@@ -508,13 +529,17 @@ details > summary::-webkit-details-marker {
   padding: 0.5rem;
   border-radius: 0.5rem;
   color: var(--color-gruene-dark);
-  background: rgba(107, 165, 57, 0.1);
+  /*
+   * 10% / 20% green tint of the hellgruen brand color. Token-derived via
+   * `color-mix` so a DS palette refresh propagates here too.
+   */
+  background: color-mix(in srgb, var(--color-gruene-green) 10%, transparent);
   border: 1px solid transparent;
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s;
 }
 .search-trigger-btn:hover {
-  background: rgba(107, 165, 57, 0.2);
+  background: color-mix(in srgb, var(--color-gruene-green) 20%, transparent);
   border-color: var(--color-gruene-green);
 }
 
@@ -567,7 +592,7 @@ details > summary::-webkit-details-marker {
  * button). Aligns to the right edge of the head row.
  */
 .app-search-modal-shortcut {
-  font-size: 0.6875rem;
+  font-size: var(--app-text-micro);
   color: var(--gat-web-text-mute, #9ca3af);
   border: 1px solid var(--gat-web-hairline, #e5e7eb);
   border-radius: 0.25rem;
@@ -639,7 +664,7 @@ details > summary::-webkit-details-marker {
 
 /* Inline type label for FAQ/Glossar result cards */
 .search-result-type-label {
-  font-size: 0.6875rem;
+  font-size: var(--app-text-micro);
   font-weight: 500;
   color: #6b7280;
   margin-left: auto;
@@ -918,7 +943,7 @@ h2[id] {
 /* Enhanced glossary term styling within law text */
 .app-law-text .app-glossar-term {
   text-decoration-thickness: 2px;
-  background-color: rgba(107, 165, 57, 0.08);
+  background-color: color-mix(in srgb, var(--color-gruene-green) 8%, transparent);
   padding: 0 0.125rem;
   border-radius: 0.125rem;
 }
@@ -939,7 +964,7 @@ h2[id] {
 
 .app-bl-switcher-label {
   display: block;
-  font-size: 0.6875rem;
+  font-size: var(--app-text-micro);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
