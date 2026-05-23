@@ -86,7 +86,7 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
   test('BL header select is visible on mobile law page', async ({ page }) => {
     await page.goto('./gemeindeordnungen/wien.html');
 
-    const blSelect = page.locator('select.bl-header-select');
+    const blSelect = page.locator('select.app-bl-header-select');
     await expect(blSelect).toBeVisible();
   });
 
@@ -98,7 +98,7 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
 
     // Tap should open search modal
     await fab.click();
-    const modal = page.locator('.search-modal');
+    const modal = page.locator('.app-search-modal');
     await expect(modal).toBeVisible({ timeout: 3000 });
   });
 

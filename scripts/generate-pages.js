@@ -53,6 +53,27 @@ function generateSkiplink() {
 }
 
 /**
+ * Render a callout banner using the shared `.gat-callout` design-system atom.
+ *
+ * `variant` selects the DS modifier (`info`, `warn`, `error`, `legal`,
+ * `success`). The callout body is rendered as-is so callers can pass an
+ * inline `<strong>` lead or richer HTML.
+ *
+ * Callouts above the main content are marked `data-pagefind-ignore` so the
+ * Pagefind index does not pick up the disclaimer chrome as searchable copy.
+ */
+function renderCallout(variant, bodyHtml, { pagefindIgnore = true, indent = '      ' } = {}) {
+  const validVariants = new Set(['info', 'warn', 'error', 'legal', 'success']);
+  if (!validVariants.has(variant)) {
+    throw new Error(`renderCallout: unknown variant "${variant}"`);
+  }
+  const ignoreAttr = pagefindIgnore ? ' data-pagefind-ignore' : '';
+  return `${indent}<div class="gat-callout gat-callout--${variant}"${ignoreAttr}>
+${indent}  ${bodyHtml}
+${indent}</div>`;
+}
+
+/**
  * Render the Gruene-AT design system stylesheet link for a page <head>.
  */
 function generateDesignSystemLink() {
@@ -125,14 +146,14 @@ function injectGlossaryTerms(bodyHtml, glossaryTerms, categoryPrefix) {
     const fullMatchStart = match.index;
     const wordStart = fullMatchStart + match[0].indexOf(match[2]);
 
-    // Check this position isn't inside an existing glossar-tooltip or glossar-term
+    // Check this position isn't inside an existing app-glossar-tooltip or app-glossar-term
     const before = result.substring(0, wordStart);
-    const inTooltip = (before.match(/class="glossar-tooltip"/g) || []).length >
-                      (before.match(/class="glossar-tooltip-link"/g) || []).length;
+    const inTooltip = (before.match(/class="app-glossar-tooltip"/g) || []).length >
+                      (before.match(/class="app-glossar-tooltip-link"/g) || []).length;
     if (inTooltip) continue;
 
     const definition = escapeHtml(term.definition);
-    const tooltipHtml = `<span class="glossar-term" tabindex="0">${match[2]}<span class="glossar-tooltip">${definition}<a href="${categoryPrefix}glossar.html#${term.slug}" class="glossar-tooltip-link">&#8594; Glossar</a></span></span>`;
+    const tooltipHtml = `<span class="app-glossar-term" tabindex="0">${match[2]}<span class="app-glossar-tooltip">${definition}<a href="${categoryPrefix}glossar.html#${term.slug}" class="app-glossar-tooltip-link">&#8594; Glossar</a></span></span>`;
 
     // Positional replace: splice at exact word position
     result = result.substring(0, wordStart) + tooltipHtml + result.substring(wordStart + match[2].length);
@@ -153,13 +174,13 @@ function injectStructuralMarkers(html) {
   return html.replace(/>[^<]+</g, (match) => {
     let text = match.slice(1, -1); // Remove > and <
     // Abs. N references
-    text = text.replace(/\b(Abs\.\s*\d+[a-z]?)/g, '<span class="legal-ref">$1</span>');
+    text = text.replace(/\b(Abs\.\s*\d+[a-z]?)/g, '<span class="app-legal-ref">$1</span>');
     // Paragraph sign references
-    text = text.replace(/(§\s*\d+[a-z]?(?:\s*(?:bis|und|iVm)\s*§?\s*\d+[a-z]?)*)/g, '<span class="legal-ref">$1</span>');
+    text = text.replace(/(§\s*\d+[a-z]?(?:\s*(?:bis|und|iVm)\s*§?\s*\d+[a-z]?)*)/g, '<span class="app-legal-ref">$1</span>');
     // Z (Ziffer) references
-    text = text.replace(/\b(Z\s*\d+)/g, '<span class="legal-ref">$1</span>');
+    text = text.replace(/\b(Z\s*\d+)/g, '<span class="app-legal-ref">$1</span>');
     // lit. references
-    text = text.replace(/\b(lit\.\s*[a-z])/g, '<span class="legal-ref">$1</span>');
+    text = text.replace(/\b(lit\.\s*[a-z])/g, '<span class="app-legal-ref">$1</span>');
     return '>' + text + '<';
   });
 }
@@ -176,12 +197,12 @@ function renderParagraph(para, llmData, glossaryTerms) {
 
   if (para.absaetze && para.absaetze.length > 0) {
     const items = para.absaetze.map(a => {
-      const numLabel = a.nummer ? `<span class="absatz-num">(${a.nummer})</span>` : '';
+      const numLabel = a.nummer ? `<span class="app-absatz-num">(${a.nummer})</span>` : '';
       // Strip leading "(N)" from text since we render the number separately
       const cleanText = a.nummer ? a.text.replace(new RegExp(`^\\(${escapeRegex(String(a.nummer))}\\)\\s*`), '') : a.text;
-      return `<div class="absatz">${numLabel}<span class="absatz-text">${escapeHtml(cleanText)}</span></div>`;
+      return `<div class="app-absatz">${numLabel}<span class="app-absatz-text">${escapeHtml(cleanText)}</span></div>`;
     }).join('\n');
-    body = `<div class="absaetze-container">\n${items}\n</div>`;
+    body = `<div class="app-absaetze-container">\n${items}\n</div>`;
   } else if (para.text) {
     body = `<p class="mt-2 whitespace-pre-line">${escapeHtml(para.text)}</p>`;
   }
@@ -202,7 +223,7 @@ function renderParagraph(para, llmData, glossaryTerms) {
     ? ` data-topics="${paraLlm.topics.map(t => escapeHtml(t)).join(',')}"`
     : '';
   const summaryHtml = paraLlm && paraLlm.summary
-    ? `\n  <div class="law-summary">
+    ? `\n  <div class="app-law-summary">
     <p>${escapeHtml(paraLlm.summary)}</p>
   </div>`
     : '';
@@ -229,8 +250,8 @@ function renderSection(section, llmData, glossaryTerms) {
     : `abschnitt-${section.nummer}`;
 
   const heading = isHaupt
-    ? `<h2 id="${sectionSlug}" class="hauptstueck-heading">${escapeHtml(section.nummer)}. Hauptstück: ${escapeHtml(section.titel)}</h2>`
-    : `<h2 id="${sectionSlug}" class="abschnitt-heading">${escapeHtml(section.nummer)}. Abschnitt: ${escapeHtml(section.titel)}</h2>`;
+    ? `<h2 id="${sectionSlug}" class="app-hauptstueck-heading">${escapeHtml(section.nummer)}. Hauptstück: ${escapeHtml(section.titel)}</h2>`
+    : `<h2 id="${sectionSlug}" class="app-abschnitt-heading">${escapeHtml(section.nummer)}. Abschnitt: ${escapeHtml(section.titel)}</h2>`;
 
   let content = '';
 
@@ -290,7 +311,7 @@ ${paraLinks}
 
   const items = struktur.map(s => tocSection(s)).join('\n');
 
-  return `    <nav data-pagefind-ignore aria-label="Inhaltsverzeichnis" class="mb-8 bg-white rounded-lg border border-gray-200 p-4">
+  return `    <nav data-pagefind-ignore aria-label="Inhaltsverzeichnis" class="app-toc mb-8 bg-white rounded-lg border border-gray-200 p-4">
       <h2 class="text-lg font-bold text-gruene-dark mb-3">Inhaltsverzeichnis</h2>
       <ul class="space-y-1">
 ${items}
@@ -363,7 +384,9 @@ ${options}
             </optgroup>`);
   }
 
-  return `          <select id="bl-switcher-select" class="bl-header-select" aria-label="Andere Gemeindeordnung anzeigen" data-pagefind-ignore onchange="if(this.value) window.location.href=this.value">
+  // .app-bl-header-select supplies the compact width + custom chevron;
+  // .gat-select supplies DS base typography, focus ring, border tokens.
+  return `          <select id="app-bl-switcher-select" class="gat-select app-bl-header-select" aria-label="Andere Gemeindeordnung anzeigen" data-pagefind-ignore onchange="if(this.value) window.location.href=this.value">
 ${optgroups.join('\n')}
           </select>`;
 }
@@ -389,7 +412,7 @@ ${options}
               </optgroup>`);
   }
 
-  return `          <select id="hero-bl-select" class="bl-header-select" aria-label="Bundesland filtern" data-pagefind-ignore>
+  return `          <select id="hero-bl-select" class="gat-select app-bl-header-select" aria-label="Bundesland filtern" data-pagefind-ignore>
               <option value="">Alle Bundesl\u00E4nder</option>
 ${optgroups.join('\n')}
             </select>`;
@@ -418,7 +441,7 @@ function generateScrollToTop() {
  * Desktop: icon button that opens modal on click.
  */
 function generateSearchHTML() {
-  return `      <input id="header-search-field" type="text" readonly class="header-search-field" placeholder="Suchen..." aria-label="Suche oeffnen" />
+  return `      <input id="header-search-field" type="text" readonly class="gat-input header-search-field" placeholder="Suchen..." aria-label="Suche oeffnen" />
       <button id="search-modal-trigger" class="search-trigger-btn" aria-label="Suche oeffnen (Ctrl+K)" title="Suche (Ctrl+K)">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
       </button>`;
@@ -452,7 +475,15 @@ function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
         </a>
       </nav>`;
 
-  return `  <header data-pagefind-ignore class="sticky top-0 bg-white border-b border-gray-200 z-10">
+  // `.app-header` is the local sticky-search-trigger header. The DS ships a
+  // `.gat-header` atom but it is built around a single-row brand bar with a
+  // fixed 56px logo and wraps to multiple rows once nav + search trigger
+  // are added; that breaks the compact search-first layout this site needs.
+  // We therefore keep an app-specific `<header class="app-header">` shell but
+  // use DS color / hairline tokens (`--gat-web-surface`, `--gat-web-hairline`)
+  // for the background and bottom border so a future DS palette shift
+  // propagates.
+  return `  <header data-pagefind-ignore class="app-header sticky top-0 z-10">
     <div class="max-w-5xl mx-auto px-4 py-2 flex items-center gap-2">
       <a href="${indexPath}" class="flex items-center gap-1.5 text-gruene-dark hover:text-gruene-dark no-underline shrink-0">
         <img src="${logoPath}" alt="Die Gruenen" class="w-7 h-7 gruene-logo" />
@@ -494,7 +525,10 @@ function generateFooter(options = {}) {
 
   const stand = standDatum || formatGermanDate(new Date().toISOString());
 
-  return `  <footer data-pagefind-ignore class="border-t border-gray-200 mt-12">
+  // `.app-footer` mirrors `.app-header` — top hairline pulls from
+  // `--gat-web-hairline` via the app-namespace CSS rule so the line color
+  // tracks the design system without us repeating Tailwind utility colors.
+  return `  <footer data-pagefind-ignore class="app-footer mt-12">
     <div class="max-w-5xl mx-auto px-4 py-6 text-sm text-gray-600">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
@@ -561,11 +595,14 @@ function generateLawPage(law, key, category, rootDir = ROOT) {
     isLawPage: true,
   });
 
-  // Disclaimer info-box (only if LLM data exists)
+  // Disclaimer info-box (only if LLM data exists).
+  // Uses the DS `.gat-callout--info` atom; the legacy
+  // `bg-gruene-light/50 border border-gruene-green/30 ...` utility stack is gone.
   const disclaimerHtml = llmData
-    ? `      <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
-        <strong>Hinweis:</strong> Der Gesetzestext ist im Original wiedergegeben. Die Zusammenfassungen zu den einzelnen Paragraphen wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
-      </div>\n`
+    ? renderCallout(
+        'info',
+        '<p><strong>Hinweis:</strong> Der Gesetzestext ist im Original wiedergegeben. Die Zusammenfassungen zu den einzelnen Paragraphen wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.</p>',
+      ) + '\n'
     : '';
 
   // Topic filter tag-select (only if LLM data has topics)
@@ -585,11 +622,11 @@ function generateLawPage(law, key, category, rootDir = ROOT) {
       const sortedTopics = [...allTopics].sort((a, b) => a.localeCompare(b, 'de'));
       const topicData = sortedTopics.map(t => ({ name: t, count: topicCounts[t] || 0 }));
       topicChipsHtml = `      <div id="topic-filter" class="mb-4 relative" data-pagefind-ignore data-topics-json="${escapeHtml(JSON.stringify(topicData))}">
-        <div class="topic-select-container">
-          <input type="text" id="topic-search-input" class="topic-search-input" placeholder="Themen filtern..." autocomplete="off" />
+        <div class="app-topic-select-container">
+          <input type="text" id="app-topic-search-input" class="gat-input app-topic-search-input" placeholder="Themen filtern..." autocomplete="off" />
         </div>
-        <div id="topic-dropdown" class="topic-dropdown hidden"></div>
-        <div id="topic-selected-chips" class="topic-selected-chips hidden"></div>
+        <div id="app-topic-dropdown" class="app-topic-dropdown hidden"></div>
+        <div id="app-topic-selected-chips" class="app-topic-selected-chips hidden"></div>
       </div>\n`;
     }
   }
@@ -618,7 +655,7 @@ ${breadcrumbHtml}
       </header>
       <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="gesetz" data-search-filter-bundesland="${escapeHtml(law.meta.bundesland)}">
         <div class="relative">
-          <input type="search" class="inline-search-input" autocomplete="off"
+          <input type="search" class="gat-input inline-search-input" autocomplete="off"
             placeholder="In ${escapeHtml(law.meta.bundesland)} suchen..." minlength="3" />
           <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -627,7 +664,7 @@ ${breadcrumbHtml}
         <div class="inline-search-dropdown hidden"></div>
       </div>
 ${disclaimerHtml}${topicChipsHtml}${tocHtml}
-      <main id="main-content" data-pagefind-body class="law-text max-w-prose mx-auto leading-relaxed" tabindex="-1">
+      <main id="main-content" data-pagefind-body class="app-law-text max-w-prose mx-auto leading-relaxed" tabindex="-1">
         ${strukturHtml}
       </main>
     </div>
@@ -748,7 +785,7 @@ ${cards}
           <div class="relative">
             <input id="hero-search-input" type="search" minlength="3" autocomplete="off"
               placeholder="Gesetz, Thema oder Begriff suchen..."
-              class="w-full text-lg py-4 pl-12 pr-4 rounded-xl border-2 border-gruene-green/50 shadow-lg bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
+              class="gat-input hero-search-input" />
             <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           </div>
           <div class="mt-3 flex justify-center">
@@ -836,12 +873,10 @@ ${headerHtml}
           Thematische Übersichten mit Vergleich aller Bundesländer
         </p>
       </div>
-      <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
-        <strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
-      </div>
+${renderCallout('info', '<p><strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.</p>')}
       <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="faq">
         <div class="relative">
-          <input type="search" class="inline-search-input" autocomplete="off"
+          <input type="search" class="gat-input inline-search-input" autocomplete="off"
             placeholder="FAQ durchsuchen..." minlength="3" />
           <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -915,7 +950,7 @@ ${headerHtml}
       </header>
       <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="faq">
         <div class="relative">
-          <input type="search" class="inline-search-input" autocomplete="off"
+          <input type="search" class="gat-input inline-search-input" autocomplete="off"
             placeholder="FAQ durchsuchen..." minlength="3" />
           <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -923,12 +958,8 @@ ${headerHtml}
         </div>
         <div class="inline-search-dropdown hidden"></div>
       </div>
-      <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
-        <strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
-      </div>
-      <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
-        <strong>Wichtig:</strong> Die Regelungen können je nach Bundesland erheblich voneinander abweichen. Prüfen Sie die Details in der jeweiligen Gemeindeordnung Ihres Bundeslandes.
-      </div>
+${renderCallout('info', '<p><strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.</p>')}
+${renderCallout('warn', '<p><strong>Wichtig:</strong> Die Regelungen können je nach Bundesland erheblich voneinander abweichen. Prüfen Sie die Details in der jeweiligen Gemeindeordnung Ihres Bundeslandes.</p>')}
       <main id="main-content" data-pagefind-body tabindex="-1">
 ${questionsHtml}
       </main>
@@ -1007,15 +1038,11 @@ ${headerHtml}
           Wichtige Fachbegriffe aus den österreichischen Gemeindeordnungen
         </p>
       </div>
-      <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
-        <strong>Hinweis:</strong> Diese Definitionen wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
-      </div>
+${renderCallout('info', '<p><strong>Hinweis:</strong> Diese Definitionen wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.</p>')}
       <div class="mb-6" data-pagefind-ignore>
         <input id="glossar-filter" type="search" data-pagefind-ignore
           placeholder="Begriff suchen..."
-          class="w-full sm:w-96 border border-gray-300 rounded-lg px-4 py-2 text-sm
-                 bg-white text-gruene-dark focus:outline-none focus:ring-2
-                 focus:ring-gruene-green/50 focus:border-gruene-green"
+          class="gat-input app-glossar-filter"
           aria-label="Glossarbegriffe filtern" />
       </div>
       <nav class="mb-8 flex flex-wrap gap-3" data-pagefind-ignore>

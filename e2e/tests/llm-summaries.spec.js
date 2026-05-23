@@ -4,16 +4,16 @@ test.describe('LLM Summaries', () => {
   test('LLM-01: always-visible summary above paragraph text', async ({ page }) => {
     await page.goto('./gemeindeordnungen/burgenland.html');
 
-    // Verify .law-summary elements exist (at least 5 on the page)
-    const summaries = page.locator('.law-summary');
+    // Verify .app-law-summary elements exist (at least 5 on the page)
+    const summaries = page.locator('.app-law-summary');
     const count = await summaries.count();
     expect(count).toBeGreaterThan(5);
 
-    // Verify .law-summary is visible WITHOUT any click (no toggle needed)
+    // Verify .app-law-summary is visible WITHOUT any click (no toggle needed)
     const firstSummary = summaries.first();
     await expect(firstSummary).toBeVisible();
 
-    // Verify .law-summary p contains non-empty text
+    // Verify .app-law-summary p contains non-empty text
     const summaryText = firstSummary.locator('p');
     await expect(summaryText).not.toBeEmpty();
 
@@ -30,7 +30,7 @@ test.describe('LLM Summaries', () => {
     await page.goto('./gemeindeordnungen/burgenland.html');
 
     // Burgenland should have many paragraph summaries
-    const summaries = page.locator('.law-summary');
+    const summaries = page.locator('.app-law-summary');
     const count = await summaries.count();
     expect(count).toBeGreaterThan(5);
   });

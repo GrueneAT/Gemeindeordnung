@@ -735,35 +735,44 @@ function openSearchModal(prefilterBundesland = null) {
   if (modalActive) return;
   modalActive = true;
 
-  // Create backdrop
+  // Create backdrop. The DS `.gat-modal` is built on the native `<dialog>`
+  // element + `::backdrop`; this app uses a non-modal-dialog shell so the
+  // sticky-search trigger does not lose its keyboard focus on close, hence
+  // the `.app-search-modal-backdrop` wrapper that handles click-outside.
   const backdrop = document.createElement('div');
-  backdrop.className = 'search-modal-backdrop';
+  backdrop.className = 'app-search-modal-backdrop';
   backdrop.id = 'search-modal-backdrop';
   backdrop.addEventListener('click', (e) => {
     if (e.target === backdrop) closeSearchModal();
   });
 
-  // Create modal
+  // Create modal — DS `.gat-modal` skeleton (head/body); the results panel
+  // and the local `app-search-modal` shell live outside the DS BEM so the
+  // app keeps control of the result-list layout, sticky-keyboard behaviour
+  // and the inner-overflow scroll-region under the input.
   const modal = document.createElement('div');
-  modal.className = 'search-modal';
+  modal.className = 'gat-modal app-search-modal';
   modal.id = 'search-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-label', 'Suche');
   modal.innerHTML = `
-    <div class="search-modal-header">
-      <span class="text-lg font-bold text-gruene-dark">Suche</span>
-      <div class="search-modal-shortcut">ESC</div>
-      <button class="search-modal-close" aria-label="Schliessen">
+    <div class="gat-modal__head">
+      <h2 class="gat-modal__title">Suche</h2>
+      <div class="app-search-modal-shortcut">ESC</div>
+      <button class="gat-modal__close" aria-label="Schliessen">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
-    <div class="search-modal-body">
+    <div class="gat-modal__body app-search-modal__body">
       <div class="relative">
         <input id="search-modal-input" type="search" autocomplete="off"
           placeholder="Gesetz, Thema oder Begriff suchen..."
-          class="w-full border border-gray-300 rounded-lg pl-9 pr-3 py-2.5 text-base bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
+          class="gat-input app-search-modal-input" />
         <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
       </div>
     </div>
-    <div id="search-modal-results" class="search-modal-results"></div>
+    <div id="search-modal-results" class="app-search-modal-results"></div>
   `;
 
   backdrop.appendChild(modal);
@@ -809,8 +818,8 @@ function openSearchModal(prefilterBundesland = null) {
   // Focus input
   modalInput.focus();
 
-  // Wire close button
-  modal.querySelector('.search-modal-close').addEventListener('click', closeSearchModal);
+  // Wire close button (now uses the DS `.gat-modal__close` element)
+  modal.querySelector('.gat-modal__close').addEventListener('click', closeSearchModal);
 
   // Wire result link clicks to close modal
   modalResults.addEventListener('click', (e) => {

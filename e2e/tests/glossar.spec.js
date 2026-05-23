@@ -112,10 +112,10 @@ test.describe('Glossary', () => {
     await page.goto('./gemeindeordnungen/burgenland.html');
 
     // Find glossary term spans (requires data/llm/glossary/terms.json to be generated)
-    const glossarTerms = page.locator('.glossar-term');
+    const glossarTerms = page.locator('.app-glossar-term');
     const termCount = await glossarTerms.count();
     // Skip test if no glossary terms were injected (terms.json not generated)
-    test.skip(termCount === 0, 'No glossar-term elements found — data/llm/glossary/terms.json likely missing');
+    test.skip(termCount === 0, 'No app-glossar-term elements found — data/llm/glossary/terms.json likely missing');
 
     // Get the first glossary term and scroll to it
     const firstTerm = glossarTerms.first();
@@ -126,14 +126,14 @@ test.describe('Glossary', () => {
     await firstTerm.hover();
     await page.waitForTimeout(300);
 
-    // Tooltip should become visible (check that at least one glossar-tooltip is showing)
-    const visibleTooltip = page.locator('.glossar-tooltip:visible').first();
+    // Tooltip should become visible (check that at least one app-glossar-tooltip is showing)
+    const visibleTooltip = page.locator('.app-glossar-tooltip:visible').first();
     await expect(visibleTooltip).toBeVisible({ timeout: 3000 });
 
     // Tooltip contains link to glossary page
     const glossarLink = visibleTooltip.locator('a[href*="glossar.html"]').first();
     await expect(glossarLink).toBeVisible();
 
-    await page.screenshot({ path: 'e2e/screenshots/glossar-tooltip.png', fullPage: false });
+    await page.screenshot({ path: 'e2e/screenshots/app-glossar-tooltip.png', fullPage: false });
   });
 });

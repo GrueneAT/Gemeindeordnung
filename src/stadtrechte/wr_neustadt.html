@@ -17,14 +17,14 @@
   </head>
   <body class="bg-white min-h-screen flex flex-col">
   <a class="gat-skiplink" href="#main-content">Zum Inhalt springen</a>
-  <header data-pagefind-ignore class="sticky top-0 bg-white border-b border-gray-200 z-10">
+  <header data-pagefind-ignore class="app-header sticky top-0 z-10">
     <div class="max-w-5xl mx-auto px-4 py-2 flex items-center gap-2">
       <a href="../index.html" class="flex items-center gap-1.5 text-gruene-dark hover:text-gruene-dark no-underline shrink-0">
         <img src="https://grueneat.github.io/design-system/assets/gruene-logo.svg" alt="Die Gruenen" class="w-7 h-7 gruene-logo" />
         <span class="header-site-name text-sm sm:text-lg font-bold">gemeindeordnung.gruene.at</span>
       </a>
       <div class="flex-1"></div>
-          <select id="bl-switcher-select" class="bl-header-select" aria-label="Andere Gemeindeordnung anzeigen" data-pagefind-ignore onchange="if(this.value) window.location.href=this.value">
+          <select id="app-bl-switcher-select" class="gat-select app-bl-header-select" aria-label="Andere Gemeindeordnung anzeigen" data-pagefind-ignore onchange="if(this.value) window.location.href=this.value">
             <optgroup label="Burgenland">
             <option value="../stadtrechte/eisenstadt.html">Eisenstadt (Stadtrecht)</option>
             <option value="../stadtrechte/rust.html">Rust (Stadtrecht)</option>
@@ -78,7 +78,7 @@
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
         </a>
       </nav>
-      <input id="header-search-field" type="text" readonly class="header-search-field" placeholder="Suchen..." aria-label="Suche oeffnen" />
+      <input id="header-search-field" type="text" readonly class="gat-input header-search-field" placeholder="Suchen..." aria-label="Suche oeffnen" />
       <button id="search-modal-trigger" class="search-trigger-btn" aria-label="Suche oeffnen (Ctrl+K)" title="Suche (Ctrl+K)">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
       </button>
@@ -98,11 +98,11 @@
       <header class="mb-6">
         <h1 class="text-3xl font-bold text-gruene-dark">Wr. Neustaedter Stadtrecht 1977</h1>
         <p class="mt-1 text-gruene-dark/80">Wr. Neustadt (Wr. Neustadt)</p>
-        <p class="mt-1 text-sm text-gray-600">Stand: 23.05.2026</p>
+        <p class="mt-1 text-sm text-gray-600">Stand: 15.03.2026</p>
       </header>
       <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="gesetz" data-search-filter-bundesland="Wr. Neustadt">
         <div class="relative">
-          <input type="search" class="inline-search-input" autocomplete="off"
+          <input type="search" class="gat-input inline-search-input" autocomplete="off"
             placeholder="In Wr. Neustadt suchen..." minlength="3" />
           <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -110,17 +110,17 @@
         </div>
         <div class="inline-search-dropdown hidden"></div>
       </div>
-      <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
-        <strong>Hinweis:</strong> Der Gesetzestext ist im Original wiedergegeben. Die Zusammenfassungen zu den einzelnen Paragraphen wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
+      <div class="gat-callout gat-callout--info" data-pagefind-ignore>
+        <p><strong>Hinweis:</strong> Der Gesetzestext ist im Original wiedergegeben. Die Zusammenfassungen zu den einzelnen Paragraphen wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.</p>
       </div>
       <div id="topic-filter" class="mb-4 relative" data-pagefind-ignore data-topics-json="[{&quot;name&quot;:&quot;Finanzkontrolle&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Gemeinderat&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Kontrollamt&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Kontrollausschuss&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Organe der Gemeinde&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Rechtsstellung der Gemeinde&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Stadtgebiet&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Stadtidentität&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Statutarstadt&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Wappen und Hoheitszeichen&quot;,&quot;count&quot;:1}]">
-        <div class="topic-select-container">
-          <input type="text" id="topic-search-input" class="topic-search-input" placeholder="Themen filtern..." autocomplete="off" />
+        <div class="app-topic-select-container">
+          <input type="text" id="app-topic-search-input" class="gat-input app-topic-search-input" placeholder="Themen filtern..." autocomplete="off" />
         </div>
-        <div id="topic-dropdown" class="topic-dropdown hidden"></div>
-        <div id="topic-selected-chips" class="topic-selected-chips hidden"></div>
+        <div id="app-topic-dropdown" class="app-topic-dropdown hidden"></div>
+        <div id="app-topic-selected-chips" class="app-topic-selected-chips hidden"></div>
       </div>
-    <nav data-pagefind-ignore aria-label="Inhaltsverzeichnis" class="mb-8 bg-white rounded-lg border border-gray-200 p-4">
+    <nav data-pagefind-ignore aria-label="Inhaltsverzeichnis" class="app-toc mb-8 bg-white rounded-lg border border-gray-200 p-4">
       <h2 class="text-lg font-bold text-gruene-dark mb-3">Inhaltsverzeichnis</h2>
       <ul class="space-y-1">
       <li>
@@ -137,9 +137,9 @@
       </li>
       </ul>
     </nav>
-      <main id="main-content" data-pagefind-body class="law-text max-w-prose mx-auto leading-relaxed" tabindex="-1">
+      <main id="main-content" data-pagefind-body class="app-law-text max-w-prose mx-auto leading-relaxed" tabindex="-1">
         <section class="mb-8 pt-4">
-<h2 id="abschnitt-1" class="abschnitt-heading">1. Abschnitt: </h2>
+<h2 id="abschnitt-1" class="app-abschnitt-heading">1. Abschnitt: </h2>
 <article class="mb-6 group" data-topics="Rechtsstellung der Gemeinde,Statutarstadt">
   <h3 id="p1" class="text-lg font-semibold text-gruene-dark flex items-center gap-2">
     <span>&sect; 1 <span class="text-gruene-dark/80">Rechtliche Stellung der Stadt</span></span>
@@ -147,12 +147,12 @@
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
     </button>
   </h3>
-  <div class="law-summary">
+  <div class="app-law-summary">
     <p>Wiener Neustadt ist als Gebietskörperschaft mit eigenem Statut zur Selbstverwaltung berechtigt. Das Stadtgebiet bildet gleichzeitig einen politischen Bezirk, weshalb die Stadt sowohl Gemeinde- als auch Bezirksverwaltungsaufgaben wahrnimmt.</p>
   </div>
-  <div class="absaetze-container">
-<div class="absatz"><span class="absatz-num">(1)</span><span class="absatz-text">Die Stadtgemeinde Wiener Neustadt ist eine Gebietskörperschaft mit dem Recht auf Selbstverwaltung. Sie ist eine Stadt mit eigenem Statut.</span></div>
-<div class="absatz"><span class="absatz-num">(2)</span><span class="absatz-text">Das Gebiet der Stadt ist zugleich politischer Bezirk. Die Stadt hat neben den Aufgaben der Gemeindeverwaltung auch die der Bezirksverwaltung zu besorgen.</span></div>
+  <div class="app-absaetze-container">
+<div class="app-absatz"><span class="app-absatz-num">(1)</span><span class="app-absatz-text">Die Stadtgemeinde Wiener Neustadt ist eine Gebietskörperschaft mit dem Recht auf Selbstverwaltung. Sie ist eine Stadt mit eigenem Statut.</span></div>
+<div class="app-absatz"><span class="app-absatz-num">(2)</span><span class="app-absatz-text">Das Gebiet der Stadt ist zugleich politischer Bezirk. Die Stadt hat neben den Aufgaben der Gemeindeverwaltung auch die der Bezirksverwaltung zu besorgen.</span></div>
 </div>
 </article>
 <article class="mb-6 group" data-topics="Stadtgebiet">
@@ -162,7 +162,7 @@
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
     </button>
   </h3>
-  <div class="law-summary">
+  <div class="app-law-summary">
     <p>Die Grenzen des Stadtgebiets ergeben sich aus dem niederösterreichischen Gemeindegliederungsgesetz (LGBl. 1030).</p>
   </div>
   <p class="mt-2 whitespace-pre-line">Das Stadtgebiet wird durch das Gesetz über die Gliederung des Landes Niederösterreich in Gemeinden, LGBl. 1030, festgelegt.</p>
@@ -174,14 +174,14 @@
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
     </button>
   </h3>
-  <div class="law-summary">
+  <div class="app-law-summary">
     <p>Wiener Neustadt führt einen viergeteilten Wappenschild mit dem schwarzen Doppeladler sowie einem silbernen Torbau auf grünem Dreiberg. Die Stadtfarben sind Weiß-Rot. Sowohl das Stadtsiegel als auch das Amtssiegel des Magistrats zeigen das Stadtwappen mit entsprechender Umschrift.</p>
   </div>
-  <div class="absaetze-container">
-<div class="absatz"><span class="absatz-num">(1)</span><span class="absatz-text">Das Wappen der Stadt Wiener Neustadt ist ein viergeteilter Schild, der in seinem ersten und vierten Feld in Gold einen goldbeschnäbelten rotbezungten nimbierten und mit einer silbernen Kaiserkrone halsgekrönten schwarzen Doppeladler, in seinem zweiten und dritten Feld in Rot auf einem grünen Dreiberg einen silbernen zweitürmigen zinnenbekrönten Torbau, dessen durchbrochenes Rundbogentor mit hochgezogenem goldenen Fallgatter von je einer schwarz geöffneten Schießscharte beseitet wird, dessen Türme mit je einem schwarz geöffneten Fenster versehen sind und der zwischen den Türmen einen schwebenden rot-weiß-roten österreichischen Bindenschild zeigt.</span></div>
-<div class="absatz"><span class="absatz-num">(2)</span><span class="absatz-text">Die Farben der Stadt sind weiß-rot.</span></div>
-<div class="absatz"><span class="absatz-num">(3)</span><span class="absatz-text">Das Siegel der Stadt weist das Stadtwappen (<span class="legal-ref">Abs. 1</span>) mit der Umschrift “Stadt Wiener Neustadt” auf.</span></div>
-<div class="absatz"><span class="absatz-num">(4)</span><span class="absatz-text">Das Amtssiegel des Magistrates weist das Wappen und die Umschrift “Magistrat der Stadt Wiener Neustadt” auf.</span></div>
+  <div class="app-absaetze-container">
+<div class="app-absatz"><span class="app-absatz-num">(1)</span><span class="app-absatz-text">Das Wappen der Stadt Wiener Neustadt ist ein viergeteilter Schild, der in seinem ersten und vierten Feld in Gold einen goldbeschnäbelten rotbezungten nimbierten und mit einer silbernen Kaiserkrone halsgekrönten schwarzen Doppeladler, in seinem zweiten und dritten Feld in Rot auf einem grünen Dreiberg einen silbernen zweitürmigen zinnenbekrönten Torbau, dessen durchbrochenes Rundbogentor mit hochgezogenem goldenen Fallgatter von je einer schwarz geöffneten Schießscharte beseitet wird, dessen Türme mit je einem schwarz geöffneten Fenster versehen sind und der zwischen den Türmen einen schwebenden rot-weiß-roten österreichischen Bindenschild zeigt.</span></div>
+<div class="app-absatz"><span class="app-absatz-num">(2)</span><span class="app-absatz-text">Die Farben der Stadt sind weiß-rot.</span></div>
+<div class="app-absatz"><span class="app-absatz-num">(3)</span><span class="app-absatz-text">Das Siegel der Stadt weist das Stadtwappen (<span class="app-legal-ref">Abs. 1</span>) mit der Umschrift “Stadt Wiener Neustadt” auf.</span></div>
+<div class="app-absatz"><span class="app-absatz-num">(4)</span><span class="app-absatz-text">Das Amtssiegel des Magistrates weist das Wappen und die Umschrift “Magistrat der Stadt Wiener Neustadt” auf.</span></div>
 </div>
 </article>
 <article class="mb-6 group" data-topics="Organe der Gemeinde,Gemeinderat,Kontrollausschuss">
@@ -191,12 +191,12 @@
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
     </button>
   </h3>
-  <div class="law-summary">
+  <div class="app-law-summary">
     <p>Der Gemeinderat setzt sich aus 40 Mitgliedern zusammen. Im Stadtsenat sind neben der ersten und zweiten Vizebürgermeister:in acht Stadträt:innen vertreten. Für die Kontrolle ist ein Kontrollausschuss mit mindestens sieben Mitgliedern samt Ersatzmitgliedern vorgesehen.</p>
   </div>
-  <div class="absaetze-container">
-<div class="absatz"><span class="absatz-num">(1)</span><span class="absatz-text">Für die Organe der Stadt gilt:1.Der Gemeinderat besteht aus 40 Mitgliedern.2.Der Stadtsenat besteht aus dem Ersten und dem Zweiten Vizebürgermeister sowie 8 Stadträten.</span></div>
-<div class="absatz"><span class="absatz-num">(2)</span><span class="absatz-text">Der Kontrollausschuss besteht aus mindestens 7 Mitgliedern und Ersatzmitgliedern.</span></div>
+  <div class="app-absaetze-container">
+<div class="app-absatz"><span class="app-absatz-num">(1)</span><span class="app-absatz-text">Für die Organe der Stadt gilt:1.Der Gemeinderat besteht aus 40 Mitgliedern.2.Der Stadtsenat besteht aus dem Ersten und dem Zweiten Vizebürgermeister sowie 8 Stadträten.</span></div>
+<div class="app-absatz"><span class="app-absatz-num">(2)</span><span class="app-absatz-text">Der Kontrollausschuss besteht aus mindestens 7 Mitgliedern und Ersatzmitgliedern.</span></div>
 </div>
 </article>
 <article class="mb-6 group" data-topics="Finanzkontrolle,Kontrollamt">
@@ -206,7 +206,7 @@
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
     </button>
   </h3>
-  <div class="law-summary">
+  <div class="app-law-summary">
     <p>Zur Überprüfung der städtischen Gebarung und Rechnungsführung ist ein eigenes Kontrollamt einzurichten.</p>
   </div>
   <p class="mt-2 whitespace-pre-line">Zur Prüfung der Gebarung und Rechnung der Stadt ist ein Kontrollamt einzurichten.</p>
@@ -214,12 +214,12 @@
 </section>
       </main>
     </div>
-  <footer data-pagefind-ignore class="border-t border-gray-200 mt-12">
+  <footer data-pagefind-ignore class="app-footer mt-12">
     <div class="max-w-5xl mx-auto px-4 py-6 text-sm text-gray-600">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
           <a href="https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=LrNO&amp;Gesetzesnummer=20000066" target="_blank" rel="noopener" class="text-gruene-dark hover:underline">Quelle: RIS</a>
-          <span>Stand: 23.05.2026</span>
+          <span>Stand: 15.03.2026</span>
           <span class="font-medium">Keine Rechtsberatung</span>
         </div>
         <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">

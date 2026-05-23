@@ -4,8 +4,8 @@ test.describe('Typography readability (UAT 4)', () => {
   test('law text has adequate line-height and constrained max-width', async ({ page }) => {
     await page.goto('./gemeindeordnungen/wien.html');
 
-    // The law text container uses law-text class on <main>
-    const lawContainer = page.locator('main.law-text');
+    // The law text container uses app-law-text class on <main>
+    const lawContainer = page.locator('main.app-law-text');
     await expect(lawContainer).toBeVisible();
 
     // Evaluate computed styles
@@ -44,6 +44,6 @@ test.describe('Typography readability (UAT 4)', () => {
     expect(await articles.count()).toBeGreaterThan(0);
 
     // Screenshot
-    await page.screenshot({ path: 'e2e/screenshots/typography-law-text.png', fullPage: false });
+    await page.screenshot({ path: 'e2e/screenshots/typography-app-law-text.png', fullPage: false });
   });
 });

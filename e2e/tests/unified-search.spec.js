@@ -173,7 +173,7 @@ test.describe('Unified search: mobile modal', () => {
 
     // Open modal via header search field tap
     await page.click('#header-search-field');
-    const modal = page.locator('.search-modal');
+    const modal = page.locator('.app-search-modal');
     await expect(modal).toBeVisible({ timeout: 3000 });
 
     // Type in modal search input

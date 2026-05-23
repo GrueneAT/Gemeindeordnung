@@ -25,11 +25,42 @@
   --color-gruene-accent: var(--gat-color-hellgruen, #8AB414);
   --color-gruene-link: #005538;
   --color-gruene-link-hover: var(--gat-web-green-deep, #2D5016);
+
+  /*
+   * App-local micro-text size. The DS type scale starts at `--gat-text-small`
+   * (~0.875rem); the laws-site uses 11px for the tightest UI chrome (Stadtrecht
+   * badge, Search-Modal-Shortcut, Search-Tab-Label, BL-Switcher-Label).
+   * Documented as an app-specific Sonderwert -- not part of the DS scale.
+   *
+   * Follow-up for the DS maintainers (see notes/iteration-abschluss.md):
+   * if a `--gat-text-micro` 11px tier ever lands in v2.3+, this can be
+   * aliased to it.
+   */
+  --app-text-micro: 0.6875rem;
 }
 
 /* Prevent horizontal overflow on mobile */
 html, body {
   overflow-x: hidden;
+}
+
+/*
+ * App-specific sticky-search header. The DS ships `.gat-header` (single-row
+ * brand bar, 56px logo) but it does not accommodate the sticky-search-trigger
+ * layout this site requires. The local `.app-header` therefore stays — but
+ * background, bottom hairline and color all pull from DS tokens so a future
+ * DS-palette change propagates.
+ */
+.app-header {
+  background: var(--gat-web-surface, #ffffff);
+  border-bottom: 1px solid var(--gat-web-hairline, #e5e7eb);
+}
+
+/*
+ * Footer mirrors the header — top hairline from `--gat-web-hairline`.
+ */
+.app-footer {
+  border-top: 1px solid var(--gat-web-hairline, #e5e7eb);
 }
 
 /*
@@ -137,7 +168,16 @@ h3[id] {
 /* ---- Hero Section Styles ---- */
 
 .hero-section {
-  background: linear-gradient(135deg, #f0f7ed 0%, #e8f5e3 100%);
+  /*
+   * The hero is a soft green wash from the DS green-tint token. The end stop
+   * fades slightly toward the surface color so the gradient has perceptible
+   * direction without competing with the headline text.
+   */
+  background: linear-gradient(
+    135deg,
+    var(--color-gruene-light) 0%,
+    color-mix(in srgb, var(--color-gruene-light) 70%, white) 100%
+  );
   padding: 3rem 1rem;
   text-align: center;
 }
@@ -153,6 +193,20 @@ h3[id] {
   right: 0;
   top: 100%;
   z-index: 50;
+}
+
+/*
+ * Hero search input — sits on top of `.gat-input` baseline. App-specific
+ * tweaks: larger font, generous touch target, room for the absolute-positioned
+ * search-icon SVG on the left, and a soft drop shadow that lifts it above the
+ * hero gradient.
+ */
+.hero-search-input {
+  font-size: 1.125rem;
+  padding: 1rem 1rem 1rem 3rem;
+  border-width: 2px;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 /* ---- Discovery Chip Styles ---- */
@@ -176,15 +230,15 @@ h3[id] {
 .discovery-chip {
   display: inline-block;
   padding: 0.375rem 0.875rem;
-  border: 1px solid #6BA539;
+  border: 1px solid var(--color-gruene-green);
   border-radius: 9999px;
-  color: #1a3a1a;
+  color: var(--color-gruene-dark);
   font-size: 0.8125rem;
   text-decoration: none;
   transition: background-color 0.15s, color 0.15s;
 }
 .discovery-chip:hover {
-  background-color: #6BA539;
+  background-color: var(--color-gruene-green);
   color: white;
 }
 
@@ -287,8 +341,14 @@ details > summary::-webkit-details-marker {
   line-height: 1.4;
 }
 
-/* Highlighted terms in excerpts */
-.search-result-excerpt mark {
+/*
+ * Highlighted terms in Pagefind-generated excerpts. Pagefind emits bare
+ * `<mark>` tags so we style the element selector inside the result-excerpt
+ * scope. The same look is exposed as the `.app-search-mark` class for any
+ * direct authoring (see below).
+ */
+.search-result-excerpt mark,
+.app-search-mark {
   background-color: rgba(250, 204, 21, 0.4);
   border-radius: 0.125rem;
   padding: 0 0.125rem;
@@ -296,7 +356,7 @@ details > summary::-webkit-details-marker {
 
 /* Stadtrecht badge */
 .search-badge-stadtrecht {
-  font-size: 0.6875rem;
+  font-size: var(--app-text-micro);
   font-weight: 500;
   background-color: var(--color-gruene-light);
   color: var(--color-gruene-dark);
@@ -431,13 +491,16 @@ details > summary::-webkit-details-marker {
 
 /* ---- Header Search Field (mobile) / Search Icon (desktop) ---- */
 
+/*
+ * Sits ON TOP of the DS `.gat-input` baseline (typography, focus ring, border
+ * tokens are inherited). Only sets app-specific layout deltas: flex sizing,
+ * compact padding, and the muted look that makes it read as a button.
+ */
 .header-search-field {
   flex: 1;
   min-width: 0;
   padding: 0.35rem 0.75rem;
   font-size: 0.8125rem;
-  border: 1px solid #d1d5db;
-  border-radius: 0.5rem;
   background: #f9fafb;
   color: #6b7280;
   cursor: pointer;
@@ -466,17 +529,28 @@ details > summary::-webkit-details-marker {
   padding: 0.5rem;
   border-radius: 0.5rem;
   color: var(--color-gruene-dark);
-  background: rgba(107, 165, 57, 0.1);
+  /*
+   * 10% / 20% green tint of the hellgruen brand color. Token-derived via
+   * `color-mix` so a DS palette refresh propagates here too.
+   */
+  background: color-mix(in srgb, var(--color-gruene-green) 10%, transparent);
   border: 1px solid transparent;
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s;
 }
 .search-trigger-btn:hover {
-  background: rgba(107, 165, 57, 0.2);
+  background: color-mix(in srgb, var(--color-gruene-green) 20%, transparent);
   border-color: var(--color-gruene-green);
 }
 
-.search-modal-backdrop {
+/*
+ * Custom backdrop for the app-search modal. The DS `.gat-modal` is built on
+ * the native `<dialog>` element which surfaces a `::backdrop` pseudo; this
+ * app uses a non-`<dialog>` shell so it can click-outside-to-close without
+ * the focus-trap baked into native modal dialogs. Z-index sits above the
+ * sticky header (`z-index: 10`).
+ */
+.app-search-modal-backdrop {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
@@ -493,10 +567,12 @@ details > summary::-webkit-details-marker {
   to { opacity: 1; }
 }
 
-.search-modal {
-  background: white;
-  border-radius: 0.75rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+/*
+ * `.app-search-modal` sits on top of the DS `.gat-modal` and adds app-specific
+ * layout: flex-column with a scrollable results pane, 90vw / 700px sizing and
+ * the slide-in animation. The DS supplies background, radius, shadow, color.
+ */
+.app-search-modal {
   width: 90vw;
   max-width: 700px;
   max-height: 80vh;
@@ -511,42 +587,21 @@ details > summary::-webkit-details-marker {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.search-modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.25rem;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.search-modal-shortcut {
-  font-size: 0.6875rem;
-  color: #9ca3af;
-  border: 1px solid #e5e7eb;
+/*
+ * Cmd-K shortcut chip in the modal head (between the title and the close
+ * button). Aligns to the right edge of the head row.
+ */
+.app-search-modal-shortcut {
+  font-size: var(--app-text-micro);
+  color: var(--gat-web-text-mute, #9ca3af);
+  border: 1px solid var(--gat-web-hairline, #e5e7eb);
   border-radius: 0.25rem;
   padding: 0.125rem 0.375rem;
   margin-left: auto;
   margin-right: 0.5rem;
 }
 
-.search-modal-close {
-  padding: 0.375rem;
-  color: #6b7280;
-  cursor: pointer;
-  border-radius: 0.375rem;
-  border: none;
-  background: none;
-}
-.search-modal-close:hover {
-  background: #f3f4f6;
-  color: var(--color-gruene-dark);
-}
-
-.search-modal-body {
-  padding: 1rem 1.25rem;
-}
-
-.search-modal-results {
+.app-search-modal-results {
   flex: 1;
   overflow-y: auto;
   max-height: 60vh;
@@ -554,11 +609,11 @@ details > summary::-webkit-details-marker {
 
 /* Mobile: full-screen modal */
 @media (max-width: 639px) {
-  .search-modal-backdrop {
+  .app-search-modal-backdrop {
     padding-top: 0;
     align-items: stretch;
   }
-  .search-modal {
+  .app-search-modal {
     width: 100%;
     max-width: 100%;
     max-height: 100%;
@@ -566,6 +621,12 @@ details > summary::-webkit-details-marker {
     border-radius: 0;
   }
 }
+
+/*
+ * `.app-search-mark` is defined alongside `.search-result-excerpt mark` (see
+ * above) so the DS-less highlight color stays available for direct authoring.
+ * The DS does not (yet) ship a `.gat-mark` atom.
+ */
 
 /* ---- Search Tab Styles ---- */
 
@@ -603,7 +664,7 @@ details > summary::-webkit-details-marker {
 
 /* Inline type label for FAQ/Glossar result cards */
 .search-result-type-label {
-  font-size: 0.6875rem;
+  font-size: var(--app-text-micro);
   font-weight: 500;
   color: #6b7280;
   margin-left: auto;
@@ -611,32 +672,21 @@ details > summary::-webkit-details-marker {
 
 /* ---- Topic Filter Styles ---- */
 
-.topic-search-input {
-  width: 100%;
-  padding: 0.5rem 0.75rem 0.5rem 2.25rem;
-  border: 1px solid #d1d5db;
-  border-radius: 0.5rem;
+/*
+ * Topic filter input — `.gat-input` covers typography, focus, border tokens.
+ * App-specific overrides: compact 14px size and the embedded search-icon
+ * background image (cheaper than an absolute-positioned SVG sibling).
+ */
+.app-topic-search-input {
+  padding-left: 2.25rem;
   font-size: 0.875rem;
-  color: var(--color-gruene-dark);
-  background-color: white;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: 0.625rem center;
   background-size: 1rem;
-  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
-.topic-search-input:focus {
-  outline: none;
-  border-color: var(--color-gruene-green);
-  box-shadow: 0 0 0 3px rgba(107, 165, 57, 0.15);
-}
-
-.topic-search-input::placeholder {
-  color: #9ca3af;
-}
-
-.topic-dropdown {
+.app-topic-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
@@ -651,11 +701,11 @@ details > summary::-webkit-details-marker {
   margin-top: 0.25rem;
 }
 
-.topic-dropdown.hidden {
+.app-topic-dropdown.hidden {
   display: none;
 }
 
-.topic-dropdown-item {
+.app-topic-dropdown-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -666,40 +716,40 @@ details > summary::-webkit-details-marker {
   transition: background-color 0.1s;
 }
 
-.topic-dropdown-item:hover {
+.app-topic-dropdown-item:hover {
   background-color: var(--color-gruene-light);
 }
 
-.topic-dropdown-item input[type="checkbox"] {
+.app-topic-dropdown-item input[type="checkbox"] {
   accent-color: var(--color-gruene-green);
   width: 1rem;
   height: 1rem;
   flex-shrink: 0;
 }
 
-.topic-dropdown-item.topic-item-checked {
+.app-topic-dropdown-item.app-topic-item-checked {
   background-color: var(--color-gruene-light);
 }
 
-.topic-dropdown-name {
+.app-topic-dropdown-name {
   flex: 1;
   min-width: 0;
 }
 
-.topic-dropdown-count {
+.app-topic-dropdown-count {
   color: #9ca3af;
   font-size: 0.75rem;
   flex-shrink: 0;
 }
 
-.topic-dropdown-empty {
+.app-topic-dropdown-empty {
   padding: 0.75rem;
   text-align: center;
   color: #9ca3af;
   font-size: 0.8125rem;
 }
 
-.topic-selected-chips {
+.app-topic-selected-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -707,11 +757,11 @@ details > summary::-webkit-details-marker {
   align-items: center;
 }
 
-.topic-selected-chips.hidden {
+.app-topic-selected-chips.hidden {
   display: none;
 }
 
-.topic-selected-chip {
+.app-topic-selected-chip {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
@@ -722,7 +772,7 @@ details > summary::-webkit-details-marker {
   font-size: 0.8125rem;
 }
 
-.topic-chip-remove {
+.app-topic-chip-remove {
   cursor: pointer;
   opacity: 0.7;
   font-size: 1rem;
@@ -730,11 +780,11 @@ details > summary::-webkit-details-marker {
   margin-left: 0.125rem;
 }
 
-.topic-chip-remove:hover {
+.app-topic-chip-remove:hover {
   opacity: 1;
 }
 
-.topic-reset-link {
+.app-topic-reset-link {
   font-size: 0.8125rem;
   color: var(--color-gruene-link);
   text-decoration: underline;
@@ -744,13 +794,13 @@ details > summary::-webkit-details-marker {
   padding: 0;
 }
 
-.topic-reset-link:hover {
+.app-topic-reset-link:hover {
   color: var(--color-gruene-link-hover);
 }
 
 /* ---- Glossary Tooltip Styles ---- */
 
-.glossar-term {
+.app-glossar-term {
   text-decoration: underline;
   text-decoration-style: dotted;
   text-decoration-color: var(--color-gruene-green);
@@ -759,7 +809,7 @@ details > summary::-webkit-details-marker {
   position: relative;
 }
 
-.glossar-tooltip {
+.app-glossar-tooltip {
   display: none;
   position: absolute;
   bottom: 100%;
@@ -778,13 +828,13 @@ details > summary::-webkit-details-marker {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.glossar-term:hover .glossar-tooltip,
-.glossar-term:focus .glossar-tooltip,
-.glossar-term.glossar-tooltip-active .glossar-tooltip {
+.app-glossar-term:hover .app-glossar-tooltip,
+.app-glossar-term:focus .app-glossar-tooltip,
+.app-glossar-term.app-glossar-tooltip-active .app-glossar-tooltip {
   display: block;
 }
 
-.glossar-tooltip-link {
+.app-glossar-tooltip-link {
   color: var(--color-gruene-light);
   text-decoration: underline;
   font-size: 0.75rem;
@@ -795,7 +845,7 @@ details > summary::-webkit-details-marker {
 /* ---- Law Text Readability Styles ---- */
 
 /* Scoped typography for law pages */
-.law-text {
+.app-law-text {
   font-size: 1.0625rem; /* 17px */
   line-height: 1.75;
   max-width: 65ch;
@@ -804,17 +854,17 @@ details > summary::-webkit-details-marker {
 }
 
 @media (max-width: 639px) {
-  .law-text {
+  .app-law-text {
     font-size: 1rem; /* 16px on mobile */
   }
 }
 
-.law-text article {
+.app-law-text article {
   margin-bottom: 2rem;
 }
 
 /* Hauptstueck headings -- top-level, most prominent */
-.hauptstueck-heading {
+.app-hauptstueck-heading {
   font-size: 1.5rem;
   font-weight: 700;
   margin-top: 3rem;
@@ -826,7 +876,7 @@ details > summary::-webkit-details-marker {
 }
 
 /* Abschnitt headings -- mid-level with left accent */
-.abschnitt-heading {
+.app-abschnitt-heading {
   font-size: 1.25rem;
   font-weight: 600;
   margin-top: 2rem;
@@ -837,7 +887,7 @@ details > summary::-webkit-details-marker {
 }
 
 /* Paragraph headings -- subordinate */
-.law-text h3 {
+.app-law-text h3 {
   font-size: 1.0625rem;
   font-weight: 600;
 }
@@ -848,22 +898,22 @@ h2[id] {
 }
 
 /* Absatz separation styles */
-.absaetze-container {
+.app-absaetze-container {
   margin-top: 0.75rem;
 }
 
-.absatz {
+.app-absatz {
   display: flex;
   gap: 0.5rem;
   padding: 0.5rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.absatz:last-child {
+.app-absatz:last-child {
   border-bottom: none;
 }
 
-.absatz-num {
+.app-absatz-num {
   color: #4a7c59;
   font-size: 0.875rem;
   flex-shrink: 0;
@@ -871,7 +921,7 @@ h2[id] {
   font-variant-numeric: tabular-nums;
 }
 
-.absatz-text {
+.app-absatz-text {
   flex: 1;
   min-width: 0;
   overflow-wrap: break-word;
@@ -879,7 +929,7 @@ h2[id] {
 }
 
 /* Always-visible summary orientation box */
-.law-summary {
+.app-law-summary {
   background-color: var(--color-gruene-light);
   border-left: 3px solid var(--color-gruene-green);
   padding: 0.75rem 1rem;
@@ -891,15 +941,15 @@ h2[id] {
 }
 
 /* Enhanced glossary term styling within law text */
-.law-text .glossar-term {
+.app-law-text .app-glossar-term {
   text-decoration-thickness: 2px;
-  background-color: rgba(107, 165, 57, 0.08);
+  background-color: color-mix(in srgb, var(--color-gruene-green) 8%, transparent);
   padding: 0 0.125rem;
   border-radius: 0.125rem;
 }
 
 /* Structural marker styling for legal references */
-.legal-ref {
+.app-legal-ref {
   color: var(--color-gruene-dark);
   font-weight: 500;
   white-space: nowrap;
@@ -907,14 +957,14 @@ h2[id] {
 
 /* ---- BL Switcher Styles (law page header) ---- */
 
-.bl-switcher {
+.app-bl-switcher {
   margin-top: 0.5rem;
   max-width: 100%;
 }
 
-.bl-switcher-label {
+.app-bl-switcher-label {
   display: block;
-  font-size: 0.6875rem;
+  font-size: var(--app-text-micro);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -922,68 +972,26 @@ h2[id] {
   margin-bottom: 0.25rem;
 }
 
-.bl-switcher-select {
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: #f9fafb;
-  border: 1px solid #d1d5db;
-  border-radius: 0.5rem;
-  padding: 0.375rem 2rem 0.375rem 0.75rem;
-  font-size: 0.8125rem;
-  color: var(--color-gruene-dark);
-  cursor: pointer;
-  min-width: 180px;
-  max-width: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%236b7280'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.5rem center;
-  background-size: 1rem;
-  transition: border-color 0.15s;
-}
-
-.bl-switcher-select:hover {
-  border-color: var(--color-gruene-green);
-}
-
-.bl-switcher-select:focus {
-  outline: 2px solid var(--color-gruene-green);
-  outline-offset: 1px;
-}
-
 /* ---- Compact BL Header Select (inline in sticky header) ---- */
 
-.bl-header-select {
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: #f9fafb;
-  border: 1px solid #d1d5db;
-  border-radius: 0.375rem;
+/*
+ * Compact BL select in the sticky header. Sits on top of `.gat-select`
+ * baseline; overrides the chevron position to match the tighter padding so
+ * the text content (BL name) does not collide with the arrow at narrow widths.
+ */
+.app-bl-header-select {
   padding: 0.25rem 1.5rem 0.25rem 0.5rem;
   font-size: 0.75rem;
-  color: var(--color-gruene-dark);
-  cursor: pointer;
   max-width: 140px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%236b7280'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
   background-position: right 0.25rem center;
   background-size: 0.875rem;
-  transition: border-color 0.15s;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.bl-header-select:hover {
-  border-color: var(--color-gruene-green);
-}
-
-.bl-header-select:focus {
-  outline: 2px solid var(--color-gruene-green);
-  outline-offset: 1px;
-}
-
 @media (min-width: 640px) {
-  .bl-header-select {
+  .app-bl-header-select {
     max-width: 200px;
     font-size: 0.8125rem;
   }
@@ -1003,23 +1011,16 @@ h2[id] {
   position: relative;
 }
 
+/*
+ * Inline (scoped) search input — sits on top of `.gat-input` baseline.
+ * Only sets app-specific deltas: left padding for the embedded search-icon
+ * SVG, slightly heavier border and the compact 14px size used in tight
+ * dropdown panels.
+ */
 .inline-search-input {
-  width: 100%;
-  padding: 0.5rem 0.75rem 0.5rem 2.25rem;
-  border: 1.5px solid #d1d5db;
-  border-radius: 0.5rem;
+  padding-left: 2.25rem;
+  border-width: 1.5px;
   font-size: 0.875rem;
-  color: var(--color-gruene-dark);
-  background: white;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-.inline-search-input:focus {
-  outline: none;
-  border-color: var(--color-gruene-green);
-  box-shadow: 0 0 0 3px rgba(107, 165, 57, 0.15);
-}
-.inline-search-input::placeholder {
-  color: #6b7280;
 }
 
 .inline-search-dropdown {
@@ -1073,6 +1074,23 @@ h2[id] {
   }
 }
 
+/*
+ * Glossary filter input — `.gat-input` covers everything else; only override
+ * the responsive width so the input does not stretch past the 24rem column
+ * on desktop.
+ */
+.app-glossar-filter {
+  max-width: 24rem;
+}
+
+/*
+ * Search modal input — `.gat-input` baseline plus room for the absolute-
+ * positioned search-icon SVG on the left.
+ */
+.app-search-modal-input {
+  padding-left: 2.25rem;
+}
+
 /* Mobile: inline search dropdown full width */
 @media (max-width: 639px) {
   .inline-search-dropdown {
@@ -1095,9 +1113,9 @@ h2[id] {
 /*
  * Respect the user's motion preference -- WCAG 2.1 (2.3.3 Animation
  * from Interactions). Disables the three local keyframe animations:
- *   - .anchor-highlight   (paragraph fade-out after deep-link)
- *   - .search-modal-backdrop fade-in
- *   - .search-modal slide-in
+ *   - .anchor-highlight                (paragraph fade-out after deep-link)
+ *   - .app-search-modal-backdrop fade-in
+ *   - .app-search-modal slide-in
  * Also cancels CSS transitions on the FAB and copy-link buttons so
  * tap / hover state changes are instant rather than animated.
  *
@@ -1107,8 +1125,8 @@ h2[id] {
  */
 @media (prefers-reduced-motion: reduce) {
   .anchor-highlight,
-  .search-modal-backdrop,
-  .search-modal {
+  .app-search-modal-backdrop,
+  .app-search-modal {
     animation: none !important;
   }
 

@@ -293,8 +293,10 @@ describe('generate-pages', () => {
 
     const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
 
-    // Sections have border separators
-    expect(html).toMatch(/border-t/);
+    // Section separators come from the `.app-hauptstueck-heading` / `.app-abschnitt-heading`
+    // CSS rules (border-top / border-left) — assert the class is emitted on the
+    // section heading. Previously matched the unrelated footer utility class.
+    expect(html).toMatch(/class="app-hauptstueck-heading"|class="app-abschnitt-heading"/);
   });
 
   it('Test 14P2: law page paragraph IDs use p{nummer} format', async () => {
@@ -358,8 +360,8 @@ describe('generate-pages', () => {
     const html = readFileSync(join(TEST_DIR, 'src', 'gemeindeordnungen', 'testland.html'), 'utf-8');
 
     // BL switcher uses a select with BL-grouped optgroups
-    expect(html).toContain('bl-header-select');
-    expect(html).toContain('bl-switcher-select');
+    expect(html).toContain('app-bl-header-select');
+    expect(html).toContain('app-bl-switcher-select');
     expect(html).toContain('<optgroup');
   });
 
