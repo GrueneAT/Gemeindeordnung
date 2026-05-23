@@ -10,13 +10,20 @@
  *
  * The hex fallback values mirror the historical local palette and are used
  * only when the DS stylesheet has not loaded (offline build, network blip).
+ *
+ * `--color-gruene-dark` keeps the historical #005538 as primary because the
+ * site uses it at 80% opacity (e.g. `text-gruene-dark/80`) on white. The DS
+ * `--gat-color-dunkelgruen` (#257639) only reaches 3.77:1 at that opacity,
+ * which fails WCAG AA. Body-text contrast is a hard a11y constraint, so this
+ * one token diverges from DS until the markup-side migration (Phase 2) drops
+ * the `/80` opacity utilities.
  */
 @theme {
   --color-gruene-green: var(--gat-color-hellgruen, #6BA539);
-  --color-gruene-dark: var(--gat-color-dunkelgruen, #005538);
+  --color-gruene-dark: #005538;
   --color-gruene-light: var(--gat-web-green-tint, #E8F5E9);
   --color-gruene-accent: var(--gat-color-hellgruen, #8AB414);
-  --color-gruene-link: var(--gat-color-dunkelgruen, #005538);
+  --color-gruene-link: #005538;
   --color-gruene-link-hover: var(--gat-web-green-deep, #2D5016);
 }
 
