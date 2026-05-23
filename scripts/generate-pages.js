@@ -53,6 +53,27 @@ function generateSkiplink() {
 }
 
 /**
+ * Render a callout banner using the shared `.gat-callout` design-system atom.
+ *
+ * `variant` selects the DS modifier (`info`, `warn`, `error`, `legal`,
+ * `success`). The callout body is rendered as-is so callers can pass an
+ * inline `<strong>` lead or richer HTML.
+ *
+ * Callouts above the main content are marked `data-pagefind-ignore` so the
+ * Pagefind index does not pick up the disclaimer chrome as searchable copy.
+ */
+function renderCallout(variant, bodyHtml, { pagefindIgnore = true, indent = '      ' } = {}) {
+  const validVariants = new Set(['info', 'warn', 'error', 'legal', 'success']);
+  if (!validVariants.has(variant)) {
+    throw new Error(`renderCallout: unknown variant "${variant}"`);
+  }
+  const ignoreAttr = pagefindIgnore ? ' data-pagefind-ignore' : '';
+  return `${indent}<div class="gat-callout gat-callout--${variant}"${ignoreAttr}>
+${indent}  ${bodyHtml}
+${indent}</div>`;
+}
+
+/**
  * Render the Gruene-AT design system stylesheet link for a page <head>.
  */
 function generateDesignSystemLink() {
@@ -561,11 +582,14 @@ function generateLawPage(law, key, category, rootDir = ROOT) {
     isLawPage: true,
   });
 
-  // Disclaimer info-box (only if LLM data exists)
+  // Disclaimer info-box (only if LLM data exists).
+  // Uses the DS `.gat-callout--info` atom; the legacy
+  // `bg-gruene-light/50 border border-gruene-green/30 ...` utility stack is gone.
   const disclaimerHtml = llmData
-    ? `      <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
-        <strong>Hinweis:</strong> Der Gesetzestext ist im Original wiedergegeben. Die Zusammenfassungen zu den einzelnen Paragraphen wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
-      </div>\n`
+    ? renderCallout(
+        'info',
+        '<p><strong>Hinweis:</strong> Der Gesetzestext ist im Original wiedergegeben. Die Zusammenfassungen zu den einzelnen Paragraphen wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.</p>',
+      ) + '\n'
     : '';
 
   // Topic filter tag-select (only if LLM data has topics)
@@ -836,9 +860,7 @@ ${headerHtml}
           Thematische Übersichten mit Vergleich aller Bundesländer
         </p>
       </div>
-      <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
-        <strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
-      </div>
+${renderCallout('info', '<p><strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.</p>')}
       <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="faq">
         <div class="relative">
           <input type="search" class="inline-search-input" autocomplete="off"
@@ -923,12 +945,8 @@ ${headerHtml}
         </div>
         <div class="inline-search-dropdown hidden"></div>
       </div>
-      <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
-        <strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
-      </div>
-      <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
-        <strong>Wichtig:</strong> Die Regelungen können je nach Bundesland erheblich voneinander abweichen. Prüfen Sie die Details in der jeweiligen Gemeindeordnung Ihres Bundeslandes.
-      </div>
+${renderCallout('info', '<p><strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.</p>')}
+${renderCallout('warn', '<p><strong>Wichtig:</strong> Die Regelungen können je nach Bundesland erheblich voneinander abweichen. Prüfen Sie die Details in der jeweiligen Gemeindeordnung Ihres Bundeslandes.</p>')}
       <main id="main-content" data-pagefind-body tabindex="-1">
 ${questionsHtml}
       </main>
@@ -1007,9 +1025,7 @@ ${headerHtml}
           Wichtige Fachbegriffe aus den österreichischen Gemeindeordnungen
         </p>
       </div>
-      <div class="bg-gruene-light/50 border border-gruene-green/30 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
-        <strong>Hinweis:</strong> Diese Definitionen wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.
-      </div>
+${renderCallout('info', '<p><strong>Hinweis:</strong> Diese Definitionen wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.</p>')}
       <div class="mb-6" data-pagefind-ignore>
         <input id="glossar-filter" type="search" data-pagefind-ignore
           placeholder="Begriff suchen..."
