@@ -1,12 +1,23 @@
 @import "tailwindcss";
 
+/*
+ * Local brand tokens for Tailwind v4 (`text-gruene-*` / `bg-gruene-*` etc.).
+ *
+ * Values aliased to the shared Gruene-AT design-system tokens (loaded via
+ * <link rel="stylesheet" href="https://grueneat.github.io/design-system/design-system.css">)
+ * so any future DS color tweak propagates here automatically -- no silent drift.
+ * Local utility-class names are preserved so existing markup keeps working.
+ *
+ * The hex fallback values mirror the historical local palette and are used
+ * only when the DS stylesheet has not loaded (offline build, network blip).
+ */
 @theme {
-  --color-gruene-green: #6BA539;
-  --color-gruene-dark: #005538;
-  --color-gruene-light: #E8F5E9;
-  --color-gruene-accent: #8AB414;
-  --color-gruene-link: #005538;
-  --color-gruene-link-hover: #2D5016;
+  --color-gruene-green: var(--gat-color-hellgruen, #6BA539);
+  --color-gruene-dark: var(--gat-color-dunkelgruen, #005538);
+  --color-gruene-light: var(--gat-web-green-tint, #E8F5E9);
+  --color-gruene-accent: var(--gat-color-hellgruen, #8AB414);
+  --color-gruene-link: var(--gat-color-dunkelgruen, #005538);
+  --color-gruene-link-hover: var(--gat-web-green-deep, #2D5016);
 }
 
 /* Prevent horizontal overflow on mobile */
