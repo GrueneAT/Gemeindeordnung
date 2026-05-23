@@ -29,6 +29,20 @@ const CATEGORY_LABELS = {
 const SUPPORT_EMAIL = 'florian.motlik@gruene.at';
 
 /**
+ * URL of the shared Gruene-AT design system stylesheet (CDN).
+ * Loaded BEFORE local main.css so local rules can still override DS defaults.
+ * Source: https://github.com/GrueneAT/design-system
+ */
+const DS_CSS_URL = 'https://grueneat.github.io/design-system/design-system.css';
+
+/**
+ * Render the Gruene-AT design system stylesheet link for a page <head>.
+ */
+function generateDesignSystemLink() {
+  return `    <link rel="stylesheet" href="${DS_CSS_URL}" />`;
+}
+
+/**
  * Render the favicon / theme-color link block for a page <head>.
  * `prefix` should be '' for pages at /src or '../' for subpages.
  */
@@ -568,6 +582,7 @@ function generateLawPage(law, key, category, rootDir = ROOT) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${title} - gemeindeordnung.gruene.at</title>
+${generateDesignSystemLink()}
     <link rel="stylesheet" href="../css/main.css" />
 ${generateFaviconLinks('../')}
     <meta data-pagefind-filter="bundesland[content]" content="${escapeHtml(law.meta.bundesland)}" />
@@ -749,6 +764,7 @@ ${cards}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gemeindeordnungen der österreichischen Bundesländer</title>
+${generateDesignSystemLink()}
     <link rel="stylesheet" href="css/main.css" />
 ${generateFaviconLinks('')}
   </head>
@@ -785,6 +801,7 @@ function generateFAQIndexPage(topics) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Häufige Fragen - gemeindeordnung.gruene.at</title>
+${generateDesignSystemLink()}
     <link rel="stylesheet" href="../css/main.css" />
 ${generateFaviconLinks('../')}
   </head>
@@ -851,6 +868,7 @@ function generateFAQTopicPage(topic) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${genderText(escapeHtml(topic.title))} - FAQ - gemeindeordnung.gruene.at</title>
+${generateDesignSystemLink()}
     <link rel="stylesheet" href="../css/main.css" />
 ${generateFaviconLinks('../')}
     <meta data-pagefind-filter="typ[content]" content="FAQ" />
@@ -951,6 +969,7 @@ ${termsHtml}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Glossar der Rechtsbegriffe - gemeindeordnung.gruene.at</title>
+${generateDesignSystemLink()}
     <link rel="stylesheet" href="css/main.css" />
 ${generateFaviconLinks('')}
     <meta data-pagefind-filter="typ[content]" content="Glossar" />
@@ -1088,6 +1107,7 @@ function generateImpressumPage() {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Impressum - gemeindeordnung.gruene.at</title>
+${generateDesignSystemLink()}
     <link rel="stylesheet" href="css/main.css" />
 ${generateFaviconLinks('')}
     <meta name="robots" content="noindex" />
