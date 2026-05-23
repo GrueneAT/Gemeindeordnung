@@ -42,6 +42,17 @@ const DS_CSS_URL = 'https://grueneat.github.io/design-system/design-system.css';
 const DS_LOGO_URL = 'https://grueneat.github.io/design-system/assets/gruene-logo.svg';
 
 /**
+ * Render the accessibility skip link that lets keyboard / screen-reader users
+ * jump directly to the page's main content, bypassing the sticky header and
+ * navigation. Styled by the design-system `.gat-skiplink` class.
+ *
+ * Every page MUST contain an element with id="main-content" as the target.
+ */
+function generateSkiplink() {
+  return `  <a class="gat-skiplink" href="#main-content">Zum Inhalt springen</a>`;
+}
+
+/**
  * Render the Gruene-AT design system stylesheet link for a page <head>.
  */
 function generateDesignSystemLink() {
@@ -596,6 +607,7 @@ ${generateFaviconLinks('../')}
     <meta data-pagefind-filter="typ[content]" content="Gesetz" />
   </head>
   <body class="bg-white min-h-screen flex flex-col">
+${generateSkiplink()}
 ${headerHtml}
 ${breadcrumbHtml}
     <div class="max-w-5xl mx-auto px-4 py-6 flex-1 w-full">
@@ -615,7 +627,7 @@ ${breadcrumbHtml}
         <div class="inline-search-dropdown hidden"></div>
       </div>
 ${disclaimerHtml}${topicChipsHtml}${tocHtml}
-      <main data-pagefind-body class="law-text max-w-prose mx-auto leading-relaxed">
+      <main id="main-content" data-pagefind-body class="law-text max-w-prose mx-auto leading-relaxed" tabindex="-1">
         ${strukturHtml}
       </main>
     </div>
@@ -722,8 +734,9 @@ ${cards}
   const headerHtml = generateHeader(false);
   const footerHtml = generateFooter({ isLawPage: false });
 
-  // Hero section with large centered search
-  const heroHtml = `    <section class="hero-section" data-pagefind-ignore>
+  // Hero section with large centered search.
+  // id="main-content" so the skiplink lands on the page's primary content.
+  const heroHtml = `    <section id="main-content" class="hero-section" tabindex="-1" data-pagefind-ignore>
       <div class="max-w-3xl mx-auto px-4">
         <h1 class="text-3xl sm:text-4xl font-bold text-gruene-dark mb-2">
           Gemeindeordnungen der österreichischen Bundesländer
@@ -776,6 +789,7 @@ ${generateDesignSystemLink()}
 ${generateFaviconLinks('')}
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
+${generateSkiplink()}
 ${headerHtml}
 ${heroHtml}
 ${discoveryHtml}
@@ -813,6 +827,7 @@ ${generateDesignSystemLink()}
 ${generateFaviconLinks('../')}
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
+${generateSkiplink()}
 ${headerHtml}
     <div class="max-w-5xl mx-auto px-4 py-8 flex-1 w-full">
       <div class="mb-8">
@@ -834,7 +849,7 @@ ${headerHtml}
         </div>
         <div class="inline-search-dropdown hidden"></div>
       </div>
-      <main data-pagefind-ignore>
+      <main id="main-content" data-pagefind-ignore tabindex="-1">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 ${cards}
         </div>
@@ -882,6 +897,7 @@ ${generateFaviconLinks('../')}
     <meta data-pagefind-meta="topic_title[content]" content="${genderText(escapeHtml(topic.title))}" />
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
+${generateSkiplink()}
 ${headerHtml}
     <nav data-pagefind-ignore aria-label="Breadcrumb" class="max-w-5xl mx-auto px-4 py-2 text-sm">
       <ol class="flex items-center gap-1 text-gruene-dark">
@@ -913,7 +929,7 @@ ${headerHtml}
       <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-6 text-sm text-gruene-dark" data-pagefind-ignore>
         <strong>Wichtig:</strong> Die Regelungen können je nach Bundesland erheblich voneinander abweichen. Prüfen Sie die Details in der jeweiligen Gemeindeordnung Ihres Bundeslandes.
       </div>
-      <main data-pagefind-body>
+      <main id="main-content" data-pagefind-body tabindex="-1">
 ${questionsHtml}
       </main>
       <div class="mt-6">
@@ -982,6 +998,7 @@ ${generateFaviconLinks('')}
     <meta data-pagefind-filter="typ[content]" content="Glossar" />
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
+${generateSkiplink()}
 ${headerHtml}
     <div class="max-w-5xl mx-auto px-4 py-8 flex-1 w-full">
       <div class="mb-8">
@@ -1004,7 +1021,7 @@ ${headerHtml}
       <nav class="mb-8 flex flex-wrap gap-3" data-pagefind-ignore>
           ${azNav}
       </nav>
-      <main data-pagefind-body>
+      <main id="main-content" data-pagefind-body tabindex="-1">
 ${termSections}
       </main>
     </div>
@@ -1120,8 +1137,9 @@ ${generateFaviconLinks('')}
     <meta name="robots" content="noindex" />
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col">
+${generateSkiplink()}
 ${headerHtml}
-    <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full" data-pagefind-ignore>
+    <main id="main-content" class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full" data-pagefind-ignore tabindex="-1">
       <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 sm:p-8">
         <h1 class="text-2xl font-bold text-gruene-dark mb-2">Impressum &amp; Offenlegung</h1>
         <p class="text-sm text-gray-500 mb-6">
