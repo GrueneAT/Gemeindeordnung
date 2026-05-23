@@ -42,8 +42,10 @@ test.describe('LLM Summaries', () => {
     const disclaimer = page.locator('text=keine Rechtsberatung').first();
     await expect(disclaimer).toBeVisible();
 
-    // Verify it contains the full disclaimer message
-    const disclaimerBox = page.locator('.bg-gruene-light\\/50:has-text("keine Rechtsberatung")').first();
+    // Verify it contains the full disclaimer message. Phase 2 migrated the
+    // banner markup from the Tailwind utility stack `.bg-gruene-light/50 ...`
+    // to the shared DS atom `.gat-callout--info` -- selector reflects that.
+    const disclaimerBox = page.locator('.gat-callout--info:has-text("keine Rechtsberatung")').first();
     await expect(disclaimerBox).toBeVisible();
     await expect(disclaimerBox).toContainText('mittels KI (LLM) erstellt');
 
