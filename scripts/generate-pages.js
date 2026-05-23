@@ -36,6 +36,12 @@ const SUPPORT_EMAIL = 'florian.motlik@gruene.at';
 const DS_CSS_URL = 'https://grueneat.github.io/design-system/design-system.css';
 
 /**
+ * URL of the shared Gruene-AT logo (SVG, CDN).
+ * Consumed via CDN so brand refreshes land here automatically.
+ */
+const DS_LOGO_URL = 'https://grueneat.github.io/design-system/assets/gruene-logo.svg';
+
+/**
  * Render the Gruene-AT design system stylesheet link for a page <head>.
  */
 function generateDesignSystemLink() {
@@ -416,7 +422,8 @@ function generateSearchHTML() {
  */
 function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
   const prefix = pathPrefix !== undefined ? pathPrefix : (isLawPage ? '../' : '');
-  const logoPath = `${prefix}assets/gruene-logo.png`;
+  // Logo is served from the design-system CDN -- no local asset copy.
+  const logoPath = DS_LOGO_URL;
   const indexPath = `${prefix}index.html`;
 
   const switcher = isLawPage ? buildBundeslandSwitcher(currentKey, currentCategory) : '';
@@ -437,7 +444,7 @@ function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
   return `  <header data-pagefind-ignore class="sticky top-0 bg-white border-b border-gray-200 z-10">
     <div class="max-w-5xl mx-auto px-4 py-2 flex items-center gap-2">
       <a href="${indexPath}" class="flex items-center gap-1.5 text-gruene-dark hover:text-gruene-dark no-underline shrink-0">
-        <img src="${logoPath}" alt="Gruene Logo" class="w-7 h-7 gruene-logo" />
+        <img src="${logoPath}" alt="Die Gruenen" class="w-7 h-7 gruene-logo" />
         <span class="header-site-name text-sm sm:text-lg font-bold">gemeindeordnung.gruene.at</span>
       </a>
       <div class="flex-1"></div>
