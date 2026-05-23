@@ -13,7 +13,7 @@ async function openSearchModal(page, testInfo) {
     await page.waitForSelector('#search-modal-trigger', { state: 'visible' });
     await page.click('#search-modal-trigger');
   }
-  await expect(page.locator('.search-modal')).toBeVisible({ timeout: 3000 });
+  await expect(page.locator('.app-search-modal')).toBeVisible({ timeout: 3000 });
 }
 
 test.describe('Search modal behavior', () => {
@@ -32,13 +32,13 @@ test.describe('Search modal behavior', () => {
     test.skip(testInfo.project.name === 'mobile', 'Ctrl+K not applicable on mobile');
     await page.waitForSelector('#search-modal-trigger', { state: 'visible' });
     await page.keyboard.press('Control+k');
-    const modal = page.locator('.search-modal');
+    const modal = page.locator('.app-search-modal');
     await expect(modal).toBeVisible({ timeout: 3000 });
   });
 
   test('modal closes on Escape', async ({ page }, testInfo) => {
     await openSearchModal(page, testInfo);
-    const modal = page.locator('.search-modal');
+    const modal = page.locator('.app-search-modal');
     await page.keyboard.press('Escape');
     await expect(modal).toBeHidden({ timeout: 3000 });
   });
@@ -48,10 +48,10 @@ test.describe('Search modal behavior', () => {
     test.skip(testInfo.project.name === 'mobile', 'Full-screen modal has no backdrop area on mobile');
 
     await openSearchModal(page, testInfo);
-    const modal = page.locator('.search-modal');
+    const modal = page.locator('.app-search-modal');
 
     // Click backdrop (outside modal) -- click at viewport edge
-    const backdrop = page.locator('.search-modal-backdrop');
+    const backdrop = page.locator('.app-search-modal-backdrop');
     await backdrop.click({ position: { x: 10, y: 10 } });
     await expect(modal).toBeHidden({ timeout: 3000 });
   });
@@ -60,7 +60,7 @@ test.describe('Search modal behavior', () => {
     await openSearchModal(page, testInfo);
 
     // No BL pills should exist in the modal
-    const pills = page.locator('.search-modal .bl-selector-pill');
+    const pills = page.locator('.app-search-modal .bl-selector-pill');
     await expect(pills).toHaveCount(0);
 
     // Modal should have search input
@@ -112,7 +112,7 @@ test.describe('Search modal behavior', () => {
     await page.waitForTimeout(500);
 
     await page.click('#header-search-field');
-    const modal = page.locator('.search-modal');
+    const modal = page.locator('.app-search-modal');
     await expect(modal).toBeVisible({ timeout: 3000 });
 
     // Modal should take full width on mobile
@@ -125,8 +125,8 @@ test.describe('Search modal behavior', () => {
 
   test('close button dismisses modal', async ({ page }, testInfo) => {
     await openSearchModal(page, testInfo);
-    const modal = page.locator('.search-modal');
-    await page.click('.search-modal-close');
+    const modal = page.locator('.app-search-modal');
+    await page.click('.gat-modal__close');
     await expect(modal).toBeHidden({ timeout: 3000 });
   });
 });

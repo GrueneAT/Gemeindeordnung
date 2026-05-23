@@ -11,7 +11,7 @@ test.describe('Mobile search modal', () => {
     await page.click('#header-search-field');
 
     // Wait for modal to appear
-    const modal = page.locator('.search-modal');
+    const modal = page.locator('.app-search-modal');
     await expect(modal).toBeVisible({ timeout: 3000 });
 
     // Type in the modal search input

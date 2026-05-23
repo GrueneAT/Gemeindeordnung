@@ -301,8 +301,14 @@ details > summary::-webkit-details-marker {
   line-height: 1.4;
 }
 
-/* Highlighted terms in excerpts */
-.search-result-excerpt mark {
+/*
+ * Highlighted terms in Pagefind-generated excerpts. Pagefind emits bare
+ * `<mark>` tags so we style the element selector inside the result-excerpt
+ * scope. The same look is exposed as the `.app-search-mark` class for any
+ * direct authoring (see below).
+ */
+.search-result-excerpt mark,
+.app-search-mark {
   background-color: rgba(250, 204, 21, 0.4);
   border-radius: 0.125rem;
   padding: 0 0.125rem;
@@ -493,7 +499,14 @@ details > summary::-webkit-details-marker {
   border-color: var(--color-gruene-green);
 }
 
-.search-modal-backdrop {
+/*
+ * Custom backdrop for the app-search modal. The DS `.gat-modal` is built on
+ * the native `<dialog>` element which surfaces a `::backdrop` pseudo; this
+ * app uses a non-`<dialog>` shell so it can click-outside-to-close without
+ * the focus-trap baked into native modal dialogs. Z-index sits above the
+ * sticky header (`z-index: 10`).
+ */
+.app-search-modal-backdrop {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
@@ -510,10 +523,12 @@ details > summary::-webkit-details-marker {
   to { opacity: 1; }
 }
 
-.search-modal {
-  background: white;
-  border-radius: 0.75rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+/*
+ * `.app-search-modal` sits on top of the DS `.gat-modal` and adds app-specific
+ * layout: flex-column with a scrollable results pane, 90vw / 700px sizing and
+ * the slide-in animation. The DS supplies background, radius, shadow, color.
+ */
+.app-search-modal {
   width: 90vw;
   max-width: 700px;
   max-height: 80vh;
@@ -528,42 +543,21 @@ details > summary::-webkit-details-marker {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.search-modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.25rem;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.search-modal-shortcut {
+/*
+ * Cmd-K shortcut chip in the modal head (between the title and the close
+ * button). Aligns to the right edge of the head row.
+ */
+.app-search-modal-shortcut {
   font-size: 0.6875rem;
-  color: #9ca3af;
-  border: 1px solid #e5e7eb;
+  color: var(--gat-web-text-mute, #9ca3af);
+  border: 1px solid var(--gat-web-hairline, #e5e7eb);
   border-radius: 0.25rem;
   padding: 0.125rem 0.375rem;
   margin-left: auto;
   margin-right: 0.5rem;
 }
 
-.search-modal-close {
-  padding: 0.375rem;
-  color: #6b7280;
-  cursor: pointer;
-  border-radius: 0.375rem;
-  border: none;
-  background: none;
-}
-.search-modal-close:hover {
-  background: #f3f4f6;
-  color: var(--color-gruene-dark);
-}
-
-.search-modal-body {
-  padding: 1rem 1.25rem;
-}
-
-.search-modal-results {
+.app-search-modal-results {
   flex: 1;
   overflow-y: auto;
   max-height: 60vh;
@@ -571,11 +565,11 @@ details > summary::-webkit-details-marker {
 
 /* Mobile: full-screen modal */
 @media (max-width: 639px) {
-  .search-modal-backdrop {
+  .app-search-modal-backdrop {
     padding-top: 0;
     align-items: stretch;
   }
-  .search-modal {
+  .app-search-modal {
     width: 100%;
     max-width: 100%;
     max-height: 100%;
@@ -583,6 +577,12 @@ details > summary::-webkit-details-marker {
     border-radius: 0;
   }
 }
+
+/*
+ * `.app-search-mark` is defined alongside `.search-result-excerpt mark` (see
+ * above) so the DS-less highlight color stays available for direct authoring.
+ * The DS does not (yet) ship a `.gat-mark` atom.
+ */
 
 /* ---- Search Tab Styles ---- */
 
@@ -1069,9 +1069,9 @@ h2[id] {
 /*
  * Respect the user's motion preference -- WCAG 2.1 (2.3.3 Animation
  * from Interactions). Disables the three local keyframe animations:
- *   - .anchor-highlight   (paragraph fade-out after deep-link)
- *   - .search-modal-backdrop fade-in
- *   - .search-modal slide-in
+ *   - .anchor-highlight                (paragraph fade-out after deep-link)
+ *   - .app-search-modal-backdrop fade-in
+ *   - .app-search-modal slide-in
  * Also cancels CSS transitions on the FAB and copy-link buttons so
  * tap / hover state changes are instant rather than animated.
  *
@@ -1081,8 +1081,8 @@ h2[id] {
  */
 @media (prefers-reduced-motion: reduce) {
   .anchor-highlight,
-  .search-modal-backdrop,
-  .search-modal {
+  .app-search-modal-backdrop,
+  .app-search-modal {
     animation: none !important;
   }
 

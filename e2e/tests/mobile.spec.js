@@ -98,7 +98,7 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
 
     // Tap should open search modal
     await fab.click();
-    const modal = page.locator('.search-modal');
+    const modal = page.locator('.app-search-modal');
     await expect(modal).toBeVisible({ timeout: 3000 });
   });
 
