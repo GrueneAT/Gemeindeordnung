@@ -146,14 +146,14 @@ function injectGlossaryTerms(bodyHtml, glossaryTerms, categoryPrefix) {
     const fullMatchStart = match.index;
     const wordStart = fullMatchStart + match[0].indexOf(match[2]);
 
-    // Check this position isn't inside an existing glossar-tooltip or glossar-term
+    // Check this position isn't inside an existing app-glossar-tooltip or app-glossar-term
     const before = result.substring(0, wordStart);
-    const inTooltip = (before.match(/class="glossar-tooltip"/g) || []).length >
-                      (before.match(/class="glossar-tooltip-link"/g) || []).length;
+    const inTooltip = (before.match(/class="app-glossar-tooltip"/g) || []).length >
+                      (before.match(/class="app-glossar-tooltip-link"/g) || []).length;
     if (inTooltip) continue;
 
     const definition = escapeHtml(term.definition);
-    const tooltipHtml = `<span class="glossar-term" tabindex="0">${match[2]}<span class="glossar-tooltip">${definition}<a href="${categoryPrefix}glossar.html#${term.slug}" class="glossar-tooltip-link">&#8594; Glossar</a></span></span>`;
+    const tooltipHtml = `<span class="app-glossar-term" tabindex="0">${match[2]}<span class="app-glossar-tooltip">${definition}<a href="${categoryPrefix}glossar.html#${term.slug}" class="app-glossar-tooltip-link">&#8594; Glossar</a></span></span>`;
 
     // Positional replace: splice at exact word position
     result = result.substring(0, wordStart) + tooltipHtml + result.substring(wordStart + match[2].length);
@@ -174,13 +174,13 @@ function injectStructuralMarkers(html) {
   return html.replace(/>[^<]+</g, (match) => {
     let text = match.slice(1, -1); // Remove > and <
     // Abs. N references
-    text = text.replace(/\b(Abs\.\s*\d+[a-z]?)/g, '<span class="legal-ref">$1</span>');
+    text = text.replace(/\b(Abs\.\s*\d+[a-z]?)/g, '<span class="app-legal-ref">$1</span>');
     // Paragraph sign references
-    text = text.replace(/(§\s*\d+[a-z]?(?:\s*(?:bis|und|iVm)\s*§?\s*\d+[a-z]?)*)/g, '<span class="legal-ref">$1</span>');
+    text = text.replace(/(§\s*\d+[a-z]?(?:\s*(?:bis|und|iVm)\s*§?\s*\d+[a-z]?)*)/g, '<span class="app-legal-ref">$1</span>');
     // Z (Ziffer) references
-    text = text.replace(/\b(Z\s*\d+)/g, '<span class="legal-ref">$1</span>');
+    text = text.replace(/\b(Z\s*\d+)/g, '<span class="app-legal-ref">$1</span>');
     // lit. references
-    text = text.replace(/\b(lit\.\s*[a-z])/g, '<span class="legal-ref">$1</span>');
+    text = text.replace(/\b(lit\.\s*[a-z])/g, '<span class="app-legal-ref">$1</span>');
     return '>' + text + '<';
   });
 }
@@ -197,12 +197,12 @@ function renderParagraph(para, llmData, glossaryTerms) {
 
   if (para.absaetze && para.absaetze.length > 0) {
     const items = para.absaetze.map(a => {
-      const numLabel = a.nummer ? `<span class="absatz-num">(${a.nummer})</span>` : '';
+      const numLabel = a.nummer ? `<span class="app-absatz-num">(${a.nummer})</span>` : '';
       // Strip leading "(N)" from text since we render the number separately
       const cleanText = a.nummer ? a.text.replace(new RegExp(`^\\(${escapeRegex(String(a.nummer))}\\)\\s*`), '') : a.text;
-      return `<div class="absatz">${numLabel}<span class="absatz-text">${escapeHtml(cleanText)}</span></div>`;
+      return `<div class="app-absatz">${numLabel}<span class="app-absatz-text">${escapeHtml(cleanText)}</span></div>`;
     }).join('\n');
-    body = `<div class="absaetze-container">\n${items}\n</div>`;
+    body = `<div class="app-absaetze-container">\n${items}\n</div>`;
   } else if (para.text) {
     body = `<p class="mt-2 whitespace-pre-line">${escapeHtml(para.text)}</p>`;
   }
@@ -223,7 +223,7 @@ function renderParagraph(para, llmData, glossaryTerms) {
     ? ` data-topics="${paraLlm.topics.map(t => escapeHtml(t)).join(',')}"`
     : '';
   const summaryHtml = paraLlm && paraLlm.summary
-    ? `\n  <div class="law-summary">
+    ? `\n  <div class="app-law-summary">
     <p>${escapeHtml(paraLlm.summary)}</p>
   </div>`
     : '';
@@ -250,8 +250,8 @@ function renderSection(section, llmData, glossaryTerms) {
     : `abschnitt-${section.nummer}`;
 
   const heading = isHaupt
-    ? `<h2 id="${sectionSlug}" class="hauptstueck-heading">${escapeHtml(section.nummer)}. Hauptstück: ${escapeHtml(section.titel)}</h2>`
-    : `<h2 id="${sectionSlug}" class="abschnitt-heading">${escapeHtml(section.nummer)}. Abschnitt: ${escapeHtml(section.titel)}</h2>`;
+    ? `<h2 id="${sectionSlug}" class="app-hauptstueck-heading">${escapeHtml(section.nummer)}. Hauptstück: ${escapeHtml(section.titel)}</h2>`
+    : `<h2 id="${sectionSlug}" class="app-abschnitt-heading">${escapeHtml(section.nummer)}. Abschnitt: ${escapeHtml(section.titel)}</h2>`;
 
   let content = '';
 
@@ -311,7 +311,7 @@ ${paraLinks}
 
   const items = struktur.map(s => tocSection(s)).join('\n');
 
-  return `    <nav data-pagefind-ignore aria-label="Inhaltsverzeichnis" class="mb-8 bg-white rounded-lg border border-gray-200 p-4">
+  return `    <nav data-pagefind-ignore aria-label="Inhaltsverzeichnis" class="app-toc mb-8 bg-white rounded-lg border border-gray-200 p-4">
       <h2 class="text-lg font-bold text-gruene-dark mb-3">Inhaltsverzeichnis</h2>
       <ul class="space-y-1">
 ${items}
@@ -384,9 +384,9 @@ ${options}
             </optgroup>`);
   }
 
-  // .bl-header-select supplies the compact width + custom chevron;
+  // .app-bl-header-select supplies the compact width + custom chevron;
   // .gat-select supplies DS base typography, focus ring, border tokens.
-  return `          <select id="bl-switcher-select" class="gat-select bl-header-select" aria-label="Andere Gemeindeordnung anzeigen" data-pagefind-ignore onchange="if(this.value) window.location.href=this.value">
+  return `          <select id="app-bl-switcher-select" class="gat-select app-bl-header-select" aria-label="Andere Gemeindeordnung anzeigen" data-pagefind-ignore onchange="if(this.value) window.location.href=this.value">
 ${optgroups.join('\n')}
           </select>`;
 }
@@ -412,7 +412,7 @@ ${options}
               </optgroup>`);
   }
 
-  return `          <select id="hero-bl-select" class="gat-select bl-header-select" aria-label="Bundesland filtern" data-pagefind-ignore>
+  return `          <select id="hero-bl-select" class="gat-select app-bl-header-select" aria-label="Bundesland filtern" data-pagefind-ignore>
               <option value="">Alle Bundesl\u00E4nder</option>
 ${optgroups.join('\n')}
             </select>`;
@@ -622,11 +622,11 @@ function generateLawPage(law, key, category, rootDir = ROOT) {
       const sortedTopics = [...allTopics].sort((a, b) => a.localeCompare(b, 'de'));
       const topicData = sortedTopics.map(t => ({ name: t, count: topicCounts[t] || 0 }));
       topicChipsHtml = `      <div id="topic-filter" class="mb-4 relative" data-pagefind-ignore data-topics-json="${escapeHtml(JSON.stringify(topicData))}">
-        <div class="topic-select-container">
-          <input type="text" id="topic-search-input" class="gat-input topic-search-input" placeholder="Themen filtern..." autocomplete="off" />
+        <div class="app-topic-select-container">
+          <input type="text" id="app-topic-search-input" class="gat-input app-topic-search-input" placeholder="Themen filtern..." autocomplete="off" />
         </div>
-        <div id="topic-dropdown" class="topic-dropdown hidden"></div>
-        <div id="topic-selected-chips" class="topic-selected-chips hidden"></div>
+        <div id="app-topic-dropdown" class="app-topic-dropdown hidden"></div>
+        <div id="app-topic-selected-chips" class="app-topic-selected-chips hidden"></div>
       </div>\n`;
     }
   }
@@ -664,7 +664,7 @@ ${breadcrumbHtml}
         <div class="inline-search-dropdown hidden"></div>
       </div>
 ${disclaimerHtml}${topicChipsHtml}${tocHtml}
-      <main id="main-content" data-pagefind-body class="law-text max-w-prose mx-auto leading-relaxed" tabindex="-1">
+      <main id="main-content" data-pagefind-body class="app-law-text max-w-prose mx-auto leading-relaxed" tabindex="-1">
         ${strukturHtml}
       </main>
     </div>

@@ -118,9 +118,9 @@ function initTopicFilter() {
   if (!topicDataJson) return;
   const topics = JSON.parse(topicDataJson);
 
-  const input = document.getElementById('topic-search-input');
-  const dropdown = document.getElementById('topic-dropdown');
-  const chipsContainer = document.getElementById('topic-selected-chips');
+  const input = document.getElementById('app-topic-search-input');
+  const dropdown = document.getElementById('app-topic-dropdown');
+  const chipsContainer = document.getElementById('app-topic-selected-chips');
   const selectedTopics = new Set();
 
   function escapeAttr(s) {
@@ -137,15 +137,15 @@ function initTopicFilter() {
       ? topics.filter(t => t.name.toLowerCase().includes(q))
       : topics;
     if (filtered.length === 0) {
-      dropdown.innerHTML = '<div class="topic-dropdown-empty">Kein Thema gefunden</div>';
+      dropdown.innerHTML = '<div class="app-topic-dropdown-empty">Kein Thema gefunden</div>';
       return;
     }
     dropdown.innerHTML = filtered.map(t => {
       const checked = selectedTopics.has(t.name);
-      return `<label class="topic-dropdown-item${checked ? ' topic-item-checked' : ''}">
+      return `<label class="app-topic-dropdown-item${checked ? ' app-topic-item-checked' : ''}">
         <input type="checkbox" value="${escapeAttr(t.name)}" ${checked ? 'checked' : ''} />
-        <span class="topic-dropdown-name">${escapeText(t.name)}</span>
-        <span class="topic-dropdown-count">(${t.count})</span>
+        <span class="app-topic-dropdown-name">${escapeText(t.name)}</span>
+        <span class="app-topic-dropdown-count">(${t.count})</span>
       </label>`;
     }).join('');
   }
@@ -159,9 +159,9 @@ function initTopicFilter() {
     }
     chipsContainer.classList.remove('hidden');
     const chips = [...selectedTopics].map(t =>
-      `<span class="topic-selected-chip" data-topic="${escapeAttr(t)}">${escapeText(t)} <span class="topic-chip-remove">\u00D7</span></span>`
+      `<span class="app-topic-selected-chip" data-topic="${escapeAttr(t)}">${escapeText(t)} <span class="app-topic-chip-remove">\u00D7</span></span>`
     ).join('');
-    chipsContainer.innerHTML = chips + ' <button type="button" class="topic-reset-link">Alle zur\u00FCcksetzen</button>';
+    chipsContainer.innerHTML = chips + ' <button type="button" class="app-topic-reset-link">Alle zur\u00FCcksetzen</button>';
   }
 
   // Apply OR filter to paragraphs
@@ -206,9 +206,9 @@ function initTopicFilter() {
       selectedTopics.delete(checkbox.value);
     }
     // Update the checked item's background
-    const label = checkbox.closest('.topic-dropdown-item');
+    const label = checkbox.closest('.app-topic-dropdown-item');
     if (label) {
-      label.classList.toggle('topic-item-checked', checkbox.checked);
+      label.classList.toggle('app-topic-item-checked', checkbox.checked);
     }
     renderChips();
     applyFilter();
@@ -216,16 +216,16 @@ function initTopicFilter() {
 
   // Event: remove chip
   chipsContainer.addEventListener('click', (e) => {
-    const removeBtn = e.target.closest('.topic-chip-remove');
+    const removeBtn = e.target.closest('.app-topic-chip-remove');
     if (removeBtn) {
-      const chip = removeBtn.closest('.topic-selected-chip');
+      const chip = removeBtn.closest('.app-topic-selected-chip');
       selectedTopics.delete(chip.dataset.topic);
       renderChips();
       renderDropdown(input.value);
       applyFilter();
       return;
     }
-    const resetBtn = e.target.closest('.topic-reset-link');
+    const resetBtn = e.target.closest('.app-topic-reset-link');
     if (resetBtn) {
       selectedTopics.clear();
       input.value = '';
@@ -257,16 +257,16 @@ function initTopicFilter() {
  */
 function initGlossaryTooltips() {
   document.addEventListener('click', (e) => {
-    const term = e.target.closest('.glossar-term');
+    const term = e.target.closest('.app-glossar-term');
 
     // Close all open tooltips first
-    document.querySelectorAll('.glossar-tooltip-active').forEach((el) => {
-      if (el !== term) el.classList.remove('glossar-tooltip-active');
+    document.querySelectorAll('.app-glossar-tooltip-active').forEach((el) => {
+      if (el !== term) el.classList.remove('app-glossar-tooltip-active');
     });
 
     if (term) {
       e.preventDefault();
-      term.classList.toggle('glossar-tooltip-active');
+      term.classList.toggle('app-glossar-tooltip-active');
     }
   });
 }

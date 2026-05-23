@@ -652,7 +652,7 @@ details > summary::-webkit-details-marker {
  * App-specific overrides: compact 14px size and the embedded search-icon
  * background image (cheaper than an absolute-positioned SVG sibling).
  */
-.topic-search-input {
+.app-topic-search-input {
   padding-left: 2.25rem;
   font-size: 0.875rem;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
@@ -661,7 +661,7 @@ details > summary::-webkit-details-marker {
   background-size: 1rem;
 }
 
-.topic-dropdown {
+.app-topic-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
@@ -676,11 +676,11 @@ details > summary::-webkit-details-marker {
   margin-top: 0.25rem;
 }
 
-.topic-dropdown.hidden {
+.app-topic-dropdown.hidden {
   display: none;
 }
 
-.topic-dropdown-item {
+.app-topic-dropdown-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -691,40 +691,40 @@ details > summary::-webkit-details-marker {
   transition: background-color 0.1s;
 }
 
-.topic-dropdown-item:hover {
+.app-topic-dropdown-item:hover {
   background-color: var(--color-gruene-light);
 }
 
-.topic-dropdown-item input[type="checkbox"] {
+.app-topic-dropdown-item input[type="checkbox"] {
   accent-color: var(--color-gruene-green);
   width: 1rem;
   height: 1rem;
   flex-shrink: 0;
 }
 
-.topic-dropdown-item.topic-item-checked {
+.app-topic-dropdown-item.app-topic-item-checked {
   background-color: var(--color-gruene-light);
 }
 
-.topic-dropdown-name {
+.app-topic-dropdown-name {
   flex: 1;
   min-width: 0;
 }
 
-.topic-dropdown-count {
+.app-topic-dropdown-count {
   color: #9ca3af;
   font-size: 0.75rem;
   flex-shrink: 0;
 }
 
-.topic-dropdown-empty {
+.app-topic-dropdown-empty {
   padding: 0.75rem;
   text-align: center;
   color: #9ca3af;
   font-size: 0.8125rem;
 }
 
-.topic-selected-chips {
+.app-topic-selected-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -732,11 +732,11 @@ details > summary::-webkit-details-marker {
   align-items: center;
 }
 
-.topic-selected-chips.hidden {
+.app-topic-selected-chips.hidden {
   display: none;
 }
 
-.topic-selected-chip {
+.app-topic-selected-chip {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
@@ -747,7 +747,7 @@ details > summary::-webkit-details-marker {
   font-size: 0.8125rem;
 }
 
-.topic-chip-remove {
+.app-topic-chip-remove {
   cursor: pointer;
   opacity: 0.7;
   font-size: 1rem;
@@ -755,11 +755,11 @@ details > summary::-webkit-details-marker {
   margin-left: 0.125rem;
 }
 
-.topic-chip-remove:hover {
+.app-topic-chip-remove:hover {
   opacity: 1;
 }
 
-.topic-reset-link {
+.app-topic-reset-link {
   font-size: 0.8125rem;
   color: var(--color-gruene-link);
   text-decoration: underline;
@@ -769,13 +769,13 @@ details > summary::-webkit-details-marker {
   padding: 0;
 }
 
-.topic-reset-link:hover {
+.app-topic-reset-link:hover {
   color: var(--color-gruene-link-hover);
 }
 
 /* ---- Glossary Tooltip Styles ---- */
 
-.glossar-term {
+.app-glossar-term {
   text-decoration: underline;
   text-decoration-style: dotted;
   text-decoration-color: var(--color-gruene-green);
@@ -784,7 +784,7 @@ details > summary::-webkit-details-marker {
   position: relative;
 }
 
-.glossar-tooltip {
+.app-glossar-tooltip {
   display: none;
   position: absolute;
   bottom: 100%;
@@ -803,13 +803,13 @@ details > summary::-webkit-details-marker {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.glossar-term:hover .glossar-tooltip,
-.glossar-term:focus .glossar-tooltip,
-.glossar-term.glossar-tooltip-active .glossar-tooltip {
+.app-glossar-term:hover .app-glossar-tooltip,
+.app-glossar-term:focus .app-glossar-tooltip,
+.app-glossar-term.app-glossar-tooltip-active .app-glossar-tooltip {
   display: block;
 }
 
-.glossar-tooltip-link {
+.app-glossar-tooltip-link {
   color: var(--color-gruene-light);
   text-decoration: underline;
   font-size: 0.75rem;
@@ -820,7 +820,7 @@ details > summary::-webkit-details-marker {
 /* ---- Law Text Readability Styles ---- */
 
 /* Scoped typography for law pages */
-.law-text {
+.app-law-text {
   font-size: 1.0625rem; /* 17px */
   line-height: 1.75;
   max-width: 65ch;
@@ -829,17 +829,17 @@ details > summary::-webkit-details-marker {
 }
 
 @media (max-width: 639px) {
-  .law-text {
+  .app-law-text {
     font-size: 1rem; /* 16px on mobile */
   }
 }
 
-.law-text article {
+.app-law-text article {
   margin-bottom: 2rem;
 }
 
 /* Hauptstueck headings -- top-level, most prominent */
-.hauptstueck-heading {
+.app-hauptstueck-heading {
   font-size: 1.5rem;
   font-weight: 700;
   margin-top: 3rem;
@@ -851,7 +851,7 @@ details > summary::-webkit-details-marker {
 }
 
 /* Abschnitt headings -- mid-level with left accent */
-.abschnitt-heading {
+.app-abschnitt-heading {
   font-size: 1.25rem;
   font-weight: 600;
   margin-top: 2rem;
@@ -862,7 +862,7 @@ details > summary::-webkit-details-marker {
 }
 
 /* Paragraph headings -- subordinate */
-.law-text h3 {
+.app-law-text h3 {
   font-size: 1.0625rem;
   font-weight: 600;
 }
@@ -873,22 +873,22 @@ h2[id] {
 }
 
 /* Absatz separation styles */
-.absaetze-container {
+.app-absaetze-container {
   margin-top: 0.75rem;
 }
 
-.absatz {
+.app-absatz {
   display: flex;
   gap: 0.5rem;
   padding: 0.5rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.absatz:last-child {
+.app-absatz:last-child {
   border-bottom: none;
 }
 
-.absatz-num {
+.app-absatz-num {
   color: #4a7c59;
   font-size: 0.875rem;
   flex-shrink: 0;
@@ -896,7 +896,7 @@ h2[id] {
   font-variant-numeric: tabular-nums;
 }
 
-.absatz-text {
+.app-absatz-text {
   flex: 1;
   min-width: 0;
   overflow-wrap: break-word;
@@ -904,7 +904,7 @@ h2[id] {
 }
 
 /* Always-visible summary orientation box */
-.law-summary {
+.app-law-summary {
   background-color: var(--color-gruene-light);
   border-left: 3px solid var(--color-gruene-green);
   padding: 0.75rem 1rem;
@@ -916,7 +916,7 @@ h2[id] {
 }
 
 /* Enhanced glossary term styling within law text */
-.law-text .glossar-term {
+.app-law-text .app-glossar-term {
   text-decoration-thickness: 2px;
   background-color: rgba(107, 165, 57, 0.08);
   padding: 0 0.125rem;
@@ -924,7 +924,7 @@ h2[id] {
 }
 
 /* Structural marker styling for legal references */
-.legal-ref {
+.app-legal-ref {
   color: var(--color-gruene-dark);
   font-weight: 500;
   white-space: nowrap;
@@ -932,12 +932,12 @@ h2[id] {
 
 /* ---- BL Switcher Styles (law page header) ---- */
 
-.bl-switcher {
+.app-bl-switcher {
   margin-top: 0.5rem;
   max-width: 100%;
 }
 
-.bl-switcher-label {
+.app-bl-switcher-label {
   display: block;
   font-size: 0.6875rem;
   font-weight: 600;
@@ -954,7 +954,7 @@ h2[id] {
  * baseline; overrides the chevron position to match the tighter padding so
  * the text content (BL name) does not collide with the arrow at narrow widths.
  */
-.bl-header-select {
+.app-bl-header-select {
   padding: 0.25rem 1.5rem 0.25rem 0.5rem;
   font-size: 0.75rem;
   max-width: 140px;
@@ -966,7 +966,7 @@ h2[id] {
 }
 
 @media (min-width: 640px) {
-  .bl-header-select {
+  .app-bl-header-select {
     max-width: 200px;
     font-size: 0.8125rem;
   }

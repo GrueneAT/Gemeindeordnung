@@ -86,7 +86,7 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
   test('BL header select is visible on mobile law page', async ({ page }) => {
     await page.goto('./gemeindeordnungen/wien.html');
 
-    const blSelect = page.locator('select.bl-header-select');
+    const blSelect = page.locator('select.app-bl-header-select');
     await expect(blSelect).toBeVisible();
   });
 

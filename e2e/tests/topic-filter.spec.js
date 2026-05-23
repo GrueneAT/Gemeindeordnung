@@ -8,7 +8,7 @@ test.describe('Topic Filter', () => {
     await expect(filterContainer).toBeVisible();
 
     // Search input is visible
-    const searchInput = page.locator('#topic-search-input');
+    const searchInput = page.locator('#app-topic-search-input');
     await expect(searchInput).toBeVisible();
 
     // No old-style chip buttons
@@ -27,8 +27,8 @@ test.describe('Topic Filter', () => {
   test('LLM-07: search filters dropdown topics', async ({ page }) => {
     await page.goto('./gemeindeordnungen/burgenland.html');
 
-    const searchInput = page.locator('#topic-search-input');
-    const dropdown = page.locator('#topic-dropdown');
+    const searchInput = page.locator('#app-topic-search-input');
+    const dropdown = page.locator('#app-topic-dropdown');
 
     // Focus input opens dropdown
     await searchInput.focus();
@@ -39,29 +39,29 @@ test.describe('Topic Filter', () => {
     await expect(dropdown).toBeVisible();
 
     // Dropdown items should contain filtered results
-    const items = dropdown.locator('.topic-dropdown-item');
+    const items = dropdown.locator('.app-topic-dropdown-item');
     const count = await items.count();
     expect(count).toBeGreaterThan(0);
 
     // Each visible item should contain the search term in its name
     for (let i = 0; i < count; i++) {
-      const name = await items.nth(i).locator('.topic-dropdown-name').textContent();
+      const name = await items.nth(i).locator('.app-topic-dropdown-name').textContent();
       expect(name.toLowerCase()).toContain('gemeinde');
     }
 
     // Items have checkboxes and counts
     const firstCheckbox = items.first().locator('input[type="checkbox"]');
     await expect(firstCheckbox).toBeVisible();
-    const firstCount = items.first().locator('.topic-dropdown-count');
+    const firstCount = items.first().locator('.app-topic-dropdown-count');
     await expect(firstCount).toBeVisible();
   });
 
   test('LLM-07: multi-select and OR filtering', async ({ page }) => {
     await page.goto('./gemeindeordnungen/burgenland.html');
 
-    const searchInput = page.locator('#topic-search-input');
-    const dropdown = page.locator('#topic-dropdown');
-    const chipsContainer = page.locator('#topic-selected-chips');
+    const searchInput = page.locator('#app-topic-search-input');
+    const dropdown = page.locator('#app-topic-dropdown');
+    const chipsContainer = page.locator('#app-topic-selected-chips');
 
     // Count initial visible articles
     const allArticles = page.locator('article[data-topics]');
@@ -71,18 +71,18 @@ test.describe('Topic Filter', () => {
     // Open dropdown and select first topic
     await searchInput.focus();
     await expect(dropdown).toBeVisible();
-    const firstCheckbox = dropdown.locator('.topic-dropdown-item input[type="checkbox"]').first();
-    const firstTopicName = await dropdown.locator('.topic-dropdown-item .topic-dropdown-name').first().textContent();
+    const firstCheckbox = dropdown.locator('.app-topic-dropdown-item input[type="checkbox"]').first();
+    const firstTopicName = await dropdown.locator('.app-topic-dropdown-item .app-topic-dropdown-name').first().textContent();
     await firstCheckbox.check();
 
     // Select second topic
-    const secondCheckbox = dropdown.locator('.topic-dropdown-item input[type="checkbox"]').nth(1);
-    const secondTopicName = await dropdown.locator('.topic-dropdown-item .topic-dropdown-name').nth(1).textContent();
+    const secondCheckbox = dropdown.locator('.app-topic-dropdown-item input[type="checkbox"]').nth(1);
+    const secondTopicName = await dropdown.locator('.app-topic-dropdown-item .app-topic-dropdown-name').nth(1).textContent();
     await secondCheckbox.check();
 
     // Both appear as chips
     await expect(chipsContainer).toBeVisible();
-    const chips = chipsContainer.locator('.topic-selected-chip');
+    const chips = chipsContainer.locator('.app-topic-selected-chip');
     await expect(chips).toHaveCount(2);
 
     // Some articles should be hidden (filtered)
@@ -111,24 +111,24 @@ test.describe('Topic Filter', () => {
   test('LLM-07: remove chip updates filter', async ({ page }) => {
     await page.goto('./gemeindeordnungen/burgenland.html');
 
-    const searchInput = page.locator('#topic-search-input');
-    const dropdown = page.locator('#topic-dropdown');
-    const chipsContainer = page.locator('#topic-selected-chips');
+    const searchInput = page.locator('#app-topic-search-input');
+    const dropdown = page.locator('#app-topic-dropdown');
+    const chipsContainer = page.locator('#app-topic-selected-chips');
 
     // Select two topics
     await searchInput.focus();
-    await dropdown.locator('.topic-dropdown-item input[type="checkbox"]').first().check();
-    await dropdown.locator('.topic-dropdown-item input[type="checkbox"]').nth(1).check();
-    await expect(chipsContainer.locator('.topic-selected-chip')).toHaveCount(2);
+    await dropdown.locator('.app-topic-dropdown-item input[type="checkbox"]').first().check();
+    await dropdown.locator('.app-topic-dropdown-item input[type="checkbox"]').nth(1).check();
+    await expect(chipsContainer.locator('.app-topic-selected-chip')).toHaveCount(2);
 
     // Close dropdown
     await page.click('body', { position: { x: 10, y: 10 } });
     await expect(dropdown).toBeHidden();
 
     // Remove first chip
-    const firstChipRemove = chipsContainer.locator('.topic-selected-chip').first().locator('.topic-chip-remove');
+    const firstChipRemove = chipsContainer.locator('.app-topic-selected-chip').first().locator('.app-topic-chip-remove');
     await firstChipRemove.click();
-    await expect(chipsContainer.locator('.topic-selected-chip')).toHaveCount(1);
+    await expect(chipsContainer.locator('.app-topic-selected-chip')).toHaveCount(1);
 
     // Filter should update (still have one topic active)
     const hiddenArticles = page.locator('article[data-topics][style*="display: none"]');
@@ -139,20 +139,20 @@ test.describe('Topic Filter', () => {
   test('LLM-07: reset all clears selections', async ({ page }) => {
     await page.goto('./gemeindeordnungen/burgenland.html');
 
-    const searchInput = page.locator('#topic-search-input');
-    const dropdown = page.locator('#topic-dropdown');
-    const chipsContainer = page.locator('#topic-selected-chips');
+    const searchInput = page.locator('#app-topic-search-input');
+    const dropdown = page.locator('#app-topic-dropdown');
+    const chipsContainer = page.locator('#app-topic-selected-chips');
 
     // Select a topic
     await searchInput.focus();
-    await dropdown.locator('.topic-dropdown-item input[type="checkbox"]').first().check();
+    await dropdown.locator('.app-topic-dropdown-item input[type="checkbox"]').first().check();
     await expect(chipsContainer).toBeVisible();
 
     // Close dropdown
     await page.click('body', { position: { x: 10, y: 10 } });
 
     // Click reset
-    const resetBtn = chipsContainer.locator('.topic-reset-link');
+    const resetBtn = chipsContainer.locator('.app-topic-reset-link');
     await resetBtn.click();
 
     // Chips container should be hidden
@@ -168,8 +168,8 @@ test.describe('Topic Filter', () => {
   test('LLM-07: click outside closes dropdown', async ({ page }) => {
     await page.goto('./gemeindeordnungen/burgenland.html');
 
-    const searchInput = page.locator('#topic-search-input');
-    const dropdown = page.locator('#topic-dropdown');
+    const searchInput = page.locator('#app-topic-search-input');
+    const dropdown = page.locator('#app-topic-dropdown');
 
     // Open dropdown
     await searchInput.focus();

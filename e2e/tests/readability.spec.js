@@ -5,7 +5,7 @@ test.describe('Section hierarchy (READ-05)', () => {
     await page.goto('./gemeindeordnungen/wien.html');
 
     // Verify Hauptstueck headings exist and have correct font-size
-    const hauptHeadings = page.locator('.hauptstueck-heading');
+    const hauptHeadings = page.locator('.app-hauptstueck-heading');
     const hauptCount = await hauptHeadings.count();
     expect(hauptCount).toBeGreaterThan(0);
 
@@ -15,7 +15,7 @@ test.describe('Section hierarchy (READ-05)', () => {
     expect(hauptFontSize).toBeGreaterThanOrEqual(22); // 1.5rem at 16px base = 24px
 
     // Verify Abschnitt headings exist and have correct font-size
-    const abschnittHeadings = page.locator('.abschnitt-heading');
+    const abschnittHeadings = page.locator('.app-abschnitt-heading');
     const abschnittCount = await abschnittHeadings.count();
     expect(abschnittCount).toBeGreaterThan(0);
 
@@ -44,27 +44,27 @@ test.describe('Absatz separation (READ-04)', () => {
   test('Absaetze render as separated blocks with number labels', async ({ page }) => {
     await page.goto('./gemeindeordnungen/wien.html');
 
-    // Verify .absaetze-container elements exist
-    const containers = page.locator('.absaetze-container');
+    // Verify .app-absaetze-container elements exist
+    const containers = page.locator('.app-absaetze-container');
     expect(await containers.count()).toBeGreaterThan(0);
 
-    // Verify .absatz elements within containers
-    const absatzElements = page.locator('.absaetze-container .absatz');
+    // Verify .app-absatz elements within containers
+    const absatzElements = page.locator('.app-absaetze-container .app-absatz');
     expect(await absatzElements.count()).toBeGreaterThan(0);
 
-    // Verify .absatz uses flexbox layout
+    // Verify .app-absatz uses flexbox layout
     const display = await absatzElements.first().evaluate((el) => {
       return window.getComputedStyle(el).display;
     });
     expect(display).toBe('flex');
 
-    // Verify .absatz-num elements show number labels
-    const absatzNums = page.locator('.absatz-num');
+    // Verify .app-absatz-num elements show number labels
+    const absatzNums = page.locator('.app-absatz-num');
     expect(await absatzNums.count()).toBeGreaterThan(0);
     const firstNumText = await absatzNums.first().textContent();
     expect(firstNumText).toMatch(/\(\d+/);
 
-    // Verify .absatz elements have padding > 0 (not jammed together)
+    // Verify .app-absatz elements have padding > 0 (not jammed together)
     const padding = await absatzElements.first().evaluate((el) => {
       const cs = window.getComputedStyle(el);
       return parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
@@ -78,21 +78,21 @@ test.describe('Absatz separation (READ-04)', () => {
 });
 
 test.describe('Structural marker highlighting (READ-03)', () => {
-  test('Legal references are wrapped in .legal-ref spans', async ({ page }) => {
+  test('Legal references are wrapped in .app-legal-ref spans', async ({ page }) => {
     await page.goto('./gemeindeordnungen/wien.html');
 
-    // Verify .legal-ref elements exist on the page (at least 1)
-    const legalRefs = page.locator('.legal-ref');
+    // Verify .app-legal-ref elements exist on the page (at least 1)
+    const legalRefs = page.locator('.app-legal-ref');
     const refCount = await legalRefs.count();
     expect(refCount).toBeGreaterThan(0);
 
-    // Verify .legal-ref has font-weight >= 500
+    // Verify .app-legal-ref has font-weight >= 500
     const fontWeight = await legalRefs.first().evaluate((el) => {
       return parseInt(window.getComputedStyle(el).fontWeight, 10);
     });
     expect(fontWeight).toBeGreaterThanOrEqual(500);
 
-    // Verify .legal-ref text content matches expected patterns
+    // Verify .app-legal-ref text content matches expected patterns
     const firstText = await legalRefs.first().textContent();
     expect(firstText).toMatch(/Abs\.|§|Z\s*\d|lit\./);
 
@@ -116,8 +116,8 @@ test.describe('Mobile readability', () => {
     });
     expect(overflow).toBe(true);
 
-    // Verify .law-text font-size is 16px on mobile
-    const lawText = page.locator('main.law-text');
+    // Verify .app-law-text font-size is 16px on mobile
+    const lawText = page.locator('main.app-law-text');
     const fontSize = await lawText.evaluate((el) => {
       return parseFloat(window.getComputedStyle(el).fontSize);
     });
