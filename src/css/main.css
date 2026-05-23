@@ -1067,3 +1067,38 @@ h2[id] {
   border-radius: 0.125rem;
   padding: 0 0.125rem;
 }
+
+/*
+ * Respect the user's motion preference -- WCAG 2.1 (2.3.3 Animation
+ * from Interactions). Disables the three local keyframe animations:
+ *   - .anchor-highlight   (paragraph fade-out after deep-link)
+ *   - .search-modal-backdrop fade-in
+ *   - .search-modal slide-in
+ * Also cancels CSS transitions on the FAB and copy-link buttons so
+ * tap / hover state changes are instant rather than animated.
+ *
+ * The shared design-system stylesheet adds a global reduced-motion rule
+ * too (covers .gat-* components); this local block makes the behaviour
+ * resilient to a CDN-less build (offline / cache miss).
+ */
+@media (prefers-reduced-motion: reduce) {
+  .anchor-highlight,
+  .search-modal-backdrop,
+  .search-modal {
+    animation: none !important;
+  }
+
+  .fab-btn,
+  .copy-link-btn {
+    transition: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
