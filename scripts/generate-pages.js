@@ -384,7 +384,9 @@ ${options}
             </optgroup>`);
   }
 
-  return `          <select id="bl-switcher-select" class="bl-header-select" aria-label="Andere Gemeindeordnung anzeigen" data-pagefind-ignore onchange="if(this.value) window.location.href=this.value">
+  // .bl-header-select supplies the compact width + custom chevron;
+  // .gat-select supplies DS base typography, focus ring, border tokens.
+  return `          <select id="bl-switcher-select" class="gat-select bl-header-select" aria-label="Andere Gemeindeordnung anzeigen" data-pagefind-ignore onchange="if(this.value) window.location.href=this.value">
 ${optgroups.join('\n')}
           </select>`;
 }
@@ -410,7 +412,7 @@ ${options}
               </optgroup>`);
   }
 
-  return `          <select id="hero-bl-select" class="bl-header-select" aria-label="Bundesland filtern" data-pagefind-ignore>
+  return `          <select id="hero-bl-select" class="gat-select bl-header-select" aria-label="Bundesland filtern" data-pagefind-ignore>
               <option value="">Alle Bundesl\u00E4nder</option>
 ${optgroups.join('\n')}
             </select>`;
@@ -439,7 +441,7 @@ function generateScrollToTop() {
  * Desktop: icon button that opens modal on click.
  */
 function generateSearchHTML() {
-  return `      <input id="header-search-field" type="text" readonly class="header-search-field" placeholder="Suchen..." aria-label="Suche oeffnen" />
+  return `      <input id="header-search-field" type="text" readonly class="gat-input header-search-field" placeholder="Suchen..." aria-label="Suche oeffnen" />
       <button id="search-modal-trigger" class="search-trigger-btn" aria-label="Suche oeffnen (Ctrl+K)" title="Suche (Ctrl+K)">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
       </button>`;
@@ -610,7 +612,7 @@ function generateLawPage(law, key, category, rootDir = ROOT) {
       const topicData = sortedTopics.map(t => ({ name: t, count: topicCounts[t] || 0 }));
       topicChipsHtml = `      <div id="topic-filter" class="mb-4 relative" data-pagefind-ignore data-topics-json="${escapeHtml(JSON.stringify(topicData))}">
         <div class="topic-select-container">
-          <input type="text" id="topic-search-input" class="topic-search-input" placeholder="Themen filtern..." autocomplete="off" />
+          <input type="text" id="topic-search-input" class="gat-input topic-search-input" placeholder="Themen filtern..." autocomplete="off" />
         </div>
         <div id="topic-dropdown" class="topic-dropdown hidden"></div>
         <div id="topic-selected-chips" class="topic-selected-chips hidden"></div>
@@ -642,7 +644,7 @@ ${breadcrumbHtml}
       </header>
       <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="gesetz" data-search-filter-bundesland="${escapeHtml(law.meta.bundesland)}">
         <div class="relative">
-          <input type="search" class="inline-search-input" autocomplete="off"
+          <input type="search" class="gat-input inline-search-input" autocomplete="off"
             placeholder="In ${escapeHtml(law.meta.bundesland)} suchen..." minlength="3" />
           <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -772,7 +774,7 @@ ${cards}
           <div class="relative">
             <input id="hero-search-input" type="search" minlength="3" autocomplete="off"
               placeholder="Gesetz, Thema oder Begriff suchen..."
-              class="w-full text-lg py-4 pl-12 pr-4 rounded-xl border-2 border-gruene-green/50 shadow-lg bg-white text-gruene-dark focus:outline-none focus:ring-2 focus:ring-gruene-green/50 focus:border-gruene-green" />
+              class="gat-input hero-search-input" />
             <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           </div>
           <div class="mt-3 flex justify-center">
@@ -863,7 +865,7 @@ ${headerHtml}
 ${renderCallout('info', '<p><strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.</p>')}
       <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="faq">
         <div class="relative">
-          <input type="search" class="inline-search-input" autocomplete="off"
+          <input type="search" class="gat-input inline-search-input" autocomplete="off"
             placeholder="FAQ durchsuchen..." minlength="3" />
           <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -937,7 +939,7 @@ ${headerHtml}
       </header>
       <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="faq">
         <div class="relative">
-          <input type="search" class="inline-search-input" autocomplete="off"
+          <input type="search" class="gat-input inline-search-input" autocomplete="off"
             placeholder="FAQ durchsuchen..." minlength="3" />
           <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -1029,9 +1031,7 @@ ${renderCallout('info', '<p><strong>Hinweis:</strong> Diese Definitionen wurden 
       <div class="mb-6" data-pagefind-ignore>
         <input id="glossar-filter" type="search" data-pagefind-ignore
           placeholder="Begriff suchen..."
-          class="w-full sm:w-96 border border-gray-300 rounded-lg px-4 py-2 text-sm
-                 bg-white text-gruene-dark focus:outline-none focus:ring-2
-                 focus:ring-gruene-green/50 focus:border-gruene-green"
+          class="gat-input app-glossar-filter"
           aria-label="Glossarbegriffe filtern" />
       </div>
       <nav class="mb-8 flex flex-wrap gap-3" data-pagefind-ignore>

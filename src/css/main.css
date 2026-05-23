@@ -155,6 +155,20 @@ h3[id] {
   z-index: 50;
 }
 
+/*
+ * Hero search input — sits on top of `.gat-input` baseline. App-specific
+ * tweaks: larger font, generous touch target, room for the absolute-positioned
+ * search-icon SVG on the left, and a soft drop shadow that lifts it above the
+ * hero gradient.
+ */
+.hero-search-input {
+  font-size: 1.125rem;
+  padding: 1rem 1rem 1rem 3rem;
+  border-width: 2px;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
 /* ---- Discovery Chip Styles ---- */
 
 .discovery-section-compact {
@@ -431,13 +445,16 @@ details > summary::-webkit-details-marker {
 
 /* ---- Header Search Field (mobile) / Search Icon (desktop) ---- */
 
+/*
+ * Sits ON TOP of the DS `.gat-input` baseline (typography, focus ring, border
+ * tokens are inherited). Only sets app-specific layout deltas: flex sizing,
+ * compact padding, and the muted look that makes it read as a button.
+ */
 .header-search-field {
   flex: 1;
   min-width: 0;
   padding: 0.35rem 0.75rem;
   font-size: 0.8125rem;
-  border: 1px solid #d1d5db;
-  border-radius: 0.5rem;
   background: #f9fafb;
   color: #6b7280;
   cursor: pointer;
@@ -611,29 +628,18 @@ details > summary::-webkit-details-marker {
 
 /* ---- Topic Filter Styles ---- */
 
+/*
+ * Topic filter input — `.gat-input` covers typography, focus, border tokens.
+ * App-specific overrides: compact 14px size and the embedded search-icon
+ * background image (cheaper than an absolute-positioned SVG sibling).
+ */
 .topic-search-input {
-  width: 100%;
-  padding: 0.5rem 0.75rem 0.5rem 2.25rem;
-  border: 1px solid #d1d5db;
-  border-radius: 0.5rem;
+  padding-left: 2.25rem;
   font-size: 0.875rem;
-  color: var(--color-gruene-dark);
-  background-color: white;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: 0.625rem center;
   background-size: 1rem;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-
-.topic-search-input:focus {
-  outline: none;
-  border-color: var(--color-gruene-green);
-  box-shadow: 0 0 0 3px rgba(107, 165, 57, 0.15);
-}
-
-.topic-search-input::placeholder {
-  color: #9ca3af;
 }
 
 .topic-dropdown {
@@ -922,64 +928,22 @@ h2[id] {
   margin-bottom: 0.25rem;
 }
 
-.bl-switcher-select {
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: #f9fafb;
-  border: 1px solid #d1d5db;
-  border-radius: 0.5rem;
-  padding: 0.375rem 2rem 0.375rem 0.75rem;
-  font-size: 0.8125rem;
-  color: var(--color-gruene-dark);
-  cursor: pointer;
-  min-width: 180px;
-  max-width: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%236b7280'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.5rem center;
-  background-size: 1rem;
-  transition: border-color 0.15s;
-}
-
-.bl-switcher-select:hover {
-  border-color: var(--color-gruene-green);
-}
-
-.bl-switcher-select:focus {
-  outline: 2px solid var(--color-gruene-green);
-  outline-offset: 1px;
-}
-
 /* ---- Compact BL Header Select (inline in sticky header) ---- */
 
+/*
+ * Compact BL select in the sticky header. Sits on top of `.gat-select`
+ * baseline; overrides the chevron position to match the tighter padding so
+ * the text content (BL name) does not collide with the arrow at narrow widths.
+ */
 .bl-header-select {
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: #f9fafb;
-  border: 1px solid #d1d5db;
-  border-radius: 0.375rem;
   padding: 0.25rem 1.5rem 0.25rem 0.5rem;
   font-size: 0.75rem;
-  color: var(--color-gruene-dark);
-  cursor: pointer;
   max-width: 140px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%236b7280'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
   background-position: right 0.25rem center;
   background-size: 0.875rem;
-  transition: border-color 0.15s;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-
-.bl-header-select:hover {
-  border-color: var(--color-gruene-green);
-}
-
-.bl-header-select:focus {
-  outline: 2px solid var(--color-gruene-green);
-  outline-offset: 1px;
 }
 
 @media (min-width: 640px) {
@@ -1003,23 +967,16 @@ h2[id] {
   position: relative;
 }
 
+/*
+ * Inline (scoped) search input — sits on top of `.gat-input` baseline.
+ * Only sets app-specific deltas: left padding for the embedded search-icon
+ * SVG, slightly heavier border and the compact 14px size used in tight
+ * dropdown panels.
+ */
 .inline-search-input {
-  width: 100%;
-  padding: 0.5rem 0.75rem 0.5rem 2.25rem;
-  border: 1.5px solid #d1d5db;
-  border-radius: 0.5rem;
+  padding-left: 2.25rem;
+  border-width: 1.5px;
   font-size: 0.875rem;
-  color: var(--color-gruene-dark);
-  background: white;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-.inline-search-input:focus {
-  outline: none;
-  border-color: var(--color-gruene-green);
-  box-shadow: 0 0 0 3px rgba(107, 165, 57, 0.15);
-}
-.inline-search-input::placeholder {
-  color: #6b7280;
 }
 
 .inline-search-dropdown {
@@ -1071,6 +1028,23 @@ h2[id] {
     font-size: 1rem;
     padding: 0.625rem 1rem 0.625rem 2.5rem;
   }
+}
+
+/*
+ * Glossary filter input — `.gat-input` covers everything else; only override
+ * the responsive width so the input does not stretch past the 24rem column
+ * on desktop.
+ */
+.app-glossar-filter {
+  max-width: 24rem;
+}
+
+/*
+ * Search modal input — `.gat-input` baseline plus room for the absolute-
+ * positioned search-icon SVG on the left.
+ */
+.app-search-modal-input {
+  padding-left: 2.25rem;
 }
 
 /* Mobile: inline search dropdown full width */

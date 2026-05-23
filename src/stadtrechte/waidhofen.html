@@ -24,7 +24,7 @@
         <span class="header-site-name text-sm sm:text-lg font-bold">gemeindeordnung.gruene.at</span>
       </a>
       <div class="flex-1"></div>
-          <select id="bl-switcher-select" class="bl-header-select" aria-label="Andere Gemeindeordnung anzeigen" data-pagefind-ignore onchange="if(this.value) window.location.href=this.value">
+          <select id="bl-switcher-select" class="gat-select bl-header-select" aria-label="Andere Gemeindeordnung anzeigen" data-pagefind-ignore onchange="if(this.value) window.location.href=this.value">
             <optgroup label="Burgenland">
             <option value="../stadtrechte/eisenstadt.html">Eisenstadt (Stadtrecht)</option>
             <option value="../stadtrechte/rust.html">Rust (Stadtrecht)</option>
@@ -78,7 +78,7 @@
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
         </a>
       </nav>
-      <input id="header-search-field" type="text" readonly class="header-search-field" placeholder="Suchen..." aria-label="Suche oeffnen" />
+      <input id="header-search-field" type="text" readonly class="gat-input header-search-field" placeholder="Suchen..." aria-label="Suche oeffnen" />
       <button id="search-modal-trigger" class="search-trigger-btn" aria-label="Suche oeffnen (Ctrl+K)" title="Suche (Ctrl+K)">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
       </button>
@@ -102,7 +102,7 @@
       </header>
       <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="gesetz" data-search-filter-bundesland="Waidhofen/Ybbs">
         <div class="relative">
-          <input type="search" class="inline-search-input" autocomplete="off"
+          <input type="search" class="gat-input inline-search-input" autocomplete="off"
             placeholder="In Waidhofen/Ybbs suchen..." minlength="3" />
           <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -115,7 +115,7 @@
       </div>
       <div id="topic-filter" class="mb-4 relative" data-pagefind-ignore data-topics-json="[{&quot;name&quot;:&quot;Gemeindeorgane&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Kontrollamt&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Kontrollausschuss&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Rechnungsprüfung&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Rechtsstellung der Gemeinde&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Siegel&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Stadtgebiet&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Statutarstadt&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Wappen und Stadtfarben&quot;,&quot;count&quot;:1}]">
         <div class="topic-select-container">
-          <input type="text" id="topic-search-input" class="topic-search-input" placeholder="Themen filtern..." autocomplete="off" />
+          <input type="text" id="topic-search-input" class="gat-input topic-search-input" placeholder="Themen filtern..." autocomplete="off" />
         </div>
         <div id="topic-dropdown" class="topic-dropdown hidden"></div>
         <div id="topic-selected-chips" class="topic-selected-chips hidden"></div>
