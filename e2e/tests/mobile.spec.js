@@ -60,7 +60,7 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
     const header = page.locator('header.sticky');
     const headerBox = await header.boundingBox();
     // Header should be compact -- single line should be under 60px height
-    expect(headerBox.height).toBeLessThan(60);
+    expect(headerBox.height).toBeLessThan(70); // 65 typical, 70 ceiling — werkzeuge-link added
   });
 
   test('inline search is hidden on mobile law page', async ({ page }) => {
