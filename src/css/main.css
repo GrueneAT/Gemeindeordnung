@@ -45,15 +45,40 @@ html, body {
 }
 
 /*
- * App-specific sticky-search header. The DS ships `.gat-header` (single-row
- * brand bar, 56px logo) but it does not accommodate the sticky-search-trigger
- * layout this site requires. The local `.app-header` therefore stays — but
- * background, bottom hairline and color all pull from DS tokens so a future
- * DS-palette change propagates.
+ * Der Header selbst ist jetzt die einheitliche DS-Brandbar (`.gat-header`,
+ * identisch zu den anderen Werkzeugen). Die search-first-Controls (Suche +
+ * Bundesland-Umschalter) sitzen in einer eigenen, sticky App-Leiste direkt
+ * darunter — so bleibt der Header CI-gleich und die Suche dennoch immer
+ * erreichbar. Hintergrund/Hairline aus DS-Tokens.
  */
-.app-header {
+.app-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   background: var(--gat-web-surface, #ffffff);
   border-bottom: 1px solid var(--gat-web-hairline, #e5e7eb);
+}
+.app-toolbar__inner {
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: 0.4rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+/* Suche rechtsbuendig, Bundesland-Umschalter links. */
+.app-toolbar .search-trigger-btn {
+  margin-left: auto;
+}
+/* Desktop: die Suche als vollwertiges, breites Feld in der Leiste zeigen
+   (statt nur Icon) — die Leiste hat hier Platz, search-first bleibt prominent. */
+@media (min-width: 640px) {
+  .app-toolbar .header-search-field {
+    display: block;
+  }
+  .app-toolbar .search-trigger-btn {
+    display: none;
+  }
 }
 
 /*

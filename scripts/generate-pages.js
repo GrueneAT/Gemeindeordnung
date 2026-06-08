@@ -464,39 +464,40 @@ function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
 
   const searchHTML = generateSearchHTML();
 
-  const navLinks = `      <nav class="flex items-center gap-1.5 text-xs shrink-0" data-pagefind-ignore>
-        <a href="${prefix}faq/index.html" class="text-gruene-dark hover:underline whitespace-nowrap">FAQ</a>
-        <span class="text-gray-300">|</span>
-        <a href="${prefix}glossar.html" class="text-gruene-dark hover:underline whitespace-nowrap">Glossar</a>
-        <span class="text-gray-300 hidden md:inline">|</span>
-        <a href="mailto:${SUPPORT_EMAIL}" class="hidden md:inline text-gruene-dark hover:underline whitespace-nowrap" title="Fragen oder Feedback zu dieser Seite">${SUPPORT_EMAIL}</a>
-        <a href="mailto:${SUPPORT_EMAIL}" class="md:hidden text-gruene-dark hover:underline" title="${SUPPORT_EMAIL}" aria-label="Kontakt">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-        </a>
-        <span class="text-gray-300">|</span>
-        <a href="https://grueneat.github.io/werkzeuge/" class="text-gruene-dark hover:underline whitespace-nowrap">Werkzeuge</a>
-      </nav>`;
-
-  // `.app-header` is the local sticky-search-trigger header. The DS ships a
-  // `.gat-header` atom but it is built around a single-row brand bar with a
-  // fixed 56px logo and wraps to multiple rows once nav + search trigger
-  // are added; that breaks the compact search-first layout this site needs.
-  // We therefore keep an app-specific `<header class="app-header">` shell but
-  // use DS color / hairline tokens (`--gat-web-surface`, `--gat-web-hairline`)
-  // for the background and bottom border so a future DS palette shift
-  // propagates.
-  return `  <header data-pagefind-ignore class="app-header sticky top-0 z-10">
-    <div class="max-w-5xl mx-auto px-4 py-2 flex items-center gap-2">
-      <a href="${indexPath}" class="flex items-center gap-1.5 text-gruene-dark hover:text-gruene-dark no-underline shrink-0">
-        <img src="${logoPath}" alt="Die Gruenen" class="w-7 h-7 gruene-logo" />
-        <span class="header-site-name text-sm sm:text-lg font-bold">gemeindeordnung.gruene.at</span>
+  // Einheitliche Gruene-AT-CI-Brandbar (gat-header, identisch zu den anderen
+  // Werkzeugen): nur Marke + Text-Links + Support-Mail. Interaktive Controls
+  // (Suche, Bundesland-Umschalter) wandern in die App-Leiste darunter, damit
+  // der Header ueberall gleich ruhig bleibt ("Links rein, Controls raus").
+  const header = `  <header data-pagefind-ignore class="gat-header">
+    <div class="gat-header__inner">
+      <a class="gat-header__brand" href="${indexPath}">
+        <img class="gat-header__logo gruene-logo" src="${logoPath}" alt="Die Gruenen" width="150" height="132" />
+        <span class="gat-header__wordmark header-site-name">gemeindeordnung.gruene.at</span>
       </a>
-      <div class="flex-1"></div>
-${switcher}
-${navLinks}
-${searchHTML}
+      <nav class="gat-header__nav" aria-label="Navigation">
+        <ul class="gat-header__nav-list">
+          <li><a href="${prefix}faq/index.html">FAQ</a></li>
+          <li><a href="${prefix}glossar.html">Glossar</a></li>
+          <li><a href="https://grueneat.github.io/werkzeuge/">Werkzeuge</a></li>
+        </ul>
+        <a href="mailto:${SUPPORT_EMAIL}" class="gat-header__support" title="Fragen oder Feedback zu dieser Seite" aria-label="Support-E-Mail an ${SUPPORT_EMAIL}">
+          <svg class="gat-header__support-icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <span class="gat-header__support-label">${SUPPORT_EMAIL}</span>
+        </a>
+      </nav>
     </div>
   </header>`;
+
+  // App-Leiste: sticky Such-/Filterzeile direkt unter dem Header. Traegt die
+  // search-first-Controls (Suche immer erreichbar; auf Gesetzesseiten zusaetzlich
+  // der Bundesland-Umschalter). IDs/Klassen unveraendert -> Such-Modal-JS bleibt.
+  return `${header}
+  <div data-pagefind-ignore class="app-toolbar">
+    <div class="app-toolbar__inner">
+${switcher}
+${searchHTML}
+    </div>
+  </div>`;
 }
 
 /**
