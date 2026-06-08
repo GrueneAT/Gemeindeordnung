@@ -7,8 +7,8 @@ import { test, expect } from '@playwright/test';
 async function openSearchModal(page) {
   // The search field is the universal trigger in the sticky app toolbar
   // (visible on desktop and mobile); the icon button stays hidden.
-  await page.waitForSelector('#header-search-field', { state: 'visible' });
-  await page.click('#header-search-field');
+  await page.waitForSelector('#search-modal-trigger', { state: 'visible' });
+  await page.click('#search-modal-trigger');
   await expect(page.locator('.app-search-modal')).toBeVisible({ timeout: 3000 });
 }
 
@@ -26,7 +26,7 @@ test.describe('Search modal behavior', () => {
 
   test('modal opens on Ctrl+K', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name === 'mobile', 'Ctrl+K not applicable on mobile');
-    await page.waitForSelector('#header-search-field', { state: 'visible' });
+    await page.waitForSelector('#search-modal-trigger', { state: 'visible' });
     await page.keyboard.press('Control+k');
     const modal = page.locator('.app-search-modal');
     await expect(modal).toBeVisible({ timeout: 3000 });
@@ -77,35 +77,30 @@ test.describe('Search modal behavior', () => {
     await page.screenshot({ path: 'e2e/screenshots/search-modal-desktop.png', fullPage: false });
   });
 
-  test('toolbar search field stays accessible while scrolling (index page)', async ({ page }, testInfo) => {
-    test.skip(testInfo.project.name === 'mobile', 'Desktop sticky-toolbar behaviour');
+  test('search magnifier reveals on scroll and opens the modal (index page)', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name === 'mobile', 'Desktop header magnifier');
     await page.goto('./index.html');
     await page.waitForSelector('.hero-section', { state: 'visible' });
 
-    // The sticky app-toolbar search field is reachable from the top.
-    const field = page.locator('#header-search-field');
-    await expect(field).toBeVisible();
-
-    // Expand the card grid to make the page scrollable, then scroll past hero
+    // On the index the hero search is primary, so the header magnifier stays
+    // hidden until the hero scrolls out of view (no double search at the top).
+    const trigger = page.locator('#search-modal-trigger');
     const details = page.locator('details').filter({ hasText: 'Alle Gesetze' });
     await details.locator('summary').click();
-    await page.waitForTimeout(300);
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-    await page.waitForTimeout(800);
+    await expect(trigger).toBeVisible({ timeout: 5000 });
 
-    // Sticky toolbar keeps the field reachable after scrolling.
-    await expect(field).toBeVisible({ timeout: 5000 });
-
-    await page.screenshot({ path: 'e2e/screenshots/header-search-field.png', fullPage: false });
+    await trigger.click();
+    await expect(page.locator('.app-search-modal')).toBeVisible({ timeout: 3000 });
   });
 
   test('mobile modal is full-screen', async ({ page }, testInfo) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto('./gemeindeordnungen/wien.html');
-    await page.waitForSelector('#header-search-field', { state: 'visible' });
+    await page.waitForSelector('#search-modal-trigger', { state: 'visible' });
     await page.waitForTimeout(500);
 
-    await page.click('#header-search-field');
+    await page.click('#search-modal-trigger');
     const modal = page.locator('.app-search-modal');
     await expect(modal).toBeVisible({ timeout: 3000 });
 
