@@ -5,7 +5,7 @@ test.describe('Navigation consistency and header links', () => {
     test.skip(testInfo.project.name === 'mobile', 'Nav links hidden on mobile for non-index pages by design');
 
     // Use sticky header selector to avoid matching content <header> elements on law pages
-    const stickyHeader = 'header.sticky';
+    const stickyHeader = 'header.gat-header';
 
     // Check index page header
     await page.goto('./index.html');
@@ -13,7 +13,7 @@ test.describe('Navigation consistency and header links', () => {
     await expect(indexHeader).toBeVisible();
     await expect(indexHeader.locator('.gruene-logo')).toBeVisible();
     await expect(indexHeader.locator('nav')).toBeVisible();
-    await expect(indexHeader.locator('#search-modal-trigger')).toBeAttached();
+    await expect(page.locator('#header-search-field')).toBeVisible();
 
     await page.screenshot({ path: 'e2e/screenshots/header-index.png', fullPage: false });
 
@@ -23,7 +23,7 @@ test.describe('Navigation consistency and header links', () => {
     await expect(lawHeader).toBeVisible();
     await expect(lawHeader.locator('.gruene-logo')).toBeVisible();
     await expect(lawHeader.locator('nav')).toBeVisible();
-    await expect(lawHeader.locator('#search-modal-trigger')).toBeVisible();
+    await expect(page.locator('#header-search-field')).toBeVisible();
 
     await page.screenshot({ path: 'e2e/screenshots/header-law-page.png', fullPage: false });
 

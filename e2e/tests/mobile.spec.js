@@ -48,19 +48,20 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
     await expect(main).toBeVisible();
 
     // Navigation header (sticky top bar) should be visible
-    const header = page.locator('header.sticky');
+    const header = page.locator('header.gat-header');
     await expect(header).toBeVisible();
 
     await page.screenshot({ path: 'e2e/screenshots/mobile-law-page.png', fullPage: false });
   });
 
-  test('header fits on one line at 375px viewport (compact)', async ({ page }) => {
+  test('header fits the viewport width at 375px (no horizontal overflow)', async ({ page }) => {
     await page.goto('./gemeindeordnungen/wien.html');
 
-    const header = page.locator('header.sticky');
+    const header = page.locator('header.gat-header');
+    await expect(header).toBeVisible();
     const headerBox = await header.boundingBox();
-    // Header should be compact -- single line should be under 60px height
-    expect(headerBox.height).toBeLessThan(70); // 65 typical, 70 ceiling — werkzeuge-link added
+    // Unified gat-header is full-width and must not overflow the 375px viewport.
+    expect(headerBox.width).toBeLessThanOrEqual(376);
   });
 
   test('inline search is hidden on mobile law page', async ({ page }) => {
