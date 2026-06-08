@@ -13,7 +13,9 @@ test.describe('Navigation consistency and header links', () => {
     await expect(indexHeader).toBeVisible();
     await expect(indexHeader.locator('.gruene-logo')).toBeVisible();
     await expect(indexHeader.locator('nav')).toBeVisible();
-    await expect(page.locator('#header-search-field')).toBeVisible();
+    // Magnifier is present in the header; on the index it is scroll-revealed
+    // (hidden while the hero search is in view), so assert it is attached.
+    await expect(page.locator('#search-modal-trigger')).toBeAttached();
 
     await page.screenshot({ path: 'e2e/screenshots/header-index.png', fullPage: false });
 
@@ -23,7 +25,7 @@ test.describe('Navigation consistency and header links', () => {
     await expect(lawHeader).toBeVisible();
     await expect(lawHeader.locator('.gruene-logo')).toBeVisible();
     await expect(lawHeader.locator('nav')).toBeVisible();
-    await expect(page.locator('#header-search-field')).toBeVisible();
+    await expect(page.locator('#search-modal-trigger')).toBeVisible();
 
     await page.screenshot({ path: 'e2e/screenshots/header-law-page.png', fullPage: false });
 

@@ -462,7 +462,11 @@ function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
 
   const switcher = isLawPage ? buildBundeslandSwitcher(currentKey, currentCategory) : '';
 
-  const searchHTML = generateSearchHTML();
+  // Globale Suche als kompakte Lupe im Header — oeffnet das Such-Modal ueber
+  // ALLE Felder. Hero-/Inline-Suche der einzelnen Seiten bleiben separat.
+  const searchBtn = `        <button id="search-modal-trigger" class="gat-header__search" type="button" aria-label="Alles durchsuchen (Strg+K)" title="Alles durchsuchen (Strg+K)">
+          <svg class="gat-header__search-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>`;
 
   // Einheitliche Gruene-AT-CI-Brandbar (gat-header, identisch zu den anderen
   // Werkzeugen): nur Marke + Text-Links + Support-Mail. Interaktive Controls
@@ -480,6 +484,7 @@ function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
           <li><a href="${prefix}glossar.html">Glossar</a></li>
           <li><a href="https://grueneat.github.io/werkzeuge/">Werkzeuge</a></li>
         </ul>
+${searchBtn}
         <a href="mailto:${SUPPORT_EMAIL}" class="gat-header__support" title="Fragen oder Feedback zu dieser Seite" aria-label="Support-E-Mail an ${SUPPORT_EMAIL}">
           <svg class="gat-header__support-icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
           <span class="gat-header__support-label">${SUPPORT_EMAIL}</span>
@@ -488,14 +493,14 @@ function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
     </div>
   </header>`;
 
-  // App-Leiste: sticky Such-/Filterzeile direkt unter dem Header. Traegt die
-  // search-first-Controls (Suche immer erreichbar; auf Gesetzesseiten zusaetzlich
-  // der Bundesland-Umschalter). IDs/Klassen unveraendert -> Such-Modal-JS bleibt.
+  // App-Leiste nur noch fuer den Bundesland-Umschalter (Gesetzesseiten). Die
+  // Suche liegt jetzt als Lupe im Header; Seiten ohne Umschalter brauchen keine
+  // Leiste mehr — so steht kein zweites Suchfeld neben Hero-/Inline-Suche.
+  if (!switcher.trim()) return header;
   return `${header}
   <div data-pagefind-ignore class="app-toolbar">
     <div class="app-toolbar__inner">
 ${switcher}
-${searchHTML}
     </div>
   </div>`;
 }

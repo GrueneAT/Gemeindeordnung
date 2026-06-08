@@ -72,16 +72,14 @@ test.describe('Mobile responsive layout (UAT 9)', () => {
     await expect(inlineSearch).toBeHidden();
   });
 
-  test('header search field is visible on mobile and opens modal', async ({ page }) => {
+  test('search magnifier is visible on mobile and opens the modal', async ({ page }) => {
     await page.goto('./gemeindeordnungen/wien.html');
 
-    const searchField = page.locator('#header-search-field');
-    await expect(searchField).toBeVisible();
-    await expect(searchField).toHaveAttribute('placeholder', 'Suchen...');
+    const trigger = page.locator('#search-modal-trigger');
+    await expect(trigger).toBeVisible();
 
-    // Icon button should be hidden on mobile
-    const iconBtn = page.locator('#search-modal-trigger');
-    await expect(iconBtn).toBeHidden();
+    await trigger.click();
+    await expect(page.locator('.app-search-modal')).toBeVisible({ timeout: 3000 });
   });
 
   test('BL header select is visible on mobile law page', async ({ page }) => {
