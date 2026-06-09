@@ -102,13 +102,13 @@ html, body {
  * Preserve the historical Tailwind sans-serif typography on body text.
  *
  * The shared design-system stylesheet sets `body { font-family: var(--gat-font-copy) }`
- * (Barlow Semi Condensed). On the laws site the Tailwind utility classes
+ * (Raleway). On the laws site the Tailwind utility classes
  * (`text-3xl`, `font-bold`, `text-lg`, ...) were tuned against the system
  * sans-serif metrics, so swapping the body font shifts the layout (visible
  * regression: the index hero heading clips on 375px mobile).
  *
  * Phase 0 leaves the local typography untouched. The proper migration to the
- * DS typography scale (Barlow Semi Condensed for copy, Vollkorn for emphasis,
+ * DS typography scale (Raleway for copy, Vollkorn for emphasis,
  * the `gat-headline` / `gat-fliesstext` utilities) belongs to Phase 2.
  */
 body {
