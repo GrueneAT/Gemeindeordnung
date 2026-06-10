@@ -33,13 +33,13 @@ const SUPPORT_EMAIL = 'florian.motlik@gruene.at';
  * Loaded BEFORE local main.css so local rules can still override DS defaults.
  * Source: https://github.com/GrueneAT/design-system
  */
-const DS_CSS_URL = 'https://grueneat.github.io/design-system/design-system.css';
+const DS_CSS_URL = 'https://design-system.gruene.at/design-system.css';
 
 /**
  * URL of the shared Gruene-AT logo (SVG, CDN).
  * Consumed via CDN so brand refreshes land here automatically.
  */
-const DS_LOGO_URL = 'https://grueneat.github.io/design-system/assets/gruene-logo.svg';
+const DS_LOGO_URL = 'https://design-system.gruene.at/assets/gruene-logo.svg';
 
 /**
  * Render the accessibility skip link that lets keyboard / screen-reader users

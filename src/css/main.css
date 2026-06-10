@@ -4,7 +4,7 @@
  * Local brand tokens for Tailwind v4 (`text-gruene-*` / `bg-gruene-*` etc.).
  *
  * Values aliased to the shared Gruene-AT design-system tokens (loaded via
- * <link rel="stylesheet" href="https://grueneat.github.io/design-system/design-system.css">)
+ * <link rel="stylesheet" href="https://design-system.gruene.at/design-system.css">)
  * so any future DS color tweak propagates here automatically -- no silent drift.
  * Local utility-class names are preserved so existing markup keeps working.
  *
