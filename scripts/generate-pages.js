@@ -482,7 +482,7 @@ function generateHeader(isLawPage, currentKey, currentCategory, pathPrefix) {
         <ul class="gat-header__nav-list">
           <li><a href="${prefix}faq/index.html">FAQ</a></li>
           <li><a href="${prefix}glossar.html">Glossar</a></li>
-          <li><a href="https://grueneat.github.io/werkzeuge/">Werkzeuge</a></li>
+          <li><a href="https://werkzeuge.gruene.at/">Werkzeuge</a></li>
         </ul>
 ${searchBtn}
         <a href="mailto:${SUPPORT_EMAIL}" class="gat-header__support" title="Fragen oder Feedback zu dieser Seite" aria-label="Support-E-Mail an ${SUPPORT_EMAIL}">
