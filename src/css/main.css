@@ -244,6 +244,21 @@ h3[id] {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
+/*
+ * The hero field adopts the DS `.gat-search` markup (field + icon slot). The DS
+ * `.gat-search__icon` is sized for the standard 44px input; the hero input is
+ * taller and uses a fixed 3rem left padding, so re-center the icon over the full
+ * field height and align it with that padding.
+ */
+.hero-search-container .gat-search__icon {
+  height: 100%;
+  width: 3rem;
+}
+.hero-search-container .gat-search__icon > svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
 /* ---- Discovery Chip Styles ---- */
 
 .discovery-section-compact {

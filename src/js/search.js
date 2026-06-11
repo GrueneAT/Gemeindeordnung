@@ -2,9 +2,23 @@
 // Handles: initialization, search execution, filtering, result formatting, UI rendering
 // Supports unified search across Gesetze, FAQ, and Glossar content types
 // Uses a modal overlay for search (desktop centered, mobile full-screen)
+//
+// The hero search field (index page) delegates its GENERIC behaviour — open/close
+// without layout shift, debounce + race-guard, ARIA combobox wiring, Strg/Cmd+K
+// and click-outside — to the shared Gruene-AT design-system search module
+// (gat-search.js, loaded from the CDN, no vendoring). This module keeps the
+// APP-SPECIFIC layer: the tabbed/grouped result panel, the Bundesland filter,
+// the stemming false-positive filter, ?highlight= deep-linking and the bespoke
+// modal/FAB. gat-search supplies the chrome; the app supplies the search source
+// (via the adapter) and the result shaping (which it paints into
+// #hero-search-dropdown itself).
+import { createSearch } from 'https://design-system.gruene.at/gat-search.js';
 
 let pagefind = null;
 let searchInitialized = false;
+
+// Hero gat-search controller (index page only); null elsewhere.
+let heroSearchController = null;
 
 // UI state
 let activeBundesland = null;
@@ -868,9 +882,11 @@ function setupKeyboardShortcuts() {
       e.preventDefault();
       if (modalActive) return;
 
-      // On index page with hero visible, focus hero input instead
-      if (heroActive && isHeroVisible() && heroInput) {
-        heroInput.focus();
+      // On index page with hero visible, focus the hero field. The DS
+      // gat-search controller owns the hero open/close, so we route through it
+      // (rather than focusing the raw input) to keep its ARIA state in sync.
+      if (heroActive && isHeroVisible() && heroSearchController) {
+        heroSearchController.focus();
         return;
       }
 
@@ -880,7 +896,9 @@ function setupKeyboardShortcuts() {
     if (e.key === 'Escape') {
       if (modalActive) {
         closeSearchModal();
-      } else {
+      } else if (!(heroActive && isHeroVisible())) {
+        // Hero Escape is handled by the DS gat-search controller; only fall back
+        // to the legacy dropdown-hide on non-hero pages / when hero is hidden.
         hideDropdown();
         if (searchInput) searchInput.blur();
       }
@@ -923,16 +941,16 @@ function setupHeroObserver() {
         }
         if (!modalActive) {
           if (entry.isIntersecting) {
-            // Hero visible -- use hero as primary
+            // Hero visible -- it is the primary search surface again.
             searchInput = heroInput;
-            searchDropdown = heroDropdown;
             // Sync query to hero
             if (currentQuery) heroInput.value = currentQuery;
           } else {
-            // Hero scrolled out -- primary refs are null (search via modal only)
+            // Hero scrolled out -- search happens via the modal only. Close the
+            // DS controller so its overlay/ARIA state is reset and the hero
+            // dropdown is hidden.
             searchInput = null;
-            searchDropdown = null;
-            // Hide hero dropdown
+            heroSearchController?.close();
             heroDropdown?.classList.add('hidden');
           }
         }
@@ -945,14 +963,88 @@ function setupHeroObserver() {
 }
 
 /**
- * Set up click-outside handler for hero dropdown on index page.
+ * Initialise the hero search field on the shared DS gat-search controller.
+ *
+ * The DS module supplies the GENERIC chrome: open/close of the overlay without
+ * layout shift, debounce + race-guard, ARIA combobox wiring on the input, and
+ * click-outside / Escape handling. The APP keeps full control
+ * of the result DOM: the adapter runs the app's unified Pagefind search and
+ * paints the tabbed/grouped panel (with the BL filter, stemming filter and
+ * ?highlight= deep-links) directly into #hero-search-dropdown, then returns an
+ * empty array so the DS never renders its own flat listbox.
+ *
+ * Visibility of #hero-search-dropdown (the `.hidden` class the e2e suite and the
+ * IntersectionObserver rely on) is bridged from the DS open/close events.
  */
-function setupHeroClickOutside() {
-  document.addEventListener('click', (e) => {
-    if (modalActive) return;
-    const inHeroContainer = e.target.closest('.hero-search-container');
-    if (!inHeroContainer && heroActive) {
-      heroDropdown?.classList.add('hidden');
+function initHeroSearch() {
+  // The DS overlay element is required by createSearch but unused for rendering
+  // (the app paints its own panel). Keep it out of the layout flow and hidden.
+  let dsOverlay = document.getElementById('hero-gat-search-overlay');
+  if (!dsOverlay) {
+    dsOverlay = document.createElement('div');
+    dsOverlay.id = 'hero-gat-search-overlay';
+    dsOverlay.className = 'gat-search__overlay';
+    dsOverlay.hidden = true;
+    dsOverlay.style.display = 'none';
+    heroInput.parentElement?.appendChild(dsOverlay);
+  }
+
+  // Bridge the DS close event onto the app's #hero-search-dropdown `.hidden`
+  // class. The app's own renderers (renderUnifiedResults / renderEmptyState /
+  // showMinCharsHint / hideDropdown) toggle visibility while open; we only need
+  // the DS to hide the panel when it closes (click-outside / Escape).
+  heroInput.addEventListener('gat-search:close', () => {
+    heroDropdown?.classList.add('hidden');
+    heroDropdown?.classList.remove('search-dropdown-expanded');
+  });
+
+  // The app paints its result panel into #hero-search-dropdown, which sits
+  // OUTSIDE the DS overlay element. The DS click-outside handler (a document
+  // pointerdown listener) would otherwise treat any click inside that panel —
+  // a tab button, the "show all" / "search all" action, a result link — as an
+  // outside click and close the search, killing the interaction mid-click.
+  // Keep those in-panel pointer events from reaching the document handler so
+  // the DS stays open; genuine clicks elsewhere still close it. The panel's own
+  // delegated click handlers (tabs, buttons, links) run first in the bubble
+  // phase, so stopping propagation at the panel root does not affect them.
+  heroDropdown?.addEventListener('pointerdown', (event) => {
+    event.stopPropagation();
+  });
+
+  heroSearchController = createSearch({
+    input: heroInput,
+    overlay: dsOverlay,
+    minQueryLength: 3,
+    debounceMs: 200,
+    // App search adapter: the DS calls this (debounced, race-guarded). We paint
+    // the app panel as a side effect and hand the DS an empty result list so it
+    // renders nothing of its own.
+    search: async (query) => {
+      currentQuery = query;
+      // The hero is the active surface whenever this adapter runs (the modal
+      // uses its own handlers). Point the shared renderers at the hero dropdown.
+      searchDropdown = heroDropdown;
+      const result = await executeUnifiedSearch(query, activeBundesland);
+      if (result) renderUnifiedResults(result);
+      return [];
+    },
+    // Both `/` and Strg/Cmd+K stay app-routed via setupKeyboardShortcuts,
+    // which must decide between focusing the hero (when visible) and opening the
+    // modal (when the hero has scrolled out). So the DS global shortcut is off
+    // to avoid double-handling.
+    shortcut: false,
+  });
+
+  // Short-query hint: the DS shows its own `hint` state in its (hidden) overlay,
+  // so mirror the app hint into the visible #hero-search-dropdown on input.
+  heroInput.addEventListener('input', () => {
+    const q = heroInput.value.trim();
+    currentQuery = q;
+    if (q.length === 0) {
+      hideDropdown();
+    } else if (q.length < 3) {
+      searchDropdown = heroDropdown;
+      showMinCharsHint();
     }
   });
 }
@@ -1127,14 +1219,11 @@ function initSearch() {
   // Pre-load Pagefind WASM
   loadPagefind();
 
-  // Set up event listeners on hero input (if present)
+  // Hero field: delegate generic chrome (open/close, debounce + race-guard,
+  // ARIA combobox, Strg/Cmd+K, click-outside) to the shared DS gat-search
+  // module. The app keeps painting its tabbed panel into #hero-search-dropdown.
   if (heroActive && heroInput) {
-    heroInput.addEventListener('input', handleSearchInput);
-    heroInput.addEventListener('focus', () => {
-      if (currentQuery.length >= 3) {
-        heroDropdown?.classList.remove('hidden');
-      }
-    });
+    initHeroSearch();
   }
 
   // Wire up search modal trigger button
@@ -1177,11 +1266,6 @@ function initSearch() {
   }
 
   setupKeyboardShortcuts();
-
-  // Hero click-outside handler (for hero dropdown on index page)
-  if (heroActive) {
-    setupHeroClickOutside();
-  }
 }
 
 export {
