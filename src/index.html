@@ -46,11 +46,13 @@
           Alle Gemeindeordnungen und Stadtrechte durchsuchen, vergleichen und verstehen.
         </p>
         <div class="hero-search-container max-w-2xl mx-auto relative">
-          <div class="relative">
+          <div class="gat-search relative">
             <input id="hero-search-input" type="search" minlength="3" autocomplete="off"
               placeholder="Gesetz, Thema oder Begriff suchen..."
-              class="gat-input hero-search-input" />
-            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              class="gat-input gat-search__field hero-search-input" />
+            <span class="gat-search__icon" aria-hidden="true">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </span>
           </div>
           <div class="mt-3 flex justify-center">
                       <select id="hero-bl-select" class="gat-select app-bl-header-select" aria-label="Bundesland filtern" data-pagefind-ignore>
