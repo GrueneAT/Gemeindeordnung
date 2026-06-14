@@ -594,52 +594,29 @@ details > summary::-webkit-details-marker {
 }
 
 /*
- * Custom backdrop for the app-search modal. The DS `.gat-modal` is built on
- * the native `<dialog>` element which surfaces a `::backdrop` pseudo; this
- * app uses a non-`<dialog>` shell so it can click-outside-to-close without
- * the focus-trap baked into native modal dialogs. Z-index sits above the
- * sticky header (`z-index: 10`).
+ * Global search modal. Migrated to the DS search template: a native
+ * `<dialog class="gat-modal gat-modal--blur gat-modal--wide">` driven by the DS
+ * gat-search controller (mode: 'modal'). The DS rule
+ * `.gat-modal:has(.gat-search--modal)` makes it full-screen on all viewports
+ * and provides background, focus-trap (native <dialog>), `::backdrop` blur and
+ * the close-button chrome. The app only adds the flex-column layout so the
+ * result panel scrolls under a fixed head + search field.
+ *
+ * Scope the flex layout to `[open]`: an unconditional `display: flex` would beat
+ * the UA `dialog:not([open]) { display: none }` rule and leave the (static,
+ * always-in-DOM) dialog rendered over the header, intercepting clicks on the
+ * search trigger. Only the OPEN dialog gets the flex-column layout; a closed one
+ * falls back to the UA `display: none`.
  */
-.app-search-modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 100;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 10vh;
-  animation: fade-in 0.15s ease-out;
-}
-
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/*
- * `.app-search-modal` sits on top of the DS `.gat-modal` and adds app-specific
- * layout: flex-column with a scrollable results pane, 90vw / 700px sizing and
- * the slide-in animation. The DS supplies background, radius, shadow, color.
- */
-.app-search-modal {
-  width: 90vw;
-  max-width: 700px;
-  max-height: 80vh;
+.app-search-modal[open] {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  animation: modal-slide-in 0.15s ease-out;
-}
-
-@keyframes modal-slide-in {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /*
- * Cmd-K shortcut chip in the modal head (between the title and the close
- * button). Aligns to the right edge of the head row.
+ * ESC chip in the modal head (between the title and the DS close button).
+ * Aligns to the right edge of the head row, just left of the close button.
  */
 .app-search-modal-shortcut {
   font-size: var(--app-text-micro);
@@ -651,25 +628,12 @@ details > summary::-webkit-details-marker {
   margin-right: 0.5rem;
 }
 
+/* The app result panel scrolls; the head + search field stay fixed above it. */
 .app-search-modal-results {
   flex: 1;
   overflow-y: auto;
-  max-height: 60vh;
-}
-
-/* Mobile: full-screen modal */
-@media (max-width: 639px) {
-  .app-search-modal-backdrop {
-    padding-top: 0;
-    align-items: stretch;
-  }
-  .app-search-modal {
-    width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    height: 100%;
-    border-radius: 0;
-  }
+  min-height: 0;
+  padding: 0 var(--gat-space-4, 1rem) var(--gat-space-4, 1rem);
 }
 
 /*
@@ -1134,12 +1098,9 @@ h2[id] {
 }
 
 /*
- * Search modal input — `.gat-input` baseline plus room for the absolute-
- * positioned search-icon SVG on the left.
+ * Search modal input — the DS `.gat-search__field` already reserves room for
+ * the `.gat-search__icon` on the left, so no extra padding is needed here.
  */
-.app-search-modal-input {
-  padding-left: 2.25rem;
-}
 
 /* Mobile: inline search dropdown full width */
 @media (max-width: 639px) {
@@ -1162,21 +1123,14 @@ h2[id] {
 
 /*
  * Respect the user's motion preference -- WCAG 2.1 (2.3.3 Animation
- * from Interactions). Disables the three local keyframe animations:
- *   - .anchor-highlight                (paragraph fade-out after deep-link)
- *   - .app-search-modal-backdrop fade-in
- *   - .app-search-modal slide-in
- * Also cancels CSS transitions on the FAB and copy-link buttons so
- * tap / hover state changes are instant rather than animated.
- *
- * The shared design-system stylesheet adds a global reduced-motion rule
- * too (covers .gat-* components); this local block makes the behaviour
- * resilient to a CDN-less build (offline / cache miss).
+ * from Interactions). Disables the local `.anchor-highlight` keyframe
+ * animation (paragraph fade-out after deep-link) and cancels CSS transitions
+ * on the FAB and copy-link buttons so tap / hover state changes are instant.
+ * The search modal/overlay animations are DS-owned and the DS stylesheet's own
+ * reduced-motion rule covers all `.gat-*` components.
  */
 @media (prefers-reduced-motion: reduce) {
-  .anchor-highlight,
-  .app-search-modal-backdrop,
-  .app-search-modal {
+  .anchor-highlight {
     animation: none !important;
   }
 
