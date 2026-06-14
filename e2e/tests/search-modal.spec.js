@@ -39,17 +39,26 @@ test.describe('Search modal behavior', () => {
     await expect(modal).toBeHidden({ timeout: 3000 });
   });
 
-  test('modal closes on backdrop click', async ({ page }, testInfo) => {
-    // On mobile, the modal is full-screen so there is no backdrop area to click
-    test.skip(testInfo.project.name === 'mobile', 'Full-screen modal has no backdrop area on mobile');
-
+  test('clicking inside the modal result panel keeps the modal open', async ({ page }, testInfo) => {
+    // The app result panel is registered as a DS `extraContainers` member, so
+    // clicks inside it (a result link, "show all" etc.) must NOT close the
+    // search mid-interaction. The DS modal is full-screen on every viewport and
+    // dismisses only via Escape / close button / selecting a result.
     await openSearchModal(page, testInfo);
     const modal = page.locator('.app-search-modal');
 
-    // Click backdrop (outside modal) -- click at viewport edge
-    const backdrop = page.locator('.app-search-modal-backdrop');
-    await backdrop.click({ position: { x: 10, y: 10 } });
-    await expect(modal).toBeHidden({ timeout: 3000 });
+    const input = page.locator('#search-modal-input');
+    await input.fill('Gemeinderat');
+    await page.waitForTimeout(2000);
+
+    // Click a non-link area inside the result panel (the count header).
+    const panel = page.locator('#search-modal-results');
+    await expect(panel).toBeVisible();
+    await panel.locator('.search-count').first().click();
+    await page.waitForTimeout(300);
+
+    // Modal stays open (extraContainers exempts the panel from click-outside).
+    await expect(modal).toBeVisible();
   });
 
   test('Modal has no BL pills (BL filtering via hero select only)', async ({ page }, testInfo) => {

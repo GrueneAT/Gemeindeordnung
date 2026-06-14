@@ -3,15 +3,23 @@
 // Supports unified search across Gesetze, FAQ, and Glossar content types
 // Uses a modal overlay for search (desktop centered, mobile full-screen)
 //
-// The hero search field (index page) delegates its GENERIC behaviour — open/close
-// without layout shift, debounce + race-guard, ARIA combobox wiring, Strg/Cmd+K
-// and click-outside — to the shared Gruene-AT design-system search module
-// (gat-search.js, loaded from the CDN, no vendoring). This module keeps the
-// APP-SPECIFIC layer: the tabbed/grouped result panel, the Bundesland filter,
-// the stemming false-positive filter, ?highlight= deep-linking and the bespoke
-// modal/FAB. gat-search supplies the chrome; the app supplies the search source
-// (via the adapter) and the result shaping (which it paints into
-// #hero-search-dropdown itself).
+// ALL search entry points delegate their GENERIC behaviour — open/close without
+// layout shift, debounce + race-guard, ARIA combobox wiring, focus-trap +
+// returnFocus (modal), click-outside / Escape — to the shared Gruene-AT
+// design-system search module (gat-search.js, loaded from the CDN, no
+// vendoring). This module keeps the APP-SPECIFIC layer: the tabbed/grouped
+// result panel, the Bundesland filter, the stemming false-positive filter and
+// ?highlight= deep-linking. gat-search supplies the chrome; the app supplies the
+// search source (via the adapter) and the result shaping (which it paints into
+// its own panels — #hero-search-dropdown, #search-modal-results,
+// .inline-search-dropdown — itself, returning [] so the DS renders nothing).
+//
+// The hero (index) field runs in `inline` mode; the global search lives in a
+// native `<dialog class="gat-modal gat-modal--blur gat-modal--wide">` driven in
+// `mode: 'modal'`, with the mobile FAB and the desktop header magnifier wired as
+// DS `triggers` (plus an optional legacy mobile header field if a header ever
+// renders one). The app result panels are registered via the DS
+// `extraContainers` option so clicks inside them never close the search.
 import { createSearch } from 'https://design-system.gruene.at/gat-search.js';
 
 let pagefind = null;
@@ -19,6 +27,8 @@ let searchInitialized = false;
 
 // Hero gat-search controller (index page only); null elsewhere.
 let heroSearchController = null;
+// Modal gat-search controller (present on every page via the static dialog).
+let modalSearchController = null;
 
 // UI state
 let activeBundesland = null;
@@ -739,75 +749,29 @@ function hideDropdown() {
 }
 
 // ---- Search Modal ----
+//
+// The modal is a static native `<dialog id="search-modal">` shipped on every
+// page. The DS gat-search controller (mode: 'modal') owns the open/close,
+// focus-trap + ESC (native <dialog>) and returnFocus onto the trigger. The app
+// keeps its tabbed/grouped result panel (#search-modal-results), which is
+// registered via `extraContainers` so clicks inside it never close the search.
+
+// Modal element refs (resolved once in initSearch).
+let modalDialog = null;
+let modalInput = null;
+let modalResults = null;
 
 /**
- * Open the search modal overlay.
- * Desktop: centered ~700px wide modal with backdrop.
- * Mobile (<640px): full-screen overlay.
+ * Open the global search modal.
+ * @param {string|null} prefilterBundesland - Scope the search to a Bundesland
+ *   (used by the inline "show all" hand-off); otherwise the page BL is detected.
  */
 function openSearchModal(prefilterBundesland = null) {
+  if (!modalSearchController) return;
   if (modalActive) return;
-  modalActive = true;
 
-  // Create backdrop. The DS `.gat-modal` is built on the native `<dialog>`
-  // element + `::backdrop`; this app uses a non-modal-dialog shell so the
-  // sticky-search trigger does not lose its keyboard focus on close, hence
-  // the `.app-search-modal-backdrop` wrapper that handles click-outside.
-  const backdrop = document.createElement('div');
-  backdrop.className = 'app-search-modal-backdrop';
-  backdrop.id = 'search-modal-backdrop';
-  backdrop.addEventListener('click', (e) => {
-    if (e.target === backdrop) closeSearchModal();
-  });
-
-  // Create modal — DS `.gat-modal` skeleton (head/body); the results panel
-  // and the local `app-search-modal` shell live outside the DS BEM so the
-  // app keeps control of the result-list layout, sticky-keyboard behaviour
-  // and the inner-overflow scroll-region under the input.
-  const modal = document.createElement('div');
-  modal.className = 'gat-modal app-search-modal';
-  modal.id = 'search-modal';
-  modal.setAttribute('role', 'dialog');
-  modal.setAttribute('aria-modal', 'true');
-  modal.setAttribute('aria-label', 'Suche');
-  modal.innerHTML = `
-    <div class="gat-modal__head">
-      <h2 class="gat-modal__title">Suche</h2>
-      <div class="app-search-modal-shortcut">ESC</div>
-      <button class="gat-modal__close" aria-label="Schliessen">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <div class="gat-modal__body app-search-modal__body">
-      <div class="relative">
-        <input id="search-modal-input" type="search" autocomplete="off"
-          placeholder="Gesetz, Thema oder Begriff suchen..."
-          class="gat-input app-search-modal-input" />
-        <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-      </div>
-    </div>
-    <div id="search-modal-results" class="app-search-modal-results"></div>
-  `;
-
-  backdrop.appendChild(modal);
-  document.body.appendChild(backdrop);
-
-  // Prevent body scrolling while modal is open
-  document.body.style.overflow = 'hidden';
-
-  // Get modal elements
-  const modalInput = document.getElementById('search-modal-input');
-  const modalResults = document.getElementById('search-modal-results');
-
-  // Store previous refs to restore on close
-  const prevInput = searchInput;
-  const prevDropdown = searchDropdown;
-
-  // Swap to modal refs
-  searchInput = modalInput;
-  searchDropdown = modalResults;
-
-  // Apply pre-filter if provided (from inline search trigger), otherwise auto-detect from page
+  // Apply pre-filter if provided (from inline search trigger), otherwise
+  // auto-detect from the current page meta.
   if (prefilterBundesland) {
     activeBundesland = prefilterBundesland;
   } else {
@@ -817,54 +781,114 @@ function openSearchModal(prefilterBundesland = null) {
     }
   }
 
-  // Pre-fill query if exists
-  if (currentQuery) {
-    modalInput.value = currentQuery;
-    // Trigger search with existing query
-    if (currentQuery.length >= 3) {
-      triggerSearch();
-    }
-  }
+  // Point the shared renderers at the modal result panel.
+  searchInput = modalInput;
+  searchDropdown = modalResults;
 
-  // Wire input handler
-  modalInput.addEventListener('input', handleSearchInput);
-
-  // Focus input
-  modalInput.focus();
-
-  // Wire close button (now uses the DS `.gat-modal__close` element)
-  modal.querySelector('.gat-modal__close').addEventListener('click', closeSearchModal);
-
-  // Wire result link clicks to close modal
-  modalResults.addEventListener('click', (e) => {
-    const link = e.target.closest('a.search-result-item');
-    if (link) {
-      closeSearchModal();
-    }
-  });
-
-  // Store restore function on backdrop element
-  backdrop._restore = () => {
-    searchInput = prevInput;
-    searchDropdown = prevDropdown;
-  };
+  // Open via the DS controller (shows the native <dialog>, focuses the input).
+  // The `gat-search:open` handler in initSearchModal applies the page BL scope
+  // and re-runs any prefilled `currentQuery`.
+  modalSearchController.open();
 }
 
 /**
- * Close the search modal overlay.
+ * Close the global search modal (delegates to the DS controller).
  */
 function closeSearchModal() {
-  if (!modalActive) return;
-  modalActive = false;
+  if (modalSearchController) modalSearchController.close();
+}
 
-  const backdrop = document.getElementById('search-modal-backdrop');
-  if (backdrop) {
-    if (backdrop._restore) backdrop._restore();
-    backdrop.remove();
-  }
+/**
+ * Initialise the global search modal on the shared DS gat-search controller.
+ *
+ * `mode: 'modal'` makes the DS drive the native `<dialog>`: showModal()/close(),
+ * focus-trap, ESC and returnFocus onto whichever element triggered the open.
+ * The mobile FAB and the desktop header magnifier are passed as DS `triggers`
+ * so a click on either opens the modal. The adapter runs the
+ * app's unified Pagefind search and paints the tabbed/grouped panel into
+ * #search-modal-results, then returns [] so the DS renders nothing of its own.
+ * That panel is registered via `extraContainers` so clicks inside it (tabs,
+ * "show all"/"search all", result links) never reach the click-outside handler.
+ */
+function initSearchModal() {
+  modalDialog = document.getElementById('search-modal');
+  modalInput = document.getElementById('search-modal-input');
+  modalResults = document.getElementById('search-modal-results');
+  if (!modalDialog || !modalInput || !modalResults) return;
 
-  // Restore body scrolling
-  document.body.style.overflow = '';
+  // DS modal triggers: the mobile FAB (#fab-search, visible <640px) and the
+  // desktop header magnifier (#search-modal-trigger). `#header-search-field` is
+  // a legacy/optional mobile header field that the current header does not
+  // render; kept here so a future header that re-adds it is wired automatically.
+  // `.filter(Boolean)` drops any that are absent on the current page.
+  const triggerEls = [
+    document.getElementById('fab-search'),
+    document.getElementById('search-modal-trigger'),
+    document.getElementById('header-search-field'),
+  ].filter(Boolean);
+
+  // Bridge the DS open/close lifecycle onto the app's modal state and the
+  // page BL pre-fill. `open` fires after the dialog is shown; `close` after it
+  // is dismissed (ESC / backdrop / close button / result-link select).
+  modalInput.addEventListener('gat-search:open', () => {
+    modalActive = true;
+    searchInput = modalInput;
+    searchDropdown = modalResults;
+    // When a trigger (not openSearchModal) opened the modal, still honour the
+    // page-level BL scope and re-run any prefilled query.
+    const pageBL = document.querySelector('meta[data-pagefind-filter="bundesland[content]"]')?.getAttribute('content');
+    if (pageBL && !activeBundesland) activeBundesland = pageBL;
+    if (currentQuery && currentQuery.length >= 3) {
+      modalInput.value = currentQuery;
+      triggerSearch();
+    }
+  });
+  modalInput.addEventListener('gat-search:close', () => {
+    modalActive = false;
+    modalResults.innerHTML = '';
+  });
+
+  // Result-link clicks inside the panel should dismiss the modal. The panel is
+  // an extraContainer (so the click does not auto-close), so close explicitly.
+  modalResults.addEventListener('click', (e) => {
+    const link = e.target.closest('a.search-result-item');
+    if (link) closeSearchModal();
+  });
+
+  modalSearchController = createSearch({
+    input: modalInput,
+    overlay: document.getElementById('search-modal-overlay'),
+    mode: 'modal',
+    minQueryLength: 3,
+    debounceMs: 200,
+    triggers: triggerEls,
+    // The app paints its own panel; register it so click-outside ignores it.
+    extraContainers: ['#search-modal-results'],
+    // App search adapter: paint the unified panel as a side effect, return [].
+    search: async (query) => {
+      currentQuery = query;
+      searchInput = modalInput;
+      searchDropdown = modalResults;
+      const result = await executeUnifiedSearch(query, activeBundesland);
+      if (result) renderUnifiedResults(result);
+      return [];
+    },
+    // `/` and Strg/Cmd+K are app-routed (hero vs modal decision) in
+    // setupKeyboardShortcuts, so the DS global shortcut stays off here.
+    shortcut: false,
+  });
+
+  // Short-query hint: mirror the app hint into the visible result panel.
+  modalInput.addEventListener('input', () => {
+    const q = modalInput.value.trim();
+    currentQuery = q;
+    if (q.length === 0) {
+      modalResults.innerHTML = '';
+    } else if (q.length < 3) {
+      searchDropdown = modalResults;
+      showMinCharsHint();
+    }
+  });
 }
 
 // ---- Keyboard Shortcuts ----
@@ -894,11 +918,10 @@ function setupKeyboardShortcuts() {
     }
 
     if (e.key === 'Escape') {
-      if (modalActive) {
-        closeSearchModal();
-      } else if (!(heroActive && isHeroVisible())) {
-        // Hero Escape is handled by the DS gat-search controller; only fall back
-        // to the legacy dropdown-hide on non-hero pages / when hero is hidden.
+      // Modal Escape is handled natively by the DS modal controller (native
+      // <dialog> + gat-search:close), the hero by the DS inline controller; only
+      // fall back to the legacy dropdown-hide on non-hero pages / hidden hero.
+      if (!modalActive && !(heroActive && isHeroVisible())) {
         hideDropdown();
         if (searchInput) searchInput.blur();
       }
@@ -998,24 +1021,17 @@ function initHeroSearch() {
     heroDropdown?.classList.remove('search-dropdown-expanded');
   });
 
-  // The app paints its result panel into #hero-search-dropdown, which sits
-  // OUTSIDE the DS overlay element. The DS click-outside handler (a document
-  // pointerdown listener) would otherwise treat any click inside that panel —
-  // a tab button, the "show all" / "search all" action, a result link — as an
-  // outside click and close the search, killing the interaction mid-click.
-  // Keep those in-panel pointer events from reaching the document handler so
-  // the DS stays open; genuine clicks elsewhere still close it. The panel's own
-  // delegated click handlers (tabs, buttons, links) run first in the bubble
-  // phase, so stopping propagation at the panel root does not affect them.
-  heroDropdown?.addEventListener('pointerdown', (event) => {
-    event.stopPropagation();
-  });
-
   heroSearchController = createSearch({
     input: heroInput,
     overlay: dsOverlay,
     minQueryLength: 3,
     debounceMs: 200,
+    // The app paints its result panel into #hero-search-dropdown, which sits
+    // OUTSIDE the DS overlay element. Register it via the DS `extraContainers`
+    // option so the click-outside handler treats clicks inside it — a tab
+    // button, the "show all" / "search all" action, a result link — as "inside"
+    // and keeps the search open; genuine clicks elsewhere still close it.
+    extraContainers: ['#hero-search-dropdown'],
     // App search adapter: the DS calls this (debounced, race-guarded). We paint
     // the app panel as a side effect and hand the DS an empty result list so it
     // renders nothing of its own.
@@ -1053,8 +1069,13 @@ function initHeroSearch() {
 
 /**
  * Initialize inline scoped Pagefind search on law and FAQ pages.
- * Each `.inline-search-container` gets its own debounced search handler
- * that filters results by scope (gesetz+bundesland or faq).
+ *
+ * Each `.inline-search-container` rides its own DS gat-search controller: the DS
+ * supplies open/close, debounce + race-guard, ARIA combobox and click-outside /
+ * Escape; the app adapter runs the scoped Pagefind search (gesetz+bundesland or
+ * faq), paints the results into `.inline-search-dropdown` and returns [] so the
+ * DS renders nothing of its own. The dropdown is registered via
+ * `extraContainers` so clicks inside it (result links, "show all") stay open.
  */
 function initInlineSearch() {
   const containers = document.querySelectorAll('.inline-search-container');
@@ -1067,8 +1088,22 @@ function initInlineSearch() {
 
     const scope = container.dataset.searchScope || 'gesetz';
     const filterBl = container.dataset.searchFilterBundesland || null;
-    let inlineTimer = null;
-    let inlineGeneration = 0;
+
+    // Stable id so the dropdown can be referenced as a DS extraContainer.
+    if (!dropdown.id) {
+      dropdown.id = `inline-search-dropdown-${++idCounterInline}`;
+    }
+
+    // The DS overlay is required by createSearch but unused (the app paints its
+    // own dropdown). Keep it out of the layout flow and hidden.
+    let dsOverlay = container.querySelector('.inline-gat-search-overlay');
+    if (!dsOverlay) {
+      dsOverlay = document.createElement('div');
+      dsOverlay.className = 'gat-search__overlay inline-gat-search-overlay';
+      dsOverlay.hidden = true;
+      dsOverlay.style.display = 'none';
+      container.appendChild(dsOverlay);
+    }
 
     function hideInlineDropdown() {
       dropdown.classList.add('hidden');
@@ -1080,7 +1115,7 @@ function initInlineSearch() {
       dropdown.classList.remove('hidden');
     }
 
-    async function doInlineSearch(query, generation) {
+    async function doInlineSearch(query) {
       const pf = await loadPagefind();
       if (!pf) return;
 
@@ -1093,7 +1128,6 @@ function initInlineSearch() {
       }
 
       const search = await pf.search(query, { filters });
-      if (generation !== inlineGeneration) return;
       if (!search || !search.results) {
         showInlineResults('<div class="inline-search-empty">Keine Treffer</div>');
         return;
@@ -1103,7 +1137,6 @@ function initInlineSearch() {
       const loaded = await Promise.all(
         search.results.slice(0, maxResults).map(r => r.data())
       );
-      if (generation !== inlineGeneration) return;
 
       if (loaded.length === 0) {
         showInlineResults('<div class="inline-search-empty">Keine Treffer</div>');
@@ -1133,43 +1166,45 @@ function initInlineSearch() {
           e.preventDefault();
           currentQuery = query;
           hideInlineDropdown();
+          inlineController?.close();
           openSearchModal(filterBl);
         });
       }
     }
 
-    // Input handler with debounce
+    const inlineController = createSearch({
+      input,
+      overlay: dsOverlay,
+      minQueryLength: 3,
+      debounceMs: 200,
+      extraContainers: [`#${dropdown.id}`],
+      // App adapter: paint the scoped result panel, return [] (DS renders none).
+      search: async (query) => {
+        await doInlineSearch(query);
+        return [];
+      },
+      // Inline fields are not global-shortcut targets.
+      shortcut: false,
+    });
+
+    // The DS hides its own (hidden) overlay on close; mirror that onto the
+    // visible `.inline-search-dropdown` (click-outside / Escape).
+    input.addEventListener('gat-search:close', hideInlineDropdown);
+
+    // Short-query hint: mirror into the visible dropdown on input.
     input.addEventListener('input', () => {
-      const query = input.value.trim();
-      if (query.length === 0) {
+      const q = input.value.trim();
+      if (q.length === 0) {
         hideInlineDropdown();
-        return;
-      }
-      if (query.length < 3) {
+      } else if (q.length < 3) {
         showInlineResults('<div class="search-hint">Bitte mindestens 3 Zeichen eingeben</div>');
-        return;
-      }
-      const generation = ++inlineGeneration;
-      clearTimeout(inlineTimer);
-      inlineTimer = setTimeout(() => doInlineSearch(query, generation), 200);
-    });
-
-    // Click outside closes dropdown
-    document.addEventListener('click', (e) => {
-      if (!container.contains(e.target)) {
-        hideInlineDropdown();
-      }
-    });
-
-    // Escape closes dropdown
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        hideInlineDropdown();
-        input.blur();
       }
     });
   });
 }
+
+// Counter for unique inline dropdown ids (extraContainer references).
+let idCounterInline = 0;
 
 // ---- Init ----
 
@@ -1226,36 +1261,11 @@ function initSearch() {
     initHeroSearch();
   }
 
-  // Wire up search modal trigger button
-  const triggerBtn = document.getElementById('search-modal-trigger');
-  if (triggerBtn) {
-    triggerBtn.addEventListener('click', () => {
-      openSearchModal();
-    });
-  }
-
-  // Wire up mobile header search field (opens modal on focus)
-  const headerSearchField = document.getElementById('header-search-field');
-  if (headerSearchField) {
-    headerSearchField.addEventListener('focus', (e) => {
-      e.preventDefault();
-      headerSearchField.blur();
-      openSearchModal();
-    });
-    headerSearchField.addEventListener('click', (e) => {
-      e.preventDefault();
-      headerSearchField.blur();
-      openSearchModal();
-    });
-  }
-
-  // Wire up floating search FAB (mobile bottom-right)
-  const fabSearch = document.getElementById('fab-search');
-  if (fabSearch) {
-    fabSearch.addEventListener('click', () => {
-      openSearchModal();
-    });
-  }
+  // Global search modal (Strg+K / mobile FAB / desktop header magnifier). The
+  // FAB (#fab-search) and the header magnifier (#search-modal-trigger) are wired
+  // as DS `triggers` inside initSearchModal — no manual click handlers needed
+  // here.
+  initSearchModal();
 
   // Initialize inline scoped search on law/FAQ pages
   initInlineSearch();

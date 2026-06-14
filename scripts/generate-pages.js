@@ -419,11 +419,47 @@ ${optgroups.join('\n')}
 }
 
 /**
+ * Generate the global search modal (Strg+K / FAB / header trigger / mobile field).
+ *
+ * Native `<dialog class="gat-modal gat-modal--blur gat-modal--wide">` per the DS
+ * search template: the DS `gat-search.js` controller (mode: 'modal') drives
+ * open/close, focus-trap + ESC (native `<dialog>`) and `returnFocus`. The app's
+ * unified result panel keeps its own id (#search-modal-results) so the app
+ * renderers paint into it; the DS overlay element stays present-but-unused
+ * because the adapter returns []. Registered as an `extraContainers` member so
+ * clicks in the result panel never close the search.
+ */
+function generateSearchModal() {
+  return `  <dialog id="search-modal" class="gat-modal gat-modal--blur gat-modal--wide app-search-modal" aria-label="Suche">
+    <div class="gat-modal__head">
+      <h2 class="gat-modal__title">Suche</h2>
+      <div class="app-search-modal-shortcut">ESC</div>
+      <button type="button" class="gat-modal__close" aria-label="Schliessen" onclick="this.closest('dialog').close()">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="gat-modal__body app-search-modal__body">
+      <div class="gat-search gat-search--modal">
+        <span class="gat-search__icon" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </span>
+        <input id="search-modal-input" type="search" autocomplete="off"
+          placeholder="Gesetz, Thema oder Begriff suchen..."
+          class="gat-input gat-search__field app-search-modal-input" />
+        <div class="gat-search__overlay" id="search-modal-overlay" hidden></div>
+      </div>
+    </div>
+    <div id="search-modal-results" class="app-search-modal-results"></div>
+  </dialog>`;
+}
+
+/**
  * Generate the floating action buttons: search FAB (mobile) + scroll-to-top.
  * Uses a fixed container so both buttons stack vertically in bottom-right.
  */
 function generateScrollToTop() {
-  return `  <div id="fab-container" class="fab-container">
+  return `${generateSearchModal()}
+  <div id="fab-container" class="fab-container">
     <button id="fab-search" class="fab-btn fab-search" aria-label="Suche oeffnen">
       <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
     </button>
@@ -662,12 +698,12 @@ ${breadcrumbHtml}
         <p class="mt-1 text-sm text-gray-600">Stand: ${standDatum}</p>
       </header>
       <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="gesetz" data-search-filter-bundesland="${escapeHtml(law.meta.bundesland)}">
-        <div class="relative">
-          <input type="search" class="gat-input inline-search-input" autocomplete="off"
+        <div class="gat-search relative">
+          <span class="gat-search__icon" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </span>
+          <input type="search" class="gat-input gat-search__field inline-search-input" autocomplete="off"
             placeholder="In ${escapeHtml(law.meta.bundesland)} suchen..." minlength="3" />
-          <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
         </div>
         <div class="inline-search-dropdown hidden"></div>
       </div>
@@ -885,12 +921,12 @@ ${headerHtml}
       </div>
 ${renderCallout('info', '<p><strong>Hinweis:</strong> Diese Inhalte wurden mittels KI (LLM) erstellt und nicht redaktionell überprüft. Sie dienen ausschließlich der Orientierung und sind keine Rechtsberatung.</p>')}
       <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="faq">
-        <div class="relative">
-          <input type="search" class="gat-input inline-search-input" autocomplete="off"
+        <div class="gat-search relative">
+          <span class="gat-search__icon" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </span>
+          <input type="search" class="gat-input gat-search__field inline-search-input" autocomplete="off"
             placeholder="FAQ durchsuchen..." minlength="3" />
-          <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
         </div>
         <div class="inline-search-dropdown hidden"></div>
       </div>
@@ -959,12 +995,12 @@ ${headerHtml}
         <p class="mt-1 text-gruene-dark/80">${genderText(escapeHtml(topic.description))}</p>
       </header>
       <div class="inline-search-container hidden sm:block" data-pagefind-ignore data-search-scope="faq">
-        <div class="relative">
-          <input type="search" class="gat-input inline-search-input" autocomplete="off"
+        <div class="gat-search relative">
+          <span class="gat-search__icon" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </span>
+          <input type="search" class="gat-input gat-search__field inline-search-input" autocomplete="off"
             placeholder="FAQ durchsuchen..." minlength="3" />
-          <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
         </div>
         <div class="inline-search-dropdown hidden"></div>
       </div>
